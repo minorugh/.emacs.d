@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>起動設定 on minoru&#39;s Emacs Configuration</title>
+    <link>https://exsanple.com/startup/</link>
+    <description>Recent content in 起動設定 on minoru&#39;s Emacs Configuration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://exsanple.com/startup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.1. [early-init.el] eary-initを使う</title>
+      <link>https://exsanple.com/startup/eary-init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/startup/eary-init/</guid>
+      <description>1.1. [early-init.el] eary-initを使う  early-init.el は、Emacs27から導入されました。 https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
+;;; early-init.el --- Early Initialization. -*- lexical-binding: t; no-byte-compile: t -*- ;;; Commentary: ;; ;; Emacs 27+ introduces early-init.el, which is run before init.el, ;; before package and UI initialization happens. ;; ;;; Code: ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) ;; For slightly faster startup (setq package-enable-at-startup nil) ;; Always load newest byte code (setq load-prefer-newer t) ;; Inhibit resizing frame (setq frame-inhibit-implied-resize t) ;; Faster to disable these here (before they&amp;#39;ve been initialized) (push &amp;#39;(fullscreen .</description>
+    </item>
+    
+    <item>
+      <title>1.2. GCを減らす</title>
+      <link>https://exsanple.com/startup/gc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/startup/gc/</guid>
+      <description>2.1.1. GCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。これもとりあえず書いておけば速くなる系なのでおすすめです。
+(setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことで起動時間を短縮します。</description>
+    </item>
+    
+  </channel>
+</rss>

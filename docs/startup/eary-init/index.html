@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>minoru&#39;s Emacs Configuration</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2022-08-22T07:23:13 JST">
+<title>1.1. [early-init.el] eary-initを使う :: minoru&#39;s Emacs Configuration</title>
+<link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
+<link href="../../css/nucleus.css" rel="stylesheet">
+<link href="../../css/font-awesome.min.css" rel="stylesheet">
+<link href="../../css/hybrid.css" rel="stylesheet">
+<link href="../../css/featherlight.min.css" rel="stylesheet">
+<link href="../../css/auto-complete.css" rel="stylesheet">
+<link href="../../theme-original/style.css" rel="stylesheet">
+
+  <link href="../../theme-original/variant-gray.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="../../startup/eary-init/">
+    
+    <div id="headermain"></div>
+<nav id="sidebar" class="showVisitedLinks">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://exsanple.com/">minoru&#39;s Emacs Configuration</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+  </div>
+
+  <ul class="topics">
+            <li data-nav-id="/" class="dd-item">
+            <a href="../../"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="https://exsanple.com/startup/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="../../startup/"><b>1. </b>起動設定</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://exsanple.com/startup/eary-init/" class="dd-item">
+        <div>
+          <a href="../../startup/eary-init/">
+            1.1. [early-init.el] eary-initを使う
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://exsanple.com/startup/gc/" class="dd-item">
+        <div>
+          <a href="../../startup/gc/">
+            1.2. GCを減らす
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://exsanple.com/core/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="../../core/"><b>2. </b>コア設定</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://exsanple.com/core/core_01/" class="dd-item">
+        <div>
+          <a href="../../core/core_01/">
+            core
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://exsanple.com/cursor/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="../../cursor/"><b>3. </b>カーソル移動</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://exsanple.com/cursor/cursor_01/" class="dd-item">
+        <div>
+          <a href="../../cursor/cursor_01/">
+            cursor
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://exsanple.com/font/" class="dd-item
+        ">
+      <div>
+      <a href="../../font/"><b>4. </b>フォント / 配色関係</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/buffer/" class="dd-item
+        ">
+      <div>
+      <a href="../../buffer/"><b>5. </b>バッフアー / ウインドウ</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/ui/" class="dd-item
+        ">
+      <div>
+      <a href="../../ui/"><b>6. </b>UI</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/editing/" class="dd-item
+        ">
+      <div>
+      <a href="../../editing/"><b>7. </b>ファイル編集/入力補助</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/display/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="../../display/"><b>8. </b>表示サポート</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://exsanple.com/display/display_01/" class="dd-item">
+        <div>
+          <a href="../../display/display_01/">
+            display_01
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://exsanple.com/hydra/" class="dd-item
+        ">
+      <div>
+      <a href="../../hydra/"><b>9. </b>Hydra / コマンドディスパッチャ</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/programming/" class="dd-item
+        ">
+      <div>
+      <a href="../../programming/"><b>10. </b>開発サポート</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/external-tool/" class="dd-item
+        ">
+      <div>
+      <a href="../../external-tool/"><b>11. </b>外部連携ツール設定</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/memo-tool/" class="dd-item
+        ">
+      <div>
+      <a href="../../memo-tool/"><b>12. </b>メモ環境</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://exsanple.com/utility-tool/" class="dd-item
+        ">
+      <div>
+      <a href="../../utility-tool/"><b>13. </b>ユーティリティー関数</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/minorugh/emacs.d" rel="noopener"><i class='fa fa-github'></i> <label>Github repo</label></a></li>
+                <li class="" role=""><a href="https://minorugh.github.io/" rel="noopener"><i class='fa fa-home'></i> 四時随順に戻る</a></li>
+                <li class="" role=""><a href="https://twitter.com/minorugh" rel="noopener"><i class='fa fa-twitter'></i> Twitter</a></li>
+        </section>
+            <a id="clear-history" class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> Clear History</a>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/startup/eary-init.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='https://exsanple.com/'>minoru's Emacs Configuration</a> > <a href='https://exsanple.com/startup/'>起動設定</a> > 1.1. [early-init.el] eary-initを使う
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+      <div class="wrapper">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#11-early-initel-eary-initを使う">1.1. [early-init.el] eary-initを使う</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+	</div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>1.1. [early-init.el] eary-initを使う</h1>
+  
+
+
+
+    
+    
+    
+<h3 id="11-early-initel-eary-initを使う">1.1. [early-init.el] eary-initを使う</h3>
+<ul>
+<li><a href="https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html"><code>early-init.el</code></a> は、Emacs27から導入されました。</li>
+<li><a href="https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el">https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el</a></li>
+</ul>
+<p><code>init.el</code> でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;;; early-init.el --- Early Initialization. -*- lexical-binding: t; no-byte-compile: t -*-</span>
+<span style="color:#75715e">;;; Commentary:</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;; Emacs 27+ introduces early-init.el, which is run before init.el,</span>
+<span style="color:#75715e">;; before package and UI initialization happens.</span>
+<span style="color:#75715e">;;</span>
+<span style="color:#75715e">;;; Code:</span>
+
+<span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
+(setq gc-cons-threshold most-positive-fixnum)
+
+<span style="color:#75715e">;; For slightly faster startup</span>
+(setq package-enable-at-startup <span style="color:#66d9ef">nil</span>)
+
+<span style="color:#75715e">;; Always load newest byte code</span>
+(setq load-prefer-newer <span style="color:#66d9ef">t</span>)
+
+<span style="color:#75715e">;; Inhibit resizing frame</span>
+(setq frame-inhibit-implied-resize <span style="color:#66d9ef">t</span>)
+
+<span style="color:#75715e">;; Faster to disable these here (before they&#39;ve been initialized)</span>
+(push <span style="color:#f92672">&#39;</span>(fullscreen <span style="color:#f92672">.</span> maximized) default-frame-alist)
+(push <span style="color:#f92672">&#39;</span>(menu-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
+(push <span style="color:#f92672">&#39;</span>(tool-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
+(push <span style="color:#f92672">&#39;</span>(vertical-scroll-bars) default-frame-alist)
+
+<span style="color:#75715e">;; Suppress flashing at startup</span>
+(setq inhibit-redisplay <span style="color:#66d9ef">t</span>)
+(setq inhibit-message <span style="color:#66d9ef">t</span>)
+(add-hook <span style="color:#e6db74">&#39;window-setup-hook</span>
+		  (lambda ()
+			(setq inhibit-redisplay <span style="color:#66d9ef">nil</span>)
+			(setq inhibit-message <span style="color:#66d9ef">nil</span>)
+			(<span style="color:#a6e22e">redisplay</span>)))
+
+<span style="color:#75715e">;; Startup setting</span>
+(setq inhibit-splash-screen <span style="color:#66d9ef">t</span>)
+(setq inhibit-startup-message <span style="color:#66d9ef">t</span>)
+(setq byte-compile-warnings <span style="color:#f92672">&#39;</span>(cl-functions))
+(custom-set-faces <span style="color:#f92672">&#39;</span>(default ((<span style="color:#66d9ef">t</span> (:background <span style="color:#e6db74">&#34;#282a36&#34;</span>)))))
+
+
+(provide <span style="color:#e6db74">&#39;early-init</span>)
+<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#75715e">;;; early-init.el ends here</span>
+</code></pre></div>
+
+    
+    
+        <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="../../startup/" title="起動設定"> <i class="fa fa-chevron-left"></i><label>起動設定</label></a>
+    <a class="nav nav-next" href="../../startup/gc/" title="1.2. GCを減らす" style="margin-right: 0px;"><label>1.2. GCを減らす</label><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="../../js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/exsanple.com\/";
+    
+</script>
+<script src="../../js/clipboard.min.js"></script>
+<script src="../../js/featherlight.min.js"></script>
+<script src="../../js/html5shiv-printshiv.min.js"></script>
+
+<script src="../../js/modernizr.custom.71422.js"></script>
+<script src="../../js/docdock.js"></script>
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/auto-complete.js"></script>
+<script type="text/javascript" src="../../js/search.js"></script>
+<script src="../../theme-original/script.js"></script>
+
+
+
+
+<script src="https://exsanple.com/js/scripts.min.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

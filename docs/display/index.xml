@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>表示サポート on minoru&#39;s Emacs Configuration</title>
+    <link>https://exsanple.com/display/</link>
+    <description>Recent content in 表示サポート on minoru&#39;s Emacs Configuration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://exsanple.com/display/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>display_01</title>
+      <link>https://exsanple.com/display/display_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/display/display_01/</guid>
+      <description>5. 編集サポート / 入力補助 ファイル編集や入力補助の設定をまとめている。
+5.1. 矩形編集/連番入力 24.4 からは、rectangle-mark-mode が使えるようになり C-x SPC を押下すると矩形モードに入り直感的に矩形選択ができる。
+標準の rect.el に以下の機能が実装されている。
+|矩形切り取り|	C-x r k | |矩形削除	| C-x r d | |矩形貼り付け|	C-x r y | |矩形先頭に文字を挿入|	C-x r t | |矩形を空白に変換する|	C-x r c |
+5.2. markdownモード markdown-mode.el は、Markdown形式のテキストを編集するための主要なモードです。
+(leaf markdown-mode :ensure t :mode (&amp;#34;\\.md\\&amp;#39;&amp;#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-emacs-lisp-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedown を使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。
+https://github.com/shime/emacs-livedown
+npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
+$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。</description>
+    </item>
+    
+  </channel>
+</rss>

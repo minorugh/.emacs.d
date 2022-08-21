@@ -1,0 +1,148 @@
+[
+{
+	"uri": "https://exsanple.com/startup/",
+	"title": "起動設定",
+	"tags": [],
+	"description": "",
+	"content": "Emacs の起動設定に関わる部分をここでは設定している\n Emacs-27導入にあわせて early-init.el を設定しました。 ブートシーケンスは以下のとおり。   early-init.el の読み込み init.el の読み込み inits/ のファイル群を読み込み （init-loader 使用）   eary-init.el 早期設定ファイルの設定 GCを減らす 早期設定ファイルの設定  "
+},
+{
+	"uri": "https://exsanple.com/core/",
+	"title": "コア設定",
+	"tags": [],
+	"description": "",
+	"content": "Emacs の基本動作に関わる部分をここでは設定している\n core 認証情報の取り扱いファイルの設定  "
+},
+{
+	"uri": "https://exsanple.com/cursor/",
+	"title": "カーソル移動",
+	"tags": [],
+	"description": "",
+	"content": "ここでは全体に関わるキーバインド系の設定を記載している。\n cursor 認証情報の取り扱いファイルの設定  "
+},
+{
+	"uri": "https://exsanple.com/font/",
+	"title": "フォント / 配色関係",
+	"tags": [],
+	"description": "",
+	"content": "ここではバッファ管理関係の設定を記載している\n"
+},
+{
+	"uri": "https://exsanple.com/buffer/",
+	"title": "バッフアー / ウインドウ",
+	"tags": [],
+	"description": "",
+	"content": "ここではバッファ管理関係の設定を記載している\n"
+},
+{
+	"uri": "https://exsanple.com/ui/",
+	"title": "UI",
+	"tags": [],
+	"description": "",
+	"content": "ここでは Emacs の UI を変更するようなものを載せている\n"
+},
+{
+	"uri": "https://exsanple.com/editing/",
+	"title": "ファイル編集/入力補助",
+	"tags": [],
+	"description": "",
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n"
+},
+{
+	"uri": "https://exsanple.com/display/",
+	"title": "表示サポート",
+	"tags": [],
+	"description": "",
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n display 認証情報の取り扱いファイルの設定  "
+},
+{
+	"uri": "https://exsanple.com/hydra/",
+	"title": "Hydra / コマンドディスパッチャ",
+	"tags": [],
+	"description": "",
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n"
+},
+{
+	"uri": "https://exsanple.com/programming/",
+	"title": "開発サポート",
+	"tags": [],
+	"description": "",
+	"content": "ここでは各言語やフレームワーク毎の設定をまとめている。 markdown-mode とか yaml-mode なんかはプログラム言語ではないけど面倒なので一旦ここにまとめている。\n"
+},
+{
+	"uri": "https://exsanple.com/external-tool/",
+	"title": "外部連携ツール設定",
+	"tags": [],
+	"description": "",
+	"content": "ここでは外部のサービスと連携するようなやつをまとめています\n"
+},
+{
+	"uri": "https://exsanple.com/memo-tool/",
+	"title": "メモ環境",
+	"tags": [],
+	"description": "",
+	"content": "ここでは org-mode 周りの設定をまとめている。 org-mode だけでも書くことが多いからね……。\n"
+},
+{
+	"uri": "https://exsanple.com/utility-tool/",
+	"title": "ユーティリティー関数",
+	"tags": [],
+	"description": "",
+	"content": "自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている\n"
+},
+{
+	"uri": "https://exsanple.com/startup/eary-init/",
+	"title": "1.1. [early-init.el] eary-initを使う",
+	"tags": [],
+	"description": "",
+	"content": "1.1. [early-init.el] eary-initを使う  early-init.el は、Emacs27から導入されました。 https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。\n;;; early-init.el --- Early Initialization. -*- lexical-binding: t; no-byte-compile: t -*- ;;; Commentary: ;; ;; Emacs 27+ introduces early-init.el, which is run before init.el, ;; before package and UI initialization happens. ;; ;;; Code: ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) ;; For slightly faster startup (setq package-enable-at-startup nil) ;; Always load newest byte code (setq load-prefer-newer t) ;; Inhibit resizing frame (setq frame-inhibit-implied-resize t) ;; Faster to disable these here (before they\u0026#39;ve been initialized) (push \u0026#39;(fullscreen . maximized) default-frame-alist) (push \u0026#39;(menu-bar-lines . 0) default-frame-alist) (push \u0026#39;(tool-bar-lines . 0) default-frame-alist) (push \u0026#39;(vertical-scroll-bars) default-frame-alist) ;; Suppress flashing at startup (setq inhibit-redisplay t) (setq inhibit-message t) (add-hook \u0026#39;window-setup-hook (lambda () (setq inhibit-redisplay nil) (setq inhibit-message nil) (redisplay))) ;; Startup setting (setq inhibit-splash-screen t) (setq inhibit-startup-message t) (setq byte-compile-warnings \u0026#39;(cl-functions)) (custom-set-faces \u0026#39;(default ((t (:background \u0026#34;#282a36\u0026#34;))))) (provide \u0026#39;early-init) ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;; early-init.el ends here "
+},
+{
+	"uri": "https://exsanple.com/startup/gc/",
+	"title": "1.2. GCを減らす",
+	"tags": [],
+	"description": "",
+	"content": "2.1.1. GCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。これもとりあえず書いておけば速くなる系なのでおすすめです。\n(setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことで起動時間を短縮します。\n"
+},
+{
+	"uri": "https://exsanple.com/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://exsanple.com/core/core_01/",
+	"title": "core",
+	"tags": [],
+	"description": "",
+	"content": "3. コア設定 Emacs を操作して日本語文書編集するうえで必要な設定。\n3.1. 言語 / 文字コード シンプルにこれだけです。\n(set-language-environment \u0026#34;Japanese\u0026#34;) (prefer-coding-system \u0026#39;utf-8) 3.2. [emacs-mozc] 日本語入力  Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。\n! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。\n(leaf mozc :ensure t :bind ((\u0026#34;\u0026lt;hiragana-katakana\u0026gt;\u0026#34; . toggle-input-method) (:mozc-mode-map (\u0026#34;,\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;、\u0026#34;))) (\u0026#34;.\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;。\u0026#34;))) (\u0026#34;?\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;？\u0026#34;))) (\u0026#34;!\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;！\u0026#34;))))) :custom `((default-input-method . \u0026#34;japanese-mozc\u0026#34;) (mozc-helper-program-name . \u0026#34;mozc_emacs_helper\u0026#34;) (mozc-leim-title . \u0026#34;かな\u0026#34;)) :config (defun mozc-insert-str (str) (mozc-handle-event \u0026#39;enter) (insert str)) (defadvice toggle-input-method (around toggle-input-method-around activate) \u0026#34;Input method function in key-chord.el not to be nil.\u0026#34; (let ((input-method-function-save input-method-function)) ad-do-it (setq input-method-function input-method-function-save)))) Emacsで文章編集中にShellコマンドで mozc-tool を起動し、Emacsを閉じることなく単語登録できるようにしています。\n(leaf *cus-mozc-tool :bind ((\u0026#34;s-t\u0026#34; . my:mozc-dictionary-tool) (\u0026#34;s-d\u0026#34; . my:mozc-word-regist)) :init (defun my:mozc-dictionary-tool () \u0026#34;Open `mozc-dictipnary-tool\u0026#39;.\u0026#34; (interactive) (compile \u0026#34;/usr/lib/mozc/mozc_tool --mode=dictionary_tool\u0026#34;) (delete-other-windows)) (defun my:mozc-word-regist () \u0026#34;Open `mozc-word-regist\u0026#39;.\u0026#34; (interactive) (compile \u0026#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog\u0026#34;) (delete-other-windows))) 3.3. [Mozc] 辞書の共有 Linux環境でMozcを使うメリットは辞書の共有です。\n Emacs以外のコンテンツでも同じMozc辞書を使うのでEmacsから単語登録しておけば全てのコンテンツで有効になる。 辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンで共有できる。  3.3.1. Dropboxで辞書を共有する やり方は簡単です。\n Dropboxに ~/Dropbox/mozc フォルダを新規作成します。 つぎに、~/.mozc フォルダーを ~/Dropboc/mozc/ へコピーします。 最後に、~/.mozc を削除してDropboxにコピーした .mozc のシンボリックファイルを ~/ へ貼り付けます。  makefile で自動化するなら次のようになるかと思います。\nmozc_copy: mkdir -p ~/Dropbox/mozc cp -r ~/.mozc/ ~/Dropbox/mozc/ test -L ~/.mozc || rm -rf ~/.mozc ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc 3.3.2. 辞書共有の問題点 Dropboxに保存された辞書ファイルを複数マシンで同時アクセスした場合、複製（競合コピー）がいっぱい作られるという問題があります。 Google Driveは大丈夫という情報もありますが試せてません。\n3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。  ;; C-h is backspace (define-key key-translation-map (kbd \u0026#34;C-h\u0026#34;) (kbd \u0026#34;\u0026lt;DEL\u0026gt;\u0026#34;)) (bind-key \u0026#34;M-w\u0026#34; \u0026#39;clipboard-kill-ring-save) (bind-key \u0026#34;C-w\u0026#34; \u0026#39;my:clipboard-kill-region) (bind-key \u0026#34;s-c\u0026#34; \u0026#39;clipboard-kill-ring-save)\t;; Like mac (bind-key \u0026#34;s-v\u0026#34; \u0026#39;clipboard-yank) ;; Like mac (bind-key \u0026#34;M-/\u0026#34; \u0026#39;kill-this-buffer) ;; No inquiry (bind-key \u0026#34;C-_\u0026#34; \u0026#39;undo-fu-only-undo) ;; Use undu-fu.el (bind-key \u0026#34;C-/\u0026#34; \u0026#39;undo-fu-only-redo) ;; Use undo-fu.el (defun my:kill-whoile-ine-or-region () \u0026#34;If the region is active, to kill region. If the region is inactive, to kill whole line.\u0026#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) 3.5. マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．\n(setq mouse-drag-copy-region t) 3.6. compilation buffer を自動的に閉じる compile コマンドをよく使うので実行後は自動で閉じるようにしました。\n(setq compilation-always-kill t) (setq compilation-finish-functions \u0026#39;compile-autoclose) (defun compile-autoclose (buffer string) \u0026#34;Automatically close the compilation buffer.\u0026#34; (cond ((string-match \u0026#34;finished\u0026#34; string) (bury-buffer \u0026#34;*compilation*\u0026#34;) (delete-other-windows) (message \u0026#34;Build successful.\u0026#34;)) (t (message \u0026#34;Compilation exited abnormally: %s\u0026#34; string)))) また、defaultだと出力が続いてもスクロールされないので自動的にスクロールさせる設定を追加。\n(setq compilation-scroll-output t) 3.7. C-x C-c でEmacsを終了させないようにする  終了させることはまずないので、再起動コマンドに変更しています。 restart-emacs はMELPAからインストールできます。  (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) 3.8. [aggressive-indent.el] 即時バッファー整形 特定のメジャーモードで、とにかく整形しまくります。\n(leaf aggressive-indent :ensure t :hook ((emacs-lisp-mode-hook css-mode-hook) . aggressive-indent-mode)) 3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) 3.10. [el-get] パッケージ管理  MELPAをメインに管理していますが、MELPAにないものはel-get でGitHubやEmacsWikiからインストールします。 個人用に開発したものも、自分のGitHubリポジトリで管理しel-get で読み込んでいます。  "
+},
+{
+	"uri": "https://exsanple.com/cursor/cursor_01/",
+	"title": "cursor",
+	"tags": [],
+	"description": "",
+	"content": "4. カーソル移動  文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。  4.1. [sequential-command.el] バッファー内のカーソル移動  https://github.com/HKey/sequential-command  標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。\n C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。\nMELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。\n(leaf sequential-command :doc \u0026#34;https://bre.is/6Xu4fQs6\u0026#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) 4.2. ウインドウ間のカーソル移動 C-c o でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています．\n画面分割されていないときは、左右分割して新しいウインドウに移動します。\n(defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key \u0026#34;C-q\u0026#34; \u0026#39;other-window-or-split) 4.3. 対応する括弧を選択  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  上記標準機能は使いにくいので my:jump-brace を定義しました。 括弧の先頭と最後へ交互にポイント移動します。\n(defun my:jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key \u0026#34;C-M-9\u0026#34; \u0026#39;my:jump-brace) 4.4. マーク箇所を遡る C-u C-SPC で辿れるようになります。\n(setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) C-x C-x は、直前の編集ポイントと現在のポイントとを行き来できる設定です。\n(defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) 4.5 [expand-region.el] カーソル位置を起点に選択範囲を賢く広げる expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。\n2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
+},
+{
+	"uri": "https://exsanple.com/display/display_01/",
+	"title": "display_01",
+	"tags": [],
+	"description": "",
+	"content": "5. 編集サポート / 入力補助 ファイル編集や入力補助の設定をまとめている。\n5.1. 矩形編集/連番入力 24.4 からは、rectangle-mark-mode が使えるようになり C-x SPC を押下すると矩形モードに入り直感的に矩形選択ができる。\n標準の rect.el に以下の機能が実装されている。\n|矩形切り取り|\tC-x r k | |矩形削除\t| C-x r d | |矩形貼り付け|\tC-x r y | |矩形先頭に文字を挿入|\tC-x r t | |矩形を空白に変換する|\tC-x r c |\n5.2. markdownモード markdown-mode.el は、Markdown形式のテキストを編集するための主要なモードです。\n(leaf markdown-mode :ensure t :mode (\u0026#34;\\\\.md\\\\\u0026#39;\u0026#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-emacs-lisp-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedown を使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。\nhttps://github.com/shime/emacs-livedown\nnpmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。\n$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。\n(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((\u0026#34;C-c C-c p\u0026#34; . livedown-preview) (\u0026#34;C-c C-c k\u0026#34; . livedown-kill))) 5.3. viewモード 特定の拡張子に対して常に view モードで開きたいときやgzされた emacs-lisp ソースを見るときに view-mode を使います。\n下記の設定では、my:auto-view-dirs に追加したディレクトリのファイルを開くと view-mode が常に有効になります．\n(leaf view :hook (find-file-hook . my:auto-view) (server-visit-hook . my:unlock-view-mode) :chord (\u0026#34;::\u0026#34; . view-mode) :bind (:view-mode-map (\u0026#34;h\u0026#34; . backward-char) (\u0026#34;l\u0026#34; . forward-char) (\u0026#34;a\u0026#34; . beginning-of-buffer) (\u0026#34;e\u0026#34; . end-of-buffer) (\u0026#34;w\u0026#34; . forward-word) (\u0026#34;b\u0026#34; . scroll-down) (\u0026#34;c\u0026#34; . kill-ring-save) (\u0026#34;r\u0026#34; . xref-find-references) (\u0026#34;RET\u0026#34; . xref-find-definitions) (\u0026#34;x\u0026#34; . my:view-del-char) (\u0026#34;y\u0026#34; . my:view-yank) (\u0026#34;d\u0026#34; . my:view-kill-region) (\u0026#34;u\u0026#34; . my:view-undo) (\u0026#34;m\u0026#34; . magit-status) (\u0026#34;g\u0026#34; . my:google) (\u0026#34;s\u0026#34; . swiper-region) (\u0026#34;%\u0026#34; . my:jump-brace) (\u0026#34;@\u0026#34; . counsel-mark-ring) (\u0026#34;n\u0026#34; . my:org-view-next-heading) (\u0026#34;p\u0026#34; . my:org-view-previous-heading) (\u0026#34;o\u0026#34; . other-window-or-split) (\u0026#34;G\u0026#34; . end-of-buffer) (\u0026#34;0\u0026#34; . my:delete-window) (\u0026#34;1\u0026#34; . my:delete-other-windows) (\u0026#34;2\u0026#34; . my:split-window-below) (\u0026#34;+\u0026#34; . text-scale-increase) (\u0026#34;-\u0026#34; . text-scale-decrease) (\u0026#34;/\u0026#34; . (lambda ()(interactive)(text-scale-set 0))) (\u0026#34;_\u0026#34; . kill-other-buffers) (\u0026#34;:\u0026#34; . View-exit-and-edit) (\u0026#34;i\u0026#34; . View-exit-and-edit) (\u0026#34;]\u0026#34; . winner-undo) (\u0026#34;[\u0026#34; . winner-redo) (\u0026#34;.\u0026#34; . hydra-view/body)) :init ;; Specific extension / directory (defvar my:auto-view-regexp \u0026#34;\\\\.php\\\\|\\\\.pl\\\\|\\\\.el.gz?\\\\|\\\\.tar.gz?\\\\\u0026#39;\u0026#34;) ;; Specific directory (defvar my:auto-view-dirs nil) (add-to-list \u0026#39;my:auto-view-dirs \u0026#34;~/src/\u0026#34;) (add-to-list \u0026#39;my:auto-view-dirs \u0026#34;~/Dropbox/GH/\u0026#34;) (add-to-list \u0026#39;my:auto-view-dirs \u0026#34;/scp:xsrv:/home/minorugh/\u0026#34;) (defun my:auto-view () \u0026#34;Open a file with view mode.\u0026#34; (when (file-exists-p buffer-file-name) (when (and my:auto-view-regexp (string-match my:auto-view-regexp buffer-file-name)) (view-mode 1)) (dolist (dir my:auto-view-dirs) (when (eq 0 (string-match (expand-file-name dir) buffer-file-name)) (view-mode 1))))) (defun my:unlock-view-mode () \u0026#34;Unlock view mode with git commit.\u0026#34; (when (string-match \u0026#34;COMMIT_EDITMSG\u0026#34; buffer-file-name) (view-mode 0)))) view-mode のときにモードラインの色を変えるのは viewer.el を使うと設定が簡単です。\n;; Change-modeline-color (leaf viewer :ensure t :hook (view-mode-hook . viewer-change-modeline-color-setup) :custom `((viewer-modeline-color-view . \u0026#34;#852941\u0026#34;) (viewer-modeline-color-unwritable . \u0026#34;#2F6828\u0026#34;))) view-mode からでも簡単な編集ができるように vim like なコマンドをいくつか作りました。\n(with-eval-after-load \u0026#39;view ;; save-buffer no message (defun my:save-buffer () \u0026#34;With clear Wrote message.\u0026#34; (interactive) (save-buffer) (message nil)) ;; Like as \u0026#39;x\u0026#39; of vim (defun my:view-del-char () \u0026#34;Delete charactor in view mode.\u0026#34; (interactive) (view-mode 0) (delete-char 1) (my:save-buffer) (view-mode 1)) ;; Like as \u0026#39;dd\u0026#39; of vim (defun my:view-kill-region () \u0026#34;If the region is active, to kill region. If the region is inactive, to kill whole line.\u0026#34; (interactive) (view-mode 0) (if (use-region-p) (kill-region (region-beginning) (region-end)) (kill-whole-line)) (my:save-buffer) (view-mode 1)) ;; Like as \u0026#39;u\u0026#39; of vim (defun my:view-undo () \u0026#34;Undo in view mode.\u0026#34; (interactive) (view-mode 0) (undo) (my:save-buffer) (view-mode 1)) ;; Like as \u0026#39;y\u0026#39; of vim (defun my:view-yank () \u0026#34;Yank in view mode.\u0026#34; (interactive) (view-mode 0) (yank) (my:save-buffer) (view-mode 1)) ;; Like as \u0026#39;%\u0026#39; of vim (defun my:jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (defun my:org-view-next-heading () \u0026#34;Org-view-next-heading.\u0026#34; (interactive) (if (and (derived-mode-p \u0026#39;org-mode) (org-at-heading-p)) (org-next-visible-heading 1) (next-line))) (defun my:org-view-previous-heading () \u0026#34;Org-view-previous-heading.\u0026#34; (interactive) (if (and (derived-mode-p \u0026#39;org-mode) (org-at-heading-p)) (org-previous-visible-heading 1) (previous-line)))) 5.4. web/htmlモード HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。\n出来上がったHTMLの内容を確認したり部分的に変更したり\u0026hellip;という程度の使い方です。\n(leaf web-mode :ensure t :mode (\u0026#34;\\\\.js?\\\\\u0026#39;\u0026#34; \u0026#34;\\\\.html?\\\\\u0026#39;\u0026#34; \u0026#34;\\\\.php?\\\\\u0026#39;\u0026#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-emacs-lisp-indent-offset . 2))) 5.5. [darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。\nhttps://github.com/joaotavora/darkroom\n[F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。\nyes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。\n(leaf darkroom :ensure t :bind ((\u0026#34;\u0026lt;f12\u0026gt;\u0026#34; . my:darkroom-in) (:darkroom-mode-map (\u0026#34;\u0026lt;f12\u0026gt;\u0026#34; . my:darkroom-out))) :config (defun my:darkroom-in () \u0026#34;Enter to the `darkroom-mode\u0026#39;.\u0026#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () \u0026#34;Returns from `darkroom-mode\u0026#39;to the previous state.\u0026#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () \u0026#34;Revert buffer without confirmation.\u0026#34; (interactive) (revert-buffer t t))) 5.6. [yatex] YaTexで LaTex編集 yatex.el は、Emacsの上で動作する LaTeX の入力支援環境です。\nごく一般的な設定例ですが、参考になるとしたら dviprint-command-format に dvpd.sh というスクリプトを設定して、YateX.lpr コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。\n(leaf yatex :ensure t :mode (\u0026#34;\\\\.tex\\\\\u0026#39;\u0026#34; \u0026#34;\\\\.sty\\\\\u0026#39;\u0026#34; \u0026#34;\\\\.cls\\\\\u0026#39;\u0026#34;) :custom `((tex-command . \u0026#34;platex\u0026#34;) (dviprint-command-format . \u0026#34;dvpd.sh %s\u0026#34;) (YaTeX-kanji-emacs-lisp . nil) (YaTeX-latex-message-emacs-lisp . \u0026#39;utf-8) (YaTeX-default-pop-window-height . 15)) :config (leaf yatexprc :bind ((\u0026#34;M-c\u0026#34; . YaTeX-typeset-buffer) (\u0026#34;M-v\u0026#34; . YaTeX-lpr)))) YaTeX-lpr は、dviprint-command-format を呼び出すコマンドです。\ndviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、chmod +x dvpd.sh  として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。\n[dvpd.sh]\n#!/bin/emacs-lisp name=$1 dvipdfmx $1 \u0026amp;\u0026amp; evince ${name%.*}.pdf # Delete unnecessary files rm *.au* *.dv* *.lo* 上記の例では、ビューアーに Linux の evince を設定していますが、Mac の場合は、下記のようになるかと思います。\ndvipdfmx $1 \u0026amp;\u0026amp; open -a Preview.app ${name%.*}.pdf 5.7. [yasunippet] Emacs用のテンプレートシステム テンプレート挿入機能を提供してくれるやつです。\n(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) 以下の設定を追加するとcompany-mode と連携してとても使いやすくなる。\n(defvar company-mode/enable-yas t \u0026#34;Enable yasnippet for all backends.\u0026#34;) (defun company-mode/backend-with-yas (backend) (if (or (not company-mode/enable-yas) (and (listp backend) (member \u0026#39;company-yasnippet backend))) backend (append (if (consp backend) backend (list backend)) \u0026#39;(:with company-yasnippet)))) (setq company-backends (mapcar #\u0026#39;company-mode/backend-with-yas company-backends)) (bind-key \u0026#34;C-\u0026lt;tab\u0026gt;\u0026#34; \u0026#39;company-yasunippets) 5.8. [iedit] 選択領域を別の文字列に置き換える idet.el は、バッファー内の複数箇所を同時に編集するツールです。\n同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。\n multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。\n対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。\nここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。\nかなりの頻度で使うので、Emacsでは使うことのない \u0026lt;insert\u0026gt; にキーバインドしています。\n(leaf iedit :ensure t :bind (\u0026#34;\u0026lt;insert\u0026gt;\u0026#34; . iedit-mode)) 5.9. [selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。\nEmacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。\n(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (\u0026#34;;\u0026#34; . comment-dwim) (\u0026#34;c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s\u0026#34; . swiper-thing-at-point) (\u0026#34;t\u0026#34; . google-translate-auto) (\u0026#34;T\u0026#34; . chromium-translate) (\u0026#34;W\u0026#34; . my:weblio) (\u0026#34;k\u0026#34; . my:koujien) (\u0026#34;e\u0026#34; . my:eijiro) (\u0026#34;g\u0026#34; . my:google))) 5.10. [selected] browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。\n(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://sakura-paris.org/dict/広辞苑/prefix/%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://www.weblio.jp/content/%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:eijiro (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://eow.alc.co.jp/%s/UTF-8/\u0026#34; (upcase (url-hexify-string str))))) (defun my:google (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://www.google.com/search?hl=ja\u0026amp;q=%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:get-region (r) \u0026#34;Get search word from region.\u0026#34; (buffer-substring-no-properties (region-beginning) (region-end))) 5.11. [selected] IME のオン・オフを自動制御する selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。\n領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、 @takaxp さんの Qiitaの記事 にあったので、私の環境（emacs-mozc ）にあうように設定したら、すんなり動いてくれました。感謝！\n(leaf *cus-selected :hook ((activate-mark-hook . my:activate-selected) (activate-mark-hook . (lambda () (setq my:ime-flag current-input-method) (my:ime-off))) (deactivate-mark-hook . (lambda () (unless (null my:ime-flag) (my:ime-on))))) :init ;; Control mozc when seleceted (defun my:activate-selected () (selected-global-mode 1) (selected--on) (remove-hook \u0026#39;activate-mark-hook #\u0026#39;my:activate-selected)) (add-hook \u0026#39;activate-mark-hook #\u0026#39;my:activate-selected) (defun my:ime-on () (interactive) (when (null current-input-method) (toggle-input-method))) (defun my:ime-off () (interactive) (inactivate-input-method)) (defvar my:ime-flag nil) (add-hook \u0026#39;activate-mark-hook #\u0026#39;(lambda () (setq my:ime-flag current-input-method) (my:ime-off))) (add-hook \u0026#39;deactivate-mark-hook #\u0026#39;(lambda () (unless (null my:ime-flag) (my:ime-on))))) 5.12. [swiper-migemo] ローマ字入力で日本語を検索 avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。\nつい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。\n(leaf swiper-migemo :el-get tam17aki/swiper-migemo :global-minor-mode t) 5.13. [smartparent] 対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。\n(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) 5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((\u0026#34;df\u0026#34; . counsel-descbinds) (\u0026#34;l;\u0026#34; . init-loader-show-log) (\u0026#34;@@\u0026#34; . howm-list-all) (\u0026#34;jk\u0026#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。\n改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。\n5.15. [fontawesome] fontawesome utility fontawesome.el は、Emacs での fontawesome の入力が簡単に出来るユーティリティです。helm や ivy とも勝手に連携してくれる。\n(leaf FontAwesome :ensure t :bind (\u0026#34;s-a\u0026#34; . councel-fontawesome)) "
+},
+{
+	"uri": "https://exsanple.com/",
+	"title": "minoru&#39;s Emacs Configuration",
+	"tags": [],
+	"description": "",
+	"content": "Emacs Configuration はじめに  ここは @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から jekyll を使ってGithub pages にWebサイトを構築しています。 本ドキュメントは、@takaxpさんが公開されている takaxp.github.io/ の記事を下敷きにした模倣版です。 執筆用途に特化してカスタマイズしていますので、コンセプトやキーバイドなどは極めて邪道思想になっています。  動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\n Debian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 27.2.50  デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── el-get/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── tmp/ ├── early-init.el ├── init.el └── mini-init.el "
+},
+{
+	"uri": "https://exsanple.com/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

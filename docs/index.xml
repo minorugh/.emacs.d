@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>minoru&#39;s Emacs Configuration</title>
+    <link>https://exsanple.com/</link>
+    <description>Recent content on minoru&#39;s Emacs Configuration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://exsanple.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.1. [early-init.el] eary-initを使う</title>
+      <link>https://exsanple.com/startup/eary-init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/startup/eary-init/</guid>
+      <description>1.1. [early-init.el] eary-initを使う  early-init.el は、Emacs27から導入されました。 https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
+;;; early-init.el --- Early Initialization. -*- lexical-binding: t; no-byte-compile: t -*- ;;; Commentary: ;; ;; Emacs 27+ introduces early-init.el, which is run before init.el, ;; before package and UI initialization happens. ;; ;;; Code: ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) ;; For slightly faster startup (setq package-enable-at-startup nil) ;; Always load newest byte code (setq load-prefer-newer t) ;; Inhibit resizing frame (setq frame-inhibit-implied-resize t) ;; Faster to disable these here (before they&amp;#39;ve been initialized) (push &amp;#39;(fullscreen .</description>
+    </item>
+    
+    <item>
+      <title>1.2. GCを減らす</title>
+      <link>https://exsanple.com/startup/gc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/startup/gc/</guid>
+      <description>2.1.1. GCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。これもとりあえず書いておけば速くなる系なのでおすすめです。
+(setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことで起動時間を短縮します。</description>
+    </item>
+    
+    <item>
+      <title>core</title>
+      <link>https://exsanple.com/core/core_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/core/core_01/</guid>
+      <description>3. コア設定 Emacs を操作して日本語文書編集するうえで必要な設定。
+3.1. 言語 / 文字コード シンプルにこれだけです。
+(set-language-environment &amp;#34;Japanese&amp;#34;) (prefer-coding-system &amp;#39;utf-8) 3.2. [emacs-mozc] 日本語入力  Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
+! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
+(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?</description>
+    </item>
+    
+    <item>
+      <title>cursor</title>
+      <link>https://exsanple.com/cursor/cursor_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/cursor/cursor_01/</guid>
+      <description>4. カーソル移動  文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。  4.1. [sequential-command.el] バッファー内のカーソル移動  https://github.com/HKey/sequential-command  標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
+ C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。
+MELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。
+(leaf sequential-command :doc &amp;#34;https://bre.is/6Xu4fQs6&amp;#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) 4.2. ウインドウ間のカーソル移動 C-c o でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています．
+画面分割されていないときは、左右分割して新しいウインドウに移動します。
+(defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key &amp;#34;C-q&amp;#34; &amp;#39;other-window-or-split) 4.3. 対応する括弧を選択  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  上記標準機能は使いにくいので my:jump-brace を定義しました。 括弧の先頭と最後へ交互にポイント移動します。</description>
+    </item>
+    
+    <item>
+      <title>display_01</title>
+      <link>https://exsanple.com/display/display_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://exsanple.com/display/display_01/</guid>
+      <description>5. 編集サポート / 入力補助 ファイル編集や入力補助の設定をまとめている。
+5.1. 矩形編集/連番入力 24.4 からは、rectangle-mark-mode が使えるようになり C-x SPC を押下すると矩形モードに入り直感的に矩形選択ができる。
+標準の rect.el に以下の機能が実装されている。
+|矩形切り取り|	C-x r k | |矩形削除	| C-x r d | |矩形貼り付け|	C-x r y | |矩形先頭に文字を挿入|	C-x r t | |矩形を空白に変換する|	C-x r c |
+5.2. markdownモード markdown-mode.el は、Markdown形式のテキストを編集するための主要なモードです。
+(leaf markdown-mode :ensure t :mode (&amp;#34;\\.md\\&amp;#39;&amp;#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-emacs-lisp-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedown を使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。
+https://github.com/shime/emacs-livedown
+npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
+$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。</description>
+    </item>
+    
+  </channel>
+</rss>
