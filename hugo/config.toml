@@ -9,7 +9,7 @@ relativeURLs = true
 
 
 [markup.goldmark.renderer]
-unsafe = true
+unsafe = false
 
 [params]
 editURL = "https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/"
