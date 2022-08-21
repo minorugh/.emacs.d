@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>バッフアー / ウインドウ on minoru&#39;s Emacs Configuration</title>
-    <link>https://exsanple.com/buffer/</link>
+    <link>https://minorugh.github.io/.emacs.d/buffer/</link>
     <description>Recent content in バッフアー / ウインドウ on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://exsanple.com/buffer/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/buffer/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

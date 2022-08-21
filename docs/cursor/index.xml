@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>カーソル移動 on minoru&#39;s Emacs Configuration</title>
-    <link>https://exsanple.com/cursor/</link>
+    <link>https://minorugh.github.io/.emacs.d/cursor/</link>
     <description>Recent content in カーソル移動 on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://exsanple.com/cursor/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/cursor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cursor</title>
-      <link>https://exsanple.com/cursor/cursor_01/</link>
+      <link>https://minorugh.github.io/.emacs.d/cursor/cursor_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://exsanple.com/cursor/cursor_01/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/cursor/cursor_01/</guid>
       <description>4. カーソル移動  文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。  4.1. [sequential-command.el] バッファー内のカーソル移動  https://github.com/HKey/sequential-command  標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
  C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。
 MELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。
