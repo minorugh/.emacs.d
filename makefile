@@ -1,4 +1,4 @@
-a.out: git
+a.out: hugo git
 
 copy:
 	rsync -auv ~/src/github.com/minorugh/dotfiles/.emacs.d/ ~/src/github.com/minorugh/emacs.d/
