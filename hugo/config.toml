@@ -1,4 +1,4 @@
-baseURL = "https://exsanple.com/"
+baseURL = "https://minorugh.github.io/.emacs.d/"
 languageCode = "ja-jp"
 title = "minoru's Emacs Configuration"
 theme = "docdock"
@@ -31,7 +31,7 @@ home = [ "HTML", "RSS", "JSON"]
 pre = "<h3>More</h3>"
 name = "<i class='fa fa-github'></i> <label>Github repo</label>"
 identifier = "ds"
-url = "https://github.com/minorugh/emacs.d"
+url = "https://github.com/minorugh/.emacs.d"
 weight = 10
 
 [[menu.shortcuts]]
