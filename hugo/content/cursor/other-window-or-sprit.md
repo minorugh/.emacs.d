@@ -1,5 +1,5 @@
 +++
-title = "3.2. [other-window-or-sprit] ウインドウ間のカーソル移動"
+title = "3.2. ウインドウ間のカーソル移動"
 draft = false
 +++
 

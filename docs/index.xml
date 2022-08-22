@@ -137,19 +137,19 @@ $ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。
     </item>
     
     <item>
-      <title>3.1. [sequential-command.el] バッファーの先頭と最終行への移動を簡単にする</title>
+      <title>3.1. バッファーの先頭と最終行への移動を簡単にする</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</guid>
-      <description>標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
+      <description>sequential-command は、標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
  https://github.com/HKey/sequential-command C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。
 MELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。
 (leaf sequential-command :doc &amp;#34;https://bre.is/6Xu4fQs6&amp;#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) </description>
     </item>
     
     <item>
-      <title>3.2. [other-window-or-sprit] ウインドウ間のカーソル移動</title>
+      <title>3.2. ウインドウ間のカーソル移動</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -158,7 +158,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>3.3. [my:jump-brace] 括弧の先頭と最後へ交互にポイント移動します。</title>
+      <title>3.3. 括弧の先頭と最後へ交互にポイント移動します。</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -169,7 +169,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>3.4. [my:exchange-point-and-mark] 直前の編集ポイントと現在のポイントとを行き来する。</title>
+      <title>3.4. 直前の編集ポイントと現在のポイントとを行き来する。</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/mark-command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -178,7 +178,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>3.5. [expand-region.el] カーソル位置を起点に選択範囲を賢く広げる</title>
+      <title>3.5. カーソル位置を起点に選択範囲を賢く広げる</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/expand-region/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
