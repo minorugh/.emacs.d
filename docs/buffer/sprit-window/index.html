@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T22:16:09 JST">
-<title>5.4. other-window-or-sprit :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-22T22:31:38 JST">
+<title>5.4. cus-sprit-window :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -249,13 +249,6 @@
       <a href="/.emacs.d/buffer/"><b>5. </b>バッフアー / ウインドウ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/winner/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/buffer/winner/">
-            
-          </a>
-        </div>
-    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/auto-save-buffer/">
@@ -280,7 +273,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/sprit-window/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/sprit-window/">
-            5.4. other-window-or-sprit
+            5.4. cus-sprit-window
           </a>
         </div>
     </li>
@@ -288,6 +281,13 @@
         <div>
           <a href="/.emacs.d/buffer/tempbuf/">
             5.5. tempbuf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/winner/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/buffer/winner/">
+            5.6. winner-mode
           </a>
         </div>
     </li>
@@ -425,7 +425,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/buffer/'>バッフアー / ウインドウ</a> > 5.4. other-window-or-sprit
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/buffer/'>バッフアー / ウインドウ</a> > 5.4. cus-sprit-window
 
  
 
@@ -448,7 +448,7 @@
 
 <div id="body-inner">
   
-    <h1>5.4. other-window-or-sprit</h1>
+    <h1>5.4. cus-sprit-window</h1>
   
 
 
@@ -462,7 +462,7 @@
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
 <li>画面分割を閉じたときは、<code>dimmer-mode-off</code> にする。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf *sprit-window-configurations
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf *cus-sprit-window
   :bind ((<span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#f92672">.</span> other-window-or-split)
 		 (<span style="color:#e6db74">&#34;C-x 2&#34;</span> <span style="color:#f92672">.</span> my:split-window-below)
 		 (<span style="color:#e6db74">&#34;C-x 1&#34;</span> <span style="color:#f92672">.</span> my:delete-other-windows)

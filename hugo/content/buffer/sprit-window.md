@@ -1,5 +1,5 @@
 +++
-title = "5.4. other-window-or-sprit"
+title = "5.4. cus-sprit-window"
 draft = false
 +++
 `dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
@@ -9,7 +9,7 @@ draft = false
 * 画面分割を閉じたときは、`dimmer-mode-off` にする。
 
 ```emacs-lisp
-(leaf *sprit-window-configurations
+(leaf *cus-sprit-window
   :bind (("C-q" . other-window-or-split)
 		 ("C-x 2" . my:split-window-below)
 		 ("C-x 1" . my:delete-other-windows)

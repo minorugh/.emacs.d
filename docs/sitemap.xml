@@ -67,10 +67,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/winner/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/eary-init/</loc>
   </url>
   
@@ -176,6 +172,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/buffer/tempbuf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/winner/</loc>
   </url>
   
   <url>

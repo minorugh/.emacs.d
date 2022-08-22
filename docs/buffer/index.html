@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T22:16:09 JST">
+<meta name="revised" content="2022-08-22T22:31:38 JST">
 <title>バッフアー / ウインドウ :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -249,13 +249,6 @@
       <a href="/.emacs.d/buffer/"><b>5. </b>バッフアー / ウインドウ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/winner/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/buffer/winner/">
-            
-          </a>
-        </div>
-    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/auto-save-buffer/">
@@ -280,7 +273,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/sprit-window/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/sprit-window/">
-            5.4. other-window-or-sprit
+            5.4. cus-sprit-window
           </a>
         </div>
     </li>
@@ -288,6 +281,13 @@
         <div>
           <a href="/.emacs.d/buffer/tempbuf/">
             5.5. tempbuf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/winner/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/buffer/winner/">
+            5.6. winner-mode
           </a>
         </div>
     </li>
@@ -456,14 +456,16 @@
 <dl>
 <dt><a href="/.emacs.d/buffer/auto-save-buffer/">auto-seve-buffer</a></dt>
 <dd>ファイルの自動保存機能を提供します。</dd>
-<dt><a href="/.emacs.d/buffer/auto-save-buffer/">auto-seve-buffer</a></dt>
-<dd>ファイルの自動保存機能を提供します。</dd>
-<dt><a href="/.emacs.d/buffer/auto-save-buffer/">auto-seve-buffer</a></dt>
-<dd>ファイルの自動保存機能を提供します。</dd>
 <dt><a href="/.emacs.d/buffer/dimmer/">dimmer</a></dt>
 <dd>現在のバッファ以外の輝度を落とす</dd>
-<dt><a href="/.emacs.d/buffer/sprit-window/">sprit-window</a></dt>
-<dd>認証情報の取り扱いファイルの設定</dd>
+<dt><a href="/.emacs.d/buffer/scrool-other-window/">scrool-other-window</a></dt>
+<dd><code>deactive</code> なwindowをスクロールさせます。</dd>
+<dt><a href="/.emacs.d/buffer/sprit-window/">sprit-window-configuration</a></dt>
+<dd><code>dimmer-mode</code> 画面分割コマンドのカスタマイズ設定。</dd>
+<dt><a href="/.emacs.d/buffer/tempbuf/">tempbuf</a></dt>
+<dd>不要になったと思われるバッファを自動的に kill してくれる。</dd>
+<dt><a href="/.emacs.d/buffer/winner/">winner-mode</a></dt>
+<dd>ウインドウ構成の履歴を辿る</dd>
 </dl>
 
 
@@ -478,7 +480,7 @@
 
 <div id="navigation">
 <a class="nav nav-prev" href="/.emacs.d/higlight/rainbow/" title="4.5. rainbow-mode"> <i class="fa fa-chevron-left"></i><label>4.5. rainbow-mode</label></a>
-    <a class="nav nav-next" href="/.emacs.d/buffer/winner/" title="" style="margin-right: 0px;"><label></label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/.emacs.d/buffer/auto-save-buffer/" title="5.1. auto-save-buffer-enhanced" style="margin-right: 0px;"><label>5.1. auto-save-buffer-enhanced</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

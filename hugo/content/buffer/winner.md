@@ -1,3 +1,7 @@
++++
+title = "5.6. winner-mode"
+draft = false
++++
 
 ### 11.3. [Winner.el] ウインドウ構成の履歴を辿る
 * ビルトインの `winner.el` を使います．

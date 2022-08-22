@@ -53,7 +53,7 @@
 	"title": "バッフアー / ウインドウ",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n auto-seve-buffer ファイルの自動保存機能を提供します。 auto-seve-buffer ファイルの自動保存機能を提供します。 auto-seve-buffer ファイルの自動保存機能を提供します。 dimmer 現在のバッファ以外の輝度を落とす sprit-window 認証情報の取り扱いファイルの設定  "
+	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n auto-seve-buffer ファイルの自動保存機能を提供します。 dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせます。 sprit-window-configuration dimmer-mode 画面分割コマンドのカスタマイズ設定。 tempbuf 不要になったと思われるバッファを自動的に kill してくれる。 winner-mode ウインドウ構成の履歴を辿る  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/",
@@ -110,13 +110,6 @@
 	"tags": [],
 	"description": "",
 	"content": "自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている\n"
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/buffer/winner/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
@@ -295,10 +288,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
-	"title": "5.4. other-window-or-sprit",
+	"title": "5.4. cus-sprit-window",
 	"tags": [],
 	"description": "",
-	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
+	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/tempbuf/",
@@ -306,6 +299,13 @@
 	"tags": [],
 	"description": "",
 	"content": " tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。\n my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files \u0026#39;(\u0026#34;~/Dropbox/org/task.org\u0026#34; \u0026#34;~/Dropbox/org/capture.org\u0026#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar \u0026#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/winner/",
+	"title": "5.6. winner-mode",
+	"tags": [],
+	"description": "",
+	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/categories/",
