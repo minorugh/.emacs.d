@@ -1,5 +1,5 @@
 +++
-title = "1.2. Magic File Name を一時的に無効にする"
+title = "1.2. speed up startup"
 draft = false
 +++
 

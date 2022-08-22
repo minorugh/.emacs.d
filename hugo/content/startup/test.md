@@ -1,5 +1,5 @@
 +++
-title = "1.5. 最小限の emacs起動設定"
+title = "1.5. test.el"
 draft = false
 +++
 

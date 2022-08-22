@@ -1,5 +1,5 @@
 +++
-title = "1.4. init-loader.el を使う"
+title = "1.4. init-loader.el"
 draft = false
 +++
 * [emacs-jp/init-loader:Loader of configuration files.](https://github.com/emacs-jp/init-loader/) 

@@ -1,5 +1,5 @@
 +++
-title = "1.3. leaf.el を使う"
+title = "1.3. leaf.el"
 draft = false
 +++
 これまで `use-pacage.el` を使っていましたが、

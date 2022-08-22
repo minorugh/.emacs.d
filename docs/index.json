@@ -113,35 +113,35 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
-	"title": "1.1. eary-init.el を使う",
+	"title": "1.1. eary-init.el",
 	"tags": [],
 	"description": "",
 	"content": " early-init.el は、Emacs27から導入されました。 https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。\nGCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。\n;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことが重要です。\nPackage の初期化を抑制する Emacs27では、(package-initialize) が 2回実行されます。 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。\n1回目を抑制するために以下を eary-init.el に記述することで初期化が少し早くなります。\n;; For slightly faster startup (setq package-enable-at-startup nil) 常に最新のバイトコードをロードする ;; Always load newest byte code (setq load-prefer-newer t) フレームのサイズ変更を禁止する ;; Inhibit resizing frame (setq frame-inhibit-implied-resize t) これらを無効にする方が速い (初期化される前) ;; Faster to disable these here (before they\u0026#39;ve been initialized) (push \u0026#39;(fullscreen . maximized) default-frame-alist) (push \u0026#39;(menu-bar-lines . 0) default-frame-alist) (push \u0026#39;(tool-bar-lines . 0) default-frame-alist) (push \u0026#39;(vertical-scroll-bars) default-frame-alist) 起動時の点滅を抑える Emacsが設定ファイルを読み込むプロセスで画面がちらつくのを抑制します。\n;; Suppress flashing at startup (setq inhibit-redisplay t) (setq inhibit-message t) (add-hook \u0026#39;window-setup-hook (lambda () (setq inhibit-redisplay nil) (setq inhibit-message nil) (redisplay))) 起動時の背景色を指定する Emacsが設定を読み込む色段階の背景色は白です。 自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。\n;; Startup setting (setq inhibit-splash-screen t) (setq inhibit-startup-message t) (setq byte-compile-warnings \u0026#39;(cl-functions)) (custom-set-faces \u0026#39;(default ((t (:background \u0026#34;#282a36\u0026#34;))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/magick-file/",
-	"title": "1.2. Magic File Name を一時的に無効にする",
+	"title": "1.2. speed up startup",
 	"tags": [],
 	"description": "",
 	"content": " Magic File Name を一時的に無効にすることで、起動時間を短縮できます。 GC設定とともに設定ファイル読み込み後に正常値に戻します。  ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook \u0026#39;emacs-startup-hook (lambda () \u0026#34;Recover file name handlers.\u0026#34; (setq file-name-handler-alist (delete-dups (append file-name-handler-alist old-file-name-handler-alist))))))) ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) (add-hook \u0026#39;emacs-startup-hook (lambda () \u0026#34;Recover GC values after startup.\u0026#34; (setq gc-cons-threshold 800000))) ※ init.el の先頭に書きます。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/leaf/",
-	"title": "1.3. leaf.el を使う",
+	"title": "1.3. leaf.el",
 	"tags": [],
 	"description": "",
 	"content": "これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。\n Emacs入門から始めるleaf.el入門  (eval-and-compile (customize-set-variable \u0026#39;package-archives \u0026#39;((\u0026#34;org\u0026#34; . \u0026#34;https://orgmode.org/elpa/\u0026#34;) (\u0026#34;melpa\u0026#34; . \u0026#34;https://melpa.org/packages/\u0026#34;) (\u0026#34;gnu\u0026#34; . \u0026#34;https://elpa.gnu.org/packages/\u0026#34;))) (package-initialize) (unless (package-installed-p \u0026#39;leaf) (package-refresh-contents) (package-install \u0026#39;leaf)) (leaf leaf-keywords :ensure t :init (leaf hydra :ensure t) (leaf el-get :ensure t) :config (leaf-keywords-init))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/init-loader/",
-	"title": "1.4. init-loader.el を使う",
+	"title": "1.4. init-loader.el",
 	"tags": [],
 	"description": "",
 	"content": " emacs-jp/init-loader:Loader of configuration files.  設定ファイル群のローダーです。 指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。\ninit-loader には、エラーが出た設定ファイルは読み込まれない\u0026hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。\n起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。\n(leaf init-loader :ensure t :config (custom-set-variables \u0026#39;(init-loader-show-log-after-init \u0026#39;error-only)) (init-loader-load)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/test/",
-	"title": "1.5. 最小限の emacs起動設定",
+	"title": "1.5. test.el",
 	"tags": [],
 	"description": "",
 	"content": " 最小限の emacs を起動させるための設定です。  test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。\n以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。\nalias eq = \u0026#39;emacs -q -l ~/.emacs.d/test.el\u0026#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。\n"

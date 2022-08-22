@@ -1,5 +1,5 @@
 +++
-title = "1.1. eary-init.el を使う"
+title = "1.1. eary-init.el"
 draft = false
 +++
 * [`early-init.el`](https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html) は、Emacs27から導入されました。 
