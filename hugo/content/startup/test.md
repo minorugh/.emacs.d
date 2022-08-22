@@ -10,7 +10,7 @@ draft = false
 
 以下を `.zshrc` または `.coderc` に記述し反映させたのち、シェルから `eq` と入力することで起動することがでます。
 
-```code
+```zshrc
 alias eq = 'emacs -q -l ~/.emacs.d/test.el'
 ```
 

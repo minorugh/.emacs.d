@@ -37,7 +37,7 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
       <description>これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。
 Emacs入門から始めるleaf.el入門
-(eval-and-compile (customize-set-variable &#39;package-archives &#39;((&amp;quot;org&amp;quot; . &amp;quot;https://orgmode.org/elpa/&amp;quot;) (&amp;quot;melpa&amp;quot; . &amp;quot;https://melpa.org/packages/&amp;quot;) (&amp;quot;gnu&amp;quot; . &amp;quot;https://elpa.gnu.org/packages/&amp;quot;))) (package-initialize) (unless (package-installed-p &#39;leaf) (package-refresh-contents) (package-install &#39;leaf)) (leaf leaf-keywords :ensure t :init (leaf hydra :ensure t) (leaf el-get :ensure t) :config (leaf-keywords-init))) </description>
+(eval-and-compile (customize-set-variable &amp;#39;package-archives &amp;#39;((&amp;#34;org&amp;#34; . &amp;#34;https://orgmode.org/elpa/&amp;#34;) (&amp;#34;melpa&amp;#34; . &amp;#34;https://melpa.org/packages/&amp;#34;) (&amp;#34;gnu&amp;#34; . &amp;#34;https://elpa.gnu.org/packages/&amp;#34;))) (package-initialize) (unless (package-installed-p &amp;#39;leaf) (package-refresh-contents) (package-install &amp;#39;leaf)) (leaf leaf-keywords :ensure t :init (leaf hydra :ensure t) (leaf el-get :ensure t) :config (leaf-keywords-init))) </description>
     </item>
     
     <item>
@@ -46,7 +46,7 @@ Emacs入門から始めるleaf.el入門
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/init-loader/</guid>
-      <description> emacs-jp/init-loader:Loader of configuration files.  init-loader.el は、設定ファイル群のローダーです。 指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
+      <description> emacs-jp/init-loader:Loader of configuration files.  設定ファイル群のローダーです。 指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 (leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) </description>
@@ -60,7 +60,7 @@ init-loader には、エラーが出た設定ファイルは読み込まれな�
       <guid>https://minorugh.github.io/.emacs.d/startup/test/</guid>
       <description>最小限の emacs を起動させるための設定です。  test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
 以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
-alias eq = &#39;emacs -q -l ~/.emacs.d/test.el&#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
+alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
     </item>
     
   </channel>
