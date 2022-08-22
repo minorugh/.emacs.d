@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T10:42:16 JST">
+<meta name="revised" content="2022-08-22T10:47:34 JST">
 <title>dimmer :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -308,12 +308,6 @@
 <h2 id="dimmerel-現在のバッファ以外の輝度を落とす">[dimmer.el] 現在のバッファ以外の輝度を落とす</h2>
 <p><a href="https://takaxp.github.io/init.html#org8ba0784e">takaxp.github.io</a> の設定をそのままパクリました。
 on/off できるのが快適です。</p>
-<p><code>global</code> 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。</p>
-<p>下記の通り発想転換すれば呪縛から逃れることができます。</p>
-<ul>
-<li>画面分割を発動するときに <code>dimmer-on</code></li>
-<li>画面分割を閉じるときに <code>dimmer-off</code></li>
-</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf dimmer
   :ensure <span style="color:#66d9ef">t</span>
   :chord (<span style="color:#e6db74">&#34;..&#34;</span> <span style="color:#f92672">.</span> my:toggle-dimmer)
@@ -337,8 +331,9 @@ on/off できるのが快適です。</p>
 	  (dimmer-mode <span style="color:#ae81ff">1</span>)
 	  (dimmer-process-all))))
 </code></pre></div><h2 id="sprit-window-との連携">Sprit-window との連携</h2>
+<p><code>dimmer-mode</code> を <code>global</code> 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。</p>
+<p>下記の通り発想転換すれば呪縛から逃れることができます。</p>
 <ul>
-<li>同じバッファーを分割したときは、<code>follow-mode</code> にする。</li>
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
 <li>画面分割を閉じたときは、<code>dimmer-mode-off</code> にする。</li>
 </ul>
@@ -384,7 +379,9 @@ on/off できるのが快適です。</p>
 	(interactive)
 	(<span style="color:#a6e22e">mapc</span> <span style="color:#e6db74">&#39;kill-buffer</span> (<span style="color:#a6e22e">delq</span> (<span style="color:#a6e22e">current-buffer</span>) (<span style="color:#a6e22e">buffer-list</span>)))
 	(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;killl-other-buffers!&#34;</span>))
-</code></pre></div>
+</code></pre></div><p>バッファーを分割したときは、自動的に <code>follow-mode</code> にしています。
+行数の多いページを二分割して見るときに便利です。</p>
+
 
     
     

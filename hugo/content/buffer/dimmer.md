@@ -8,13 +8,6 @@ draft = false
 [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
 on/off できるのが快適です。
 
-`global` 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。
-
-下記の通り発想転換すれば呪縛から逃れることができます。
-
-* 画面分割を発動するときに `dimmer-on`
-* 画面分割を閉じるときに `dimmer-off`
-
 ```emacs-lisp
 (leaf dimmer
   :ensure t
@@ -42,7 +35,10 @@ on/off できるのが快適です。
 
 ## Sprit-window との連携
 
-* 同じバッファーを分割したときは、`follow-mode` にする。
+`dimmer-mode` を `global` 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。
+
+下記の通り発想転換すれば呪縛から逃れることができます。
+
 * 画面分割したときは、`dimmer-mode-on` にする。
 * 画面分割を閉じたときは、`dimmer-mode-off` にする。
 
@@ -90,3 +86,7 @@ on/off できるのが快適です。
 	(mapc 'kill-buffer (delq (current-buffer) (buffer-list)))
 	(message "killl-other-buffers!"))
 ```
+
+バッファーを分割したときは、自動的に `follow-mode` にしています。
+行数の多いページを二分割して見るときに便利です。
+
