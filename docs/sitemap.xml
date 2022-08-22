@@ -59,7 +59,19 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/startup/gc/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/startup/magick-file/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/leaf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/init-loader/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/test/</loc>
   </url>
   
   <url>
