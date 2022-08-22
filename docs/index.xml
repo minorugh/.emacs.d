@@ -103,7 +103,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.2. font 設定</title>
+      <title>2.2. font setting</title>
       <link>https://minorugh.github.io/.emacs.d/core/font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
