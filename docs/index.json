@@ -176,10 +176,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/global-keybind/",
-	"title": "2.8. 基本キーバインド",
+	"title": "2.8. 基本キーバインドをカスタマイズ",
 	"tags": [],
 	"description": "",
-	"content": "3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。  ;; Change global key bind (leaf cus-global-keybind :bind ((\u0026#34;C-x C-x\u0026#34; . my:exchange-point-and-mark) (\u0026#34;M-w\u0026#34; . clipboard-kill-ring-save) (\u0026#34;C-w\u0026#34; . my:kill-whole-line-or-region) (\u0026#34;s-c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s-v\u0026#34; . clipboard-yank) (\u0026#34;M-/\u0026#34; . kill-this-buffer))) ;; Overwrite `C-w\u0026#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () \u0026#34;If the region is active, to kill region. If the region is inactive, to kill whole line.\u0026#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) ;; Return to last edit point (defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark)) "
+	"content": "3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。 C-w は、kill-ring-save に割り当てられたものですが、region 選択されていないときは、一行削除になるようにカスタマイズしてます。  ;; Change global key bind (leaf cus-global-keybind :bind ((\u0026#34;M-w\u0026#34; . clipboard-kill-ring-save) (\u0026#34;C-w\u0026#34; . my:kill-whole-line-or-region) (\u0026#34;s-c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s-v\u0026#34; . clipboard-yank) (\u0026#34;M-/\u0026#34; . kill-this-buffer))) ;; Overwrite `C-w\u0026#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () \u0026#34;If the region is active, to kill region. If the region is inactive, to kill whole line.\u0026#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/all-the-icons/",

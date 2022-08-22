@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T15:09:03 JST">
-<title>2.8. 基本キーバインド :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-22T15:14:46 JST">
+<title>2.8. 基本キーバインドをカスタマイズ :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -158,7 +158,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/global-keybind/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/global-keybind/">
-            2.8. 基本キーバインド
+            2.8. 基本キーバインドをカスタマイズ
           </a>
         </div>
     </li>
@@ -339,7 +339,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.8. 基本キーバインド
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.8. 基本キーバインドをカスタマイズ
 
  
 
@@ -370,7 +370,7 @@
 
 <div id="body-inner">
   
-    <h1>2.8. 基本キーバインド</h1>
+    <h1>2.8. 基本キーバインドをカスタマイズ</h1>
   
 
 
@@ -381,11 +381,11 @@
 <h3 id="34-基本キーバインド">3.4. 基本キーバインド</h3>
 <ul>
 <li>いつでもどこでも使えるキーバインド周りの設定をここにまとめています。</li>
+<li><code>C-w</code> は、<code>kill-ring-save</code> に割り当てられたものですが、<code>region</code> 選択されていないときは、一行削除になるようにカスタマイズしてます。</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Change global key bind</span>
 (leaf cus-global-keybind
-  :bind ((<span style="color:#e6db74">&#34;C-x C-x&#34;</span> <span style="color:#f92672">.</span> my:exchange-point-and-mark)
-		 (<span style="color:#e6db74">&#34;M-w&#34;</span> <span style="color:#f92672">.</span> clipboard-kill-ring-save)
+  :bind ((<span style="color:#e6db74">&#34;M-w&#34;</span> <span style="color:#f92672">.</span> clipboard-kill-ring-save)
 		 (<span style="color:#e6db74">&#34;C-w&#34;</span> <span style="color:#f92672">.</span> my:kill-whole-line-or-region)
 		 (<span style="color:#e6db74">&#34;s-c&#34;</span> <span style="color:#f92672">.</span> clipboard-kill-ring-save)
 		 (<span style="color:#e6db74">&#34;s-v&#34;</span> <span style="color:#f92672">.</span> clipboard-yank)
@@ -399,13 +399,6 @@
   (if (use-region-p)
 	  (clipboard-kill-region (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>))
     (kill-whole-line)))
-
-<span style="color:#75715e">;; Return to last edit point</span>
-(defun my:exchange-point-and-mark ()
-  <span style="color:#e6db74">&#34;No mark active </span><span style="color:#e6db74">`exchange-point-and-mark&#39;</span><span style="color:#e6db74">.&#34;</span>
-  (interactive)
-  (exchange-point-and-mark)
-  (deactivate-mark))
 </code></pre></div>
 
     

@@ -79,12 +79,12 @@
     </item>
     
     <item>
-      <title>2.8. 基本キーバインド</title>
+      <title>2.8. 基本キーバインドをカスタマイズ</title>
       <link>https://minorugh.github.io/.emacs.d/core/global-keybind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/global-keybind/</guid>
-      <description>3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。  ;; Change global key bind (leaf cus-global-keybind :bind ((&amp;#34;C-x C-x&amp;#34; . my:exchange-point-and-mark) (&amp;#34;M-w&amp;#34; . clipboard-kill-ring-save) (&amp;#34;C-w&amp;#34; . my:kill-whole-line-or-region) (&amp;#34;s-c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s-v&amp;#34; . clipboard-yank) (&amp;#34;M-/&amp;#34; . kill-this-buffer))) ;; Overwrite `C-w&amp;#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () &amp;#34;If the region is active, to kill region. If the region is inactive, to kill whole line.&amp;#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) ;; Return to last edit point (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.</description>
+      <description>3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。 C-w は、kill-ring-save に割り当てられたものですが、region 選択されていないときは、一行削除になるようにカスタマイズしてます。  ;; Change global key bind (leaf cus-global-keybind :bind ((&amp;#34;M-w&amp;#34; . clipboard-kill-ring-save) (&amp;#34;C-w&amp;#34; . my:kill-whole-line-or-region) (&amp;#34;s-c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s-v&amp;#34; . clipboard-yank) (&amp;#34;M-/&amp;#34; . kill-this-buffer))) ;; Overwrite `C-w&amp;#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () &amp;#34;If the region is active, to kill region. If the region is inactive, to kill whole line.&amp;#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) </description>
     </item>
     
   </channel>

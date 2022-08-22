@@ -1,15 +1,16 @@
 +++
-title = "2.8. 基本キーバインド"
+title = "2.8. 基本キーバインドをカスタマイズ"
 draft = false
 +++
 ### 3.4. 基本キーバインド
+
 * いつでもどこでも使えるキーバインド周りの設定をここにまとめています。 
+* `C-w` は、`kill-ring-save` に割り当てられたものですが、`region` 選択されていないときは、一行削除になるようにカスタマイズしてます。
 
 ```elisp
 ;; Change global key bind
 (leaf cus-global-keybind
-  :bind (("C-x C-x" . my:exchange-point-and-mark)
-		 ("M-w" . clipboard-kill-ring-save)
+  :bind (("M-w" . clipboard-kill-ring-save)
 		 ("C-w" . my:kill-whole-line-or-region)
 		 ("s-c" . clipboard-kill-ring-save)
 		 ("s-v" . clipboard-yank)
@@ -23,11 +24,4 @@ If the region is inactive, to kill whole line."
   (if (use-region-p)
 	  (clipboard-kill-region (region-beginning) (region-end))
     (kill-whole-line)))
-
-;; Return to last edit point
-(defun my:exchange-point-and-mark ()
-  "No mark active `exchange-point-and-mark'."
-  (interactive)
-  (exchange-point-and-mark)
-  (deactivate-mark))
 ```
