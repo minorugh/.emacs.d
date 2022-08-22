@@ -33,7 +33,7 @@ on/off できるのが快適です。
 	  (dimmer-process-all))))
 ```
 
-## Sprit-window との連携
+## Sprit-window と連携させる
 
 `dimmer-mode` を `global` に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 
