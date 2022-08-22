@@ -93,7 +93,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.1. Language / coding-system</title>
+      <title>2.1. language / coding-system</title>
       <link>https://minorugh.github.io/.emacs.d/core/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -103,7 +103,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.2. Font 設定</title>
+      <title>2.2. font 設定</title>
       <link>https://minorugh.github.io/.emacs.d/core/font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -115,7 +115,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.3. Emacs-mozc</title>
+      <title>2.3. emacs-mozc</title>
       <link>https://minorugh.github.io/.emacs.d/core/mozc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -147,7 +147,7 @@ $ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。
     </item>
     
     <item>
-      <title>2.6. niguify</title>
+      <title>2.6. uniguify</title>
       <link>https://minorugh.github.io/.emacs.d/core/uniquify/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -157,7 +157,7 @@ $ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。
     </item>
     
     <item>
-      <title>2.7. Gloal Key bind</title>
+      <title>2.7. gloal key bind</title>
       <link>https://minorugh.github.io/.emacs.d/core/global-keybind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

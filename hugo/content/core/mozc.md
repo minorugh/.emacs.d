@@ -1,5 +1,5 @@
 +++
-title = "2.3. Emacs-mozc"
+title = "2.3. emacs-mozc"
 draft = false
 +++
 
