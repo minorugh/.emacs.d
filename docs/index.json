@@ -53,7 +53,7 @@
 	"title": "バッフアー / ウインドウ",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n auto-seve-buffer ファイルの自動保存機能を提供します。 dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせます。 sprit-window-configuration dimmer-mode 画面分割コマンドのカスタマイズ設定。 tempbuf 不要になったと思われるバッファを自動的に kill してくれる。 winner-mode ウインドウ構成の履歴を辿る  "
+	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n auto-seve-buffer ファイルの自動保存機能を提供します。 dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせます。 sprit-window-function dimmer-mode 画面分割コマンドのカスタマイズ設定。 tempbuf 不要になったと思われるバッファを自動的に kill してくれる。 winner-mode ウインドウ構成の履歴を辿る  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/",
@@ -281,14 +281,14 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/",
-	"title": "5.3. Scrool-other-Window",
+	"title": "5.3. scrool-other-Window",
 	"tags": [],
 	"description": "",
 	"content": "Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。\n一画面のとき \u0026lt;next\u0026gt; / \u0026lt;prior\u0026gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。\n(leaf *my:scroll-other-window :bind ((\u0026#34;\u0026lt;next\u0026gt;\u0026#34; . my:scroll-other-window) (\u0026#34;\u0026lt;prior\u0026gt;\u0026#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () \u0026#34;If there are two windows, `scroll-other-window\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () \u0026#34;If there are two windows, `scroll-other-window-down\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
-	"title": "5.4. cus-sprit-window",
+	"title": "5.4. sprit-window-functions",
 	"tags": [],
 	"description": "",
 	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "

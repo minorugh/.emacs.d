@@ -287,7 +287,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>5.3. Scrool-other-Window</title>
+      <title>5.3. scrool-other-Window</title>
       <link>https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -298,7 +298,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>5.4. cus-sprit-window</title>
+      <title>5.4. sprit-window-functions</title>
       <link>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

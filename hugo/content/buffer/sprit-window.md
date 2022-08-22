@@ -1,5 +1,5 @@
 +++
-title = "5.4. cus-sprit-window"
+title = "5.4. sprit-window-functions"
 draft = false
 +++
 `dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。

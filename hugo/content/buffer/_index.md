@@ -17,7 +17,7 @@ disableToc = true
 [scrool-other-window]({{< relref "scrool-other-window" >}})
 : `deactive` なwindowをスクロールさせます。
 
-[sprit-window-configuration]({{< relref "sprit-window" >}})
+[sprit-window-function]({{< relref "sprit-window" >}})
 : `dimmer-mode` 画面分割コマンドのカスタマイズ設定。
 
 [tempbuf]({{< relref "tempbuf" >}})
