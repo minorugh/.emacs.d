@@ -3,7 +3,8 @@ title = "dimmer"
 draft = false
 +++
 
-
+## [dimmer.el] 現在のバッファ以外の輝度を落とす
+ 
 [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
 on/off できるのが快適です。
 
