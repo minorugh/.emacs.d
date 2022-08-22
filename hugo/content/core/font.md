@@ -2,12 +2,22 @@
 title = "2.2. フォント設定"
 draft = false
 +++
-
 * GUI / CUI 共通で `Cica` を使っています。
 
 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
 
 * [プログラミング用日本語等幅フォント Cica](https://github.com/miiton/Cica)
+* Think Pad を2台使っていますので、環境を取得して設定を変えています。
+
+## フォントの設定
+* メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。
+
+```elisp
+(add-to-list 'default-frame-alist '(font . "Cica-18"))
+;; for sub-machine
+(when (string-match "x250" (code-command-to-string "uname -n"))
+  (add-to-list 'default-frame-alist '(font . "Cica-15")))
+```
 
 ## Cicaフォントのインストール
 * Linux 環境でのインストールの方法です。
@@ -39,12 +49,3 @@ $ fc-list | grep Cica
 /home/minoru/.fonts/Cica-v5.0.1/Cica-RegularItalic.ttf: Cica:style=Italic
 ```
 
-## Cica の設定
-* メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。
-
-```elisp
-(add-to-list 'default-frame-alist '(font . "Cica-18"))
-;; for sub-machine
-(when (string-match "x250" (code-command-to-string "uname -n"))
-  (add-to-list 'default-frame-alist '(font . "Cica-15")))
-```

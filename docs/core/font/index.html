@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T15:33:04 JST">
+<meta name="revised" content="2022-08-22T15:39:27 JST">
 <title>2.2. フォント設定 :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -347,8 +347,8 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
+    <li><a href="#フォントの設定">フォントの設定</a></li>
     <li><a href="#cicaフォントのインストール">Cicaフォントのインストール</a></li>
-    <li><a href="#cica-の設定">Cica の設定</a></li>
   </ul>
 </nav>
       </div>
@@ -374,8 +374,17 @@
 <p>Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。</p>
 <ul>
 <li><a href="https://github.com/miiton/Cica">プログラミング用日本語等幅フォント Cica</a></li>
+<li>Think Pad を2台使っていますので、環境を取得して設定を変えています。</li>
 </ul>
-<h2 id="cicaフォントのインストール">Cicaフォントのインストール</h2>
+<h2 id="フォントの設定">フォントの設定</h2>
+<ul>
+<li>メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(add-to-list <span style="color:#e6db74">&#39;default-frame-alist</span> <span style="color:#f92672">&#39;</span>(font <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Cica-18&#34;</span>))
+<span style="color:#75715e">;; for sub-machine</span>
+(when (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;x250&#34;</span> (code-command-to-string <span style="color:#e6db74">&#34;uname -n&#34;</span>))
+  (add-to-list <span style="color:#e6db74">&#39;default-frame-alist</span> <span style="color:#f92672">&#39;</span>(font <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Cica-15&#34;</span>)))
+</code></pre></div><h2 id="cicaフォントのインストール">Cicaフォントのインストール</h2>
 <ul>
 <li>
 <p>Linux 環境でのインストールの方法です。</p>
@@ -406,15 +415,7 @@ $ fc-list | grep Cica
 /home/minoru/.fonts/Cica-v5.0.1/Cica-Bold.ttf: Cica:style=Bold
 /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-BoldItalic.ttf: Cica:style=Bold Italic
 /home/minoru/.fonts/Cica-v5.0.1/Cica-RegularItalic.ttf: Cica:style=Italic
-</code></pre><h2 id="cica-の設定">Cica の設定</h2>
-<ul>
-<li>メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(add-to-list <span style="color:#e6db74">&#39;default-frame-alist</span> <span style="color:#f92672">&#39;</span>(font <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Cica-18&#34;</span>))
-<span style="color:#75715e">;; for sub-machine</span>
-(when (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;x250&#34;</span> (code-command-to-string <span style="color:#e6db74">&#34;uname -n&#34;</span>))
-  (add-to-list <span style="color:#e6db74">&#39;default-frame-alist</span> <span style="color:#f92672">&#39;</span>(font <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;Cica-15&#34;</span>)))
-</code></pre></div>
+</code></pre>
 
     
     
