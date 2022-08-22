@@ -1,3 +1,8 @@
++++
+title = "2.2. フォント設定"
+draft = false
++++
+
 * GUI / CUI 共通で `Cica` を使っています。
 
 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。

@@ -1,4 +1,8 @@
-## [server.el] Server機能を使う
++++
+title = "2.4. Server 機能を使う"
+draft = false
++++
+
 
 ```elisp
 ;; Server start for emacs-client

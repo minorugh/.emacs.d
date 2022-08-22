@@ -1,4 +1,7 @@
-### 3.2. [emacs-mozc] 日本語入力
++++
+title = "2.3. 日本語入力の設定"
+draft = false
++++
 
 * Debian11 にインストールした Emacs上で [`emacs-mozc`](https://wiki.debian.org/JapaneseEnvironment/Mozc) を使っています。
 * debian でのインストール手順は以下の通り。

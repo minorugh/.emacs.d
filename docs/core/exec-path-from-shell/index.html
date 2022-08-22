@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T14:44:54 JST">
-<title> :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-22T15:03:47 JST">
+<title>2.5. [exec-path-from-shell]設定をシェルから継承する :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -109,56 +109,56 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/encode/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/encode/">
-            
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/exec-path-from-shell/">
-            
+            2.1. 言語と文字コード
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/font/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/font/">
-            
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/global-keybind/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/global-keybind/">
-            
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mouse-copy/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/mouse-copy/">
-            
+            2.2. フォント設定
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mozc/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/mozc/">
-            
+            2.3. 日本語入力の設定
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/server/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/server/">
-            
+            2.4. Server 機能を使う
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/exec-path-from-shell/">
+            2.5. [exec-path-from-shell]設定をシェルから継承する
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mouse-copy/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/mouse-copy/">
+            2.6. マウスで選択した領域を自動コピー
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/uniquify/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/uniquify/">
-            
+            2.7. [uniquify.el] 同じバッファ名が開かれた場合に区別する
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/global-keybind/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/global-keybind/">
+            2.8. 基本キーバインド
           </a>
         </div>
     </li>
@@ -339,7 +339,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.5. [exec-path-from-shell]設定をシェルから継承する
 
  
 
@@ -352,15 +352,7 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#exec-path-from-shellel-設定をシェルから継承する">[exec-path-from-shell.el] 設定をシェルから継承する</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+		<nav id="TableOfContents"></nav>
       </div>
 	</div>
     
@@ -370,7 +362,7 @@
 
 <div id="body-inner">
   
-    <h1></h1>
+    <h1>2.5. [exec-path-from-shell]設定をシェルから継承する</h1>
   
 
 
@@ -378,7 +370,6 @@
     
     
     
-<h3 id="exec-path-from-shellel-設定をシェルから継承する">[exec-path-from-shell.el] 設定をシェルから継承する</h3>
 <ul>
 <li><a href="https://github.com/purcell/exec-path-from-shell">purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&rsquo;s shell</a></li>
 </ul>
@@ -399,8 +390,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/core/encode/" title=""> <i class="fa fa-chevron-left"></i><label></label></a>
-    <a class="nav nav-next" href="/.emacs.d/core/font/" title="" style="margin-right: 0px;"><label></label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/core/server/" title="2.4. Server 機能を使う"> <i class="fa fa-chevron-left"></i><label>2.4. Server 機能を使う</label></a>
+    <a class="nav nav-next" href="/.emacs.d/core/mouse-copy/" title="2.6. マウスで選択した領域を自動コピー" style="margin-right: 0px;"><label>2.6. マウスで選択した領域を自動コピー</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

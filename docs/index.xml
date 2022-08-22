@@ -7,85 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/encode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/encode/</guid>
-      <description>シンプルにこれだけです。
-(set-language-environment &amp;#34;Japanese&amp;#34;) (prefer-coding-system &amp;#39;utf-8) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</guid>
-      <description>[exec-path-from-shell.el] 設定をシェルから継承する  purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell  外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。自分は、shell-commad や compile-command をよく使うので必須のパッケージです。
-(leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/font/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/font/</guid>
-      <description>GUI / CUI 共通で Cica を使っています。  Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
- プログラミング用日本語等幅フォント Cica  Cicaフォントのインストール  Linux 環境でのインストールの方法です。  [オフィシャルページ](https://github.com/miiton/Cica/releases/tag/v5.0.3)にある最新の `Cica v5.03` は、 `page-break-lines` で表示が乱れます。  Cica-v5.0.1のダウンロードページから、 (Cica-v5.0.1.zip) をダウンロードします。 上記サイトの存続は怪しいので自分のサイトにも置いておきます。 Cica-v5.0.1.zip  zipファイルを展開します。  $ unzip Cica-v5.0.1.zip LICENSE.txtを確認し、ファイルを /usr/local/share/fonts/ または ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf $ fc-list | grep Cica /home/minoru/.fonts/Cica-v5.0.1/Cica-Regular.ttf: Cica:style=Regular /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-Regular.ttf: Cica:style=Regular /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-RegularItalic.ttf: Cica:style=Italic /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-Bold.ttf: Cica:style=Bold /home/minoru/.fonts/Cica-v5.0.1/Cica-BoldItalic.ttf: Cica:style=Bold Italic /home/minoru/.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/global-keybind/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/global-keybind/</guid>
-      <description>3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。  ;; Change global key bind (leaf cus-global-keybind :bind ((&amp;#34;C-x C-x&amp;#34; . my:exchange-point-and-mark) (&amp;#34;M-w&amp;#34; . clipboard-kill-ring-save) (&amp;#34;C-w&amp;#34; . my:kill-whole-line-or-region) (&amp;#34;s-c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s-v&amp;#34; . clipboard-yank) (&amp;#34;M-/&amp;#34; . kill-this-buffer))) ;; Overwrite `C-w&amp;#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () &amp;#34;If the region is active, to kill region. If the region is inactive, to kill whole line.&amp;#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) ;; Return to last edit point (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/mouse-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/mouse-copy/</guid>
-      <description>3.5. マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．
-(setq mouse-drag-copy-region t) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/mozc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/mozc/</guid>
-      <description>3.2. [emacs-mozc] 日本語入力  Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
-! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
-(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;？&amp;#34;))) (&amp;#34;!&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;！&amp;#34;))))) :custom `((default-input-method .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/server/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/server/</guid>
-      <description>[server.el] Server機能を使う ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/core/uniquify/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
-      <description>3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。
-(setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
-    </item>
-    
-    <item>
       <title>1.1. eary-init.el を使う</title>
       <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -139,6 +60,85 @@ init-loader には、エラーが出た設定ファイルは読み込まれな�
       <description>最小限の emacs を起動させるための設定です。  test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
 以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
 alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
+    </item>
+    
+    <item>
+      <title>2.1. 言語と文字コード</title>
+      <link>https://minorugh.github.io/.emacs.d/core/encode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/encode/</guid>
+      <description>シンプルにこれだけです。
+(set-language-environment &amp;#34;Japanese&amp;#34;) (prefer-coding-system &amp;#39;utf-8) </description>
+    </item>
+    
+    <item>
+      <title>2.2. フォント設定</title>
+      <link>https://minorugh.github.io/.emacs.d/core/font/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/font/</guid>
+      <description>GUI / CUI 共通で Cica を使っています。  Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
+ プログラミング用日本語等幅フォント Cica  Cicaフォントのインストール  Linux 環境でのインストールの方法です。  [オフィシャルページ](https://github.com/miiton/Cica/releases/tag/v5.0.3)にある最新の `Cica v5.03` は、 `page-break-lines` で表示が乱れます。  Cica-v5.0.1のダウンロードページから、 (Cica-v5.0.1.zip) をダウンロードします。 上記サイトの存続は怪しいので自分のサイトにも置いておきます。 Cica-v5.0.1.zip  zipファイルを展開します。  $ unzip Cica-v5.0.1.zip LICENSE.txtを確認し、ファイルを /usr/local/share/fonts/ または ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf $ fc-list | grep Cica /home/minoru/.fonts/Cica-v5.0.1/Cica-Regular.ttf: Cica:style=Regular /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-Regular.ttf: Cica:style=Regular /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-RegularItalic.ttf: Cica:style=Italic /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-Bold.ttf: Cica:style=Bold /home/minoru/.fonts/Cica-v5.0.1/Cica-BoldItalic.ttf: Cica:style=Bold Italic /home/minoru/.</description>
+    </item>
+    
+    <item>
+      <title>2.3. 日本語入力の設定</title>
+      <link>https://minorugh.github.io/.emacs.d/core/mozc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/mozc/</guid>
+      <description>Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
+! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
+(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;？&amp;#34;))) (&amp;#34;!&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;！&amp;#34;))))) :custom `((default-input-method .</description>
+    </item>
+    
+    <item>
+      <title>2.4. Server 機能を使う</title>
+      <link>https://minorugh.github.io/.emacs.d/core/server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/server/</guid>
+      <description>;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
+    </item>
+    
+    <item>
+      <title>2.5. [exec-path-from-shell]設定をシェルから継承する</title>
+      <link>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</guid>
+      <description> purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell  外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。自分は、shell-commad や compile-command をよく使うので必須のパッケージです。
+(leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
+    </item>
+    
+    <item>
+      <title>2.6. マウスで選択した領域を自動コピー</title>
+      <link>https://minorugh.github.io/.emacs.d/core/mouse-copy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/mouse-copy/</guid>
+      <description>3.5. マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．
+(setq mouse-drag-copy-region t) </description>
+    </item>
+    
+    <item>
+      <title>2.7. [uniquify.el] 同じバッファ名が開かれた場合に区別する</title>
+      <link>https://minorugh.github.io/.emacs.d/core/uniquify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
+      <description>3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。
+(setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
+    </item>
+    
+    <item>
+      <title>2.8. 基本キーバインド</title>
+      <link>https://minorugh.github.io/.emacs.d/core/global-keybind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/global-keybind/</guid>
+      <description>3.4. 基本キーバインド  いつでもどこでも使えるキーバインド周りの設定をここにまとめています。  ;; Change global key bind (leaf cus-global-keybind :bind ((&amp;#34;C-x C-x&amp;#34; . my:exchange-point-and-mark) (&amp;#34;M-w&amp;#34; . clipboard-kill-ring-save) (&amp;#34;C-w&amp;#34; . my:kill-whole-line-or-region) (&amp;#34;s-c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s-v&amp;#34; . clipboard-yank) (&amp;#34;M-/&amp;#34; . kill-this-buffer))) ;; Overwrite `C-w&amp;#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () &amp;#34;If the region is active, to kill region. If the region is inactive, to kill whole line.&amp;#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) ;; Return to last edit point (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.</description>
     </item>
     
     <item>
