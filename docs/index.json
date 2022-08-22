@@ -11,7 +11,7 @@
 	"title": "起動設定",
 	"tags": [],
 	"description": "",
-	"content": "Emacs の起動設定に関わる部分をここでは設定している\n Emacs-27導入にあわせて early-init.el を設定しました。 ブートシーケンスは以下のとおり。   early-init.el の読み込み init.el の読み込み inits/ のファイル群を読み込み （init-loader 使用）   eary-init.el を使う 早期設定ファイルの設定 Magic File Name を一時的に無効にする これも起動時間を短縮するためのおまじない(^^) leaf.el を使う 設定ファイルを明示的に書くためのパッケージです。 init-loader.el を使う 設定ファイル群のローダーです。 test.el 最小限の emacs を起動させるための設定  "
+	"content": "Emacs の起動設定に関わる部分をここでは設定している\n Emacs-27導入にあわせて early-init.el を設定しました。 ブートシーケンスは以下のとおり。   early-init.el の読み込み init.el の読み込み inits/ のファイル群を読み込み （init-loader 使用）   eary-init.el を使う 早期設定ファイルの設定 speed up startup Magic File Name を一時的に無効にして起動時間を短縮するためのおまじない(^^) leaf.el を使う 設定ファイルを明示的に書くためのパッケージです。 init-loader.el を使う 設定ファイル群のローダーです。 test.el 最小限の emacs を起動させるための設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/doom-modeline/",
