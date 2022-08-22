@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>バッフアー / ウインドウ on minoru&#39;s Emacs Configuration</title>
+    <title>バッフアー / ウインドウ制御 on minoru&#39;s Emacs Configuration</title>
     <link>https://minorugh.github.io/.emacs.d/buffer/</link>
-    <description>Recent content in バッフアー / ウインドウ on minoru&#39;s Emacs Configuration</description>
+    <description>Recent content in バッフアー / ウインドウ制御 on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/buffer/index.xml" rel="self" type="application/rss+xml" />
     <item>
