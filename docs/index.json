@@ -46,7 +46,7 @@
 	"title": "配色関連",
 	"tags": [],
 	"description": "",
-	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n hl-line カーソル行に色をつける  "
+	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードを実際の色に表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/",
@@ -232,10 +232,38 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/hl-line/",
-	"title": "4.1. カーソル行に色をつける",
+	"title": "4.1. hl-line-mode",
 	"tags": [],
 	"description": "",
-	"content": "  ビルトインの hl-line を使います.\n  http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html\n  https://www.emacswiki.org/emacs/highlight-current-line.el\n  機能別にhl-line のon/off や色を変えたりという設定もできますが、私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。\n(global-hl-line-mode 1) "
+	"content": "ビルトインの hl-line-mode は、カーソル行に色をつける設定です。\n http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html https://www.emacswiki.org/emacs/highlight-current-line.el  機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。\n(global-hl-line-mode 1) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/blink-cursor/",
+	"title": "4.2. blink-cursor-mode",
+	"tags": [],
+	"description": "",
+	"content": " blink-cursor-mode を設定してカーソルの点滅を制御します。  以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．\n(setq blink-cursor-blinks 0) (setq blink-cursor-interval 0.3) (setq blink-cursor-delay 10) (add-hook 'emacs-startup-hook . blink-cursor-mode) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/ivy-format/",
+	"title": "4.3. my:ivy-format-function-arrow",
+	"tags": [],
+	"description": "",
+	"content": " ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) (setq ivy-format-functions-alist \u0026#39;((t . my:ivy-format-function-arrow))) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/",
+	"title": "4.4. volatile-highlight",
+	"tags": [],
+	"description": "",
+	"content": " volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp 'pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end \u0026amp;optional _buf face) \u0026quot;Pulse the changes.\u0026quot; (pulse-momentary-highlight-region beg end face)) (advice-add #'vhl/.make-hl :override #'my:vhl-pulse))) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow/",
+	"title": "4.5. rainbow-mode",
+	"tags": [],
+	"description": "",
+	"content": " rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",

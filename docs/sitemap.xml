@@ -139,6 +139,22 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
   </url>
   

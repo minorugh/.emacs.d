@@ -12,4 +12,16 @@ disableToc = true
 [hl-line]({{< relref "hl-line" >}})
 : カーソル行に色をつける
 
+[blink-cursor]({{< relref "blink-cursor" >}})
+: カーソルの点滅を制御する
+
+[my:ivy-format]({{< relref "ivy-format" >}})
+: ivyの選択行をアイコンで強調する
+
+[volatile-highlights]({{< relref "volatile-highlights" >}})
+: コピペした領域を強調する
+
+[rainbow-mode]({{< relref "rainbow" >}})
+: カラーコードを実際の色に表示する
+
 

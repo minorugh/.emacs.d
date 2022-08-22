@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T20:42:05 JST">
-<title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
+<title>4.2. blink-cursor-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/startup/eary-init/">
+  <body data-url="/.emacs.d/higlight/blink-cursor/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -377,7 +377,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/startup/eary-init.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/blink-cursor.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -397,7 +397,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/startup/'>起動設定</a> > 1.1. eary-init.el
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/higlight/'>配色関連</a> > 4.2. blink-cursor-mode
 
  
 
@@ -410,17 +410,7 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#gcを減らす">GCを減らす</a></li>
-    <li><a href="#package-の初期化を抑制する">Package の初期化を抑制する</a></li>
-    <li><a href="#常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</a></li>
-    <li><a href="#フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</a></li>
-    <li><a href="#これらを無効にする方が速い-初期化される前">これらを無効にする方が速い (初期化される前)</a></li>
-    <li><a href="#起動時の点滅を抑える">起動時の点滅を抑える</a></li>
-    <li><a href="#起動時の背景色を指定する">起動時の背景色を指定する</a></li>
-  </ul>
-</nav>
+		<nav id="TableOfContents"></nav>
       </div>
 	</div>
     
@@ -430,7 +420,7 @@
 
 <div id="body-inner">
   
-    <h1>1.1. eary-init.el</h1>
+    <h1>4.2. blink-cursor-mode</h1>
   
 
 
@@ -439,53 +429,14 @@
     
     
 <ul>
-<li><a href="https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html"><code>early-init.el</code></a> は、Emacs27から導入されました。</li>
-<li><a href="https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el">https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el</a></li>
+<li><code>blink-cursor-mode</code> を設定してカーソルの点滅を制御します。</li>
 </ul>
-<p><code>init.el</code> でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
-<h2 id="gcを減らす">GCを減らす</h2>
-<p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
-(setq gc-cons-threshold most-positive-fixnum)
-</code></pre></div><p>eary-init.el の先頭に書くことが重要です。</p>
-<h2 id="package-の初期化を抑制する">Package の初期化を抑制する</h2>
-<p>Emacs27では、(package-initialize) が 2回実行されます。
-(1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。</p>
-<p>1回目を抑制するために以下を <code>eary-init.el</code> に記述することで初期化が少し早くなります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; For slightly faster startup</span>
-(setq package-enable-at-startup <span style="color:#66d9ef">nil</span>)
-</code></pre></div><h2 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Always load newest byte code</span>
-(setq load-prefer-newer <span style="color:#66d9ef">t</span>)
-
-</code></pre></div><h2 id="フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Inhibit resizing frame</span>
-(setq frame-inhibit-implied-resize <span style="color:#66d9ef">t</span>)
-</code></pre></div><h2 id="これらを無効にする方が速い-初期化される前">これらを無効にする方が速い (初期化される前)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Faster to disable these here (before they&#39;ve been initialized)</span>
-(push <span style="color:#f92672">&#39;</span>(fullscreen <span style="color:#f92672">.</span> maximized) default-frame-alist)
-(push <span style="color:#f92672">&#39;</span>(menu-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
-(push <span style="color:#f92672">&#39;</span>(tool-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
-(push <span style="color:#f92672">&#39;</span>(vertical-scroll-bars) default-frame-alist)
-</code></pre></div><h2 id="起動時の点滅を抑える">起動時の点滅を抑える</h2>
-<p>Emacsが設定ファイルを読み込むプロセスで画面がちらつくのを抑制します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Suppress flashing at startup</span>
-(setq inhibit-redisplay <span style="color:#66d9ef">t</span>)
-(setq inhibit-message <span style="color:#66d9ef">t</span>)
-(add-hook <span style="color:#e6db74">&#39;window-setup-hook</span>
-		  (lambda ()
-			(setq inhibit-redisplay <span style="color:#66d9ef">nil</span>)
-			(setq inhibit-message <span style="color:#66d9ef">nil</span>)
-			(<span style="color:#a6e22e">redisplay</span>)))
-</code></pre></div><h2 id="起動時の背景色を指定する">起動時の背景色を指定する</h2>
-<p>Emacsが設定を読み込む色段階の背景色は白です。
-自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Startup setting</span>
-(setq inhibit-splash-screen <span style="color:#66d9ef">t</span>)
-(setq inhibit-startup-message <span style="color:#66d9ef">t</span>)
-(setq byte-compile-warnings <span style="color:#f92672">&#39;</span>(cl-functions))
-(custom-set-faces <span style="color:#f92672">&#39;</span>(default ((<span style="color:#66d9ef">t</span> (:background <span style="color:#e6db74">&#34;#282a36&#34;</span>)))))
-</code></pre></div>
+<p>以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．</p>
+<pre><code class="language-elips" data-lang="elips">(setq blink-cursor-blinks 0)
+(setq blink-cursor-interval 0.3)
+(setq blink-cursor-delay 10)
+(add-hook 'emacs-startup-hook . blink-cursor-mode)
+</code></pre>
 
     
     
@@ -496,8 +447,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/startup/" title="起動設定"> <i class="fa fa-chevron-left"></i><label>起動設定</label></a>
-    <a class="nav nav-next" href="/.emacs.d/startup/magick-file/" title="1.2. speed up startup" style="margin-right: 0px;"><label>1.2. speed up startup</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/higlight/hl-line/" title="4.1. hl-line-mode"> <i class="fa fa-chevron-left"></i><label>4.1. hl-line-mode</label></a>
+    <a class="nav nav-next" href="/.emacs.d/higlight/ivy-format/" title="4.3. my:ivy-format-function-arrow" style="margin-right: 0px;"><label>4.3. my:ivy-format-function-arrow</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
