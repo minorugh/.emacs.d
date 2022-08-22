@@ -67,6 +67,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/winner/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/eary-init/</loc>
   </url>
   
@@ -155,11 +159,23 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/tempbuf/</loc>
   </url>
   
   <url>

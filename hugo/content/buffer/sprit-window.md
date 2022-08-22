@@ -1,5 +1,5 @@
 +++
-title = "5.2. other-window-or-sprit"
+title = "5.4. other-window-or-sprit"
 draft = false
 +++
 `dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。

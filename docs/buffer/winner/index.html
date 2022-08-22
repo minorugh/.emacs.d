@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T22:13:02 JST">
-<title>1.2. speed up startup :: minoru&#39;s Emacs Configuration</title>
+<title> :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/startup/magick-file/">
+  <body data-url="/.emacs.d/buffer/winner/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -405,7 +405,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/startup/magick-file.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/buffer/winner.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -425,7 +425,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/startup/'>起動設定</a> > 1.2. speed up startup
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/buffer/'>バッフアー / ウインドウ</a> > 
 
  
 
@@ -438,7 +438,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#113-winnerel-ウインドウ構成の履歴を辿る">11.3. [Winner.el] ウインドウ構成の履歴を辿る</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -448,7 +456,7 @@
 
 <div id="body-inner">
   
-    <h1>1.2. speed up startup</h1>
+    <h1></h1>
   
 
 
@@ -456,28 +464,12 @@
     
     
     
+<h3 id="113-winnerel-ウインドウ構成の履歴を辿る">11.3. [Winner.el] ウインドウ構成の履歴を辿る</h3>
 <ul>
-<li>Magic File Name を一時的に無効にすることで、起動時間を短縮できます。</li>
-<li>GC設定とともに設定ファイル読み込み後に正常値に戻します。</li>
+<li>ビルトインの <code>winner.el</code> を使います．</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Speed up startup</span>
-(unless (or (<span style="color:#a6e22e">daemonp</span>) noninteractive init-file-debug)
-  (let ((old-file-name-handler-alist file-name-handler-alist))
-    (setq file-name-handler-alist <span style="color:#66d9ef">nil</span>)
-    (add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span>
-              (lambda ()
-                <span style="color:#e6db74">&#34;Recover file name handlers.&#34;</span>
-                (setq file-name-handler-alist
-                      (delete-dups (<span style="color:#a6e22e">append</span> file-name-handler-alist
-                                           old-file-name-handler-alist)))))))
-
-<span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
-(setq gc-cons-threshold most-positive-fixnum)
-(add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span>
-          (lambda ()
-            <span style="color:#e6db74">&#34;Recover GC values after startup.&#34;</span>
-            (setq gc-cons-threshold <span style="color:#ae81ff">800000</span>)))
-</code></pre></div><p>※ <code>init.el</code> の先頭に書きます。</p>
+<p>ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。
+<code>winner-undo</code> で直前の状態に戻せます。例えば、誤って <code>C-x 0</code> で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</p>
 
 
     
@@ -489,8 +481,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/startup/eary-init/" title="1.1. eary-init.el"> <i class="fa fa-chevron-left"></i><label>1.1. eary-init.el</label></a>
-    <a class="nav nav-next" href="/.emacs.d/startup/leaf/" title="1.3. leaf.el" style="margin-right: 0px;"><label>1.3. leaf.el</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/buffer/" title="バッフアー / ウインドウ"> <i class="fa fa-chevron-left"></i><label>バッフアー / ウインドウ</label></a>
+    <a class="nav nav-next" href="/.emacs.d/buffer/auto-save-buffer/" title="5.1. auto-save-buffer-enhanced" style="margin-right: 0px;"><label>5.1. auto-save-buffer-enhanced</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

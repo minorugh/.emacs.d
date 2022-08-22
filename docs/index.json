@@ -53,7 +53,7 @@
 	"title": "バッフアー / ウインドウ",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n dimmer 現在のバッファ以外の輝度を落とす sprit-window 認証情報の取り扱いファイルの設定  "
+	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n auto-seve-buffer ファイルの自動保存機能を提供します。 auto-seve-buffer ファイルの自動保存機能を提供します。 auto-seve-buffer ファイルの自動保存機能を提供します。 dimmer 現在のバッファ以外の輝度を落とす sprit-window 認証情報の取り扱いファイルの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/",
@@ -110,6 +110,13 @@
 	"tags": [],
 	"description": "",
 	"content": "自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている\n"
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/winner/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
@@ -256,7 +263,7 @@
 	"title": "4.4. volatile-highlight",
 	"tags": [],
 	"description": "",
-	"content": " volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp 'pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end \u0026amp;optional _buf face) \u0026quot;Pulse the changes.\u0026quot; (pulse-momentary-highlight-region beg end face)) (advice-add #'vhl/.make-hl :override #'my:vhl-pulse))) "
+	"content": " volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp \u0026#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end \u0026amp;optional _buf face) \u0026#34;Pulse the changes.\u0026#34; (pulse-momentary-highlight-region beg end face)) (advice-add #\u0026#39;vhl/.make-hl :override #\u0026#39;my:vhl-pulse))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow/",
@@ -266,18 +273,39 @@
 	"content": " rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/",
+	"title": "5.1. auto-save-buffer-enhanced",
+	"tags": [],
+	"description": "",
+	"content": " auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . \u0026#39;(\u0026#34;^/ssh:\u0026#34; \u0026#34;^/scp:\u0026#34; \u0026#34;/sudo:\u0026#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",
-	"title": "5.1. dimmer-mode",
+	"title": "5.2. dimmer-mode",
 	"tags": [],
 	"description": "",
 	"content": " dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。\n(leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。\n下記の通り発想転換すれば呪縛から逃れることができます。\n 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 3\u0026#34; . my:split-window-right) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-right () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-right) (follow-mode 1) (dimmer-mode 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (when (one-window-p) (dimmer-mode -1))) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)))  画面分割時に follow-mode もonにしておくと行数の多いバッファーを見るのに便利です。  "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/",
+	"title": "5.3. Scrool-other-Window",
+	"tags": [],
+	"description": "",
+	"content": "Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。\n一画面のとき \u0026lt;next\u0026gt; / \u0026lt;prior\u0026gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。\n(leaf *my:scroll-other-window :bind ((\u0026#34;\u0026lt;next\u0026gt;\u0026#34; . my:scroll-other-window) (\u0026#34;\u0026lt;prior\u0026gt;\u0026#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () \u0026#34;If there are two windows, `scroll-other-window\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () \u0026#34;If there are two windows, `scroll-other-window-down\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
-	"title": "5.2. other-window-or-sprit",
+	"title": "5.4. other-window-or-sprit",
 	"tags": [],
 	"description": "",
 	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/tempbuf/",
+	"title": "5.5. tempbuf",
+	"tags": [],
+	"description": "",
+	"content": " tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。\n my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files \u0026#39;(\u0026#34;~/Dropbox/org/task.org\u0026#34; \u0026#34;~/Dropbox/org/capture.org\u0026#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar \u0026#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/categories/",
