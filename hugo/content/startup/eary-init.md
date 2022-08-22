@@ -1,5 +1,5 @@
 +++
-title = "1.1. [early-init.el] eary-initを使う"
+title = "1.1. eary-init.el を使う"
 draft = false
 +++
 ### 1.1. [early-init.el] eary-initを使う

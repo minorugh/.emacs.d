@@ -673,12 +673,12 @@ code {
   background: #1d1f21; }
 
 code + .copy-to-clipboard {
-  margin-left: -2px;
-  border-left: 0 !important;
-  font-size: inherit !important;
-  vertical-align: middle;
-  height: 21px;
-  top: -1px; }
+	margin-left: -2px;
+	border-left: 0 !important;
+	font-size: inherit !important;
+	vertical-align: middle;
+	height: 21px;
+	top: -1px; }
 
 pre {
   padding: 1rem;
