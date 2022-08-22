@@ -102,7 +102,7 @@
 	"title": "1.2. Magic File Name を一時的に無効にする",
 	"tags": [],
 	"description": "",
-	"content": " Magic File Name を一時的に無効にすることで、起動時間を短縮できます。 GC設定とともに設定ファイル読み込み後に正常値に戻します。  (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook \u0026#39;emacs-startup-hook (lambda () \u0026#34;Recover file name handlers.\u0026#34; (setq file-name-handler-alist (delete-dups (append file-name-handler-alist old-file-name-handler-alist))))))) ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) (add-hook \u0026#39;emacs-startup-hook (lambda () \u0026#34;Recover GC values after startup.\u0026#34; (setq gc-cons-threshold 800000))) ※ init.el の先頭に書きます。\n"
+	"content": " Magic File Name を一時的に無効にすることで、起動時間を短縮できます。 GC設定とともに設定ファイル読み込み後に正常値に戻します。  ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook \u0026#39;emacs-startup-hook (lambda () \u0026#34;Recover file name handlers.\u0026#34; (setq file-name-handler-alist (delete-dups (append file-name-handler-alist old-file-name-handler-alist))))))) ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) (add-hook \u0026#39;emacs-startup-hook (lambda () \u0026#34;Recover GC values after startup.\u0026#34; (setq gc-cons-threshold 800000))) ※ init.el の先頭に書きます。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/leaf/",

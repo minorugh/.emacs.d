@@ -7,6 +7,7 @@ draft = false
 * GC設定とともに設定ファイル読み込み後に正常値に戻します。
 
 ```elisp
+;; Speed up startup
 (unless (or (daemonp) noninteractive init-file-debug)
   (let ((old-file-name-handler-alist file-name-handler-alist))
     (setq file-name-handler-alist nil)

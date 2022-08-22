@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T13:39:26 JST">
+<meta name="revised" content="2022-08-22T14:09:15 JST">
 <title>1.2. Magic File Name を一時的に無効にする :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -325,7 +325,8 @@
 <li>Magic File Name を一時的に無効にすることで、起動時間を短縮できます。</li>
 <li>GC設定とともに設定ファイル読み込み後に正常値に戻します。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(unless (or (<span style="color:#a6e22e">daemonp</span>) noninteractive init-file-debug)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Speed up startup</span>
+(unless (or (<span style="color:#a6e22e">daemonp</span>) noninteractive init-file-debug)
   (let ((old-file-name-handler-alist file-name-handler-alist))
     (setq file-name-handler-alist <span style="color:#66d9ef">nil</span>)
     (add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span>
