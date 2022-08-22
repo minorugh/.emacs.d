@@ -63,6 +63,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/categories/</loc>
   </url>
   
@@ -76,6 +80,14 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/display/display_01/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/ui/doom-themes/</loc>
   </url>
   
   <url>

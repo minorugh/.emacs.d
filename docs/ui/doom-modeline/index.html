@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T10:12:09 JST">
-<title>バッフアー / ウインドウ :: minoru&#39;s Emacs Configuration</title>
+<title>doom-modeline :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/buffer/">
+  <body data-url="/.emacs.d/ui/doom-modeline/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -233,7 +233,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/buffer/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/ui/doom-modeline.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -250,7 +250,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > バッフアー / ウインドウ
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/ui/'>UI</a> > doom-modeline
+
+ 
 
  
 
@@ -271,7 +276,7 @@
 
 <div id="body-inner">
   
-    <h1>バッフアー / ウインドウ</h1>
+    <h1>doom-modeline</h1>
   
 
 
@@ -279,10 +284,26 @@
     
     
     
-
-<p>ここではバッファ管理関係の設定を記載している</p>
-
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf doom-modeline
+  :ensure <span style="color:#66d9ef">t</span>
+  :hook (after-init-hook <span style="color:#f92672">.</span> doom-modeline-mode)
+  :custom
+  (doom-modeline-icon <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
+  (doom-modeline-major-mode-icon <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>)
+  (doom-modeline-minor-modes <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>)
+  :config
+  (line-number-mode <span style="color:#ae81ff">0</span>)
+  (column-number-mode <span style="color:#ae81ff">0</span>)
+  (doom-modeline-def-modeline <span style="color:#e6db74">&#39;main</span>
+    <span style="color:#f92672">&#39;</span>(bar window-number matches buffer-info remote-host buffer-position parrot selection-info)
+    <span style="color:#f92672">&#39;</span>(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker))
+  :init
+  (leaf nyan-mode
+	:ensure <span style="color:#66d9ef">t</span>
+	:config
+	(nyan-mode <span style="color:#ae81ff">1</span>)
+	(nyan-start-animation)))
+</code></pre></div>
 
     
     
@@ -293,8 +314,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/font/" title="フォント / 配色関係"> <i class="fa fa-chevron-left"></i><label>フォント / 配色関係</label></a>
-    <a class="nav nav-next" href="/.emacs.d/ui/" title="UI" style="margin-right: 0px;"><label>UI</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/ui/all-the-icons/" title="all-the-icons"> <i class="fa fa-chevron-left"></i><label>all-the-icons</label></a>
+    <a class="nav nav-next" href="/.emacs.d/ui/doom-themes/" title="doom-thmes" style="margin-right: 0px;"><label>doom-thmes</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

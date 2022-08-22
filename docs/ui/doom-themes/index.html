@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T10:12:09 JST">
-<title>バッフアー / ウインドウ :: minoru&#39;s Emacs Configuration</title>
+<title>doom-thmes :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/buffer/">
+  <body data-url="/.emacs.d/ui/doom-themes/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -233,7 +233,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/buffer/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/ui/doom-themes.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -250,7 +250,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > バッフアー / ウインドウ
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/ui/'>UI</a> > doom-thmes
+
+ 
 
  
 
@@ -271,7 +276,7 @@
 
 <div id="body-inner">
   
-    <h1>バッフアー / ウインドウ</h1>
+    <h1>doom-thmes</h1>
   
 
 
@@ -279,10 +284,16 @@
     
     
     
-
-<p>ここではバッファ管理関係の設定を記載している</p>
-
-
+<pre><code class="language-emaxs-lisp" data-lang="emaxs-lisp">(leaf doom-themes
+  :ensure t
+  :hook (after-init-hook . (lambda () (load-theme 'doom-dracula t)))
+  :custom
+  (doom-themes-enable-italic . nil)
+  (doom-themes-enable-bold . nil)
+  :config
+  (doom-themes-neotree-config)
+  (doom-themes-org-config))
+</code></pre>
 
     
     
@@ -293,8 +304,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/font/" title="フォント / 配色関係"> <i class="fa fa-chevron-left"></i><label>フォント / 配色関係</label></a>
-    <a class="nav nav-next" href="/.emacs.d/ui/" title="UI" style="margin-right: 0px;"><label>UI</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/ui/doom-modeline/" title="doom-modeline"> <i class="fa fa-chevron-left"></i><label>doom-modeline</label></a>
+    <a class="nav nav-next" href="/.emacs.d/editing/" title="ファイル編集/入力補助" style="margin-right: 0px;"><label>ファイル編集/入力補助</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
