@@ -3,7 +3,7 @@ title = "sprit-window"
 draft = false
 +++
 
-#### 11.2.1. Dimmer-Mode との連携
+### Sprit-window との連携
 
 * 同じバッファーを分割したときは、`follow-mode` にする。
 * 画面分割したときは、`dimmer-mode-on` にする。
