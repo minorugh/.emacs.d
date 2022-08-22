@@ -35,7 +35,7 @@ on/off できるのが快適です。
 
 ## Sprit-window との連携
 
-`dimmer-mode` を `global` 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。
+`dimmer-mode` を `global` に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 
 下記の通り発想転換すれば呪縛から逃れることができます。
 
