@@ -10,7 +10,7 @@ Emacs の起動設定に関わる部分をここでは設定している
 * Emacs-27導入にあわせて `early-init.el` を設定しました。 
 * ブートシーケンスは以下のとおり。
 
-```text
+```shellsession
 1. early-init.el の読み込み
 2. init.el の読み込み
 3. inits/ のファイル群を読み込み （init-loader 使用）
