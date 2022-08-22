@@ -7,9 +7,9 @@ description = ""
 ## はじめに
   
 * ここは [`@minoruGH`](https://twitter.com/minorugh)  の Emacs設定ファイルの一部を解説しているページです。
-* [`https://github.com/minorugh/.emacs.d/`](https://github.com/minorugh/.emacs.d/) から
+* [[https://github.com/minorugh/.emacs.d/](https://github.com/minorugh/.emacs.d/)] から
 `hugo` を使ってGithub pages にWebサイトを構築しています。
-* 本ドキュメントは、[`@takaxp``](https://twitter.com/takaxp)さんが公開されている [`takaxp.github.io/`](https://takaxp.github.io/init.html) の記事を下敷きにした模倣版です。
+* 本ドキュメントは、[`@takaxp`](https://twitter.com/takaxp)さんが公開されている [[takaxp.github.io/](https://takaxp.github.io/init.html)] の記事を下敷きにした模倣版です。
 * 執筆用途に特化してカスタマイズしていますので、コンセプトやキーバイドなどは極めて邪道思想になっています。
 
 ### 動作確認環境
