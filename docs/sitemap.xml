@@ -103,6 +103,26 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/mark-command/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/expand-region/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
   </url>
   

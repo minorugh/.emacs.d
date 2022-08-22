@@ -7,6 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/cursor/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>3.1. [sequential-command.el] バッファーの先頭と最終行への移動を簡単にする</title>
+      <link>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</guid>
+      <description>標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
+ https://github.com/HKey/sequential-command C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。
+MELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。
+(leaf sequential-command :doc &amp;#34;https://bre.is/6Xu4fQs6&amp;#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) </description>
+    </item>
+    
+    <item>
+      <title>3.2. [other-window-or-sprit] ウインドウ間のカーソル移動</title>
+      <link>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</guid>
+      <description> C-c o でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています． 画面分割されていないときは、左右分割して follow-mode dimmer-mode も ON にしています。（詳細後述）  (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key &amp;#34;C-q&amp;#34; &amp;#39;other-window-or-split) </description>
+    </item>
+    
+    <item>
+      <title>3.3. [my:jump-brace] 括弧の先頭と最後へ交互にポイント移動します。</title>
+      <link>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</guid>
+      <description>括弧の先頭と最後へ交互にポイント移動します。
+ C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  ただ、上記標準機能はなにげに使いにくいので my:jump-brace を定義しました。 括弧の先頭と最後へ交互にポイント移動します。
+(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) </description>
+    </item>
+    
+    <item>
+      <title>3.4. [my:exchange-point-and-mark] 直前の編集ポイントと現在のポイントとを行き来する。</title>
+      <link>https://minorugh.github.io/.emacs.d/cursor/mark-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/cursor/mark-command/</guid>
+      <description> C-x C-x は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) *標準機能の C-u C-SPC でマーク箇所を辿れるようになります。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) </description>
+    </item>
+    
+    <item>
+      <title>3.5. [expand-region.el] カーソル位置を起点に選択範囲を賢く広げる</title>
+      <link>https://minorugh.github.io/.emacs.d/cursor/expand-region/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/cursor/expand-region/</guid>
+      <description>expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。
+2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。
+(leaf expand-region :ensure t :bind (&amp;#34;C-@&amp;#34; . er/expand-region)) </description>
+    </item>
+    
+    <item>
       <title>cursor</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/cursor_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

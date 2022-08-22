@@ -5,8 +5,21 @@ pre = "<b>3. </b>"
 weight = 3
 disableToc = true
 +++
+* カーソル移動に関する設定です。
+* ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーと`PgUp` `PgDn` を使っています。
 
-ここでは全体に関わるキーバインド系の設定を記載している。
+[sequential-command]({{< relref "sequential-command" >}})
+: 標準の `C-a` `C-e` を拡張します。
 
-[cursor]({{< relref "cursor_01" >}})
-: 認証情報の取り扱いファイルの設定
+[other-window-or-sptit]({{< relref "other-window-or-sprit" >}})
+: 画面分割コマンド `C-x 3` を拡張します。
+
+[jump-brace]({{< relref "jump-brace" >}})
+: 括弧の先頭と最後へ交互にポイント移動します。
+
+[my:exchange-point-and-mark]({{< relref "mark-command" >}})
+: 直前の編集ポイントと現在のポイントとを行き来できる設定です。
+
+[expand-region]({{< relref "expand-region" >}})
+: カーソル位置を起点に選択範囲を賢く広げてくれるパッケージ。
+

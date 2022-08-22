@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T17:29:45 JST">
+<meta name="revised" content="2022-08-22T18:17:08 JST">
 <title>カーソル移動 :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -163,6 +163,41 @@
       <a href="/.emacs.d/cursor/"><b>3. </b>カーソル移動</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/sequential-command/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/sequential-command/">
+            3.1. [sequential-command.el] バッファーの先頭と最終行への移動を簡単にする
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/other-window-or-sprit/">
+            3.2. [other-window-or-sprit] ウインドウ間のカーソル移動
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/jump-brace/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/jump-brace/">
+            3.3. [my:jump-brace] 括弧の先頭と最後へ交互にポイント移動します。
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/mark-command/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/mark-command/">
+            3.4. [my:exchange-point-and-mark] 直前の編集ポイントと現在のポイントとを行き来する。
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/expand-region/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/expand-region/">
+            3.5. [expand-region.el] カーソル位置を起点に選択範囲を賢く広げる
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/cursor_01/" class="dd-item">
         <div>
           <a href="/.emacs.d/cursor/cursor_01/">
@@ -359,10 +394,21 @@
     
     
 
-<p>ここでは全体に関わるキーバインド系の設定を記載している。</p>
+<ul>
+<li>カーソル移動に関する設定です。</li>
+<li>ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーと<code>PgUp</code> <code>PgDn</code> を使っています。</li>
+</ul>
 <dl>
-<dt><a href="/.emacs.d/cursor/cursor_01/">cursor</a></dt>
-<dd>認証情報の取り扱いファイルの設定</dd>
+<dt><a href="/.emacs.d/cursor/sequential-command/">sequential-command</a></dt>
+<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dt><a href="/.emacs.d/cursor/other-window-or-sprit/">other-window-or-sptit</a></dt>
+<dd>画面分割コマンド <code>C-x 3</code> を拡張します。</dd>
+<dt><a href="/.emacs.d/cursor/jump-brace/">jump-brace</a></dt>
+<dd>括弧の先頭と最後へ交互にポイント移動します。</dd>
+<dt><a href="/.emacs.d/cursor/mark-command/">my:exchange-point-and-mark</a></dt>
+<dd>直前の編集ポイントと現在のポイントとを行き来できる設定です。</dd>
+<dt><a href="/.emacs.d/cursor/expand-region/">expand-region</a></dt>
+<dd>カーソル位置を起点に選択範囲を賢く広げてくれるパッケージ。</dd>
 </dl>
 
 
@@ -377,7 +423,7 @@
 
 <div id="navigation">
 <a class="nav nav-prev" href="/.emacs.d/core/global-keybind/" title="2.7. グローバルキーバインド"> <i class="fa fa-chevron-left"></i><label>2.7. グローバルキーバインド</label></a>
-    <a class="nav nav-next" href="/.emacs.d/cursor/cursor_01/" title="cursor" style="margin-right: 0px;"><label>cursor</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/.emacs.d/cursor/sequential-command/" title="3.1. [sequential-command.el] バッファーの先頭と最終行への移動を簡単にする" style="margin-right: 0px;"><label>3.1. [sequential-command.el] バッファーの先頭と最終行への移動を簡単にする</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
