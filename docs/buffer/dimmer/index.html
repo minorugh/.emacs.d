@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T10:55:49 JST">
+<meta name="revised" content="2022-08-22T11:28:24 JST">
 <title>dimmer :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -339,6 +339,7 @@ on/off できるのが快適です。</p>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf *sprit-window-configurations
   :bind ((<span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#f92672">.</span> other-window-or-split)
+		 (<span style="color:#e6db74">&#34;C-x 3&#34;</span> <span style="color:#f92672">.</span> my:split-window-right)
 		 (<span style="color:#e6db74">&#34;C-x 2&#34;</span> <span style="color:#f92672">.</span> my:split-window-below)
 		 (<span style="color:#e6db74">&#34;C-x 1&#34;</span> <span style="color:#f92672">.</span> my:delete-other-windows)
 		 (<span style="color:#e6db74">&#34;C-x 0&#34;</span> <span style="color:#f92672">.</span> my:delete-window)
@@ -349,39 +350,59 @@ on/off できるのが快適です。</p>
 	(interactive)
 	(when (one-window-p)
 	  (split-window-horizontally)
-	  (follow-mode <span style="color:#ae81ff">1</span>)
 	  (dimmer-mode <span style="color:#ae81ff">1</span>))
 	(other-window <span style="color:#ae81ff">1</span>))
+
+  (defun my:split-window-right ()
+	<span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
+	(interactive)
+	(split-window-right)
+	(dimmer-mode <span style="color:#ae81ff">1</span>))
 
   (defun my:split-window-below ()
 	<span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
 	(interactive)
 	(split-window-below)
-	(follow-mode <span style="color:#ae81ff">1</span>)
 	(dimmer-mode <span style="color:#ae81ff">1</span>))
 
   (defun my:delete-window ()
 	<span style="color:#e6db74">&#34;With turn off dimmer.&#34;</span>
 	(interactive)
 	(delete-window)
-	(follow-mode <span style="color:#ae81ff">-1</span>)
-	(dimmer-mode <span style="color:#ae81ff">-1</span>))
+	(when (one-window-p)
+	  (dimmer-mode <span style="color:#ae81ff">-1</span>)))
 
   (defun my:delete-other-windows ()
 	<span style="color:#e6db74">&#34;With turn off dimmer.&#34;</span>
 	(interactive)
 	(delete-other-windows)
-	(follow-mode <span style="color:#ae81ff">-1</span>)
 	(dimmer-mode <span style="color:#ae81ff">-1</span>))
 
   (defun kill-other-buffers ()
 	<span style="color:#e6db74">&#34;Kill all other buffers.&#34;</span>
 	(interactive)
 	(<span style="color:#a6e22e">mapc</span> <span style="color:#e6db74">&#39;kill-buffer</span> (<span style="color:#a6e22e">delq</span> (<span style="color:#a6e22e">current-buffer</span>) (<span style="color:#a6e22e">buffer-list</span>)))
-	(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;killl-other-buffers!&#34;</span>))
-</code></pre></div><p>バッファーを分割したときは、自動的に <code>follow-mode</code> にしています。
-行数の多いページを二分割して見るときに便利です。</p>
+	(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;killl-other-buffers!&#34;</span>)))
 
+
+(leaf *my:scroll-other-window
+  :bind ((<span style="color:#e6db74">&#34;&lt;next&gt;&#34;</span> <span style="color:#f92672">.</span> my:scroll-other-window)
+		 (<span style="color:#e6db74">&#34;&lt;prior&gt;&#34;</span> <span style="color:#f92672">.</span> my:scroll-other-window-down))
+  :init
+  (defun my:scroll-other-window ()
+	<span style="color:#e6db74">&#34;If there are two windows, </span><span style="color:#e6db74">`scroll-other-window&#39;</span><span style="color:#e6db74">.&#34;</span>
+	(interactive)
+	(when (one-window-p)
+	  (<span style="color:#a6e22e">scroll-up</span>))
+	(<span style="color:#a6e22e">scroll-other-window</span>))
+
+  (defun my:scroll-other-window-down ()
+	<span style="color:#e6db74">&#34;If there are two windows, </span><span style="color:#e6db74">`scroll-other-window-down&#39;</span><span style="color:#e6db74">.&#34;</span>
+	(interactive)
+	(when (one-window-p)
+	  (<span style="color:#a6e22e">scroll-down</span>))
+	(scroll-other-window-down)))
+</code></pre></div>
 
     
     
