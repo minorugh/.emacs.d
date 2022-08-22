@@ -17,7 +17,6 @@ disableToc = true
 [auto-seve-buffer]({{< relref "auto-save-buffer" >}})
 : ファイルの自動保存機能を提供します。
 
-
 [dimmer]({{< relref "dimmer" >}})
 : 現在のバッファ以外の輝度を落とす
 
