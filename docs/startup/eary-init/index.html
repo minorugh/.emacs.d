@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T12:19:36 JST">
+<meta name="revised" content="2022-08-22T12:45:52 JST">
 <title>1.1. eary-init.el を使う :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -284,11 +284,13 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#11-early-initel-eary-initを使う">1.1. [early-init.el] eary-initを使う</a></li>
-      </ul>
-    </li>
+    <li><a href="#gcを減らす">GCを減らす</a></li>
+    <li><a href="#package-の初期化を抑制する">Package の初期化を抑制する</a></li>
+    <li><a href="#常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</a></li>
+    <li><a href="#フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</a></li>
+    <li><a href="#これらを無効にする方が速い-初期化される前">これらを無効にする方が速い (初期化される前)</a></li>
+    <li><a href="#起動時の点滅を抑える">起動時の点滅を抑える</a></li>
+    <li><a href="#起動時の背景色を指定する">起動時の背景色を指定する</a></li>
   </ul>
 </nav>
       </div>
@@ -308,39 +310,38 @@
     
     
     
-<h3 id="11-early-initel-eary-initを使う">1.1. [early-init.el] eary-initを使う</h3>
 <ul>
 <li><a href="https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html"><code>early-init.el</code></a> は、Emacs27から導入されました。</li>
 <li><a href="https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el">https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el</a></li>
 </ul>
 <p><code>init.el</code> でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;;; early-init.el --- Early Initialization. -*- lexical-binding: t; no-byte-compile: t -*-</span>
-<span style="color:#75715e">;;; Commentary:</span>
-<span style="color:#75715e">;;</span>
-<span style="color:#75715e">;; Emacs 27+ introduces early-init.el, which is run before init.el,</span>
-<span style="color:#75715e">;; before package and UI initialization happens.</span>
-<span style="color:#75715e">;;</span>
-<span style="color:#75715e">;;; Code:</span>
-
-<span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
+<h2 id="gcを減らす">GCを減らす</h2>
+<p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
 (setq gc-cons-threshold most-positive-fixnum)
-
-<span style="color:#75715e">;; For slightly faster startup</span>
+</code></pre></div><p>eary-init.el の先頭に書くことが重要です。</p>
+<h2 id="package-の初期化を抑制する">Package の初期化を抑制する</h2>
+<p>Emacs27では、(package-initialize) が 2回実行されます。
+(1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。</p>
+<p>1回目を抑制するために以下を <code>eary-init.el</code> に記述することで初期化が少し早くなります。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; For slightly faster startup</span>
 (setq package-enable-at-startup <span style="color:#66d9ef">nil</span>)
-
-<span style="color:#75715e">;; Always load newest byte code</span>
+</code></pre></div><h2 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Always load newest byte code</span>
 (setq load-prefer-newer <span style="color:#66d9ef">t</span>)
 
-<span style="color:#75715e">;; Inhibit resizing frame</span>
+</code></pre></div><h2 id="フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Inhibit resizing frame</span>
 (setq frame-inhibit-implied-resize <span style="color:#66d9ef">t</span>)
-
-<span style="color:#75715e">;; Faster to disable these here (before they&#39;ve been initialized)</span>
+</code></pre></div><h2 id="これらを無効にする方が速い-初期化される前">これらを無効にする方が速い (初期化される前)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Faster to disable these here (before they&#39;ve been initialized)</span>
 (push <span style="color:#f92672">&#39;</span>(fullscreen <span style="color:#f92672">.</span> maximized) default-frame-alist)
 (push <span style="color:#f92672">&#39;</span>(menu-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
 (push <span style="color:#f92672">&#39;</span>(tool-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
 (push <span style="color:#f92672">&#39;</span>(vertical-scroll-bars) default-frame-alist)
-
-<span style="color:#75715e">;; Suppress flashing at startup</span>
+</code></pre></div><h2 id="起動時の点滅を抑える">起動時の点滅を抑える</h2>
+<p>Emacsが設定ファイルを読み込むプロセスで画面がちらつくのを抑制します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Suppress flashing at startup</span>
 (setq inhibit-redisplay <span style="color:#66d9ef">t</span>)
 (setq inhibit-message <span style="color:#66d9ef">t</span>)
 (add-hook <span style="color:#e6db74">&#39;window-setup-hook</span>
@@ -348,17 +349,14 @@
 			(setq inhibit-redisplay <span style="color:#66d9ef">nil</span>)
 			(setq inhibit-message <span style="color:#66d9ef">nil</span>)
 			(<span style="color:#a6e22e">redisplay</span>)))
-
-<span style="color:#75715e">;; Startup setting</span>
+</code></pre></div><h2 id="起動時の背景色を指定する">起動時の背景色を指定する</h2>
+<p>Emacsが設定を読み込む色段階の背景色は白です。
+自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Startup setting</span>
 (setq inhibit-splash-screen <span style="color:#66d9ef">t</span>)
 (setq inhibit-startup-message <span style="color:#66d9ef">t</span>)
 (setq byte-compile-warnings <span style="color:#f92672">&#39;</span>(cl-functions))
 (custom-set-faces <span style="color:#f92672">&#39;</span>(default ((<span style="color:#66d9ef">t</span> (:background <span style="color:#e6db74">&#34;#282a36&#34;</span>)))))
-
-
-(provide <span style="color:#e6db74">&#39;early-init</span>)
-<span style="color:#75715e">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#75715e">;;; early-init.el ends here</span>
 </code></pre></div>
 
     
