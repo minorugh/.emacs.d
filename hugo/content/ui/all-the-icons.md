@@ -21,7 +21,7 @@ draft = false
 	(display-line-numbers-mode 0)
 	(flymake-mode 0)))
 ```
-## [all-the-icons-dired]
+### all-the-icons-dired
 `dired` でファイルのアイコンを表示します。
 
 * Emacs27以降、MELPA版は白色にしか表示されないので [jtbm37/all-the-icons-dired](https://github.com/jtbm37/all-the-icons-dired) をel-getでインストールしています。
@@ -31,7 +31,7 @@ draft = false
   :after doom-modeline
   :hook (dired-mode-hook . all-the-icons-dired-mode))
 ```
-## [all-the-icons-ivy-rich]
+### all-the-icons-ivy-rich
 `ivy-mode` でアイコン表示をします。
 ```elisp
 (leaf all-the-icons-ivy-rich
@@ -39,7 +39,7 @@ draft = false
   :hook (after-init-hook . all-the-icons-ivy-rich-mode))
 ```
 
-## [all-the-icons-ibuffer]
+### all-the-icons-ibuffer
 `ibuffer-mode` でアイコン表示をします。
 ```elisp
 (leaf all-the-icons-ibuffer

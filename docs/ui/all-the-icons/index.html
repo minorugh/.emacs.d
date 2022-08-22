@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T18:44:03 JST">
+<meta name="revised" content="2022-08-22T18:47:50 JST">
 <title>all-the-icons :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -384,9 +384,13 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#all-the-icons-dired">[all-the-icons-dired]</a></li>
-    <li><a href="#all-the-icons-ivy-rich">[all-the-icons-ivy-rich]</a></li>
-    <li><a href="#all-the-icons-ibuffer">[all-the-icons-ibuffer]</a></li>
+    <li>
+      <ul>
+        <li><a href="#all-the-icons-dired">all-the-icons-dired</a></li>
+        <li><a href="#all-the-icons-ivy-rich">all-the-icons-ivy-rich</a></li>
+        <li><a href="#all-the-icons-ibuffer">all-the-icons-ibuffer</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -422,7 +426,7 @@
 	(interactive)
 	(display-line-numbers-mode <span style="color:#ae81ff">0</span>)
 	(flymake-mode <span style="color:#ae81ff">0</span>)))
-</code></pre></div><h2 id="all-the-icons-dired">[all-the-icons-dired]</h2>
+</code></pre></div><h3 id="all-the-icons-dired">all-the-icons-dired</h3>
 <p><code>dired</code> でファイルのアイコンを表示します。</p>
 <ul>
 <li>Emacs27以降、MELPA版は白色にしか表示されないので <a href="https://github.com/jtbm37/all-the-icons-dired">jtbm37/all-the-icons-dired</a> をel-getでインストールしています。</li>
@@ -431,12 +435,12 @@
   :el-get jtbm37/all-the-icons-dired
   :after doom-modeline
   :hook (dired-mode-hook <span style="color:#f92672">.</span> all-the-icons-dired-mode))
-</code></pre></div><h2 id="all-the-icons-ivy-rich">[all-the-icons-ivy-rich]</h2>
+</code></pre></div><h3 id="all-the-icons-ivy-rich">all-the-icons-ivy-rich</h3>
 <p><code>ivy-mode</code> でアイコン表示をします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf all-the-icons-ivy-rich
   :ensure <span style="color:#66d9ef">t</span>
   :hook (after-init-hook <span style="color:#f92672">.</span> all-the-icons-ivy-rich-mode))
-</code></pre></div><h2 id="all-the-icons-ibuffer">[all-the-icons-ibuffer]</h2>
+</code></pre></div><h3 id="all-the-icons-ibuffer">all-the-icons-ibuffer</h3>
 <p><code>ibuffer-mode</code> でアイコン表示をします。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf all-the-icons-ibuffer
   :ensure <span style="color:#66d9ef">t</span>
