@@ -1,9 +1,8 @@
 +++
-title = "dimmer"
+title = "現在のバッファ以外の輝度を落とす"
 draft = false
 +++
-
-## [dimmer.el] 現在のバッファ以外の輝度を落とす
+* [dimmer.el](https://github.com/gonewest818/dimmer.el) は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
  
 [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
 on/off できるのが快適です。

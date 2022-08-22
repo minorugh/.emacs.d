@@ -1,9 +1,8 @@
 +++
-title = "sprit-window"
+title = "画面分割とdimmerを連携させる"
 draft = false
 +++
-
-### Sprit-window との連携
+`dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
 
 * 同じバッファーを分割したときは、`follow-mode` にする。
 * 画面分割したときは、`dimmer-mode-on` にする。

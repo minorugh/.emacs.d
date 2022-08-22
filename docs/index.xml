@@ -214,18 +214,6 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>dimmer</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/dimmer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/buffer/dimmer/</guid>
-      <description>[dimmer.el] 現在のバッファ以外の輝度を落とす takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。
-(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
-下記の通り発想転換すれば呪縛から逃れることができます。
- 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
-    </item>
-    
-    <item>
       <title>display_01</title>
       <link>https://minorugh.github.io/.emacs.d/display/display_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -261,12 +249,25 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
-      <title>sprit-window</title>
+      <title>現在のバッファ以外の輝度を落とす</title>
+      <link>https://minorugh.github.io/.emacs.d/buffer/dimmer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/buffer/dimmer/</guid>
+      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。
+(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
+下記の通り発想転換すれば呪縛から逃れることができます。
+ 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
+    </item>
+    
+    <item>
+      <title>画面分割とdimmerを連携させる</title>
       <link>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</guid>
-      <description>Sprit-window との連携  同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
+      <description>dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
+ 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
     </item>
     
   </channel>

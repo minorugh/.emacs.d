@@ -231,13 +231,6 @@
 	"content": ""
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",
-	"title": "dimmer",
-	"tags": [],
-	"description": "",
-	"content": "[dimmer.el] 現在のバッファ以外の輝度を落とす takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。\n(leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。\n下記の通り発想転換すれば呪縛から逃れることができます。\n 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 3\u0026#34; . my:split-window-right) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-right () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-right) (follow-mode 1) (dimmer-mode 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (when (one-window-p) (dimmer-mode -1))) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)))  画面分割時に follow-mode もonにしておくと行数の多いバッファーを見るのに便利です。  "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/display/display_01/",
 	"title": "display_01",
 	"tags": [],
@@ -266,16 +259,23 @@
 	"content": "Emacs Configuration はじめに  ここは @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から jekyll を使ってGithub pages にWebサイトを構築しています。 本ドキュメントは、@takaxpさんが公開されている takaxp.github.io/ の記事を下敷きにした模倣版です。 執筆用途に特化してカスタマイズしていますので、コンセプトやキーバイドなどは極めて邪道思想になっています。  動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\n Debian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 27.2.50  デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── el-get/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── tmp/ ├── early-init.el ├── init.el └── mini-init.el "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
-	"title": "sprit-window",
-	"tags": [],
-	"description": "",
-	"content": "Sprit-window との連携  同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",
+	"title": "現在のバッファ以外の輝度を落とす",
+	"tags": [],
+	"description": "",
+	"content": " dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。\n(leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。\n下記の通り発想転換すれば呪縛から逃れることができます。\n 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 3\u0026#34; . my:split-window-right) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-right () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-right) (follow-mode 1) (dimmer-mode 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (when (one-window-p) (dimmer-mode -1))) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)))  画面分割時に follow-mode もonにしておくと行数の多いバッファーを見るのに便利です。  "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
+	"title": "画面分割とdimmerを連携させる",
+	"tags": [],
+	"description": "",
+	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
 }]

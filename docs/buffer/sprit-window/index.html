@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T19:03:57 JST">
-<title>sprit-window :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-22T19:10:21 JST">
+<title>画面分割とdimmerを連携させる :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -224,14 +224,14 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/dimmer/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/dimmer/">
-            dimmer
+            現在のバッファ以外の輝度を落とす
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/sprit-window/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/sprit-window/">
-            sprit-window
+            画面分割とdimmerを連携させる
           </a>
         </div>
     </li>
@@ -369,7 +369,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/buffer/'>バッフアー / ウインドウ</a> > sprit-window
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/buffer/'>バッフアー / ウインドウ</a> > 画面分割とdimmerを連携させる
 
  
 
@@ -382,15 +382,7 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#sprit-window-との連携">Sprit-window との連携</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+		<nav id="TableOfContents"></nav>
       </div>
 	</div>
     
@@ -400,7 +392,7 @@
 
 <div id="body-inner">
   
-    <h1>sprit-window</h1>
+    <h1>画面分割とdimmerを連携させる</h1>
   
 
 
@@ -408,7 +400,7 @@
     
     
     
-<h3 id="sprit-window-との連携">Sprit-window との連携</h3>
+<p><code>dimmer-mode</code> との連携をさせるために、デフォルトのキーバインドをカスタマイズします。</p>
 <ul>
 <li>同じバッファーを分割したときは、<code>follow-mode</code> にする。</li>
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
@@ -467,7 +459,7 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/buffer/dimmer/" title="dimmer"> <i class="fa fa-chevron-left"></i><label>dimmer</label></a>
+<a class="nav nav-prev" href="/.emacs.d/buffer/dimmer/" title="現在のバッファ以外の輝度を落とす"> <i class="fa fa-chevron-left"></i><label>現在のバッファ以外の輝度を落とす</label></a>
     <a class="nav nav-next" href="/.emacs.d/ui/" title="UI" style="margin-right: 0px;"><label>UI</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>

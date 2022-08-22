@@ -135,10 +135,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/display_01/</loc>
   </url>
   
@@ -155,11 +151,15 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/tags/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/tags/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</loc>
   </url>
   
 </urlset>
