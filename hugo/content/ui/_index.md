@@ -15,4 +15,4 @@ disableToc = true
 : モードラインの設定
 
 [all-the-icons]({{< relref "all-the-icons" >}})
-: アイコンを使う設定
+: フォントでアイコン表示をする設定
