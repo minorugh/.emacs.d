@@ -32,7 +32,7 @@
 	"title": "バッフアー / ウインドウ",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ管理関係の設定を記載している\n"
+	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n dimmer 認証情報の取り扱いファイルの設定 multi-windows 認証情報の取り扱いファイルの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/",
@@ -133,6 +133,13 @@
 	"content": "4. カーソル移動  文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。  4.1. [sequential-command.el] バッファー内のカーソル移動  https://github.com/HKey/sequential-command  標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。\n C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。\nMELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。\n(leaf sequential-command :doc \u0026#34;https://bre.is/6Xu4fQs6\u0026#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) 4.2. ウインドウ間のカーソル移動 C-c o でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています．\n画面分割されていないときは、左右分割して新しいウインドウに移動します。\n(defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key \u0026#34;C-q\u0026#34; \u0026#39;other-window-or-split) 4.3. 対応する括弧を選択  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  上記標準機能は使いにくいので my:jump-brace を定義しました。 括弧の先頭と最後へ交互にポイント移動します。\n(defun my:jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key \u0026#34;C-M-9\u0026#34; \u0026#39;my:jump-brace) 4.4. マーク箇所を遡る C-u C-SPC で辿れるようになります。\n(setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) C-x C-x は、直前の編集ポイントと現在のポイントとを行き来できる設定です。\n(defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) 4.5 [expand-region.el] カーソル位置を起点に選択範囲を賢く広げる expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。\n2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",
+	"title": "dimmer",
+	"tags": [],
+	"description": "",
+	"content": "takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。\nglobal 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。下記の通り発想転換すれば呪いから逃れることができます。\n 画面分割を発動するときに dimmer-on 画面分割を閉じるときに dimmer-off  (leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/display/display_01/",
 	"title": "display_01",
 	"tags": [],
@@ -159,6 +166,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Emacs Configuration はじめに  ここは @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から jekyll を使ってGithub pages にWebサイトを構築しています。 本ドキュメントは、@takaxpさんが公開されている takaxp.github.io/ の記事を下敷きにした模倣版です。 執筆用途に特化してカスタマイズしていますので、コンセプトやキーバイドなどは極めて邪道思想になっています。  動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\n Debian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 27.2.50  デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── el-get/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── tmp/ ├── early-init.el ├── init.el └── mini-init.el "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/multi-windows/",
+	"title": "multi-windows",
+	"tags": [],
+	"description": "",
+	"content": "11.2.1. Dimmer-Mode との連携  同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/tags/",
