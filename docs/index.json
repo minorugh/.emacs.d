@@ -274,7 +274,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
-	"title": "5.2. sprit-window-configuration",
+	"title": "5.2. other-window-or-sprit",
 	"tags": [],
 	"description": "",
 	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
