@@ -155,17 +155,17 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/",
-	"title": "2.5. [exec-path-from-shell] 設定をシェルから継承する",
+	"title": "2.5. 設定をシェルから継承する",
 	"tags": [],
 	"description": "",
 	"content": " purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user\u0026rsquo;s shell  外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。自分は、shell-commad や compile-command をよく使うので必須のパッケージです。\n(leaf exec-path-from-shell :ensure t :when (memq window-system \u0026#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/uniquify/",
-	"title": "2.6. [uniquify.el] 同じバッファ名が開かれた場合に区別する",
+	"title": "2.6. 同じバッファ名が開かれた場合に区別する",
 	"tags": [],
 	"description": "",
-	"content": "3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
+	"content": "ビルトインの uniquify を使います。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/global-keybind/",

@@ -107,7 +107,7 @@ $ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。
     </item>
     
     <item>
-      <title>2.5. [exec-path-from-shell] 設定をシェルから継承する</title>
+      <title>2.5. 設定をシェルから継承する</title>
       <link>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -117,12 +117,12 @@ $ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。
     </item>
     
     <item>
-      <title>2.6. [uniquify.el] 同じバッファ名が開かれた場合に区別する</title>
+      <title>2.6. 同じバッファ名が開かれた場合に区別する</title>
       <link>https://minorugh.github.io/.emacs.d/core/uniquify/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
-      <description>3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。
+      <description>ビルトインの uniquify を使います。
 (setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
     </item>
     

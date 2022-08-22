@@ -1,5 +1,5 @@
 +++
-title = "2.5. [exec-path-from-shell] 設定をシェルから継承する"
+title = "2.5. 設定をシェルから継承する"
 draft = false
 +++
 * [purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user's shell](https://github.com/purcell/exec-path-from-shell) 
