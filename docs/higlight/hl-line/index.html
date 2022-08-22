@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T18:32:36 JST">
-<title>2.4. emacsclient を使う :: minoru&#39;s Emacs Configuration</title>
+<title>4.1. [hl-line.el] カーソル行に色をつける :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/core/server/">
+  <body data-url="/.emacs.d/higlight/hl-line/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -349,7 +349,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/core/server.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/hl-line.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -369,7 +369,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.4. emacsclient を使う
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/higlight/'>配色関連</a> > 4.1. [hl-line.el] カーソル行に色をつける
 
  
 
@@ -382,11 +382,7 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#linux-の起動時に-emacsを最小化起動させる">Linux の起動時に Emacsを最小化起動させる</a></li>
-  </ul>
-</nav>
+		<nav id="TableOfContents"></nav>
       </div>
 	</div>
     
@@ -396,7 +392,7 @@
 
 <div id="body-inner">
   
-    <h1>2.4. emacsclient を使う</h1>
+    <h1>4.1. [hl-line.el] カーソル行に色をつける</h1>
   
 
 
@@ -405,21 +401,19 @@
     
     
 <ul>
-<li><code>shell-command</code> で <code>emacsclient</code> をよく使うので、Emacs起動時に <code>server</code> を起動させています。</li>
-<li>重複起動させない設定です。</li>
+<li>
+<p>ビルトインの <code>hl-line</code> を使います.</p>
+</li>
+<li>
+<p><a href="http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html">http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html</a></p>
+</li>
+<li>
+<p><a href="https://www.emacswiki.org/emacs/highlight-current-line.el">https://www.emacswiki.org/emacs/highlight-current-line.el</a></p>
+</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Server start for emacs-client</span>
-(leaf server
-  :require <span style="color:#66d9ef">t</span>
-  :config
-  (unless (server-running-p)
-    (server-start)))
-</code></pre></div><h2 id="linux-の起動時に-emacsを最小化起動させる">Linux の起動時に Emacsを最小化起動させる</h2>
-<p>起動オプションに <code>--iconic</code> を付すことで最小化起動します。</p>
-<p>MENUから「セッションと起動」を立ち上げて「自動開始アプリケーション」に以下を設定すといいです。</p>
-<pre><code class="language-sell" data-lang="sell">$ emacs --iconic
-</code></pre><p>Emacsから最小化するのは、<code>C-z: suspend-frame</code> です。</p>
-
+<p>機能別に<code>hl-line</code> のon/off や色を変えたりという設定もできますが、私の場合は、シンプルに <code>global</code> 設定して色は <code>theme</code> に依存というスタイルです。</p>
+<pre><code class="language-code" data-lang="code">(global-hl-line-mode 1)
+</code></pre>
 
     
     
@@ -430,8 +424,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/core/mozc/" title="2.3. 日本語入力の設定"> <i class="fa fa-chevron-left"></i><label>2.3. 日本語入力の設定</label></a>
-    <a class="nav nav-next" href="/.emacs.d/core/exec-path-from-shell/" title="2.5. [exec-path-from-shell] 設定をシェルから継承する" style="margin-right: 0px;"><label>2.5. [exec-path-from-shell] 設定をシェルから継承する</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/higlight/" title="配色関連"> <i class="fa fa-chevron-left"></i><label>配色関連</label></a>
+    <a class="nav nav-next" href="/.emacs.d/buffer/" title="バッフアー / ウインドウ" style="margin-right: 0px;"><label>バッフアー / ウインドウ</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

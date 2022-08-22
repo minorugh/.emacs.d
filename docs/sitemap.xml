@@ -15,7 +15,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/font/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/</loc>
   </url>
   
   <url>
@@ -123,15 +123,15 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/hl-line/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/cursor/cursor_01/</loc>
   </url>
   
   <url>

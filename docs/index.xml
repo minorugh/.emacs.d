@@ -189,26 +189,25 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
+      <title>4.1. [hl-line.el] カーソル行に色をつける</title>
+      <link>https://minorugh.github.io/.emacs.d/higlight/hl-line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/higlight/hl-line/</guid>
+      <description>  ビルトインの hl-line を使います.
+  http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html
+  https://www.emacswiki.org/emacs/highlight-current-line.el
+  機能別にhl-line のon/off や色を変えたりという設定もできますが、私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。
+(global-hl-line-mode 1) </description>
+    </item>
+    
+    <item>
       <title>all-the-icons</title>
       <link>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</guid>
       <description>(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) </description>
-    </item>
-    
-    <item>
-      <title>cursor</title>
-      <link>https://minorugh.github.io/.emacs.d/cursor/cursor_01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/cursor/cursor_01/</guid>
-      <description>4. カーソル移動  文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。  4.1. [sequential-command.el] バッファー内のカーソル移動  https://github.com/HKey/sequential-command  標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
- C-a を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。
-MELPAから Installできますが、私は HKey氏の改良版を el-get でインストールしました。
-(leaf sequential-command :doc &amp;#34;https://bre.is/6Xu4fQs6&amp;#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) 4.2. ウインドウ間のカーソル移動 C-c o でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています．
-画面分割されていないときは、左右分割して新しいウインドウに移動します。
-(defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key &amp;#34;C-q&amp;#34; &amp;#39;other-window-or-split) 4.3. 対応する括弧を選択  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  上記標準機能は使いにくいので my:jump-brace を定義しました。 括弧の先頭と最後へ交互にポイント移動します。</description>
     </item>
     
     <item>
