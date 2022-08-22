@@ -69,16 +69,6 @@
     </item>
     
     <item>
-      <title>2.6. マウスで選択した領域を自動コピー</title>
-      <link>https://minorugh.github.io/.emacs.d/core/mouse-copy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/mouse-copy/</guid>
-      <description>3.5. マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．
-(setq mouse-drag-copy-region t) </description>
-    </item>
-    
-    <item>
       <title>2.7. グローバルキーバインド</title>
       <link>https://minorugh.github.io/.emacs.d/core/global-keybind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

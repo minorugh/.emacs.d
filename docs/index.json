@@ -168,13 +168,6 @@
 	"content": "3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/core/mouse-copy/",
-	"title": "2.6. マウスで選択した領域を自動コピー",
-	"tags": [],
-	"description": "",
-	"content": "3.5. マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．\n(setq mouse-drag-copy-region t) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/core/global-keybind/",
 	"title": "2.7. グローバルキーバインド",
 	"tags": [],
