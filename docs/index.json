@@ -211,7 +211,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/hl-line/",
-	"title": "4.1. [hl-line.el] カーソル行に色をつける",
+	"title": "4.1. カーソル行に色をつける",
 	"tags": [],
 	"description": "",
 	"content": "  ビルトインの hl-line を使います.\n  http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html\n  https://www.emacswiki.org/emacs/highlight-current-line.el\n  機能別にhl-line のon/off や色を変えたりという設定もできますが、私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。\n(global-hl-line-mode 1) "

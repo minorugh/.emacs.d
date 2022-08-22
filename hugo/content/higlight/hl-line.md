@@ -1,5 +1,5 @@
 +++
-title = "4.1. [hl-line.el] カーソル行に色をつける"
+title = "4.1. カーソル行に色をつける"
 draft = false
 +++
 
