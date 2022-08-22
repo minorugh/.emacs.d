@@ -4,7 +4,7 @@ draft = false
 weight = 1
 +++
 
-```emaxs-lisp
+```emacs-lisp
 (leaf doom-themes
   :ensure t
   :hook (after-init-hook . (lambda () (load-theme 'doom-dracula t)))

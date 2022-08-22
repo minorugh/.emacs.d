@@ -4,7 +4,7 @@
 	"title": "6.1. doom-thmes",
 	"tags": [],
 	"description": "",
-	"content": "(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme 'doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) "
+	"content": "(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme \u0026#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/",
