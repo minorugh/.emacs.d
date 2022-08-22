@@ -1,5 +1,5 @@
 +++
-title = "配色関連"
+title = "強調 / 配色関連"
 draft = false
 pre = "<b>4. </b>"
 weight = 4
