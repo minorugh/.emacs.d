@@ -9,7 +9,6 @@ draft = false
 ```elisp
 ;; Use the X11 clipboard
 (setq select-enable-clipboard  t)
-
 ```
 
 * マウスで選択した領域を自動コピー
