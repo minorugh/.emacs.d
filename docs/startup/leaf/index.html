@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T14:09:15 JST">
+<meta name="revised" content="2022-08-22T14:44:54 JST">
 <title>1.3. leaf.el を使う :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -106,10 +106,59 @@
       <a href="/.emacs.d/core/"><b>2. </b>コア設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/core_01/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/encode/" class="dd-item">
         <div>
-          <a href="/.emacs.d/core/core_01/">
-            core
+          <a href="/.emacs.d/core/encode/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/exec-path-from-shell/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/font/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/font/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/global-keybind/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/global-keybind/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mouse-copy/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/mouse-copy/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mozc/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/mozc/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/server/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/server/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/uniquify/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/uniquify/">
+            
           </a>
         </div>
     </li>
@@ -323,7 +372,9 @@
     
 <p>これまで <code>use-pacage.el</code> を使っていましたが、
 <a href="https://qiita.com/conao3">@conao3</a> さんの開発された <code>leaf.el</code> に触発されて全面的に書き直しました。</p>
-<p><a href="https://qiita.com/conao3/items/347d7e472afd0c58fbd7">Emacs入門から始めるleaf.el入門</a></p>
+<ul>
+<li><a href="https://qiita.com/conao3/items/347d7e472afd0c58fbd7">Emacs入門から始めるleaf.el入門</a></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(eval-and-compile
   (customize-set-variable
    <span style="color:#e6db74">&#39;package-archives</span> <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;org&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;https://orgmode.org/elpa/&#34;</span>)

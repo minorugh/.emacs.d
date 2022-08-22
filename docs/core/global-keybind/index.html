@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T14:44:54 JST">
-<title>1.5. 最小限の emacs起動設定 :: minoru&#39;s Emacs Configuration</title>
+<title> :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/startup/test/">
+  <body data-url="/.emacs.d/core/global-keybind/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -319,7 +319,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/startup/test.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/core/global-keybind.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -339,7 +339,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/startup/'>起動設定</a> > 1.5. 最小限の emacs起動設定
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 
 
  
 
@@ -352,7 +352,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#34-基本キーバインド">3.4. 基本キーバインド</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -362,7 +370,7 @@
 
 <div id="body-inner">
   
-    <h1>1.5. 最小限の emacs起動設定</h1>
+    <h1></h1>
   
 
 
@@ -370,15 +378,35 @@
     
     
     
+<h3 id="34-基本キーバインド">3.4. 基本キーバインド</h3>
 <ul>
-<li>最小限の emacs を起動させるための設定です。</li>
+<li>いつでもどこでも使えるキーバインド周りの設定をここにまとめています。</li>
 </ul>
-<p><a href="https://github.com/minorugh/dotfiles/blob/main/.emacs.d/test.el"><code>test.el</code></a> は、
-新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。</p>
-<p>以下を <code>.zshrc</code> または <code>.coderc</code> に記述し反映させたのち、シェルから <code>eq</code> と入力することで起動することがでます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">alias eq <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;emacs -q -l ~/.emacs.d/test.el&#39;</span>
-</code></pre></div><p>ファイルの PATH は、ご自分の環境に応じて修正が必要です。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Change global key bind</span>
+(leaf cus-global-keybind
+  :bind ((<span style="color:#e6db74">&#34;C-x C-x&#34;</span> <span style="color:#f92672">.</span> my:exchange-point-and-mark)
+		 (<span style="color:#e6db74">&#34;M-w&#34;</span> <span style="color:#f92672">.</span> clipboard-kill-ring-save)
+		 (<span style="color:#e6db74">&#34;C-w&#34;</span> <span style="color:#f92672">.</span> my:kill-whole-line-or-region)
+		 (<span style="color:#e6db74">&#34;s-c&#34;</span> <span style="color:#f92672">.</span> clipboard-kill-ring-save)
+		 (<span style="color:#e6db74">&#34;s-v&#34;</span> <span style="color:#f92672">.</span> clipboard-yank)
+		 (<span style="color:#e6db74">&#34;M-/&#34;</span> <span style="color:#f92672">.</span> kill-this-buffer)))
 
+<span style="color:#75715e">;; Overwrite `C-w&#39; to the whole-line-or-region</span>
+(defun my:kill-whole-line-or-region ()
+  <span style="color:#e6db74">&#34;If the region is active, to kill region.
+</span><span style="color:#e6db74">If the region is inactive, to kill whole line.&#34;</span>
+  (interactive)
+  (if (use-region-p)
+	  (clipboard-kill-region (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>))
+    (kill-whole-line)))
+
+<span style="color:#75715e">;; Return to last edit point</span>
+(defun my:exchange-point-and-mark ()
+  <span style="color:#e6db74">&#34;No mark active </span><span style="color:#e6db74">`exchange-point-and-mark&#39;</span><span style="color:#e6db74">.&#34;</span>
+  (interactive)
+  (exchange-point-and-mark)
+  (deactivate-mark))
+</code></pre></div>
 
     
     
@@ -389,8 +417,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/startup/init-loader/" title="1.4. init-loader.el を使う"> <i class="fa fa-chevron-left"></i><label>1.4. init-loader.el を使う</label></a>
-    <a class="nav nav-next" href="/.emacs.d/core/" title="コア設定" style="margin-right: 0px;"><label>コア設定</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/core/font/" title=""> <i class="fa fa-chevron-left"></i><label></label></a>
+    <a class="nav nav-next" href="/.emacs.d/core/mouse-copy/" title="" style="margin-right: 0px;"><label></label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -36,8 +36,7 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       
       <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
       <description>これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。
-Emacs入門から始めるleaf.el入門
-(eval-and-compile (customize-set-variable &amp;#39;package-archives &amp;#39;((&amp;#34;org&amp;#34; . &amp;#34;https://orgmode.org/elpa/&amp;#34;) (&amp;#34;melpa&amp;#34; . &amp;#34;https://melpa.org/packages/&amp;#34;) (&amp;#34;gnu&amp;#34; . &amp;#34;https://elpa.gnu.org/packages/&amp;#34;))) (package-initialize) (unless (package-installed-p &amp;#39;leaf) (package-refresh-contents) (package-install &amp;#39;leaf)) (leaf leaf-keywords :ensure t :init (leaf hydra :ensure t) (leaf el-get :ensure t) :config (leaf-keywords-init))) </description>
+ Emacs入門から始めるleaf.el入門  (eval-and-compile (customize-set-variable &amp;#39;package-archives &amp;#39;((&amp;#34;org&amp;#34; . &amp;#34;https://orgmode.org/elpa/&amp;#34;) (&amp;#34;melpa&amp;#34; . &amp;#34;https://melpa.org/packages/&amp;#34;) (&amp;#34;gnu&amp;#34; . &amp;#34;https://elpa.gnu.org/packages/&amp;#34;))) (package-initialize) (unless (package-installed-p &amp;#39;leaf) (package-refresh-contents) (package-install &amp;#39;leaf)) (leaf leaf-keywords :ensure t :init (leaf hydra :ensure t) (leaf el-get :ensure t) :config (leaf-keywords-init))) </description>
     </item>
     
     <item>
