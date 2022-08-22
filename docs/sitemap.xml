@@ -3,11 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/ui/doom-themes/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/core/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
   </url>
   
   <url>
@@ -127,7 +139,11 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</loc>
   </url>
   
   <url>
@@ -135,27 +151,11 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/display_01/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/doom-themes/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</loc>
   </url>
   
   <url>

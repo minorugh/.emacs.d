@@ -1,5 +1,5 @@
 +++
-title = "sprit-window-configuration"
+title = "5.2. sprit-window-configuration"
 draft = false
 +++
 `dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。

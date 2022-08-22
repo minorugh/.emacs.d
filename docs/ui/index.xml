@@ -7,19 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/ui/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>all-the-icons</title>
-      <link>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</link>
+      <title>6.1. doom-thmes</title>
+      <link>https://minorugh.github.io/.emacs.d/ui/doom-themes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</guid>
-      <description>all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
- domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
-(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。
- Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) all-the-icons-ivy-rich ivy-mode でアイコン表示をします。</description>
+      <guid>https://minorugh.github.io/.emacs.d/ui/doom-themes/</guid>
+      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
     </item>
     
     <item>
-      <title>doom-modeline</title>
+      <title>6.2. doom-modeline</title>
       <link>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -28,12 +25,15 @@
     </item>
     
     <item>
-      <title>doom-thmes</title>
-      <link>https://minorugh.github.io/.emacs.d/ui/doom-themes/</link>
+      <title>6.3. all-the-icons</title>
+      <link>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/ui/doom-themes/</guid>
-      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
+      <guid>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</guid>
+      <description>all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
+ domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
+(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。
+ Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) all-the-icons-ivy-rich ivy-mode でアイコン表示をします。</description>
     </item>
     
   </channel>

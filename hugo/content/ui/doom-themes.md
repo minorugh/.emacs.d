@@ -1,6 +1,7 @@
 +++
-title = "doom-thmes"
+title = "6.1. doom-thmes"
 draft = false
+weight = 1
 +++
 
 ```emaxs-lisp
