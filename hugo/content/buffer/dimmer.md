@@ -7,7 +7,9 @@ draft = false
 [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
 on/off できるのが快適です。
 
-`global` 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。下記の通り発想転換すれば呪いから逃れることができます。
+`global` 設定にすると多くのシーンでDisable対策の設定が必要になり面倒です。
+
+下記の通り発想転換すれば呪縛から逃れることができます。
 
 * 画面分割を発動するときに `dimmer-on`
 * 画面分割を閉じるときに `dimmer-off`
