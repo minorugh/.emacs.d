@@ -10,7 +10,9 @@ disableToc = true
 
 [doom-themes]({{< relref "doom-themes" >}})
 : テーマの設定
+
 [doom-modeline]({{< relref "doom-modeline" >}})
 : モードラインの設定
+
 [all-the-icons]({{< relref "all-the-icons" >}})
 : アイコンを使う設定
