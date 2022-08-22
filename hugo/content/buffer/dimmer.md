@@ -56,6 +56,7 @@ on/off できるのが快適です。
 	(interactive)
 	(when (one-window-p)
 	  (split-window-horizontally)
+	  (follow-mode 1)
 	  (dimmer-mode 1))
 	(other-window 1))
 
@@ -63,12 +64,14 @@ on/off できるのが快適です。
 	"With turn on dimmer."
 	(interactive)
 	(split-window-right)
+	(follow-mode 1)
 	(dimmer-mode 1))
 
   (defun my:split-window-below ()
 	"With turn on dimmer."
 	(interactive)
 	(split-window-below)
+	(follow-mode 1)
 	(dimmer-mode 1))
 
   (defun my:delete-window ()
@@ -89,23 +92,5 @@ on/off できるのが快適です。
 	(interactive)
 	(mapc 'kill-buffer (delq (current-buffer) (buffer-list)))
 	(message "killl-other-buffers!")))
-
-
-(leaf *my:scroll-other-window
-  :bind (("<next>" . my:scroll-other-window)
-		 ("<prior>" . my:scroll-other-window-down))
-  :init
-  (defun my:scroll-other-window ()
-	"If there are two windows, `scroll-other-window'."
-	(interactive)
-	(when (one-window-p)
-	  (scroll-up))
-	(scroll-other-window))
-
-  (defun my:scroll-other-window-down ()
-	"If there are two windows, `scroll-other-window-down'."
-	(interactive)
-	(when (one-window-p)
-	  (scroll-down))
-	(scroll-other-window-down)))
 ```
+* 画面分割時に `follow-mode` もonにしておくと行数の多いバッファーを見るのに便利です。
