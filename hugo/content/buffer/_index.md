@@ -11,5 +11,5 @@ disableToc = true
 [dimmer]({{< relref "dimmer" >}})
 : 認証情報の取り扱いファイルの設定
 
-[multi-windows]({{< relref "multi-windows" >}})
+[sprit-window]({{< relref "sprit-window" >}})
 : 認証情報の取り扱いファイルの設定

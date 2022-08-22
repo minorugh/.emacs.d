@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-22T10:33:42 JST">
-<title>外部連携ツール設定 :: minoru&#39;s Emacs Configuration</title>
+<title>sprit-window :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/external-tool/">
+  <body data-url="/.emacs.d/buffer/sprit-window/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -249,7 +249,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/external-tool/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/buffer/sprit-window.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -266,7 +266,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > 外部連携ツール設定
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/buffer/'>バッフアー / ウインドウ</a> > sprit-window
+
+ 
 
  
 
@@ -277,7 +282,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -287,7 +300,7 @@
 
 <div id="body-inner">
   
-    <h1>外部連携ツール設定</h1>
+    <h1>sprit-window</h1>
   
 
 
@@ -295,10 +308,55 @@
     
     
     
+<h4 id="1121-dimmer-mode-との連携">11.2.1. Dimmer-Mode との連携</h4>
+<ul>
+<li>同じバッファーを分割したときは、<code>follow-mode</code> にする。</li>
+<li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
+<li>画面分割を閉じたときは、<code>dimmer-mode-off</code> にする。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf *sprit-window-configurations
+  :bind ((<span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#f92672">.</span> other-window-or-split)
+		 (<span style="color:#e6db74">&#34;C-x 2&#34;</span> <span style="color:#f92672">.</span> my:split-window-below)
+		 (<span style="color:#e6db74">&#34;C-x 1&#34;</span> <span style="color:#f92672">.</span> my:delete-other-windows)
+		 (<span style="color:#e6db74">&#34;C-x 0&#34;</span> <span style="color:#f92672">.</span> my:delete-window)
+		 (<span style="color:#e6db74">&#34;&lt;C-return&gt;&#34;</span> <span style="color:#f92672">.</span> window-swap-states))
+  :init
+  (defun other-window-or-split ()
+	<span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
+	(interactive)
+	(when (one-window-p)
+	  (split-window-horizontally)
+	  (follow-mode <span style="color:#ae81ff">1</span>)
+	  (dimmer-mode <span style="color:#ae81ff">1</span>))
+	(other-window <span style="color:#ae81ff">1</span>))
 
-<p>ここでは外部のサービスと連携するようなやつをまとめています</p>
+  (defun my:split-window-below ()
+	<span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
+	(interactive)
+	(split-window-below)
+	(follow-mode <span style="color:#ae81ff">1</span>)
+	(dimmer-mode <span style="color:#ae81ff">1</span>))
 
+  (defun my:delete-window ()
+	<span style="color:#e6db74">&#34;With turn off dimmer.&#34;</span>
+	(interactive)
+	(delete-window)
+	(follow-mode <span style="color:#ae81ff">-1</span>)
+	(dimmer-mode <span style="color:#ae81ff">-1</span>))
 
+  (defun my:delete-other-windows ()
+	<span style="color:#e6db74">&#34;With turn off dimmer.&#34;</span>
+	(interactive)
+	(delete-other-windows)
+	(follow-mode <span style="color:#ae81ff">-1</span>)
+	(dimmer-mode <span style="color:#ae81ff">-1</span>))
+
+  (defun kill-other-buffers ()
+	<span style="color:#e6db74">&#34;Kill all other buffers.&#34;</span>
+	(interactive)
+	(<span style="color:#a6e22e">mapc</span> <span style="color:#e6db74">&#39;kill-buffer</span> (<span style="color:#a6e22e">delq</span> (<span style="color:#a6e22e">current-buffer</span>) (<span style="color:#a6e22e">buffer-list</span>)))
+	(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;killl-other-buffers!&#34;</span>))
+</code></pre></div>
 
     
     
@@ -309,8 +367,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/programming/" title="開発サポート"> <i class="fa fa-chevron-left"></i><label>開発サポート</label></a>
-    <a class="nav nav-next" href="/.emacs.d/memo-tool/" title="メモ環境" style="margin-right: 0px;"><label>メモ環境</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/buffer/dimmer/" title="dimmer"> <i class="fa fa-chevron-left"></i><label>dimmer</label></a>
+    <a class="nav nav-next" href="/.emacs.d/ui/" title="UI" style="margin-right: 0px;"><label>UI</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

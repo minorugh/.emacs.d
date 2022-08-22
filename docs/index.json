@@ -32,7 +32,7 @@
 	"title": "バッフアー / ウインドウ",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n dimmer 認証情報の取り扱いファイルの設定 multi-windows 認証情報の取り扱いファイルの設定  "
+	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n dimmer 認証情報の取り扱いファイルの設定 sprit-window 認証情報の取り扱いファイルの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/ui/",
@@ -168,8 +168,8 @@
 	"content": "Emacs Configuration はじめに  ここは @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から jekyll を使ってGithub pages にWebサイトを構築しています。 本ドキュメントは、@takaxpさんが公開されている takaxp.github.io/ の記事を下敷きにした模倣版です。 執筆用途に特化してカスタマイズしていますので、コンセプトやキーバイドなどは極めて邪道思想になっています。  動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\n Debian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 27.2.50  デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── el-get/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── tmp/ ├── early-init.el ├── init.el └── mini-init.el "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/buffer/multi-windows/",
-	"title": "multi-windows",
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
+	"title": "sprit-window",
 	"tags": [],
 	"description": "",
 	"content": "11.2.1. Dimmer-Mode との連携  同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "

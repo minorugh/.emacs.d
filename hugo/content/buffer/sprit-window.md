@@ -1,5 +1,5 @@
 +++
-title = "multi-windows"
+title = "sprit-window"
 draft = false
 +++
 

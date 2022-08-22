@@ -18,11 +18,11 @@ global 設定にすると多くのシーンでDisable対策の設定が必要に
     </item>
     
     <item>
-      <title>multi-windows</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/multi-windows/</link>
+      <title>sprit-window</title>
+      <link>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/multi-windows/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</guid>
       <description>11.2.1. Dimmer-Mode との連携  同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
     </item>
     
