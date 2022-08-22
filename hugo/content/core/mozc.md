@@ -1,5 +1,5 @@
 +++
-title = "2.3. 日本語入力の設定"
+title = "2.3. Emacs-mozc"
 draft = false
 +++
 

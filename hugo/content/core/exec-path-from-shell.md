@@ -1,10 +1,11 @@
 +++
-title = "2.5. 設定をシェルから継承する"
+title = "2.5. exec-path-from-shell"
 draft = false
 +++
-* [purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user's shell](https://github.com/purcell/exec-path-from-shell) 
+* `exec-path-from-shell` は、シェルに設定した `PATH` の情報を継承して `exec-path` や `PATH` を設定してくれます。
+* 自分は、`shell-commad` や `compile-command` をよく使うので必須のパッケージです。
 
-外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 `exec-path-from-shell` は、シェルに設定した `PATH` の情報を継承して `exec-path` や `PATH` を設定してくれます。自分は、`shell-commad` や `compile-command` をよく使うので必須のパッケージです。
+[purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user's shell](https://github.com/purcell/exec-path-from-shell) 
 
 ```elisp
 (leaf exec-path-from-shell

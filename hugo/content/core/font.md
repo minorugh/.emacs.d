@@ -1,5 +1,5 @@
 +++
-title = "2.2. フォント設定"
+title = "2.2. Font 設定"
 draft = false
 +++
 * GUI / CUI 共通で `Cica` を使っています。

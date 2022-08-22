@@ -1,5 +1,5 @@
 +++
-title = "画面分割とdimmerを連携させる"
+title = "sprit-window-configuration"
 draft = false
 +++
 `dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。

@@ -1,5 +1,5 @@
 +++
-title = "2.7. グローバルキーバインド"
+title = "2.7. Gloal Key bind"
 draft = false
 +++
 グローバルキーバインドを自分好みにカスタマイズしました。 
@@ -41,4 +41,5 @@ If the region is inactive, to kill whole line."
 	  (clipboard-kill-region (region-beginning) (region-end))
     (kill-whole-line)))
 ```
+
 

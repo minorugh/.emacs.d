@@ -63,7 +63,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.1. 言語と文字コード</title>
+      <title>2.1. Language / coding-system</title>
       <link>https://minorugh.github.io/.emacs.d/core/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -73,7 +73,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.2. フォント設定</title>
+      <title>2.2. Font 設定</title>
       <link>https://minorugh.github.io/.emacs.d/core/font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -85,7 +85,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.3. 日本語入力の設定</title>
+      <title>2.3. Emacs-mozc</title>
       <link>https://minorugh.github.io/.emacs.d/core/mozc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -96,7 +96,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.4. emacsclient を使う</title>
+      <title>2.4. server / emacsclient</title>
       <link>https://minorugh.github.io/.emacs.d/core/server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -107,27 +107,27 @@ $ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。
     </item>
     
     <item>
-      <title>2.5. 設定をシェルから継承する</title>
+      <title>2.5. exec-path-from-shell</title>
       <link>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</guid>
-      <description> purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell  外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。自分は、shell-commad や compile-command をよく使うので必須のパッケージです。
+      <description> exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。 自分は、shell-commad や compile-command をよく使うので必須のパッケージです。  purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell
 (leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
     </item>
     
     <item>
-      <title>2.6. 同じバッファ名が開かれた場合に区別する</title>
+      <title>2.6. niguify</title>
       <link>https://minorugh.github.io/.emacs.d/core/uniquify/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
-      <description>ビルトインの uniquify を使います。
+      <description>ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。
 (setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
     </item>
     
     <item>
-      <title>2.7. グローバルキーバインド</title>
+      <title>2.7. Gloal Key bind</title>
       <link>https://minorugh.github.io/.emacs.d/core/global-keybind/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -214,6 +214,18 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
+      <title>dimmer-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/buffer/dimmer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/buffer/dimmer/</guid>
+      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。
+(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
+下記の通り発想転換すれば呪縛から逃れることができます。
+ 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
+    </item>
+    
+    <item>
       <title>display_01</title>
       <link>https://minorugh.github.io/.emacs.d/display/display_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -249,19 +261,7 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
-      <title>現在のバッファ以外の輝度を落とす</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/dimmer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/buffer/dimmer/</guid>
-      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。
-(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
-下記の通り発想転換すれば呪縛から逃れることができます。
- 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
-    </item>
-    
-    <item>
-      <title>画面分割とdimmerを連携させる</title>
+      <title>sprit-window-configuration</title>
       <link>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

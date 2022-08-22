@@ -127,49 +127,49 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",
-	"title": "2.1. 言語と文字コード",
+	"title": "2.1. Language / coding-system",
 	"tags": [],
 	"description": "",
 	"content": "シンプルにこれだけです。\n(set-language-environment \u0026#34;Japanese\u0026#34;) (prefer-coding-system \u0026#39;utf-8) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/font/",
-	"title": "2.2. フォント設定",
+	"title": "2.2. Font 設定",
 	"tags": [],
 	"description": "",
 	"content": " GUI / CUI 共通で Cica を使っています。  Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。\n プログラミング用日本語等幅フォント Cica Think Pad を2台使っていますので、環境を取得して設定を変えています。  フォントの設定  メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。  (add-to-list \u0026#39;default-frame-alist \u0026#39;(font . \u0026#34;Cica-18\u0026#34;)) ;; for sub-machine (when (string-match \u0026#34;x250\u0026#34; (code-command-to-string \u0026#34;uname -n\u0026#34;)) (add-to-list \u0026#39;default-frame-alist \u0026#39;(font . \u0026#34;Cica-15\u0026#34;))) Cicaフォントのインストール   Linux 環境でのインストールの方法です。\n  オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。\n   Cica-v5.0.1のダウンロードページから、 (Cica-v5.0.1.zip) をダウンロードします。 上記サイトの存続は怪しいので自分のサイトにも置いておきます。 Cica-v5.0.1.zip  zipファイルを展開します。  $ unzip Cica-v5.0.1.zip LICENSE.txtを確認し、ファイルを /usr/local/share/fonts/ または ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf $ fc-list | grep Cica /home/minoru/.fonts/Cica-v5.0.1/Cica-Regular.ttf: Cica:style=Regular /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-Regular.ttf: Cica:style=Regular /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-RegularItalic.ttf: Cica:style=Italic /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-Bold.ttf: Cica:style=Bold /home/minoru/.fonts/Cica-v5.0.1/Cica-BoldItalic.ttf: Cica:style=Bold Italic /home/minoru/.fonts/Cica-v5.0.1/Cica-Bold.ttf: Cica:style=Bold /home/minoru/.fonts/Cica-v5.0.1/noemoji/Cica-BoldItalic.ttf: Cica:style=Bold Italic /home/minoru/.fonts/Cica-v5.0.1/Cica-RegularItalic.ttf: Cica:style=Italic "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/mozc/",
-	"title": "2.3. 日本語入力の設定",
+	"title": "2.3. Emacs-mozc",
 	"tags": [],
 	"description": "",
 	"content": " Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。\n! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。\n(leaf mozc :ensure t :bind ((\u0026#34;\u0026lt;hiragana-katakana\u0026gt;\u0026#34; . toggle-input-method) (:mozc-mode-map (\u0026#34;,\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;、\u0026#34;))) (\u0026#34;.\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;。\u0026#34;))) (\u0026#34;?\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;？\u0026#34;))) (\u0026#34;!\u0026#34; . (lambda () (interactive) (mozc-insert-str \u0026#34;！\u0026#34;))))) :custom `((default-input-method . \u0026#34;japanese-mozc\u0026#34;) (mozc-helper-program-name . \u0026#34;mozc_emacs_helper\u0026#34;) (mozc-leim-title . \u0026#34;かな\u0026#34;)) :config (defun mozc-insert-str (str) (mozc-handle-event \u0026#39;enter) (insert str)) (defadvice toggle-input-method (around toggle-input-method-around activate) \u0026#34;Input method function in key-chord.el not to be nil.\u0026#34; (let ((input-method-function-save input-method-function)) ad-do-it (setq input-method-function input-method-function-save)))) Emacsから単語登録する Emacsで文章編集中にShellコマンドで mozc-tool を起動し、Emacsを閉じることなく単語登録できるようにしています。\n(leaf *cus-mozc-tool :bind ((\u0026#34;s-t\u0026#34; . my:mozc-dictionary-tool) (\u0026#34;s-d\u0026#34; . my:mozc-word-regist)) :init (defun my:mozc-dictionary-tool () \u0026#34;Open `mozc-dictipnary-tool\u0026#39;.\u0026#34; (interactive) (compile \u0026#34;/usr/lib/mozc/mozc_tool --mode=dictionary_tool\u0026#34;) (delete-other-windows)) (defun my:mozc-word-regist () \u0026#34;Open `mozc-word-regist\u0026#39;.\u0026#34; (interactive) (compile \u0026#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog\u0026#34;) (delete-other-windows))) Mozc 辞書の共有 Linux環境でMozcを使うメリットは辞書の共有です。\n Emacs以外のコンテンツでも同じMozc辞書を使うのでEmacsから単語登録しておけば全てのコンテンツで有効になる。 辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンで共有できる。  Dropboxで辞書を共有する やり方は簡単です。\n Dropboxに ~/Dropbox/mozc フォルダを新規作成します。 つぎに、~/.mozc フォルダーを ~/Dropboc/mozc/ へコピーします。 最後に、~/.mozc を削除してDropboxにコピーした .mozc のシンボリックファイルを ~/ へ貼り付けます。  makefile で自動化するなら次のようになるかと思います。\nmozc_copy: mkdir -p ~/Dropbox/mozc cp -r ~/.mozc/ ~/Dropbox/mozc/ test -L ~/.mozc || rm -rf ~/.mozc ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc 辞書共有の課題 Dropboxに保存された辞書ファイルを複数マシンで同時アクセスした場合、複製（競合コピー）がいっぱい作られるという問題があります。 Google Driveは大丈夫という情報もありますが試せてません。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/server/",
-	"title": "2.4. emacsclient を使う",
+	"title": "2.4. server / emacsclient",
 	"tags": [],
 	"description": "",
 	"content": " shell-command で emacsclient をよく使うので、Emacs起動時に server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) Linux の起動時に Emacsを最小化起動させる 起動オプションに --iconic を付すことで最小化起動します。\nMENUから「セッションと起動」を立ち上げて「自動開始アプリケーション」に以下を設定すといいです。\n$ emacs --iconic Emacsから最小化するのは、C-z: suspend-frame です。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/",
-	"title": "2.5. 設定をシェルから継承する",
+	"title": "2.5. exec-path-from-shell",
 	"tags": [],
 	"description": "",
-	"content": " purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user\u0026rsquo;s shell  外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。自分は、shell-commad や compile-command をよく使うので必須のパッケージです。\n(leaf exec-path-from-shell :ensure t :when (memq window-system \u0026#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) "
+	"content": " exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。 自分は、shell-commad や compile-command をよく使うので必須のパッケージです。  purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user\u0026rsquo;s shell\n(leaf exec-path-from-shell :ensure t :when (memq window-system \u0026#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/uniquify/",
-	"title": "2.6. 同じバッファ名が開かれた場合に区別する",
+	"title": "2.6. niguify",
 	"tags": [],
 	"description": "",
-	"content": "ビルトインの uniquify を使います。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
+	"content": "ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/global-keybind/",
-	"title": "2.7. グローバルキーバインド",
+	"title": "2.7. Gloal Key bind",
 	"tags": [],
 	"description": "",
 	"content": "グローバルキーバインドを自分好みにカスタマイズしました。 前準備として以下を設定しておきます。\n クリップボードを使えるようにする  ;; Use the X11 clipboard (setq select-enable-clipboard t)  マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．  (setq mouse-drag-copy-region t) グローバルキーバインドをカスタマイズする  C-w は、kill-ring-save に割り当てられたものですが、region 選択されていないときは、一行削除になるようにカスタマイズしてます。 C-x k の kill-buffer は、yes/no 確認されるのが煩わしいので、確認なしの kill-this-buffer を愛用しています。  ;; Change global key bind (leaf cus-global-keybind :bind ((\u0026#34;M-w\u0026#34; . clipboard-kill-ring-save) (\u0026#34;C-w\u0026#34; . my:kill-whole-line-or-region) (\u0026#34;s-c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s-v\u0026#34; . clipboard-yank) (\u0026#34;M-/\u0026#34; . kill-this-buffer))) ;; Overwrite `C-w\u0026#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () \u0026#34;If the region is active, to kill region. If the region is inactive, to kill whole line.\u0026#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) "
@@ -231,6 +231,13 @@
 	"content": ""
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",
+	"title": "dimmer-mode",
+	"tags": [],
+	"description": "",
+	"content": " dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。\n(leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。\n下記の通り発想転換すれば呪縛から逃れることができます。\n 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 3\u0026#34; . my:split-window-right) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-right () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-right) (follow-mode 1) (dimmer-mode 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (when (one-window-p) (dimmer-mode -1))) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)))  画面分割時に follow-mode もonにしておくと行数の多いバッファーを見るのに便利です。  "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/display/display_01/",
 	"title": "display_01",
 	"tags": [],
@@ -259,23 +266,16 @@
 	"content": "Emacs Configuration はじめに  ここは @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から jekyll を使ってGithub pages にWebサイトを構築しています。 本ドキュメントは、@takaxpさんが公開されている takaxp.github.io/ の記事を下敷きにした模倣版です。 執筆用途に特化してカスタマイズしていますので、コンセプトやキーバイドなどは極めて邪道思想になっています。  動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\n Debian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 27.2.50  デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── el-get/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── tmp/ ├── early-init.el ├── init.el └── mini-init.el "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
+	"title": "sprit-window-configuration",
+	"tags": [],
+	"description": "",
+	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/buffer/dimmer/",
-	"title": "現在のバッファ以外の輝度を落とす",
-	"tags": [],
-	"description": "",
-	"content": " dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 on/off できるのが快適です。\n(leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。\n下記の通り発想転換すれば呪縛から逃れることができます。\n 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 3\u0026#34; . my:split-window-right) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-right () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-right) (follow-mode 1) (dimmer-mode 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (when (one-window-p) (dimmer-mode -1))) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)))  画面分割時に follow-mode もonにしておくと行数の多いバッファーを見るのに便利です。  "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/buffer/sprit-window/",
-	"title": "画面分割とdimmerを連携させる",
-	"tags": [],
-	"description": "",
-	"content": "dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。\n 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
 }]

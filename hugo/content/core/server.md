@@ -1,5 +1,5 @@
 +++
-title = "2.4. emacsclient を使う"
+title = "2.4. server / emacsclient"
 draft = false
 +++
 * `shell-command` で `emacsclient` をよく使うので、Emacs起動時に `server` を起動させています。

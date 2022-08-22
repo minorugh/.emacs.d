@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T19:10:21 JST">
-<title>2.6. 同じバッファ名が開かれた場合に区別する :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-22T19:25:23 JST">
+<title>2.6. niguify :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -109,49 +109,49 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/encode/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/encode/">
-            2.1. 言語と文字コード
+            2.1. Language / coding-system
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/font/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/font/">
-            2.2. フォント設定
+            2.2. Font 設定
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mozc/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/mozc/">
-            2.3. 日本語入力の設定
+            2.3. Emacs-mozc
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/server/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/server/">
-            2.4. emacsclient を使う
+            2.4. server / emacsclient
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/exec-path-from-shell/">
-            2.5. 設定をシェルから継承する
+            2.5. exec-path-from-shell
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/uniquify/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/uniquify/">
-            2.6. 同じバッファ名が開かれた場合に区別する
+            2.6. niguify
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/global-keybind/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/global-keybind/">
-            2.7. グローバルキーバインド
+            2.7. Gloal Key bind
           </a>
         </div>
     </li>
@@ -224,14 +224,14 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/dimmer/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/dimmer/">
-            現在のバッファ以外の輝度を落とす
+            dimmer-mode
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer/sprit-window/" class="dd-item">
         <div>
           <a href="/.emacs.d/buffer/sprit-window/">
-            画面分割とdimmerを連携させる
+            sprit-window-configuration
           </a>
         </div>
     </li>
@@ -369,7 +369,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.6. 同じバッファ名が開かれた場合に区別する
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.6. niguify
 
  
 
@@ -392,7 +392,7 @@
 
 <div id="body-inner">
   
-    <h1>2.6. 同じバッファ名が開かれた場合に区別する</h1>
+    <h1>2.6. niguify</h1>
   
 
 
@@ -400,7 +400,7 @@
     
     
     
-<p>ビルトインの <code>uniquify</code> を使います。</p>
+<p>ビルトインの <code>uniquify</code> は、同じバッファ名が開かれた場合に区別する設定です。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(setq uniquify-buffer-name-style <span style="color:#e6db74">&#39;post-forward-angle-brackets</span>)
 </code></pre></div>
 
@@ -413,8 +413,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/core/exec-path-from-shell/" title="2.5. 設定をシェルから継承する"> <i class="fa fa-chevron-left"></i><label>2.5. 設定をシェルから継承する</label></a>
-    <a class="nav nav-next" href="/.emacs.d/core/global-keybind/" title="2.7. グローバルキーバインド" style="margin-right: 0px;"><label>2.7. グローバルキーバインド</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/core/exec-path-from-shell/" title="2.5. exec-path-from-shell"> <i class="fa fa-chevron-left"></i><label>2.5. exec-path-from-shell</label></a>
+    <a class="nav nav-next" href="/.emacs.d/core/global-keybind/" title="2.7. Gloal Key bind" style="margin-right: 0px;"><label>2.7. Gloal Key bind</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
