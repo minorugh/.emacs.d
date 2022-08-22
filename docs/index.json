@@ -148,10 +148,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/server/",
-	"title": "2.4. Server 機能を使う",
+	"title": "2.4. emacsclient を使う",
 	"tags": [],
 	"description": "",
-	"content": ";; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
+	"content": " shell-command で emacsclient をよく使うのでEmacs起動時に server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/",
