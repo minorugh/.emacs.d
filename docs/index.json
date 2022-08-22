@@ -161,6 +161,13 @@
 	"content": " purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user\u0026rsquo;s shell  外部プログラムのサポートを得て動くパッケージは、設定の過程で「プログラムが見つからない」と怒られることがしばしばあります。 exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。自分は、shell-commad や compile-command をよく使うので必須のパッケージです。\n(leaf exec-path-from-shell :ensure t :when (memq window-system \u0026#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/core/uniquify/",
+	"title": "2.6. [uniquify.el] 同じバッファ名が開かれた場合に区別する",
+	"tags": [],
+	"description": "",
+	"content": "3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/core/mouse-copy/",
 	"title": "2.6. マウスで選択した領域を自動コピー",
 	"tags": [],
@@ -168,15 +175,8 @@
 	"content": "3.5. マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．\n(setq mouse-drag-copy-region t) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/core/uniquify/",
-	"title": "2.7. [uniquify.el] 同じバッファ名が開かれた場合に区別する",
-	"tags": [],
-	"description": "",
-	"content": "3.9. [uniquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify を使います。モードラインの表示が変わります。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/core/global-keybind/",
-	"title": "2.8. グローバルキーバインド",
+	"title": "2.7. グローバルキーバインド",
 	"tags": [],
 	"description": "",
 	"content": "グローバルキーバインドを自分好みにカスタマイズしました。 前準備として以下を設定しておきます。\n クリップボードを使えるようにする  ;; Use the X11 clipboard (setq select-enable-clipboard t)  マウスで選択した領域を自動コピー マウスで選択すると，勝手にペーストボードにデータが流れます．  (setq mouse-drag-copy-region t) グローバルキーバインドをカスタマイズする  C-w は、kill-ring-save に割り当てられたものですが、region 選択されていないときは、一行削除になるようにカスタマイズしてます。 C-x k の kill-buffer は、yes/no 確認されるのが煩わしいので、確認なしの kill-this-buffer を愛用しています。  ;; Change global key bind (leaf cus-global-keybind :bind ((\u0026#34;M-w\u0026#34; . clipboard-kill-ring-save) (\u0026#34;C-w\u0026#34; . my:kill-whole-line-or-region) (\u0026#34;s-c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s-v\u0026#34; . clipboard-yank) (\u0026#34;M-/\u0026#34; . kill-this-buffer))) ;; Overwrite `C-w\u0026#39; to the whole-line-or-region (defun my:kill-whole-line-or-region () \u0026#34;If the region is active, to kill region. If the region is inactive, to kill whole line.\u0026#34; (interactive) (if (use-region-p) (clipboard-kill-region (region-beginning) (region-end)) (kill-whole-line))) "

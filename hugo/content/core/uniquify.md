@@ -1,5 +1,5 @@
 +++
-title = "2.7. [uniquify.el] 同じバッファ名が開かれた場合に区別する"
+title = "2.6. [uniquify.el] 同じバッファ名が開かれた場合に区別する"
 draft = false
 +++
 ### 3.9.  [uniquify.el] 同じバッファ名が開かれた場合に区別する
