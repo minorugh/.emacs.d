@@ -1,13 +1,11 @@
-a.out: hugo git
+a.out: git
 
 copy:
 	rsync -auv ~/src/github.com/minorugh/dotfiles/.emacs.d/ ~/src/github.com/minorugh/emacs.d/
 
-hugo:
+git:
 	cd hugo && \
 	hugo
-
-git:
 	# cd ..
 	git add . && git diff --cached --exit-code --quiet && echo "\nnothing to commit, working tree clean!"|| \
 	git commit -a -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`" && \
