@@ -105,7 +105,7 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     </item>
     
     <item>
-      <title>2.5. [exec-path-from-shell]設定をシェルから継承する</title>
+      <title>2.5. [exec-path-from-shell] 設定をシェルから継承する</title>
       <link>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
