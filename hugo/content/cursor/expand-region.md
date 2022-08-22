@@ -1,5 +1,5 @@
 +++
-title = "3.5. カーソル位置を起点に選択範囲を賢く広げる"
+title = "3.5. expand-region"
 draft = false
 +++
 

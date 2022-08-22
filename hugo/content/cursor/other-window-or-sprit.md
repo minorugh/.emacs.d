@@ -1,10 +1,10 @@
 +++
-title = "3.2. ウインドウ間のカーソル移動"
+title = "3.2. other-window-or-split"
 draft = false
 +++
-
-* `C-c o` でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています．
+* `other-window-or-split` は、画面分割コマンド `C-x 3` を拡張します。
 * 画面分割されていないときは、左右分割して `follow-mode` `dimmer-mode` も `ON` にしています。（詳細後述）
+* 画面移動だけなら `C-c o` でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。
 
 ```elisp
 (defun other-window-or-split ()

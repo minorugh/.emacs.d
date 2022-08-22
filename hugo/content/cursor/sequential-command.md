@@ -1,5 +1,5 @@
 +++
-title = "3.1. バッファーの先頭と最終行への移動を簡単にする"
+title = "3.1. sequential-command"
 draft = false
 +++
 `sequential-command` は、標準の `C-a` `C-e` を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/cursor/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>3.1. バッファーの先頭と最終行への移動を簡単にする</title>
+      <title>3.1. sequential-command</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -19,36 +19,35 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>3.2. ウインドウ間のカーソル移動</title>
+      <title>3.2. other-window-or-split</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</guid>
-      <description> C-c o でもいいですが，ワンアクションで移動できるほうが楽なので、次のように双方向で使えるように設定しています． 画面分割されていないときは、左右分割して follow-mode dimmer-mode も ON にしています。（詳細後述）  (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key &amp;#34;C-q&amp;#34; &amp;#39;other-window-or-split) </description>
+      <description> other-window-or-split は、画面分割コマンド C-x 3 を拡張します。 画面分割されていないときは、左右分割して follow-mode dimmer-mode も ON にしています。（詳細後述） 画面移動だけなら C-c o でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。  (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key &amp;#34;C-q&amp;#34; &amp;#39;other-window-or-split) </description>
     </item>
     
     <item>
-      <title>3.3. 括弧の先頭と最後へ交互にポイント移動します。</title>
+      <title>3.3. my:jump-brace</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</guid>
-      <description>括弧の先頭と最後へ交互にポイント移動します。
- C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  ただ、上記標準機能はなにげに使いにくいので my:jump-brace を定義しました。 括弧の先頭と最後へ交互にポイント移動します。
-(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) </description>
+      <description>my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
+(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  でも、上記標準機能はなにげに使いにくいです。</description>
     </item>
     
     <item>
-      <title>3.4. 直前の編集ポイントと現在のポイントとを行き来する。</title>
+      <title>3.4. my:exchange-point-and-mark</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/mark-command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/mark-command/</guid>
-      <description> C-x C-x は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) *標準機能の C-u C-SPC でマーク箇所を辿れるようになります。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) </description>
+      <description> my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) </description>
     </item>
     
     <item>
-      <title>3.5. カーソル位置を起点に選択範囲を賢く広げる</title>
+      <title>3.5. expand-region</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/expand-region/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-22T19:25:23 JST">
-<title>3.3. 括弧の先頭と最後へ交互にポイント移動します。 :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-22T19:36:17 JST">
+<title>3.3. my:jump-brace :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -166,35 +166,35 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/sequential-command/" class="dd-item">
         <div>
           <a href="/.emacs.d/cursor/sequential-command/">
-            3.1. バッファーの先頭と最終行への移動を簡単にする
+            3.1. sequential-command
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/" class="dd-item">
         <div>
           <a href="/.emacs.d/cursor/other-window-or-sprit/">
-            3.2. ウインドウ間のカーソル移動
+            3.2. other-window-or-split
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/jump-brace/" class="dd-item">
         <div>
           <a href="/.emacs.d/cursor/jump-brace/">
-            3.3. 括弧の先頭と最後へ交互にポイント移動します。
+            3.3. my:jump-brace
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/mark-command/" class="dd-item">
         <div>
           <a href="/.emacs.d/cursor/mark-command/">
-            3.4. 直前の編集ポイントと現在のポイントとを行き来する。
+            3.4. my:exchange-point-and-mark
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/expand-region/" class="dd-item">
         <div>
           <a href="/.emacs.d/cursor/expand-region/">
-            3.5. カーソル位置を起点に選択範囲を賢く広げる
+            3.5. expand-region
           </a>
         </div>
     </li>
@@ -369,7 +369,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/cursor/'>カーソル移動</a> > 3.3. 括弧の先頭と最後へ交互にポイント移動します。
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/cursor/'>カーソル移動</a> > 3.3. my:jump-brace
 
  
 
@@ -382,7 +382,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#標準機能">標準機能</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -392,7 +400,7 @@
 
 <div id="body-inner">
   
-    <h1>3.3. 括弧の先頭と最後へ交互にポイント移動します。</h1>
+    <h1>3.3. my:jump-brace</h1>
   
 
 
@@ -400,13 +408,7 @@
     
     
     
-<p>括弧の先頭と最後へ交互にポイント移動します。</p>
-<ul>
-<li><code>C-M-SPC</code> (mark-sexp) は，カーソル位置から順方向に選択．</li>
-<li><code>C-M-U</code> (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．</li>
-</ul>
-<p>ただ、上記標準機能はなにげに使いにくいので <code>my:jump-brace</code> を定義しました。
-括弧の先頭と最後へ交互にポイント移動します。</p>
+<p><code>my:jump-brace</code> は、括弧の先頭と最後へ交互にポイント移動します。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun my:jump-brace ()
  <span style="color:#e6db74">&#34;Jump to the corresponding parenthesis.&#34;</span>
  (interactive)
@@ -416,7 +418,13 @@
 	 (if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> p) <span style="color:#ae81ff">41</span>) (backward-list)
        (backward-up-list)))))
 (bind-key <span style="color:#e6db74">&#34;C-M-9&#34;</span> <span style="color:#e6db74">&#39;my:jump-brace</span>)
-</code></pre></div>
+</code></pre></div><h3 id="標準機能">標準機能</h3>
+<ul>
+<li><code>C-M-SPC</code> (mark-sexp) は，カーソル位置から順方向に選択．</li>
+<li><code>C-M-U</code> (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．</li>
+</ul>
+<p>でも、上記標準機能はなにげに使いにくいです。</p>
+
 
     
     
@@ -427,8 +435,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/cursor/other-window-or-sprit/" title="3.2. ウインドウ間のカーソル移動"> <i class="fa fa-chevron-left"></i><label>3.2. ウインドウ間のカーソル移動</label></a>
-    <a class="nav nav-next" href="/.emacs.d/cursor/mark-command/" title="3.4. 直前の編集ポイントと現在のポイントとを行き来する。" style="margin-right: 0px;"><label>3.4. 直前の編集ポイントと現在のポイントとを行き来する。</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/cursor/other-window-or-sprit/" title="3.2. other-window-or-split"> <i class="fa fa-chevron-left"></i><label>3.2. other-window-or-split</label></a>
+    <a class="nav nav-next" href="/.emacs.d/cursor/mark-command/" title="3.4. my:exchange-point-and-mark" style="margin-right: 0px;"><label>3.4. my:exchange-point-and-mark</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

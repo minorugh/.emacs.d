@@ -1,8 +1,8 @@
 +++
-title = "3.4. 直前の編集ポイントと現在のポイントとを行き来する。"
+title = "3.4. my:exchange-point-and-mark"
 draft = false
 +++
-* `C-x C-x` は、直前の編集ポイントと現在のポイントとを行き来できる設定です。
+* `my:exchange-point-and-mark` は、直前の編集ポイントと現在のポイントとを行き来できる設定です。
 
 ```elisp
 (defun my:exchange-point-and-mark ()
@@ -13,7 +13,7 @@ draft = false
 (bind-key "C-x C-x" 'my:exchange-point-and-mark)
 ```
 
-## *標準機能の `C-u C-SPC` でマーク箇所を辿れるようになります。
+## 標準機能の `C-u C-SPC` でもマーク箇所を辿れます。
 
 ```elisp
 (setq set-mark-command-repeat-pop t)
