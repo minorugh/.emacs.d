@@ -21,14 +21,11 @@ Emacs の基本動作に関わる部分をここでは設定している
 : サーバー機能を使う設定
 
 [exec-path-from-shell]({{< relref "exec-path-from-shell" >}})
-: 認証情報の取り扱いファイルの設定
-
-[mouse-copy]({{< relref "mouse-copy" >}})
-: 認証情報の取り扱いファイルの設定
+: 設定をシェルから継承する
 
 [uniquify]({{< relref "uniquify" >}})
-: 認証情報の取り扱いファイルの設定
+: 同じバッファ名が開かれた場合に区別する
 
 [global-keibind]({{< relref "global-keybind" >}})
-: 認証情報の取り扱いファイルの設定
+: グローバルキーバインドのカスタマイズ設定
 

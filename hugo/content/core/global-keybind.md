@@ -1,11 +1,28 @@
 +++
-title = "2.8. 基本キーバインドをカスタマイズ"
+title = "2.8. グローバルキーバインド"
 draft = false
 +++
-### 3.4. 基本キーバインド
+グローバルキーバインドを自分好みにカスタマイズしました。 
+前準備として以下を設定しておきます。
 
-* いつでもどこでも使えるキーバインド周りの設定をここにまとめています。 
+* クリップボードを使えるようにする
+```elisp
+;; Use the X11 clipboard
+(setq select-enable-clipboard  t)
+
+```
+
+* マウスで選択した領域を自動コピー
+マウスで選択すると，勝手にペーストボードにデータが流れます．
+
+```elisp
+(setq mouse-drag-copy-region t)
+```
+
+## グローバルキーバインドをカスタマイズする
+
 * `C-w` は、`kill-ring-save` に割り当てられたものですが、`region` 選択されていないときは、一行削除になるようにカスタマイズしてます。
+* `C-x k` の `kill-buffer` は、`yes/no` 確認されるのが煩わしいので、確認なしの `kill-this-buffer` を愛用しています。
 
 ```elisp
 ;; Change global key bind
@@ -25,3 +42,4 @@ If the region is inactive, to kill whole line."
 	  (clipboard-kill-region (region-beginning) (region-end))
     (kill-whole-line)))
 ```
+
