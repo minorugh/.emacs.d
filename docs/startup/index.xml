@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/eary-init/</guid>
-      <description>early-init.el は、Emacs27から導入されました。 https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
+      <description>early-init.el は、Emacs27から導入されました。 https://github.com/minorugh/.emacs.d/blob/main/early-init.el  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
 GCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。
 ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことが重要です。
 Package の初期化を抑制する Emacs27では、(package-initialize) が 2回実行されます。 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。

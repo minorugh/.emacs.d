@@ -3,7 +3,7 @@ title = "1.1. eary-init.el"
 draft = false
 +++
 * [`early-init.el`](https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html) は、Emacs27から導入されました。 
-* [https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el](https://github.com/minorugh/dotfiles/blob/main/.emacs.d/early-init.el)
+* [https://github.com/minorugh/.emacs.d/blob/main/early-init.el](https://github.com/minorugh/.emacs.d/blob/main/early-init.el)
 
 `init.el` でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
 
