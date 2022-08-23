@@ -6,7 +6,7 @@ weight = 7
 disableToc = true
 +++
 
-## ここにはファイル編集や入力補助の設定をまとめている
+ここにはファイル編集や入力補助の設定をまとめている
 
 [markdown-mode]({{< relref "markdown" >}})
 : markdown記法での編集をサポートしてくれるマイナーモード。
