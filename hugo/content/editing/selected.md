@@ -1,6 +1,7 @@
 +++
-title = "3.5. selected"
+title = "7.12. selected"
 draft = false
+weight = 12
 +++
 
 ### 5.9. [selected] リージョン選択時のアクションを制御

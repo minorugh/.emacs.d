@@ -1,6 +1,7 @@
 +++
-title = "3.5. migemo"
+title = "7.11. migemo"
 draft = false
+weight = 11
 +++
 
 ```elisp

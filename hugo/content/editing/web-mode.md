@@ -1,6 +1,7 @@
 +++
-title = "3.5. web-mode"
+title = "7.3. web-mode"
 draft = false
+weight = 3
 +++
 
 ### 5.4. Webモード

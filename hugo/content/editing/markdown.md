@@ -1,6 +1,7 @@
 +++
 title = "7.1. markdown-mode"
 draft = false
+weight = 1
 +++
 ### 5.2. markdownモード
 [`markdown-mode.el`](https://github.com/jrblevin/markdown-mode) は、Markdown形式のテキストを編集するための主要なモードです。

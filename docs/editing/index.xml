@@ -7,121 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/editing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>3.5. darkroom</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/darkroom/</guid>
-      <description>5.5. [darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
-https://github.com/joaotavora/darkroom
-[F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
-yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
-(leaf darkroom :ensure t :bind ((&amp;quot;&amp;lt;f12&amp;gt;&amp;quot; . my:darkroom-in) (:darkroom-mode-map (&amp;quot;&amp;lt;f12&amp;gt;&amp;quot; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;quot;Enter to the `darkroom-mode&#39;.&amp;quot; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;quot;Returns from `darkroom-mode&#39; to the previous state.&amp;quot; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;quot;Revert buffer without confirmation.</description>
-    </item>
-    
-    <item>
-      <title>3.5. iedit</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
-      <description>5.8. [iedit] 選択領域を別の文字列に置き換える idet.el は、バッファー内の複数箇所を同時に編集するツールです。
-同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
- multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
-対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
-ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
-かなりの頻度で使うので、Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドしています。</description>
-    </item>
-    
-    <item>
-      <title>3.5. ivy / counsel</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/ivy/</guid>
-      <description>ivy は、helm と双璧を成す Emacsの補完システムです。
-リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。 このシンプルかつ極めて重要なタスクを ivy が手助けしてくれます．
-(leaf counsel :ensure t :defer-config (ivy-mode) :bind ((&amp;#34;C-r&amp;#34; . swiper-thing-at-point) (&amp;#34;C-s&amp;#34; . swiper-region) (&amp;#34;C-:&amp;#34; . counsel-switch-buffer) (&amp;#34;s-a&amp;#34; . counsel-ag) (&amp;#34;s-r&amp;#34; . counsel-rg) (&amp;#34;s-f&amp;#34; . counsel-fontawesome) (&amp;#34;M-x&amp;#34; . counsel-M-x) (&amp;#34;M-y&amp;#34; . counsel-yank-pop) (&amp;#34;C-x m&amp;#34; . counsel-mark-ring) (&amp;#34;C-x C-b&amp;#34; . ibuffer) (&amp;#34;C-x C-f&amp;#34; . counsel-find-file) (&amp;#34;C-x C-r&amp;#34; . counsel-recentf)) :custom `((search-default-mode . nil) (ivy-use-virtual-buffers . t) (ivy-use-selectable-prompt . t) (enable-recursive-minibuffers . t) (counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions)) (ivy-format-functions-alist .</description>
-    </item>
-    
-    <item>
-      <title>3.5. key-chord</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/key-chord/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/key-chord/</guid>
-      <description>5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;quot;df&amp;quot; . counsel-descbinds) (&amp;quot;l;&amp;quot; . init-loader-show-log) (&amp;quot;@@&amp;quot; . howm-list-all) (&amp;quot;jk&amp;quot; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
-改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</description>
-    </item>
-    
-    <item>
-      <title>3.5. migemo</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
-      <description>(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
-つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
-(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :after migemo :global-minor-mode t :config (setq migemo-options &amp;#39;(&amp;#34;--quiet&amp;#34; &amp;#34;--nonewline&amp;#34; &amp;#34;--emacs&amp;#34;)) (add-to-list &amp;#39;swiper-migemo-enable-command &amp;#39;counsel-rg) (migemo-kill) (migemo-init)) </description>
-    </item>
-    
-    <item>
-      <title>3.5. selected</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
-      <description>5.9. [selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
-Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
-(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) 5.10. [selected] browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
-(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
-    </item>
-    
-    <item>
-      <title>3.5. snartparens</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
-      <description>5.13. [smartparens] 対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
-(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) </description>
-    </item>
-    
-    <item>
-      <title>3.5. web-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/web-mode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/web-mode/</guid>
-      <description>5.4. Webモード HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。
-出来上がったHTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
-(leaf web-mode :ensure t :mode (&amp;quot;\\.js?\\&#39;&amp;quot; &amp;quot;\\.html?\\&#39;&amp;quot; &amp;quot;\\.php?\\&#39;&amp;quot;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
-    </item>
-    
-    <item>
-      <title>3.5. yasunippets / company</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/company/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/company/</guid>
-      <description>(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) (leaf company :ensure t :hook (after-init-hook . global-company-mode) :bind ((&amp;#34;C-&amp;lt;return&amp;gt;&amp;#34; . company-complete) (&amp;#34;C-&amp;lt;tab&amp;gt;&amp;#34; . company-yasnippet) (:company-active-map (&amp;#34;&amp;lt;tab&amp;gt;&amp;#34; . company-complete-common-or-cycle) (&amp;#34;&amp;lt;backtab&amp;gt;&amp;#34; . company-select-previous) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . company-abort))) :custom `((company-transformers . &amp;#39;(company-sort-by-backend-importance)) (company-idle-delay . 0) (company-require-match . &amp;#39;never) (company-minimum-prefix-length . 2) (company-selection-wrap-around . t) (completion-ignore-case . t) (company-dabbrev-downcase . nil)) :config (defvar company-mode/enable-yas t &amp;#34;Enable yasnippet for all backends.&amp;#34;) (defun company-mode/backend-with-yas (backend) (if (or (not company-mode/enable-yas) (and (listp backend) (member &amp;#39;company-yasnippet backend))) backend (append (if (consp backend) backend (list backend)) &amp;#39;(:with company-yasnippet)))) (setq company-backends (mapcar #&amp;#39;company-mode/backend-with-yas company-backends))) </description>
-    </item>
-    
-    <item>
-      <title>3.5. yatex</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/yatex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/yatex/</guid>
-      <description>5.6. [yatex] YaTexで LaTex編集 yatex.el は、Emacsの上で動作する LaTeX の入力支援環境です。
-ごく一般的な設定例ですが、参考になるとしたら dviprint-command-format に dvpd.sh というスクリプトを設定して、YateX.lpr コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
-(leaf yatex :ensure t :mode (&amp;#34;\\.tex\\&amp;#39;&amp;#34; &amp;#34;\\.sty\\&amp;#39;&amp;#34; &amp;#34;\\.cls\\&amp;#39;&amp;#34;) :custom `((tex-command . &amp;#34;platex&amp;#34;) (dviprint-command-format . &amp;#34;dvpd.sh %s&amp;#34;) (YaTeX-kanji-code . nil) (YaTeX-latex-message-code . &amp;#39;utf-8) (YaTeX-default-pop-window-height . 15)) :config (leaf yatexprc :bind ((&amp;#34;M-c&amp;#34; . YaTeX-typeset-buffer) (&amp;#34;M-v&amp;#34; . YaTeX-lpr)))) YaTeX-lpr は、dviprint-command-format を呼び出すコマンドです。
-dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、chmod +x dvpd.sh  として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。
-[dvpd.sh]
-#!/bin/sh name=$1 dvipdfmx $1 &amp;amp;&amp;amp; evince ${name%.</description>
-    </item>
-    
-    <item>
       <title>7.1. markdown-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -144,6 +29,121 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
       <description>5.3. viewモード 特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに view-mode を使います。
 下記の設定では、my:auto-view-dirs に追加したディレクトリのファイルを開くと view-mode が常に有効になります．
 (leaf view :hook (find-file-hook . my:auto-view) (server-visit-hook . my:unlock-view-mode) :chord (&amp;#34;::&amp;#34; . view-mode) :bind (:view-mode-map (&amp;#34;h&amp;#34; . backward-char) (&amp;#34;l&amp;#34; . forward-char) (&amp;#34;a&amp;#34; . beginning-of-buffer) (&amp;#34;e&amp;#34; . end-of-buffer) (&amp;#34;w&amp;#34; . forward-word) (&amp;#34;b&amp;#34; . scroll-down) (&amp;#34;c&amp;#34; . kill-ring-save) (&amp;#34;r&amp;#34; . xref-find-references) (&amp;#34;RET&amp;#34; . xref-find-definitions) (&amp;#34;x&amp;#34; . my:view-del-char) (&amp;#34;y&amp;#34; . my:view-yank) (&amp;#34;d&amp;#34; . my:view-kill-region) (&amp;#34;u&amp;#34; . my:view-undo) (&amp;#34;m&amp;#34; . magit-status) (&amp;#34;g&amp;#34; .</description>
+    </item>
+    
+    <item>
+      <title>7.3. web-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/web-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/web-mode/</guid>
+      <description>5.4. Webモード HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。
+出来上がったHTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
+(leaf web-mode :ensure t :mode (&amp;quot;\\.js?\\&#39;&amp;quot; &amp;quot;\\.html?\\&#39;&amp;quot; &amp;quot;\\.php?\\&#39;&amp;quot;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
+    </item>
+    
+    <item>
+      <title>7.4. yatex</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/yatex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/yatex/</guid>
+      <description>5.6. [yatex] YaTexで LaTex編集 yatex.el は、Emacsの上で動作する LaTeX の入力支援環境です。
+ごく一般的な設定例ですが、参考になるとしたら dviprint-command-format に dvpd.sh というスクリプトを設定して、YateX.lpr コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
+(leaf yatex :ensure t :mode (&amp;#34;\\.tex\\&amp;#39;&amp;#34; &amp;#34;\\.sty\\&amp;#39;&amp;#34; &amp;#34;\\.cls\\&amp;#39;&amp;#34;) :custom `((tex-command . &amp;#34;platex&amp;#34;) (dviprint-command-format . &amp;#34;dvpd.sh %s&amp;#34;) (YaTeX-kanji-code . nil) (YaTeX-latex-message-code . &amp;#39;utf-8) (YaTeX-default-pop-window-height . 15)) :config (leaf yatexprc :bind ((&amp;#34;M-c&amp;#34; . YaTeX-typeset-buffer) (&amp;#34;M-v&amp;#34; . YaTeX-lpr)))) YaTeX-lpr は、dviprint-command-format を呼び出すコマンドです。
+dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、chmod +x dvpd.sh  として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。
+[dvpd.sh]
+#!/bin/sh name=$1 dvipdfmx $1 &amp;amp;&amp;amp; evince ${name%.</description>
+    </item>
+    
+    <item>
+      <title>7.5. darkroom</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/darkroom/</guid>
+      <description>5.5. [darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
+https://github.com/joaotavora/darkroom
+[F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
+yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
+(leaf darkroom :ensure t :bind ((&amp;quot;&amp;lt;f12&amp;gt;&amp;quot; . my:darkroom-in) (:darkroom-mode-map (&amp;quot;&amp;lt;f12&amp;gt;&amp;quot; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;quot;Enter to the `darkroom-mode&#39;.&amp;quot; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;quot;Returns from `darkroom-mode&#39; to the previous state.&amp;quot; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;quot;Revert buffer without confirmation.</description>
+    </item>
+    
+    <item>
+      <title>7.6. ivy / counsel</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/ivy/</guid>
+      <description>ivy は、helm と双璧を成す Emacsの補完システムです。
+リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。 このシンプルかつ極めて重要なタスクを ivy が手助けしてくれます．
+(leaf counsel :ensure t :defer-config (ivy-mode) :bind ((&amp;#34;C-r&amp;#34; . swiper-thing-at-point) (&amp;#34;C-s&amp;#34; . swiper-region) (&amp;#34;C-:&amp;#34; . counsel-switch-buffer) (&amp;#34;s-a&amp;#34; . counsel-ag) (&amp;#34;s-r&amp;#34; . counsel-rg) (&amp;#34;s-f&amp;#34; . counsel-fontawesome) (&amp;#34;M-x&amp;#34; . counsel-M-x) (&amp;#34;M-y&amp;#34; . counsel-yank-pop) (&amp;#34;C-x m&amp;#34; . counsel-mark-ring) (&amp;#34;C-x C-b&amp;#34; . ibuffer) (&amp;#34;C-x C-f&amp;#34; . counsel-find-file) (&amp;#34;C-x C-r&amp;#34; . counsel-recentf)) :custom `((search-default-mode . nil) (ivy-use-virtual-buffers . t) (ivy-use-selectable-prompt . t) (enable-recursive-minibuffers . t) (counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions)) (ivy-format-functions-alist .</description>
+    </item>
+    
+    <item>
+      <title>7.7. yasunippets / company</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/company/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/company/</guid>
+      <description>(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) (leaf company :ensure t :hook (after-init-hook . global-company-mode) :bind ((&amp;#34;C-&amp;lt;return&amp;gt;&amp;#34; . company-complete) (&amp;#34;C-&amp;lt;tab&amp;gt;&amp;#34; . company-yasnippet) (:company-active-map (&amp;#34;&amp;lt;tab&amp;gt;&amp;#34; . company-complete-common-or-cycle) (&amp;#34;&amp;lt;backtab&amp;gt;&amp;#34; . company-select-previous) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . company-abort))) :custom `((company-transformers . &amp;#39;(company-sort-by-backend-importance)) (company-idle-delay . 0) (company-require-match . &amp;#39;never) (company-minimum-prefix-length . 2) (company-selection-wrap-around . t) (completion-ignore-case . t) (company-dabbrev-downcase . nil)) :config (defvar company-mode/enable-yas t &amp;#34;Enable yasnippet for all backends.&amp;#34;) (defun company-mode/backend-with-yas (backend) (if (or (not company-mode/enable-yas) (and (listp backend) (member &amp;#39;company-yasnippet backend))) backend (append (if (consp backend) backend (list backend)) &amp;#39;(:with company-yasnippet)))) (setq company-backends (mapcar #&amp;#39;company-mode/backend-with-yas company-backends))) </description>
+    </item>
+    
+    <item>
+      <title>7.8. key-chord</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/key-chord/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/key-chord/</guid>
+      <description>5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;quot;df&amp;quot; . counsel-descbinds) (&amp;quot;l;&amp;quot; . init-loader-show-log) (&amp;quot;@@&amp;quot; . howm-list-all) (&amp;quot;jk&amp;quot; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
+改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</description>
+    </item>
+    
+    <item>
+      <title>7.9. snartparens</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
+      <description>5.13. [smartparens] 対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
+(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) </description>
+    </item>
+    
+    <item>
+      <title>7.10. iedit</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
+      <description>5.8. [iedit] 選択領域を別の文字列に置き換える idet.el は、バッファー内の複数箇所を同時に編集するツールです。
+同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
+ multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
+対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
+ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
+かなりの頻度で使うので、Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドしています。</description>
+    </item>
+    
+    <item>
+      <title>7.11. migemo</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
+      <description>(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
+つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
+(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :after migemo :global-minor-mode t :config (setq migemo-options &amp;#39;(&amp;#34;--quiet&amp;#34; &amp;#34;--nonewline&amp;#34; &amp;#34;--emacs&amp;#34;)) (add-to-list &amp;#39;swiper-migemo-enable-command &amp;#39;counsel-rg) (migemo-kill) (migemo-init)) </description>
+    </item>
+    
+    <item>
+      <title>7.12. selected</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
+      <description>5.9. [selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
+Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
+(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) 5.10. [selected] browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
+(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
     </item>
     
   </channel>

@@ -7,11 +7,19 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
   </url>
   
   <url>
@@ -23,6 +31,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/cursor/</loc>
   </url>
   
@@ -31,7 +43,15 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/higlight/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
   </url>
   
   <url>
@@ -39,7 +59,15 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/ui/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
   </url>
   
   <url>
@@ -47,7 +75,15 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
   </url>
   
   <url>
@@ -55,11 +91,23 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/programming/</loc>
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/external-tool/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/selected/</loc>
   </url>
   
   <url>
@@ -135,47 +183,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/cursor/expand-region/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/selected/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
   </url>
   
   <url>
@@ -232,14 +240,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/buffer/winner/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
   </url>
   
   <url>

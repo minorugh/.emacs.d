@@ -1,6 +1,7 @@
 +++
-title = "3.5. ivy / counsel"
+title = "7.6. ivy / counsel"
 draft = false
+weight = 6
 +++
 
 `ivy` は、`helm` と双璧を成す Emacsの補完システムです。

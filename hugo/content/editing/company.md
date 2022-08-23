@@ -1,6 +1,7 @@
 +++
-title = "3.5. yasunippets / company"
+title = "7.7. yasunippets / company"
 draft = false
+weight = 7
 +++
 
 ```elisp

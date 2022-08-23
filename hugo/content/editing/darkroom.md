@@ -1,6 +1,7 @@
 +++
-title = "3.5. darkroom"
+title = "7.5. darkroom"
 draft = false
+weight = 5
 +++
 
 ### 5.5. [darkroom-mode] 執筆モード

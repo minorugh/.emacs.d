@@ -1,6 +1,7 @@
 +++
-title = "3.5. yatex"
+title = "7.4. yatex"
 draft = false
+weight = 4
 +++
 
 ### 5.6. [yatex] YaTexで LaTex編集
