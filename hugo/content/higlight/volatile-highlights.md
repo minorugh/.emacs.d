@@ -1,5 +1,5 @@
 +++
-title = "4.4. volatile-highlight"
+title = "4.7. volatile-highlight"
 draft = false
 +++
 * `volatile-highlights.el` は、コピペした領域を強調します。

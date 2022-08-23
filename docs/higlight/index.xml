@@ -37,7 +37,34 @@
     </item>
     
     <item>
-      <title>4.4. volatile-highlight</title>
+      <title>4.4. pare</title>
+      <link>https://minorugh.github.io/.emacs.d/higlight/paren/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/higlight/paren/</guid>
+      <description>(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . &amp;#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) </description>
+    </item>
+    
+    <item>
+      <title>4.5. rainbow-delimiters</title>
+      <link>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</guid>
+      <description>(leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) </description>
+    </item>
+    
+    <item>
+      <title>4.6. rainbow-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/higlight/rainbow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow/</guid>
+      <description> rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (&amp;#34;C-c r&amp;#34; . rainbow-mode)) </description>
+    </item>
+    
+    <item>
+      <title>4.7. volatile-highlight</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -46,12 +73,12 @@
     </item>
     
     <item>
-      <title>4.5. rainbow-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/higlight/rainbow/</link>
+      <title>4.8. whitespace</title>
+      <link>https://minorugh.github.io/.emacs.d/higlight/whitespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow/</guid>
-      <description> rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (&amp;#34;C-c r&amp;#34; . rainbow-mode)) </description>
+      <guid>https://minorugh.github.io/.emacs.d/higlight/whitespace/</guid>
+      <description>(leaf whitespace :ensure t :bind (&amp;#34;C-c C-c&amp;#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () &amp;#34;Show tail whitespace.&amp;#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () &amp;#34;Remove contiguous line breaks at end of line + end of file.&amp;#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) </description>
     </item>
     
   </channel>

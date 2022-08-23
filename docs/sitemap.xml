@@ -151,11 +151,23 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/paren/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/whitespace/</loc>
   </url>
   
   <url>

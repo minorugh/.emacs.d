@@ -53,7 +53,7 @@
 	"title": "強調 / 配色関連",
 	"tags": [],
 	"description": "",
-	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードを実際の色に表示する  "
+	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードを実際の色に表示する rainbow-delimiters カラーコードを実際の色に表示する paren カラーコードを実際の色に表示する whitespace カラーコードを実際の色に表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/",
@@ -259,18 +259,39 @@
 	"content": " ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) (setq ivy-format-functions-alist \u0026#39;((t . my:ivy-format-function-arrow))) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/paren/",
+	"title": "4.4. pare",
+	"tags": [],
+	"description": "",
+	"content": "(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . \u0026#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/",
+	"title": "4.5. rainbow-delimiters",
+	"tags": [],
+	"description": "",
+	"content": "(leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow/",
+	"title": "4.6. rainbow-mode",
+	"tags": [],
+	"description": "",
+	"content": " rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/",
-	"title": "4.4. volatile-highlight",
+	"title": "4.7. volatile-highlight",
 	"tags": [],
 	"description": "",
 	"content": " volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp \u0026#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end \u0026amp;optional _buf face) \u0026#34;Pulse the changes.\u0026#34; (pulse-momentary-highlight-region beg end face)) (advice-add #\u0026#39;vhl/.make-hl :override #\u0026#39;my:vhl-pulse))) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow/",
-	"title": "4.5. rainbow-mode",
+	"uri": "https://minorugh.github.io/.emacs.d/higlight/whitespace/",
+	"title": "4.8. whitespace",
 	"tags": [],
 	"description": "",
-	"content": " rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
+	"content": "(leaf whitespace :ensure t :bind (\u0026#34;C-c C-c\u0026#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () \u0026#34;Show tail whitespace.\u0026#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () \u0026#34;Remove contiguous line breaks at end of line + end of file.\u0026#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/",

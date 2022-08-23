@@ -1,5 +1,5 @@
 +++
-title = "4.5. rainbow-mode"
+title = "4.6. rainbow-mode"
 draft = false
 +++
 * `rainbow-mode.el` は `red`, `green` などの色名や `#aabbcc` といったカラーコードから実際の色を表示するマイナーモードです。
