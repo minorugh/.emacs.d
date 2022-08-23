@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-23T09:05:39 JST">
-<title>3.2. other-window-or-split :: minoru&#39;s Emacs Configuration</title>
+<title>6.4. display-number-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/cursor/other-window-or-sprit/">
+  <body data-url="/.emacs.d/ui/display-number/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -412,7 +412,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/cursor/other-window-or-sprit.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/ui/display-number.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -432,7 +432,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/cursor/'>カーソル移動</a> > 3.2. other-window-or-split
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/ui/'>UI</a> > 6.4. display-number-mode
 
  
 
@@ -455,7 +455,7 @@
 
 <div id="body-inner">
   
-    <h1>3.2. other-window-or-split</h1>
+    <h1>6.4. display-number-mode</h1>
   
 
 
@@ -463,20 +463,18 @@
     
     
     
-<ul>
-<li><code>other-window-or-split</code> は、画面分割コマンド <code>C-x 3</code> を拡張します。</li>
-<li>画面分割されていないときは、左右分割して <code>follow-mode</code> <code>dimmer-mode</code> も <code>ON</code> にしています。（詳細後述）</li>
-<li>画面移動だけなら <code>C-c o</code> でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun other-window-or-split ()
- <span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
- (interactive)
- (when (one-window-p)
-	 (split-window-horizontally)
-	 (follow-mode <span style="color:#ae81ff">1</span>)
-	 (dimmer-mode <span style="color:#ae81ff">1</span>))
-   (other-window <span style="color:#ae81ff">1</span>))
-(bind-key <span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#e6db74">&#39;other-window-or-split</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf display-line-numbers
+  :hook ((after-init-hook <span style="color:#f92672">.</span> global-display-line-numbers-mode)
+		 ((lisp-interaction-mode-hook dired-mode-hook)<span style="color:#f92672">.</span> my:disable-modes))
+  :bind (<span style="color:#e6db74">&#34;&lt;f9&gt;&#34;</span> <span style="color:#f92672">.</span> display-line-numbers-mode)
+  :custom (display-line-numbers-width-start <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
+  :init
+  (defun my:disable-modes ()
+	<span style="color:#e6db74">&#34;Disable modes in scrtch buffer.&#34;</span>
+	(interactive)
+	(display-line-numbers-mode <span style="color:#ae81ff">0</span>)
+	(flymake-mode <span style="color:#ae81ff">0</span>)
+	(nyan-mode <span style="color:#ae81ff">0</span>)))
 </code></pre></div>
 
     
@@ -488,8 +486,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/cursor/sequential-command/" title="3.1. sequential-command"> <i class="fa fa-chevron-left"></i><label>3.1. sequential-command</label></a>
-    <a class="nav nav-next" href="/.emacs.d/cursor/jump-brace/" title="3.3. my:jump-brace" style="margin-right: 0px;"><label>3.3. my:jump-brace</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/ui/all-the-icons/" title="6.3. all-the-icons"> <i class="fa fa-chevron-left"></i><label>6.3. all-the-icons</label></a>
+    <a class="nav nav-next" href="/.emacs.d/editing/" title="ファイル編集/入力補助" style="margin-right: 0px;"><label>ファイル編集/入力補助</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

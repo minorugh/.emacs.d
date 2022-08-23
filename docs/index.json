@@ -42,6 +42,13 @@
 	"content": " カーソル移動に関する設定です。 ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。   sequential-command 標準の C-a C-e を拡張します。 other-window-or-sptit 画面分割コマンド C-x 3 を拡張します。 jump-brace 括弧の先頭と最後へ交互にポイント移動します。 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来できる設定です。 expand-region カーソル位置を起点に選択範囲を賢く広げてくれるパッケージ。  "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/ui/display-number/",
+	"title": "6.4. display-number-mode",
+	"tags": [],
+	"description": "",
+	"content": "(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/",
 	"title": "強調 / 配色関連",
 	"tags": [],
@@ -60,7 +67,7 @@
 	"title": "UI",
 	"tags": [],
 	"description": "",
-	"content": "ここでは Emacs の UI を変更するようなものを載せている\n doom-themes テーマの設定 doom-modeline モードラインの設定 all-the-icons フォントでアイコン表示をする設定  "
+	"content": "ここでは Emacs の UI を変更するようなものを載せている\n doom-themes テーマの設定 doom-modeline モードラインの設定 all-the-icons フォントでアイコン表示をする設定 display-number-mode 行番号を表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/",

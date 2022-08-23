@@ -16,3 +16,7 @@ disableToc = true
 
 [all-the-icons]({{< relref "all-the-icons" >}})
 : フォントでアイコン表示をする設定
+
+[display-number-mode]({{< relref "display-number" >}})
+: 行番号を表示する
+
