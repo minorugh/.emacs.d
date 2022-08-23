@@ -1,5 +1,5 @@
 +++
-title = "7.9. snartparens"
+title = "7.9. smartparens"
 draft = false
 weight = 9
 +++

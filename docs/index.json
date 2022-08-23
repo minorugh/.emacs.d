@@ -239,7 +239,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/smartparens/",
-	"title": "7.9. snartparens",
+	"title": "7.9. smartparens",
 	"tags": [],
 	"description": "",
 	"content": "5.13. [smartparens] 対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。\n(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) "

@@ -280,7 +280,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>7.9. snartparens</title>
+      <title>7.9. smartparens</title>
       <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
