@@ -564,7 +564,7 @@
 	"title": "7.. which-key",
 	"tags": [],
 	"description": "",
-	"content": "6.5. [which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。\n(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) "
+	"content": "[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。\n(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/categories/",
