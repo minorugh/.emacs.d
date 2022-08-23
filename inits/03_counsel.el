@@ -14,7 +14,6 @@
 		 ("C-:" . counsel-switch-buffer)
 		 ("s-a" . counsel-ag)
 		 ("s-r" . counsel-rg)
-		 ("s-f" . counsel-fontawesome)
 		 ("M-x" . counsel-M-x)
 		 ("M-y" . counsel-yank-pop)
 		 ("C-x m" . counsel-mark-ring)
@@ -114,7 +113,9 @@ If the region isn't selected, `swiper'."
 ;; counsel related misc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Font-awesom
-(leaf fontawesome :ensure t)
+(leaf fontawesome
+  :ensure t
+  :bind ("s-f" . counsel-fontwesame))
 
 ;; CSS
 (leaf counsel-css

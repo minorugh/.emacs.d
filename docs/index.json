@@ -123,7 +123,7 @@
 	"title": "ファイル編集/入力補助",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n markdown-mode markdown記法での編集をサポートしてくれるマイナーモード。 view-mode ファイルの閲覧に特化した便利機能を提供してくれる。 web-mode HTML編集をするためのマイナーモードを提供してくれる。 yatex Emacsの上で動作する LaTeX の入力支援環境を提供する。 darkroom 書くことに集中できるようにバッファを調整してくれる。 ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。 yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる。 key-chord 同時押しというキーバインドを提供してくれる。 smartparens 括弧などのペアを自動的に挿入してくれる。 iedit 択領域を別の文字列に置き換える。 migemo ローマ字のまま日本語をインクリメンタル検索を可能にする。 selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n markdown-mode markdown記法での編集をサポートしてくれるマイナーモード。 view-mode ファイルの閲覧に特化した便利機能を提供してくれる。 web-mode HTML編集をするためのマイナーモードを提供してくれる。 yatex Emacsの上で動作する LaTeX の入力支援環境を提供する。 darkroom 書くことに集中できるようにバッファを調整してくれる。 ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。 yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる。 key-chord 同時押しというキーバインドを提供してくれる。 smartparens 括弧などのペアを自動的に挿入してくれる。 iedit 択領域を別の文字列に置き換える。 migemo ローマ字のまま日本語をインクリメンタル検索を可能にする。 selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる。 counsel-fontawesome Font-Awesomeの入力を支援してくれる。  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/key-chord/",
@@ -208,6 +208,13 @@
 	"tags": [],
 	"description": "",
 	"content": "自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている\n"
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/editing/fontawesome/",
+	"title": "7.12. selected",
+	"tags": [],
+	"description": "",
+	"content": "Font-awesomeの入力を支援してくれる。\n(leaf fontawesome :ensure t :bind (\u0026#34;s-f\u0026#34; . counsel-fontwesame)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",

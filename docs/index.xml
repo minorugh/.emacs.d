@@ -195,6 +195,16 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
     </item>
     
     <item>
+      <title>7.12. selected</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
+      <description>Font-awesomeの入力を支援してくれる。
+(leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
+    </item>
+    
+    <item>
       <title>1.1. eary-init.el</title>
       <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

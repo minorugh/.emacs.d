@@ -45,5 +45,8 @@ disableToc = true
 : リージョン選択時のアクションを制御してくれる。Like `sendto` of windows.
 
 [pangu-spacing]({{< relref "pangu" >}})
-: 全角と半角の間に自動でスペースを入れる
+: 全角と半角の間に自動でスペースを入れる。
+
+[counsel-fontawesome]({{< relref "fontawesome" >}})
+: Font-Awesomeの入力を支援してくれる。
 

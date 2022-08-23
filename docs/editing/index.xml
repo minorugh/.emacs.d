@@ -155,5 +155,15 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
       <description>;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
     </item>
     
+    <item>
+      <title>7.12. selected</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
+      <description>Font-awesomeの入力を支援してくれる。
+(leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
+    </item>
+    
   </channel>
 </rss>
