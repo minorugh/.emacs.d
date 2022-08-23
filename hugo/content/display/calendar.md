@@ -1,3 +1,7 @@
++++
+title = "7.. calendar"
+draft = false
++++
 
 ### 6.4. [japanese-holidays] カレンダーをカラフルにする
 ビルドインの `holidays` と `japanese-holidays.el`を使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。

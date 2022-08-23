@@ -1,3 +1,7 @@
++++
+title = "7.. which-key"
+draft = false
++++
 
 ### 6.5. [which-key] キーバインドの選択肢をポップアップする
 `guide-key.el` の後発、ディスパッチャが見やすく直感的でとても使いやすい。

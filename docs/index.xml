@@ -7,15 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>5.1. auto-save-buffer-enhanced</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</guid>
-      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
-    </item>
-    
-    <item>
       <title>7.1. markdown-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -27,6 +18,37 @@ https://github.com/shime/emacs-livedown
 npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
 $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。
 (leaf emacs-livedown :el-get shime/emacs-livedown :bind ((&amp;#34;C-c C-c p&amp;#34; . livedown-preview) (&amp;#34;C-c C-c k&amp;#34; . livedown-kill))) </description>
+    </item>
+    
+    <item>
+      <title>9.1. auto-save-buffer-enhanced</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
+      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+    </item>
+    
+    <item>
+      <title>9.2. undo-fua</title>
+      <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
+      <description>8.3. [undo-fu] シンプルな undo/redo を提供 undo-fu はシンプルな undo/redo 機能を提供してくれるやつです。
+昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
+(leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
+    </item>
+    
+    <item>
+      <title>9.3. auto-delete</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
+      <description>8.2. 空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
+下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
+(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
     </item>
     
     <item>
@@ -64,7 +86,7 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
-      <title>6.3. all-the-icons</title>
+      <title>7.3. all-the-icons</title>
       <link>https://minorugh.github.io/.emacs.d/display/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -73,6 +95,19 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
  domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。
  Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) all-the-icons-ivy-rich ivy-mode でアイコン表示をします。</description>
+    </item>
+    
+    <item>
+      <title>7.3. line-spacing</title>
+      <link>https://minorugh.github.io/.emacs.d/display/linespacing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
+      <description>12.4 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
+@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
+(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &#39;buffer-list-update-hook #&#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。
+darkroom-mode では、
+(setq-local line-spacing 0.4) と行間を大きくするように設定していますが、dark-room からでるときに my:linespacing に戻しています。</description>
     </item>
     
     <item>
@@ -97,7 +132,7 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
-      <title>6.4. display-number-mode</title>
+      <title>7.4. display-number-mode</title>
       <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -267,73 +302,29 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
     
     <item>
       <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
-      <description>6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
-(leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
+      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
+      <description>;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/dashboard/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/display/dashboard/</guid>
-      <description>11.1. 起動時の設定 *scratch* バッファーを表示させるのが標準かと思いますが、私は、dashboard にしています。
-https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el
-(leaf dashboard :ensure t :hook ((after-init-hook . dashboard-setup-startup-hook) (dashboard-mode-hook . page-break-lines-mode)) :defun (dashboard-setup-startup-hook) :bind ((&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . open-dashboard) (:dashboard-mode-map (&amp;#34;c&amp;#34; . chromium-calendar) (&amp;#34;y&amp;#34; . chromium-yahoo-japan) (&amp;#34;n&amp;#34; . chromium-nhk-news) (&amp;#34;w&amp;#34; . chromium-weather) (&amp;#34;t&amp;#34; . chromium-tweetdeck) (&amp;#34;h&amp;#34; . chromium-homepage) (&amp;#34;m&amp;#34; . sylpheed) (&amp;#34;s&amp;#34; . slack) (&amp;#34;.&amp;#34; . hydra-browse/body) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . quit-dashboard))) :advice (:override emacs-init-time ad:emacs-init-time) :init (leaf page-break-lines :ensure t) :config ;; Set the title (setq dashboard-banner-logo-title (concat &amp;#34;GNU Emacs &amp;#34; emacs-version &amp;#34; kernel &amp;#34; (car (split-string (shell-command-to-string &amp;#34;uname -r&amp;#34;))) &amp;#34; Debian &amp;#34; (car (split-string (shell-command-to-string &amp;#34;cat /etc/debian_version&amp;#34;))) &amp;#34; 86_64 GNU/Linux&amp;#34;)) ;; Set the banner (setq dashboard-startup-banner (expand-file-name &amp;#34;emacs.</description>
+      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
+      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
-      <description>6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
-(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
-      <description>6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
-(leaf imenu-list :ensure t :bind (&amp;quot;&amp;lt;f2&amp;gt;&amp;quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &#39;left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。
-(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
-      <description>6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
-(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
-      <description>6.5. [which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
-(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
+      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
+      <description>;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
     </item>
     
     <item>
@@ -428,6 +419,17 @@ init-loader には、エラーが出た設定ファイルは読み込まれな�
       <description>最小限の emacs を起動させるための設定です。  test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
 以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
 alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
+    </item>
+    
+    <item>
+      <title>1.6. dashboard</title>
+      <link>https://minorugh.github.io/.emacs.d/startup/dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/startup/dashboard/</guid>
+      <description>11.1. 起動時の設定 *scratch* バッファーを表示させるのが標準かと思いますが、私は、dashboard にしています。
+https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el
+(leaf dashboard :ensure t :hook ((after-init-hook . dashboard-setup-startup-hook) (dashboard-mode-hook . page-break-lines-mode)) :defun (dashboard-setup-startup-hook) :bind ((&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . open-dashboard) (:dashboard-mode-map (&amp;#34;c&amp;#34; . chromium-calendar) (&amp;#34;y&amp;#34; . chromium-yahoo-japan) (&amp;#34;n&amp;#34; . chromium-nhk-news) (&amp;#34;w&amp;#34; . chromium-weather) (&amp;#34;t&amp;#34; . chromium-tweetdeck) (&amp;#34;h&amp;#34; . chromium-homepage) (&amp;#34;m&amp;#34; . sylpheed) (&amp;#34;s&amp;#34; . slack) (&amp;#34;.&amp;#34; . hydra-browse/body) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . quit-dashboard))) :advice (:override emacs-init-time ad:emacs-init-time) :init (leaf page-break-lines :ensure t) :config ;; Set the title (setq dashboard-banner-logo-title (concat &amp;#34;GNU Emacs &amp;#34; emacs-version &amp;#34; kernel &amp;#34; (car (split-string (shell-command-to-string &amp;#34;uname -r&amp;#34;))) &amp;#34; Debian &amp;#34; (car (split-string (shell-command-to-string &amp;#34;cat /etc/debian_version&amp;#34;))) &amp;#34; 86_64 GNU/Linux&amp;#34;)) ;; Set the banner (setq dashboard-startup-banner (expand-file-name &amp;#34;emacs.</description>
     </item>
     
     <item>
@@ -626,6 +628,66 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/whitespace/</guid>
       <description>(leaf whitespace :ensure t :bind (&amp;#34;C-c C-c&amp;#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () &amp;#34;Show tail whitespace.&amp;#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () &amp;#34;Remove contiguous line breaks at end of line + end of file.&amp;#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) </description>
+    </item>
+    
+    <item>
+      <title>7.. calendar</title>
+      <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
+      <description>6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
+(leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
+    </item>
+    
+    <item>
+      <title>7.. calendar</title>
+      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
+      <description>6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
+(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
+    </item>
+    
+    <item>
+      <title>7.. diff-hl</title>
+      <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
+      <description>6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
+(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
+    </item>
+    
+    <item>
+      <title>7.. imenu-list</title>
+      <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
+      <description>6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
+(leaf imenu-list :ensure t :bind (&amp;quot;&amp;lt;f2&amp;gt;&amp;quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &#39;left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。
+(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) </description>
+    </item>
+    
+    <item>
+      <title>7.. toggle-fullscreen</title>
+      <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
+      <description>(global-set-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-fullscreen&amp;#39;) </description>
+    </item>
+    
+    <item>
+      <title>7.. which-key</title>
+      <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
+      <description>6.5. [which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
+(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
     </item>
     
     <item>

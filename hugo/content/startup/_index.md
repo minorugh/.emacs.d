@@ -31,3 +31,6 @@ Emacs の起動設定に関わる部分をここでは設定している
 [test.el]({{< relref "test" >}})
 : 最小限の emacs を起動させるための設定
 
+[dashboard]({{< relref "dashboard" >}})
+: dashboardを起動初期画面にする
+

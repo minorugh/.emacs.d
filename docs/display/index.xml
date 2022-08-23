@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/display/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>6.3. all-the-icons</title>
+      <title>7.3. all-the-icons</title>
       <link>https://minorugh.github.io/.emacs.d/display/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -19,7 +19,20 @@
     </item>
     
     <item>
-      <title>6.4. display-number-mode</title>
+      <title>7.3. line-spacing</title>
+      <link>https://minorugh.github.io/.emacs.d/display/linespacing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
+      <description>12.4 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
+@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
+(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &#39;buffer-list-update-hook #&#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。
+darkroom-mode では、
+(setq-local line-spacing 0.4) と行間を大きくするように設定していますが、dark-room からでるときに my:linespacing に戻しています。</description>
+    </item>
+    
+    <item>
+      <title>7.4. display-number-mode</title>
       <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -28,7 +41,7 @@
     </item>
     
     <item>
-      <title></title>
+      <title>7.. calendar</title>
       <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -38,18 +51,17 @@
     </item>
     
     <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/dashboard/</link>
+      <title>7.. calendar</title>
+      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/display/dashboard/</guid>
-      <description>11.1. 起動時の設定 *scratch* バッファーを表示させるのが標準かと思いますが、私は、dashboard にしています。
-https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el
-(leaf dashboard :ensure t :hook ((after-init-hook . dashboard-setup-startup-hook) (dashboard-mode-hook . page-break-lines-mode)) :defun (dashboard-setup-startup-hook) :bind ((&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . open-dashboard) (:dashboard-mode-map (&amp;#34;c&amp;#34; . chromium-calendar) (&amp;#34;y&amp;#34; . chromium-yahoo-japan) (&amp;#34;n&amp;#34; . chromium-nhk-news) (&amp;#34;w&amp;#34; . chromium-weather) (&amp;#34;t&amp;#34; . chromium-tweetdeck) (&amp;#34;h&amp;#34; . chromium-homepage) (&amp;#34;m&amp;#34; . sylpheed) (&amp;#34;s&amp;#34; . slack) (&amp;#34;.&amp;#34; . hydra-browse/body) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . quit-dashboard))) :advice (:override emacs-init-time ad:emacs-init-time) :init (leaf page-break-lines :ensure t) :config ;; Set the title (setq dashboard-banner-logo-title (concat &amp;#34;GNU Emacs &amp;#34; emacs-version &amp;#34; kernel &amp;#34; (car (split-string (shell-command-to-string &amp;#34;uname -r&amp;#34;))) &amp;#34; Debian &amp;#34; (car (split-string (shell-command-to-string &amp;#34;cat /etc/debian_version&amp;#34;))) &amp;#34; 86_64 GNU/Linux&amp;#34;)) ;; Set the banner (setq dashboard-startup-banner (expand-file-name &amp;#34;emacs.</description>
+      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
+      <description>6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
+(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
     </item>
     
     <item>
-      <title></title>
+      <title>7.. diff-hl</title>
       <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -59,7 +71,7 @@ https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el
     </item>
     
     <item>
-      <title></title>
+      <title>7.. imenu-list</title>
       <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -70,26 +82,16 @@ https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el
     </item>
     
     <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
-      <description>6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
-(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>7.. toggle-fullscreen</title>
       <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
-      <description></description>
+      <description>(global-set-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-fullscreen&amp;#39;) </description>
     </item>
     
     <item>
-      <title></title>
+      <title>7.. which-key</title>
       <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

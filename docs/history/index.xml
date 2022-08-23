@@ -6,5 +6,63 @@
     <description>Recent content in 履歴 / ファイル管理 on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/history/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>9.1. auto-save-buffer-enhanced</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
+      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+    </item>
+    
+    <item>
+      <title>9.2. undo-fua</title>
+      <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
+      <description>8.3. [undo-fu] シンプルな undo/redo を提供 undo-fu はシンプルな undo/redo 機能を提供してくれるやつです。
+昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
+(leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
+    </item>
+    
+    <item>
+      <title>9.3. auto-delete</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
+      <description>8.2. 空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
+下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
+(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
+      <description>;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
+      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
+      <description>;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
+    </item>
+    
   </channel>
 </rss>

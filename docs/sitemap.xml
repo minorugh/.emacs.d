@@ -3,11 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/undo-fu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
   </url>
   
   <url>
@@ -32,6 +40,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
   </url>
   
   <url>
@@ -151,31 +163,15 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/dashboard/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
   </url>
   
   <url>
@@ -212,6 +208,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/dashboard/</loc>
   </url>
   
   <url>
@@ -292,6 +292,30 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/higlight/whitespace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
   </url>
   
   <url>

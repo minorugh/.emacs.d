@@ -1,5 +1,5 @@
 +++
-title = "6.4. display-number-mode"
+title = "7.4. display-number-mode"
 draft = false
 weight = 4
 +++

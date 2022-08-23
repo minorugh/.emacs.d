@@ -7,15 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>5.1. auto-save-buffer-enhanced</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</guid>
-      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
-    </item>
-    
-    <item>
       <title>5.2. dimmer-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

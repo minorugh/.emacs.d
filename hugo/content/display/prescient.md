@@ -1,3 +1,7 @@
++++
+title = "7.. calendar"
+draft = false
++++
 
 ### 6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company）
 コマンド履歴を保存、コマンドのイニシャル入力を可能にする。

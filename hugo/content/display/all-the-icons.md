@@ -1,5 +1,5 @@
 +++
-title = "6.3. all-the-icons"
+title = "7.3. all-the-icons"
 draft = false
 weight = 3
 +++

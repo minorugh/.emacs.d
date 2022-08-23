@@ -1,3 +1,7 @@
++++
+title = "1.6. dashboard"
+draft = false
++++
 
 ### 11.1. 起動時の設定
 `*scratch*` バッファーを表示させるのが標準かと思いますが、私は、`dashboard` にしています。

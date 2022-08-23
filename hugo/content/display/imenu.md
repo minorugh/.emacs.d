@@ -1,3 +1,7 @@
++++
+title = "7.. imenu-list"
+draft = false
++++
 
 ### 6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示
 [@takaxpさんの改良版/imenu-list](https://github.com/takaxp/imenu-list) を使ってます。 
