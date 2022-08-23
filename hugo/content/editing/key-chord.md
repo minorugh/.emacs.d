@@ -8,7 +8,7 @@ weight = 8
 * 同時押しというキーバインドを提供してくれるやつ
 * 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。
 
-```code
+```elisp
 (leaf key-chord
   :ensure t
   :hook (after-init-hook . key-chord-mode)

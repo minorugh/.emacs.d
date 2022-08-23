@@ -130,7 +130,7 @@
 	"title": "7.8. key-chord",
 	"tags": [],
 	"description": "",
-	"content": "5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((\u0026quot;df\u0026quot; . counsel-descbinds) (\u0026quot;l;\u0026quot; . init-loader-show-log) (\u0026quot;@@\u0026quot; . howm-list-all) (\u0026quot;jk\u0026quot; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。\n改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。\n"
+	"content": "5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((\u0026#34;df\u0026#34; . counsel-descbinds) (\u0026#34;l;\u0026#34; . init-loader-show-log) (\u0026#34;@@\u0026#34; . howm-list-all) (\u0026#34;jk\u0026#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。\n改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/",
