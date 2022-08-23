@@ -3,7 +3,7 @@ title = "1.4. init-loader.el"
 draft = false
 +++
 
-### [init-loader] 設定ファイル群のローダー 
+### [init-loader.el] 設定ファイル群のローダー 
 
 * [emacs-jp/init-loader:Loader of configuration files.](https://github.com/emacs-jp/init-loader/) 
 
