@@ -375,7 +375,7 @@
 	"title": "1.5. test.el",
 	"tags": [],
 	"description": "",
-	"content": " 最小限の emacs を起動させるための設定です。  test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。\n以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。\nalias eq = \u0026#39;emacs -q -l ~/.emacs.d/test.el\u0026#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。\n"
+	"content": "[test.el] 最小限の emacs を起動させるための設定 test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。\n以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。\nalias eq = \u0026#39;emacs -q -l ~/.emacs.d/test.el\u0026#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/dashboard/",

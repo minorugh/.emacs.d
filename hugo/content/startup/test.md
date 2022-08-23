@@ -2,8 +2,7 @@
 title = "1.5. test.el"
 draft = false
 +++
-
-* 最小限の emacs を起動させるための設定です。
+### [test.el] 最小限の emacs を起動させるための設定
 
 [`test.el`](https://github.com/minorugh/dotfiles/blob/main/.emacs.d/test.el) は、
 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
