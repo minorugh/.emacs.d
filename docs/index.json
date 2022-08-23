@@ -211,10 +211,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/fontawesome/",
-	"title": "7.12. selected",
+	"title": "7.14. fontawesome",
 	"tags": [],
 	"description": "",
-	"content": "Font-awesomeの入力を支援してくれる。\n(leaf fontawesome :ensure t :bind (\u0026#34;s-f\u0026#34; . counsel-fontwesame)) "
+	"content": "Font-awesome の入力をcounsel で支援してくれる。\n(leaf fontawesome :ensure t :bind (\u0026#34;s-f\u0026#34; . counsel-fontwesame)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
