@@ -2,6 +2,7 @@
 title = "3.1. sequential-command"
 draft = false
 +++
+### [sequential-command.el] バッファーの先頭と最終行への移動を簡単に
 `sequential-command` は、標準の `C-a` `C-e` を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
 
 * [https://github.com/HKey/sequential-command](https://github.com/HKey/sequential-command)
@@ -10,7 +11,7 @@ draft = false
 
 地味ながら一度使うと便利すぎて止められません。
 
-MELPAから Installできますが、私は HKey氏の改良版を `el-get` でインストールしました。
+MELPAからインストールできますが、私は HKey氏の改良版を `el-get` でインストールしました。
 
 ```elisp
 (leaf sequential-command
