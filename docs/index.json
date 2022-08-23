@@ -242,7 +242,7 @@
 	"title": "7.9. smartparens",
 	"tags": [],
 	"description": "",
-	"content": "5.13. [smartparens] 対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。\n(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) "
+	"content": "対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。\n(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/",
@@ -459,7 +459,7 @@
 	"title": "3.5. expand-region",
 	"tags": [],
 	"description": "",
-	"content": "expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。\n2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
+	"content": "カーソル位置を起点に選択範囲を賢く広げてくれる  expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。  2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/font/",

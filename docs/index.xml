@@ -285,7 +285,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
-      <description>5.13. [smartparens] 対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
+      <description>対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
 (leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) </description>
     </item>
     
@@ -556,8 +556,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/expand-region/</guid>
-      <description>expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。
-2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。
+      <description>カーソル位置を起点に選択範囲を賢く広げてくれる  expand-region.el は、カーソル位置を起点として前後に選択範囲を広げてくれます。  2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。
 (leaf expand-region :ensure t :bind (&amp;#34;C-@&amp;#34; . er/expand-region)) </description>
     </item>
     
