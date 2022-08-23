@@ -15,10 +15,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
   </url>
   
@@ -51,6 +47,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/cursor/</loc>
   </url>
   
@@ -67,6 +67,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/higlight/</loc>
   </url>
   
@@ -76,6 +80,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
   </url>
   
   <url>
@@ -91,7 +99,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
   </url>
   
   <url>
@@ -107,7 +115,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
   </url>
   
   <url>
@@ -120,6 +128,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
   </url>
   
   <url>
@@ -168,18 +180,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/fontawesome/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
   </url>
   
   <url>

@@ -1,7 +1,7 @@
 +++
 title = "9.3. auto-delete"
 draft = false
-weight = 1
+weight = 3
 +++
 ### 8.2. 空になったファイルを自動的に削除
 

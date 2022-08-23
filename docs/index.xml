@@ -41,17 +41,6 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
-      <title>9.3. auto-delete</title>
-      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
-      <description>8.2. 空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
-下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
-(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
-    </item>
-    
-    <item>
       <title>5.2. dimmer-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -122,6 +111,17 @@ darkroom-mode では、
     </item>
     
     <item>
+      <title>9.3. auto-delete</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
+      <description>8.2. 空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
+下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
+(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
+    </item>
+    
+    <item>
       <title>5.4. sprit-window-functions</title>
       <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -155,6 +155,15 @@ dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起
     </item>
     
     <item>
+      <title>9.4. recentf</title>
+      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
+      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
+    </item>
+    
+    <item>
       <title>5.5. tempbuf</title>
       <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -178,6 +187,15 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
+      <title>9.5. savehist</title>
+      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
+      <description>;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
+    </item>
+    
+    <item>
       <title>5.6. winner-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -198,12 +216,12 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>9.6. dired</title>
-      <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
+      <title>9.6. hist-files</title>
+      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/history/dired/</guid>
-      <description>(leaf dired :hook ((dired-mode-hook . dired-my-append-buffer-name-hint) (dired-mode-hook . (lambda () (load &amp;#34;dired-x&amp;#34;) (dired-omit-mode 1)))) :bind (:dired-mode-map (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . dired-up-alternate-directory) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;RET&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;&amp;lt;&amp;#34; . beginning-of-buffer) (&amp;#34;&amp;gt;&amp;#34; . end-of-buffer) (&amp;#34;SPC&amp;#34; . my:dired-toggle-mark) (&amp;#34;C-g&amp;#34; . my:dired-unmark-all) (&amp;#34;f&amp;#34; . counsel-find-file) (&amp;#34;r&amp;#34; . wdired-change-to-wdired-mode) (&amp;#34;o&amp;#34; . dired-open-file) (&amp;#34;[&amp;#34; . dired-hide-details-mode) (&amp;#34;a&amp;#34; . toggle-dired-listing-switches) (&amp;#34;q&amp;#34; . dired-dwim-quit-window) (&amp;#34;i&amp;#34; . call-sxiv) (&amp;#34;s&amp;#34; . sudo-edit) (&amp;#34;e&amp;#34; . gedit-open-dired) (&amp;#34;@&amp;#34; . dired-do-gist) (&amp;#34;.&amp;#34; . dired-omit-mode)) :custom `((dired-dwim-target .</description>
+      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
+      <description>;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
     </item>
     
     <item>
@@ -225,12 +243,12 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>9.7. neotree</title>
-      <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
+      <title>9.7. dired</title>
+      <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
-      <description>(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) (with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.&amp;#34; (interactive) (text-scale-adjust 0) (text-scale-decrease 0.8) (message nil)) (add-hook &amp;#39;neo-after-create-hook (lambda (_) (call-interactively &amp;#39;neotree-text-scale))) ;; neotree enter hide ;; Tips from https://github.com/jaypei/emacs-neotree/issues/77 (defun neo-open-file-hide (full-path &amp;amp;optional arg) &amp;#34;Neotree enter hide with FULL-PATH ARG.</description>
+      <guid>https://minorugh.github.io/.emacs.d/history/dired/</guid>
+      <description>(leaf dired :hook ((dired-mode-hook . dired-my-append-buffer-name-hint) (dired-mode-hook . (lambda () (load &amp;#34;dired-x&amp;#34;) (dired-omit-mode 1)))) :bind (:dired-mode-map (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . dired-up-alternate-directory) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;RET&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;&amp;lt;&amp;#34; . beginning-of-buffer) (&amp;#34;&amp;gt;&amp;#34; . end-of-buffer) (&amp;#34;SPC&amp;#34; . my:dired-toggle-mark) (&amp;#34;C-g&amp;#34; . my:dired-unmark-all) (&amp;#34;f&amp;#34; . counsel-find-file) (&amp;#34;r&amp;#34; . wdired-change-to-wdired-mode) (&amp;#34;o&amp;#34; . dired-open-file) (&amp;#34;[&amp;#34; . dired-hide-details-mode) (&amp;#34;a&amp;#34; . toggle-dired-listing-switches) (&amp;#34;q&amp;#34; . dired-dwim-quit-window) (&amp;#34;i&amp;#34; . call-sxiv) (&amp;#34;s&amp;#34; . sudo-edit) (&amp;#34;e&amp;#34; . gedit-open-dired) (&amp;#34;@&amp;#34; . dired-do-gist) (&amp;#34;.&amp;#34; . dired-omit-mode)) :custom `((dired-dwim-target .</description>
     </item>
     
     <item>
@@ -250,6 +268,15 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <guid>https://minorugh.github.io/.emacs.d/editing/key-chord/</guid>
       <description>5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;#34;df&amp;#34; . counsel-descbinds) (&amp;#34;l;&amp;#34; . init-loader-show-log) (&amp;#34;@@&amp;#34; . howm-list-all) (&amp;#34;jk&amp;#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
 改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</description>
+    </item>
+    
+    <item>
+      <title>9.8. neotree</title>
+      <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
+      <description>(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) (with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.&amp;#34; (interactive) (text-scale-adjust 0) (text-scale-decrease 0.8) (message nil)) (add-hook &amp;#39;neo-after-create-hook (lambda (_) (call-interactively &amp;#39;neotree-text-scale))) ;; neotree enter hide ;; Tips from https://github.com/jaypei/emacs-neotree/issues/77 (defun neo-open-file-hide (full-path &amp;amp;optional arg) &amp;#34;Neotree enter hide with FULL-PATH ARG.</description>
     </item>
     
     <item>
@@ -316,33 +343,6 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
       <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
       <description>Font-awesome の入力をcounsel で支援してくれる。
 (leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
-      <description>;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
-      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
-      <description>;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
     </item>
     
     <item>
