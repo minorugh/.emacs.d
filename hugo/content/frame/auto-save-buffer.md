@@ -1,6 +1,7 @@
 +++
 title = "5.1. auto-save-buffer-enhanced"
 draft = false
+weight = 1
 +++
 * `auto-save-buffer-enhanced` は、ファイルの自動保存機能を提供します。
 * [kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs](https://github.com/kentaro/auto-save-buffers-enhanced) 

@@ -7,24 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>5.7. doom-thmes</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
-      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
-    </item>
-    
-    <item>
-      <title>5.8. doom-modeline</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
-      <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
-    </item>
-    
-    <item>
       <title>5.1. auto-save-buffer-enhanced</title>
       <link>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -83,6 +65,24 @@
       
       <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
       <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</description>
+    </item>
+    
+    <item>
+      <title>5.7. doom-thmes</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
+      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
+    </item>
+    
+    <item>
+      <title>5.8. doom-modeline</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
+      <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
     </item>
     
   </channel>

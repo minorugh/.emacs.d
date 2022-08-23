@@ -1,6 +1,7 @@
 +++
 title = "5.4. sprit-window-functions"
 draft = false
+weight = 4
 +++
 `dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
 

@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>5.1. auto-save-buffer-enhanced</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</guid>
+      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+    </item>
+    
+    <item>
       <title>7.1. markdown-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -21,6 +30,18 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
+      <title>5.2. dimmer-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
+      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
+(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
+下記の通り発想転換すれば呪縛から逃れることができます。
+ 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
+    </item>
+    
+    <item>
       <title>7.2. veiw-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/view/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -29,6 +50,17 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
       <description>5.3. viewモード 特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに view-mode を使います。
 下記の設定では、my:auto-view-dirs に追加したディレクトリのファイルを開くと view-mode が常に有効になります．
 (leaf view :hook (find-file-hook . my:auto-view) (server-visit-hook . my:unlock-view-mode) :chord (&amp;#34;::&amp;#34; . view-mode) :bind (:view-mode-map (&amp;#34;h&amp;#34; . backward-char) (&amp;#34;l&amp;#34; . forward-char) (&amp;#34;a&amp;#34; . beginning-of-buffer) (&amp;#34;e&amp;#34; . end-of-buffer) (&amp;#34;w&amp;#34; . forward-word) (&amp;#34;b&amp;#34; . scroll-down) (&amp;#34;c&amp;#34; . kill-ring-save) (&amp;#34;r&amp;#34; . xref-find-references) (&amp;#34;RET&amp;#34; . xref-find-definitions) (&amp;#34;x&amp;#34; . my:view-del-char) (&amp;#34;y&amp;#34; . my:view-yank) (&amp;#34;d&amp;#34; . my:view-kill-region) (&amp;#34;u&amp;#34; . my:view-undo) (&amp;#34;m&amp;#34; . magit-status) (&amp;#34;g&amp;#34; .</description>
+    </item>
+    
+    <item>
+      <title>5.3. scrool-other-Window</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
+      <description>Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。
+一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
+(leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
     </item>
     
     <item>
@@ -55,6 +87,16 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
+      <title>5.4. sprit-window-functions</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
+      <description>dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
+ 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
+    </item>
+    
+    <item>
       <title>6.4. display-number-mode</title>
       <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -78,6 +120,16 @@ dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起
     </item>
     
     <item>
+      <title>5.5. tempbuf</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
+      <description> tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
+ my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
+    </item>
+    
+    <item>
       <title>7.5. darkroom</title>
       <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -88,6 +140,15 @@ https://github.com/joaotavora/darkroom
 [F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
 yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
 (leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.</description>
+    </item>
+    
+    <item>
+      <title>5.6. winner-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
+      <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</description>
     </item>
     
     <item>
@@ -565,67 +626,6 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/whitespace/</guid>
       <description>(leaf whitespace :ensure t :bind (&amp;#34;C-c C-c&amp;#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () &amp;#34;Show tail whitespace.&amp;#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () &amp;#34;Remove contiguous line breaks at end of line + end of file.&amp;#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) </description>
-    </item>
-    
-    <item>
-      <title>5.1. auto-save-buffer-enhanced</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</guid>
-      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
-    </item>
-    
-    <item>
-      <title>5.2. dimmer-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
-      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
-(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
-下記の通り発想転換すれば呪縛から逃れることができます。
- 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
-    </item>
-    
-    <item>
-      <title>5.3. scrool-other-Window</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
-      <description>Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。
-一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
-(leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
-    </item>
-    
-    <item>
-      <title>5.4. sprit-window-functions</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
-      <description>dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
- 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
-    </item>
-    
-    <item>
-      <title>5.5. tempbuf</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
-      <description> tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
- my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
-    </item>
-    
-    <item>
-      <title>5.6. winner-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
-      <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</description>
     </item>
     
     <item>
