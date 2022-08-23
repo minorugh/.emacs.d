@@ -1,11 +1,10 @@
-;;; 30_neotree.el --- Neotree configurations. -*- lexical-binding: t; no-byte-compile:t -*-
-;;; Commentary:
-;;; Code:
-;; (setq debug-on-error t)
++++
+title = "9.7. neotree"
+draft = false
+weight = 7
++++
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Neotree configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+```elisp
 (leaf neotree
   :ensure t
   :bind (("<f10>" . neotree-find)
@@ -18,8 +17,9 @@
   :custom
   `((neo-keymap-style . 'concise)
     (neo-create-file-auto-open . t)))
+```
 
-
+```elisp
 (with-eval-after-load neotree
   ;; Change neotree's font size
   ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218
@@ -45,9 +45,4 @@
 	"Neotree enter hide with ARG."
 	(interactive "P")
 	(neo-buffer--execute arg 'neo-open-file-hide 'neo-open-dir)))
-
-
-
-(provide '30_neotree)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; 30_neotree.el ends here
+```

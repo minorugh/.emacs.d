@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-23T21:33:31 JST">
-<title>4.7. rainbow-mode :: minoru&#39;s Emacs Configuration</title>
+<title>9.7. neotree :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/higlight/rainbow/">
+  <body data-url="/.emacs.d/history/neotree/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -668,7 +668,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/rainbow.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/history/neotree.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -688,7 +688,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/higlight/'>フォント / 配色関連</a> > 4.7. rainbow-mode
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/history/'>履歴 / ファイル管理</a> > 9.7. neotree
 
  
 
@@ -711,7 +711,7 @@
 
 <div id="body-inner">
   
-    <h1>4.7. rainbow-mode</h1>
+    <h1>9.7. neotree</h1>
   
 
 
@@ -719,13 +719,43 @@
     
     
     
-<ul>
-<li><code>rainbow-mode.el</code> は <code>red</code>, <code>green</code> などの色名や <code>#aabbcc</code> といったカラーコードから実際の色を表示するマイナーモードです。</li>
-<li>常時表示しているとうざいときもあるので、<code>global</code> 設定しないで必要なときだけ使えるようにしています。</li>
-</ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">rainbow-mode</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">neotree</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-c r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">rainbow-mode</span>))
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-find</span>)
+		 (<span style="color:#a90d91">:neotree-mode-map</span>
+		  (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-enter-hide</span>)
+		  (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-hidden-file-toggle</span>)
+		  (<span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-select-up-node</span>)
+		  (<span style="color:#c41a16">&#34;&lt;right&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-change-root</span>)
+		  (<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-toggle</span>)))
+  <span style="color:#a90d91">:custom</span>
+  <span style="color:#000">`</span>((<span style="color:#000">neo-keymap-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;concise</span>)
+    (<span style="color:#000">neo-create-file-auto-open</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#000">neotree</span>
+  <span style="color:#177500">;; Change neotree&#39;s font size</span>
+  <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/218</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-text-scale</span> ()
+	<span style="color:#c41a16">&#34;Neotree text scale.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">text-scale-adjust</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">text-scale-decrease</span> <span style="color:#1c01ce">0.8</span>)
+	(<span style="color:#000">message</span> <span style="color:#000">nil</span>))
+  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;neo-after-create-hook</span>
+			(<span style="color:#a90d91">lambda</span> (<span style="color:#000">_</span>)
+			  (<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;neotree-text-scale</span>)))
+
+  <span style="color:#177500">;; neotree enter hide</span>
+  <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/77</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">neo-open-file-hide</span> (<span style="color:#000">full-path</span> <span style="color:#a90d91">&amp;optional</span> <span style="color:#000">arg</span>)
+	<span style="color:#c41a16">&#34;Neotree enter hide with FULL-PATH ARG.&#34;</span>
+	(<span style="color:#000">neo-global--select-mru-window</span> <span style="color:#000">arg</span>)
+	(<span style="color:#000">find-file</span> <span style="color:#000">full-path</span>)
+	(<span style="color:#000">neotree-hide</span>))
+
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-enter-hide</span> (<span style="color:#a90d91">&amp;optional</span> <span style="color:#000">arg</span>)
+	<span style="color:#c41a16">&#34;Neotree enter hide with ARG.&#34;</span>
+	(<span style="color:#a90d91">interactive</span> <span style="color:#c41a16">&#34;P&#34;</span>)
+	(<span style="color:#000">neo-buffer--execute</span> <span style="color:#000">arg</span> <span style="color:#c41a16">&#39;neo-open-file-hide</span> <span style="color:#c41a16">&#39;neo-open-dir</span>)))
 </code></pre></div>
 
     
@@ -737,8 +767,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/higlight/rainbow-delimiters/" title="4.6. rainbow-delimiters"> <i class="fa fa-chevron-left"></i><label>4.6. rainbow-delimiters</label></a>
-    <a class="nav nav-next" href="/.emacs.d/higlight/volatile-highlights/" title="4.8. volatile-highlight" style="margin-right: 0px;"><label>4.8. volatile-highlight</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/history/dired/" title="9.6. dired"> <i class="fa fa-chevron-left"></i><label>9.6. dired</label></a>
+    <a class="nav nav-next" href="/.emacs.d/history/hist-files/" title="" style="margin-right: 0px;"><label></label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

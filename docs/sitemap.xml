@@ -91,6 +91,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/</loc>
   </url>
   
@@ -100,6 +104,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
   </url>
   
   <url>

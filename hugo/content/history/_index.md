@@ -26,4 +26,9 @@ disableToc = true
 [hist-files]({{< relref "hist-files" >}})
 : ファイルの自動保存機能を提供します。
 
+[dired]({{< relref "dired" >}})
+: ファイルの自動保存機能を提供します。
+
+[neotree]({{< relref "neotree" >}})
+: ファイルの自動保存機能を提供します。
 
