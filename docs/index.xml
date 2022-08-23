@@ -105,7 +105,7 @@ dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起
 https://github.com/joaotavora/darkroom
 [F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
 yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
-(leaf darkroom :ensure t :bind ((&amp;quot;&amp;lt;f12&amp;gt;&amp;quot; . my:darkroom-in) (:darkroom-mode-map (&amp;quot;&amp;lt;f12&amp;gt;&amp;quot; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;quot;Enter to the `darkroom-mode&#39;.&amp;quot; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;quot;Returns from `darkroom-mode&#39; to the previous state.&amp;quot; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;quot;Revert buffer without confirmation.</description>
+(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.</description>
     </item>
     
     <item>

@@ -14,7 +14,7 @@ weight = 5
 
 yes/no確認を聞かれるのが煩わしいので `my:revery-buffer-no-confirm` の関数を作りました。
 
-```code
+```elisp
 (leaf darkroom
   :ensure t
   :bind (("<f12>" . my:darkroom-in)
