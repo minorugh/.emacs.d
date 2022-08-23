@@ -1,7 +1,7 @@
 +++
-title = "6.1. doom-thmes"
+title = "5.7. doom-thmes"
 draft = false
-weight = 1
+weight = 7
 +++
 
 ```emacs-lisp

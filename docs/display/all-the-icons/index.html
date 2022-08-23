@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-23T20:20:15 JST">
-<title>編集サポート / 入力補助 :: minoru&#39;s Emacs Configuration</title>
+<title>6.3. all-the-icons :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/editing/">
+  <body data-url="/.emacs.d/display/all-the-icons/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -610,7 +610,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/display/all-the-icons.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -627,7 +627,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > 編集サポート / 入力補助
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 6.3. all-the-icons
+
+ 
 
  
 
@@ -638,7 +643,17 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#all-the-icons-dired">all-the-icons-dired</a></li>
+        <li><a href="#all-the-icons-ivy-rich">all-the-icons-ivy-rich</a></li>
+        <li><a href="#all-the-icons-ibuffer">all-the-icons-ibuffer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -648,7 +663,7 @@
 
 <div id="body-inner">
   
-    <h1>編集サポート / 入力補助</h1>
+    <h1>6.3. all-the-icons</h1>
   
 
 
@@ -656,40 +671,42 @@
     
     
     
-
-<p>ここにはファイル編集や入力補助の設定をまとめている</p>
-<dl>
-<dt><a href="/.emacs.d/editing/markdown/">markdown-mode</a></dt>
-<dd>markdown記法での編集をサポートしてくれるマイナーモード。</dd>
-<dt><a href="/.emacs.d/editing/view/">view-mode</a></dt>
-<dd>ファイルの閲覧に特化した便利機能を提供してくれる。</dd>
-<dt><a href="/.emacs.d/editing/web-mode/">web-mode</a></dt>
-<dd>HTML編集をするためのマイナーモードを提供してくれる。</dd>
-<dt><a href="/.emacs.d/editing/yatex/">yatex</a></dt>
-<dd>Emacsの上で動作する LaTeX の入力支援環境を提供する。</dd>
-<dt><a href="/.emacs.d/editing/darkroom/">darkroom</a></dt>
-<dd>書くことに集中できるようにバッファを調整してくれる。</dd>
-<dt><a href="/.emacs.d/editing/ivy/">ivy / counsel</a></dt>
-<dd>多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。</dd>
-<dt><a href="/.emacs.d/editing/company/">yasunippets/ cpmpany</a></dt>
-<dd>キーをタイプした時点で自動的に補完候補が出てきてくれる。</dd>
-<dt><a href="/.emacs.d/editing/key-chord/">key-chord</a></dt>
-<dd>同時押しというキーバインドを提供してくれる。</dd>
-<dt><a href="/.emacs.d/editing/smartparens/">smartparens</a></dt>
-<dd>括弧などのペアを自動的に挿入してくれる。</dd>
-<dt><a href="/.emacs.d/editing/iedit/">iedit</a></dt>
-<dd>択領域を別の文字列に置き換える。</dd>
-<dt><a href="/.emacs.d/editing/iedit/">migemo</a></dt>
-<dd>ローマ字のまま日本語をインクリメンタル検索を可能にする。</dd>
-<dt><a href="/.emacs.d/editing/selected/">selected</a></dt>
-<dd>リージョン選択時のアクションを制御してくれる。Like <code>sendto</code> of windows.</dd>
-<dt><a href="/.emacs.d/editing/pangu/">pangu-spacing</a></dt>
-<dd>全角と半角の間に自動でスペースを入れる。</dd>
-<dt><a href="/.emacs.d/editing/fontawesome/">counsel-fontawesome</a></dt>
-<dd>Font-Awesomeの入力を支援してくれる。</dd>
-</dl>
-
-
+<p><code>all-the-icons.el</code> を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。</p>
+<ul>
+<li><a href="https://github.com/domtronn/all-the-icons.el">domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.</a></li>
+</ul>
+<p>初めて使うときはパッケージを使えるようにした後、<code>M-x all-the-icons-install-fonts</code> すると自動的にフォントがインストールされます。以下の設定では自動化しています。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">display-line-numbers</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">global-display-line-numbers-mode</span>)
+		 (<span style="color:#000">lisp-interaction-mode-hook</span> <span style="color:#000">dired-mode-hook</span>)<span style="color:#000">.</span> <span style="color:#000">my:disable-modes</span>)
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f9&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">display-line-numbers-mode</span>)
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">display-line-numbers-width-start</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:disable-modes</span> ()
+	<span style="color:#c41a16">&#34;Disable modes in scrtch buffer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">flymake-mode</span> <span style="color:#1c01ce">0</span>)))
+</code></pre></div><h3 id="all-the-icons-dired">all-the-icons-dired</h3>
+<p><code>dired</code> でファイルのアイコンを表示します。</p>
+<ul>
+<li>Emacs27以降、MELPA版は白色にしか表示されないので <a href="https://github.com/jtbm37/all-the-icons-dired">jtbm37/all-the-icons-dired</a> をel-getでインストールしています。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-dired</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">jtbm37/all-the-icons-dired</span>
+  <span style="color:#a90d91">:after</span> <span style="color:#000">doom-modeline</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-dired-mode</span>))
+</code></pre></div><h3 id="all-the-icons-ivy-rich">all-the-icons-ivy-rich</h3>
+<p><code>ivy-mode</code> でアイコン表示をします。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-ivy-rich</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-ivy-rich-mode</span>))
+</code></pre></div><h3 id="all-the-icons-ibuffer">all-the-icons-ibuffer</h3>
+<p><code>ibuffer-mode</code> でアイコン表示をします。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-ibuffer</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">ibuffer-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-ibuffer-mode</span>))
+</code></pre></div>
 
     
     
@@ -700,8 +717,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/frame/winner/" title="5.6. winner-mode"> <i class="fa fa-chevron-left"></i><label>5.6. winner-mode</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/markdown/" title="7.1. markdown-mode" style="margin-right: 0px;"><label>7.1. markdown-mode</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/display/" title="表示サポート"> <i class="fa fa-chevron-left"></i><label>表示サポート</label></a>
+    <a class="nav nav-next" href="/.emacs.d/display/display-number/" title="6.4. display-number-mode" style="margin-right: 0px;"><label>6.4. display-number-mode</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

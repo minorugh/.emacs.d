@@ -25,3 +25,10 @@ disableToc = true
 
 [winner-mode]({{< relref "winner" >}})
 : ウインドウ構成の履歴を辿る
+
+[doom-themes]({{< relref "doom-themes" >}})
+: テーマの設定
+
+[doom-modeline]({{< relref "doom-modeline" >}})
+: モードラインの設定
+

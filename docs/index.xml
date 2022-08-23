@@ -7,15 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>6.1. doom-thmes</title>
-      <link>https://minorugh.github.io/.emacs.d/history/doom-themes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/doom-themes/</guid>
-      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
-    </item>
-    
-    <item>
       <title>7.1. markdown-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -27,15 +18,6 @@ https://github.com/shime/emacs-livedown
 npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
 $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。
 (leaf emacs-livedown :el-get shime/emacs-livedown :bind ((&amp;#34;C-c C-c p&amp;#34; . livedown-preview) (&amp;#34;C-c C-c k&amp;#34; . livedown-kill))) </description>
-    </item>
-    
-    <item>
-      <title>6.2. doom-modeline</title>
-      <link>https://minorugh.github.io/.emacs.d/history/doom-modeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/doom-modeline/</guid>
-      <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
     </item>
     
     <item>
@@ -51,10 +33,10 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     
     <item>
       <title>6.3. all-the-icons</title>
-      <link>https://minorugh.github.io/.emacs.d/history/all-the-icons/</link>
+      <link>https://minorugh.github.io/.emacs.d/display/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/history/all-the-icons/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/display/all-the-icons/</guid>
       <description>all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
  domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。
@@ -74,10 +56,10 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     
     <item>
       <title>6.4. display-number-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/history/display-number/</link>
+      <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/history/display-number/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/display/display-number/</guid>
       <description>(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
     </item>
     
@@ -120,12 +102,30 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
+      <title>5.7. doom-thmes</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
+      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
+    </item>
+    
+    <item>
       <title>7.7. yasunippets / company</title>
       <link>https://minorugh.github.io/.emacs.d/editing/company/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/company/</guid>
       <description>(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) (leaf company :ensure t :hook (after-init-hook . global-company-mode) :bind ((&amp;#34;C-&amp;lt;return&amp;gt;&amp;#34; . company-complete) (&amp;#34;C-&amp;lt;tab&amp;gt;&amp;#34; . company-yasnippet) (:company-active-map (&amp;#34;&amp;lt;tab&amp;gt;&amp;#34; . company-complete-common-or-cycle) (&amp;#34;&amp;lt;backtab&amp;gt;&amp;#34; . company-select-previous) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . company-abort))) :custom `((company-transformers . &amp;#39;(company-sort-by-backend-importance)) (company-idle-delay . 0) (company-require-match . &amp;#39;never) (company-minimum-prefix-length . 2) (company-selection-wrap-around . t) (completion-ignore-case . t) (company-dabbrev-downcase . nil)) :config (defvar company-mode/enable-yas t &amp;#34;Enable yasnippet for all backends.&amp;#34;) (defun company-mode/backend-with-yas (backend) (if (or (not company-mode/enable-yas) (and (listp backend) (member &amp;#39;company-yasnippet backend))) backend (append (if (consp backend) backend (list backend)) &amp;#39;(:with company-yasnippet)))) (setq company-backends (mapcar #&amp;#39;company-mode/backend-with-yas company-backends))) </description>
+    </item>
+    
+    <item>
+      <title>5.8. doom-modeline</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
+      <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
     </item>
     
     <item>

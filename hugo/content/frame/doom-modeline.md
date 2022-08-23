@@ -1,7 +1,7 @@
 +++
-title = "6.2. doom-modeline"
+title = "5.8. doom-modeline"
 draft = false
-weight = 2
+weight = 8
 +++
 
 ```emacs-lisp

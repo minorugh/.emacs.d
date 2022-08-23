@@ -3,19 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/doom-themes/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/doom-modeline/</loc>
   </url>
   
   <url>
@@ -27,7 +19,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/all-the-icons/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
   </url>
   
   <url>
@@ -39,7 +31,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/display-number/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
   </url>
   
   <url>
@@ -67,11 +59,19 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-themes/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/display/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</loc>
   </url>
   
   <url>
