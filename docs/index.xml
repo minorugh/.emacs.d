@@ -425,7 +425,7 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/init-loader/</guid>
-      <description> emacs-jp/init-loader:Loader of configuration files.  設定ファイル群のローダーです。 指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
+      <description>[init-loader] 設定ファイル群のローダー  emacs-jp/init-loader:Loader of configuration files.  指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 (leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) </description>

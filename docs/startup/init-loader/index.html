@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T08:26:04 JST">
+<meta name="revised" content="2022-08-24T08:30:16 JST">
 <title>1.4. init-loader.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -701,7 +701,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#init-loader-設定ファイル群のローダー">[init-loader] 設定ファイル群のローダー</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -719,10 +727,11 @@
     
     
     
+<h3 id="init-loader-設定ファイル群のローダー">[init-loader] 設定ファイル群のローダー</h3>
 <ul>
 <li><a href="https://github.com/emacs-jp/init-loader/">emacs-jp/init-loader:Loader of configuration files.</a></li>
 </ul>
-<p>設定ファイル群のローダーです。 指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。</p>
+<p>指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。</p>
 <p><code>init-loader</code> には、エラーが出た設定ファイルは読み込まれない&hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。</p>
 <p>起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">init-loader</span>
