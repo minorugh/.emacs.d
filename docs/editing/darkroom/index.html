@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>7.5. darkroom :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -598,33 +598,33 @@
 <p>[F12] キーで IN/OUT をトグルしています。
 <code>darkroom-mode</code> から抜けるときは、<code>revert-buffer</code> で再読込してもとに戻します。</p>
 <p>yes/no確認を聞かれるのが煩わしいので <code>my:revery-buffer-no-confirm</code> の関数を作りました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf darkroom
-  :ensure <span style="color:#66d9ef">t</span>
-  :bind ((<span style="color:#e6db74">&#34;&lt;f12&gt;&#34;</span> <span style="color:#f92672">.</span> my:darkroom-in)
-		 (:darkroom-mode-map
-		  (<span style="color:#e6db74">&#34;&lt;f12&gt;&#34;</span> <span style="color:#f92672">.</span> my:darkroom-out)))
-  :config
-  (defun my:darkroom-in ()
-	<span style="color:#e6db74">&#34;Enter to the </span><span style="color:#e6db74">`darkroom-mode&#39;</span><span style="color:#e6db74">.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(diff-hl-mode <span style="color:#ae81ff">0</span>)
-	(display-line-numbers-mode <span style="color:#ae81ff">0</span>)
-	(darkroom-tentative-mode <span style="color:#ae81ff">1</span>)
-	(setq-local line-spacing <span style="color:#ae81ff">0.4</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">darkroom</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:darkroom-in</span>)
+		 (<span style="color:#a90d91">:darkroom-mode-map</span>
+		  (<span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:darkroom-out</span>)))
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-in</span> ()
+	<span style="color:#c41a16">&#34;Enter to the </span><span style="color:#c41a16">`darkroom-mode&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">diff-hl-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>))
 
-  (defun my:darkroom-out ()
-	<span style="color:#e6db74">&#34;Returns from </span><span style="color:#e6db74">`darkroom-mode&#39;</span><span style="color:#e6db74"> to the previous state.&#34;</span>
-	(interactive)
-	(my:linespacing)
-	(darkroom-tentative-mode <span style="color:#ae81ff">0</span>)
-	(display-line-numbers-mode <span style="color:#ae81ff">1</span>)
-	(my:revert-buffer-no-confirm))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-out</span> ()
+	<span style="color:#c41a16">&#34;Returns from </span><span style="color:#c41a16">`darkroom-mode&#39;</span><span style="color:#c41a16"> to the previous state.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">my:linespacing</span>)
+	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">my:revert-buffer-no-confirm</span>))
 
-  (defun my:revert-buffer-no-confirm ()
-	<span style="color:#e6db74">&#34;Revert buffer without confirmation.&#34;</span>
-	(interactive)
-	(revert-buffer <span style="color:#66d9ef">t</span> <span style="color:#66d9ef">t</span>)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:revert-buffer-no-confirm</span> ()
+	<span style="color:#c41a16">&#34;Revert buffer without confirmation.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">revert-buffer</span> <span style="color:#000">t</span> <span style="color:#000">t</span>)))
 </code></pre></div>
 
     

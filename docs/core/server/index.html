@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>2.4. server / emacsclient :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -592,12 +592,12 @@
 <li><code>shell-command</code> で <code>emacsclient</code> をよく使うので、Emacs起動時に <code>server</code> を起動させています。</li>
 <li>重複起動させない設定です。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Server start for emacs-client</span>
-(leaf server
-  :require <span style="color:#66d9ef">t</span>
-  :config
-  (unless (server-running-p)
-    (server-start)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Server start for emacs-client</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">server</span>
+  <span style="color:#a90d91">:require</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">unless</span> (<span style="color:#000">server-running-p</span>)
+    (<span style="color:#000">server-start</span>)))
 </code></pre></div><h2 id="linux-の起動時に-emacsを最小化起動させる">Linux の起動時に Emacsを最小化起動させる</h2>
 <p>起動オプションに <code>--iconic</code> を付すことで最小化起動します。</p>
 <p>MENUから「セッションと起動」を立ち上げて「自動開始アプリケーション」に以下を設定すといいです。</p>

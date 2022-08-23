@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>5.3. scrool-other-Window :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -587,23 +587,23 @@
 <p><code>Scrool-other-Window</code> は、<code>deactive</code> なwindowをスクロールさせるための設定です。</p>
 <p>一画面のとき <code>&lt;next&gt;</code> / <code>&lt;prior&gt;</code> は、PgUp / PgDn として使うが、画面分割のときだけ <code>other-Window</code> に対応させている。
 標準機能の <code>C-v: scroll-uo-command</code> / <code>M-v: scroll-down-command</code> を使い分ければ快適に二画面同時閲覧が可能となる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf *my:scroll-other-window
-  :bind ((<span style="color:#e6db74">&#34;&lt;next&gt;&#34;</span> <span style="color:#f92672">.</span> my:scroll-other-window)
-		 (<span style="color:#e6db74">&#34;&lt;prior&gt;&#34;</span> <span style="color:#f92672">.</span> my:scroll-other-window-down))
-  :init
-  (defun my:scroll-other-window ()
-	<span style="color:#e6db74">&#34;If there are two windows, </span><span style="color:#e6db74">`scroll-other-window&#39;</span><span style="color:#e6db74">.&#34;</span>
-	(interactive)
-	(when (one-window-p)
-	  (<span style="color:#a6e22e">scroll-up</span>))
-	(<span style="color:#a6e22e">scroll-other-window</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*my:scroll-other-window</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;next&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:scroll-other-window</span>)
+		 (<span style="color:#c41a16">&#34;&lt;prior&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:scroll-other-window-down</span>))
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:scroll-other-window</span> ()
+	<span style="color:#c41a16">&#34;If there are two windows, </span><span style="color:#c41a16">`scroll-other-window&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
+	  (<span style="color:#000">scroll-up</span>))
+	(<span style="color:#000">scroll-other-window</span>))
 
-  (defun my:scroll-other-window-down ()
-	<span style="color:#e6db74">&#34;If there are two windows, </span><span style="color:#e6db74">`scroll-other-window-down&#39;</span><span style="color:#e6db74">.&#34;</span>
-	(interactive)
-	(when (one-window-p)
-	  (<span style="color:#a6e22e">scroll-down</span>))
-	(scroll-other-window-down)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:scroll-other-window-down</span> ()
+	<span style="color:#c41a16">&#34;If there are two windows, </span><span style="color:#c41a16">`scroll-other-window-down&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
+	  (<span style="color:#000">scroll-down</span>))
+	(<span style="color:#000">scroll-other-window-down</span>)))
 </code></pre></div>
 
     

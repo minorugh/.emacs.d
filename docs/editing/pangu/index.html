@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>7.13. pangu-spacing :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -584,16 +584,16 @@
     
     
     
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Add space between full-width and half-width</span>
-(leaf pangu-spacing
-  :ensure <span style="color:#66d9ef">t</span>
-  :after mozc
-  :hook ((markdown-mode-hook text-mode-hook) <span style="color:#f92672">.</span> pangu-spacing-mode)
-  :config
-  (setq pangu-spacing-include-regexp
-		(rx (or (and (or (group-n <span style="color:#ae81ff">3</span> (any <span style="color:#e6db74">&#34;。，！？；：「」（）、&#34;</span>))
-						 (group-n <span style="color:#ae81ff">1</span> (or (category japanese))))))
-			(group-n <span style="color:#ae81ff">2</span> (in <span style="color:#e6db74">&#34;a-zA-Z&#34;</span>)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Add space between full-width and half-width</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">pangu-spacing</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:after</span> <span style="color:#000">mozc</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">markdown-mode-hook</span> <span style="color:#000">text-mode-hook</span>) <span style="color:#000">.</span> <span style="color:#000">pangu-spacing-mode</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">pangu-spacing-include-regexp</span>
+		(<span style="color:#a90d91">rx</span> (<span style="color:#a90d91">or</span> (<span style="color:#a90d91">and</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">group-n</span> <span style="color:#1c01ce">3</span> (<span style="color:#000">any</span> <span style="color:#c41a16">&#34;。，！？；：「」（）、&#34;</span>))
+						 (<span style="color:#000">group-n</span> <span style="color:#1c01ce">1</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">category</span> <span style="color:#000">japanese</span>))))))
+			(<span style="color:#000">group-n</span> <span style="color:#1c01ce">2</span> (<span style="color:#000">in</span> <span style="color:#c41a16">&#34;a-zA-Z&#34;</span>)))))
 
 </code></pre></div>
 

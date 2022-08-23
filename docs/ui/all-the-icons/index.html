@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>6.3. all-the-icons :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -599,36 +599,36 @@
 <li><a href="https://github.com/domtronn/all-the-icons.el">domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.</a></li>
 </ul>
 <p>初めて使うときはパッケージを使えるようにした後、<code>M-x all-the-icons-install-fonts</code> すると自動的にフォントがインストールされます。以下の設定では自動化しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf display-line-numbers
-  :hook ((after-init-hook <span style="color:#f92672">.</span> global-display-line-numbers-mode)
-		 (lisp-interaction-mode-hook dired-mode-hook)<span style="color:#f92672">.</span> my:disable-modes)
-  :bind (<span style="color:#e6db74">&#34;&lt;f9&gt;&#34;</span> <span style="color:#f92672">.</span> display-line-numbers-mode)
-  :custom (display-line-numbers-width-start <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-  :init
-  (defun my:disable-modes ()
-	<span style="color:#e6db74">&#34;Disable modes in scrtch buffer.&#34;</span>
-	(interactive)
-	(display-line-numbers-mode <span style="color:#ae81ff">0</span>)
-	(flymake-mode <span style="color:#ae81ff">0</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">display-line-numbers</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">global-display-line-numbers-mode</span>)
+		 (<span style="color:#000">lisp-interaction-mode-hook</span> <span style="color:#000">dired-mode-hook</span>)<span style="color:#000">.</span> <span style="color:#000">my:disable-modes</span>)
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f9&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">display-line-numbers-mode</span>)
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">display-line-numbers-width-start</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:disable-modes</span> ()
+	<span style="color:#c41a16">&#34;Disable modes in scrtch buffer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">flymake-mode</span> <span style="color:#1c01ce">0</span>)))
 </code></pre></div><h3 id="all-the-icons-dired">all-the-icons-dired</h3>
 <p><code>dired</code> でファイルのアイコンを表示します。</p>
 <ul>
 <li>Emacs27以降、MELPA版は白色にしか表示されないので <a href="https://github.com/jtbm37/all-the-icons-dired">jtbm37/all-the-icons-dired</a> をel-getでインストールしています。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf all-the-icons-dired
-  :el-get jtbm37/all-the-icons-dired
-  :after doom-modeline
-  :hook (dired-mode-hook <span style="color:#f92672">.</span> all-the-icons-dired-mode))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-dired</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">jtbm37/all-the-icons-dired</span>
+  <span style="color:#a90d91">:after</span> <span style="color:#000">doom-modeline</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-dired-mode</span>))
 </code></pre></div><h3 id="all-the-icons-ivy-rich">all-the-icons-ivy-rich</h3>
 <p><code>ivy-mode</code> でアイコン表示をします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf all-the-icons-ivy-rich
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (after-init-hook <span style="color:#f92672">.</span> all-the-icons-ivy-rich-mode))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-ivy-rich</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-ivy-rich-mode</span>))
 </code></pre></div><h3 id="all-the-icons-ibuffer">all-the-icons-ibuffer</h3>
 <p><code>ibuffer-mode</code> でアイコン表示をします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf all-the-icons-ibuffer
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (ibuffer-mode-hook <span style="color:#f92672">.</span> all-the-icons-ibuffer-mode))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-ibuffer</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">ibuffer-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-ibuffer-mode</span>))
 </code></pre></div>
 
     

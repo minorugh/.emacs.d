@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>7.1. markdown-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -594,13 +594,13 @@
     
 <h3 id="52-markdownモード">5.2. markdownモード</h3>
 <p><a href="https://github.com/jrblevin/markdown-mode"><code>markdown-mode.el</code></a> は、Markdown形式のテキストを編集するための主要なモードです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf markdown-mode
-  :ensure <span style="color:#66d9ef">t</span>
-  :mode (<span style="color:#e6db74">&#34;\\.md\\&#39;&#34;</span>)
-  :custom
-  <span style="color:#f92672">`</span>((markdown-italic-underscore <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-    (markdown-asymmetric-header <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-	(markdown-fontify-code-blocks-natively <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">markdown-mode</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.md\\&#39;&#34;</span>)
+  <span style="color:#a90d91">:custom</span>
+  <span style="color:#000">`</span>((<span style="color:#000">markdown-italic-underscore</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+    (<span style="color:#000">markdown-asymmetric-header</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+	(<span style="color:#000">markdown-fontify-code-blocks-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>))
 </code></pre></div><p>markdownファイルのプレビューには、<a href="https://github.com/shime/emacs-livedown"><code>emacs-livedown</code></a> を使っています。
 記事を書きながらライブでプレビュー出来るすぐれものです。</p>
 <p><a href="https://github.com/shime/emacs-livedown">https://github.com/shime/emacs-livedown</a></p>
@@ -608,10 +608,10 @@
 <pre><code class="language-session" data-lang="session">$ npm install -g livedown
 </code></pre><p>次にEmacsの設定を書きます。
 MELPAにはないので<code>el-get</code> でインストールします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf emacs-livedown
- :el-get shime/emacs-livedown
- :bind ((<span style="color:#e6db74">&#34;C-c C-c p&#34;</span> <span style="color:#f92672">.</span> livedown-preview)
-        (<span style="color:#e6db74">&#34;C-c C-c k&#34;</span> <span style="color:#f92672">.</span> livedown-kill)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">emacs-livedown</span>
+ <span style="color:#a90d91">:el-get</span> <span style="color:#000">shime/emacs-livedown</span>
+ <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c C-c p&#34;</span> <span style="color:#000">.</span> <span style="color:#000">livedown-preview</span>)
+        (<span style="color:#c41a16">&#34;C-c C-c k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">livedown-kill</span>)))
 </code></pre></div>
 
     

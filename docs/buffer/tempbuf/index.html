@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>5.5. tempbuf :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -595,20 +595,20 @@
 <li><code>find-file-hook</code>: <code>find-file</code> や <code>dired</code> で開いたファイルが対象</li>
 <li><code>dired buffer</code> /<code>magit-buffer</code>: 強制的に削除</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf tempbuf
-  :el-get minorugh/tempbuf
-  :hook ((find-file-hook <span style="color:#f92672">.</span> my:find-file-tempbuf-hook)
-		 (dired-mode-hook <span style="color:#f92672">.</span> turn-on-tempbuf-mode)
-		 (magit-mode-hook <span style="color:#f92672">.</span> turn-on-tempbuf-mode) )
-  :init
-  (setq my:tempbuf-ignore-files
-		<span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/Dropbox/org/task.org&#34;</span>
-          <span style="color:#e6db74">&#34;~/Dropbox/org/capture.org&#34;</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">tempbuf</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">minorugh/tempbuf</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:find-file-tempbuf-hook</span>)
+		 (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-tempbuf-mode</span>)
+		 (<span style="color:#000">magit-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-tempbuf-mode</span>) )
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">my:tempbuf-ignore-files</span>
+		<span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span>
+          <span style="color:#c41a16">&#34;~/Dropbox/org/capture.org&#34;</span>))
 
-  (defun my:find-file-tempbuf-hook ()
-	(let ((ignore-file-names (<span style="color:#a6e22e">mapcar</span> <span style="color:#e6db74">&#39;expand-file-name</span> my:tempbuf-ignore-files)))
-      (unless (<span style="color:#a6e22e">member</span> (<span style="color:#a6e22e">buffer-file-name</span>) ignore-file-names)
-		(turn-on-tempbuf-mode)))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:find-file-tempbuf-hook</span> ()
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">ignore-file-names</span> (<span style="color:#000">mapcar</span> <span style="color:#c41a16">&#39;expand-file-name</span> <span style="color:#000">my:tempbuf-ignore-files</span>)))
+      (<span style="color:#a90d91">unless</span> (<span style="color:#000">member</span> (<span style="color:#000">buffer-file-name</span>) <span style="color:#000">ignore-file-names</span>)
+		(<span style="color:#000">turn-on-tempbuf-mode</span>)))))
 </code></pre></div>
 
     

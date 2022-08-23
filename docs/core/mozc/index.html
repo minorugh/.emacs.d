@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>2.3. emacs-mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -595,50 +595,50 @@
 <li>Debian11 にインストールした Emacs上で <a href="https://wiki.debian.org/JapaneseEnvironment/Mozc"><code>emacs-mozc</code></a> を使っています。</li>
 <li>debian でのインストール手順は以下の通り。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install fcitx-mozc emacs-mozc
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install fcitx-mozc emacs-mozc
 </code></pre></div><p>Emacsをソースからビルドするときに <code>--without-xim</code> しなかったので、インライン XIMでも日本語入力ができてしまいます。
 特に使い分けする必要もなく紛らわしいので <code>.Xresources</code> で XIM無効化の設定をしました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">! ~/.Xresources
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">! ~/.Xresources
 ! Emacs XIMを無効化
-Emacs*useXIM: false
+Emacs*useXIM: <span style="color:#a90d91">false</span>
 </code></pre></div><p>句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf mozc
-  :ensure <span style="color:#66d9ef">t</span>
-  :bind ((<span style="color:#e6db74">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#f92672">.</span> toggle-input-method)
-		 (:mozc-mode-map
-		  (<span style="color:#e6db74">&#34;,&#34;</span> <span style="color:#f92672">.</span> (lambda () (interactive) (mozc-insert-str <span style="color:#e6db74">&#34;、&#34;</span>)))
-		  (<span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">.</span> (lambda () (interactive) (mozc-insert-str <span style="color:#e6db74">&#34;。&#34;</span>)))
-		  (<span style="color:#e6db74">&#34;?&#34;</span> <span style="color:#f92672">.</span> (lambda () (interactive) (mozc-insert-str <span style="color:#e6db74">&#34;？&#34;</span>)))
-		  (<span style="color:#e6db74">&#34;!&#34;</span> <span style="color:#f92672">.</span> (lambda () (interactive) (mozc-insert-str <span style="color:#e6db74">&#34;！&#34;</span>)))))
-  :custom <span style="color:#f92672">`</span>((default-input-method <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;japanese-mozc&#34;</span>)
-			(mozc-helper-program-name <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;mozc_emacs_helper&#34;</span>)
-			(mozc-leim-title <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;かな&#34;</span>))
-  :config
-  (defun mozc-insert-str (str)
-	(mozc-handle-event <span style="color:#e6db74">&#39;enter</span>)
-	(<span style="color:#a6e22e">insert</span> str))
-  (defadvice toggle-input-method (around toggle-input-method-around activate)
-	<span style="color:#e6db74">&#34;Input method function in key-chord.el not to be nil.&#34;</span>
-	(let ((input-method-function-save input-method-function))
-	  ad-do-it
-	  (setq input-method-function input-method-function-save))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-input-method</span>)
+		 (<span style="color:#a90d91">:mozc-mode-map</span>
+		  (<span style="color:#c41a16">&#34;,&#34;</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">interactive</span>) (<span style="color:#000">mozc-insert-str</span> <span style="color:#c41a16">&#34;、&#34;</span>)))
+		  (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">interactive</span>) (<span style="color:#000">mozc-insert-str</span> <span style="color:#c41a16">&#34;。&#34;</span>)))
+		  (<span style="color:#c41a16">&#34;?&#34;</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">interactive</span>) (<span style="color:#000">mozc-insert-str</span> <span style="color:#c41a16">&#34;？&#34;</span>)))
+		  (<span style="color:#c41a16">&#34;!&#34;</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">interactive</span>) (<span style="color:#000">mozc-insert-str</span> <span style="color:#c41a16">&#34;！&#34;</span>)))))
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">default-input-method</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;japanese-mozc&#34;</span>)
+			(<span style="color:#000">mozc-helper-program-name</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;mozc_emacs_helper&#34;</span>)
+			(<span style="color:#000">mozc-leim-title</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;かな&#34;</span>))
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">mozc-insert-str</span> (<span style="color:#000">str</span>)
+	(<span style="color:#000">mozc-handle-event</span> <span style="color:#c41a16">&#39;enter</span>)
+	(<span style="color:#000">insert</span> <span style="color:#000">str</span>))
+  (<span style="color:#a90d91">defadvice</span> <span style="color:#000">toggle-input-method</span> (<span style="color:#000">around</span> <span style="color:#000">toggle-input-method-around</span> <span style="color:#000">activate</span>)
+	<span style="color:#c41a16">&#34;Input method function in key-chord.el not to be nil.&#34;</span>
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">input-method-function-save</span> <span style="color:#000">input-method-function</span>))
+	  <span style="color:#000">ad-do-it</span>
+	  (<span style="color:#a90d91">setq</span> <span style="color:#000">input-method-function</span> <span style="color:#000">input-method-function-save</span>))))
 </code></pre></div><h2 id="emacsから単語登録する">Emacsから単語登録する</h2>
 <p>Emacsで文章編集中にShellコマンドで <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動し、Emacsを閉じることなく単語登録できるようにしています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf *cus-mozc-tool
-  :bind ((<span style="color:#e6db74">&#34;s-t&#34;</span> <span style="color:#f92672">.</span> my:mozc-dictionary-tool)
-		 (<span style="color:#e6db74">&#34;s-d&#34;</span> <span style="color:#f92672">.</span> my:mozc-word-regist))
-  :init
-  (defun my:mozc-dictionary-tool ()
-	<span style="color:#e6db74">&#34;Open </span><span style="color:#e6db74">`mozc-dictipnary-tool&#39;</span><span style="color:#e6db74">.&#34;</span>
-	(interactive)
-	(compile <span style="color:#e6db74">&#34;/usr/lib/mozc/mozc_tool --mode=dictionary_tool&#34;</span>)
-	(delete-other-windows))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-mozc-tool</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;s-t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:mozc-dictionary-tool</span>)
+		 (<span style="color:#c41a16">&#34;s-d&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:mozc-word-regist</span>))
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:mozc-dictionary-tool</span> ()
+	<span style="color:#c41a16">&#34;Open </span><span style="color:#c41a16">`mozc-dictipnary-tool&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;/usr/lib/mozc/mozc_tool --mode=dictionary_tool&#34;</span>)
+	(<span style="color:#000">delete-other-windows</span>))
 
-  (defun my:mozc-word-regist ()
-	<span style="color:#e6db74">&#34;Open </span><span style="color:#e6db74">`mozc-word-regist&#39;</span><span style="color:#e6db74">.&#34;</span>
-	(interactive)
-	(compile <span style="color:#e6db74">&#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog&#34;</span>)
-	(delete-other-windows)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:mozc-word-regist</span> ()
+	<span style="color:#c41a16">&#34;Open </span><span style="color:#c41a16">`mozc-word-regist&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog&#34;</span>)
+	(<span style="color:#000">delete-other-windows</span>)))
 </code></pre></div><h2 id="mozc-辞書の共有">Mozc 辞書の共有</h2>
 <p>Linux環境でMozcを使うメリットは辞書の共有です。</p>
 <ol>

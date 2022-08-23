@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>4.8. whitespace :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -584,24 +584,24 @@
     
     
     
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf whitespace
-  :ensure <span style="color:#66d9ef">t</span>
-  :bind (<span style="color:#e6db74">&#34;C-c C-c&#34;</span> <span style="color:#f92672">.</span> my:cleanup-for-spaces)
-  :hook (prog-mode-hook <span style="color:#f92672">.</span> my:enable-trailing-mode)
-  :custom (show-trailing-whitespace <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>)
-  :config
-  (defun my:enable-trailing-mode ()
-    <span style="color:#e6db74">&#34;Show tail whitespace.&#34;</span>
-    (setq show-trailing-whitespace <span style="color:#66d9ef">t</span>))
-  (defun my:cleanup-for-spaces ()
-    <span style="color:#e6db74">&#34;Remove contiguous line breaks at end of line + end of file.&#34;</span>
-    (interactive)
-    (delete-trailing-whitespace)
-    (save-excursion
-      (save-restriction
-		(<span style="color:#a6e22e">widen</span>)
-		(<span style="color:#a6e22e">goto-char</span> (<span style="color:#a6e22e">point-max</span>))
-		(delete-blank-lines)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">whitespace</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-c C-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:cleanup-for-spaces</span>)
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:enable-trailing-mode</span>)
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">show-trailing-whitespace</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:enable-trailing-mode</span> ()
+    <span style="color:#c41a16">&#34;Show tail whitespace.&#34;</span>
+    (<span style="color:#a90d91">setq</span> <span style="color:#000">show-trailing-whitespace</span> <span style="color:#000">t</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:cleanup-for-spaces</span> ()
+    <span style="color:#c41a16">&#34;Remove contiguous line breaks at end of line + end of file.&#34;</span>
+    (<span style="color:#a90d91">interactive</span>)
+    (<span style="color:#000">delete-trailing-whitespace</span>)
+    (<span style="color:#a90d91">save-excursion</span>
+      (<span style="color:#a90d91">save-restriction</span>
+		(<span style="color:#000">widen</span>)
+		(<span style="color:#000">goto-char</span> (<span style="color:#000">point-max</span>))
+		(<span style="color:#000">delete-blank-lines</span>)))))
 </code></pre></div>
 
     

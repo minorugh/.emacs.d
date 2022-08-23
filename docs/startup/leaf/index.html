@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>1.3. leaf.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -589,23 +589,23 @@
 <ul>
 <li><a href="https://qiita.com/conao3/items/347d7e472afd0c58fbd7">Emacs入門から始めるleaf.el入門</a></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(eval-and-compile
-  (customize-set-variable
-   <span style="color:#e6db74">&#39;package-archives</span> <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;org&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;https://orgmode.org/elpa/&#34;</span>)
-					   (<span style="color:#e6db74">&#34;melpa&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;https://melpa.org/packages/&#34;</span>)
-                       (<span style="color:#e6db74">&#34;gnu&#34;</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;https://elpa.gnu.org/packages/&#34;</span>)))
-  (package-initialize)
-  (unless (package-installed-p <span style="color:#e6db74">&#39;leaf</span>)
-	(package-refresh-contents)
-	(package-install <span style="color:#e6db74">&#39;leaf</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">eval-and-compile</span>
+  (<span style="color:#000">customize-set-variable</span>
+   <span style="color:#c41a16">&#39;package-archives</span> <span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;org&#34;</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://orgmode.org/elpa/&#34;</span>)
+					   (<span style="color:#c41a16">&#34;melpa&#34;</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://melpa.org/packages/&#34;</span>)
+                       (<span style="color:#c41a16">&#34;gnu&#34;</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://elpa.gnu.org/packages/&#34;</span>)))
+  (<span style="color:#000">package-initialize</span>)
+  (<span style="color:#a90d91">unless</span> (<span style="color:#000">package-installed-p</span> <span style="color:#c41a16">&#39;leaf</span>)
+	(<span style="color:#000">package-refresh-contents</span>)
+	(<span style="color:#000">package-install</span> <span style="color:#c41a16">&#39;leaf</span>))
 
-  (leaf leaf-keywords
-	:ensure <span style="color:#66d9ef">t</span>
-	:init
-	(leaf hydra :ensure <span style="color:#66d9ef">t</span>)
-	(leaf el-get :ensure <span style="color:#66d9ef">t</span>)
-	:config
-	(leaf-keywords-init)))
+  (<span style="color:#000">leaf</span> <span style="color:#000">leaf-keywords</span>
+	<span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+	<span style="color:#a90d91">:init</span>
+	(<span style="color:#000">leaf</span> <span style="color:#000">hydra</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>)
+	(<span style="color:#000">leaf</span> <span style="color:#000">el-get</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>)
+	<span style="color:#a90d91">:config</span>
+	(<span style="color:#000">leaf-keywords-init</span>)))
 </code></pre></div>
 
     

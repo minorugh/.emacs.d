@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>3.4. my:exchange-point-and-mark :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -591,16 +591,16 @@
 <ul>
 <li><code>my:exchange-point-and-mark</code> は、直前の編集ポイントと現在のポイントとを行き来できる設定です。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun my:exchange-point-and-mark ()
-  <span style="color:#e6db74">&#34;No mark active </span><span style="color:#e6db74">`exchange-point-and-mark&#39;</span><span style="color:#e6db74">.&#34;</span>
-  (interactive)
-  (exchange-point-and-mark)
-  (deactivate-mark))		 
-(bind-key <span style="color:#e6db74">&#34;C-x C-x&#34;</span> <span style="color:#e6db74">&#39;my:exchange-point-and-mark</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:exchange-point-and-mark</span> ()
+  <span style="color:#c41a16">&#34;No mark active </span><span style="color:#c41a16">`exchange-point-and-mark&#39;</span><span style="color:#c41a16">.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">exchange-point-and-mark</span>)
+  (<span style="color:#000">deactivate-mark</span>))		 
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-x C-x&#34;</span> <span style="color:#c41a16">&#39;my:exchange-point-and-mark</span>)
 </code></pre></div><h2 id="標準機能の-c-u-c-spc-でもマーク箇所を辿れます">標準機能の <code>C-u C-SPC</code> でもマーク箇所を辿れます。</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(setq set-mark-command-repeat-pop <span style="color:#66d9ef">t</span>)
-(setq mark-ring-max <span style="color:#ae81ff">32</span>)
-(setq global-mark-ring-max <span style="color:#ae81ff">64</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">set-mark-command-repeat-pop</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">mark-ring-max</span> <span style="color:#1c01ce">32</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">global-mark-ring-max</span> <span style="color:#1c01ce">64</span>)
 </code></pre></div>
 
     

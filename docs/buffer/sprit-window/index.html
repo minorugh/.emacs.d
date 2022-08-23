@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>5.4. sprit-window-functions :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -590,48 +590,48 @@
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
 <li>画面分割を閉じたときは、<code>dimmer-mode-off</code> にする。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf *cus-sprit-window
-  :bind ((<span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#f92672">.</span> other-window-or-split)
-		 (<span style="color:#e6db74">&#34;C-x 2&#34;</span> <span style="color:#f92672">.</span> my:split-window-below)
-		 (<span style="color:#e6db74">&#34;C-x 1&#34;</span> <span style="color:#f92672">.</span> my:delete-other-windows)
-		 (<span style="color:#e6db74">&#34;C-x 0&#34;</span> <span style="color:#f92672">.</span> my:delete-window)
-		 (<span style="color:#e6db74">&#34;&lt;C-return&gt;&#34;</span> <span style="color:#f92672">.</span> window-swap-states))
-  :init
-  (defun other-window-or-split ()
-	<span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
-	(interactive)
-	(when (one-window-p)
-	  (split-window-horizontally)
-	  (follow-mode <span style="color:#ae81ff">1</span>)
-	  (dimmer-mode <span style="color:#ae81ff">1</span>))
-	(other-window <span style="color:#ae81ff">1</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-sprit-window</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-q&#34;</span> <span style="color:#000">.</span> <span style="color:#000">other-window-or-split</span>)
+		 (<span style="color:#c41a16">&#34;C-x 2&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:split-window-below</span>)
+		 (<span style="color:#c41a16">&#34;C-x 1&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-other-windows</span>)
+		 (<span style="color:#c41a16">&#34;C-x 0&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-window</span>)
+		 (<span style="color:#c41a16">&#34;&lt;C-return&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">window-swap-states</span>))
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">other-window-or-split</span> ()
+	<span style="color:#c41a16">&#34;With turn on dimmer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
+	  (<span style="color:#000">split-window-horizontally</span>)
+	  (<span style="color:#000">follow-mode</span> <span style="color:#1c01ce">1</span>)
+	  (<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">1</span>))
+	(<span style="color:#000">other-window</span> <span style="color:#1c01ce">1</span>))
 
-  (defun my:split-window-below ()
-	<span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
-	(interactive)
-	(split-window-below)
-	(follow-mode <span style="color:#ae81ff">1</span>)
-	(dimmer-mode <span style="color:#ae81ff">1</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:split-window-below</span> ()
+	<span style="color:#c41a16">&#34;With turn on dimmer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">split-window-below</span>)
+	(<span style="color:#000">follow-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">1</span>))
 
-  (defun my:delete-window ()
-	<span style="color:#e6db74">&#34;With turn off dimmer.&#34;</span>
-	(interactive)
-	(delete-window)
-	(follow-mode <span style="color:#ae81ff">-1</span>)
-	(dimmer-mode <span style="color:#ae81ff">-1</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-window</span> ()
+	<span style="color:#c41a16">&#34;With turn off dimmer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">delete-window</span>)
+	(<span style="color:#000">follow-mode</span> <span style="color:#1c01ce">-1</span>)
+	(<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">-1</span>))
 
-  (defun my:delete-other-windows ()
-	<span style="color:#e6db74">&#34;With turn off dimmer.&#34;</span>
-	(interactive)
-	(delete-other-windows)
-	(follow-mode <span style="color:#ae81ff">-1</span>)
-	(dimmer-mode <span style="color:#ae81ff">-1</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-other-windows</span> ()
+	<span style="color:#c41a16">&#34;With turn off dimmer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">delete-other-windows</span>)
+	(<span style="color:#000">follow-mode</span> <span style="color:#1c01ce">-1</span>)
+	(<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">-1</span>))
 
-  (defun kill-other-buffers ()
-	<span style="color:#e6db74">&#34;Kill all other buffers.&#34;</span>
-	(interactive)
-	(<span style="color:#a6e22e">mapc</span> <span style="color:#e6db74">&#39;kill-buffer</span> (<span style="color:#a6e22e">delq</span> (<span style="color:#a6e22e">current-buffer</span>) (<span style="color:#a6e22e">buffer-list</span>)))
-	(<span style="color:#a6e22e">message</span> <span style="color:#e6db74">&#34;killl-other-buffers!&#34;</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">kill-other-buffers</span> ()
+	<span style="color:#c41a16">&#34;Kill all other buffers.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">mapc</span> <span style="color:#c41a16">&#39;kill-buffer</span> (<span style="color:#000">delq</span> (<span style="color:#000">current-buffer</span>) (<span style="color:#000">buffer-list</span>)))
+	(<span style="color:#000">message</span> <span style="color:#c41a16">&#34;killl-other-buffers!&#34;</span>))
 </code></pre></div>
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>1.2. speed up startup :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -588,23 +588,23 @@
 <li>Magic File Name を一時的に無効にすることで、起動時間を短縮できます。</li>
 <li>GC設定とともに設定ファイル読み込み後に正常値に戻します。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Speed up startup</span>
-(unless (or (<span style="color:#a6e22e">daemonp</span>) noninteractive init-file-debug)
-  (let ((old-file-name-handler-alist file-name-handler-alist))
-    (setq file-name-handler-alist <span style="color:#66d9ef">nil</span>)
-    (add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span>
-              (lambda ()
-                <span style="color:#e6db74">&#34;Recover file name handlers.&#34;</span>
-                (setq file-name-handler-alist
-                      (delete-dups (<span style="color:#a6e22e">append</span> file-name-handler-alist
-                                           old-file-name-handler-alist)))))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Speed up startup</span>
+(<span style="color:#a90d91">unless</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">daemonp</span>) <span style="color:#000">noninteractive</span> <span style="color:#000">init-file-debug</span>)
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">old-file-name-handler-alist</span> <span style="color:#000">file-name-handler-alist</span>))
+    (<span style="color:#a90d91">setq</span> <span style="color:#000">file-name-handler-alist</span> <span style="color:#000">nil</span>)
+    (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;emacs-startup-hook</span>
+              (<span style="color:#a90d91">lambda</span> ()
+                <span style="color:#c41a16">&#34;Recover file name handlers.&#34;</span>
+                (<span style="color:#a90d91">setq</span> <span style="color:#000">file-name-handler-alist</span>
+                      (<span style="color:#000">delete-dups</span> (<span style="color:#000">append</span> <span style="color:#000">file-name-handler-alist</span>
+                                           <span style="color:#000">old-file-name-handler-alist</span>)))))))
 
-<span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
-(setq gc-cons-threshold most-positive-fixnum)
-(add-hook <span style="color:#e6db74">&#39;emacs-startup-hook</span>
-          (lambda ()
-            <span style="color:#e6db74">&#34;Recover GC values after startup.&#34;</span>
-            (setq gc-cons-threshold <span style="color:#ae81ff">800000</span>)))
+<span style="color:#177500">;; Defer garbage collection further back in the startup process</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">gc-cons-threshold</span> <span style="color:#000">most-positive-fixnum</span>)
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;emacs-startup-hook</span>
+          (<span style="color:#a90d91">lambda</span> ()
+            <span style="color:#c41a16">&#34;Recover GC values after startup.&#34;</span>
+            (<span style="color:#a90d91">setq</span> <span style="color:#000">gc-cons-threshold</span> <span style="color:#1c01ce">800000</span>)))
 </code></pre></div><p>※ <code>init.el</code> の先頭に書きます。</p>
 
 

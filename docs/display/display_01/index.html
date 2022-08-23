@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>display_01 :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -618,255 +618,255 @@
 |矩形を空白に変換する|	C-x r c |</p>
 <h3 id="52-markdownモード">5.2. markdownモード</h3>
 <p><a href="https://github.com/jrblevin/markdown-mode"><code>markdown-mode.el</code></a> は、Markdown形式のテキストを編集するための主要なモードです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf markdown-mode
-  :ensure <span style="color:#66d9ef">t</span>
-  :mode (<span style="color:#e6db74">&#34;\\.md\\&#39;&#34;</span>)
-  :custom <span style="color:#f92672">`</span>((markdown-italic-underscore <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-            (markdown-asymmetric-header <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-	        (markdown-fontify-emacs-lisp-blocks-natively <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">markdown-mode</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.md\\&#39;&#34;</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">markdown-italic-underscore</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+            (<span style="color:#000">markdown-asymmetric-header</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+	        (<span style="color:#000">markdown-fontify-emacs-lisp-blocks-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>))
 </code></pre></div><p>markdownファイルのプレビューには、<a href="https://github.com/shime/emacs-livedown"><code>emacs-livedown</code></a> を使っています。
 記事を書きながらライブでプレビュー出来るすぐれものです。</p>
 <p><a href="https://github.com/shime/emacs-livedown">https://github.com/shime/emacs-livedown</a></p>
 <p>npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">$ npm install -g livedown
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#000">$</span> <span style="color:#000">npm</span> <span style="color:#000">install</span> <span style="color:#000">-g</span> <span style="color:#000">livedown</span>
 </code></pre></div><p>次にEmacsの設定を書きます。
 MELPAにはないので<code>el-get</code> でインストールします。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf emacs-livedown
- :el-get shime/emacs-livedown
- :bind ((<span style="color:#e6db74">&#34;C-c C-c p&#34;</span> <span style="color:#f92672">.</span> livedown-preview)
-        (<span style="color:#e6db74">&#34;C-c C-c k&#34;</span> <span style="color:#f92672">.</span> livedown-kill)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">emacs-livedown</span>
+ <span style="color:#a90d91">:el-get</span> <span style="color:#000">shime/emacs-livedown</span>
+ <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c C-c p&#34;</span> <span style="color:#000">.</span> <span style="color:#000">livedown-preview</span>)
+        (<span style="color:#c41a16">&#34;C-c C-c k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">livedown-kill</span>)))
 </code></pre></div><h3 id="53-viewモード">5.3. viewモード</h3>
 <p>特定の拡張子に対して常に view モードで開きたいときやgzされた emacs-lisp ソースを見るときに <a href="https://www.emacswiki.org/emacs/ViewMode">view-mode</a> を使います。</p>
 <p>下記の設定では、<code>my:auto-view-dirs</code> に追加したディレクトリのファイルを開くと <code>view-mode</code> が常に有効になります．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf view
-  :hook ((find-file-hook <span style="color:#f92672">.</span> my:auto-view)
-         (server-visit-hook <span style="color:#f92672">.</span> my:unlock-view-mode))
-  :chord (<span style="color:#e6db74">&#34;::&#34;</span> <span style="color:#f92672">.</span> view-mode)
-  :bind (:view-mode-map
-		 (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">backward-char</span>)
-		 (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">forward-char</span>)
-		 (<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">.</span> beginning-of-buffer)
-		 (<span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#f92672">.</span> end-of-buffer)
-		 (<span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">forward-word</span>)
-		 (<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">scroll-down</span>)
-		 (<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">.</span> kill-ring-save)
-		 (<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#f92672">.</span> xref-find-references)
-		 (<span style="color:#e6db74">&#34;RET&#34;</span> <span style="color:#f92672">.</span> xref-find-definitions)
-		 (<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">.</span> my:view-del-char)
-		 (<span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">.</span> my:view-yank)
-		 (<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#f92672">.</span> my:view-kill-region)
-		 (<span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#f92672">.</span> my:view-undo)
-		 (<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#f92672">.</span> magit-status)
-		 (<span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#f92672">.</span> my:google)
-		 (<span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#f92672">.</span> swiper-region)
-		 (<span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#f92672">.</span> my:jump-brace)
-		 (<span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#f92672">.</span> counsel-mark-ring)
-		 (<span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#f92672">.</span> my:org-view-next-heading)
-		 (<span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#f92672">.</span> my:org-view-previous-heading)
-		 (<span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#f92672">.</span> other-window-or-split)
-		 (<span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#f92672">.</span> end-of-buffer)
-		 (<span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">.</span> my:delete-window)
-		 (<span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">.</span> my:delete-other-windows)
-		 (<span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">.</span> my:split-window-below)
-		 (<span style="color:#e6db74">&#34;+&#34;</span> <span style="color:#f92672">.</span> text-scale-increase)
-		 (<span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">.</span> text-scale-decrease)
-		 (<span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">.</span> (lambda ()(interactive)(text-scale-set <span style="color:#ae81ff">0</span>)))
-		 (<span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">.</span> kill-other-buffers)
-		 (<span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">.</span> View-exit-and-edit)
-		 (<span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#f92672">.</span> View-exit-and-edit)
-		 (<span style="color:#e6db74">&#34;]&#34;</span> <span style="color:#f92672">.</span> winner-undo)
-		 (<span style="color:#e6db74">&#34;[&#34;</span> <span style="color:#f92672">.</span> winner-redo)
-		 (<span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">.</span> hydra-view/body))
-  :init
-  <span style="color:#75715e">;; Specific extension / directory</span>
-  (defvar my:auto-view-regexp <span style="color:#e6db74">&#34;\\.php\\|\\.pl\\|\\.el.gz?\\|\\.tar.gz?\\&#39;&#34;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">view</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:auto-view</span>)
+         (<span style="color:#000">server-visit-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:unlock-view-mode</span>))
+  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;::&#34;</span> <span style="color:#000">.</span> <span style="color:#000">view-mode</span>)
+  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:view-mode-map</span>
+		 (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">.</span> <span style="color:#000">backward-char</span>)
+		 (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">.</span> <span style="color:#000">forward-char</span>)
+		 (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">beginning-of-buffer</span>)
+		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">end-of-buffer</span>)
+		 (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">forward-word</span>)
+		 (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">.</span> <span style="color:#000">scroll-down</span>)
+		 (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">kill-ring-save</span>)
+		 (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">xref-find-references</span>)
+		 (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">xref-find-definitions</span>)
+		 (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-del-char</span>)
+		 (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-yank</span>)
+		 (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-kill-region</span>)
+		 (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-undo</span>)
+		 (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">.</span> <span style="color:#000">magit-status</span>)
+		 (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)
+		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-region</span>)
+		 (<span style="color:#c41a16">&#34;%&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:jump-brace</span>)
+		 (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-mark-ring</span>)
+		 (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:org-view-next-heading</span>)
+		 (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:org-view-previous-heading</span>)
+		 (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">other-window-or-split</span>)
+		 (<span style="color:#c41a16">&#34;G&#34;</span> <span style="color:#000">.</span> <span style="color:#000">end-of-buffer</span>)
+		 (<span style="color:#c41a16">&#34;0&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-window</span>)
+		 (<span style="color:#c41a16">&#34;1&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-other-windows</span>)
+		 (<span style="color:#c41a16">&#34;2&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:split-window-below</span>)
+		 (<span style="color:#c41a16">&#34;+&#34;</span> <span style="color:#000">.</span> <span style="color:#000">text-scale-increase</span>)
+		 (<span style="color:#c41a16">&#34;-&#34;</span> <span style="color:#000">.</span> <span style="color:#000">text-scale-decrease</span>)
+		 (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> ()(<span style="color:#a90d91">interactive</span>)(<span style="color:#000">text-scale-set</span> <span style="color:#1c01ce">0</span>)))
+		 (<span style="color:#c41a16">&#34;_&#34;</span> <span style="color:#000">.</span> <span style="color:#000">kill-other-buffers</span>)
+		 (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">.</span> <span style="color:#000">View-exit-and-edit</span>)
+		 (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">.</span> <span style="color:#000">View-exit-and-edit</span>)
+		 (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">.</span> <span style="color:#000">winner-undo</span>)
+		 (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">.</span> <span style="color:#000">winner-redo</span>)
+		 (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-view/body</span>))
+  <span style="color:#a90d91">:init</span>
+  <span style="color:#177500">;; Specific extension / directory</span>
+  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:auto-view-regexp</span> <span style="color:#c41a16">&#34;\\.php\\|\\.pl\\|\\.el.gz?\\|\\.tar.gz?\\&#39;&#34;</span>)
 
-  <span style="color:#75715e">;; Specific directory</span>
-  (defvar my:auto-view-dirs <span style="color:#66d9ef">nil</span>)
-  (add-to-list <span style="color:#e6db74">&#39;my:auto-view-dirs</span> <span style="color:#e6db74">&#34;~/src/&#34;</span>)
-  (add-to-list <span style="color:#e6db74">&#39;my:auto-view-dirs</span> <span style="color:#e6db74">&#34;~/Dropbox/GH/&#34;</span>)
-  (add-to-list <span style="color:#e6db74">&#39;my:auto-view-dirs</span> <span style="color:#e6db74">&#34;/scp:xsrv:/home/minorugh/&#34;</span>)
+  <span style="color:#177500">;; Specific directory</span>
+  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:auto-view-dirs</span> <span style="color:#000">nil</span>)
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;~/src/&#34;</span>)
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/&#34;</span>)
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;/scp:xsrv:/home/minorugh/&#34;</span>)
 
-  (defun my:auto-view ()
-	<span style="color:#e6db74">&#34;Open a file with view mode.&#34;</span>
-	(when (<span style="color:#a6e22e">file-exists-p</span> <span style="color:#a6e22e">buffer-file-name</span>)
-	  (when (and my:auto-view-regexp
-				 (<span style="color:#a6e22e">string-match</span> my:auto-view-regexp <span style="color:#a6e22e">buffer-file-name</span>))
-		(view-mode <span style="color:#ae81ff">1</span>))
-	  (dolist (dir my:auto-view-dirs)
-		(when (<span style="color:#a6e22e">eq</span> <span style="color:#ae81ff">0</span> (<span style="color:#a6e22e">string-match</span> (<span style="color:#a6e22e">expand-file-name</span> dir) <span style="color:#a6e22e">buffer-file-name</span>))
-		  (view-mode <span style="color:#ae81ff">1</span>)))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:auto-view</span> ()
+	<span style="color:#c41a16">&#34;Open a file with view mode.&#34;</span>
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">buffer-file-name</span>)
+	  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> <span style="color:#000">my:auto-view-regexp</span>
+				 (<span style="color:#000">string-match</span> <span style="color:#000">my:auto-view-regexp</span> <span style="color:#000">buffer-file-name</span>))
+		(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
+	  (<span style="color:#a90d91">dolist</span> (<span style="color:#000">dir</span> <span style="color:#000">my:auto-view-dirs</span>)
+		(<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#1c01ce">0</span> (<span style="color:#000">string-match</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">dir</span>) <span style="color:#000">buffer-file-name</span>))
+		  (<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>)))))
 
-  (defun my:unlock-view-mode ()
-	<span style="color:#e6db74">&#34;Unlock view mode with git commit.&#34;</span>
-	(when (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;COMMIT_EDITMSG&#34;</span> <span style="color:#a6e22e">buffer-file-name</span>)
-	  (view-mode <span style="color:#ae81ff">0</span>))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:unlock-view-mode</span> ()
+	<span style="color:#c41a16">&#34;Unlock view mode with git commit.&#34;</span>
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;COMMIT_EDITMSG&#34;</span> <span style="color:#000">buffer-file-name</span>)
+	  (<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>))))
 </code></pre></div><p><code>view-mode</code> のときにモードラインの色を変えるのは <a href=""><code>viewer.el</code></a> を使うと設定が簡単です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#75715e">;; Change-modeline-color</span>
-(leaf viewer
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (view-mode-hook <span style="color:#f92672">.</span> viewer-change-modeline-color-setup)
-  :custom <span style="color:#f92672">`</span>((viewer-modeline-color-view <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;#852941&#34;</span>)
-	        (viewer-modeline-color-unwritable <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;#2F6828&#34;</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; Change-modeline-color</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">viewer</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">view-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">viewer-change-modeline-color-setup</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">viewer-modeline-color-view</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#852941&#34;</span>)
+	        (<span style="color:#000">viewer-modeline-color-unwritable</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#2F6828&#34;</span>)))
 </code></pre></div><p><code>view-mode</code> からでも簡単な編集ができるように <code>vim like</code> なコマンドをいくつか作りました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
-  <span style="color:#75715e">;; save-buffer no message</span>
-  (defun my:save-buffer ()
-	<span style="color:#e6db74">&#34;With clear Wrote message.&#34;</span>
-	(interactive)
-	(save-buffer)
-	(<span style="color:#a6e22e">message</span> <span style="color:#66d9ef">nil</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;view</span>
+  <span style="color:#177500">;; save-buffer no message</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:save-buffer</span> ()
+	<span style="color:#c41a16">&#34;With clear Wrote message.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">save-buffer</span>)
+	(<span style="color:#000">message</span> <span style="color:#000">nil</span>))
 
-  <span style="color:#75715e">;; Like as &#39;x&#39; of vim</span>
-  (defun my:view-del-char ()
-	<span style="color:#e6db74">&#34;Delete charactor in view mode.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(<span style="color:#a6e22e">delete-char</span> <span style="color:#ae81ff">1</span>)
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;x&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-del-char</span> ()
+	<span style="color:#c41a16">&#34;Delete charactor in view mode.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">delete-char</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;dd&#39; of vim</span>
-  (defun my:view-kill-region ()
-	<span style="color:#e6db74">&#34;If the region is active, to kill region.
-</span><span style="color:#e6db74">If the region is inactive, to kill whole line.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(if (use-region-p)
-		(kill-region (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>))
-	  (kill-whole-line))
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;dd&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-kill-region</span> ()
+	<span style="color:#c41a16">&#34;If the region is active, to kill region.
+</span><span style="color:#c41a16">If the region is inactive, to kill whole line.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>)
+		(<span style="color:#000">kill-region</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>))
+	  (<span style="color:#000">kill-whole-line</span>))
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;u&#39; of vim</span>
-  (defun my:view-undo ()
-	<span style="color:#e6db74">&#34;Undo in view mode.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(undo)
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;u&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-undo</span> ()
+	<span style="color:#c41a16">&#34;Undo in view mode.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">undo</span>)
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;y&#39; of vim</span>
-  (defun my:view-yank ()
-	<span style="color:#e6db74">&#34;Yank in view mode.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(yank)
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;y&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-yank</span> ()
+	<span style="color:#c41a16">&#34;Yank in view mode.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">yank</span>)
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;%&#39; of vim</span>
-  (defun my:jump-brace ()
-	<span style="color:#e6db74">&#34;Jump to the corresponding parenthesis.&#34;</span>
-	(interactive)
-	(let ((c (<span style="color:#a6e22e">following-char</span>))
-		  (p (<span style="color:#a6e22e">preceding-char</span>)))
-	  (if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> c) <span style="color:#ae81ff">40</span>) (forward-list)
-		(if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> p) <span style="color:#ae81ff">41</span>) (backward-list)
-		  (backward-up-list)))))
+  <span style="color:#177500">;; Like as &#39;%&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:jump-brace</span> ()
+	<span style="color:#c41a16">&#34;Jump to the corresponding parenthesis.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">c</span> (<span style="color:#000">following-char</span>))
+		  (<span style="color:#000">p</span> (<span style="color:#000">preceding-char</span>)))
+	  (<span style="color:#a90d91">if</span> (<span style="color:#000">eq</span> (<span style="color:#000">char-syntax</span> <span style="color:#000">c</span>) <span style="color:#1c01ce">40</span>) (<span style="color:#000">forward-list</span>)
+		(<span style="color:#a90d91">if</span> (<span style="color:#000">eq</span> (<span style="color:#000">char-syntax</span> <span style="color:#000">p</span>) <span style="color:#1c01ce">41</span>) (<span style="color:#000">backward-list</span>)
+		  (<span style="color:#000">backward-up-list</span>)))))
 
-  (defun my:org-view-next-heading ()
-	<span style="color:#e6db74">&#34;Org-view-next-heading.&#34;</span>
-	(interactive)
-	(if (and (derived-mode-p <span style="color:#e6db74">&#39;org-mode</span>)
-			 (org-at-heading-p))
-		(org-next-visible-heading <span style="color:#ae81ff">1</span>)
-	  (next-line)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:org-view-next-heading</span> ()
+	<span style="color:#c41a16">&#34;Org-view-next-heading.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">derived-mode-p</span> <span style="color:#c41a16">&#39;org-mode</span>)
+			 (<span style="color:#000">org-at-heading-p</span>))
+		(<span style="color:#000">org-next-visible-heading</span> <span style="color:#1c01ce">1</span>)
+	  (<span style="color:#000">next-line</span>)))
 
-  (defun my:org-view-previous-heading ()
-	<span style="color:#e6db74">&#34;Org-view-previous-heading.&#34;</span>
-	(interactive)
-	(if (and (derived-mode-p <span style="color:#e6db74">&#39;org-mode</span>)
-			 (org-at-heading-p))
-		(org-previous-visible-heading <span style="color:#ae81ff">1</span>)
-	  (previous-line))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:org-view-previous-heading</span> ()
+	<span style="color:#c41a16">&#34;Org-view-previous-heading.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">derived-mode-p</span> <span style="color:#c41a16">&#39;org-mode</span>)
+			 (<span style="color:#000">org-at-heading-p</span>))
+		(<span style="color:#000">org-previous-visible-heading</span> <span style="color:#1c01ce">1</span>)
+	  (<span style="color:#000">previous-line</span>))))
 </code></pre></div><h3 id="54-webhtmlモード">5.4. web/htmlモード</h3>
 <p>HTML編集をするなら<a href="https://github.com/fxbois/web-mode">web-mode</a> がお勧めなのですが、私の場合あまり使っていません。</p>
 <p>出来上がったHTMLの内容を確認したり部分的に変更したり&hellip;という程度の使い方です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf web-mode
-  :ensure <span style="color:#66d9ef">t</span>
-  :mode (<span style="color:#e6db74">&#34;\\.js?\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.html?\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.php?\\&#39;&#34;</span>)
-  :custom
-  <span style="color:#f92672">`</span>((web-mode-markup-indent-offset <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>)
-	(web-mode-css-indent-offset <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>)
-	(web-mode-emacs-lisp-indent-offset <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">web-mode</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.js?\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.html?\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.php?\\&#39;&#34;</span>)
+  <span style="color:#a90d91">:custom</span>
+  <span style="color:#000">`</span>((<span style="color:#000">web-mode-markup-indent-offset</span> <span style="color:#000">.</span> <span style="color:#1c01ce">2</span>)
+	(<span style="color:#000">web-mode-css-indent-offset</span> <span style="color:#000">.</span> <span style="color:#1c01ce">2</span>)
+	(<span style="color:#000">web-mode-emacs-lisp-indent-offset</span> <span style="color:#000">.</span> <span style="color:#1c01ce">2</span>)))
 </code></pre></div><h3 id="55-darkroom-mode-執筆モード">5.5. [darkroom-mode] 執筆モード</h3>
 <p><a href="https://github.com/joaotavora/darkroom"><code>darkroom.el</code></a>  は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。</p>
 <p><a href="https://github.com/joaotavora/darkroom">https://github.com/joaotavora/darkroom</a></p>
 <p>[F12] キーで IN/OUT をトグルしています。
 <code>darkroom-mode</code> から抜けるときは、<code>revert-buffer</code> で再読込してもとに戻します。</p>
 <p>yes/no確認を聞かれるのが煩わしいので <code>my:revery-buffer-no-confirm</code> の関数を作りました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf darkroom
-  :ensure <span style="color:#66d9ef">t</span>
-  :bind ((<span style="color:#e6db74">&#34;&lt;f12&gt;&#34;</span> <span style="color:#f92672">.</span> my:darkroom-in)
-		 (:darkroom-mode-map
-		  (<span style="color:#e6db74">&#34;&lt;f12&gt;&#34;</span> <span style="color:#f92672">.</span> my:darkroom-out)))
-  :config
-  (defun my:darkroom-in ()
-	<span style="color:#e6db74">&#34;Enter to the </span><span style="color:#e6db74">`darkroom-mode&#39;</span><span style="color:#e6db74">.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(diff-hl-mode <span style="color:#ae81ff">0</span>)
-	(display-line-numbers-mode <span style="color:#ae81ff">0</span>)
-	(darkroom-tentative-mode <span style="color:#ae81ff">1</span>)
-	(setq-local line-spacing <span style="color:#ae81ff">0.4</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">darkroom</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:darkroom-in</span>)
+		 (<span style="color:#a90d91">:darkroom-mode-map</span>
+		  (<span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:darkroom-out</span>)))
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-in</span> ()
+	<span style="color:#c41a16">&#34;Enter to the </span><span style="color:#c41a16">`darkroom-mode&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">diff-hl-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>))
 
-  (defun my:darkroom-out ()
-	<span style="color:#e6db74">&#34;Returns from </span><span style="color:#e6db74">`darkroom-mode&#39;</span><span style="color:#e6db74"> to the previous state.&#34;</span>
-	(interactive)
-	(my:linespacing)
-	(darkroom-tentative-mode <span style="color:#ae81ff">0</span>)
-	(display-line-numbers-mode <span style="color:#ae81ff">1</span>)
-	(my:revert-buffer-no-confirm))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-out</span> ()
+	<span style="color:#c41a16">&#34;Returns from </span><span style="color:#c41a16">`darkroom-mode&#39;</span><span style="color:#c41a16"> to the previous state.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">my:linespacing</span>)
+	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">my:revert-buffer-no-confirm</span>))
 
-  (defun my:revert-buffer-no-confirm ()
-	<span style="color:#e6db74">&#34;Revert buffer without confirmation.&#34;</span>
-	(interactive)
-	(revert-buffer <span style="color:#66d9ef">t</span> <span style="color:#66d9ef">t</span>)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:revert-buffer-no-confirm</span> ()
+	<span style="color:#c41a16">&#34;Revert buffer without confirmation.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">revert-buffer</span> <span style="color:#000">t</span> <span style="color:#000">t</span>)))
 </code></pre></div><h3 id="56-yatex-yatexで-latex編集">5.6. [yatex] YaTexで LaTex編集</h3>
 <p><a href="https://github.com/emacsmirror/yatex"><code>yatex.el</code></a> は、Emacsの上で動作する LaTeX の入力支援環境です。</p>
 <p>ごく一般的な設定例ですが、参考になるとしたら <code>dviprint-command-format</code> に <code>dvpd.sh</code> というスクリプトを設定して、<code>YateX.lpr</code>
 コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf yatex
-  :ensure <span style="color:#66d9ef">t</span>
-  :mode (<span style="color:#e6db74">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.sty\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.cls\\&#39;&#34;</span>)
-  :custom <span style="color:#f92672">`</span>((tex-command <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;platex&#34;</span>)
-			(dviprint-command-format <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;dvpd.sh %s&#34;</span>)
-			(YaTeX-kanji-emacs-lisp <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>)
-			(YaTeX-latex-message-emacs-lisp <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;utf-8</span>)
-			(YaTeX-default-pop-window-height <span style="color:#f92672">.</span> <span style="color:#ae81ff">15</span>))
-  :config
-  (leaf yatexprc
-	:bind ((<span style="color:#e6db74">&#34;M-c&#34;</span> <span style="color:#f92672">.</span> YaTeX-typeset-buffer)
-		   (<span style="color:#e6db74">&#34;M-v&#34;</span> <span style="color:#f92672">.</span> YaTeX-lpr))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">yatex</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.sty\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.cls\\&#39;&#34;</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">tex-command</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;platex&#34;</span>)
+			(<span style="color:#000">dviprint-command-format</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;dvpd.sh %s&#34;</span>)
+			(<span style="color:#000">YaTeX-kanji-emacs-lisp</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+			(<span style="color:#000">YaTeX-latex-message-emacs-lisp</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;utf-8</span>)
+			(<span style="color:#000">YaTeX-default-pop-window-height</span> <span style="color:#000">.</span> <span style="color:#1c01ce">15</span>))
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">yatexprc</span>
+	<span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;M-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">YaTeX-typeset-buffer</span>)
+		   (<span style="color:#c41a16">&#34;M-v&#34;</span> <span style="color:#000">.</span> <span style="color:#000">YaTeX-lpr</span>))))
 </code></pre></div><p><code>YaTeX-lpr</code> は、<code>dviprint-command-format</code> を呼び出すコマンドです。</p>
 <p>dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、<code>chmod +x dvpd.sh </code> として実行権限を付与してからPATHの通ったところに置きます。私は、<code>/usr/loca/bin</code> に置きました。</p>
 <p>[dvpd.sh]</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/emacs-lisp
-</span><span style="color:#75715e"></span>name<span style="color:#f92672">=</span>$1
-dvipdfmx $1 <span style="color:#f92672">&amp;&amp;</span> evince <span style="color:#e6db74">${</span>name%.*<span style="color:#e6db74">}</span>.pdf
-<span style="color:#75715e"># Delete unnecessary files</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#633820">#!/bin/emacs-lisp
+</span><span style="color:#633820"></span><span style="color:#000">name</span><span style="color:#000">=</span><span style="color:#000">$1</span>
+dvipdfmx <span style="color:#000">$1</span> <span style="color:#000">&amp;&amp;</span> evince <span style="color:#c41a16">${</span><span style="color:#000">name</span>%.*<span style="color:#c41a16">}</span>.pdf
+<span style="color:#177500"># Delete unnecessary files</span>
 rm *.au* *.dv* *.lo*
 </code></pre></div><p>上記の例では、ビューアーに Linux の evince を設定していますが、Mac の場合は、下記のようになるかと思います。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dvipdfmx $1 <span style="color:#f92672">&amp;&amp;</span> open -a Preview.app <span style="color:#e6db74">${</span>name%.*<span style="color:#e6db74">}</span>.pdf
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">dvipdfmx <span style="color:#000">$1</span> <span style="color:#000">&amp;&amp;</span> open -a Preview.app <span style="color:#c41a16">${</span><span style="color:#000">name</span>%.*<span style="color:#c41a16">}</span>.pdf
 </code></pre></div><h3 id="57-yasunippet-emacs用のテンプレートシステム">5.7. [yasunippet] Emacs用のテンプレートシステム</h3>
 <p>テンプレート挿入機能を提供してくれるやつです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf yasnippet
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (after-init-hook <span style="color:#f92672">.</span> yas-global-mode)
-  :config
-  (leaf yasnippet-snippets :ensure <span style="color:#66d9ef">t</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">yasnippet</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">yas-global-mode</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">yasnippet-snippets</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>))
 </code></pre></div><p>以下の設定を追加すると<a href="https://github.com/company-mode/company-mode"><code>company-mode</code></a> と連携してとても使いやすくなる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defvar company-mode/enable-yas <span style="color:#66d9ef">t</span>
-  <span style="color:#e6db74">&#34;Enable yasnippet for all backends.&#34;</span>)
-(defun company-mode/backend-with-yas (backend)
-  (if (or (not company-mode/enable-yas) (and (<span style="color:#a6e22e">listp</span> backend) (<span style="color:#a6e22e">member</span> <span style="color:#e6db74">&#39;company-yasnippet</span> backend)))
-	  backend
-	(<span style="color:#a6e22e">append</span> (if (<span style="color:#a6e22e">consp</span> backend) backend (<span style="color:#a6e22e">list</span> backend))
-    	    <span style="color:#f92672">&#39;</span>(:with company-yasnippet))))
-(setq company-backends (<span style="color:#a6e22e">mapcar</span> <span style="color:#a6e22e">#&#39;</span>company-mode/backend-with-yas company-backends))
-(bind-key <span style="color:#e6db74">&#34;C-&lt;tab&gt;&#34;</span> <span style="color:#e6db74">&#39;company-yasunippets</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">defvar</span> <span style="color:#000">company-mode/enable-yas</span> <span style="color:#000">t</span>
+  <span style="color:#c41a16">&#34;Enable yasnippet for all backends.&#34;</span>)
+(<span style="color:#a90d91">defun</span> <span style="color:#000">company-mode/backend-with-yas</span> (<span style="color:#000">backend</span>)
+  (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">not</span> <span style="color:#000">company-mode/enable-yas</span>) (<span style="color:#a90d91">and</span> (<span style="color:#000">listp</span> <span style="color:#000">backend</span>) (<span style="color:#000">member</span> <span style="color:#c41a16">&#39;company-yasnippet</span> <span style="color:#000">backend</span>)))
+	  <span style="color:#000">backend</span>
+	(<span style="color:#000">append</span> (<span style="color:#a90d91">if</span> (<span style="color:#000">consp</span> <span style="color:#000">backend</span>) <span style="color:#000">backend</span> (<span style="color:#000">list</span> <span style="color:#000">backend</span>))
+    	    <span style="color:#000">&#39;</span>(<span style="color:#a90d91">:with</span> <span style="color:#000">company-yasnippet</span>))))
+(<span style="color:#a90d91">setq</span> <span style="color:#000">company-backends</span> (<span style="color:#000">mapcar</span> <span style="color:#000">#&#39;</span><span style="color:#000">company-mode/backend-with-yas</span> <span style="color:#000">company-backends</span>))
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-&lt;tab&gt;&#34;</span> <span style="color:#c41a16">&#39;company-yasunippets</span>)
 </code></pre></div><h3 id="58-iedit-選択領域を別の文字列に置き換える">5.8. [iedit] 選択領域を別の文字列に置き換える</h3>
 <p><a href="https://github.com/victorhge/iedit"><code>idet.el</code></a> は、バッファー内の複数箇所を同時に編集するツールです。</p>
 <p>同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。</p>
@@ -879,120 +879,120 @@ rm *.au* *.dv* *.lo*
 <p>対象範囲を選択して <code>C-;</code> を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。</p>
 <p>ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 <code>C-;</code> を押すと確定されiedet-modeを抜けます。</p>
 <p>かなりの頻度で使うので、Emacsでは使うことのない <code>&lt;insert&gt;</code> にキーバインドしています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf iedit
-  :ensure <span style="color:#66d9ef">t</span>
-  :bind (<span style="color:#e6db74">&#34;&lt;insert&gt;&#34;</span> <span style="color:#f92672">.</span> iedit-mode))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">iedit</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;insert&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">iedit-mode</span>))
 </code></pre></div><h3 id="59-selected-リージョン選択時のアクションを制御">5.9. [selected] リージョン選択時のアクションを制御</h3>
 <p><a href="https://github.com/Kungsgeten/selected.el"><code>selected.el</code></a> は、選択領域に対するスピードコマンドです。</p>
 <p>Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。
 コマンドの数が増えてきたら、ヘルプ代わりに使える <a href="https://github.com/takaxp/counsel-selected"><code>counsel-selected</code></a> も便利そうです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf selected
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (after-init-hook <span style="color:#f92672">.</span> selected-global-mode)
-  :bind (:selected-keymap
-		 (<span style="color:#e6db74">&#34;;&#34;</span> <span style="color:#f92672">.</span> comment-dwim)
-		 (<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">.</span> clipboard-kill-ring-save)
-		 (<span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#f92672">.</span> swiper-thing-at-point)
-		 (<span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#f92672">.</span> google-translate-auto)
-		 (<span style="color:#e6db74">&#34;T&#34;</span> <span style="color:#f92672">.</span> chromium-translate)
-		 (<span style="color:#e6db74">&#34;W&#34;</span> <span style="color:#f92672">.</span> my:weblio)
-		 (<span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#f92672">.</span> my:koujien)
-		 (<span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#f92672">.</span> my:eijiro)
-		 (<span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#f92672">.</span> my:google)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">selected</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">selected-global-mode</span>)
+  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:selected-keymap</span>
+		 (<span style="color:#c41a16">&#34;;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">comment-dwim</span>)
+		 (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-kill-ring-save</span>)
+		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-thing-at-point</span>)
+		 (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">google-translate-auto</span>)
+		 (<span style="color:#c41a16">&#34;T&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-translate</span>)
+		 (<span style="color:#c41a16">&#34;W&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:weblio</span>)
+		 (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:koujien</span>)
+		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:eijiro</span>)
+		 (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)))
 </code></pre></div><h3 id="510-selected-browse-urlで検索サイトで開く">5.10. [selected] browse-urlで検索サイトで開く</h3>
 <p>検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my:koujien (str)
-  (interactive (<span style="color:#a6e22e">list</span> (my:get-region <span style="color:#66d9ef">nil</span>)))
-  (browse-url (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&#34;</span>
-                      (<span style="color:#a6e22e">upcase</span> (url-hexify-string str)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:koujien</span> (<span style="color:#000">str</span>)
+  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&#34;</span>
+                      (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
 
-(defun my:weblio (str)
-  (interactive (<span style="color:#a6e22e">list</span> (my:get-region <span style="color:#66d9ef">nil</span>)))
-  (browse-url (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;https://www.weblio.jp/content/%s&#34;</span>
-	                  (<span style="color:#a6e22e">upcase</span> (url-hexify-string str)))))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:weblio</span> (<span style="color:#000">str</span>)
+  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://www.weblio.jp/content/%s&#34;</span>
+	                  (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
 
-(defun my:eijiro (str)
-  (interactive (<span style="color:#a6e22e">list</span> (my:get-region <span style="color:#66d9ef">nil</span>)))
-  (browse-url (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;https://eow.alc.co.jp/%s/UTF-8/&#34;</span>
-                      (<span style="color:#a6e22e">upcase</span> (url-hexify-string str)))))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:eijiro</span> (<span style="color:#000">str</span>)
+  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://eow.alc.co.jp/%s/UTF-8/&#34;</span>
+                      (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
 
-(defun my:google (str)
-	(interactive (<span style="color:#a6e22e">list</span> (my:get-region <span style="color:#66d9ef">nil</span>)))
-	(browse-url (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;https://www.google.com/search?hl=ja&amp;q=%s&#34;</span>
-						(<span style="color:#a6e22e">upcase</span> (url-hexify-string str)))))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:google</span> (<span style="color:#000">str</span>)
+	(<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+	(<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://www.google.com/search?hl=ja&amp;q=%s&#34;</span>
+						(<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
 
-(defun my:get-region (r)
-	<span style="color:#e6db74">&#34;Get search word from region.&#34;</span>
-	(<span style="color:#a6e22e">buffer-substring-no-properties</span> (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:get-region</span> (<span style="color:#000">r</span>)
+	<span style="color:#c41a16">&#34;Get search word from region.&#34;</span>
+	(<span style="color:#000">buffer-substring-no-properties</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>)))
 </code></pre></div><h3 id="511-selected-ime-のオンオフを自動制御する">5.11. [selected] IME のオン・オフを自動制御する</h3>
 <p>selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。</p>
 <p>領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、
 <a href="https://qiita.com/takaxp"><code>@takaxp</code></a> さんの <a href="https://qiita.com/takaxp/items/00245794d46c3a5fcaa8"><code>Qiitaの記事</code></a> にあったので、私の環境（emacs-mozc ）にあうように設定したら、すんなり動いてくれました。感謝！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf *cus-selected
-  :hook ((activate-mark-hook <span style="color:#f92672">.</span> my:activate-selected)
-		 (activate-mark-hook <span style="color:#f92672">.</span> (lambda () (setq my:ime-flag current-input-method) (my:ime-off)))
-		 (deactivate-mark-hook <span style="color:#f92672">.</span> (lambda () (unless (<span style="color:#a6e22e">null</span> my:ime-flag) (my:ime-on)))))
-  :init
-  <span style="color:#75715e">;; Control mozc when seleceted</span>
-  (defun my:activate-selected ()
-	(selected-global-mode <span style="color:#ae81ff">1</span>)
-	(selected--on)
-	(remove-hook <span style="color:#e6db74">&#39;activate-mark-hook</span> <span style="color:#a6e22e">#&#39;</span>my:activate-selected))
-  (add-hook <span style="color:#e6db74">&#39;activate-mark-hook</span> <span style="color:#a6e22e">#&#39;</span>my:activate-selected)
-  (defun my:ime-on ()
-	(interactive)
-	(when (<span style="color:#a6e22e">null</span> current-input-method) (toggle-input-method)))
-  (defun my:ime-off ()
-	(interactive)
-	(inactivate-input-method))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-selected</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">activate-mark-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:activate-selected</span>)
+		 (<span style="color:#000">activate-mark-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">setq</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">my:ime-off</span>)))
+		 (<span style="color:#000">deactivate-mark-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">unless</span> (<span style="color:#000">null</span> <span style="color:#000">my:ime-flag</span>) (<span style="color:#000">my:ime-on</span>)))))
+  <span style="color:#a90d91">:init</span>
+  <span style="color:#177500">;; Control mozc when seleceted</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:activate-selected</span> ()
+	(<span style="color:#000">selected-global-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">selected--on</span>)
+	(<span style="color:#000">remove-hook</span> <span style="color:#c41a16">&#39;activate-mark-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:activate-selected</span>))
+  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;activate-mark-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:activate-selected</span>)
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ime-on</span> ()
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">null</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">toggle-input-method</span>)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ime-off</span> ()
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">inactivate-input-method</span>))
 
-  (defvar my:ime-flag <span style="color:#66d9ef">nil</span>)
-  (add-hook
-   <span style="color:#e6db74">&#39;activate-mark-hook</span>
-   <span style="color:#a6e22e">#&#39;</span>(lambda ()
-	   (setq my:ime-flag current-input-method) (my:ime-off)))
-  (add-hook
-   <span style="color:#e6db74">&#39;deactivate-mark-hook</span>
-   <span style="color:#a6e22e">#&#39;</span>(lambda ()
-	   (unless (<span style="color:#a6e22e">null</span> my:ime-flag) (my:ime-on)))))
+  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">nil</span>)
+  (<span style="color:#000">add-hook</span>
+   <span style="color:#c41a16">&#39;activate-mark-hook</span>
+   <span style="color:#000">#&#39;</span>(<span style="color:#a90d91">lambda</span> ()
+	   (<span style="color:#a90d91">setq</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">my:ime-off</span>)))
+  (<span style="color:#000">add-hook</span>
+   <span style="color:#c41a16">&#39;deactivate-mark-hook</span>
+   <span style="color:#000">#&#39;</span>(<span style="color:#a90d91">lambda</span> ()
+	   (<span style="color:#a90d91">unless</span> (<span style="color:#000">null</span> <span style="color:#000">my:ime-flag</span>) (<span style="color:#000">my:ime-on</span>)))))
 </code></pre></div><h3 id="512-swiper-migemo-ローマ字入力で日本語を検索">5.12. [swiper-migemo] ローマ字入力で日本語を検索</h3>
 <p><a href="https://github.com/momomo5717/avy-migemo"><code>avy-migemo-e.g.swiper.el</code></a> を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。</p>
 <p>つい最近、avy-migemo を使わない <a href="https://github.com/tam17aki/swiper-migemo"><code>swiper-migemo</code></a>を GitHubで見つけたので試した処、機嫌よく動いてくれています。
 MELPAにはアップされていないみたいなので el-get で取得しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf swiper-migemo
-  :el-get tam17aki/swiper-migemo
-  :global-minor-mode <span style="color:#66d9ef">t</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">swiper-migemo</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">tam17aki/swiper-migemo</span>
+  <span style="color:#a90d91">:global-minor-mode</span> <span style="color:#000">t</span>)
 </code></pre></div><h3 id="513-smartparent-対応する括弧の挿入をアシスト">5.13. [smartparent] 対応する括弧の挿入をアシスト</h3>
 <p><a href="https://github.com/Fuco1/smartparens">smartparens.el</a> の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf smartparens
-  :ensure <span style="color:#66d9ef">t</span>
-  :require smartparens-config
-  :hook (prog-mode-hook <span style="color:#f92672">.</span> turn-on-smartparens-mode)
-  :config
-  (smartparens-global-mode <span style="color:#66d9ef">t</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">smartparens</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:require</span> <span style="color:#000">smartparens-config</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-smartparens-mode</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">smartparens-global-mode</span> <span style="color:#000">t</span>))
 </code></pre></div><h3 id="514-key-chordel-同時押しでキーバインド">5.14. [key-chord.el] 同時押しでキーバインド</h3>
 <ul>
 <li>同時押しというキーバインドを提供してくれるやつ</li>
 <li>同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf key-chord
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (after-init-hook <span style="color:#f92672">.</span> key-chord-mode)
-  :chord ((<span style="color:#e6db74">&#34;df&#34;</span> <span style="color:#f92672">.</span> counsel-descbinds)
-		  (<span style="color:#e6db74">&#34;l;&#34;</span> <span style="color:#f92672">.</span> init-loader-show-log)
-		  (<span style="color:#e6db74">&#34;@@&#34;</span> <span style="color:#f92672">.</span> howm-list-all)
-		  (<span style="color:#e6db74">&#34;jk&#34;</span> <span style="color:#f92672">.</span> open-junk-file))
-  :custom
-  <span style="color:#f92672">`</span>((key-chord-two-keys-delay <span style="color:#f92672">.</span> <span style="color:#ae81ff">0.25</span>)
-	(key-chord-safety-interval-backward <span style="color:#f92672">.</span> <span style="color:#ae81ff">0.1</span>)
-	(key-chord-safety-interval-forward  <span style="color:#f92672">.</span> <span style="color:#ae81ff">0.15</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">key-chord</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">key-chord-mode</span>)
+  <span style="color:#a90d91">:chord</span> ((<span style="color:#c41a16">&#34;df&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-descbinds</span>)
+		  (<span style="color:#c41a16">&#34;l;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">init-loader-show-log</span>)
+		  (<span style="color:#c41a16">&#34;@@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">howm-list-all</span>)
+		  (<span style="color:#c41a16">&#34;jk&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-junk-file</span>))
+  <span style="color:#a90d91">:custom</span>
+  <span style="color:#000">`</span>((<span style="color:#000">key-chord-two-keys-delay</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0.25</span>)
+	(<span style="color:#000">key-chord-safety-interval-backward</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0.1</span>)
+	(<span style="color:#000">key-chord-safety-interval-forward</span>  <span style="color:#000">.</span> <span style="color:#1c01ce">0.15</span>)))
 </code></pre></div><p>キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。</p>
 <p>改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は <code>Hydra</code> の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</p>
 <h3 id="515-fontawesome-fontawesome-utility">5.15. [fontawesome] fontawesome utility</h3>
 <p><a href="https://github.com/emacsorphanage/fontawesome"><code>fontawesome.el</code></a> は、Emacs での <code>fontawesome</code> の入力が簡単に出来るユーティリティです。<code>helm</code> や <code>ivy</code> とも勝手に連携してくれる。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(leaf FontAwesome
- :ensure <span style="color:#66d9ef">t</span>
- :bind (<span style="color:#e6db74">&#34;s-a&#34;</span> <span style="color:#f92672">.</span> councel-fontawesome))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">FontAwesome</span>
+ <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+ <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;s-a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">councel-fontawesome</span>))
 </code></pre></div>
 
     

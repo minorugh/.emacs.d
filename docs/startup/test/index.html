@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>1.5. test.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -590,7 +590,7 @@
 <p><a href="https://github.com/minorugh/dotfiles/blob/main/.emacs.d/test.el"><code>test.el</code></a> は、
 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。</p>
 <p>以下を <code>.zshrc</code> または <code>.coderc</code> に記述し反映させたのち、シェルから <code>eq</code> と入力することで起動することがでます。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">alias eq <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;emacs -q -l ~/.emacs.d/test.el&#39;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc"><span style="color:#a90d91">alias</span> <span style="color:#000">eq</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#39;emacs -q -l ~/.emacs.d/test.el&#39;</span>
 </code></pre></div><p>ファイルの PATH は、ご自分の環境に応じて修正が必要です。</p>
 
 

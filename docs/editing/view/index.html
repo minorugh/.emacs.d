@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>7.2. veiw-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -595,150 +595,150 @@
 <h3 id="53-viewモード">5.3. viewモード</h3>
 <p>特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに <a href="https://www.emacswiki.org/emacs/ViewMode">view-mode</a> を使います。</p>
 <p>下記の設定では、<code>my:auto-view-dirs</code> に追加したディレクトリのファイルを開くと <code>view-mode</code> が常に有効になります．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf view
-  :hook
-  (find-file-hook <span style="color:#f92672">.</span> my:auto-view)
-  (server-visit-hook <span style="color:#f92672">.</span> my:unlock-view-mode)
-  :chord (<span style="color:#e6db74">&#34;::&#34;</span> <span style="color:#f92672">.</span> view-mode)
-  :bind (:view-mode-map
-		 (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">backward-char</span>)
-		 (<span style="color:#e6db74">&#34;l&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">forward-char</span>)
-		 (<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">.</span> beginning-of-buffer)
-		 (<span style="color:#e6db74">&#34;e&#34;</span> <span style="color:#f92672">.</span> end-of-buffer)
-		 (<span style="color:#e6db74">&#34;w&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">forward-word</span>)
-		 (<span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">.</span> <span style="color:#a6e22e">scroll-down</span>)
-		 (<span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">.</span> kill-ring-save)
-		 (<span style="color:#e6db74">&#34;r&#34;</span> <span style="color:#f92672">.</span> xref-find-references)
-		 (<span style="color:#e6db74">&#34;RET&#34;</span> <span style="color:#f92672">.</span> xref-find-definitions)
-		 (<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#f92672">.</span> my:view-del-char)
-		 (<span style="color:#e6db74">&#34;y&#34;</span> <span style="color:#f92672">.</span> my:view-yank)
-		 (<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#f92672">.</span> my:view-kill-region)
-		 (<span style="color:#e6db74">&#34;u&#34;</span> <span style="color:#f92672">.</span> my:view-undo)
-		 (<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#f92672">.</span> magit-status)
-		 (<span style="color:#e6db74">&#34;g&#34;</span> <span style="color:#f92672">.</span> my:google)
-		 (<span style="color:#e6db74">&#34;s&#34;</span> <span style="color:#f92672">.</span> swiper-region)
-		 (<span style="color:#e6db74">&#34;%&#34;</span> <span style="color:#f92672">.</span> my:jump-brace)
-		 (<span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#f92672">.</span> counsel-mark-ring)
-		 (<span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#f92672">.</span> my:org-view-next-heading)
-		 (<span style="color:#e6db74">&#34;p&#34;</span> <span style="color:#f92672">.</span> my:org-view-previous-heading)
-		 (<span style="color:#e6db74">&#34;o&#34;</span> <span style="color:#f92672">.</span> other-window-or-split)
-		 (<span style="color:#e6db74">&#34;G&#34;</span> <span style="color:#f92672">.</span> end-of-buffer)
-		 (<span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#f92672">.</span> my:delete-window)
-		 (<span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">.</span> my:delete-other-windows)
-		 (<span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">.</span> my:split-window-below)
-		 (<span style="color:#e6db74">&#34;+&#34;</span> <span style="color:#f92672">.</span> text-scale-increase)
-		 (<span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">.</span> text-scale-decrease)
-		 (<span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">.</span> (lambda ()(interactive)(text-scale-set <span style="color:#ae81ff">0</span>)))
-		 (<span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">.</span> kill-other-buffers)
-		 (<span style="color:#e6db74">&#34;:&#34;</span> <span style="color:#f92672">.</span> View-exit-and-edit)
-		 (<span style="color:#e6db74">&#34;i&#34;</span> <span style="color:#f92672">.</span> View-exit-and-edit)
-		 (<span style="color:#e6db74">&#34;]&#34;</span> <span style="color:#f92672">.</span> winner-undo)
-		 (<span style="color:#e6db74">&#34;[&#34;</span> <span style="color:#f92672">.</span> winner-redo)
-		 (<span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">.</span> hydra-view/body))
-  :init
-  <span style="color:#75715e">;; Specific extension / directory</span>
-  (defvar my:auto-view-regexp <span style="color:#e6db74">&#34;\\.php\\|\\.pl\\|\\.el.gz?\\|\\.tar.gz?\\&#39;&#34;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">view</span>
+  <span style="color:#a90d91">:hook</span>
+  (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:auto-view</span>)
+  (<span style="color:#000">server-visit-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:unlock-view-mode</span>)
+  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;::&#34;</span> <span style="color:#000">.</span> <span style="color:#000">view-mode</span>)
+  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:view-mode-map</span>
+		 (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">.</span> <span style="color:#000">backward-char</span>)
+		 (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">.</span> <span style="color:#000">forward-char</span>)
+		 (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">beginning-of-buffer</span>)
+		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">end-of-buffer</span>)
+		 (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">forward-word</span>)
+		 (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">.</span> <span style="color:#000">scroll-down</span>)
+		 (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">kill-ring-save</span>)
+		 (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">xref-find-references</span>)
+		 (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">xref-find-definitions</span>)
+		 (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-del-char</span>)
+		 (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-yank</span>)
+		 (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-kill-region</span>)
+		 (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:view-undo</span>)
+		 (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">.</span> <span style="color:#000">magit-status</span>)
+		 (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)
+		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-region</span>)
+		 (<span style="color:#c41a16">&#34;%&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:jump-brace</span>)
+		 (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-mark-ring</span>)
+		 (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:org-view-next-heading</span>)
+		 (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:org-view-previous-heading</span>)
+		 (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">other-window-or-split</span>)
+		 (<span style="color:#c41a16">&#34;G&#34;</span> <span style="color:#000">.</span> <span style="color:#000">end-of-buffer</span>)
+		 (<span style="color:#c41a16">&#34;0&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-window</span>)
+		 (<span style="color:#c41a16">&#34;1&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-other-windows</span>)
+		 (<span style="color:#c41a16">&#34;2&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:split-window-below</span>)
+		 (<span style="color:#c41a16">&#34;+&#34;</span> <span style="color:#000">.</span> <span style="color:#000">text-scale-increase</span>)
+		 (<span style="color:#c41a16">&#34;-&#34;</span> <span style="color:#000">.</span> <span style="color:#000">text-scale-decrease</span>)
+		 (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> ()(<span style="color:#a90d91">interactive</span>)(<span style="color:#000">text-scale-set</span> <span style="color:#1c01ce">0</span>)))
+		 (<span style="color:#c41a16">&#34;_&#34;</span> <span style="color:#000">.</span> <span style="color:#000">kill-other-buffers</span>)
+		 (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">.</span> <span style="color:#000">View-exit-and-edit</span>)
+		 (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">.</span> <span style="color:#000">View-exit-and-edit</span>)
+		 (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">.</span> <span style="color:#000">winner-undo</span>)
+		 (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">.</span> <span style="color:#000">winner-redo</span>)
+		 (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-view/body</span>))
+  <span style="color:#a90d91">:init</span>
+  <span style="color:#177500">;; Specific extension / directory</span>
+  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:auto-view-regexp</span> <span style="color:#c41a16">&#34;\\.php\\|\\.pl\\|\\.el.gz?\\|\\.tar.gz?\\&#39;&#34;</span>)
 
-  <span style="color:#75715e">;; Specific directory</span>
-  (defvar my:auto-view-dirs <span style="color:#66d9ef">nil</span>)
-  (add-to-list <span style="color:#e6db74">&#39;my:auto-view-dirs</span> <span style="color:#e6db74">&#34;~/src/&#34;</span>)
-  (add-to-list <span style="color:#e6db74">&#39;my:auto-view-dirs</span> <span style="color:#e6db74">&#34;~/Dropbox/GH/&#34;</span>)
-  (add-to-list <span style="color:#e6db74">&#39;my:auto-view-dirs</span> <span style="color:#e6db74">&#34;/scp:xsrv:/home/minorugh/&#34;</span>)
+  <span style="color:#177500">;; Specific directory</span>
+  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:auto-view-dirs</span> <span style="color:#000">nil</span>)
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;~/src/&#34;</span>)
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/&#34;</span>)
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;/scp:xsrv:/home/minorugh/&#34;</span>)
 
-  (defun my:auto-view ()
-	<span style="color:#e6db74">&#34;Open a file with view mode.&#34;</span>
-	(when (<span style="color:#a6e22e">file-exists-p</span> <span style="color:#a6e22e">buffer-file-name</span>)
-	  (when (and my:auto-view-regexp
-				 (<span style="color:#a6e22e">string-match</span> my:auto-view-regexp <span style="color:#a6e22e">buffer-file-name</span>))
-		(view-mode <span style="color:#ae81ff">1</span>))
-	  (dolist (dir my:auto-view-dirs)
-		(when (<span style="color:#a6e22e">eq</span> <span style="color:#ae81ff">0</span> (<span style="color:#a6e22e">string-match</span> (<span style="color:#a6e22e">expand-file-name</span> dir) <span style="color:#a6e22e">buffer-file-name</span>))
-		  (view-mode <span style="color:#ae81ff">1</span>)))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:auto-view</span> ()
+	<span style="color:#c41a16">&#34;Open a file with view mode.&#34;</span>
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">buffer-file-name</span>)
+	  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> <span style="color:#000">my:auto-view-regexp</span>
+				 (<span style="color:#000">string-match</span> <span style="color:#000">my:auto-view-regexp</span> <span style="color:#000">buffer-file-name</span>))
+		(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
+	  (<span style="color:#a90d91">dolist</span> (<span style="color:#000">dir</span> <span style="color:#000">my:auto-view-dirs</span>)
+		(<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#1c01ce">0</span> (<span style="color:#000">string-match</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">dir</span>) <span style="color:#000">buffer-file-name</span>))
+		  (<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>)))))
 
-  (defun my:unlock-view-mode ()
-	<span style="color:#e6db74">&#34;Unlock view mode with git commit.&#34;</span>
-	(when (<span style="color:#a6e22e">string-match</span> <span style="color:#e6db74">&#34;COMMIT_EDITMSG&#34;</span> <span style="color:#a6e22e">buffer-file-name</span>)
-	  (view-mode <span style="color:#ae81ff">0</span>))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:unlock-view-mode</span> ()
+	<span style="color:#c41a16">&#34;Unlock view mode with git commit.&#34;</span>
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;COMMIT_EDITMSG&#34;</span> <span style="color:#000">buffer-file-name</span>)
+	  (<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>))))
 </code></pre></div><p><code>view-mode</code> のときにモードラインの色を変えるのは <a href=""><code>viewer.el</code></a> を使うと設定が簡単です。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Change-modeline-color</span>
-(leaf viewer
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (view-mode-hook <span style="color:#f92672">.</span> viewer-change-modeline-color-setup)
-  :custom <span style="color:#f92672">`</span>((viewer-modeline-color-view <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;#852941&#34;</span>)
-	        (viewer-modeline-color-unwritable <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;#2F6828&#34;</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Change-modeline-color</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">viewer</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">view-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">viewer-change-modeline-color-setup</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">viewer-modeline-color-view</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#852941&#34;</span>)
+	        (<span style="color:#000">viewer-modeline-color-unwritable</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#2F6828&#34;</span>)))
 </code></pre></div><p><code>view-mode</code> からでも簡単な編集ができるように <code>vim like</code> なコマンドをいくつか作りました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(with-eval-after-load <span style="color:#e6db74">&#39;view</span>
-  <span style="color:#75715e">;; save-buffer no message</span>
-  (defun my:save-buffer ()
-	<span style="color:#e6db74">&#34;With clear Wrote message.&#34;</span>
-	(interactive)
-	(save-buffer)
-	(<span style="color:#a6e22e">message</span> <span style="color:#66d9ef">nil</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;view</span>
+  <span style="color:#177500">;; save-buffer no message</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:save-buffer</span> ()
+	<span style="color:#c41a16">&#34;With clear Wrote message.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">save-buffer</span>)
+	(<span style="color:#000">message</span> <span style="color:#000">nil</span>))
 
-  <span style="color:#75715e">;; Like as &#39;x&#39; of vim</span>
-  (defun my:view-del-char ()
-	<span style="color:#e6db74">&#34;Delete charactor in view mode.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(<span style="color:#a6e22e">delete-char</span> <span style="color:#ae81ff">1</span>)
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;x&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-del-char</span> ()
+	<span style="color:#c41a16">&#34;Delete charactor in view mode.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">delete-char</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;dd&#39; of vim</span>
-  (defun my:view-kill-region ()
-	<span style="color:#e6db74">&#34;If the region is active, to kill region.
-</span><span style="color:#e6db74">If the region is inactive, to kill whole line.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(if (use-region-p)
-		(kill-region (<span style="color:#a6e22e">region-beginning</span>) (<span style="color:#a6e22e">region-end</span>))
-	  (kill-whole-line))
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;dd&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-kill-region</span> ()
+	<span style="color:#c41a16">&#34;If the region is active, to kill region.
+</span><span style="color:#c41a16">If the region is inactive, to kill whole line.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>)
+		(<span style="color:#000">kill-region</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>))
+	  (<span style="color:#000">kill-whole-line</span>))
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;u&#39; of vim</span>
-  (defun my:view-undo ()
-	<span style="color:#e6db74">&#34;Undo in view mode.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(undo)
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;u&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-undo</span> ()
+	<span style="color:#c41a16">&#34;Undo in view mode.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">undo</span>)
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;y&#39; of vim</span>
-  (defun my:view-yank ()
-	<span style="color:#e6db74">&#34;Yank in view mode.&#34;</span>
-	(interactive)
-	(view-mode <span style="color:#ae81ff">0</span>)
-	(yank)
-	(my:save-buffer)
-	(view-mode <span style="color:#ae81ff">1</span>))
+  <span style="color:#177500">;; Like as &#39;y&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:view-yank</span> ()
+	<span style="color:#c41a16">&#34;Yank in view mode.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">yank</span>)
+	(<span style="color:#000">my:save-buffer</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
 
-  <span style="color:#75715e">;; Like as &#39;%&#39; of vim</span>
-  (defun my:jump-brace ()
-	<span style="color:#e6db74">&#34;Jump to the corresponding parenthesis.&#34;</span>
-	(interactive)
-	(let ((c (<span style="color:#a6e22e">following-char</span>))
-		  (p (<span style="color:#a6e22e">preceding-char</span>)))
-	  (if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> c) <span style="color:#ae81ff">40</span>) (forward-list)
-		(if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> p) <span style="color:#ae81ff">41</span>) (backward-list)
-		  (backward-up-list)))))
+  <span style="color:#177500">;; Like as &#39;%&#39; of vim</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:jump-brace</span> ()
+	<span style="color:#c41a16">&#34;Jump to the corresponding parenthesis.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">c</span> (<span style="color:#000">following-char</span>))
+		  (<span style="color:#000">p</span> (<span style="color:#000">preceding-char</span>)))
+	  (<span style="color:#a90d91">if</span> (<span style="color:#000">eq</span> (<span style="color:#000">char-syntax</span> <span style="color:#000">c</span>) <span style="color:#1c01ce">40</span>) (<span style="color:#000">forward-list</span>)
+		(<span style="color:#a90d91">if</span> (<span style="color:#000">eq</span> (<span style="color:#000">char-syntax</span> <span style="color:#000">p</span>) <span style="color:#1c01ce">41</span>) (<span style="color:#000">backward-list</span>)
+		  (<span style="color:#000">backward-up-list</span>)))))
 
-  (defun my:org-view-next-heading ()
-	<span style="color:#e6db74">&#34;Org-view-next-heading.&#34;</span>
-	(interactive)
-	(if (and (derived-mode-p <span style="color:#e6db74">&#39;org-mode</span>)
-			 (org-at-heading-p))
-		(org-next-visible-heading <span style="color:#ae81ff">1</span>)
-	  (next-line)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:org-view-next-heading</span> ()
+	<span style="color:#c41a16">&#34;Org-view-next-heading.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">derived-mode-p</span> <span style="color:#c41a16">&#39;org-mode</span>)
+			 (<span style="color:#000">org-at-heading-p</span>))
+		(<span style="color:#000">org-next-visible-heading</span> <span style="color:#1c01ce">1</span>)
+	  (<span style="color:#000">next-line</span>)))
 
-  (defun my:org-view-previous-heading ()
-	<span style="color:#e6db74">&#34;Org-view-previous-heading.&#34;</span>
-	(interactive)
-	(if (and (derived-mode-p <span style="color:#e6db74">&#39;org-mode</span>)
-			 (org-at-heading-p))
-		(org-previous-visible-heading <span style="color:#ae81ff">1</span>)
-	  (previous-line))))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:org-view-previous-heading</span> ()
+	<span style="color:#c41a16">&#34;Org-view-previous-heading.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">derived-mode-p</span> <span style="color:#c41a16">&#39;org-mode</span>)
+			 (<span style="color:#000">org-at-heading-p</span>))
+		(<span style="color:#000">org-previous-visible-heading</span> <span style="color:#1c01ce">1</span>)
+	  (<span style="color:#000">previous-line</span>))))
 </code></pre></div>
 
     

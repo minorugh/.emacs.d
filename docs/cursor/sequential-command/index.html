@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>3.1. sequential-command :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -592,12 +592,12 @@
 </ul>
 <p>地味ながら一度使うと便利すぎて止められません。</p>
 <p>MELPAから Installできますが、私は HKey氏の改良版を <code>el-get</code> でインストールしました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf sequential-command
-  :doc <span style="color:#e6db74">&#34;https://bre.is/6Xu4fQs6&#34;</span>
-  :el-get HKey/sequential-command
-  :config
-  (leaf sequential-command-config
-	:hook (emacs-startup-hook <span style="color:#f92672">.</span> sequential-command-setup-keys)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">sequential-command</span>
+  <span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://bre.is/6Xu4fQs6&#34;</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">HKey/sequential-command</span>
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">sequential-command-config</span>
+	<span style="color:#a90d91">:hook</span> (<span style="color:#000">emacs-startup-hook</span> <span style="color:#000">.</span> <span style="color:#000">sequential-command-setup-keys</span>)))
 </code></pre></div>
 
     

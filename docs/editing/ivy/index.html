@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>7.6. ivy / counsel :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -599,90 +599,90 @@
 <p><code>ivy</code> は、<code>helm</code> と双璧を成す Emacsの補完システムです。</p>
 <p>リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。
 このシンプルかつ極めて重要なタスクを <code>ivy</code> が手助けしてくれます．</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf counsel
-  :ensure <span style="color:#66d9ef">t</span>
-  :defer-config (ivy-mode)
-  :bind ((<span style="color:#e6db74">&#34;C-r&#34;</span> <span style="color:#f92672">.</span> swiper-thing-at-point)
-		 (<span style="color:#e6db74">&#34;C-s&#34;</span> <span style="color:#f92672">.</span> swiper-region)
-		 (<span style="color:#e6db74">&#34;C-:&#34;</span> <span style="color:#f92672">.</span> counsel-switch-buffer)
-		 (<span style="color:#e6db74">&#34;s-a&#34;</span> <span style="color:#f92672">.</span> counsel-ag)
-		 (<span style="color:#e6db74">&#34;s-r&#34;</span> <span style="color:#f92672">.</span> counsel-rg)
-		 (<span style="color:#e6db74">&#34;s-f&#34;</span> <span style="color:#f92672">.</span> counsel-fontawesome)
-		 (<span style="color:#e6db74">&#34;M-x&#34;</span> <span style="color:#f92672">.</span> counsel-M-x)
-		 (<span style="color:#e6db74">&#34;M-y&#34;</span> <span style="color:#f92672">.</span> counsel-yank-pop)
-		 (<span style="color:#e6db74">&#34;C-x m&#34;</span> <span style="color:#f92672">.</span> counsel-mark-ring)
-		 (<span style="color:#e6db74">&#34;C-x C-b&#34;</span> <span style="color:#f92672">.</span> ibuffer)
-		 (<span style="color:#e6db74">&#34;C-x C-f&#34;</span> <span style="color:#f92672">.</span> counsel-find-file)
-		 (<span style="color:#e6db74">&#34;C-x C-r&#34;</span> <span style="color:#f92672">.</span> counsel-recentf))
-  :custom <span style="color:#f92672">`</span>((search-default-mode <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>)
-			(ivy-use-virtual-buffers <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-			(ivy-use-selectable-prompt <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-			(enable-recursive-minibuffers <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
-			(counsel-find-file-ignore-regexp <span style="color:#f92672">.</span> (regexp-opt completion-ignored-extensions))
-			(ivy-format-functions-alist <span style="color:#f92672">.</span> <span style="color:#f92672">&#39;</span>((<span style="color:#66d9ef">t</span> <span style="color:#f92672">.</span> my:ivy-format-function-arrow)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">counsel</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:defer-config</span> (<span style="color:#000">ivy-mode</span>)
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-thing-at-point</span>)
+		 (<span style="color:#c41a16">&#34;C-s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-region</span>)
+		 (<span style="color:#c41a16">&#34;C-:&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-switch-buffer</span>)
+		 (<span style="color:#c41a16">&#34;s-a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-ag</span>)
+		 (<span style="color:#c41a16">&#34;s-r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-rg</span>)
+		 (<span style="color:#c41a16">&#34;s-f&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-fontawesome</span>)
+		 (<span style="color:#c41a16">&#34;M-x&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-M-x</span>)
+		 (<span style="color:#c41a16">&#34;M-y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-yank-pop</span>)
+		 (<span style="color:#c41a16">&#34;C-x m&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-mark-ring</span>)
+		 (<span style="color:#c41a16">&#34;C-x C-b&#34;</span> <span style="color:#000">.</span> <span style="color:#000">ibuffer</span>)
+		 (<span style="color:#c41a16">&#34;C-x C-f&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-find-file</span>)
+		 (<span style="color:#c41a16">&#34;C-x C-r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-recentf</span>))
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">search-default-mode</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+			(<span style="color:#000">ivy-use-virtual-buffers</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">ivy-use-selectable-prompt</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">enable-recursive-minibuffers</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">counsel-find-file-ignore-regexp</span> <span style="color:#000">.</span> (<span style="color:#000">regexp-opt</span> <span style="color:#000">completion-ignored-extensions</span>))
+			(<span style="color:#000">ivy-format-functions-alist</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>((<span style="color:#000">t</span> <span style="color:#000">.</span> <span style="color:#000">my:ivy-format-function-arrow</span>)))))
 </code></pre></div><h3 id="現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</h3>
 <p><code>ivy-format-functions-alist</code> にカスタマイズした関数を追加すれば、プロンプトの下部に位置するカーソル行の表示を変更できます。
 <code>all-the-icons</code> を導入して好みのアイコンでカーソル行のある選択候補を目立たせましょう。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun my:ivy-format-function-arrow (cands)
-  <span style="color:#e6db74">&#34;Transform into a string for minibuffer with CANDS.&#34;</span>
-  (ivy--format-function-generic
-   (lambda (str)
-	 (<span style="color:#a6e22e">concat</span> (if (display-graphic-p)
-				 (all-the-icons-octicon <span style="color:#e6db74">&#34;chevron-right&#34;</span> :height <span style="color:#ae81ff">0.8</span> :v-adjust <span style="color:#ae81ff">-0.05</span>)
-			   <span style="color:#e6db74">&#34;&gt;&#34;</span>)
-			 (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#39;display</span> <span style="color:#f92672">`</span>(space :align-to <span style="color:#ae81ff">2</span>))
-			 (ivy--add-face str <span style="color:#e6db74">&#39;ivy-current-match</span>)))
-   (lambda (str)
-	 (<span style="color:#a6e22e">concat</span> (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#39;display</span> <span style="color:#f92672">`</span>(space :align-to <span style="color:#ae81ff">2</span>)) str))
-   cands
-   <span style="color:#e6db74">&#34;\n&#34;</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:ivy-format-function-arrow</span> (<span style="color:#000">cands</span>)
+  <span style="color:#c41a16">&#34;Transform into a string for minibuffer with CANDS.&#34;</span>
+  (<span style="color:#000">ivy--format-function-generic</span>
+   (<span style="color:#a90d91">lambda</span> (<span style="color:#000">str</span>)
+	 (<span style="color:#000">concat</span> (<span style="color:#a90d91">if</span> (<span style="color:#000">display-graphic-p</span>)
+				 (<span style="color:#000">all-the-icons-octicon</span> <span style="color:#c41a16">&#34;chevron-right&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">0.8</span> <span style="color:#a90d91">:v-adjust</span> <span style="color:#1c01ce">-0.05</span>)
+			   <span style="color:#c41a16">&#34;&gt;&#34;</span>)
+			 (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>))
+			 (<span style="color:#000">ivy--add-face</span> <span style="color:#000">str</span> <span style="color:#c41a16">&#39;ivy-current-match</span>)))
+   (<span style="color:#a90d91">lambda</span> (<span style="color:#000">str</span>)
+	 (<span style="color:#000">concat</span> (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>)) <span style="color:#000">str</span>))
+   <span style="color:#000">cands</span>
+   <span style="color:#c41a16">&#34;\n&#34;</span>))
 </code></pre></div><h3 id="ivy-rich">ivy-rich</h3>
 <p>ivy-rich を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf ivy-rich
-  :ensure <span style="color:#66d9ef">t</span>
-  :hook (after-init-hook <span style="color:#f92672">.</span> ivy-rich-mode))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">ivy-rich</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">ivy-rich-mode</span>))
 </code></pre></div><h3 id="amx">amx</h3>
 <p><code>amx</code> は、Emacsコマンド <code>M-x</code> の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
 導入することで<code>counsel-M-x</code> とも自動的に連携して効率の良い補完システムを提供します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf amx
-  :ensure <span style="color:#66d9ef">t</span>
-  :custom <span style="color:#f92672">`</span>((amx-save-file <span style="color:#f92672">.</span> <span style="color:#f92672">,</span><span style="color:#e6db74">&#34;~/.emacs.d/tmp/amx-items&#34;</span>)
-	        (amx-history-length <span style="color:#f92672">.</span> <span style="color:#ae81ff">20</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">amx</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">amx-save-file</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/amx-items&#34;</span>)
+	        (<span style="color:#000">amx-history-length</span> <span style="color:#000">.</span> <span style="color:#1c01ce">20</span>)))
 </code></pre></div><h3 id="swiper-region">swiper-region</h3>
 <p><code>swiper-thing-at-point</code> は賢くて親切なのですが、key-wordを入力して検索したいときには使いづらいです。
 自分の使い勝手に合わせてカスタマイズしました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun swiper-region ()
-  <span style="color:#e6db74">&#34;If region is selected, </span><span style="color:#e6db74">`swiper-thing-at-point&#39;</span><span style="color:#e6db74">.
-</span><span style="color:#e6db74">If the region isn&#39;t selected, </span><span style="color:#e6db74">`swiper&#39;</span><span style="color:#e6db74">.&#34;</span>
-  (interactive)
-  (if (not (use-region-p))
-	  (swiper)
-    (swiper-thing-at-point)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">swiper-region</span> ()
+  <span style="color:#c41a16">&#34;If region is selected, </span><span style="color:#c41a16">`swiper-thing-at-point&#39;</span><span style="color:#c41a16">.
+</span><span style="color:#c41a16">If the region isn&#39;t selected, </span><span style="color:#c41a16">`swiper&#39;</span><span style="color:#c41a16">.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
+	  (<span style="color:#000">swiper</span>)
+    (<span style="color:#000">swiper-thing-at-point</span>)))
 </code></pre></div><h3 id="高速全文検索">高速全文検索</h3>
 <p>2文字でも検索が発動するようにカスタマイズしています。<code>@takaxp</code> さんのTipsからパクってきました。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(with-no-warnings
-  (defun ad:counsel-ag (f <span style="color:#66d9ef">&amp;optional</span> initial-input initial-directory extra-ag-args ag-prompt caller)
-	(<span style="color:#a6e22e">apply</span> f (or initial-input
-				 (and (not (thing-at-point-looking-at <span style="color:#e6db74">&#34;^\\*+&#34;</span>))
-                      (ivy-thing-at-point)))
-           (unless current-prefix-arg
-			 (or initial-directory default-directory))
-           extra-ag-args ag-prompt caller)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-no-warnings</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">ad:counsel-ag</span> (<span style="color:#000">f</span> <span style="color:#a90d91">&amp;optional</span> <span style="color:#000">initial-input</span> <span style="color:#000">initial-directory</span> <span style="color:#000">extra-ag-args</span> <span style="color:#000">ag-prompt</span> <span style="color:#000">caller</span>)
+	(<span style="color:#000">apply</span> <span style="color:#000">f</span> (<span style="color:#a90d91">or</span> <span style="color:#000">initial-input</span>
+				 (<span style="color:#a90d91">and</span> (<span style="color:#000">not</span> (<span style="color:#000">thing-at-point-looking-at</span> <span style="color:#c41a16">&#34;^\\*+&#34;</span>))
+                      (<span style="color:#000">ivy-thing-at-point</span>)))
+           (<span style="color:#a90d91">unless</span> <span style="color:#000">current-prefix-arg</span>
+			 (<span style="color:#a90d91">or</span> <span style="color:#000">initial-directory</span> <span style="color:#000">default-directory</span>))
+           <span style="color:#000">extra-ag-args</span> <span style="color:#000">ag-prompt</span> <span style="color:#000">caller</span>)))
 
-(with-eval-after-load <span style="color:#e6db74">&#34;counsel&#34;</span>
-  (require <span style="color:#e6db74">&#39;thingatpt</span> <span style="color:#66d9ef">nil</span> <span style="color:#66d9ef">t</span>)
-  (advice-add <span style="color:#e6db74">&#39;counsel-ag</span> :around <span style="color:#a6e22e">#&#39;</span>ad:counsel-ag)
-  <span style="color:#75715e">;; Make search trigger even with 2 characters</span>
-  (add-to-list <span style="color:#e6db74">&#39;ivy-more-chars-alist</span> <span style="color:#f92672">&#39;</span>(counsel-ag <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>))
+(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#34;counsel&#34;</span>
+  (<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;thingatpt</span> <span style="color:#000">nil</span> <span style="color:#000">t</span>)
+  (<span style="color:#000">advice-add</span> <span style="color:#c41a16">&#39;counsel-ag</span> <span style="color:#a90d91">:around</span> <span style="color:#000">#&#39;</span><span style="color:#000">ad:counsel-ag</span>)
+  <span style="color:#177500">;; Make search trigger even with 2 characters</span>
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;ivy-more-chars-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">counsel-ag</span> <span style="color:#000">.</span> <span style="color:#1c01ce">2</span>))
 
-  (ivy-add-actions
-   <span style="color:#e6db74">&#39;counsel-ag</span>
-   <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;r&#34;</span> my:counsel-ag-in-dir <span style="color:#e6db74">&#34;search in directory&#34;</span>))))
+  (<span style="color:#000">ivy-add-actions</span>
+   <span style="color:#c41a16">&#39;counsel-ag</span>
+   <span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">my:counsel-ag-in-dir</span> <span style="color:#c41a16">&#34;search in directory&#34;</span>))))
 
-(defun my:counsel-ag-in-dir (_arg)
-  <span style="color:#e6db74">&#34;Search again with new root directory.&#34;</span>
-  (let ((current-prefix-arg <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">4</span>)))
-    (counsel-ag ivy-text <span style="color:#66d9ef">nil</span> <span style="color:#e6db74">&#34;&#34;</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:counsel-ag-in-dir</span> (<span style="color:#000">_arg</span>)
+  <span style="color:#c41a16">&#34;Search again with new root directory.&#34;</span>
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">current-prefix-arg</span> <span style="color:#000">&#39;</span>(<span style="color:#1c01ce">4</span>)))
+    (<span style="color:#000">counsel-ag</span> <span style="color:#000">ivy-text</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#34;&#34;</span>)))
 </code></pre></div>
 
     

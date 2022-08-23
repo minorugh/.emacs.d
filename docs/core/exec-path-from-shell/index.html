@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>2.5. exec-path-from-shell :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -589,11 +589,11 @@
 <li>自分は、<code>shell-commad</code> や <code>compile-command</code> をよく使うので必須のパッケージです。</li>
 </ul>
 <p><a href="https://github.com/purcell/exec-path-from-shell">purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&rsquo;s shell</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf exec-path-from-shell
-  :ensure <span style="color:#66d9ef">t</span>
-  :when (<span style="color:#a6e22e">memq</span> <span style="color:#a6e22e">window-system</span> <span style="color:#f92672">&#39;</span>(mac ns x))
-  :hook (after-init-hook <span style="color:#f92672">.</span> exec-path-from-shell-initialize)
-  :custom (exec-path-from-shell-check-startup-files <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">exec-path-from-shell</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:when</span> (<span style="color:#000">memq</span> <span style="color:#000">window-system</span> <span style="color:#000">&#39;</span>(<span style="color:#000">mac</span> <span style="color:#000">ns</span> <span style="color:#000">x</span>))
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">exec-path-from-shell-initialize</span>)
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">exec-path-from-shell-check-startup-files</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>))
 </code></pre></div>
 
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -601,46 +601,46 @@
 <p><code>init.el</code> でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
 <h2 id="gcを減らす">GCを減らす</h2>
 <p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Defer garbage collection further back in the startup process</span>
-(setq gc-cons-threshold most-positive-fixnum)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Defer garbage collection further back in the startup process</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">gc-cons-threshold</span> <span style="color:#000">most-positive-fixnum</span>)
 </code></pre></div><p>eary-init.el の先頭に書くことが重要です。</p>
 <h2 id="package-の初期化を抑制する">Package の初期化を抑制する</h2>
 <p>Emacs27では、(package-initialize) が 2回実行されます。
 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。</p>
 <p>1回目を抑制するために以下を <code>eary-init.el</code> に記述することで初期化が少し早くなります。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; For slightly faster startup</span>
-(setq package-enable-at-startup <span style="color:#66d9ef">nil</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; For slightly faster startup</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">package-enable-at-startup</span> <span style="color:#000">nil</span>)
 </code></pre></div><h2 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Always load newest byte code</span>
-(setq load-prefer-newer <span style="color:#66d9ef">t</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Always load newest byte code</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">load-prefer-newer</span> <span style="color:#000">t</span>)
 
 </code></pre></div><h2 id="フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Inhibit resizing frame</span>
-(setq frame-inhibit-implied-resize <span style="color:#66d9ef">t</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Inhibit resizing frame</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">frame-inhibit-implied-resize</span> <span style="color:#000">t</span>)
 </code></pre></div><h2 id="これらを無効にする方が速い-初期化される前">これらを無効にする方が速い (初期化される前)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Faster to disable these here (before they&#39;ve been initialized)</span>
-(push <span style="color:#f92672">&#39;</span>(fullscreen <span style="color:#f92672">.</span> maximized) default-frame-alist)
-(push <span style="color:#f92672">&#39;</span>(menu-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
-(push <span style="color:#f92672">&#39;</span>(tool-bar-lines <span style="color:#f92672">.</span> <span style="color:#ae81ff">0</span>) default-frame-alist)
-(push <span style="color:#f92672">&#39;</span>(vertical-scroll-bars) default-frame-alist)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Faster to disable these here (before they&#39;ve been initialized)</span>
+(<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">fullscreen</span> <span style="color:#000">.</span> <span style="color:#000">maximized</span>) <span style="color:#000">default-frame-alist</span>)
+(<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">menu-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
+(<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">tool-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
+(<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">vertical-scroll-bars</span>) <span style="color:#000">default-frame-alist</span>)
 </code></pre></div><h2 id="起動時の点滅を抑える">起動時の点滅を抑える</h2>
 <p>Emacsが設定ファイルを読み込むプロセスで画面がちらつくのを抑制します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Suppress flashing at startup</span>
-(setq inhibit-redisplay <span style="color:#66d9ef">t</span>)
-(setq inhibit-message <span style="color:#66d9ef">t</span>)
-(add-hook <span style="color:#e6db74">&#39;window-setup-hook</span>
-		  (lambda ()
-			(setq inhibit-redisplay <span style="color:#66d9ef">nil</span>)
-			(setq inhibit-message <span style="color:#66d9ef">nil</span>)
-			(<span style="color:#a6e22e">redisplay</span>)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Suppress flashing at startup</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-redisplay</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-message</span> <span style="color:#000">t</span>)
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;window-setup-hook</span>
+		  (<span style="color:#a90d91">lambda</span> ()
+			(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-redisplay</span> <span style="color:#000">nil</span>)
+			(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-message</span> <span style="color:#000">nil</span>)
+			(<span style="color:#000">redisplay</span>)))
 </code></pre></div><h2 id="起動時の背景色を指定する">起動時の背景色を指定する</h2>
 <p>Emacsが設定を読み込む色段階の背景色は白です。
 自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Startup setting</span>
-(setq inhibit-splash-screen <span style="color:#66d9ef">t</span>)
-(setq inhibit-startup-message <span style="color:#66d9ef">t</span>)
-(setq byte-compile-warnings <span style="color:#f92672">&#39;</span>(cl-functions))
-(custom-set-faces <span style="color:#f92672">&#39;</span>(default ((<span style="color:#66d9ef">t</span> (:background <span style="color:#e6db74">&#34;#282a36&#34;</span>)))))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Startup setting</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-splash-screen</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-startup-message</span> <span style="color:#000">t</span>)
+(<span style="color:#a90d91">setq</span> <span style="color:#000">byte-compile-warnings</span> <span style="color:#000">&#39;</span>(<span style="color:#000">cl-functions</span>))
+(<span style="color:#000">custom-set-faces</span> <span style="color:#000">&#39;</span>(<span style="color:#000">default</span> ((<span style="color:#000">t</span> (<span style="color:#a90d91">:background</span> <span style="color:#c41a16">&#34;#282a36&#34;</span>)))))
 </code></pre></div>
 
     

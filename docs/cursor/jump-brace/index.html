@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>3.3. my:jump-brace :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -593,15 +593,15 @@
     
     
 <p><code>my:jump-brace</code> は、括弧の先頭と最後へ交互にポイント移動します。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun my:jump-brace ()
- <span style="color:#e6db74">&#34;Jump to the corresponding parenthesis.&#34;</span>
- (interactive)
- (let ((c (<span style="color:#a6e22e">following-char</span>))
-	 (p (<span style="color:#a6e22e">preceding-char</span>)))
-   (if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> c) <span style="color:#ae81ff">40</span>) (forward-list)
-	 (if (<span style="color:#a6e22e">eq</span> (<span style="color:#a6e22e">char-syntax</span> p) <span style="color:#ae81ff">41</span>) (backward-list)
-       (backward-up-list)))))
-(bind-key <span style="color:#e6db74">&#34;C-M-9&#34;</span> <span style="color:#e6db74">&#39;my:jump-brace</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:jump-brace</span> ()
+ <span style="color:#c41a16">&#34;Jump to the corresponding parenthesis.&#34;</span>
+ (<span style="color:#a90d91">interactive</span>)
+ (<span style="color:#a90d91">let</span> ((<span style="color:#000">c</span> (<span style="color:#000">following-char</span>))
+	 (<span style="color:#000">p</span> (<span style="color:#000">preceding-char</span>)))
+   (<span style="color:#a90d91">if</span> (<span style="color:#000">eq</span> (<span style="color:#000">char-syntax</span> <span style="color:#000">c</span>) <span style="color:#1c01ce">40</span>) (<span style="color:#000">forward-list</span>)
+	 (<span style="color:#a90d91">if</span> (<span style="color:#000">eq</span> (<span style="color:#000">char-syntax</span> <span style="color:#000">p</span>) <span style="color:#1c01ce">41</span>) (<span style="color:#000">backward-list</span>)
+       (<span style="color:#000">backward-up-list</span>)))))
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-M-9&#34;</span> <span style="color:#c41a16">&#39;my:jump-brace</span>)
 </code></pre></div><h3 id="標準機能">標準機能</h3>
 <ul>
 <li><code>C-M-SPC</code> (mark-sexp) は，カーソル位置から順方向に選択．</li>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T15:18:28 JST">
+<meta name="revised" content="2022-08-23T16:26:52 JST">
 <title>3.2. other-window-or-split :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -589,15 +589,15 @@
 <li>画面分割されていないときは、左右分割して <code>follow-mode</code> <code>dimmer-mode</code> も <code>ON</code> にしています。（詳細後述）</li>
 <li>画面移動だけなら <code>C-c o</code> でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun other-window-or-split ()
- <span style="color:#e6db74">&#34;With turn on dimmer.&#34;</span>
- (interactive)
- (when (one-window-p)
-	 (split-window-horizontally)
-	 (follow-mode <span style="color:#ae81ff">1</span>)
-	 (dimmer-mode <span style="color:#ae81ff">1</span>))
-   (other-window <span style="color:#ae81ff">1</span>))
-(bind-key <span style="color:#e6db74">&#34;C-q&#34;</span> <span style="color:#e6db74">&#39;other-window-or-split</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">other-window-or-split</span> ()
+ <span style="color:#c41a16">&#34;With turn on dimmer.&#34;</span>
+ (<span style="color:#a90d91">interactive</span>)
+ (<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
+	 (<span style="color:#000">split-window-horizontally</span>)
+	 (<span style="color:#000">follow-mode</span> <span style="color:#1c01ce">1</span>)
+	 (<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">1</span>))
+   (<span style="color:#000">other-window</span> <span style="color:#1c01ce">1</span>))
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-q&#34;</span> <span style="color:#c41a16">&#39;other-window-or-split</span>)
 </code></pre></div>
 
     
