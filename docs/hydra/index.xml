@@ -6,5 +6,43 @@
     <description>Recent content in Hydra / コマンドディスパッチャ on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/hydra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</guid>
+      <description>7.1. [hydra-menu] 作業選択メニュー hydra-work-menu には、 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。
+hydra-quick-menu の方には、 編集作業で頻繁に使うツール群のほか、my:dired でプロジェクトのディレクトリを一発で開くためのショートカットなどを設定しています。
+この２つの hydra は、いわば私の秘書のような役割で、どちらからでも相互にトグルで呼び出せるようにしています。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

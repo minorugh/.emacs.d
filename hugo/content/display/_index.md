@@ -1,8 +1,8 @@
 +++
 title = "表示サポート"
 draft = false
-pre = "<b>8. </b>"
-weight = 8
+pre = "<b>7. </b>"
+weight = 7
 disableToc = true
 +++
 

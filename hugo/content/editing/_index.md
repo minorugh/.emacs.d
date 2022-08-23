@@ -1,8 +1,8 @@
 +++
-title = "ファイル編集/入力補助"
+title = "編集サポート / 入力補助"
 draft = false
-pre = "<b>7. </b>"
-weight = 7
+pre = "<b>6. </b>"
+weight = 6
 disableToc = true
 +++
 

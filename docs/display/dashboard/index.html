@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>minoru&#39;s Emacs Configuration</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2022-08-23T20:00:58 JST">
+<title> :: minoru&#39;s Emacs Configuration</title>
+<link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+<link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
+<link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
+<link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
+<link href="/.emacs.d/css/featherlight.min.css" rel="stylesheet">
+<link href="/.emacs.d/css/auto-complete.css" rel="stylesheet">
+<link href="/.emacs.d/theme-original/style.css" rel="stylesheet">
+
+  <link href="/.emacs.d/theme-original/variant-gray.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/.emacs.d/css/bootstrap.min.css">
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<meta name="description" content="">
+
+
+    
+  </head>
+  <body data-url="/.emacs.d/display/dashboard/">
+    
+    <div id="headermain"></div>
+<nav id="sidebar" class="">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://minorugh.github.io/.emacs.d/">minoru&#39;s Emacs Configuration</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+  </div>
+
+  <ul class="topics">
+            <li data-nav-id="/.emacs.d/" class="dd-item">
+            <a href="/.emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/startup/"><b>1. </b>起動設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/eary-init/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/startup/eary-init/">
+            1.1. eary-init.el
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/magick-file/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/startup/magick-file/">
+            1.2. speed up startup
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/leaf/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/startup/leaf/">
+            1.3. leaf.el
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/init-loader/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/startup/init-loader/">
+            1.4. init-loader.el
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/test/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/startup/test/">
+            1.5. test.el
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/core/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/core/"><b>2. </b>コア設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/encode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/encode/">
+            2.1. language / coding-system
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mozc/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/mozc/">
+            2.3. emacs-mozc
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/server/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/server/">
+            2.4. server / emacsclient
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/exec-path-from-shell/">
+            2.5. exec-path-from-shell
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/uniquify/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/uniquify/">
+            2.6. uniguify
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/global-keybind/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/global-keybind/">
+            2.7. gloal key bind
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/cursor/"><b>3. </b>カーソル移動</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/sequential-command/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/sequential-command/">
+            3.1. sequential-command
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/other-window-or-sprit/">
+            3.2. other-window-or-split
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/jump-brace/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/jump-brace/">
+            3.3. my:jump-brace
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/mark-command/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/mark-command/">
+            3.4. my:exchange-point-and-mark
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/expand-region/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/cursor/expand-region/">
+            3.5. expand-region
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/higlight/"><b>4. </b>フォント / 配色関連</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/font/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/font/">
+            4.1. font setting
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/hl-line/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/hl-line/">
+            4.2. hl-line-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/blink-cursor/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/blink-cursor/">
+            4.3. blink-cursor-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/ivy-format/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/ivy-format/">
+            4.4. ivy-format-function-arrow
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/paren/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/paren/">
+            4.5. pare
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/rainbow-delimiters/">
+            4.6. rainbow-delimiters
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/rainbow/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/rainbow/">
+            4.7. rainbow-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/volatile-highlights/">
+            4.8. volatile-highlight
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/whitespace/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/higlight/whitespace/">
+            4.9. whitespace
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/frame/"><b>5. </b>フレーム / ウインドウ制御</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/frame/auto-save-buffer/">
+            5.1. auto-save-buffer-enhanced
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/dimmer/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/frame/dimmer/">
+            5.2. dimmer-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/scrool-other-window/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/frame/scrool-other-window/">
+            5.3. scrool-other-Window
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/sprit-window/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/frame/sprit-window/">
+            5.4. sprit-window-functions
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/tempbuf/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/frame/tempbuf/">
+            5.5. tempbuf
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/winner/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/frame/winner/">
+            5.6. winner-mode
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/editing/"><b>6. </b>編集サポート / 入力補助</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/markdown/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/markdown/">
+            7.1. markdown-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/view/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/view/">
+            7.2. veiw-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/web-mode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/web-mode/">
+            7.3. web-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yatex/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/yatex/">
+            7.4. yatex
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/darkroom/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/darkroom/">
+            7.5. darkroom
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/ivy/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/ivy/">
+            7.6. ivy / counsel
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/company/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/company/">
+            7.7. yasunippets / company
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/key-chord/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/key-chord/">
+            7.8. key-chord
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/smartparens/">
+            7.9. snartparens
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/iedit/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/iedit/">
+            7.10. iedit
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/migemo/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/migemo/">
+            7.11. migemo
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/selected/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/selected/">
+            7.12. selected
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/pangu/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/pangu/">
+            7.13. pangu-spacing
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/fontawesome/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/fontawesome/">
+            7.14. fontawesome
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/display/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/display/"><b>7. </b>表示サポート</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/calendar/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/calendar/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/dashboard/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/dashboard/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/diff-hl/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/diff-hl/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/imenu/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/imenu/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/prescient/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/prescient/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/toggle-fullscreen/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/which-key/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/which-key/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/display_01/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/display/display_01/">
+            display_01
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/hydra/"><b>8. </b>Hydra / コマンドディスパッチャ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-make/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/hydra/hydra-make/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/hydra/hydra-markdown/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-quick/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/hydra/hydra-quick/">
+            
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-work/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/hydra/hydra-work/">
+            
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/history/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/history/"><b>9. </b>履歴 / ファイル管理</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/doom-themes/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/history/doom-themes/">
+            6.1. doom-thmes
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/doom-modeline/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/history/doom-modeline/">
+            6.2. doom-modeline
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/all-the-icons/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/history/all-the-icons/">
+            6.3. all-the-icons
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/display-number/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/history/display-number/">
+            6.4. display-number-mode
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/" class="dd-item
+        ">
+      <div>
+      <a href="/.emacs.d/programming/"><b>10. </b>開発サポート</a>
+      </div>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/" class="dd-item
+        ">
+      <div>
+      <a href="/.emacs.d/external-tool/"><b>11. </b>外部連携ツール設定</a>
+      </div>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/memo-tool/" class="dd-item
+        ">
+      <div>
+      <a href="/.emacs.d/memo-tool/"><b>12. </b>メモ環境</a>
+      </div>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/" class="dd-item
+        ">
+      <div>
+      <a href="/.emacs.d/utility-tool/"><b>13. </b>ユーティリティー関数</a>
+      </div>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/minorugh/.emacs.d" rel="noopener"><i class='fa fa-github'></i> Github repo</a></li>
+                <li class="" role=""><a href="https://minorugh.github.io/" rel="noopener"><i class='fa fa-home'></i> 四時随順に戻る</a></li>
+                <li class="" role=""><a href="https://twitter.com/minorugh" rel="noopener"><i class='fa fa-twitter'></i> Twitter</a></li>
+        </section>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer">
+
+    </section>
+  </div>
+</nav>
+
+
+
+<section id="body">
+<div id="overlay"></div>
+<div class="padding highlightable">
+
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/display/dashboard.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+      <div class="wrapper">
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#111-起動時の設定">11.1. 起動時の設定</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+	</div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1></h1>
+  
+
+
+
+    
+    
+    
+<h3 id="111-起動時の設定">11.1. 起動時の設定</h3>
+<p><code>*scratch*</code> バッファーを表示させるのが標準かと思いますが、私は、<code>dashboard</code> にしています。</p>
+<p><a href="https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el">https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el</a></p>
+<p><img src="https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067" alt="dashboard"></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">dashboard</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-setup-startup-hook</span>)
+		 (<span style="color:#000">dashboard-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">page-break-lines-mode</span>))
+  <span style="color:#a90d91">:defun</span> (<span style="color:#000">dashboard-setup-startup-hook</span>)
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-dashboard</span>)
+		 (<span style="color:#a90d91">:dashboard-mode-map</span>
+		  (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-calendar</span>)
+		  (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-yahoo-japan</span>)
+		  (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-nhk-news</span>)
+		  (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-weather</span>)
+		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-tweetdeck</span>)
+		  (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-homepage</span>)
+		  (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">.</span> <span style="color:#000">sylpheed</span>)
+		  (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">slack</span>)
+		  (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-browse/body</span>)
+		  (<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">quit-dashboard</span>)))
+  <span style="color:#a90d91">:advice</span> (<span style="color:#a90d91">:override</span> <span style="color:#000">emacs-init-time</span> <span style="color:#000">ad:emacs-init-time</span>)
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">page-break-lines</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>)
+  <span style="color:#a90d91">:config</span>
+  <span style="color:#177500">;; Set the title</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-banner-logo-title</span>
+		(<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;GNU Emacs &#34;</span> <span style="color:#000">emacs-version</span> <span style="color:#c41a16">&#34; kernel &#34;</span>
+				(<span style="color:#000">car</span> (<span style="color:#000">split-string</span> (<span style="color:#000">shell-command-to-string</span> <span style="color:#c41a16">&#34;uname -r&#34;</span>)))  <span style="color:#c41a16">&#34; Debian &#34;</span>
+				(<span style="color:#000">car</span> (<span style="color:#000">split-string</span> (<span style="color:#000">shell-command-to-string</span> <span style="color:#c41a16">&#34;cat /etc/debian_version&#34;</span>))) <span style="color:#c41a16">&#34; 86_64 GNU/Linux&#34;</span>))
+
+  <span style="color:#177500">;; Set the banner</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-startup-banner</span> (<span style="color:#000">expand-file-name</span> <span style="color:#c41a16">&#34;emacs.png&#34;</span> <span style="color:#000">user-emacs-directory</span>)
+		<span style="color:#000">dashboard-page-separator</span> <span style="color:#c41a16">&#34;\n\f\f\n&#34;</span>
+		<span style="color:#000">dashboard-set-heading-icons</span> <span style="color:#000">t</span>
+		<span style="color:#000">dashboard-set-file-icons</span> <span style="color:#000">t</span>
+		<span style="color:#000">show-week-agenda-p</span> <span style="color:#000">t</span>
+		<span style="color:#000">dashboard-items</span> <span style="color:#000">&#39;</span>((<span style="color:#000">recents</span>  <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)
+						  (<span style="color:#000">agenda</span> <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)))
+
+  <span style="color:#177500">;; Set the footer</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-footer-messages</span>
+		<span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;Always be joyful. Never stop praying. Be thankful in all circumstances.&#34;</span>))
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-footer-icon</span>
+		(<span style="color:#000">all-the-icons-octicon</span> <span style="color:#c41a16">&#34;dashboard&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">1.0</span> <span style="color:#a90d91">:v-adjust</span> <span style="color:#1c01ce">-0.05</span> <span style="color:#a90d91">:face</span> <span style="color:#c41a16">&#39;font-lock-keyword-face</span>))
+
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-insert-custom</span> (<span style="color:#000">list-size</span>)
+	<span style="color:#c41a16">&#34;Insert custom itemes LIST-SIZE.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">insert</span> <span style="color:#c41a16">&#34; GH: (h)    calendar: (c)    News: (n.y.w)    Mail: (m)    Slack: (s)    Twitter: (t)    (.)&#34;</span>))
+
+  <span style="color:#177500">;; Insert custom item</span>
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-item-generators</span>  <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-insert-custom</span>))
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-items</span> <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span>) <span style="color:#000">t</span>))
+</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Custom configurations</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-goto-recent-files</span> ()
+  <span style="color:#c41a16">&#34;Go to recent files.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">func</span> (<span style="color:#000">local-key-binding</span> <span style="color:#c41a16">&#34;r&#34;</span>)))
+    (<span style="color:#a90d91">and</span> <span style="color:#000">func</span> (<span style="color:#000">funcall</span> <span style="color:#000">func</span>))))
+
+(<span style="color:#a90d91">defvar</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">nil</span>
+  <span style="color:#c41a16">&#34;Wether recovers the layout.&#34;</span>)
+
+
+(<span style="color:#a90d91">defun</span> <span style="color:#000">open-dashboard</span> ()
+  <span style="color:#c41a16">&#34;Open the *dashboard* buffer and jump to the first widget.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">if</span> (<span style="color:#000">length&gt;</span> (<span style="color:#000">window-list-1</span>)
+			   (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">fboundp</span> <span style="color:#c41a16">&#39;treemacs-current-visibility</span>)
+                        (<span style="color:#000">eq</span> (<span style="color:#000">treemacs-current-visibility</span>) <span style="color:#c41a16">&#39;visible</span>))
+				   <span style="color:#1c01ce">2</span>
+				 <span style="color:#1c01ce">1</span>))
+	  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">t</span>))
+  (<span style="color:#000">delete-other-windows</span>)
+  (<span style="color:#000">dashboard-refresh-buffer</span>)
+  (<span style="color:#000">dashboard-goto-recent-files</span>))
+
+
+(<span style="color:#a90d91">defun</span> <span style="color:#000">quit-dashboard</span> ()
+  <span style="color:#c41a16">&#34;Quit dashboard window.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">quit-window</span> <span style="color:#000">t</span>)
+  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> <span style="color:#000">dashboard-recover-layout-p</span>
+			 (<span style="color:#000">bound-and-true-p</span> <span style="color:#000">winner-mode</span>))
+    (<span style="color:#000">winner-undo</span>)
+    (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">nil</span>)))
+
+
+<span style="color:#177500">;; Return a string giving the duration of the Emacs initialization</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">ad:emacs-init-time</span> ()
+  <span style="color:#c41a16">&#34;Advice </span><span style="color:#c41a16">`emacs-init-time&#39;</span><span style="color:#c41a16">.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">let</span> ((<span style="color:#000">str</span>
+		 (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;%.3f seconds&#34;</span>
+				 (<span style="color:#000">float-time</span>
+				  (<span style="color:#000">time-subtract</span> <span style="color:#000">after-init-time</span> <span style="color:#000">before-init-time</span>)))))
+	(<span style="color:#a90d91">if</span> (<span style="color:#000">called-interactively-p</span> <span style="color:#c41a16">&#39;interactive</span>)
+		(<span style="color:#000">message</span> <span style="color:#c41a16">&#34;%s&#34;</span> <span style="color:#000">str</span>)
+	  <span style="color:#000">str</span>)))
+
+(<span style="color:#a90d91">defun</span> <span style="color:#000">sylpheed</span> ()
+  <span style="color:#c41a16">&#34;Open sylpheed.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;sylpheed&#34;</span>)
+  (<span style="color:#000">delete-other-windows</span>))
+
+(<span style="color:#a90d91">defun</span> <span style="color:#000">slack</span> ()
+  <span style="color:#c41a16">&#34;Open sylpheed.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;slack&#34;</span>)
+  (<span style="color:#000">delete-other-windows</span>))
+</code></pre></div>
+
+    
+    
+        <footer class=" footline" >
+	
+</footer>
+  </div>
+</div>
+
+<div id="navigation">
+<a class="nav nav-prev" href="/.emacs.d/display/calendar/" title=""> <i class="fa fa-chevron-left"></i><label></label></a>
+    <a class="nav nav-next" href="/.emacs.d/display/diff-hl/" title="" style="margin-right: 0px;"><label></label><i class="fa fa-chevron-right"></i></a></div>
+
+</section>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/.emacs.d/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/minorugh.github.io\/.emacs.d\/";
+    
+</script>
+<script src="/.emacs.d/js/clipboard.min.js"></script>
+<script src="/.emacs.d/js/featherlight.min.js"></script>
+<script src="/.emacs.d/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/.emacs.d/js/modernizr.custom.71422.js"></script>
+<script src="/.emacs.d/js/docdock.js"></script>
+<script type="text/javascript" src="/.emacs.d/js/lunr.min.js"></script>
+<script type="text/javascript" src="/.emacs.d/js/auto-complete.js"></script>
+<script type="text/javascript" src="/.emacs.d/js/search.js"></script>
+<script src="/.emacs.d/theme-original/script.js"></script>
+
+
+
+
+<script src="https://minorugh.github.io/.emacs.d/js/scripts.min.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
+</html>

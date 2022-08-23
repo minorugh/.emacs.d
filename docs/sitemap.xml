@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/doom-themes/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/doom-themes/</loc>
   </url>
   
   <url>
@@ -15,7 +15,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/doom-modeline/</loc>
   </url>
   
   <url>
@@ -27,7 +27,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/all-the-icons/</loc>
   </url>
   
   <url>
@@ -39,7 +39,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/display-number/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/display-number/</loc>
   </url>
   
   <url>
@@ -55,7 +55,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/</loc>
   </url>
   
   <url>
@@ -63,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/</loc>
   </url>
   
   <url>
@@ -71,7 +71,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/display/</loc>
   </url>
   
   <url>
@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/</loc>
   </url>
   
   <url>
@@ -87,7 +87,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/history/</loc>
   </url>
   
   <url>
@@ -127,6 +127,50 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/dashboard/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/eary-init/</loc>
   </url>
   
@@ -148,10 +192,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/core/encode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/core/font/</loc>
   </url>
   
   <url>
@@ -195,6 +235,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/font/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/higlight/hl-line/</loc>
   </url>
   
@@ -227,27 +271,27 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/dimmer/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/dimmer/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/sprit-window/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/tempbuf/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/tempbuf/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer/winner/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/frame/winner/</loc>
   </url>
   
   <url>

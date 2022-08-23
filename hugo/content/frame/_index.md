@@ -1,5 +1,5 @@
 +++
-title = "バッフアー / ウインドウ制御"
+title = "フレーム / ウインドウ制御"
 draft = false
 pre = "<b>5. </b>"
 weight = 5

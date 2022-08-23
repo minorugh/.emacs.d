@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ファイル編集/入力補助 on minoru&#39;s Emacs Configuration</title>
+    <title>編集サポート / 入力補助 on minoru&#39;s Emacs Configuration</title>
     <link>https://minorugh.github.io/.emacs.d/editing/</link>
-    <description>Recent content in ファイル編集/入力補助 on minoru&#39;s Emacs Configuration</description>
+    <description>Recent content in 編集サポート / 入力補助 on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/editing/index.xml" rel="self" type="application/rss+xml" />
     <item>

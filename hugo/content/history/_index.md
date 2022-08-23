@@ -1,8 +1,8 @@
 +++
-title = "UI"
+title = "履歴 / ファイル管理"
 draft = false
-pre = "<b>6. </b>"
-weight = 6
+pre = "<b>9. </b>"
+weight = 9
 disableToc = true
 +++
 

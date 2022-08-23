@@ -11,9 +11,6 @@ Emacs の基本動作に関わる部分をここでは設定している
 [Language / Encode]({{< relref "encode" >}})
 : 言語と文字コードの設定
 
-[Font]({{< relref "font" >}})
-: フォントのインストールと設定
-
 [Mozc]({{< relref "mozc" >}})
 : 日本語入力の設定
 

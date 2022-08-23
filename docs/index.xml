@@ -8,10 +8,10 @@
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>6.1. doom-thmes</title>
-      <link>https://minorugh.github.io/.emacs.d/ui/doom-themes/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/doom-themes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/ui/doom-themes/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/history/doom-themes/</guid>
       <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
     </item>
     
@@ -31,10 +31,10 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     
     <item>
       <title>6.2. doom-modeline</title>
-      <link>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/doom-modeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/ui/doom-modeline/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/history/doom-modeline/</guid>
       <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
     </item>
     
@@ -51,10 +51,10 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     
     <item>
       <title>6.3. all-the-icons</title>
-      <link>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/history/all-the-icons/</guid>
       <description>all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
  domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。
@@ -74,10 +74,10 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     
     <item>
       <title>6.4. display-number-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/ui/display-number/</link>
+      <link>https://minorugh.github.io/.emacs.d/history/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/ui/display-number/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/history/display-number/</guid>
       <description>(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
     </item>
     
@@ -205,6 +205,115 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
     </item>
     
     <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
+      <description>6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
+(leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/dashboard/</guid>
+      <description>11.1. 起動時の設定 *scratch* バッファーを表示させるのが標準かと思いますが、私は、dashboard にしています。
+https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el
+(leaf dashboard :ensure t :hook ((after-init-hook . dashboard-setup-startup-hook) (dashboard-mode-hook . page-break-lines-mode)) :defun (dashboard-setup-startup-hook) :bind ((&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . open-dashboard) (:dashboard-mode-map (&amp;#34;c&amp;#34; . chromium-calendar) (&amp;#34;y&amp;#34; . chromium-yahoo-japan) (&amp;#34;n&amp;#34; . chromium-nhk-news) (&amp;#34;w&amp;#34; . chromium-weather) (&amp;#34;t&amp;#34; . chromium-tweetdeck) (&amp;#34;h&amp;#34; . chromium-homepage) (&amp;#34;m&amp;#34; . sylpheed) (&amp;#34;s&amp;#34; . slack) (&amp;#34;.&amp;#34; . hydra-browse/body) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . quit-dashboard))) :advice (:override emacs-init-time ad:emacs-init-time) :init (leaf page-break-lines :ensure t) :config ;; Set the title (setq dashboard-banner-logo-title (concat &amp;#34;GNU Emacs &amp;#34; emacs-version &amp;#34; kernel &amp;#34; (car (split-string (shell-command-to-string &amp;#34;uname -r&amp;#34;))) &amp;#34; Debian &amp;#34; (car (split-string (shell-command-to-string &amp;#34;cat /etc/debian_version&amp;#34;))) &amp;#34; 86_64 GNU/Linux&amp;#34;)) ;; Set the banner (setq dashboard-startup-banner (expand-file-name &amp;#34;emacs.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
+      <description>6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
+(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
+      <description>6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
+(leaf imenu-list :ensure t :bind (&amp;quot;&amp;lt;f2&amp;gt;&amp;quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &#39;left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。
+(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
+      <description>6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
+(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
+      <description>6.5. [which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
+(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</guid>
+      <description>7.1. [hydra-menu] 作業選択メニュー hydra-work-menu には、 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。
+hydra-quick-menu の方には、 編集作業で頻繁に使うツール群のほか、my:dired でプロジェクトのディレクトリを一発で開くためのショートカットなどを設定しています。
+この２つの hydra は、いわば私の秘書のような役割で、どちらからでも相互にトグルで呼び出せるようにしています。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>1.1. eary-init.el</title>
       <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -268,18 +377,6 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
       <guid>https://minorugh.github.io/.emacs.d/core/encode/</guid>
       <description>シンプルにこれだけです。
 (set-language-environment &amp;#34;Japanese&amp;#34;) (prefer-coding-system &amp;#39;utf-8) </description>
-    </item>
-    
-    <item>
-      <title>2.2. font setting</title>
-      <link>https://minorugh.github.io/.emacs.d/core/font/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/core/font/</guid>
-      <description>GUI / CUI 共通で Cica を使っています。  Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
- プログラミング用日本語等幅フォント Cica Think Pad を2台使っていますので、環境を取得して設定を変えています。  フォントの設定  メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。  (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) Cicaフォントのインストール   Linux 環境でのインストールの方法です。
-  オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。
-   Cica-v5.0.1のダウンロードページから、 (Cica-v5.0.1.zip) をダウンロードします。 上記サイトの存続は怪しいので自分のサイトにも置いておきます。 Cica-v5.0.1.zip  zipファイルを展開します。  $ unzip Cica-v5.</description>
     </item>
     
     <item>
@@ -384,7 +481,19 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.1. hl-line-mode</title>
+      <title>4.1. font setting</title>
+      <link>https://minorugh.github.io/.emacs.d/higlight/font/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/higlight/font/</guid>
+      <description>GUI / CUI 共通で Cica を使っています。  Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
+ プログラミング用日本語等幅フォント Cica Think Pad を2台使っていますので、環境を取得して設定を変えています。  フォントの設定  メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。  (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) Cicaフォントのインストール   Linux 環境でのインストールの方法です。
+  オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。
+   Cica-v5.0.1のダウンロードページから、 (Cica-v5.0.1.zip) をダウンロードします。 上記サイトの存続は怪しいので自分のサイトにも置いておきます。 Cica-v5.0.1.zip  zipファイルを展開します。  $ unzip Cica-v5.</description>
+    </item>
+    
+    <item>
+      <title>4.2. hl-line-mode</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/hl-line/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -395,7 +504,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.2. blink-cursor-mode</title>
+      <title>4.3. blink-cursor-mode</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -405,7 +514,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.3. my:ivy-format-function-arrow</title>
+      <title>4.4. ivy-format-function-arrow</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -414,7 +523,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.4. pare</title>
+      <title>4.5. pare</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/paren/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -423,7 +532,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.5. rainbow-delimiters</title>
+      <title>4.6. rainbow-delimiters</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -432,7 +541,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.6. rainbow-mode</title>
+      <title>4.7. rainbow-mode</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/rainbow/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -441,7 +550,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.7. volatile-highlight</title>
+      <title>4.8. volatile-highlight</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -450,7 +559,7 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     </item>
     
     <item>
-      <title>4.8. whitespace</title>
+      <title>4.9. whitespace</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/whitespace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -460,19 +569,19 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     
     <item>
       <title>5.1. auto-save-buffer-enhanced</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/</link>
+      <link>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/auto-save-buffer/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/frame/auto-save-buffer/</guid>
       <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
     </item>
     
     <item>
       <title>5.2. dimmer-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/dimmer/</link>
+      <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/dimmer/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
       <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
 (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 下記の通り発想転換すれば呪縛から逃れることができます。
@@ -481,10 +590,10 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     
     <item>
       <title>5.3. scrool-other-Window</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/</link>
+      <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/scrool-other-window/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
       <description>Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。
 一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
 (leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
@@ -492,30 +601,30 @@ MELPAから Installできますが、私は HKey氏の改良版を el-get でイ
     
     <item>
       <title>5.4. sprit-window-functions</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</link>
+      <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/sprit-window/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
       <description>dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
  同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
     </item>
     
     <item>
       <title>5.5. tempbuf</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/tempbuf/</link>
+      <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/tempbuf/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
       <description> tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
  my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
     </item>
     
     <item>
       <title>5.6. winner-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/buffer/winner/</link>
+      <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/buffer/winner/</guid>
+      <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
       <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</description>
     </item>
     

@@ -1,5 +1,5 @@
 +++
-title = "4.1. hl-line-mode"
+title = "4.2. hl-line-mode"
 draft = false
 +++
 

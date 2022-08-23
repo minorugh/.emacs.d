@@ -1,5 +1,5 @@
 +++
-title = "4.3. my:ivy-format-function-arrow"
+title = "4.4. ivy-format-function-arrow"
 draft = false
 +++
 

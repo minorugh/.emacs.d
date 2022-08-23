@@ -1,5 +1,5 @@
 +++
-title = "強調 / 配色関連"
+title = "フォント / 配色関連"
 draft = false
 pre = "<b>4. </b>"
 weight = 4
@@ -8,6 +8,9 @@ disableToc = true
 
 ここでは設定ファイルを見やすくするための配色関連の設定を記載している。
 
+
+[font]({{< relref "font" >}})
+: フォントの設定とインストール
 
 [hl-line]({{< relref "hl-line" >}})
 : カーソル行に色をつける
