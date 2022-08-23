@@ -1,7 +1,7 @@
-a.out: git
+a.out: copy git
 
 copy:
-	rsync -auv ~/src/github.com/minorugh/dotfiles/.emacs.d/ ~/src/github.com/minorugh/emacs.d/
+	rsync -auv ~/src/github.com/minorugh/dotfiles/.emacs.d/ ~/src/github.com/minorugh/.emacs.d/
 
 git:
 	cd hugo && \
