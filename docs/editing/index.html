@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T14:35:36 JST">
+<meta name="revised" content="2022-08-23T14:46:12 JST">
 <title>ファイル編集/入力補助 :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -554,7 +554,11 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#ここにはファイル編集や入力補助の設定をまとめている">ここにはファイル編集や入力補助の設定をまとめている</a></li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -573,7 +577,7 @@
     
     
 
-<p>ここにはファイル編集や入力補助の設定をまとめている</p>
+<h2 id="ここにはファイル編集や入力補助の設定をまとめている">ここにはファイル編集や入力補助の設定をまとめている</h2>
 <dl>
 <dt><a href="/.emacs.d/editing/markdown/">markdown-mode</a></dt>
 <dd>markdown記法での編集をサポートしてくれるマイナーモード。</dd>
@@ -581,20 +585,24 @@
 <dd>ファイルの閲覧に特化した便利機能を提供してくれる。</dd>
 <dt><a href="/.emacs.d/editing/web-mode/">web-mode</a></dt>
 <dd>HTML編集をするためのマイナーモードを提供してくれる。</dd>
+<dt><a href="/.emacs.d/editing/yatex/">yatex</a></dt>
+<dd>Emacsの上で動作する LaTeX の入力支援環境を提供する。</dd>
 <dt><a href="/.emacs.d/editing/darkroom/">darkroom</a></dt>
 <dd>書くことに集中できるようにバッファを調整してくれる。</dd>
-<dt><a href="/.emacs.d/editing/yatex/">yatex</a></dt>
-<dd>Emacsの上で動作する LaTeX の入力支援環境です。</dd>
-<dt><a href="/.emacs.d/editing/company/">company</a></dt>
+<dt><a href="/.emacs.d/editing/ivy/">ivy / counsel</a></dt>
+<dd>多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。</dd>
+<dt><a href="/.emacs.d/editing/company/">yasunippets/ cpmpany</a></dt>
 <dd>キーをタイプした時点で自動的に補完候補が出てきてくれる。</dd>
-<dt><a href="/.emacs.d/editing/selected/">selected</a></dt>
-<dd>リージョン選択時のアクションを制御。Like <code>sendto</code> of windows.</dd>
-<dt><a href="/.emacs.d/editing/iedit/">iedit</a></dt>
-<dd>択領域を別の文字列に置き換える。</dd>
-<dt><a href="/.emacs.d/editing/smartparens/">smartparens</a></dt>
-<dd>括弧などのペアを自動的に挿入してくれる。</dd>
 <dt><a href="/.emacs.d/editing/key-chord/">key-chord</a></dt>
 <dd>同時押しというキーバインドを提供してくれる。</dd>
+<dt><a href="/.emacs.d/editing/smartparens/">smartparens</a></dt>
+<dd>括弧などのペアを自動的に挿入してくれる。</dd>
+<dt><a href="/.emacs.d/editing/iedit/">iedit</a></dt>
+<dd>択領域を別の文字列に置き換える。</dd>
+<dt><a href="/.emacs.d/editing/iedit/">migemo</a></dt>
+<dd>ローマ字のまま日本語をインクリメンタル検索を可能にする。</dd>
+<dt><a href="/.emacs.d/editing/selected/">selected</a></dt>
+<dd>リージョン選択時のアクションを制御してくれる。Like <code>sendto</code> of windows.</dd>
 <dt><a href="/.emacs.d/editing/pangu/">pangu-spacing</a></dt>
 <dd>全角と半角の間に自動でスペースを入れる</dd>
 </dl>
