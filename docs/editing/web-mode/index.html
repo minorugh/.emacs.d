@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T14:48:09 JST">
+<meta name="revised" content="2022-08-23T14:48:37 JST">
 <title>7.3. web-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -588,14 +588,14 @@
 <h3 id="54-webモード">5.4. Webモード</h3>
 <p>HTML編集をするなら<a href="https://github.com/fxbois/web-mode">web-mode</a> がお勧めなのですが、私の場合あまり使っていません。</p>
 <p>出来上がったHTMLの内容を確認したり部分的に変更したり&hellip;という程度の使い方です。</p>
-<pre><code class="language-code" data-lang="code">(leaf web-mode
-  :ensure t
-  :mode (&quot;\\.js?\\'&quot; &quot;\\.html?\\'&quot; &quot;\\.php?\\'&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf web-mode
+  :ensure <span style="color:#66d9ef">t</span>
+  :mode (<span style="color:#e6db74">&#34;\\.js?\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.html?\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.php?\\&#39;&#34;</span>)
   :custom
-  `((web-mode-markup-indent-offset . 2)
-	(web-mode-css-indent-offset . 2)
-	(web-mode-code-indent-offset . 2)))
-</code></pre>
+  <span style="color:#f92672">`</span>((web-mode-markup-indent-offset <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>)
+	(web-mode-css-indent-offset <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>)
+	(web-mode-code-indent-offset <span style="color:#f92672">.</span> <span style="color:#ae81ff">2</span>)))
+</code></pre></div>
 
     
     

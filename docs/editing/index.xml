@@ -39,7 +39,7 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
       <guid>https://minorugh.github.io/.emacs.d/editing/web-mode/</guid>
       <description>5.4. Webモード HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。
 出来上がったHTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
-(leaf web-mode :ensure t :mode (&amp;quot;\\.js?\\&#39;&amp;quot; &amp;quot;\\.html?\\&#39;&amp;quot; &amp;quot;\\.php?\\&#39;&amp;quot;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
+(leaf web-mode :ensure t :mode (&amp;#34;\\.js?\\&amp;#39;&amp;#34; &amp;#34;\\.html?\\&amp;#39;&amp;#34; &amp;#34;\\.php?\\&amp;#39;&amp;#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
     </item>
     
     <item>

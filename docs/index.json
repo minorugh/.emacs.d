@@ -53,7 +53,7 @@
 	"title": "7.3. web-mode",
 	"tags": [],
 	"description": "",
-	"content": "5.4. Webモード HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。\n出来上がったHTMLの内容を確認したり部分的に変更したり\u0026hellip;という程度の使い方です。\n(leaf web-mode :ensure t :mode (\u0026quot;\\\\.js?\\\\'\u0026quot; \u0026quot;\\\\.html?\\\\'\u0026quot; \u0026quot;\\\\.php?\\\\'\u0026quot;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) "
+	"content": "5.4. Webモード HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。\n出来上がったHTMLの内容を確認したり部分的に変更したり\u0026hellip;という程度の使い方です。\n(leaf web-mode :ensure t :mode (\u0026#34;\\\\.js?\\\\\u0026#39;\u0026#34; \u0026#34;\\\\.html?\\\\\u0026#39;\u0026#34; \u0026#34;\\\\.php?\\\\\u0026#39;\u0026#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/",
