@@ -7,7 +7,7 @@ draft = false
 
 `init.el` でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
 
-## GCを減らす
+### GCを減らす
 GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。
 
 ```elisp
@@ -16,7 +16,7 @@ GC の閾値を最大にしておくことで GC を実質止めることがで�
 ```
 eary-init.el の先頭に書くことが重要です。
 
-## Package の初期化を抑制する 
+### Package の初期化を抑制する 
 Emacs27では、(package-initialize) が 2回実行されます。
 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。
 
@@ -27,7 +27,7 @@ Emacs27では、(package-initialize) が 2回実行されます。
 (setq package-enable-at-startup nil)
 ```
 
-## 常に最新のバイトコードをロードする
+### 常に最新のバイトコードをロードする
 
 ```elisp
 ;; Always load newest byte code
@@ -35,14 +35,14 @@ Emacs27では、(package-initialize) が 2回実行されます。
 
 ```
 
-## フレームのサイズ変更を禁止する
+### フレームのサイズ変更を禁止する
 
 ```elisp
 ;; Inhibit resizing frame
 (setq frame-inhibit-implied-resize t)
 ```
 
-## これらを無効にする方が速い (初期化される前)
+### これらを無効にする方が速い (初期化される前)
 
 ```elisp
 ;; Faster to disable these here (before they've been initialized)
@@ -52,7 +52,7 @@ Emacs27では、(package-initialize) が 2回実行されます。
 (push '(vertical-scroll-bars) default-frame-alist)
 ```
 
-## 起動時の点滅を抑える
+### 起動時の点滅を抑える
 Emacsが設定ファイルを読み込むプロセスで画面がちらつくのを抑制します。
 
 ```elisp
@@ -63,10 +63,10 @@ Emacsが設定ファイルを読み込むプロセスで画面がちらつくの
 		  (lambda ()
 			(setq inhibit-redisplay nil)
 			(setq inhibit-message nil)
+			(toggle-fullscreen)
 			(redisplay)))
 ```
-
-## 起動時の背景色を指定する
+### 起動時の背景色を指定する
 Emacsが設定を読み込む色段階の背景色は白です。
 自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。
 
@@ -77,3 +77,19 @@ Emacsが設定を読み込む色段階の背景色は白です。
 (setq byte-compile-warnings '(cl-functions))
 (custom-set-faces '(default ((t (:background "#282a36")))))
 ```
+
+### Emacsのを常駐環境を考えてみた 
+GUIのEmacsをシステム的に常駐化させるのは、自分にはハードルが高いので疑似環境ということでご紹介します。
+
+* Linux起動時に最小化で自動起動させる
+* `C-x C-c` で閉じれないようにする（restert-emacsに割り当てています）
+* 誤ってフレームの閉じるボタンを押せないようにする（常にフルスクリーンで使う）
+* 画面を閉じるときは、最小化（`C-z: suspend-frame`）させる
+
+Emacsは、起動オプションに `--iconic` を付すことで最小化起動します。
+
+Linuxの場合、「セッションと起動」を立ち上げて「自動開始アプリケーション」に下記の設定を追加するといいです。
+```sell
+$ emacs --iconic
+```
+

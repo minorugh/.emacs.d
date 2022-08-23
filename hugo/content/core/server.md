@@ -12,15 +12,5 @@ draft = false
   :config
   (unless (server-running-p)
     (server-start)))
+
 ```
-
-## Linux の起動時に Emacsを最小化起動させる 
-
-起動オプションに `--iconic` を付すことで最小化起動します。
-
-MENUから「セッションと起動」を立ち上げて「自動開始アプリケーション」に以下を設定すといいです。
-
-```sell
-$ emacs --iconic
-```
-Emacsから最小化するのは、`C-z: suspend-frame` です。
