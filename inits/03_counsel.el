@@ -13,9 +13,9 @@
 		 ("C-s" . swiper-region)
 		 ("C-:" . counsel-switch-buffer)
 		 ("s-a" . counsel-ag)
-		 ("s-r" . counsel-rg)
 		 ("M-x" . counsel-M-x)
 		 ("M-y" . counsel-yank-pop)
+		 ("<f6>" . counsel-linux-app)
 		 ("C-x m" . counsel-mark-ring)
 		 ("C-x C-b" . ibuffer)
 		 ("C-x C-f" . counsel-find-file)
@@ -68,7 +68,7 @@ If the region isn't selected, `swiper'."
                       (ivy-thing-at-point)))
            (unless current-prefix-arg
 			 (or initial-directory default-directory))
-           extra-ag-args ag-prompt caller)))
+           extra-ag-args ag-prompt caller))
 
 (with-eval-after-load "counsel"
   (require 'thingatpt nil t)
@@ -81,9 +81,10 @@ If the region isn't selected, `swiper'."
    '(("r" my:counsel-ag-in-dir "search in directory"))))
 
 (defun my:counsel-ag-in-dir (_arg)
-  "Search again with new root directory."
-  (let ((current-prefix-arg '(4)))
-    (counsel-ag ivy-text nil "")))
+"Search again with new root directory."
+(let ((current-prefix-arg '(4)))
+  (counsel-ag ivy-text nil ""))
+))
 
 
 
@@ -100,13 +101,8 @@ If the region isn't selected, `swiper'."
   (leaf swiper-migemo
 	:doc "https://github.com/tam17aki/swiper-migemo"
 	:el-get tam17aki/swiper-migemo
-	:after migemo
-	:global-minor-mode t
 	:config
-	(setq migemo-options '("--quiet" "--nonewline" "--emacs"))
-	(add-to-list 'swiper-migemo-enable-command 'counsel-rg)
-	(migemo-kill)
-	(migemo-init)))
+	(global-swiper-migemo-mode +1)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -115,7 +111,7 @@ If the region isn't selected, `swiper'."
 ;; Font-awesom
 (leaf fontawesome
   :ensure t
-  :bind ("s-f" . counsel-fontwesame))
+  :bind ("s-f" . counsel-fontawesome))
 
 ;; CSS
 (leaf counsel-css

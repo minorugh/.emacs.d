@@ -9,7 +9,6 @@
 (leaf *user-custom-functions
   :bind (("<f3>" . thunar-open)
 		 ("<f4>" . terminal-open)
-		 ("<f6>" . counsel-linux-app)
 		 ("<f8>" . toggle-menu-bar-mode-from-frame)
 		 ("<muhenkan>" . minibuffer-keyboard-quit))
   :init

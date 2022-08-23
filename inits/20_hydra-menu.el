@@ -15,9 +15,9 @@
    Quick Menu
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------------------------------------------------------------------------------
   _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rc  _._files   howm:_@__,_   _m_d:_p_view   _f_:zilla
-  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg  _<home>_   _c_ompile^^   make:_k_._g_   _a_wesome
+  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg  _<home>_   _c_ompile^^   make:_k_._g_   _a_g:🐾🐾
 "
-   ("a" counsel-fontawesome)
+   ("a" counsel-ag)
    ("z" eshell)
    ("o" my:org-dir)
    ("t" counsel-tramp)

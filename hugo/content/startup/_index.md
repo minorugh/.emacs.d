@@ -19,7 +19,7 @@ Emacs の起動設定に関わる部分をここでは設定している
 [eary-init.el を使う]({{< relref "eary-init" >}})
 : 早期設定ファイルの設定
 
-[speed up startup]({{< relref "magick-file" >}})
+[speed up startup]({{< relref "speed-up" >}})
 : Magic File Name を一時的に無効にして起動時間を短縮するためのおまじない(^^)
 
 [leaf.el を使う]({{< relref "leaf" >}})
