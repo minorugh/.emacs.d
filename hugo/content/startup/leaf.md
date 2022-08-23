@@ -8,7 +8,7 @@ Emacsの設定管理は、これまで `use-pacage.el` を使っていました�
 * [Emacs入門から始めるleaf.el入門](https://qiita.com/conao3/items/347d7e472afd0c58fbd7)
 
 ### leaf.el に対応したinit.el
-Packageは、基本Melpaからインストールしていますが、el-getも使えるようにしています。
+Packageは、基本MELPAからインストールしていますが、el-getも使えるようにしています。
 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。
 ```elisp
 ;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*-

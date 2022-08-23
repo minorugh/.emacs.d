@@ -308,9 +308,12 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
-      <description>(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
+      <description>[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。
+$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。
+$ cmigemo --help Emacsの設定は下記のとおりです。
+(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) [swiper-migemo] swiperでもmigemoを使う avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
 つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
-(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :after migemo :global-minor-mode t :config (setq migemo-options &amp;#39;(&amp;#34;--quiet&amp;#34; &amp;#34;--nonewline&amp;#34; &amp;#34;--emacs&amp;#34;)) (add-to-list &amp;#39;swiper-migemo-enable-command &amp;#39;counsel-rg) (migemo-kill) (migemo-init)) </description>
+(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) </description>
     </item>
     
     <item>
@@ -412,7 +415,7 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       
       <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
       <description>Emacsの設定管理は、これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。
- Emacs入門から始めるleaf.el入門  leaf.el に対応したinit.el Packageは、基本Melpaからインストールしていますが、el-getも使えるようにしています。 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。
+ Emacs入門から始めるleaf.el入門  leaf.el に対応したinit.el Packageは、基本MELPAからインストールしていますが、el-getも使えるようにしています。 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。
 ;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*- ;;; Commentary: ;; ;; Compatible with Emacs 27 and later ;; Aiming for a fancy and fast Emacs configuration ;; ;;; Code: ;; (setq debug-on-error t) ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover file name handlers.</description>
     </item>
     

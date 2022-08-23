@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T07:53:06 JST">
+<meta name="revised" content="2022-08-24T08:26:04 JST">
 <title>7.11. migemo :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -701,7 +701,16 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#migemo-ローマ字のまま日本語をインクリメンタル検索可能にする">[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。</a></li>
+        <li><a href="#swiper-migemo-swiperでもmigemoを使う">[swiper-migemo] swiperでもmigemoを使う</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -719,6 +728,13 @@
     
     
     
+<h3 id="migemo-ローマ字のまま日本語をインクリメンタル検索可能にする">[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。</h3>
+<p>migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。
+aptでインストール。</p>
+<pre><code class="language-shellsesson" data-lang="shellsesson">$ sudo apt install cmigemo
+</code></pre><p>インストール完了したら、下記コマンドで実行できる事を確認しておきます。</p>
+<pre><code class="language-shellsesson" data-lang="shellsesson">$ cmigemo --help
+</code></pre><p>Emacsの設定は下記のとおりです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">migemo</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">migemo-init</span>)
@@ -726,19 +742,15 @@
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">migemo-command</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;cmigemo&#34;</span>)
 			(<span style="color:#000">migemo-dictionary</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/usr/share/cmigemo/utf-8/migemo-dict&#34;</span>)))
 
-</code></pre></div><p><a href="https://github.com/momomo5717/avy-migemo"><code>avy-migemo-e.g.swiper.el</code></a> を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。</p>
+</code></pre></div><h3 id="swiper-migemo-swiperでもmigemoを使う">[swiper-migemo] swiperでもmigemoを使う</h3>
+<p><a href="https://github.com/momomo5717/avy-migemo"><code>avy-migemo-e.g.swiper.el</code></a> を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。</p>
 <p>つい最近、avy-migemo を使わない <a href="https://github.com/tam17aki/swiper-migemo"><code>swiper-migemo</code></a>を GitHubで見つけたので試した処、機嫌よく動いてくれています。
 MELPAにはアップされていないみたいなので el-get で取得しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">swiper-migemo</span>
 	<span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://github.com/tam17aki/swiper-migemo&#34;</span>
 	<span style="color:#a90d91">:el-get</span> <span style="color:#000">tam17aki/swiper-migemo</span>
-	<span style="color:#a90d91">:after</span> <span style="color:#000">migemo</span>
-	<span style="color:#a90d91">:global-minor-mode</span> <span style="color:#000">t</span>
 	<span style="color:#a90d91">:config</span>
-	(<span style="color:#a90d91">setq</span> <span style="color:#000">migemo-options</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;--quiet&#34;</span> <span style="color:#c41a16">&#34;--nonewline&#34;</span> <span style="color:#c41a16">&#34;--emacs&#34;</span>))
-	(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;swiper-migemo-enable-command</span> <span style="color:#c41a16">&#39;counsel-rg</span>)
-	(<span style="color:#000">migemo-kill</span>)
-	(<span style="color:#000">migemo-init</span>))
+	(<span style="color:#000">global-swiper-migemo-mode</span> <span style="color:#1c01ce">+1</span>))
 </code></pre></div>
 
     
