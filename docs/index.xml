@@ -179,11 +179,11 @@ dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/darkroom/</guid>
-      <description>5.5. [darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
+      <description>[darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
 https://github.com/joaotavora/darkroom
 [F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
 yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
-(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.</description>
+(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.&amp;#34; (interactive) (revert-buffer t t))) </description>
     </item>
     
     <item>
@@ -266,7 +266,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/key-chord/</guid>
-      <description>5.14. [key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;#34;df&amp;#34; . counsel-descbinds) (&amp;#34;l;&amp;#34; . init-loader-show-log) (&amp;#34;@@&amp;#34; . howm-list-all) (&amp;#34;jk&amp;#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
+      <description>[key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;#34;df&amp;#34; . counsel-descbinds) (&amp;#34;l;&amp;#34; . init-loader-show-log) (&amp;#34;@@&amp;#34; . howm-list-all) (&amp;#34;jk&amp;#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
 改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</description>
     </item>
     
@@ -295,8 +295,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
-      <description>5.8. [iedit] 選択領域を別の文字列に置き換える idet.el は、バッファー内の複数箇所を同時に編集するツールです。
-同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
+      <description>[iedit] 選択領域を別の文字列に置き換える  idet.el は、バッファー内の複数箇所を同時に編集するツールです。  同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
  multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
 対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
 ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
@@ -320,9 +319,9 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
-      <description>5.9. [selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
+      <description>[selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
 Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
-(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) 5.10. [selected] browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
+(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
 (defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
     </item>
     

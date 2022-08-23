@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T22:45:14 JST">
+<meta name="revised" content="2022-08-23T22:48:58 JST">
 <title>7.12. selected :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -705,9 +705,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#59-selected-リージョン選択時のアクションを制御">5.9. [selected] リージョン選択時のアクションを制御</a></li>
-        <li><a href="#510-selected-browse-urlで検索サイトで開く">5.10. [selected] browse-urlで検索サイトで開く</a></li>
-        <li><a href="#511-selected-ime-のオンオフを自動制御する">5.11. [selected] IME のオン・オフを自動制御する</a></li>
+        <li><a href="#selected-リージョン選択時のアクションを制御">[selected] リージョン選択時のアクションを制御</a></li>
+        <li><a href="#browse-urlで検索サイトで開く">browse-urlで検索サイトで開く</a></li>
+        <li><a href="#ime-のオンオフを自動制御する">IME のオン・オフを自動制御する</a></li>
       </ul>
     </li>
   </ul>
@@ -729,7 +729,7 @@
     
     
     
-<h3 id="59-selected-リージョン選択時のアクションを制御">5.9. [selected] リージョン選択時のアクションを制御</h3>
+<h3 id="selected-リージョン選択時のアクションを制御">[selected] リージョン選択時のアクションを制御</h3>
 <p><a href="https://github.com/Kungsgeten/selected.el"><code>selected.el</code></a> は、選択領域に対するスピードコマンドです。</p>
 <p>Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。
 コマンドの数が増えてきたら、ヘルプ代わりに使える <a href="https://github.com/takaxp/counsel-selected"><code>counsel-selected</code></a> も便利そうです。</p>
@@ -746,7 +746,7 @@
 		 (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:koujien</span>)
 		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:eijiro</span>)
 		 (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)))
-</code></pre></div><h3 id="510-selected-browse-urlで検索サイトで開く">5.10. [selected] browse-urlで検索サイトで開く</h3>
+</code></pre></div><h3 id="browse-urlで検索サイトで開く">browse-urlで検索サイトで開く</h3>
 <p>検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:koujien</span> (<span style="color:#000">str</span>)
   (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
@@ -771,7 +771,7 @@
 (<span style="color:#a90d91">defun</span> <span style="color:#000">my:get-region</span> (<span style="color:#000">r</span>)
 	<span style="color:#c41a16">&#34;Get search word from region.&#34;</span>
 	(<span style="color:#000">buffer-substring-no-properties</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>)))
-</code></pre></div><h3 id="511-selected-ime-のオンオフを自動制御する">5.11. [selected] IME のオン・オフを自動制御する</h3>
+</code></pre></div><h3 id="ime-のオンオフを自動制御する">IME のオン・オフを自動制御する</h3>
 <p>selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。</p>
 <p>領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、
 <a href="https://qiita.com/takaxp"><code>@takaxp</code></a> さんの <a href="https://qiita.com/takaxp/items/00245794d46c3a5fcaa8"><code>Qiitaの記事</code></a> にあったので、私の環境（emacs-mozc ）にあうように設定したら、すんなり動いてくれました。感謝！</p>

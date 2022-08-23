@@ -3,8 +3,9 @@ title = "7.10. iedit"
 draft = false
 weight = 10
 +++
-### 5.8. [iedit] 選択領域を別の文字列に置き換える
-[`idet.el`](https://github.com/victorhge/iedit) は、バッファー内の複数箇所を同時に編集するツールです。
+### [iedit] 選択領域を別の文字列に置き換える
+
+* [`idet.el`](https://github.com/victorhge/iedit) は、バッファー内の複数箇所を同時に編集するツールです。
 
 同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
 * [`multi-cursors.el`](https://github.com/magnars/multiple-cursors.el) 

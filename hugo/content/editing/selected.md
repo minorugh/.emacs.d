@@ -4,7 +4,7 @@ draft = false
 weight = 12
 +++
 
-### 5.9. [selected] リージョン選択時のアクションを制御
+### [selected] リージョン選択時のアクションを制御
 [`selected.el`](https://github.com/Kungsgeten/selected.el) は、選択領域に対するスピードコマンドです。
 
 Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。
@@ -26,7 +26,7 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
 		 ("g" . my:google)))
 ```
 
-### 5.10. [selected] browse-urlで検索サイトで開く
+### browse-urlで検索サイトで開く
 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
 
 ```elisp
@@ -55,7 +55,7 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
 	(buffer-substring-no-properties (region-beginning) (region-end)))
 ```
 
-### 5.11. [selected] IME のオン・オフを自動制御する
+### IME のオン・オフを自動制御する
 selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。
 
 領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、
