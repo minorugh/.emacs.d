@@ -48,20 +48,20 @@
 	;; Use the X11 clipboard
 	(select-enable-clipboard  . t)))
 
+
 ;; Set default modes for startup hook
-(leaf cus-default-modes
-  :hook (after-init-hook . my:default-modes)
-  :init
-  (defun my:default-modes ()
-	(interactive)
-	(recentf-mode 1)
-	(save-place-mode 1)
-	(savehist-mode 1)
-	(winner-mode 1)
-	(global-auto-revert-mode 1)
-	(global-font-lock-mode 1)
-	(global-hl-line-mode 1)
-	(global-visual-line-mode 1)))
+(defun my:default-modes ()
+  "Default mode hooks."
+  (interactive)
+  (recentf-mode 1)
+  (save-place-mode 1)
+  (savehist-mode 1)
+  (winner-mode 1)
+  (global-auto-revert-mode 1)
+  (global-font-lock-mode 1)
+  (global-hl-line-mode 1)
+  (global-visual-line-mode 1))
+(add-hook 'afterinit-hook 'my:default-modes)
 
 ;; Display buffer name in title bar
 (setq frame-title-format (format "emacs@%s : %%b" (system-name)))

@@ -583,7 +583,7 @@ h2, h3, h4, h5, h6 {
 
 h1 {
 	font-family: "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-	/* font-family: "Gisha Bold", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; */
+	/* font-family: "Tahoma", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; */
 	text-align: center;
 	text-transform: uppercase;
 	color: #060606;

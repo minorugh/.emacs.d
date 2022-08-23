@@ -386,7 +386,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",
-	"title": "2.1. language / coding-system",
+	"title": "2.1. language / coding",
 	"tags": [],
 	"description": "",
 	"content": "シンプルにこれだけです。\n(set-language-environment \u0026#34;Japanese\u0026#34;) (prefer-coding-system \u0026#39;utf-8) "

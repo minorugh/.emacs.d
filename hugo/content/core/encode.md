@@ -1,5 +1,5 @@
 +++
-title = "2.1. language / coding-system"
+title = "2.1. language / coding"
 draft = false
 +++
 
