@@ -49,13 +49,6 @@
 	"content": "all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。\n domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。\n(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。\n Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) all-the-icons-ivy-rich ivy-mode でアイコン表示をします。\n(leaf all-the-icons-ivy-rich :ensure t :hook (after-init-hook . all-the-icons-ivy-rich-mode)) all-the-icons-ibuffer ibuffer-mode でアイコン表示をします。\n(leaf all-the-icons-ibuffer :ensure t :hook (ibuffer-mode-hook . all-the-icons-ibuffer-mode)) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/editing/pangu/",
-	"title": "7.13. pangu-spacing",
-	"tags": [],
-	"description": "",
-	"content": ";; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any \u0026#34;。，！？；：「」（）、\u0026#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in \u0026#34;a-zA-Z\u0026#34;))))) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/editing/web-mode/",
 	"title": "7.3. web-mode",
 	"tags": [],
@@ -201,6 +194,13 @@
 	"tags": [],
 	"description": "",
 	"content": "ここでは org-mode 周りの設定をまとめている。 org-mode だけでも書くことが多いからね……。\n"
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/editing/pangu/",
+	"title": "7.13. pangu-spacing",
+	"tags": [],
+	"description": "",
+	"content": ";; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any \u0026#34;。，！？；：「」（）、\u0026#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in \u0026#34;a-zA-Z\u0026#34;))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/",

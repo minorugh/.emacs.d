@@ -31,10 +31,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
   </url>
   
@@ -116,6 +112,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/memo-tool/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
   </url>
   
   <url>
