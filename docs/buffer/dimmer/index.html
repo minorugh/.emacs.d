@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T16:26:52 JST">
+<meta name="revised" content="2022-08-23T16:30:39 JST">
 <title>5.2. dimmer-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -592,7 +592,7 @@
 <li><a href="https://github.com/gonewest818/dimmer.el">dimmer.el</a> は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。</li>
 </ul>
 <p><a href="https://takaxp.github.io/init.html#org8ba0784e">takaxp.github.io</a> の設定をそのままパクリました。
-on/off できるのが快適です。</p>
+ON/OFF できるのが快適です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">dimmer</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;..&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:toggle-dimmer</span>)
@@ -616,7 +616,7 @@ on/off できるのが快適です。</p>
 	  (<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">1</span>)
 	  (<span style="color:#000">dimmer-process-all</span>))))
 </code></pre></div><h2 id="sprit-window-と連携させる">Sprit-window と連携させる</h2>
-<p><code>dimmer-mode</code> を <code>global</code> に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。</p>
+<p><code>dimmer-mode</code> を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。</p>
 <p>下記の通り発想転換すれば呪縛から逃れることができます。</p>
 <ul>
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>

@@ -5,7 +5,7 @@ draft = false
 * [dimmer.el](https://github.com/gonewest818/dimmer.el) は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
  
 [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
-on/off できるのが快適です。
+ON/OFF できるのが快適です。
 
 ```emacs-lisp
 (leaf dimmer
@@ -34,7 +34,7 @@ on/off できるのが快適です。
 
 ## Sprit-window と連携させる
 
-`dimmer-mode` を `global` に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
+`dimmer-mode` を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 
 下記の通り発想転換すれば呪縛から逃れることができます。
 
