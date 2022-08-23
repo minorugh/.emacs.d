@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-23T14:33:11 JST">
-<title>7.4. yatex :: minoru&#39;s Emacs Configuration</title>
+<title>7.13. pangu-spacing :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/editing/yatex/">
+  <body data-url="/.emacs.d/editing/pangu/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -526,7 +526,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/yatex.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/pangu.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -546,7 +546,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>ファイル編集/入力補助</a> > 7.4. yatex
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>ファイル編集/入力補助</a> > 7.13. pangu-spacing
 
  
 
@@ -559,15 +559,7 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#56-yatex-yatexで-latex編集">5.6. [yatex] YaTexで LaTex編集</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+		<nav id="TableOfContents"></nav>
       </div>
 	</div>
     
@@ -577,7 +569,7 @@
 
 <div id="body-inner">
   
-    <h1>7.4. yatex</h1>
+    <h1>7.13. pangu-spacing</h1>
   
 
 
@@ -585,33 +577,18 @@
     
     
     
-<h3 id="56-yatex-yatexで-latex編集">5.6. [yatex] YaTexで LaTex編集</h3>
-<p><a href="https://github.com/emacsmirror/yatex"><code>yatex.el</code></a> は、Emacsの上で動作する LaTeX の入力支援環境です。</p>
-<p>ごく一般的な設定例ですが、参考になるとしたら <code>dviprint-command-format</code> に <code>dvpd.sh</code> というスクリプトを設定して、<code>YateX.lpr</code>
-コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(leaf yatex
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#75715e">;; Add space between full-width and half-width</span>
+(leaf pangu-spacing
   :ensure <span style="color:#66d9ef">t</span>
-  :mode (<span style="color:#e6db74">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.sty\\&#39;&#34;</span> <span style="color:#e6db74">&#34;\\.cls\\&#39;&#34;</span>)
-  :custom <span style="color:#f92672">`</span>((tex-command <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;platex&#34;</span>)
-			(dviprint-command-format <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;dvpd.sh %s&#34;</span>)
-			(YaTeX-kanji-code <span style="color:#f92672">.</span> <span style="color:#66d9ef">nil</span>)
-			(YaTeX-latex-message-code <span style="color:#f92672">.</span> <span style="color:#e6db74">&#39;utf-8</span>)
-			(YaTeX-default-pop-window-height <span style="color:#f92672">.</span> <span style="color:#ae81ff">15</span>))
+  :after mozc
+  :hook ((markdown-mode-hook text-mode-hook) <span style="color:#f92672">.</span> pangu-spacing-mode)
   :config
-  (leaf yatexprc
-	:bind ((<span style="color:#e6db74">&#34;M-c&#34;</span> <span style="color:#f92672">.</span> YaTeX-typeset-buffer)
-		   (<span style="color:#e6db74">&#34;M-v&#34;</span> <span style="color:#f92672">.</span> YaTeX-lpr))))
-</code></pre></div><p><code>YaTeX-lpr</code> は、<code>dviprint-command-format</code> を呼び出すコマンドです。</p>
-<p>dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、<code>chmod +x dvpd.sh </code> として実行権限を付与してからPATHの通ったところに置きます。私は、<code>/usr/loca/bin</code> に置きました。</p>
-<p>[dvpd.sh]</p>
-<pre><code class="language-shellsession" data-lang="shellsession">#!/bin/sh
-name=$1
-dvipdfmx $1 &amp;&amp; evince ${name%.*}.pdf
-# Delete unnecessary files
-rm *.au* *.dv* *.lo*
-</code></pre><p>上記の例では、ビューアーに Linux の evince を設定していますが、Mac の場合は、下記のようになるかと思います。</p>
-<pre><code class="language-shellsession" data-lang="shellsession">dvipdfmx $1 &amp;&amp; open -a Preview.app ${name%.*}.pdf
-</code></pre>
+  (setq pangu-spacing-include-regexp
+		(rx (or (and (or (group-n <span style="color:#ae81ff">3</span> (any <span style="color:#e6db74">&#34;。，！？；：「」（）、&#34;</span>))
+						 (group-n <span style="color:#ae81ff">1</span> (or (category japanese))))))
+			(group-n <span style="color:#ae81ff">2</span> (in <span style="color:#e6db74">&#34;a-zA-Z&#34;</span>)))))
+
+</code></pre></div>
 
     
     
@@ -622,8 +599,8 @@ rm *.au* *.dv* *.lo*
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/editing/web-mode/" title="7.3. web-mode"> <i class="fa fa-chevron-left"></i><label>7.3. web-mode</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/darkroom/" title="7.5. darkroom" style="margin-right: 0px;"><label>7.5. darkroom</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/editing/view/" title="7.2. veiw-mode"> <i class="fa fa-chevron-left"></i><label>7.2. veiw-mode</label></a>
+    <a class="nav nav-next" href="/.emacs.d/editing/web-mode/" title="7.3. web-mode" style="margin-right: 0px;"><label>7.3. web-mode</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

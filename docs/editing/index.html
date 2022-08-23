@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-23T13:56:11 JST">
+<meta name="revised" content="2022-08-23T14:33:11 JST">
 <title>ファイル編集/入力補助 :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -370,6 +370,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/pangu/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/pangu/">
+            7.13. pangu-spacing
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/web-mode/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/web-mode/">
@@ -569,25 +576,27 @@
 <p>ここにはファイル編集や入力補助の設定をまとめている</p>
 <dl>
 <dt><a href="/.emacs.d/editing/markdown/">markdown-mode</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>markdown記法での編集をサポートしてくれるマイナーモード。</dd>
 <dt><a href="/.emacs.d/editing/view/">view-mode</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>ファイルの閲覧に特化した便利機能を提供してくれる。</dd>
 <dt><a href="/.emacs.d/editing/web-mode/">web-mode</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>HTML編集をするためのマイナーモードを提供してくれる。</dd>
 <dt><a href="/.emacs.d/editing/darkroom/">darkroom</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>書くことに集中できるようにバッファを調整してくれる。</dd>
 <dt><a href="/.emacs.d/editing/yatex/">yatex</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>Emacsの上で動作する LaTeX の入力支援環境です。</dd>
 <dt><a href="/.emacs.d/editing/company/">company</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>キーをタイプした時点で自動的に補完候補が出てきてくれる。</dd>
 <dt><a href="/.emacs.d/editing/selected/">selected</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>リージョン選択時のアクションを制御。Like <code>sendto</code> of windows.</dd>
 <dt><a href="/.emacs.d/editing/iedit/">iedit</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>択領域を別の文字列に置き換える。</dd>
 <dt><a href="/.emacs.d/editing/smartparens/">smartparens</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>括弧などのペアを自動的に挿入してくれる。</dd>
 <dt><a href="/.emacs.d/editing/key-chord/">key-chord</a></dt>
-<dd>標準の <code>C-a</code> <code>C-e</code> を拡張します。</dd>
+<dd>同時押しというキーバインドを提供してくれる。</dd>
+<dt><a href="/.emacs.d/editing/pangu/">pangu-spacing</a></dt>
+<dd>全角と半角の間に自動でスペースを入れる</dd>
 </dl>
 
 
