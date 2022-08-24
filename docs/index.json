@@ -361,7 +361,7 @@
 	"title": "4.8. volatile-highlight",
 	"tags": [],
 	"description": "",
-	"content": " volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp \u0026#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end \u0026amp;optional _buf face) \u0026#34;Pulse the changes.\u0026#34; (pulse-momentary-highlight-region beg end face)) (advice-add #\u0026#39;vhl/.make-hl :override #\u0026#39;my:vhl-pulse))) "
+	"content": "[volatile-highlights.el] コピペした領域を強調 k-talo/volatile-highlights.el: Highlighting copied area.\n volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp \u0026#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end \u0026amp;optional _buf face) \u0026#34;Pulse the changes.\u0026#34; (pulse-momentary-highlight-region beg end face)) (advice-add #\u0026#39;vhl/.make-hl :override #\u0026#39;my:vhl-pulse))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/whitespace/",

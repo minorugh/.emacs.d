@@ -415,7 +415,8 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</guid>
-      <description> volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp &amp;#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end &amp;amp;optional _buf face) &amp;#34;Pulse the changes.&amp;#34; (pulse-momentary-highlight-region beg end face)) (advice-add #&amp;#39;vhl/.make-hl :override #&amp;#39;my:vhl-pulse))) </description>
+      <description>[volatile-highlights.el] コピペした領域を強調 k-talo/volatile-highlights.el: Highlighting copied area.
+ volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp &amp;#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end &amp;amp;optional _buf face) &amp;#34;Pulse the changes.&amp;#34; (pulse-momentary-highlight-region beg end face)) (advice-add #&amp;#39;vhl/.make-hl :override #&amp;#39;my:vhl-pulse))) </description>
     </item>
     
     <item>
