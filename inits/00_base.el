@@ -61,7 +61,7 @@
   (global-font-lock-mode 1)
   (global-hl-line-mode 1)
   (global-visual-line-mode 1))
-(add-hook 'afterinit-hook 'my:default-modes)
+(add-hook 'after-init-hook 'my:default-modes)
 
 ;; Display buffer name in title bar
 (setq frame-title-format (format "emacs@%s : %%b" (system-name)))

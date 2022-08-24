@@ -7,10 +7,12 @@
 ;; User custom functions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf *user-custom-functions
-  :bind (("<f3>" . thunar-open)
-		 ("<f4>" . terminal-open)
-		 ("<f8>" . toggle-menu-bar-mode-from-frame)
-		 ("<muhenkan>" . minibuffer-keyboard-quit))
+  :bind	 (("<f3>" . thunar-open)
+		  ("<f4>" . terminal-open)
+		  ("<f8>" . toggle-menu-bar-mode-from-frame)
+		  ("<muhenkan>" . minibuffer-keyboard-quit)
+		  ("C-c <left>" . winner-undo)
+		  ("C-c <right>" . winner-redo))
   :init
   (defun thunar-open ()
 	"Open thunar with current dir."

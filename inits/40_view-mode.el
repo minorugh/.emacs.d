@@ -7,9 +7,8 @@
 ;; View mode configurations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf view
-  :hook
-  (find-file-hook . my:auto-view)
-  (server-visit-hook . my:unlock-view-mode)
+  :hook ((find-file-hook . my:auto-view)
+		 (server-visit-hook . my:unlock-view-mode))
   :chord ("::" . view-mode)
   :bind (:view-mode-map
 		 ("h" . backward-char)

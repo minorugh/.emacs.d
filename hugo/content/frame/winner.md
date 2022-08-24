@@ -8,3 +8,12 @@ draft = false
 
 ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。
 `winner-undo` で直前の状態に戻せます。例えば、誤って `C-x 0` で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。
+
+```elisp
+(leaf winner-mode
+  :ensure nil
+  :bind (("C-c <left>" . winner-undo)
+         ("C-c <right>" . winner-redo))
+  :init
+  (winner-mode 1))
+```
