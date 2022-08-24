@@ -2,7 +2,7 @@
 title = "4.2. hl-line-mode"
 draft = false
 +++
-### カーソル行に色を付ける
+### [hi-line.el] カーソル行に色を付ける
 
 ビルトインの `hl-line-mode` を使ってカーソル行に色をつける設定です。
 

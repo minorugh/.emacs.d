@@ -273,7 +273,7 @@ toggle-scratch は、編集中のバッファーとscratchバッファーとを�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
-      <description>[unquify.el] 同じバッファ名が開かれた場合に区別する *ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。
+      <description>[unquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。
 (setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
     </item>
     
@@ -356,7 +356,7 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/hl-line/</guid>
-      <description>カーソル行に色を付ける ビルトインの hl-line-mode を使ってカーソル行に色をつける設定です。
+      <description>[hi-line.el] カーソル行に色を付ける ビルトインの hl-line-mode を使ってカーソル行に色をつける設定です。
  http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html https://www.emacswiki.org/emacs/highlight-current-line.el  機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。
 (global-hl-line-mode 1) </description>
     </item>
