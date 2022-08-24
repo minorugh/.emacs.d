@@ -1,5 +1,5 @@
 +++
-title = "12.4. open terminal"
+title = "12.4. open thunar"
 draft = false
 +++
 ### Thunarを Emacsから呼び出す
