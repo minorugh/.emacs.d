@@ -3,12 +3,11 @@ title = "5.2. dimmer-mode"
 draft = false
 +++
 ### [dimmer.el] 現在のバッファ以外の輝度を落とす
+[gonewest818/dimmer.el: Visually highlight the selected buffer.](https://github.com/gonewest818/dimmer.el) 
 
 * 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
 * [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
 ON/OFF できるのが快適です。
-
-[gonewest818/dimmer.el: Visually highlight the selected buffer.](https://github.com/gonewest818/dimmer.el) 
 
 ```emacs-lisp
 (leaf dimmer
@@ -35,7 +34,7 @@ ON/OFF できるのが快適です。
 	  (dimmer-process-all))))
 ```
 
-## Sprit-window と連携させる
+### sprit-window と連携させる
 
 `dimmer-mode` を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 
