@@ -1,6 +1,7 @@
 +++
-title = "7.. which-key"
+title = "7.1. which-key"
 draft = false
+weight = 1
 +++
 
 ### [which-key] キーバインドの選択肢をポップアップする
@@ -12,3 +13,4 @@ draft = false
   :hook (after-init-hook . which-key-mode)
   :custom (which-key-max-description-length . 40))
 ```
+

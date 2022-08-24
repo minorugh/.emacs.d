@@ -1,6 +1,7 @@
 +++
-title = "7.. imenu-list"
+title = "7.7. imenu-list"
 draft = false
+weight = 7
 +++
 
 ### 6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示

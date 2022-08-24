@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/display/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>7.3. all-the-icons</title>
+      <title>7.1. which-key</title>
+      <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
+      <description>[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
+(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
+    </item>
+    
+    <item>
+      <title>7.2. all-the-icons</title>
       <link>https://minorugh.github.io/.emacs.d/display/all-the-icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -41,7 +51,17 @@ darkroom-mode では、
     </item>
     
     <item>
-      <title>7.. calendar</title>
+      <title>7.5. prescient</title>
+      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
+      <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
+(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
+    </item>
+    
+    <item>
+      <title>7.6. calendar</title>
       <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -51,17 +71,7 @@ darkroom-mode では、
     </item>
     
     <item>
-      <title>7.. diff-hl</title>
-      <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
-      <description>6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
-(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
-    </item>
-    
-    <item>
-      <title>7.. imenu-list</title>
+      <title>7.7. imenu-list</title>
       <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -72,32 +82,22 @@ darkroom-mode では、
     </item>
     
     <item>
-      <title>7.. prescient</title>
-      <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
+      <title>7.8. diff-hl</title>
+      <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
-      <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
-(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
+      <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
+      <description>6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
+(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
     </item>
     
     <item>
-      <title>7.. toggle-fullscreen</title>
+      <title>7.9. toggle-fullscreen</title>
       <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
       <description>(global-set-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-fullscreen&amp;#39;) </description>
-    </item>
-    
-    <item>
-      <title>7.. which-key</title>
-      <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
-      <description>[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
-(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
     </item>
     
     <item>

@@ -7,6 +7,13 @@
 	"content": "5.2. markdownモード markdown-mode.el は、Markdown形式のテキストを編集するための主要なモードです。\n(leaf markdown-mode :ensure t :mode (\u0026#34;\\\\.md\\\\\u0026#39;\u0026#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-code-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedown を使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。\nhttps://github.com/shime/emacs-livedown\nnpmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。\n$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。\n(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((\u0026#34;C-c C-c p\u0026#34; . livedown-preview) (\u0026#34;C-c C-c k\u0026#34; . livedown-kill))) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/display/which-key/",
+	"title": "7.1. which-key",
+	"tags": [],
+	"description": "",
+	"content": "[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。\n(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/history/auto-save-buffer/",
 	"title": "9.1. auto-save-buffer-enhanced",
 	"tags": [],
@@ -57,7 +64,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/all-the-icons/",
-	"title": "7.3. all-the-icons",
+	"title": "7.2. all-the-icons",
 	"tags": [],
 	"description": "",
 	"content": "all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。\n domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。\n(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。\n Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) all-the-icons-ivy-rich ivy-mode でアイコン表示をします。\n(leaf all-the-icons-ivy-rich :ensure t :hook (after-init-hook . all-the-icons-ivy-rich-mode)) all-the-icons-ibuffer ibuffer-mode でアイコン表示をします。\n(leaf all-the-icons-ibuffer :ensure t :hook (ibuffer-mode-hook . all-the-icons-ibuffer-mode)) "
@@ -140,6 +147,13 @@
 	"content": "[darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。\nhttps://github.com/joaotavora/darkroom\n[F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。\nyes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。\n(leaf darkroom :ensure t :bind ((\u0026#34;\u0026lt;f12\u0026gt;\u0026#34; . my:darkroom-in) (:darkroom-mode-map (\u0026#34;\u0026lt;f12\u0026gt;\u0026#34; . my:darkroom-out))) :config (defun my:darkroom-in () \u0026#34;Enter to the `darkroom-mode\u0026#39;.\u0026#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () \u0026#34;Returns from `darkroom-mode\u0026#39;to the previous state.\u0026#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () \u0026#34;Revert buffer without confirmation.\u0026#34; (interactive) (revert-buffer t t))) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/display/prescient/",
+	"title": "7.5. prescient",
+	"tags": [],
+	"description": "",
+	"content": "[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。\n(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . \u0026quot;~/.emacs.d/tmp/prescient-save\u0026quot;)) :init (with-eval-after-load 'prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/history/savehist/",
 	"title": "9.5. savehist",
 	"tags": [],
@@ -159,6 +173,13 @@
 	"tags": [],
 	"description": "",
 	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n"
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/display/calendar/",
+	"title": "7.6. calendar",
+	"tags": [],
+	"description": "",
+	"content": "6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。\n(leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/ivy/",
@@ -189,6 +210,13 @@
 	"content": "(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme \u0026#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/display/imenu/",
+	"title": "7.7. imenu-list",
+	"tags": [],
+	"description": "",
+	"content": "6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。\n(leaf imenu-list :ensure t :bind (\u0026quot;\u0026lt;f2\u0026gt;\u0026quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . 'left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。\n(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/editing/company/",
 	"title": "7.7. yasunippets / company",
 	"tags": [],
@@ -217,6 +245,13 @@
 	"content": "(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline \u0026#39;main \u0026#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) \u0026#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/display/diff-hl/",
+	"title": "7.8. diff-hl",
+	"tags": [],
+	"description": "",
+	"content": "6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。\n(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/editing/key-chord/",
 	"title": "7.8. key-chord",
 	"tags": [],
@@ -243,6 +278,13 @@
 	"tags": [],
 	"description": "",
 	"content": "対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。\n(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/",
+	"title": "7.9. toggle-fullscreen",
+	"tags": [],
+	"description": "",
+	"content": "(global-set-key \u0026#34;\u0026lt;f11\u0026gt;\u0026#34; \u0026#39;toggle-fullscreen\u0026#39;) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/",
@@ -523,48 +565,6 @@
 	"tags": [],
 	"description": "",
 	"content": "(leaf whitespace :ensure t :bind (\u0026#34;C-c C-c\u0026#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () \u0026#34;Show tail whitespace.\u0026#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () \u0026#34;Remove contiguous line breaks at end of line + end of file.\u0026#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/calendar/",
-	"title": "7.. calendar",
-	"tags": [],
-	"description": "",
-	"content": "6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。\n(leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/diff-hl/",
-	"title": "7.. diff-hl",
-	"tags": [],
-	"description": "",
-	"content": "6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。\n(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/imenu/",
-	"title": "7.. imenu-list",
-	"tags": [],
-	"description": "",
-	"content": "6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。\n(leaf imenu-list :ensure t :bind (\u0026quot;\u0026lt;f2\u0026gt;\u0026quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . 'left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。\n(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/prescient/",
-	"title": "7.. prescient",
-	"tags": [],
-	"description": "",
-	"content": "[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。\n(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . \u0026quot;~/.emacs.d/tmp/prescient-save\u0026quot;)) :init (with-eval-after-load 'prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/",
-	"title": "7.. toggle-fullscreen",
-	"tags": [],
-	"description": "",
-	"content": "(global-set-key \u0026#34;\u0026lt;f11\u0026gt;\u0026#34; \u0026#39;toggle-fullscreen\u0026#39;) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/which-key/",
-	"title": "7.. which-key",
-	"tags": [],
-	"description": "",
-	"content": "[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。\n(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/categories/",
