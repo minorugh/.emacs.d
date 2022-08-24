@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T18:53:44 JST">
+<meta name="revised" content="2022-08-24T19:03:58 JST">
 <title>4.9. whitespace :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#whitespaceel-全角スペースを強調表示する">[whitespace.el] 全角スペースを強調表示する</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,6 +846,11 @@
     
     
     
+<h3 id="whitespaceel-全角スペースを強調表示する">[whitespace.el] 全角スペースを強調表示する</h3>
+<ul>
+<li><code>show-trailing-whitespace</code> は、便利だけれどtext-modなどでは多少うざいときもあるので、<code>prog-mode-hook</code> で使っている。</li>
+<li><a href="https://qiita.com/itiut@github/items/4d74da2412a29ef59c3a">ファイルの保存時に行末のスペースや末尾の改行を削除する</a> というTipsもあるがジブは、手動で削除できるようにしている。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">whitespace</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-c C-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:cleanup-for-spaces</span>)

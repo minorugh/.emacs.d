@@ -368,7 +368,7 @@
 	"title": "4.9. whitespace",
 	"tags": [],
 	"description": "",
-	"content": "(leaf whitespace :ensure t :bind (\u0026#34;C-c C-c\u0026#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () \u0026#34;Show tail whitespace.\u0026#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () \u0026#34;Remove contiguous line breaks at end of line + end of file.\u0026#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) "
+	"content": "[whitespace.el] 全角スペースを強調表示する  show-trailing-whitespace は、便利だけれどtext-modなどでは多少うざいときもあるので、prog-mode-hook で使っている。 ファイルの保存時に行末のスペースや末尾の改行を削除する というTipsもあるがジブは、手動で削除できるようにしている。  (leaf whitespace :ensure t :bind (\u0026#34;C-c C-c\u0026#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () \u0026#34;Show tail whitespace.\u0026#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () \u0026#34;Remove contiguous line breaks at end of line + end of file.\u0026#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/dimmer/",
