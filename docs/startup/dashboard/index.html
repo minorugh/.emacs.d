@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T08:36:01 JST">
+<meta name="revised" content="2022-08-24T09:01:52 JST">
 <title>1.6. dashboard :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -705,7 +705,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#111-起動時の設定">11.1. 起動時の設定</a></li>
+        <li><a href="#dashboardel起動初期画面をイケメンにする">[dashboard.el]起動初期画面をイケメンにする</a></li>
+        <li><a href="#カスタマイズ設定">カスタマイズ設定</a></li>
       </ul>
     </li>
   </ul>
@@ -727,10 +728,14 @@
     
     
     
-<h3 id="111-起動時の設定">11.1. 起動時の設定</h3>
-<p><code>*scratch*</code> バッファーを表示させるのが標準かと思いますが、私は、<code>dashboard</code> にしています。</p>
-<p><a href="https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el">https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el</a></p>
+<h3 id="dashboardel起動初期画面をイケメンにする">[dashboard.el]起動初期画面をイケメンにする</h3>
+<p>100分の1秒でもemacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、<code>dashbord.el</code> を導入してみた。</p>
+<p><a href="https://github.com/emacs-dashboard/emacs-dashboard">emacs-dashboard: An extensible emacs startup screen</a></p>
 <p><img src="https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067" alt="dashboard"></p>
+<ul>
+<li>どのような状況からでも <code>dashboard</code>画面に戻れるように設定しています。</li>
+<li><code>&lt;home&gt;</code> キーのトグル操作で編集中のバッファーと<code>dashboard</code>画面とを行き来します。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">dashboard</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-setup-startup-hook</span>)
@@ -781,7 +786,9 @@
   <span style="color:#177500">;; Insert custom item</span>
   (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-item-generators</span>  <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-insert-custom</span>))
   (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-items</span> <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span>) <span style="color:#000">t</span>))
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Custom configurations</span>
+</code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+<p><code>dashbord</code>画面を好みにカスタマイズするためのユーザー関数です。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Custom configurations</span>
 (<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-goto-recent-files</span> ()
   <span style="color:#c41a16">&#34;Go to recent files.&#34;</span>
   (<span style="color:#a90d91">interactive</span>)

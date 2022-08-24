@@ -3,12 +3,15 @@ title = "1.6. dashboard"
 draft = false
 +++
 
-### 11.1. 起動時の設定
-`*scratch*` バッファーを表示させるのが標準かと思いますが、私は、`dashboard` にしています。
+### [dashboard.el]起動初期画面をイケメンにする
+100分の1秒でもemacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、`dashbord.el` を導入してみた。
 
-[https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el](https://github.com/minorugh/emacs.d/blob/main/inits/01_dashboard.el) 
+[emacs-dashboard: An extensible emacs startup screen](https://github.com/emacs-dashboard/emacs-dashboard) 
 
 ![dashboard](https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067) 
+
+* どのような状況からでも `dashboard`画面に戻れるように設定しています。
+* `<home>` キーのトグル操作で編集中のバッファーと`dashboard`画面とを行き来します。
 
 ```elisp
 (leaf dashboard
@@ -62,6 +65,9 @@ draft = false
   (add-to-list 'dashboard-item-generators  '(custom . dashboard-insert-custom))
   (add-to-list 'dashboard-items '(custom) t))
 ```
+
+### カスタマイズ設定
+`dashbord`画面を好みにカスタマイズするためのユーザー関数です。
 
 ```elisp
 ;; Custom configurations
