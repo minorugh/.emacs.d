@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T11:07:24 JST">
+<meta name="revised" content="2022-08-24T11:16:50 JST">
 <title>8.5. hydra-view-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -715,7 +715,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#hydra-view-mode-view-modeのヘルプ機能">[hydra-view-mode] view-modeのヘルプ機能</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -733,6 +741,8 @@
     
     
     
+<h3 id="hydra-view-mode-view-modeのヘルプ機能">[hydra-view-mode] view-modeのヘルプ機能</h3>
+<p><code>vew-mode</code> でバッファーを開いているとき、[<code>.</code>]/[<code>?</code>] キーを打つことでhydraが発動するようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span style="color:#177500">;; hydra view mode</span>
 <span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>

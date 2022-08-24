@@ -48,7 +48,8 @@ weight = 2
 		 ("i" . View-exit-and-edit)
 		 ("]" . winner-undo)
 		 ("[" . winner-redo)
-		 ("." . hydra-view/body))
+		 ("." . hydra-view/body)
+		 ("?" . hydra-view/body))
   :init
   ;; Specific extension / directory
   (defvar my:auto-view-regexp "\\.php\\|\\.pl\\|\\.el.gz?\\|\\.tar.gz?\\'")

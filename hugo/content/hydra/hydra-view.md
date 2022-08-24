@@ -3,6 +3,9 @@ title = "8.5. hydra-view-mode"
 draft = false
 weight = 5
 +++
+### [hydra-view-mode] view-modeのヘルプ機能
+`vew-mode` でバッファーを開いているとき、[`.`]/[`?`] キーを打つことでhydraが発動するようにしています。
+
 ```elisp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hydra view mode
