@@ -25,7 +25,7 @@ disableToc = true
 : コピペした領域を強調する
 
 [rainbow-mode]({{< relref "rainbow" >}})
-: カラーコードを実際の色に表示する
+: バッファ内のカラーコードに実際の色をつける
 
 [rainbow-delimiters]({{< relref "rainbow-delimiters" >}})
 : 対応するカッコに色を付ける

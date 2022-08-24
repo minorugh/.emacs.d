@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T18:03:18 JST">
+<meta name="revised" content="2022-08-24T18:10:04 JST">
 <title>4.7. rainbow-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#rainbow-modeel-バッファ内のカラーコードに実際の色をつける">[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,6 +846,8 @@
     
     
     
+<h3 id="rainbow-modeel-バッファ内のカラーコードに実際の色をつける">[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける</h3>
+<p><a href="https://github.com/emacsmirror/rainbow-mode">emacsmirror/rainbow-mode: Colorize color names in buffers.</a></p>
 <ul>
 <li><code>rainbow-mode.el</code> は <code>red</code>, <code>green</code> などの色名や <code>#aabbcc</code> といったカラーコードから実際の色を表示するマイナーモードです。</li>
 <li>常時表示しているとうざいときもあるので、<code>global</code> 設定しないで必要なときだけ使えるようにしています。</li>

@@ -25,7 +25,7 @@
 	"title": "フォント / 配色関連",
 	"tags": [],
 	"description": "",
-	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードを実際の色に表示する rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
+	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode バッファ内のカラーコードに実際の色をつける rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/",
@@ -354,7 +354,7 @@
 	"title": "4.7. rainbow-mode",
 	"tags": [],
 	"description": "",
-	"content": " rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
+	"content": "[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける emacsmirror/rainbow-mode: Colorize color names in buffers.\n rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/",
