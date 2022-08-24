@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-24T13:57:43 JST">
-<title>7.7. imenu-list :: minoru&#39;s Emacs Configuration</title>
+<title>10.8. open-junk-file :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/display/imenu/">
+  <body data-url="/.emacs.d/programming/junk/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -787,7 +787,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/display/imenu.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/programming/junk.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 7.7. imenu-list
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/programming/'>開発サポート</a> > 10.8. open-junk-file
 
  
 
@@ -824,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#612-imenu-list-サイドバー的にファイル内容の目次要素を表示">6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示</a></li>
+        <li><a href="#open-junk-file">open-junk-file</a></li>
       </ul>
     </li>
   </ul>
@@ -838,7 +838,7 @@
 
 <div id="body-inner">
   
-    <h1>7.7. imenu-list</h1>
+    <h1>10.8. open-junk-file</h1>
   
 
 
@@ -846,21 +846,33 @@
     
     
     
-<h3 id="612-imenu-list-サイドバー的にファイル内容の目次要素を表示">6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示</h3>
-<p><a href="https://github.com/takaxp/imenu-list">@takaxpさんの改良版/imenu-list</a> を使ってます。</p>
-<p><img src="https://live.staticflickr.com/65535/51419973025_01d97fe83b_b.jpg" alt="Alt Text"></p>
-<pre><code class="language-code" data-lang="code">(leaf imenu-list
-  :ensure t
-  :bind (&quot;&lt;f2&gt;&quot; . imenu-list-smart-toggle)
-  :custom
-  `((imenu-list-size . 30)
-	(imenu-list-position . 'left)
-	(imenu-list-focus-after-activation . t)))
-</code></pre><p><code>counsel-css.el</code> を導入すると便利です。</p>
-<pre><code class="language-code" data-lang="code">(leaf counsel-css
-  :ensure t
-  :hook (css-mode-hook . counsel-css-imenu-setup))
-</code></pre>
+<h3 id="open-junk-file">open-junk-file</h3>
+<ul>
+<li>junkファイルの保存も howmフォルダーに置くことで、<code>howm-list</code> からの検索機能が利用できて便利です。</li>
+<li><code>howm</code>の [<code>m</code>: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">open-junk-file</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">open-junk-file-format</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/junk/%Y%m%d.&#34;</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">open-junk-file-find-file-function</span> <span style="color:#c41a16">&#39;find-file</span>))
+</code></pre></div><p>下記のTipsを参考にして、直近の junkファイルを即開けるように <code>open-last-junk-file</code> を定義しました。</p>
+<ul>
+<li><a href="htotps://qiita.com/zonkyy/items/eba6bc64f66d278f0032"><code>Emacs で作成した使い捨てファイルを簡単に開く</code></a></li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">em-glob</span>
+ <span style="color:#a90d91">:require</span> <span style="color:#000">t</span>
+ <span style="color:#a90d91">:config</span>
+ (<span style="color:#a90d91">defvar</span> <span style="color:#000">junk-file-dir</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/junk/&#34;</span>)
+ (<span style="color:#a90d91">defun</span> <span style="color:#000">open-last-junk-file</span> ()
+   <span style="color:#c41a16">&#34;Open last created junk-file.&#34;</span>
+   (<span style="color:#a90d91">interactive</span>)
+   (<span style="color:#000">find-file</span>
+    (<span style="color:#000">car</span>
+	    (<span style="color:#000">last</span> (<span style="color:#000">eelisp-extended-glob</span>
+	   	   (<span style="color:#000">concat</span>
+   			(<span style="color:#000">file-name-as-directory</span> <span style="color:#000">junk-file-dir</span>)
+			<span style="color:#c41a16">&#34;*.*.*&#34;</span>)))))))
+</code></pre></div>
 
     
     
@@ -871,8 +883,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/display/calendar/" title="7.6. calendar"> <i class="fa fa-chevron-left"></i><label>7.6. calendar</label></a>
-    <a class="nav nav-next" href="/.emacs.d/display/diff-hl/" title="7.8. diff-hl" style="margin-right: 0px;"><label>7.8. diff-hl</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/programming/easy-hugo/" title="10.7. easy-hugo"> <i class="fa fa-chevron-left"></i><label>10.7. easy-hugo</label></a>
+    <a class="nav nav-next" href="/.emacs.d/memo-tool/" title="メモ環境" style="margin-right: 0px;"><label>メモ環境</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

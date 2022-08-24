@@ -76,5 +76,15 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <description>[eagy-hugo.el] マルチブログ管理  easy-hugo.el は、Hugoで作成されたブログを書くための Emacs メジャー モードです。 https://github.com/minorugh/emacs.d/blob/main/inits/60_easy-hugo.el  (leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.minorugh.com&amp;#34;) (setq easy-hugo-sshdomain &amp;#34;xsrv&amp;#34;) (setq easy-hugo-root &amp;#34;/home/minorugh/minorugh.</description>
     </item>
     
+    <item>
+      <title>10.8. open-junk-file</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/junk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
+      <description>open-junk-file  junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+ Emacs で作成した使い捨てファイルを簡単に開く  (leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
+    </item>
+    
   </channel>
 </rss>

@@ -13,9 +13,6 @@ TPOで使い分けるメモツール
 [org-mode]({{< relref "org" >}})
 : 言語と文字コードの設定
 
-[open-junk-file]({{< relref "junk" >}})
-: 言語と文字コードの設定
-
 [scratch-memo]({{< relref "scratch" >}})
 : 言語と文字コードの設定
 

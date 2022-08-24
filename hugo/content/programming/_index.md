@@ -29,4 +29,7 @@ disableToc = true
 [quickrun]({{< relref "quickrun" >}})
 : 言語と文字コードの設定
 
+[open-junk-file]({{< relref "junk" >}})
+: 言語と文字コードの設定
+
 
