@@ -705,7 +705,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
-      <description>6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
+      <description>6.12. [imenu-list.el] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
 (leaf imenu-list :ensure t :bind (&amp;quot;&amp;lt;f2&amp;gt;&amp;quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &#39;left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。
 (leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) </description>
     </item>
@@ -736,7 +736,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
-      <description>[diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
+      <description>[diff-hl.el] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
 (leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
     </item>
     
