@@ -34,7 +34,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/server/</guid>
-      <description>[server] クライアントサーバー  shell-command で emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
+      <description>[server.el] クライアントサーバー  shell-command で emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
-      <description>ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。
+      <description>[unquify.el] 同じバッファ名が開かれた場合に区別する *ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。
 (setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
     </item>
     

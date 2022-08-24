@@ -2,7 +2,7 @@
 title = "2.4. server / emacsclient"
 draft = false
 +++
-### [server] クライアントサーバー
+### [server.el] クライアントサーバー
 
 * `shell-command` で `emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
 * 重複起動させない設定です。
