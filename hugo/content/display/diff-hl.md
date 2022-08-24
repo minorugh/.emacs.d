@@ -1,7 +1,6 @@
 +++
 title = "7.8. diff-hl"
 draft = false
-weight = 8
 +++
 
 ### 6.3. [diff-hl] 編集差分をフレーム端で視覚化

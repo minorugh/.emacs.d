@@ -1,7 +1,6 @@
 +++
 title = "7.2. all-the-icons"
 draft = false
-weight = 3
 +++
 `all-the-icons.el` を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
 

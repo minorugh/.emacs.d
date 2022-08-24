@@ -1,7 +1,6 @@
 +++
 title = "7.5. prescient"
 draft = false
-weight = 5
 +++
 
 ### [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company）

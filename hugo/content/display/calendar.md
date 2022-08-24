@@ -1,7 +1,6 @@
 +++
 title = "7.6. calendar"
 draft = false
-weight = 6
 +++
 
 ### 6.4. [japanese-holidays] カレンダーをカラフルにする

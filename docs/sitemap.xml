@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</loc>
   </url>
   
@@ -47,14 +43,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
   </url>
   
@@ -72,10 +60,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/frame/sprit-window/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
   </url>
   
   <url>
@@ -103,10 +87,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</loc>
   </url>
   
@@ -120,10 +100,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/frame/winner/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
   </url>
   
   <url>
@@ -147,10 +123,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
   </url>
   
@@ -167,10 +139,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
   </url>
   
@@ -184,10 +152,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</loc>
   </url>
   
   <url>
@@ -388,6 +352,42 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/higlight/whitespace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</loc>
   </url>
   
   <url>

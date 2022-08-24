@@ -1,7 +1,6 @@
 +++
 title = "7.4. display-number-mode"
 draft = false
-weight = 4
 +++
 
 ```elisp

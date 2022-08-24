@@ -1,7 +1,6 @@
 +++
 title = "7.9. toggle-fullscreen"
 draft = false
-weight = 9
 +++
 
 ```elisp

@@ -1,7 +1,6 @@
 +++
 title = "7.1. which-key"
 draft = false
-weight = 1
 +++
 
 ### [which-key] キーバインドの選択肢をポップアップする
