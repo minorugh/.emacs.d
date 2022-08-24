@@ -12,9 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/howm/</guid>
-      <description>Howm Mode Howm-menuは使わないので howm-list-all を初期画面として使っています。
-この画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。
-(leaf howm :ensure t :hook ((emacs-startup-hook . howm-mode) ()) :chord (&amp;#34;@@&amp;#34; . howm-list-all) :init (setq howm-view-title-header &amp;#34;#&amp;#34;) (defun my:howm-create-file () &amp;#34;Make howm create file with &amp;#39;org-capture&amp;#39;.&amp;#34; (interactive) (format-time-string &amp;#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&amp;#34; (current-time))) :config (bind-key [backtab] &amp;#39;howm-view-summary-previous-section howm-view-summary-mode-map) (setq howm-directory &amp;#34;~/Dropbox/howm&amp;#34;) (setq howm-view-split-horizontally t) (setq howm-view-summary-persistent nil) (setq howm-normalizer &amp;#39;howm-sort-items-by-reverse-date) (setq howm-user-font-lock-keywords &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;gnus-group-mail-3)) (&amp;#34;note:&amp;#34; . (0 &amp;#39;epa-mark))))) </description>
+      <description>howm-mode howm: Write fragmentarily and read collectively.
+ Howm-menuは使わないので howm-list-all を初期画面として使っています。 上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。  (leaf howm :ensure t :hook ((emacs-startup-hook . howm-mode) ()) :chord (&amp;#34;@@&amp;#34; . howm-list-all) :init (setq howm-view-title-header &amp;#34;#&amp;#34;) (defun my:howm-create-file () &amp;#34;Make howm create file with &amp;#39;org-capture&amp;#39;.&amp;#34; (interactive) (format-time-string &amp;#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&amp;#34; (current-time))) :config (bind-key [backtab] &amp;#39;howm-view-summary-previous-section howm-view-summary-mode-map) (setq howm-directory &amp;#34;~/Dropbox/howm&amp;#34;) (setq howm-view-split-horizontally t) (setq howm-view-summary-persistent nil) (setq howm-normalizer &amp;#39;howm-sort-items-by-reverse-date) (setq howm-user-font-lock-keywords &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;gnus-group-mail-3)) (&amp;#34;note:&amp;#34; .</description>
     </item>
     
     <item>
@@ -23,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
-      <description>[org-mode]  メモ書きは、howmメインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに org-capture を利用しています。 org-capture からhowm-create を発動できるように org-capture-template を作りました。 org-capture からだと画面が半分になるのがいやなので、最大化で開くようにしています。 dashboard画面に簡単なタスクを表示させるために org-agenda も使っています。  (leaf org :hook (emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) :chord (&amp;#34;,,&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;org) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-startup-indented . t) (org-hide-leading-stars . t) (org-startup-folded .</description>
+      <description>org-mode  メモ書きは、howmメインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに org-capture を利用しています。 org-capture からhowm-create を発動できるように org-capture-template を作りました。 org-capture からだと画面が半分になるのがいやなので、最大化で開くようにしています。 dashboard画面に簡単なタスクを表示させるために org-agenda も使っています。  (leaf org :hook (emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) :chord (&amp;#34;,,&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;org) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-startup-indented . t) (org-hide-leading-stars . t) (org-startup-folded .</description>
     </item>
     
     <item>
@@ -32,7 +31,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/junk/</guid>
-      <description>Open-junk-file  junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+      <description>open-junk-file  junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
  Emacs で作成した使い捨てファイルを簡単に開く  (leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
     </item>
     
@@ -42,9 +41,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</guid>
-      <description>10.4. Scratchを付箋として使う 作業中の短期的なメモを気軽に使うために *scratch*バッファーを付箋メモに使えるように設定してみた。
-Emacsを再起動しても*scratch* バッファーの内容が消えないように auto-save-buffers-enhanced の *scratch* バッファー自動保存機能を併用しています。専用のパッケージもあるようです。
- persistent-scratch.el: scratch バッファを永続化・自動保存・復元する  toggle-scratch は、編集中のバッファーとscratchバッファーとをトグルで切り替えます。
+      <description>scratch-memo  作業中の編集画面から短期的なメモを気軽に使うために *scratch*バッファーを付箋メモに使えるように設定してみた。 Emacsを再起動しても*scratch* バッファーの内容が消えないように auto-save-buffers-enhanced の *scratch* バッファー自動保存機能を併用しています。専用のパッケージもあるようです。  persistent-scratch.el: scratch バッファを永続化・自動保存・復元する
+toggle-scratch は、編集中のバッファーとscratchバッファーとをトグルで切り替えます。
 ;; Scratch for sticky-memo (leaf *scratch-memo :after auto-save-buffers-enhanced :bind (&amp;#34;S-&amp;lt;return&amp;gt;&amp;#34; . toggle-scratch) :custom ((auto-save-buffers-enhanced-save-scratch-buffer-to-file-p . t) (auto-save-buffers-enhanced-file-related-with-scratch-buffer . &amp;#34;~/.emacs.d/tmp/scratch&amp;#34;)) :init (defun toggle-scratch () &amp;#34;Toggle current buffer and *scratch* buffer.&amp;#34; (interactive) (if (not (string= &amp;#34;*scratch*&amp;#34; (buffer-name))) (progn (setq toggle-scratch-prev-buffer (buffer-name)) (switch-to-buffer &amp;#34;*scratch*&amp;#34;)) (switch-to-buffer toggle-scratch-prev-buffer))) (defun read-scratch-data () (let ((file &amp;#34;~/.emacs.d/tmp/scratch&amp;#34;)) (when (file-exists-p file) (set-buffer (get-buffer &amp;#34;*scratch*&amp;#34;)) (erase-buffer) (insert-file-contents file)))) (read-scratch-data)) </description>
     </item>
     

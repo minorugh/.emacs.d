@@ -2,7 +2,7 @@
 title = "12.2. org-modo"
 draft = false
 +++
-### [org-mode] 
+### org-mode 
 
 * メモ書きは、`howm`メインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに `org-capture` を利用しています。
 * `org-capture` から`howm-create` を発動できるように `org-capture-template` を作りました。

@@ -2,7 +2,7 @@
 title = "12.3. open-junk-file"
 draft = false
 +++
-### Open-junk-file
+### open-junk-file
 * junkファイルの保存も howmフォルダーに置くことで、`howm-list` からの検索機能が利用できて便利です。
 * `howm`の [`m`: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。
 

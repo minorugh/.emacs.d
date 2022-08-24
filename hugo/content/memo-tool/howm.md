@@ -3,10 +3,12 @@ title = "12.1. howm-modo"
 draft = false
 +++
 
-### Howm Mode
-Howm-menuは使わないので `howm-list-all` を初期画面として使っています。
+### howm-mode
 
-この画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。
+[howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
+
+* Howm-menuは使わないので `howm-list-all` を初期画面として使っています。
+* 上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。
 
 ```elisp
 (leaf howm
