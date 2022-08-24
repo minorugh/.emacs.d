@@ -340,7 +340,7 @@
 	"title": "4.5. pare",
 	"tags": [],
 	"description": "",
-	"content": "対応するカッコをハイライトする ビルトインの paren を利用して対応するカッコをハイライトさせます。\n(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . \u0026#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) "
+	"content": "[peren.el] 対応するカッコをハイライトする ビルトインの paren を利用して対応するカッコをハイライトさせます。\n(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . \u0026#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/",
