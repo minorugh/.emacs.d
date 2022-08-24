@@ -74,7 +74,7 @@
 	"title": "メモ環境",
 	"tags": [],
 	"description": "",
-	"content": "TPOで使い分けるメモツール\n howm-mode 言語と文字コードの設定 org-mode 言語と文字コードの設定 scratch-memo 言語と文字コードの設定  "
+	"content": "TPOで使い分けるメモツール\n howm-mode howm-modeの設定 org-mode org-modeの設定 scratch-memo scratchを付箋として使う設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/",

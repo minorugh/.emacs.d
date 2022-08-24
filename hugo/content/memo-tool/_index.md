@@ -8,12 +8,12 @@ disableToc = true
 TPOで使い分けるメモツール
 
 [howm-mode]({{< relref "howm" >}})
-: 言語と文字コードの設定
+: howm-modeの設定
 
 [org-mode]({{< relref "org" >}})
-: 言語と文字コードの設定
+: org-modeの設定
 
 [scratch-memo]({{< relref "scratch" >}})
-: 言語と文字コードの設定
+: scratchを付箋として使う設定
 
 
