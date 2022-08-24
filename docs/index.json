@@ -375,7 +375,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": " 自作のユーティリティ関数を集めてここに載せている ps-print 早期設定ファイルの設定 open-gnome-terminal 早期設定ファイルの設定 open-thunar 早期設定ファイルの設定  "
+	"content": "自作のユーティリティ関数を集めてここに載せている\n 自作のユーティリティ関数を集めてここに載せている emacs-lock 早期設定ファイルの設定 ps-print 早期設定ファイルの設定 open-gnome-terminal 早期設定ファイルの設定 open-thunar 早期設定ファイルの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/pangu/",
