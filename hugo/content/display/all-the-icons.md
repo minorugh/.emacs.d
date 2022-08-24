@@ -2,6 +2,7 @@
 title = "7.2. all-the-icons"
 draft = false
 +++
+### [all-the-icons.el] アイコン表示を可能する
 `all-the-icons.el` を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
 
 * [domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.](https://github.com/domtronn/all-the-icons.el)
@@ -21,8 +22,8 @@ draft = false
 	(display-line-numbers-mode 0)
 	(flymake-mode 0)))
 ```
-### all-the-icons-dired
-`dired` でファイルのアイコンを表示します。
+### [all-the-icons-dired.el] `dired` でファイルのアイコン表示をする
+
 
 * Emacs27以降、MELPA版は白色にしか表示されないので [jtbm37/all-the-icons-dired](https://github.com/jtbm37/all-the-icons-dired) をel-getでインストールしています。
 ```elisp
@@ -31,16 +32,16 @@ draft = false
   :after doom-modeline
   :hook (dired-mode-hook . all-the-icons-dired-mode))
 ```
-### all-the-icons-ivy-rich
-`ivy-mode` でアイコン表示をします。
+### [all-the-icons-ivy-rich.el] `ivy-mode` でアイコン表示をする
+
 ```elisp
 (leaf all-the-icons-ivy-rich
   :ensure t
   :hook (after-init-hook . all-the-icons-ivy-rich-mode))
 ```
 
-### all-the-icons-ibuffer
-`ibuffer-mode` でアイコン表示をします。
+### [all-the-icons-ibuffer.el] `ibuffer-mode` でアイコン表示をする。
+
 ```elisp
 (leaf all-the-icons-ibuffer
   :ensure t
