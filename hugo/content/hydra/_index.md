@@ -1,5 +1,5 @@
 +++
-title = "Hydra / コマンドディスパッチャ"
+title = "Hydra / commandディスパッチャ"
 draft = false
 pre = "<b>8. </b>"
 weight = 8
