@@ -53,7 +53,7 @@
 	"title": "Hydra",
 	"tags": [],
 	"description": "",
-	"content": "hydra.el を使うとよく使う機能をまとめて独創的なコマンドディスパッチャを構築することが出来ます。\n日本では、smartrep.el が有名だったようですが、hydra.elも同様の機能を提供します。\n hydra-menu プロジェクトのディレクトリや作業テーブルを一発で開くための設定 hydra-make makeコマンド選択メニュー hydra-markdown markdown-mode編集の支援 hydra-package-utility パケージユーティティーの選択メニュー hydra-browse ブラウザのお気に入りをEmacsから開くための選択メニュー hydra-view-mode view-modeにおけるキーバインドヘルプ  Qitta に詳しい記事を書いています。  Hydraで Emacsのキーバインド問題を解消  "
+	"content": "hydra.el を使うとよく使う機能をまとめて独創的なコマンドディスパッチャを構築することが出来ます。\nINDEX  hydra-menu プロジェクトのディレクトリや作業テーブルを一発で開くための設定 hydra-make makeコマンド選択メニュー hydra-markdown markdown-mode編集の支援 hydra-package-utility パケージユーティティーの選択メニュー hydra-browse ブラウザのお気に入りをEmacsから開くための選択メニュー hydra-view-mode view-modeにおけるキーバインドヘルプ  Qitta に詳しい記事を書いています。  Hydraで Emacsのキーバインド問題を解消  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/",

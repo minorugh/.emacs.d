@@ -8,8 +8,7 @@ disableToc = true
 
 [hydra.el](https://github.com/abo-abo/hydra) を使うとよく使う機能をまとめて独創的なコマンドディスパッチャを構築することが出来ます。
 
-日本では、[smartrep.el](http://sheephead.homelinux.org/2011/12/19/6930/) が有名だったようですが、hydra.elも同様の機能を提供します。
-
+#### INDEX
 [hydra-menu]({{< relref "hydra-quick" >}})
 : プロジェクトのディレクトリや作業テーブルを一発で開くための設定
 
