@@ -1,4 +1,8 @@
-### 13.1. Scratch バッファーを消さない
++++
+title = "12.1. emacs-lok-mode"
+draft = false
++++
+### Scratch バッファーを消さない
 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。
 
 ```elisp

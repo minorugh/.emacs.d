@@ -8,16 +8,26 @@
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/utility-tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</guid>
+      <description>12.4. Thunar を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが&amp;hellip;
+(defun filer-current-dir-open () &amp;#34;Open filer in current dir.&amp;#34; (interactive) (compile (concat &amp;#34;Thunar &amp;#34; default-directory))) (bind-key &amp;#34;&amp;lt;f3&amp;gt;&amp;#34; &amp;#39;filer-current-dir-open) </description>
+    </item>
+    
+    <item>
+      <title>12.1. emacs-lok-mode</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</guid>
-      <description>13.1. Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。
+      <description>Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。
 ;; Set buffer that can not be killed (with-current-buffer &amp;#34;*scratch*&amp;#34; (emacs-lock-mode &amp;#39;kill)) (with-current-buffer &amp;#34;*Messages*&amp;#34; (emacs-lock-mode &amp;#39;kill)) </description>
     </item>
     
     <item>
-      <title></title>
+      <title>12.2. ps-priter__</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -27,24 +37,13 @@
     </item>
     
     <item>
-      <title></title>
+      <title>12.3. open ginome terminal</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</guid>
-      <description>13.2. Terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。
-(defun term-current-dir-open () &amp;#34;Open terminal application in current dir.&amp;#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat &amp;#34;gnome-terminal --working-directory &amp;#34; dir)))) (bind-key &amp;#34;&amp;lt;f4&amp;gt;&amp;#34; &amp;#39;term-current-dir-open) 13.3. Thunar を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが&amp;hellip;
-(defun filer-current-dir-open () &amp;#34;Open filer in current dir.&amp;#34; (interactive) (compile (concat &amp;#34;Thunar &amp;#34; default-directory))) (bind-key &amp;#34;&amp;lt;f3&amp;gt;&amp;#34; &amp;#39;filer-current-dir-open) </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</guid>
-      <description>13.3. Thunar を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが&amp;hellip;
-(defun filer-current-dir-open () &amp;quot;Open filer in current dir.&amp;quot; (interactive) (compile (concat &amp;quot;Thunar &amp;quot; default-directory))) (bind-key &amp;quot;&amp;lt;f3&amp;gt;&amp;quot; &#39;filer-current-dir-open) </description>
+      <description>nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。
+(defun term-current-dir-open () &amp;#34;Open terminal application in current dir.&amp;#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat &amp;#34;gnome-terminal --working-directory &amp;#34; dir)))) (bind-key &amp;#34;&amp;lt;f4&amp;gt;&amp;#34; &amp;#39;term-current-dir-open) </description>
     </item>
     
   </channel>

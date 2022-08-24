@@ -392,32 +392,11 @@
 	"content": "Font-awesome の入力をcounsel で支援してくれる。\n(leaf fontawesome :ensure t :bind (\u0026#34;s-f\u0026#34; . counsel-fontwesame)) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": "13.1. Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。\n;; Set buffer that can not be killed (with-current-buffer \u0026#34;*scratch*\u0026#34; (emacs-lock-mode \u0026#39;kill)) (with-current-buffer \u0026#34;*Messages*\u0026#34; (emacs-lock-mode \u0026#39;kill)) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/ps-print/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": "13.4. PS-Printer へのファイルの出力 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。\n(defalias 'ps-mule-header-string-charsets 'ignore) (setq ps-multibyte-buffer 'non-latin-printer ps-paper-type 'a4 ps-font-size 9 ;; ps-font-family 'Helvetica ps-font-family 'Courier ps-line-number-font 'Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/terminal/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": "13.2. Terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) 13.3. Thunar を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026#34;Open filer in current dir.\u0026#34; (interactive) (compile (concat \u0026#34;Thunar \u0026#34; default-directory))) (bind-key \u0026#34;\u0026lt;f3\u0026gt;\u0026#34; \u0026#39;filer-current-dir-open) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/thunar/",
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "13.3. Thunar を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026quot;Open filer in current dir.\u0026quot; (interactive) (compile (concat \u0026quot;Thunar \u0026quot; default-directory))) (bind-key \u0026quot;\u0026lt;f3\u0026gt;\u0026quot; 'filer-current-dir-open) "
+	"content": "12.4. Thunar を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026#34;Open filer in current dir.\u0026#34; (interactive) (compile (concat \u0026#34;Thunar \u0026#34; default-directory))) (bind-key \u0026#34;\u0026lt;f3\u0026gt;\u0026#34; \u0026#39;filer-current-dir-open) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
@@ -488,6 +467,27 @@
 	"tags": [],
 	"description": "",
 	"content": "scratch-memo  作業中の編集画面から短期的なメモを気軽に使うために *scratch*バッファーを付箋メモに使えるように設定してみた。 Emacsを再起動しても*scratch* バッファーの内容が消えないように auto-save-buffers-enhanced の *scratch* バッファー自動保存機能を併用しています。専用のパッケージもあるようです。  persistent-scratch.el: scratch バッファを永続化・自動保存・復元する\ntoggle-scratch は、編集中のバッファーとscratchバッファーとをトグルで切り替えます。\n;; Scratch for sticky-memo (leaf *scratch-memo :after auto-save-buffers-enhanced :bind (\u0026#34;S-\u0026lt;return\u0026gt;\u0026#34; . toggle-scratch) :custom ((auto-save-buffers-enhanced-save-scratch-buffer-to-file-p . t) (auto-save-buffers-enhanced-file-related-with-scratch-buffer . \u0026#34;~/.emacs.d/tmp/scratch\u0026#34;)) :init (defun toggle-scratch () \u0026#34;Toggle current buffer and *scratch* buffer.\u0026#34; (interactive) (if (not (string= \u0026#34;*scratch*\u0026#34; (buffer-name))) (progn (setq toggle-scratch-prev-buffer (buffer-name)) (switch-to-buffer \u0026#34;*scratch*\u0026#34;)) (switch-to-buffer toggle-scratch-prev-buffer))) (defun read-scratch-data () (let ((file \u0026#34;~/.emacs.d/tmp/scratch\u0026#34;)) (when (file-exists-p file) (set-buffer (get-buffer \u0026#34;*scratch*\u0026#34;)) (erase-buffer) (insert-file-contents file)))) (read-scratch-data)) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/",
+	"title": "12.1. emacs-lok-mode",
+	"tags": [],
+	"description": "",
+	"content": "Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。\n;; Set buffer that can not be killed (with-current-buffer \u0026#34;*scratch*\u0026#34; (emacs-lock-mode \u0026#39;kill)) (with-current-buffer \u0026#34;*Messages*\u0026#34; (emacs-lock-mode \u0026#39;kill)) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/ps-print/",
+	"title": "12.2. ps-priter__",
+	"tags": [],
+	"description": "",
+	"content": "13.4. PS-Printer へのファイルの出力 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。\n(defalias 'ps-mule-header-string-charsets 'ignore) (setq ps-multibyte-buffer 'non-latin-printer ps-paper-type 'a4 ps-font-size 9 ;; ps-font-family 'Helvetica ps-font-family 'Courier ps-line-number-font 'Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/terminal/",
+	"title": "12.3. open ginome terminal",
+	"tags": [],
+	"description": "",
+	"content": "nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",

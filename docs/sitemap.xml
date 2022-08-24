@@ -227,18 +227,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</loc>
   </url>
   
@@ -280,6 +268,18 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</loc>
   </url>
   
   <url>

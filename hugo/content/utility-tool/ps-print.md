@@ -1,3 +1,7 @@
++++
+title = "12.2. ps-priter__"
+draft = false
++++
 
 ### 13.4. PS-Printer へのファイルの出力
 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。
