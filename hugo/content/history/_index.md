@@ -9,26 +9,26 @@ disableToc = true
 ここでは Emacs ファイル管理関係の設定を載せている
 
 [auto-seve-buffer]({{< relref "auto-save-buffer" >}})
-: ファイルの自動保存機能を提供します。
+: ファイルの自動保存機能を提供してる
 
 [undo-fu]({{< relref "undo-fu" >}})
-: ファイルの自動保存機能を提供します。
+: シンプルな undo/redo を提供
 
 [auto-deleter]({{< relref "auto-delete" >}})
-: ファイルの自動保存機能を提供します。
+: 空になったファイルを自動的に削除してくれる
 
 [recentf]({{< relref "recentf" >}})
-: ファイルの自動保存機能を提供します。
+: 開いたファイルの履歴を保存してくれる機能
 
 [savehist]({{< relref "savehist" >}})
-: ファイルの自動保存機能を提供します。
+: ミニバッファの履歴などを保存してくれる機能
 
 [hist-files]({{< relref "hist-files" >}})
-: ファイルの自動保存機能を提供します。
+: 履歴ファイル類の保存場所を整理
 
 [dired]({{< relref "dired" >}})
-: ファイルの自動保存機能を提供します。
+: ファイルシステムのディレクトリを編集する機能
 
 [neotree]({{< relref "neotree" >}})
-: ファイルの自動保存機能を提供します。
+: デレクトリやファイル一覧をツリー形式で表示、編集できる機能
 

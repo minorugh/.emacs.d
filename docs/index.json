@@ -60,7 +60,7 @@
 	"title": "履歴 / ファイル管理",
 	"tags": [],
 	"description": "",
-	"content": "ここでは Emacs ファイル管理関係の設定を載せている\n auto-seve-buffer ファイルの自動保存機能を提供します。 undo-fu ファイルの自動保存機能を提供します。 auto-deleter ファイルの自動保存機能を提供します。 recentf ファイルの自動保存機能を提供します。 savehist ファイルの自動保存機能を提供します。 hist-files ファイルの自動保存機能を提供します。 dired ファイルの自動保存機能を提供します。 neotree ファイルの自動保存機能を提供します。  "
+	"content": "ここでは Emacs ファイル管理関係の設定を載せている\n auto-seve-buffer ファイルの自動保存機能を提供してる undo-fu シンプルな undo/redo を提供 auto-deleter 空になったファイルを自動的に削除してくれる recentf 開いたファイルの履歴を保存してくれる機能 savehist ミニバッファの履歴などを保存してくれる機能 hist-files 履歴ファイル類の保存場所を整理 dired ファイルシステムのディレクトリを編集する機能 neotree デレクトリやファイル一覧をツリー形式で表示、編集できる機能  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/",
