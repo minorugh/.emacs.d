@@ -3,6 +3,8 @@ title = "2.3. emacs-mozc"
 draft = false
 +++
 
+### [emacs-mozc] 日本語入力システム（インプットメソッド）
+
 * Debian11 にインストールした Emacs上で [`emacs-mozc`](https://wiki.debian.org/JapaneseEnvironment/Mozc) を使っています。
 * debian でのインストール手順は以下の通り。
 
@@ -43,7 +45,7 @@ Emacs*useXIM: false
 	  (setq input-method-function input-method-function-save))))
 ```
 
-## Emacsから単語登録する
+### Emacsから単語登録する
 
 Emacsで文章編集中にShellコマンドで [`mozc-tool`](https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/) を起動し、Emacsを閉じることなく単語登録できるようにしています。
 
@@ -65,13 +67,13 @@ Emacsで文章編集中にShellコマンドで [`mozc-tool`](https://www.mk-mode
 	(delete-other-windows)))
 ```
 
-## Mozc 辞書の共有
+### Mozc 辞書の共有
 Linux環境でMozcを使うメリットは辞書の共有です。
 
 1. Emacs以外のコンテンツでも同じMozc辞書を使うのでEmacsから単語登録しておけば全てのコンテンツで有効になる。
 2. 辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンで共有できる。
 
-## Dropboxで辞書を共有する
+### Dropboxで辞書を共有する
 やり方は簡単です。
 
 1. Dropboxに `~/Dropbox/mozc` フォルダを新規作成します。
@@ -88,7 +90,7 @@ mozc_copy:
 	ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
 ```
 
-## 辞書共有の課題
+### 辞書共有の課題
 Dropboxに保存された辞書ファイルを複数マシンで同時アクセスした場合、複製（競合コピー）がいっぱい作られるという問題があります。
 Google Driveは大丈夫という情報もありますが試せてません。
 

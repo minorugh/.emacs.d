@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/mozc/</guid>
-      <description>Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
+      <description>[emacs-mozc] 日本語入力システム（インプットメソッド）  Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
 ! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
 (leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;？&amp;#34;))) (&amp;#34;!&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;！&amp;#34;))))) :custom `((default-input-method .</description>
     </item>

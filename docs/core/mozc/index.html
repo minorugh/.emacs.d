@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T09:01:52 JST">
+<meta name="revised" content="2022-08-24T09:11:04 JST">
 <title>2.3. emacs-mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -703,10 +703,15 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
-    <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
-    <li><a href="#dropboxで辞書を共有する">Dropboxで辞書を共有する</a></li>
-    <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
+    <li>
+      <ul>
+        <li><a href="#emacs-mozc-日本語入力システムインプットメソッド">[emacs-mozc] 日本語入力システム（インプットメソッド）</a></li>
+        <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
+        <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
+        <li><a href="#dropboxで辞書を共有する">Dropboxで辞書を共有する</a></li>
+        <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -726,6 +731,7 @@
     
     
     
+<h3 id="emacs-mozc-日本語入力システムインプットメソッド">[emacs-mozc] 日本語入力システム（インプットメソッド）</h3>
 <ul>
 <li>Debian11 にインストールした Emacs上で <a href="https://wiki.debian.org/JapaneseEnvironment/Mozc"><code>emacs-mozc</code></a> を使っています。</li>
 <li>debian でのインストール手順は以下の通り。</li>
@@ -757,7 +763,7 @@ Emacs*useXIM: <span style="color:#a90d91">false</span>
 	(<span style="color:#a90d91">let</span> ((<span style="color:#000">input-method-function-save</span> <span style="color:#000">input-method-function</span>))
 	  <span style="color:#000">ad-do-it</span>
 	  (<span style="color:#a90d91">setq</span> <span style="color:#000">input-method-function</span> <span style="color:#000">input-method-function-save</span>))))
-</code></pre></div><h2 id="emacsから単語登録する">Emacsから単語登録する</h2>
+</code></pre></div><h3 id="emacsから単語登録する">Emacsから単語登録する</h3>
 <p>Emacsで文章編集中にShellコマンドで <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動し、Emacsを閉じることなく単語登録できるようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-mozc-tool</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;s-t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:mozc-dictionary-tool</span>)
@@ -774,13 +780,13 @@ Emacs*useXIM: <span style="color:#a90d91">false</span>
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog&#34;</span>)
 	(<span style="color:#000">delete-other-windows</span>)))
-</code></pre></div><h2 id="mozc-辞書の共有">Mozc 辞書の共有</h2>
+</code></pre></div><h3 id="mozc-辞書の共有">Mozc 辞書の共有</h3>
 <p>Linux環境でMozcを使うメリットは辞書の共有です。</p>
 <ol>
 <li>Emacs以外のコンテンツでも同じMozc辞書を使うのでEmacsから単語登録しておけば全てのコンテンツで有効になる。</li>
 <li>辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンで共有できる。</li>
 </ol>
-<h2 id="dropboxで辞書を共有する">Dropboxで辞書を共有する</h2>
+<h3 id="dropboxで辞書を共有する">Dropboxで辞書を共有する</h3>
 <p>やり方は簡単です。</p>
 <ol>
 <li>Dropboxに <code>~/Dropbox/mozc</code> フォルダを新規作成します。</li>
@@ -793,7 +799,7 @@ Emacs*useXIM: <span style="color:#a90d91">false</span>
 	cp -r ~/.mozc/ ~/Dropbox/mozc/
 	test -L ~/.mozc || rm -rf ~/.mozc
 	ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
-</code></pre><h2 id="辞書共有の課題">辞書共有の課題</h2>
+</code></pre><h3 id="辞書共有の課題">辞書共有の課題</h3>
 <p>Dropboxに保存された辞書ファイルを複数マシンで同時アクセスした場合、複製（競合コピー）がいっぱい作られるという問題があります。
 Google Driveは大丈夫という情報もありますが試せてません。</p>
 
