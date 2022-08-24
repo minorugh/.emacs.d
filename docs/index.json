@@ -532,13 +532,6 @@
 	"content": "6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。\n(leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/display/prescient/",
-	"title": "7.. calendar",
-	"tags": [],
-	"description": "",
-	"content": "6.13. [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。\n(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . \u0026quot;~/.emacs.d/tmp/prescient-save\u0026quot;)) :init (with-eval-after-load 'prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/display/diff-hl/",
 	"title": "7.. diff-hl",
 	"tags": [],
@@ -551,6 +544,13 @@
 	"tags": [],
 	"description": "",
 	"content": "6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。\n(leaf imenu-list :ensure t :bind (\u0026quot;\u0026lt;f2\u0026gt;\u0026quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . 'left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。\n(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/display/prescient/",
+	"title": "7.. prescient",
+	"tags": [],
+	"description": "",
+	"content": "[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。\n(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . \u0026quot;~/.emacs.d/tmp/prescient-save\u0026quot;)) :init (with-eval-after-load 'prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/",

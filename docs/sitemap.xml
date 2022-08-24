@@ -307,15 +307,15 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
   </url>
   
   <url>
