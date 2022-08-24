@@ -18,7 +18,7 @@ disableToc = true
 : 括弧の先頭と最後へ交互にポイント移動
 
 [my:exchange-point-and-mark]({{< relref "mark-command" >}})
-: 直前の編集ポイントと現在のポイントとを行き来できる設定
+: 直前の編集ポイントと現在のポイントとを行き来する設定
 
 [expand-region]({{< relref "expand-region" >}})
 : カーソル位置を起点に選択範囲を賢く広げてくれる

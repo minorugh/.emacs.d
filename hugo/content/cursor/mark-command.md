@@ -2,6 +2,7 @@
 title = "3.4. my:exchange-point-and-mark"
 draft = false
 +++
+### 直前の編集ポイントと現在のポイントとを行き来する設定
 * `my:exchange-point-and-mark` は、直前の編集ポイントと現在のポイントとを行き来できる設定です。
 
 ```elisp

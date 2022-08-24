@@ -312,7 +312,7 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</guid>
-      <description>my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
+      <description>括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
 (defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  でも、上記標準機能はなにげに使いにくいです。</description>
     </item>
     
@@ -322,7 +322,7 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/mark-command/</guid>
-      <description> my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) </description>
+      <description>直前の編集ポイントと現在のポイントとを行き来する設定  my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) </description>
     </item>
     
     <item>

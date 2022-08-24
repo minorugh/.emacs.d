@@ -18,7 +18,7 @@
 	"title": "カーソル移動",
 	"tags": [],
 	"description": "",
-	"content": " カーソル移動に関する設定です。 ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。   sequential-command 標準の C-a C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来できる設定 expand-region カーソル位置を起点に選択範囲を賢く広げてくれる  "
+	"content": " カーソル移動に関する設定です。 ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。   sequential-command 標準の C-a C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げてくれる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/",
@@ -291,14 +291,14 @@
 	"title": "3.3. my:jump-brace",
 	"tags": [],
 	"description": "",
-	"content": "my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。\n(defun my:jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key \u0026#34;C-M-9\u0026#34; \u0026#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  でも、上記標準機能はなにげに使いにくいです。\n"
+	"content": "括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。\n(defun my:jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key \u0026#34;C-M-9\u0026#34; \u0026#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  でも、上記標準機能はなにげに使いにくいです。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/mark-command/",
 	"title": "3.4. my:exchange-point-and-mark",
 	"tags": [],
 	"description": "",
-	"content": " my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) "
+	"content": "直前の編集ポイントと現在のポイントとを行き来する設定  my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/expand-region/",
