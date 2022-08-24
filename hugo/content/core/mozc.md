@@ -3,7 +3,7 @@ title = "2.3. emacs-mozc"
 draft = false
 +++
 
-### [emacs-mozc] 日本語入力システム（インプットメソッド）
+### [emacs-mozc] 日本語入力システム（Mozcサーバー）
 
 * Debian11 にインストールした Emacs上で [`emacs-mozc`](https://wiki.debian.org/JapaneseEnvironment/Mozc) を使っています。
 * debian でのインストール手順は以下の通り。
@@ -20,8 +20,10 @@ Emacsをソースからビルドするときに `--without-xim` しなかった�
 ! Emacs XIMを無効化
 Emacs*useXIM: false
 ```
+### [mozc.el] Mozcサーバーを使って日本語テキストを入力
+[google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
 
-句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
+句読点などを入力したとき、わざわざ `mozc`に変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
 ```elisp
 (leaf mozc
   :ensure t

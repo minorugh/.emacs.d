@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T20:55:53 JST">
+<meta name="revised" content="2022-08-24T21:12:19 JST">
 <title>2.3. emacs-mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -824,7 +824,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#emacs-mozc-日本語入力システムインプットメソッド">[emacs-mozc] 日本語入力システム（インプットメソッド）</a></li>
+        <li><a href="#emacs-mozc-日本語入力システムmozcサーバー">[emacs-mozc] 日本語入力システム（Mozcサーバー）</a></li>
+        <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
         <li><a href="#dropboxで辞書を共有する">Dropboxで辞書を共有する</a></li>
@@ -850,7 +851,7 @@
     
     
     
-<h3 id="emacs-mozc-日本語入力システムインプットメソッド">[emacs-mozc] 日本語入力システム（インプットメソッド）</h3>
+<h3 id="emacs-mozc-日本語入力システムmozcサーバー">[emacs-mozc] 日本語入力システム（Mozcサーバー）</h3>
 <ul>
 <li>Debian11 にインストールした Emacs上で <a href="https://wiki.debian.org/JapaneseEnvironment/Mozc"><code>emacs-mozc</code></a> を使っています。</li>
 <li>debian でのインストール手順は以下の通り。</li>
@@ -861,7 +862,9 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">! ~/.Xresources
 ! Emacs XIMを無効化
 Emacs*useXIM: <span style="color:#a90d91">false</span>
-</code></pre></div><p>句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。</p>
+</code></pre></div><h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
+<p><a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
+<p>句読点などを入力したとき、わざわざ <code>mozc</code>に変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-input-method</span>)
