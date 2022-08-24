@@ -9,8 +9,11 @@ disableToc = true
 ここにはファイル編集や入力補助の設定をまとめている
 
 
+[which-key]({{< relref "which-key" >}})
+: キーバインドの選択肢をポップアップする
+
 [all-the-icons]({{< relref "all-the-icons" >}})
-: 認証情報の取り扱いファイルの設定
+: Emacsでアイコンを表示できるようにする
 
 [display-number]({{< relref "display-number" >}})
 : 認証情報の取り扱いファイルの設定
@@ -22,9 +25,6 @@ disableToc = true
 : 認証情報の取り扱いファイルの設定
 
 [diff-hl]({{< relref "diff-hl" >}})
-: 認証情報の取り扱いファイルの設定
-
-[which-key]({{< relref "which-key" >}})
 : 認証情報の取り扱いファイルの設定
 
 [prescient]({{< relref "prescient" >}})

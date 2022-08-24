@@ -513,7 +513,7 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
-      <description>[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
+      <description>[which-key.el] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
 (leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
     </item>
     
@@ -616,11 +616,10 @@ pangu-spacingは、漢字と英字の間にスペースを自動追加してく�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
-      <description>12.4 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
-@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
-(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &#39;buffer-list-update-hook #&#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。
+      <description>[line-spacing] 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
 darkroom-mode では、
-(setq-local line-spacing 0.4) と行間を大きくするように設定していますが、dark-room からでるときに my:linespacing に戻しています。</description>
+(setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときにもとに戻したいのですが、 @takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
+(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &amp;#39;buffer-list-update-hook #&amp;#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。</description>
     </item>
     
     <item>
@@ -753,12 +752,15 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>7.9. toggle-fullscreen</title>
+      <title>7.9. toggle-frame-fullscreen</title>
       <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
-      <description>(global-set-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-fullscreen&amp;#39;) </description>
+      <description>[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを init.el に書きます。
+;; 最大化 (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;maximized) ;; フルスクリーン (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;fullboth) ところが、起動後に M-x toggle-frame-fullscreen/M-x toggle-frame-fullscreen とやっても思うような動きになりません。
+そこで、多少インチキくさい設定ですが、init.el にはまず、maxmized を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。 こうすることで、あとは M-x toggle-frame-fullscreen で最大化フルスクリーンの切り替えが出来るようになります。
+;;; init.el ;; set maxmized for startup (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;maximized) ;; set fullscreen for window-setup-hook (add-hook &amp;#39;window-setup-hook (lambda () (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;fullboth))) (bind-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-frame-fullscreen) </description>
     </item>
     
     <item>

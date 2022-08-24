@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T14:34:57 JST">
+<meta name="revised" content="2022-08-24T15:27:03 JST">
 <title>7.3. line-spacing :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -506,7 +506,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/" class="dd-item">
         <div>
           <a href="/.emacs.d/display/toggle-fullscreen/">
-            7.9. toggle-fullscreen
+            7.9. toggle-frame-fullscreen
           </a>
         </div>
     </li>
@@ -824,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#124-行間を制御する">12.4 行間を制御する</a></li>
+        <li><a href="#line-spacing-行間を制御する">[line-spacing] 行間を制御する</a></li>
       </ul>
     </li>
   </ul>
@@ -846,19 +846,19 @@
     
     
     
-<h3 id="124-行間を制御する">12.4 行間を制御する</h3>
+<h3 id="line-spacing-行間を制御する">[line-spacing] 行間を制御する</h3>
 <p><code>line-spacing</code> 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。</p>
-<p><a href="https://pxaka.tokyo/blog/2019/emacs-buffer-list-update-hook/">@takaxpさんのブログ記事</a> のによると、<code>global</code> で <code>0.3</code> 以下に設定すると
-<code>nil</code> に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。</p>
-<pre><code class="language-code" data-lang="code">(defun my:linespacing ()
-  (unless (minibufferp)
-    (setq-local line-spacing 0.2)))
-(add-hook 'buffer-list-update-hook #'my:linespacing)
-</code></pre><p><code>my:linespacing</code> はシンプルに、 <code>global</code> ではなく <code>local</code> 変数の <code>line-spacing</code> を書き換えます。
-<code>(minibufferp)</code> で括っているのは、ミニバッファの行間を <code>my:linespacing</code> に左右されずに制御するためです。</p>
 <p><code>darkroom-mode</code> では、</p>
-<pre><code class="language-code" data-lang="code">(setq-local line-spacing 0.4)
-</code></pre><p>と行間を大きくするように設定していますが、<code>dark-room</code> からでるときに <code>my:linespacing</code> に戻しています。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>)
+</code></pre></div><p>と行間を大きくするように設定していて、<code>dark-room</code> からでるときにもとに戻したいのですが、
+<a href="https://pxaka.tokyo/blog/2019/emacs-buffer-list-update-hook/">@takaxpさんのブログ記事</a> のによると、<code>global</code> で <code>0.3</code> 以下に設定すると
+<code>nil</code> に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:linespacing</span> ()
+  (<span style="color:#a90d91">unless</span> (<span style="color:#000">minibufferp</span>)
+    (<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.2</span>)))
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;buffer-list-update-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:linespacing</span>)
+</code></pre></div><p><code>my:linespacing</code> はシンプルに、 <code>global</code> ではなく <code>local</code> 変数の <code>line-spacing</code> を書き換えます。
+<code>(minibufferp)</code> で括っているのは、ミニバッファの行間を <code>my:linespacing</code> に左右されずに制御するためです。</p>
 
 
     

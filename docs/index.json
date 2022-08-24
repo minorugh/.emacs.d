@@ -46,7 +46,7 @@
 	"title": "表示サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n all-the-icons 認証情報の取り扱いファイルの設定 display-number 認証情報の取り扱いファイルの設定 linespacing 認証情報の取り扱いファイルの設定 imenu-list 認証情報の取り扱いファイルの設定 diff-hl 認証情報の取り扱いファイルの設定 which-key 認証情報の取り扱いファイルの設定 prescient 認証情報の取り扱いファイルの設定 calendar 認証情報の取り扱いファイルの設定 toggle-fullscreen 認証情報の取り扱いファイルの設定  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする display-number 認証情報の取り扱いファイルの設定 linespacing 認証情報の取り扱いファイルの設定 imenu-list 認証情報の取り扱いファイルの設定 diff-hl 認証情報の取り扱いファイルの設定 prescient 認証情報の取り扱いファイルの設定 calendar 認証情報の取り扱いファイルの設定 toggle-fullscreen 認証情報の取り扱いファイルの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/hydra/",
@@ -431,7 +431,7 @@
 	"title": "7.1. which-key",
 	"tags": [],
 	"description": "",
-	"content": "[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。\n(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) "
+	"content": "[which-key.el] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。\n(leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/iedit/",
@@ -494,7 +494,7 @@
 	"title": "7.3. line-spacing",
 	"tags": [],
 	"description": "",
-	"content": "12.4 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。\n@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。\n(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook 'buffer-list-update-hook #'my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。\ndarkroom-mode では、\n(setq-local line-spacing 0.4) と行間を大きくするように設定していますが、dark-room からでるときに my:linespacing に戻しています。\n"
+	"content": "[line-spacing] 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。\ndarkroom-mode では、\n(setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときにもとに戻したいのですが、 @takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。\n(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook \u0026#39;buffer-list-update-hook #\u0026#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/web-mode/",
@@ -582,10 +582,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/",
-	"title": "7.9. toggle-fullscreen",
+	"title": "7.9. toggle-frame-fullscreen",
 	"tags": [],
 	"description": "",
-	"content": "(global-set-key \u0026#34;\u0026lt;f11\u0026gt;\u0026#34; \u0026#39;toggle-fullscreen\u0026#39;) "
+	"content": "[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを init.el に書きます。\n;; 最大化 (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;maximized) ;; フルスクリーン (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;fullboth) ところが、起動後に M-x toggle-frame-fullscreen/M-x toggle-frame-fullscreen とやっても思うような動きになりません。\nそこで、多少インチキくさい設定ですが、init.el にはまず、maxmized を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。 こうすることで、あとは M-x toggle-frame-fullscreen で最大化フルスクリーンの切り替えが出来るようになります。\n;;; init.el ;; set maxmized for startup (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;maximized) ;; set fullscreen for window-setup-hook (add-hook \u0026#39;window-setup-hook (lambda () (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;fullboth))) (bind-key \u0026#34;\u0026lt;f11\u0026gt;\u0026#34; \u0026#39;toggle-frame-fullscreen) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/hydra/hydra-quick/",

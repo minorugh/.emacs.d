@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T14:34:57 JST">
-<title>7.9. toggle-fullscreen :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-24T15:27:03 JST">
+<title>7.9. toggle-frame-fullscreen :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -506,7 +506,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/" class="dd-item">
         <div>
           <a href="/.emacs.d/display/toggle-fullscreen/">
-            7.9. toggle-fullscreen
+            7.9. toggle-frame-fullscreen
           </a>
         </div>
     </li>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 7.9. toggle-fullscreen
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 7.9. toggle-frame-fullscreen
 
  
 
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#toggle-frame-fullscreen-表示画面を最大とフルスクリーンとにトグルで切り替え">[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -830,7 +838,7 @@
 
 <div id="body-inner">
   
-    <h1>7.9. toggle-fullscreen</h1>
+    <h1>7.9. toggle-frame-fullscreen</h1>
   
 
 
@@ -838,7 +846,26 @@
     
     
     
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">global-set-key</span> <span style="color:#c41a16">&#34;&lt;f11&gt;&#34;</span> <span style="color:#c41a16">&#39;toggle-fullscreen</span><span style="color:#000">&#39;</span>)
+<h3 id="toggle-frame-fullscreen-表示画面を最大とフルスクリーンとにトグルで切り替え">[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え</h3>
+<p>Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを <code>init.el</code> に書きます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; 最大化</span>
+(<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;maximized</span>)
+
+<span style="color:#177500">;; フルスクリーン</span>
+(<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;fullboth</span>)
+</code></pre></div><p>ところが、起動後に <code>M-x toggle-frame-fullscreen</code>/<code>M-x toggle-frame-fullscreen</code> とやっても思うような動きになりません。</p>
+<p>そこで、多少インチキくさい設定ですが、<code>init.el</code> にはまず、<code>maxmized</code> を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。
+こうすることで、あとは <code>M-x toggle-frame-fullscreen</code> で最大化フルスクリーンの切り替えが出来るようになります。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;; init.el</span>
+<span style="color:#177500">;; set maxmized for startup</span>
+(<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;maximized</span>)
+
+<span style="color:#177500">;; set fullscreen for window-setup-hook</span>
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;window-setup-hook</span>
+		  (<span style="color:#a90d91">lambda</span> ()
+			(<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;fullboth</span>)))
+
+(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;&lt;f11&gt;&#34;</span> <span style="color:#c41a16">&#39;toggle-frame-fullscreen</span>)
 </code></pre></div>
 
     

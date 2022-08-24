@@ -3,7 +3,7 @@ title = "7.1. which-key"
 draft = false
 +++
 
-### [which-key] キーバインドの選択肢をポップアップする
+### [which-key.el] キーバインドの選択肢をポップアップする
 `guide-key.el` の後発、ディスパッチャが見やすく直感的でとても使いやすい。
 
 ```elisp
