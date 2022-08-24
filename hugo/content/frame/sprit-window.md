@@ -1,8 +1,8 @@
 +++
-title = "5.4. custom-sprit-window-func"
+title = "5.4. cus-sprit-window-functions"
 draft = false
 +++
-### [custom sprit window func]デフォルトの画面分割コマンドをカスタマイズ
+### [cus-sprit-window-functions]デフォルトの画面分割コマンドをカスタマイズ
 `dimmer-mode` との連携をさせるために、デフォルトのコマンドをカスタマイズします。
 
 * 同じバッファーを分割したときは、`follow-mode` にする。
@@ -10,7 +10,7 @@ draft = false
 * 画面分割を閉じたときは、`dimmer-mode-off` にする。
 
 ```emacs-lisp
-(leaf *cus-sprit-window
+(leaf *cus-sprit-window-functions
   :bind (("C-q" . other-window-or-split)
 		 ("C-x 2" . my:split-window-below)
 		 ("C-x 1" . my:delete-other-windows)

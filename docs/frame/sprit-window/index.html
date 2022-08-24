@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T19:18:57 JST">
-<title>5.4. custom-sprit-window-func :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-24T19:37:45 JST">
+<title>5.4. cus-sprit-window-functions :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -294,7 +294,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/sprit-window/" class="dd-item">
         <div>
           <a href="/.emacs.d/frame/sprit-window/">
-            5.4. custom-sprit-window-func
+            5.4. cus-sprit-window-functions
           </a>
         </div>
     </li>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/frame/'>フレーム / ウインドウ制御</a> > 5.4. custom-sprit-window-func
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/frame/'>フレーム / ウインドウ制御</a> > 5.4. cus-sprit-window-functions
 
  
 
@@ -824,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#custom-sprit-window-funcデフォルトの画面分割コマンドをカスタマイズ">[custom sprit window func]デフォルトの画面分割コマンドをカスタマイズ</a></li>
+        <li><a href="#cus-sprit-window-functionsデフォルトの画面分割コマンドをカスタマイズ">[cus-sprit-window-functions]デフォルトの画面分割コマンドをカスタマイズ</a></li>
       </ul>
     </li>
   </ul>
@@ -838,7 +838,7 @@
 
 <div id="body-inner">
   
-    <h1>5.4. custom-sprit-window-func</h1>
+    <h1>5.4. cus-sprit-window-functions</h1>
   
 
 
@@ -846,14 +846,14 @@
     
     
     
-<h3 id="custom-sprit-window-funcデフォルトの画面分割コマンドをカスタマイズ">[custom sprit window func]デフォルトの画面分割コマンドをカスタマイズ</h3>
+<h3 id="cus-sprit-window-functionsデフォルトの画面分割コマンドをカスタマイズ">[cus-sprit-window-functions]デフォルトの画面分割コマンドをカスタマイズ</h3>
 <p><code>dimmer-mode</code> との連携をさせるために、デフォルトのコマンドをカスタマイズします。</p>
 <ul>
 <li>同じバッファーを分割したときは、<code>follow-mode</code> にする。</li>
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
 <li>画面分割を閉じたときは、<code>dimmer-mode-off</code> にする。</li>
 </ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-sprit-window</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-sprit-window-functions</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-q&#34;</span> <span style="color:#000">.</span> <span style="color:#000">other-window-or-split</span>)
 		 (<span style="color:#c41a16">&#34;C-x 2&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:split-window-below</span>)
 		 (<span style="color:#c41a16">&#34;C-x 1&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:delete-other-windows</span>)
