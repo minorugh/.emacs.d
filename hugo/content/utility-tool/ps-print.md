@@ -1,9 +1,9 @@
 +++
-title = "12.2. ps-priter__"
+title = "12.2. ps-priter"
 draft = false
 +++
 
-### 13.4. PS-Printer へのファイルの出力
+### PS-Printer へのファイルの出力
 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。
 
 ```code

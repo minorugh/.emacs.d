@@ -477,10 +477,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/ps-print/",
-	"title": "12.2. ps-priter__",
+	"title": "12.2. ps-priter",
 	"tags": [],
 	"description": "",
-	"content": "13.4. PS-Printer へのファイルの出力 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。\n(defalias 'ps-mule-header-string-charsets 'ignore) (setq ps-multibyte-buffer 'non-latin-printer ps-paper-type 'a4 ps-font-size 9 ;; ps-font-family 'Helvetica ps-font-family 'Courier ps-line-number-font 'Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) "
+	"content": "PS-Printer へのファイルの出力 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。\n(defalias 'ps-mule-header-string-charsets 'ignore) (setq ps-multibyte-buffer 'non-latin-printer ps-paper-type 'a4 ps-font-size 9 ;; ps-font-family 'Helvetica ps-font-family 'Courier ps-line-number-font 'Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/terminal/",
