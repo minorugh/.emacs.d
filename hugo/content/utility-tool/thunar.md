@@ -1,4 +1,8 @@
-### 12.4. Thunar を Emacsから呼び出す
++++
+title = "12.4. open terminal"
+draft = false
++++
+### Thunarを Emacsから呼び出す
 
 Emacsで開いている`buffer` の`current-dir` で `Debian` の `Thuner` を開くというものです。
 使う機会は少ないと思いますが...
