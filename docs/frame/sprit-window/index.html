@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T19:12:07 JST">
-<title>5.4. sprit-window-functions :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-24T19:18:57 JST">
+<title>5.4. custom-sprit-window-func :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -294,7 +294,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/sprit-window/" class="dd-item">
         <div>
           <a href="/.emacs.d/frame/sprit-window/">
-            5.4. sprit-window-functions
+            5.4. custom-sprit-window-func
           </a>
         </div>
     </li>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/frame/'>フレーム / ウインドウ制御</a> > 5.4. sprit-window-functions
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/frame/'>フレーム / ウインドウ制御</a> > 5.4. custom-sprit-window-func
 
  
 
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#custom-sprit-window-funcデフォルトの画面分割コマンドをカスタマイズ">[custom sprit window func]デフォルトの画面分割コマンドをカスタマイズ</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -830,7 +838,7 @@
 
 <div id="body-inner">
   
-    <h1>5.4. sprit-window-functions</h1>
+    <h1>5.4. custom-sprit-window-func</h1>
   
 
 
@@ -838,7 +846,8 @@
     
     
     
-<p><code>dimmer-mode</code> との連携をさせるために、デフォルトのキーバインドをカスタマイズします。</p>
+<h3 id="custom-sprit-window-funcデフォルトの画面分割コマンドをカスタマイズ">[custom sprit window func]デフォルトの画面分割コマンドをカスタマイズ</h3>
+<p><code>dimmer-mode</code> との連携をさせるために、デフォルトのコマンドをカスタマイズします。</p>
 <ul>
 <li>同じバッファーを分割したときは、<code>follow-mode</code> にする。</li>
 <li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>

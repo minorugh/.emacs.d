@@ -1,8 +1,9 @@
 +++
-title = "5.4. sprit-window-functions"
+title = "5.4. custom-sprit-window-func"
 draft = false
 +++
-`dimmer-mode` との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
+### [custom sprit window func]デフォルトの画面分割コマンドをカスタマイズ
+`dimmer-mode` との連携をさせるために、デフォルトのコマンドをカスタマイズします。
 
 * 同じバッファーを分割したときは、`follow-mode` にする。
 * 画面分割したときは、`dimmer-mode-on` にする。

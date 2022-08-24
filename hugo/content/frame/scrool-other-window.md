@@ -2,8 +2,8 @@
 title = "5.3. scrool-other-Window"
 draft = false
 +++
-
-`Scrool-other-Window` は、`deactive` なwindowをスクロールさせるための設定です。
+### [scrool-other-window] `deactive` なwindowをスクロールさせるための設定
+`scrool-other-window` は、`deactive` なwindowをスクロールさせるための設定です。
 
 一画面のとき `<next>` / `<prior>` は、PgUp / PgDn として使うが、画面分割のときだけ `other-Window` に対応させている。
 標準機能の `C-v: scroll-uo-command` / `M-v: scroll-down-command` を使い分ければ快適に二画面同時閲覧が可能となる。
