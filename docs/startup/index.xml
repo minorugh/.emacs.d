@@ -60,7 +60,7 @@ init-loader には、エラーが出た設定ファイルは読み込まれな�
       
       <guid>https://minorugh.github.io/.emacs.d/startup/test/</guid>
       <description>[test.el] 最小限の emacs を起動させるための設定 test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
-以下を .zshrc または .coderc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
+以下を .zshrc または .bashrc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
 alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
     </item>
     
