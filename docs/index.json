@@ -249,7 +249,7 @@
 	"title": "2.4. server / emacsclient",
 	"tags": [],
 	"description": "",
-	"content": " shell-command で emacsclient をよく使うので、Emacs起動時に server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
+	"content": "[server] クライアントサーバー  shell-command で emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/",

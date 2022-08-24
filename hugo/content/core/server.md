@@ -2,7 +2,9 @@
 title = "2.4. server / emacsclient"
 draft = false
 +++
-* `shell-command` で `emacsclient` をよく使うので、Emacs起動時に `server` を起動させています。
+### [server] クライアントサーバー
+
+* `shell-command` で `emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
 * 重複起動させない設定です。
 
 ```elisp
@@ -12,5 +14,4 @@ draft = false
   :config
   (unless (server-running-p)
     (server-start)))
-
 ```

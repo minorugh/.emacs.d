@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T21:12:19 JST">
+<meta name="revised" content="2022-08-24T21:15:54 JST">
 <title>2.4. server / emacsclient :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#server-クライアントサーバー">[server] クライアントサーバー</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,8 +846,9 @@
     
     
     
+<h3 id="server-クライアントサーバー">[server] クライアントサーバー</h3>
 <ul>
-<li><code>shell-command</code> で <code>emacsclient</code> をよく使うので、Emacs起動時に <code>server</code> を起動させています。</li>
+<li><code>shell-command</code> で <code>emacsclient</code> をよく使うので、Emacs起動時にビルトインの <code>server</code> を起動させています。</li>
 <li>重複起動させない設定です。</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Server start for emacs-client</span>
@@ -848,7 +857,6 @@
   <span style="color:#a90d91">:config</span>
   (<span style="color:#a90d91">unless</span> (<span style="color:#000">server-running-p</span>)
     (<span style="color:#000">server-start</span>)))
-
 </code></pre></div>
 
     
