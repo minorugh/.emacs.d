@@ -1,5 +1,5 @@
 +++
-title = "12.2. org-modo"
+title = "11.2. org-modo"
 draft = false
 +++
 ### org-mode 

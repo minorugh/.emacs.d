@@ -207,7 +207,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/</loc>
   </url>
   
   <url>
@@ -215,15 +215,11 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/memo-tool/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/utility-tool/</loc>
   </url>
   
   <url>

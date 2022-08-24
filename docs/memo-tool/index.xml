@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/memo-tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>12.1. howm-modo</title>
+      <title>11.1. howm-modo</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/howm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>12.2. org-modo</title>
+      <title>11.2. org-modo</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/org/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>12.3. open-junk-file</title>
+      <title>11.3. open-junk-file</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/junk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -36,7 +36,7 @@
     </item>
     
     <item>
-      <title>12.4. scratch-memo</title>
+      <title>11.4. scratch-memo</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

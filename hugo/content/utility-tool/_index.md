@@ -1,8 +1,8 @@
 +++
 title = "ユーティリティー関数"
 draft = false
-pre = "<b>13. </b>"
-weight = 13
+pre = "<b>12. </b>"
+weight = 12
 disableToc = true
 +++
 

@@ -357,11 +357,11 @@
 	"content": "[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。\n$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。\n$ cmigemo --help Emacsの設定は下記のとおりです。\n(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find \u0026#34;cmigemo\u0026#34;) :custom `((migemo-command . \u0026#34;cmigemo\u0026#34;) (migemo-dictionary . \u0026#34;/usr/share/cmigemo/utf-8/migemo-dict\u0026#34;))) [swiper-migemo] swiperでもmigemoを使う avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。\nつい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。\n(leaf swiper-migemo :doc \u0026#34;https://github.com/tam17aki/swiper-migemo\u0026#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/external-tool/",
-	"title": "外部連携ツール設定",
+	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/",
+	"title": "メモ環境",
 	"tags": [],
 	"description": "",
-	"content": "ここでは外部のサービスと連携するようなやつをまとめています\n"
+	"content": "TPOで使い分けるメモツール\n howm-mode 言語と文字コードの設定 org-mode 言語と文字コードの設定 open-junk-file 言語と文字コードの設定 scratch-memo 言語と文字コードの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/selected/",
@@ -371,11 +371,11 @@
 	"content": "[selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。\nEmacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。\n(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (\u0026#34;;\u0026#34; . comment-dwim) (\u0026#34;c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s\u0026#34; . swiper-thing-at-point) (\u0026#34;t\u0026#34; . google-translate-auto) (\u0026#34;T\u0026#34; . chromium-translate) (\u0026#34;W\u0026#34; . my:weblio) (\u0026#34;k\u0026#34; . my:koujien) (\u0026#34;e\u0026#34; . my:eijiro) (\u0026#34;g\u0026#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。\n(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://sakura-paris.org/dict/広辞苑/prefix/%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://www.weblio.jp/content/%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:eijiro (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://eow.alc.co.jp/%s/UTF-8/\u0026#34; (upcase (url-hexify-string str))))) (defun my:google (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://www.google.com/search?hl=ja\u0026amp;q=%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:get-region (r) \u0026#34;Get search word from region.\u0026#34; (buffer-substring-no-properties (region-beginning) (region-end))) IME のオン・オフを自動制御する selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。\n領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、 @takaxp さんの Qiitaの記事 にあったので、私の環境（emacs-mozc ）にあうように設定したら、すんなり動いてくれました。感謝！\n(leaf *cus-selected :hook ((activate-mark-hook . my:activate-selected) (activate-mark-hook . (lambda () (setq my:ime-flag current-input-method) (my:ime-off))) (deactivate-mark-hook . (lambda () (unless (null my:ime-flag) (my:ime-on))))) :init ;; Control mozc when seleceted (defun my:activate-selected () (selected-global-mode 1) (selected--on) (remove-hook \u0026#39;activate-mark-hook #\u0026#39;my:activate-selected)) (add-hook \u0026#39;activate-mark-hook #\u0026#39;my:activate-selected) (defun my:ime-on () (interactive) (when (null current-input-method) (toggle-input-method))) (defun my:ime-off () (interactive) (inactivate-input-method)) (defvar my:ime-flag nil) (add-hook \u0026#39;activate-mark-hook #\u0026#39;(lambda () (setq my:ime-flag current-input-method) (my:ime-off))) (add-hook \u0026#39;deactivate-mark-hook #\u0026#39;(lambda () (unless (null my:ime-flag) (my:ime-on))))) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/",
-	"title": "メモ環境",
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/",
+	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "TPOで使い分けるメモツール\n howm-mode 言語と文字コードの設定 org-mode 言語と文字コードの設定 open-junk-file 言語と文字コードの設定 scratch-memo 言語と文字コードの設定  "
+	"content": "自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/pangu/",
@@ -383,13 +383,6 @@
 	"tags": [],
 	"description": "",
 	"content": ";; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any \u0026#34;。，！？；：「」（）、\u0026#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in \u0026#34;a-zA-Z\u0026#34;))))) "
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/",
-	"title": "ユーティリティー関数",
-	"tags": [],
-	"description": "",
-	"content": "自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/fontawesome/",
@@ -442,28 +435,28 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/howm/",
-	"title": "12.1. howm-modo",
+	"title": "11.1. howm-modo",
 	"tags": [],
 	"description": "",
 	"content": "howm-mode howm: Write fragmentarily and read collectively.\n Howm-menuは使わないので howm-list-all を初期画面として使っています。 上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。  (leaf howm :ensure t :hook ((emacs-startup-hook . howm-mode) ()) :chord (\u0026#34;@@\u0026#34; . howm-list-all) :init (setq howm-view-title-header \u0026#34;#\u0026#34;) (defun my:howm-create-file () \u0026#34;Make howm create file with \u0026#39;org-capture\u0026#39;.\u0026#34; (interactive) (format-time-string \u0026#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md\u0026#34; (current-time))) :config (bind-key [backtab] \u0026#39;howm-view-summary-previous-section howm-view-summary-mode-map) (setq howm-directory \u0026#34;~/Dropbox/howm\u0026#34;) (setq howm-view-split-horizontally t) (setq howm-view-summary-persistent nil) (setq howm-normalizer \u0026#39;howm-sort-items-by-reverse-date) (setq howm-user-font-lock-keywords \u0026#39;((\u0026#34;memo:\u0026#34; . (0 \u0026#39;gnus-group-mail-3)) (\u0026#34;note:\u0026#34; . (0 \u0026#39;epa-mark))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/org/",
-	"title": "12.2. org-modo",
+	"title": "11.2. org-modo",
 	"tags": [],
 	"description": "",
 	"content": "org-mode  メモ書きは、howmメインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに org-capture を利用しています。 org-capture からhowm-create を発動できるように org-capture-template を作りました。 org-capture からだと画面が半分になるのがいやなので、最大化で開くようにしています。 dashboard画面に簡単なタスクを表示させるために org-agenda も使っています。  (leaf org :hook (emacs-startup-hook . (lambda () (require \u0026#39;org-protocol))) :chord (\u0026#34;,,\u0026#34; . org-capture) :bind ((\u0026#34;C-c a\u0026#34; . org-agenda) (\u0026#34;C-c c\u0026#34; . org-capture) (\u0026#34;C-c k\u0026#34; . org-capture-kill) (\u0026#34;C-c o\u0026#34; . org-open-at-point) (\u0026#34;C-c i\u0026#34; . org-edit-src-exit) (:org-mode-map (\u0026#34;C-c i\u0026#34; . org-edit-special))) :custom `((org-log-done . \u0026#39;org) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-startup-indented . t) (org-hide-leading-stars . t) (org-startup-folded . \u0026#39;content) (org-indent-mode-turns-on-hiding-stars . nil) (org-indent-indentation-per-level . 4) (org-startup-folded . \u0026#39;content) (org-agenda-files . \u0026#39;(\u0026#34;~/Dropbox/org/task.org\u0026#34;)) (org-agenda-span . 30)) :config (defun my:howm-create-file () \u0026#34;Make howm create file with \u0026#39;org-capture\u0026#39;.\u0026#34; (interactive) (format-time-string \u0026#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md\u0026#34; (current-time))) ;; Caputure Settings (setq org-capture-templates \u0026#39;((\u0026#34;m\u0026#34; \u0026#34; Memo with howm\u0026#34; plain (file my:howm-create-file) \u0026#34;# memo: %?\\n%U %i\u0026#34;) (\u0026#34;n\u0026#34; \u0026#34; Note with howm\u0026#34; plain (file my:howm-create-file) \u0026#34;# note: %?\\n%U %i\u0026#34;) (\u0026#34;t\u0026#34; \u0026#34; Task\u0026#34; entry (file+headline \u0026#34;~/Dropbox/org/task.org\u0026#34; \u0026#34;TASK\u0026#34;) \u0026#34;** TODO %?\\n SCHEDULED: %^t \\n\u0026#34; :empty-lines 1 :jump-to-captured 1) (\u0026#34;e\u0026#34; \u0026#34; Experiment Perl\u0026#34; entry (file+headline \u0026#34;~/Dropbox/org/experiment.org\u0026#34; \u0026#34;Experiment\u0026#34;) \u0026#34;* %? %i\\n#+BEGIN_SRC perl\\n\\n#+END_SRC\\n\\n%U\u0026#34;) (\u0026#34;p\u0026#34; \u0026#34; Code capture\u0026#34; entry (file+headline \u0026#34;~/Dropbox/org/capture.org\u0026#34; \u0026#34;Code\u0026#34;) \u0026#34;* %^{Title} \\nSOURCE: %:link\\nCAPTURED: %U\\n\\n#+BEGIN_SRC\\n%i\\n#+END_SRC\\n\u0026#34; :prepend t) (\u0026#34;L\u0026#34; \u0026#34; Link capture\u0026#34; entry (file+headline \u0026#34;~/Dropbox/org/capture.org\u0026#34; \u0026#34;Link\u0026#34;) \u0026#34;* [[%:link][%:description]] \\nCAPTURED: %U\\nREMARKS: %?\u0026#34; :prepend t))) (setq org-refile-targets \u0026#39;((\u0026#34;~/Dropbox/org/archives.org\u0026#34; :level . 1) (\u0026#34;~/Dropbox/org/remember.org\u0026#34; :level . 1) (\u0026#34;~/Dropbox/org/task.org\u0026#34; :level . 1))) :init ;; Maximize the org-capture buffer (defvar my:org-capture-before-config nil \u0026#34;Window configuration before \u0026#39;org-capture\u0026#39;.\u0026#34;) (defadvice org-capture (before save-config activate) \u0026#34;Save the window configuration before \u0026#39;org-capture\u0026#39;.\u0026#34; (setq my:org-capture-before-config (current-window-configuration))) (add-hook \u0026#39;org-capture-mode-hook \u0026#39;delete-other-windows)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/junk/",
-	"title": "12.3. open-junk-file",
+	"title": "11.3. open-junk-file",
 	"tags": [],
 	"description": "",
 	"content": "open-junk-file  junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format \u0026#34;~/Dropbox/howm/junk/%Y%m%d.\u0026#34;) (setq open-junk-file-find-file-function \u0026#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。\n Emacs で作成した使い捨てファイルを簡単に開く  (leaf em-glob :require t :config (defvar junk-file-dir \u0026#34;~/Dropbox/howm/junk/\u0026#34;) (defun open-last-junk-file () \u0026#34;Open last created junk-file.\u0026#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) \u0026#34;*.*.*\u0026#34;))))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/scratch/",
-	"title": "12.4. scratch-memo",
+	"title": "11.4. scratch-memo",
 	"tags": [],
 	"description": "",
 	"content": "scratch-memo  作業中の編集画面から短期的なメモを気軽に使うために *scratch*バッファーを付箋メモに使えるように設定してみた。 Emacsを再起動しても*scratch* バッファーの内容が消えないように auto-save-buffers-enhanced の *scratch* バッファー自動保存機能を併用しています。専用のパッケージもあるようです。  persistent-scratch.el: scratch バッファを永続化・自動保存・復元する\ntoggle-scratch は、編集中のバッファーとscratchバッファーとをトグルで切り替えます。\n;; Scratch for sticky-memo (leaf *scratch-memo :after auto-save-buffers-enhanced :bind (\u0026#34;S-\u0026lt;return\u0026gt;\u0026#34; . toggle-scratch) :custom ((auto-save-buffers-enhanced-save-scratch-buffer-to-file-p . t) (auto-save-buffers-enhanced-file-related-with-scratch-buffer . \u0026#34;~/.emacs.d/tmp/scratch\u0026#34;)) :init (defun toggle-scratch () \u0026#34;Toggle current buffer and *scratch* buffer.\u0026#34; (interactive) (if (not (string= \u0026#34;*scratch*\u0026#34; (buffer-name))) (progn (setq toggle-scratch-prev-buffer (buffer-name)) (switch-to-buffer \u0026#34;*scratch*\u0026#34;)) (switch-to-buffer toggle-scratch-prev-buffer))) (defun read-scratch-data () (let ((file \u0026#34;~/.emacs.d/tmp/scratch\u0026#34;)) (when (file-exists-p file) (set-buffer (get-buffer \u0026#34;*scratch*\u0026#34;)) (erase-buffer) (insert-file-contents file)))) (read-scratch-data)) "

@@ -1,8 +1,8 @@
 +++
 title = "メモ環境"
 draft = false
-pre = "<b>12. </b>"
-weight = 12
+pre = "<b>11. </b>"
+weight = 11
 disableToc = true
 +++
 TPOで使い分けるメモツール
