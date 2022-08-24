@@ -410,7 +410,7 @@
 	"title": "5.7. doom-thmes",
 	"tags": [],
 	"description": "",
-	"content": "(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme \u0026#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) "
+	"content": "[doom-thems.el] テーマ設定 doomemacs/themes: Doom Emacs' Theme Pack.\n わんさかとthemeファイルがパックされています。自分は、doom-dracula を愛用しています。  (leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme \u0026#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) [cycle-custom-themes] 複数テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。\n(leaf cycle-custom-theme :doc \u0026#34;https://bre.is/5tE2BvUp\u0026#34; :config (setq my:themes (list \u0026#39;doom-dracula \u0026#39;iceberg \u0026#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () \u0026#34;Switch themes to cycle.\u0026#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message \u0026#34;%s\u0026#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc \u0026#34;modified version for myself\u0026#34; :el-get minorugh/iceberg-theme) (add-to-list \u0026#39;custom-theme-load-path \u0026#34;~/.emacs.d/el-get/iceberg-theme/\u0026#34;)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/doom-modeline/",
