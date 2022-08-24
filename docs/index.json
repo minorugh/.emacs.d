@@ -484,7 +484,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/terminal/",
-	"title": "12.3. open ginome terminal",
+	"title": "12.3. open terminal",
 	"tags": [],
 	"description": "",
 	"content": "nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
