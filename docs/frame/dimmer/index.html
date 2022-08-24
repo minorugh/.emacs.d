@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T19:04:32 JST">
+<meta name="revised" content="2022-08-24T19:10:02 JST">
 <title>5.2. dimmer-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -822,6 +822,11 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
+    <li>
+      <ul>
+        <li><a href="#dimmerel-現在のバッファ以外の輝度を落とす">[dimmer.el] 現在のバッファ以外の輝度を落とす</a></li>
+      </ul>
+    </li>
     <li><a href="#sprit-window-と連携させる">Sprit-window と連携させる</a></li>
   </ul>
 </nav>
@@ -842,11 +847,13 @@
     
     
     
+<h3 id="dimmerel-現在のバッファ以外の輝度を落とす">[dimmer.el] 現在のバッファ以外の輝度を落とす</h3>
 <ul>
-<li><a href="https://github.com/gonewest818/dimmer.el">dimmer.el</a> は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。</li>
+<li>現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。</li>
+<li><a href="https://takaxp.github.io/init.html#org8ba0784e">takaxp.github.io</a> の設定をそのままパクリました。
+ON/OFF できるのが快適です。</li>
 </ul>
-<p><a href="https://takaxp.github.io/init.html#org8ba0784e">takaxp.github.io</a> の設定をそのままパクリました。
-ON/OFF できるのが快適です。</p>
+<p><a href="https://github.com/gonewest818/dimmer.el">gonewest818/dimmer.el: Visually highlight the selected buffer.</a></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">dimmer</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;..&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:toggle-dimmer</span>)
