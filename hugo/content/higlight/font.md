@@ -2,16 +2,14 @@
 title = "4.1. font setting"
 draft = false
 +++
-### Cicaフォント
-
-*GUI / CUI 共通で `Cica` を使っています。
+### GUI / CUI 共通で `Cica` を使っています。
 
 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
 
 * [プログラミング用日本語等幅フォント Cica](https://github.com/miiton/Cica)
 * Think Pad を2台使っていますので、環境を取得して設定を変えています。
 
-## フォントの設定
+### フォントの設定
 * メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。
 
 ```elisp
@@ -21,7 +19,7 @@ Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等の
   (add-to-list 'default-frame-alist '(font . "Cica-15")))
 ```
 
-## フォントのインストール
+### フォントのインストール
 * Linux 環境でのインストールの方法です。
 
 * [オフィシャルページ](https://github.com/miiton/Cica/releases/tag/v5.0.3)にある最新の `Cica v5.03` は、

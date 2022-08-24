@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T17:13:12 JST">
+<meta name="revised" content="2022-08-24T17:14:38 JST">
 <title>4.1. font setting :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -824,11 +824,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#cicaフォント">Cicaフォント</a></li>
+        <li><a href="#gui--cui-共通で-cica-を使っています">GUI / CUI 共通で <code>Cica</code> を使っています。</a></li>
+        <li><a href="#フォントの設定">フォントの設定</a></li>
+        <li><a href="#フォントのインストール">フォントのインストール</a></li>
       </ul>
     </li>
-    <li><a href="#フォントの設定">フォントの設定</a></li>
-    <li><a href="#フォントのインストール">フォントのインストール</a></li>
   </ul>
 </nav>
       </div>
@@ -848,14 +848,13 @@
     
     
     
-<h3 id="cicaフォント">Cicaフォント</h3>
-<p>*GUI / CUI 共通で <code>Cica</code> を使っています。</p>
+<h3 id="gui--cui-共通で-cica-を使っています">GUI / CUI 共通で <code>Cica</code> を使っています。</h3>
 <p>Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。</p>
 <ul>
 <li><a href="https://github.com/miiton/Cica">プログラミング用日本語等幅フォント Cica</a></li>
 <li>Think Pad を2台使っていますので、環境を取得して設定を変えています。</li>
 </ul>
-<h2 id="フォントの設定">フォントの設定</h2>
+<h3 id="フォントの設定">フォントの設定</h3>
 <ul>
 <li>メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。</li>
 </ul>
@@ -863,7 +862,7 @@
 <span style="color:#177500">;; for sub-machine</span>
 (<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;x250&#34;</span> (<span style="color:#000">code-command-to-string</span> <span style="color:#c41a16">&#34;uname -n&#34;</span>))
   (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-15&#34;</span>)))
-</code></pre></div><h2 id="フォントのインストール">フォントのインストール</h2>
+</code></pre></div><h3 id="フォントのインストール">フォントのインストール</h3>
 <ul>
 <li>
 <p>Linux 環境でのインストールの方法です。</p>
