@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T09:27:14 JST">
+<meta name="revised" content="2022-08-24T09:37:02 JST">
 <title>1.4. init-loader.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -740,6 +740,9 @@
   (<span style="color:#000">custom-set-variables</span>
    <span style="color:#000">&#39;</span>(<span style="color:#000">init-loader-show-log-after-init</span> <span style="color:#c41a16">&#39;error-only</span>))
   (<span style="color:#000">init-loader-load</span>))
+</code></pre></div><p>デフォルトで <code>~/.emacs.d/inits</code> デレクトリ以下のファイルを読み込みますが、変更したいときは下記のように指定すればいいようです。
+自分は、デフォルトで使っています。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"> (<span style="color:#000">init-loader-load</span> <span style="color:#c41a16">&#34;~/.emacs.d/conf&#34;</span>)
 </code></pre></div>
 
     

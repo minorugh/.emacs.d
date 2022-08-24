@@ -21,3 +21,10 @@ draft = false
    '(init-loader-show-log-after-init 'error-only))
   (init-loader-load))
 ```
+
+デフォルトで `~/.emacs.d/inits` デレクトリ以下のファイルを読み込みますが、変更したいときは下記のように指定すればいいようです。
+自分は、デフォルトで使っています。
+
+```elisp
+ (init-loader-load "~/.emacs.d/conf")
+```
