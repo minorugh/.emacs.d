@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T15:27:03 JST">
-<title>7.6. calendar :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-24T15:46:48 JST">
+<title>7.6. japanese-holidays :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -471,7 +471,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/display/display-number/" class="dd-item">
         <div>
           <a href="/.emacs.d/display/display-number/">
-            7.4. display-number-mode
+            7.4. display-line-numbers
           </a>
         </div>
     </li>
@@ -485,7 +485,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/display/calendar/" class="dd-item">
         <div>
           <a href="/.emacs.d/display/calendar/">
-            7.6. calendar
+            7.6. japanese-holidays
           </a>
         </div>
     </li>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 7.6. calendar
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/display/'>表示サポート</a> > 7.6. japanese-holidays
 
  
 
@@ -824,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#64-japanese-holidays-カレンダーをカラフルにする">6.4. [japanese-holidays] カレンダーをカラフルにする</a></li>
+        <li><a href="#japanese-holidays-カレンダーをカラフルにする">[japanese-holidays] カレンダーをカラフルにする</a></li>
       </ul>
     </li>
   </ul>
@@ -838,7 +838,7 @@
 
 <div id="body-inner">
   
-    <h1>7.6. calendar</h1>
+    <h1>7.6. japanese-holidays</h1>
   
 
 
@@ -846,8 +846,11 @@
     
     
     
-<h3 id="64-japanese-holidays-カレンダーをカラフルにする">6.4. [japanese-holidays] カレンダーをカラフルにする</h3>
-<p>ビルドインの <code>holidays</code> と <code>japanese-holidays.el</code>を使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。</p>
+<h3 id="japanese-holidays-カレンダーをカラフルにする">[japanese-holidays] カレンダーをカラフルにする</h3>
+<ul>
+<li>ビルドインの <code>holidays</code> と <code>japanese-holidays.el</code>を使います。</li>
+<li>土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">calendar</span>
   <span style="color:#a90d91">:leaf-defer</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f7&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">calendar</span>)

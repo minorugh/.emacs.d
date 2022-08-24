@@ -46,7 +46,7 @@
 	"title": "表示サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする display-number 認証情報の取り扱いファイルの設定 linespacing 認証情報の取り扱いファイルの設定 imenu-list 認証情報の取り扱いファイルの設定 diff-hl 認証情報の取り扱いファイルの設定 prescient 認証情報の取り扱いファイルの設定 calendar 認証情報の取り扱いファイルの設定 toggle-fullscreen 認証情報の取り扱いファイルの設定  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする line-spacing 行間を制御する display-number-mode 行番号を表示する prescient リスト項目の並び替えとイニシャル入力機能を提供 japanese-holidays カレンダーをカラフルにする imenu-list サイドバー風にファイル内容の目次要素を表示 diff-hl 編集差分をフレーム端で視覚化 toggle-fullscreen 画面最大化とフルスクリーンとをトグルで切り替え  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/hydra/",
@@ -505,10 +505,10 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/display-number/",
-	"title": "7.4. display-number-mode",
+	"title": "7.4. display-line-numbers",
 	"tags": [],
 	"description": "",
-	"content": "(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) "
+	"content": "[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名だった。 軽くするためにはいろいろと設定しなくてはいけなかった。Emacs26でついに行数表示のネイティブ実装である diplay-line-numbers-mode が実装されたのでそちらを使います。.\n(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/yatex/",
@@ -532,18 +532,18 @@
 	"content": "[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。\n(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . \u0026quot;~/.emacs.d/tmp/prescient-save\u0026quot;)) :init (with-eval-after-load 'prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/display/calendar/",
-	"title": "7.6. calendar",
-	"tags": [],
-	"description": "",
-	"content": "6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。\n(leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/editing/ivy/",
 	"title": "7.6. ivy / counsel",
 	"tags": [],
 	"description": "",
 	"content": "[ivy.el / counsel.el] Emacsの補完システム ivy は、helm と双璧を成す Emacsの補完システムです。\nリスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。 このシンプルかつ極めて重要なタスクを ivy が手助けしてくれます．\n(leaf counsel :ensure t :defer-config (ivy-mode) :bind ((\u0026#34;C-r\u0026#34; . swiper-thing-at-point) (\u0026#34;C-s\u0026#34; . swiper-region) (\u0026#34;C-:\u0026#34; . counsel-switch-buffer) (\u0026#34;s-a\u0026#34; . counsel-ag) (\u0026#34;s-r\u0026#34; . counsel-rg) (\u0026#34;s-f\u0026#34; . counsel-fontawesome) (\u0026#34;M-x\u0026#34; . counsel-M-x) (\u0026#34;M-y\u0026#34; . counsel-yank-pop) (\u0026#34;C-x m\u0026#34; . counsel-mark-ring) (\u0026#34;C-x C-b\u0026#34; . ibuffer) (\u0026#34;C-x C-f\u0026#34; . counsel-find-file) (\u0026#34;C-x C-r\u0026#34; . counsel-recentf)) :custom `((search-default-mode . nil) (ivy-use-virtual-buffers . t) (ivy-use-selectable-prompt . t) (enable-recursive-minibuffers . t) (counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions)) (ivy-format-functions-alist . \u0026#39;((t . my:ivy-format-function-arrow))))) 現在の選択候補をわかりやすくする ivy-format-functions-alist にカスタマイズした関数を追加すれば、プロンプトの下部に位置するカーソル行の表示を変更できます。 all-the-icons を導入して好みのアイコンでカーソル行のある選択候補を目立たせましょう。\n(defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) ivy-rich ivy-rich を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。\n(leaf ivy-rich :ensure t :hook (after-init-hook . ivy-rich-mode)) amx amx は、Emacsコマンド M-x の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。 導入することでcounsel-M-x とも自動的に連携して効率の良い補完システムを提供します。\n(leaf amx :ensure t :custom `((amx-save-file . ,\u0026#34;~/.emacs.d/tmp/amx-items\u0026#34;) (amx-history-length . 20))) swiper-region swiper-thing-at-point は賢くて親切なのですが、key-wordを入力して検索したいときには使いづらいです。 自分の使い勝手に合わせてカスタマイズしました。\n(defun swiper-region () \u0026#34;If region is selected, `swiper-thing-at-point\u0026#39;. If the region isn\u0026#39;t selected, `swiper\u0026#39;.\u0026#34; (interactive) (if (not (use-region-p)) (swiper) (swiper-thing-at-point))) 高速全文検索 2文字でも検索が発動するようにカスタマイズしています。@takaxp さんのTipsからパクってきました。\n(with-no-warnings (defun ad:counsel-ag (f \u0026amp;optional initial-input initial-directory extra-ag-args ag-prompt caller) (apply f (or initial-input (and (not (thing-at-point-looking-at \u0026#34;^\\\\*+\u0026#34;)) (ivy-thing-at-point))) (unless current-prefix-arg (or initial-directory default-directory)) extra-ag-args ag-prompt caller))) (with-eval-after-load \u0026#34;counsel\u0026#34; (require \u0026#39;thingatpt nil t) (advice-add \u0026#39;counsel-ag :around #\u0026#39;ad:counsel-ag) ;; Make search trigger even with 2 characters (add-to-list \u0026#39;ivy-more-chars-alist \u0026#39;(counsel-ag . 2)) (ivy-add-actions \u0026#39;counsel-ag \u0026#39;((\u0026#34;r\u0026#34; my:counsel-ag-in-dir \u0026#34;search in directory\u0026#34;)))) (defun my:counsel-ag-in-dir (_arg) \u0026#34;Search again with new root directory.\u0026#34; (let ((current-prefix-arg \u0026#39;(4))) (counsel-ag ivy-text nil \u0026#34;\u0026#34;))) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/display/calendar/",
+	"title": "7.6. japanese-holidays",
+	"tags": [],
+	"description": "",
+	"content": "[japanese-holidays] カレンダーをカラフルにする  ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/imenu/",
@@ -571,7 +571,7 @@
 	"title": "7.8. diff-hl",
 	"tags": [],
 	"description": "",
-	"content": "6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。\n(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) "
+	"content": "[diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。\n(leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/key-chord/",

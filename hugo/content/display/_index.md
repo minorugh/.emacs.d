@@ -15,24 +15,24 @@ disableToc = true
 [all-the-icons]({{< relref "all-the-icons" >}})
 : Emacsでアイコンを表示できるようにする
 
-[display-number]({{< relref "display-number" >}})
-: 認証情報の取り扱いファイルの設定
+[line-spacing]({{< relref "linespacing" >}})
+: 行間を制御する
 
-[linespacing]({{< relref "linespacing" >}})
-: 認証情報の取り扱いファイルの設定
-
-[imenu-list]({{< relref "imenu" >}})
-: 認証情報の取り扱いファイルの設定
-
-[diff-hl]({{< relref "diff-hl" >}})
-: 認証情報の取り扱いファイルの設定
+[display-number-mode]({{< relref "display-number" >}})
+: 行番号を表示する
 
 [prescient]({{< relref "prescient" >}})
-: 認証情報の取り扱いファイルの設定
+: リスト項目の並び替えとイニシャル入力機能を提供
 
-[calendar]({{< relref "calendar" >}})
-: 認証情報の取り扱いファイルの設定
+[japanese-holidays]({{< relref "calendar" >}})
+: カレンダーをカラフルにする
+
+[imenu-list]({{< relref "imenu" >}})
+: サイドバー風にファイル内容の目次要素を表示
+
+[diff-hl]({{< relref "diff-hl" >}})
+: 編集差分をフレーム端で視覚化
 
 [toggle-fullscreen]({{< relref "toggle-fullscreen" >}})
-: 認証情報の取り扱いファイルの設定
+: 画面最大化とフルスクリーンとをトグルで切り替え
 

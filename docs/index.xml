@@ -634,12 +634,13 @@ darkroom-mode では、
     </item>
     
     <item>
-      <title>7.4. display-number-mode</title>
+      <title>7.4. display-line-numbers</title>
       <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/display-number/</guid>
-      <description>(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
+      <description>[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名だった。 軽くするためにはいろいろと設定しなくてはいけなかった。Emacs26でついに行数表示のネイティブ実装である diplay-line-numbers-mode が実装されたのでそちらを使います。.
+(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
     </item>
     
     <item>
@@ -680,16 +681,6 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>7.6. calendar</title>
-      <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
-      <description>6.4. [japanese-holidays] カレンダーをカラフルにする ビルドインの holidays と japanese-holidays.elを使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
-(leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
-    </item>
-    
-    <item>
       <title>7.6. ivy / counsel</title>
       <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -698,6 +689,15 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <description>[ivy.el / counsel.el] Emacsの補完システム ivy は、helm と双璧を成す Emacsの補完システムです。
 リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。 このシンプルかつ極めて重要なタスクを ivy が手助けしてくれます．
 (leaf counsel :ensure t :defer-config (ivy-mode) :bind ((&amp;#34;C-r&amp;#34; . swiper-thing-at-point) (&amp;#34;C-s&amp;#34; . swiper-region) (&amp;#34;C-:&amp;#34; . counsel-switch-buffer) (&amp;#34;s-a&amp;#34; . counsel-ag) (&amp;#34;s-r&amp;#34; . counsel-rg) (&amp;#34;s-f&amp;#34; . counsel-fontawesome) (&amp;#34;M-x&amp;#34; . counsel-M-x) (&amp;#34;M-y&amp;#34; . counsel-yank-pop) (&amp;#34;C-x m&amp;#34; . counsel-mark-ring) (&amp;#34;C-x C-b&amp;#34; . ibuffer) (&amp;#34;C-x C-f&amp;#34; . counsel-find-file) (&amp;#34;C-x C-r&amp;#34; . counsel-recentf)) :custom `((search-default-mode . nil) (ivy-use-virtual-buffers . t) (ivy-use-selectable-prompt . t) (enable-recursive-minibuffers .</description>
+    </item>
+    
+    <item>
+      <title>7.6. japanese-holidays</title>
+      <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
+      <description>[japanese-holidays] カレンダーをカラフルにする  ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
     </item>
     
     <item>
@@ -737,7 +737,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
-      <description>6.3. [diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
+      <description>[diff-hl] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
 (leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
     </item>
     

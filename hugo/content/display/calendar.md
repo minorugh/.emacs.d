@@ -1,10 +1,11 @@
 +++
-title = "7.6. calendar"
+title = "7.6. japanese-holidays"
 draft = false
 +++
 
-### 6.4. [japanese-holidays] カレンダーをカラフルにする
-ビルドインの `holidays` と `japanese-holidays.el`を使います。土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
+### [japanese-holidays] カレンダーをカラフルにする
+* ビルドインの `holidays` と `japanese-holidays.el`を使います。
+* 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
 
 ```elisp
 (leaf calendar
