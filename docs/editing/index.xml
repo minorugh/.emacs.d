@@ -21,6 +21,64 @@ $ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはな�
     </item>
     
     <item>
+      <title>7.10. iedit</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
+      <description>[iedit] 選択領域を別の文字列に置き換える  idet.el は、バッファー内の複数箇所を同時に編集するツールです。  同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
+ multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
+対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
+ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
+かなりの頻度で使うので、Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドしています。</description>
+    </item>
+    
+    <item>
+      <title>7.11. migemo</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
+      <description>[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。
+$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。
+$ cmigemo --help Emacsの設定は下記のとおりです。
+(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) [swiper-migemo] swiperでもmigemoを使う avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
+つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
+(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) </description>
+    </item>
+    
+    <item>
+      <title>7.12. selected</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
+      <description>[selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
+Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
+(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
+(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
+    </item>
+    
+    <item>
+      <title>7.13. pangu-spacing</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/pangu/</guid>
+      <description>;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
+    </item>
+    
+    <item>
+      <title>7.14. fontawesome</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
+      <description>Font-awesome の入力をcounsel で支援してくれる。
+(leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
+    </item>
+    
+    <item>
       <title>7.2. veiw-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/view/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,64 +165,6 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
       <description>対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
 (leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) </description>
-    </item>
-    
-    <item>
-      <title>7.10. iedit</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
-      <description>[iedit] 選択領域を別の文字列に置き換える  idet.el は、バッファー内の複数箇所を同時に編集するツールです。  同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
- multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
-対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
-ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
-かなりの頻度で使うので、Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドしています。</description>
-    </item>
-    
-    <item>
-      <title>7.11. migemo</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
-      <description>[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。
-$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。
-$ cmigemo --help Emacsの設定は下記のとおりです。
-(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) [swiper-migemo] swiperでもmigemoを使う avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
-つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
-(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) </description>
-    </item>
-    
-    <item>
-      <title>7.12. selected</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
-      <description>[selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
-Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
-(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
-(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
-    </item>
-    
-    <item>
-      <title>7.13. pangu-spacing</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/pangu/</guid>
-      <description>;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
-    </item>
-    
-    <item>
-      <title>7.14. fontawesome</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
-      <description>Font-awesome の入力をcounsel で支援してくれる。
-(leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
     </item>
     
   </channel>

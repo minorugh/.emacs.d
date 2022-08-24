@@ -1,7 +1,6 @@
 +++
 title = "9.4. recentf"
 draft = false
-weight = 4
 +++
 
 ```elisp

@@ -1,7 +1,6 @@
 +++
 title = "8.3. hydra-package"
 draft = false
-weight = 3
 +++
 
 ```elisp

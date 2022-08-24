@@ -1,7 +1,6 @@
 +++
 title = "8.4. hydra-markdown"
 draft = false
-weight = 4
 +++
 
 ### [hydra-markdown]

@@ -3,35 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/undo-fu/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/dimmer/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
   </url>
   
   <url>
@@ -39,39 +11,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/cursor/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/sprit-window/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
   </url>
   
   <url>
@@ -79,39 +19,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/tempbuf/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/frame/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/winner/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
   </url>
   
   <url>
@@ -119,31 +27,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/doom-themes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
   </url>
   
   <url>
@@ -151,15 +35,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/history/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
   </url>
   
   <url>
@@ -167,27 +43,11 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/memo-tool/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/selected/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/utility-tool/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/fontawesome/</loc>
   </url>
   
   <url>
@@ -355,7 +215,59 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/dimmer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/sprit-window/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/tempbuf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/winner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-themes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/selected/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/fontawesome/</loc>
   </url>
   
   <url>
@@ -363,11 +275,27 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
   </url>
   
   <url>
@@ -379,7 +307,15 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
   </url>
   
   <url>
@@ -387,7 +323,71 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/undo-fu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
   </url>
   
   <url>

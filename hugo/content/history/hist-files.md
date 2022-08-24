@@ -1,7 +1,6 @@
 +++
 title = "9.6. hist-files"
 draft = false
-weight = 6
 +++
 ```elisp
 ;; change-default-file-location

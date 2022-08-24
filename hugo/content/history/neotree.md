@@ -1,7 +1,6 @@
 +++
 title = "9.8. neotree"
 draft = false
-weight = 8
 +++
 
 ```elisp

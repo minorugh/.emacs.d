@@ -1,7 +1,6 @@
 +++
 title = "8.6. hydra-browse"
 draft = false
-weight = 6
 +++
 
 ```elisp

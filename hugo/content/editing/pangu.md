@@ -1,7 +1,6 @@
 +++
 title = "7.13. pangu-spacing"
 draft = false
-weight = 13
 +++
 
 ```elisp

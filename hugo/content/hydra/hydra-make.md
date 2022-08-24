@@ -1,7 +1,6 @@
 +++
 title = "8.2. hydra-make"
 draft = false
-weight = 2
 +++
 
 ### [hydra-make] 

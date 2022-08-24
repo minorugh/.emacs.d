@@ -7,369 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>7.1. markdown-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/markdown/</guid>
-      <description>5.2. markdownモード markdown-mode.el は、Markdown形式のテキストを編集するための主要なモードです。
-(leaf markdown-mode :ensure t :mode (&amp;#34;\\.md\\&amp;#39;&amp;#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-code-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedown を使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。
-https://github.com/shime/emacs-livedown
-npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
-$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。
-(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((&amp;#34;C-c C-c p&amp;#34; . livedown-preview) (&amp;#34;C-c C-c k&amp;#34; . livedown-kill))) </description>
-    </item>
-    
-    <item>
-      <title>8.1. hydra-menu</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</guid>
-      <description>hydramenu は、いわば私の秘書のような役割です。 便宜上二つに分けていますが、どちらからでも相互にトグルで呼び出せるようにしています。  [hydra-quick-menu] Quick Dired hydra-quick-menu 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。 よく使うアプリ起動のショートカットなども設定しておくと便利です。
-(leaf *hydra-quick-menu :bind (&amp;#34;M-.&amp;#34; . hydra-quick/body) :hydra (hydra-quick (:hint nil :exit t) &amp;#34;  Quick Menu ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------------------------------------------------------------------------- _d_ropbox _e_macs.d^^ _i_nits _x_srv.jp^^^^ GH:_h_ root:_/_ _s_rc _._files howm:_@__,_ _m_d:_p_view _z_illa _r_estart magit_[__]_ _t_ramp _y_as:_n_:_v_ _j_unk _b_rowse _o_rg _&amp;lt;home&amp;gt;_ _c_ompile^^ make:_k_._g_ _a_g:🐾 &amp;#34; (&amp;#34;a&amp;#34; counsel-ag) (&amp;#34;o&amp;#34; my:org-dir) (&amp;#34;t&amp;#34; counsel-tramp) (&amp;#34;q&amp;#34; my:tramp-quit) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; my:home-dir) (&amp;#34;d&amp;#34; my:dropbox) (&amp;#34;.&amp;#34; my:dotfiles-dir) (&amp;#34;i&amp;#34; my:inits-dir) (&amp;#34;e&amp;#34; my:emacs-dir) (&amp;#34;h&amp;#34; my:gh-dir) (&amp;#34;x&amp;#34; my:xsrv-dir) (&amp;#34;y&amp;#34; company-yasnippet) (&amp;#34;n&amp;#34; yas/new-snippet) (&amp;#34;v&amp;#34; yas/visit-snippet-file) (&amp;#34;r&amp;#34; restart-emacs) (&amp;#34;m&amp;#34; hydra-markdown/body) (&amp;#34;p&amp;#34; livedown-preview) (&amp;#34;w&amp;#34; livedown-kill) (&amp;#34;b&amp;#34; hydra-browse/body) (&amp;#34;c&amp;#34; hydra-make/body) (&amp;#34;-&amp;#34; my:github-show) (&amp;#34;@&amp;#34; howm-list-all) (&amp;#34;,&amp;#34; howm-remember) (&amp;#34;j&amp;#34; open-junk-file) (&amp;#34;J&amp;#34; open-last-junk-file) (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;/&amp;#34; my:root-dir) (&amp;#34;_&amp;#34; my:delete-other-windows) (&amp;#34;[&amp;#34; git-timemachine-toggle) (&amp;#34;]&amp;#34; magit-status) (&amp;#34;s&amp;#34; my:scr-dir) (&amp;#34;l&amp;#34; my:open-capture) (&amp;#34;:&amp;#34; view-mode) (&amp;#34;z&amp;#34; filezilla) (&amp;#34;M-.</description>
-    </item>
-    
-    <item>
-      <title>9.1. auto-save-buffer-enhanced</title>
-      <link>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
-      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
-    </item>
-    
-    <item>
-      <title>9.2. undo-fua</title>
-      <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
-      <description>8.3. [undo-fu] シンプルな undo/redo を提供 undo-fu はシンプルな undo/redo 機能を提供してくれるやつです。
-昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
-(leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
-    </item>
-    
-    <item>
-      <title>5.2. dimmer-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
-      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
-(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
-下記の通り発想転換すれば呪縛から逃れることができます。
- 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
-    </item>
-    
-    <item>
-      <title>7.2. veiw-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/view/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/view/</guid>
-      <description>5.3. viewモード 特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに view-mode を使います。
-下記の設定では、my:auto-view-dirs に追加したディレクトリのファイルを開くと view-mode が常に有効になります．
-(leaf view :hook (find-file-hook . my:auto-view) (server-visit-hook . my:unlock-view-mode) :chord (&amp;#34;::&amp;#34; . view-mode) :bind (:view-mode-map (&amp;#34;h&amp;#34; . backward-char) (&amp;#34;l&amp;#34; . forward-char) (&amp;#34;a&amp;#34; . beginning-of-buffer) (&amp;#34;e&amp;#34; . end-of-buffer) (&amp;#34;w&amp;#34; . forward-word) (&amp;#34;b&amp;#34; . scroll-down) (&amp;#34;c&amp;#34; . kill-ring-save) (&amp;#34;r&amp;#34; . xref-find-references) (&amp;#34;RET&amp;#34; . xref-find-definitions) (&amp;#34;x&amp;#34; . my:view-del-char) (&amp;#34;y&amp;#34; . my:view-yank) (&amp;#34;d&amp;#34; . my:view-kill-region) (&amp;#34;u&amp;#34; . my:view-undo) (&amp;#34;m&amp;#34; . magit-status) (&amp;#34;g&amp;#34; .</description>
-    </item>
-    
-    <item>
-      <title>8.2. hydra-make</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
-      <description>[hydra-make] ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Make command configurations ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *user-make-configulation :mode ((&amp;#34;\\.mak\\&amp;#39;&amp;#34; &amp;#34;makefile\\&amp;#39;&amp;#34;) . makefile-mode) :hydra (hydra-make (:hint nil :exit t) &amp;#34;  make:_k_ _u_psftp _m_ove _d_raft _b_klog _g_it _s_ort _c_lean 🐾 &amp;#34; (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;u&amp;#34; my:make-upsftp) (&amp;#34;m&amp;#34; my:make-move) (&amp;#34;d&amp;#34; my:make-draft) (&amp;#34;b&amp;#34; my:make-bklog) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;s&amp;#34; my:make-sort) (&amp;#34;c&amp;#34; my:make-clean) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (setq compilation-scroll-output t) (setq compilation-always-kill t) (setq compilation-finish-functions &amp;#39;compile-autoclose) (defun compile-autoclose (buffer string) &amp;#34;Automatically close the compilation buffer.&amp;#34; (cond ((string-match &amp;#34;finished&amp;#34; string) (bury-buffer &amp;#34;*compilation*&amp;#34;) (delete-other-windows) (message &amp;#34;Build successful.</description>
-    </item>
-    
-    <item>
-      <title>5.3. scrool-other-Window</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
-      <description>Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。
-一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
-(leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
-    </item>
-    
-    <item>
-      <title>7.3. web-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/web-mode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/web-mode/</guid>
-      <description>[web-mode] HTML編集をサポート HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。
-出来上がったHTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
-(leaf web-mode :ensure t :mode (&amp;#34;\\.js?\\&amp;#39;&amp;#34; &amp;#34;\\.html?\\&amp;#39;&amp;#34; &amp;#34;\\.php?\\&amp;#39;&amp;#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
-    </item>
-    
-    <item>
-      <title>8.3. hydra-package</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</guid>
-      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for package utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf package-utils :ensure t :chord (&amp;#34;p@&amp;#34; . hydra-package/body) :hydra (hydra-package (:color red :hint nil) &amp;#34; 📦 Package: _m_elpa _i_nstall upgrade:_l_ist._n_ame._a_ll _r_emove _e_l-get &amp;#34; (&amp;#34;i&amp;#34; package-install) (&amp;#34;l&amp;#34; package-utils-list-upgrades) (&amp;#34;n&amp;#34; package-utils-upgrade-by-name) (&amp;#34;r&amp;#34; package-utils-remove-by-name) (&amp;#34;a&amp;#34; package-utils-upgrade-all-and-restart) (&amp;#34;m&amp;#34; package-list-packages) (&amp;#34;e&amp;#34; select-elget-command) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :preface (defun select-elget-command () &amp;#34;Narrow the only el-get command in `M-x&amp;#39;.&amp;#34; (interactive) (counsel-M-x &amp;#34;^el-get &amp;#34;))) </description>
-    </item>
-    
-    <item>
-      <title>9.3. auto-delete</title>
-      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
-      <description>空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
-下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
-(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
-    </item>
-    
-    <item>
-      <title>5.4. sprit-window-functions</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
-      <description>dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
- 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
-    </item>
-    
-    <item>
-      <title>7.4. yatex</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/yatex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/yatex/</guid>
-      <description>5.6. [yatex] YaTexで LaTex編集 yatex.el は、Emacsの上で動作する LaTeX の入力支援環境です。
-ごく一般的な設定例ですが、参考になるとしたら dviprint-command-format に dvpd.sh というスクリプトを設定して、YateX.lpr コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
-(leaf yatex :ensure t :mode (&amp;#34;\\.tex\\&amp;#39;&amp;#34; &amp;#34;\\.sty\\&amp;#39;&amp;#34; &amp;#34;\\.cls\\&amp;#39;&amp;#34;) :custom `((tex-command . &amp;#34;platex&amp;#34;) (dviprint-command-format . &amp;#34;dvpd.sh %s&amp;#34;) (YaTeX-kanji-code . nil) (YaTeX-latex-message-code . &amp;#39;utf-8) (YaTeX-default-pop-window-height . 15)) :config (leaf yatexprc :bind ((&amp;#34;M-c&amp;#34; . YaTeX-typeset-buffer) (&amp;#34;M-v&amp;#34; . YaTeX-lpr)))) YaTeX-lpr は、dviprint-command-format を呼び出すコマンドです。
-dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、chmod +x dvpd.sh  として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。
-[dvpd.sh]
-#!/bin/sh name=$1 dvipdfmx $1 &amp;amp;&amp;amp; evince ${name%.</description>
-    </item>
-    
-    <item>
-      <title>8.4. hydra-markdown</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
-      <description>[hydra-markdown] (leaf *hydra-markdown :hydra (hydra-markdown (:color red :hint nil) &amp;#34;  Markdown: _i_talic 消線:_x_ foot_n_ote _t_able _m_arkup pre_v_iew md2:_p_df:_d_ocx&amp;#34; (&amp;#34;i&amp;#34; markdown-insert-italic) (&amp;#34;x&amp;#34; markdown-insert-strike-through) (&amp;#34;t&amp;#34; markdown-insert-table) (&amp;#34;n&amp;#34; markdown-insert-footnote) (&amp;#34;m&amp;#34; markdown-toggle-markup-hiding) (&amp;#34;v&amp;#34; livedown-preview) ;; Pndoc (&amp;#34;p&amp;#34; md2pdf) (&amp;#34;d&amp;#34; md2docx) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (leaf emacs-livedown :el-get shime/emacs-livedown) (custom-set-variables &amp;#39;(markdown-toc-user-toc-structure-manipulation-fn &amp;#39;cdr)) :config (defun md2pdf () &amp;#34;Generate pdf from currently open markdown.&amp;#34; (interactive) (let ((filename (buffer-file-name (current-buffer)))) ;; Use wkhtmltopdf without latex (shell-command-to-string (concat &amp;#34;pandoc &amp;#34; filename &amp;#34; -f markdown -t html5 -o &amp;#34; (file-name-sans-extension filename) &amp;#34;.</description>
-    </item>
-    
-    <item>
-      <title>9.4. recentf</title>
-      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
-      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
-    </item>
-    
-    <item>
-      <title>5.5. tempbuf</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
-      <description> tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
- my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
-    </item>
-    
-    <item>
-      <title>7.5. darkroom</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/darkroom/</guid>
-      <description>[darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
-https://github.com/joaotavora/darkroom
-[F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
-yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
-(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.&amp;#34; (interactive) (revert-buffer t t))) </description>
-    </item>
-    
-    <item>
-      <title>8.5. hydra-view-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</guid>
-      <description>[hydra-view-mode] view-modeのヘルプ機能 vew-mode でバッファーを開いているとき、[.]/[?] キーを打つことでhydraが発動するようにしています。
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; hydra view mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-view-mode :hydra (hydra-view (:color red :hint nil) &amp;#34;  View mode -----------------------^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------------------------------------ _x_:del-chra _u_:undo winner:_[__]_ _s_wiper :_o_._0_._1_._2_ _%_:paren _-__\/__+_ help_._ _d_:del-line _y_:yank x_r_ef🐾_RET_ _g_oogle _w_:for-word^^^^^^ _@_:point _m_agit^^^^ ex_i_t_:_ &amp;#34; (&amp;#34;r&amp;#34; xref-find-references) (&amp;#34;RET&amp;#34; xref-find-definitions) (&amp;#34;x&amp;#34; my:view-del-char) (&amp;#34;w&amp;#34; forward-word) (&amp;#34;d&amp;#34; my:view-kill-region) (&amp;#34;y&amp;#34; my:view-yank) (&amp;#34;u&amp;#34; my:view-undo) (&amp;#34;[&amp;#34; winner-undo) (&amp;#34;]&amp;#34; winner-redo) (&amp;#34;n&amp;#34; my:org-view-next-heading) (&amp;#34;p&amp;#34; my:org-view-previous-heading) (&amp;#34;%&amp;#34; my:jump-brace) (&amp;#34;@&amp;#34; counsel-mark-ring) (&amp;#34;i&amp;#34; View-exit-and-edit :exit t) (&amp;#34;:&amp;#34; View-exit-and-edit :exit t) (&amp;#34;s&amp;#34; swiper-thing-at-point) (&amp;#34;m&amp;#34; magit-status) (&amp;#34;g&amp;#34; my:google) (&amp;#34;o&amp;#34; other-window-or-split) (&amp;#34;0&amp;#34; my:delete-window) (&amp;#34;1&amp;#34; my:delete-other-windows) (&amp;#34;2&amp;#34; my:split-window-below) (&amp;#34;3&amp;#34; my:split-window-right) (&amp;#34;+&amp;#34; text-scale-increase) (&amp;#34;-&amp;#34; text-scale-decrease) (&amp;#34;/&amp;#34; (text-scale-set 0)) (&amp;#34;.</description>
-    </item>
-    
-    <item>
-      <title>9.5. savehist</title>
-      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
-      <description>;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
-    </item>
-    
-    <item>
-      <title>5.6. winner-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
-      <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</description>
-    </item>
-    
-    <item>
-      <title>7.6. ivy / counsel</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/ivy/</guid>
-      <description>ivy は、helm と双璧を成す Emacsの補完システムです。
-リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。 このシンプルかつ極めて重要なタスクを ivy が手助けしてくれます．
-(leaf counsel :ensure t :defer-config (ivy-mode) :bind ((&amp;#34;C-r&amp;#34; . swiper-thing-at-point) (&amp;#34;C-s&amp;#34; . swiper-region) (&amp;#34;C-:&amp;#34; . counsel-switch-buffer) (&amp;#34;s-a&amp;#34; . counsel-ag) (&amp;#34;s-r&amp;#34; . counsel-rg) (&amp;#34;s-f&amp;#34; . counsel-fontawesome) (&amp;#34;M-x&amp;#34; . counsel-M-x) (&amp;#34;M-y&amp;#34; . counsel-yank-pop) (&amp;#34;C-x m&amp;#34; . counsel-mark-ring) (&amp;#34;C-x C-b&amp;#34; . ibuffer) (&amp;#34;C-x C-f&amp;#34; . counsel-find-file) (&amp;#34;C-x C-r&amp;#34; . counsel-recentf)) :custom `((search-default-mode . nil) (ivy-use-virtual-buffers . t) (ivy-use-selectable-prompt . t) (enable-recursive-minibuffers . t) (counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions)) (ivy-format-functions-alist .</description>
-    </item>
-    
-    <item>
-      <title>8.6. hydra-browse</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</guid>
-      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for favorite utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-browse :hydra (hydra-browse (:hint nil :exit t) &amp;#34; ^ Shop^ ^ SNS^ ^🔃 Repos^ ^ Blog^ ^ Life^ ^ Social^ ^ Github^ oogle ^^^^^^^^------------------------------------------------------------------------------------------------------------------ _A_: Amazon _t_: Twitter _d_: Dropbox _g_: ghub.io _j_: Jorudan _k_: Keep _1_: minorugh _5_: Translate _R_: Rakuten _y_: Youtube _f_: Flickr _x_: xsrv.jp _n_: News _p_: Pocket _2_: gist _6_: Map _Y_: Yodobashi _I_: Instagram _G_: Gdrive _e_: Essay _w_: Weather _q_: Qiita _3_: explore _7_: Earth _K_: Kakaku _T_: Tumblr _X_: Xserver _b_: Blog _S_: SanyoBas _s_: Slack _4_: Centaur _8_: Photo &amp;#34; (&amp;#34;A&amp;#34; (browse-url &amp;#34;https://www.</description>
-    </item>
-    
-    <item>
-      <title>9.6. hist-files</title>
-      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
-      <description>;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
-    </item>
-    
-    <item>
-      <title>5.7. doom-thmes</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
-      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
-    </item>
-    
-    <item>
-      <title>7.7. yasunippets / company</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/company/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/company/</guid>
-      <description>(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) (leaf company :ensure t :hook (after-init-hook . global-company-mode) :bind ((&amp;#34;C-&amp;lt;return&amp;gt;&amp;#34; . company-complete) (&amp;#34;C-&amp;lt;tab&amp;gt;&amp;#34; . company-yasnippet) (:company-active-map (&amp;#34;&amp;lt;tab&amp;gt;&amp;#34; . company-complete-common-or-cycle) (&amp;#34;&amp;lt;backtab&amp;gt;&amp;#34; . company-select-previous) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . company-abort))) :custom `((company-transformers . &amp;#39;(company-sort-by-backend-importance)) (company-idle-delay . 0) (company-require-match . &amp;#39;never) (company-minimum-prefix-length . 2) (company-selection-wrap-around . t) (completion-ignore-case . t) (company-dabbrev-downcase . nil)) :config (defvar company-mode/enable-yas t &amp;#34;Enable yasnippet for all backends.&amp;#34;) (defun company-mode/backend-with-yas (backend) (if (or (not company-mode/enable-yas) (and (listp backend) (member &amp;#39;company-yasnippet backend))) backend (append (if (consp backend) backend (list backend)) &amp;#39;(:with company-yasnippet)))) (setq company-backends (mapcar #&amp;#39;company-mode/backend-with-yas company-backends))) </description>
-    </item>
-    
-    <item>
-      <title>9.7. dired</title>
-      <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/dired/</guid>
-      <description>(leaf dired :hook ((dired-mode-hook . dired-my-append-buffer-name-hint) (dired-mode-hook . (lambda () (load &amp;#34;dired-x&amp;#34;) (dired-omit-mode 1)))) :bind (:dired-mode-map (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . dired-up-alternate-directory) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;RET&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;&amp;lt;&amp;#34; . beginning-of-buffer) (&amp;#34;&amp;gt;&amp;#34; . end-of-buffer) (&amp;#34;SPC&amp;#34; . my:dired-toggle-mark) (&amp;#34;C-g&amp;#34; . my:dired-unmark-all) (&amp;#34;f&amp;#34; . counsel-find-file) (&amp;#34;r&amp;#34; . wdired-change-to-wdired-mode) (&amp;#34;o&amp;#34; . dired-open-file) (&amp;#34;[&amp;#34; . dired-hide-details-mode) (&amp;#34;a&amp;#34; . toggle-dired-listing-switches) (&amp;#34;q&amp;#34; . dired-dwim-quit-window) (&amp;#34;i&amp;#34; . call-sxiv) (&amp;#34;s&amp;#34; . sudo-edit) (&amp;#34;e&amp;#34; . gedit-open-dired) (&amp;#34;@&amp;#34; . dired-do-gist) (&amp;#34;.&amp;#34; . dired-omit-mode)) :custom `((dired-dwim-target .</description>
-    </item>
-    
-    <item>
-      <title>5.8. doom-modeline</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
-      <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
-    </item>
-    
-    <item>
-      <title>7.8. key-chord</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/key-chord/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/key-chord/</guid>
-      <description>[key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;#34;df&amp;#34; . counsel-descbinds) (&amp;#34;l;&amp;#34; . init-loader-show-log) (&amp;#34;@@&amp;#34; . howm-list-all) (&amp;#34;jk&amp;#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
-改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</description>
-    </item>
-    
-    <item>
-      <title>9.8. neotree</title>
-      <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
-      <description>(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) (with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.&amp;#34; (interactive) (text-scale-adjust 0) (text-scale-decrease 0.8) (message nil)) (add-hook &amp;#39;neo-after-create-hook (lambda (_) (call-interactively &amp;#39;neotree-text-scale))) ;; neotree enter hide ;; Tips from https://github.com/jaypei/emacs-neotree/issues/77 (defun neo-open-file-hide (full-path &amp;amp;optional arg) &amp;#34;Neotree enter hide with FULL-PATH ARG.</description>
-    </item>
-    
-    <item>
-      <title>7.9. smartparens</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
-      <description>対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
-(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) </description>
-    </item>
-    
-    <item>
-      <title>7.10. iedit</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
-      <description>[iedit] 選択領域を別の文字列に置き換える  idet.el は、バッファー内の複数箇所を同時に編集するツールです。  同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
- multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
-対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
-ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
-かなりの頻度で使うので、Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドしています。</description>
-    </item>
-    
-    <item>
-      <title>7.11. migemo</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
-      <description>[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。
-$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。
-$ cmigemo --help Emacsの設定は下記のとおりです。
-(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) [swiper-migemo] swiperでもmigemoを使う avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
-つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
-(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) </description>
-    </item>
-    
-    <item>
-      <title>7.12. selected</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
-      <description>[selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
-Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
-(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
-(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
-    </item>
-    
-    <item>
-      <title>7.13. pangu-spacing</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/pangu/</guid>
-      <description>;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
-    </item>
-    
-    <item>
-      <title>7.14. fontawesome</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
-      <description>Font-awesome の入力をcounsel で支援してくれる。
-(leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
-    </item>
-    
-    <item>
       <title>1.1. eary-init.el</title>
       <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -787,6 +424,90 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
     </item>
     
     <item>
+      <title>5.2. dimmer-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
+      <description>dimmer.el は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。  takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
+(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) Sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
+下記の通り発想転換すれば呪縛から逃れることができます。
+ 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
+    </item>
+    
+    <item>
+      <title>5.3. scrool-other-Window</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
+      <description>Scrool-other-Window は、deactive なwindowをスクロールさせるための設定です。
+一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
+(leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
+    </item>
+    
+    <item>
+      <title>5.4. sprit-window-functions</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
+      <description>dimmer-mode との連携をさせるために、デフォルトのキーバインドをカスタマイズします。
+ 同じバッファーを分割したときは、follow-mode にする。 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *cus-sprit-window :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.&amp;#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () &amp;#34;With turn off dimmer.</description>
+    </item>
+    
+    <item>
+      <title>5.5. tempbuf</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
+      <description> tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
+ my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
+    </item>
+    
+    <item>
+      <title>5.6. winner-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
+      <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。</description>
+    </item>
+    
+    <item>
+      <title>5.7. doom-thmes</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
+      <description>(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) </description>
+    </item>
+    
+    <item>
+      <title>5.8. doom-modeline</title>
+      <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
+      <description>(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
+    </item>
+    
+    <item>
+      <title>7.1. markdown-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/markdown/</guid>
+      <description>5.2. markdownモード markdown-mode.el は、Markdown形式のテキストを編集するための主要なモードです。
+(leaf markdown-mode :ensure t :mode (&amp;#34;\\.md\\&amp;#39;&amp;#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-code-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedown を使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。
+https://github.com/shime/emacs-livedown
+npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
+$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。
+(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((&amp;#34;C-c C-c p&amp;#34; . livedown-preview) (&amp;#34;C-c C-c k&amp;#34; . livedown-kill))) </description>
+    </item>
+    
+    <item>
       <title>7.1. which-key</title>
       <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -794,6 +515,64 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
       <description>[which-key] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
 (leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
+    </item>
+    
+    <item>
+      <title>7.10. iedit</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
+      <description>[iedit] 選択領域を別の文字列に置き換える  idet.el は、バッファー内の複数箇所を同時に編集するツールです。  同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。
+ multi-cursors.el replace-from-region.el anzu.el  MELPAからpackage-installするだけで使えます。
+対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
+ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。
+かなりの頻度で使うので、Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドしています。</description>
+    </item>
+    
+    <item>
+      <title>7.11. migemo</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/migemo/</guid>
+      <description>[migemo] ローマ字のまま日本語をインクリメンタル検索可能にする。 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。
+$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。
+$ cmigemo --help Emacsの設定は下記のとおりです。
+(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) [swiper-migemo] swiperでもmigemoを使う avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
+つい最近、avy-migemo を使わない swiper-migemoを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-get で取得しています。
+(leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) </description>
+    </item>
+    
+    <item>
+      <title>7.12. selected</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/selected/</guid>
+      <description>[selected] リージョン選択時のアクションを制御 selected.el は、選択領域に対するスピードコマンドです。
+Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。 コマンドの数が増えてきたら、ヘルプ代わりに使える counsel-selected も便利そうです。
+(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (&amp;#34;;&amp;#34; . comment-dwim) (&amp;#34;c&amp;#34; . clipboard-kill-ring-save) (&amp;#34;s&amp;#34; . swiper-thing-at-point) (&amp;#34;t&amp;#34; . google-translate-auto) (&amp;#34;T&amp;#34; . chromium-translate) (&amp;#34;W&amp;#34; . my:weblio) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;e&amp;#34; . my:eijiro) (&amp;#34;g&amp;#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。
+(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&amp;#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format &amp;#34;https://www.</description>
+    </item>
+    
+    <item>
+      <title>7.13. pangu-spacing</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/pangu/</guid>
+      <description>;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
+    </item>
+    
+    <item>
+      <title>7.14. fontawesome</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/fontawesome/</guid>
+      <description>Font-awesome の入力をcounsel で支援してくれる。
+(leaf fontawesome :ensure t :bind (&amp;#34;s-f&amp;#34; . counsel-fontwesame)) </description>
     </item>
     
     <item>
@@ -806,6 +585,17 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
  domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) all-the-icons-dired dired でファイルのアイコンを表示します。
  Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) all-the-icons-ivy-rich ivy-mode でアイコン表示をします。</description>
+    </item>
+    
+    <item>
+      <title>7.2. veiw-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/view/</guid>
+      <description>5.3. viewモード 特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに view-mode を使います。
+下記の設定では、my:auto-view-dirs に追加したディレクトリのファイルを開くと view-mode が常に有効になります．
+(leaf view :hook (find-file-hook . my:auto-view) (server-visit-hook . my:unlock-view-mode) :chord (&amp;#34;::&amp;#34; . view-mode) :bind (:view-mode-map (&amp;#34;h&amp;#34; . backward-char) (&amp;#34;l&amp;#34; . forward-char) (&amp;#34;a&amp;#34; . beginning-of-buffer) (&amp;#34;e&amp;#34; . end-of-buffer) (&amp;#34;w&amp;#34; . forward-word) (&amp;#34;b&amp;#34; . scroll-down) (&amp;#34;c&amp;#34; . kill-ring-save) (&amp;#34;r&amp;#34; . xref-find-references) (&amp;#34;RET&amp;#34; . xref-find-definitions) (&amp;#34;x&amp;#34; . my:view-del-char) (&amp;#34;y&amp;#34; . my:view-yank) (&amp;#34;d&amp;#34; . my:view-kill-region) (&amp;#34;u&amp;#34; . my:view-undo) (&amp;#34;m&amp;#34; . magit-status) (&amp;#34;g&amp;#34; .</description>
     </item>
     
     <item>
@@ -822,12 +612,50 @@ darkroom-mode では、
     </item>
     
     <item>
+      <title>7.3. web-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/web-mode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/web-mode/</guid>
+      <description>[web-mode] HTML編集をサポート HTML編集をするならweb-mode がお勧めなのですが、私の場合あまり使っていません。
+出来上がったHTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
+(leaf web-mode :ensure t :mode (&amp;#34;\\.js?\\&amp;#39;&amp;#34; &amp;#34;\\.html?\\&amp;#39;&amp;#34; &amp;#34;\\.php?\\&amp;#39;&amp;#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
+    </item>
+    
+    <item>
       <title>7.4. display-number-mode</title>
       <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/display-number/</guid>
       <description>(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
+    </item>
+    
+    <item>
+      <title>7.4. yatex</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/yatex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/yatex/</guid>
+      <description>5.6. [yatex] YaTexで LaTex編集 yatex.el は、Emacsの上で動作する LaTeX の入力支援環境です。
+ごく一般的な設定例ですが、参考になるとしたら dviprint-command-format に dvpd.sh というスクリプトを設定して、YateX.lpr コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
+(leaf yatex :ensure t :mode (&amp;#34;\\.tex\\&amp;#39;&amp;#34; &amp;#34;\\.sty\\&amp;#39;&amp;#34; &amp;#34;\\.cls\\&amp;#39;&amp;#34;) :custom `((tex-command . &amp;#34;platex&amp;#34;) (dviprint-command-format . &amp;#34;dvpd.sh %s&amp;#34;) (YaTeX-kanji-code . nil) (YaTeX-latex-message-code . &amp;#39;utf-8) (YaTeX-default-pop-window-height . 15)) :config (leaf yatexprc :bind ((&amp;#34;M-c&amp;#34; . YaTeX-typeset-buffer) (&amp;#34;M-v&amp;#34; . YaTeX-lpr)))) YaTeX-lpr は、dviprint-command-format を呼び出すコマンドです。
+dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、chmod +x dvpd.sh  として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。
+[dvpd.sh]
+#!/bin/sh name=$1 dvipdfmx $1 &amp;amp;&amp;amp; evince ${name%.</description>
+    </item>
+    
+    <item>
+      <title>7.5. darkroom</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/darkroom/</guid>
+      <description>[darkroom-mode] 執筆モード darkroom.el は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
+https://github.com/joaotavora/darkroom
+[F12] キーで IN/OUT をトグルしています。 darkroom-mode から抜けるときは、revert-buffer で再読込してもとに戻します。
+yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
+(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.&amp;#34; (interactive) (revert-buffer t t))) </description>
     </item>
     
     <item>
@@ -851,6 +679,17 @@ darkroom-mode では、
     </item>
     
     <item>
+      <title>7.6. ivy / counsel</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/ivy/</guid>
+      <description>ivy は、helm と双璧を成す Emacsの補完システムです。
+リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。 このシンプルかつ極めて重要なタスクを ivy が手助けしてくれます．
+(leaf counsel :ensure t :defer-config (ivy-mode) :bind ((&amp;#34;C-r&amp;#34; . swiper-thing-at-point) (&amp;#34;C-s&amp;#34; . swiper-region) (&amp;#34;C-:&amp;#34; . counsel-switch-buffer) (&amp;#34;s-a&amp;#34; . counsel-ag) (&amp;#34;s-r&amp;#34; . counsel-rg) (&amp;#34;s-f&amp;#34; . counsel-fontawesome) (&amp;#34;M-x&amp;#34; . counsel-M-x) (&amp;#34;M-y&amp;#34; . counsel-yank-pop) (&amp;#34;C-x m&amp;#34; . counsel-mark-ring) (&amp;#34;C-x C-b&amp;#34; . ibuffer) (&amp;#34;C-x C-f&amp;#34; . counsel-find-file) (&amp;#34;C-x C-r&amp;#34; . counsel-recentf)) :custom `((search-default-mode . nil) (ivy-use-virtual-buffers . t) (ivy-use-selectable-prompt . t) (enable-recursive-minibuffers . t) (counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions)) (ivy-format-functions-alist .</description>
+    </item>
+    
+    <item>
       <title>7.7. imenu-list</title>
       <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -859,6 +698,15 @@ darkroom-mode では、
       <description>6.12. [imenu-list] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
 (leaf imenu-list :ensure t :bind (&amp;quot;&amp;lt;f2&amp;gt;&amp;quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &#39;left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。
 (leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) </description>
+    </item>
+    
+    <item>
+      <title>7.7. yasunippets / company</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/company/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/company/</guid>
+      <description>(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) (leaf company :ensure t :hook (after-init-hook . global-company-mode) :bind ((&amp;#34;C-&amp;lt;return&amp;gt;&amp;#34; . company-complete) (&amp;#34;C-&amp;lt;tab&amp;gt;&amp;#34; . company-yasnippet) (:company-active-map (&amp;#34;&amp;lt;tab&amp;gt;&amp;#34; . company-complete-common-or-cycle) (&amp;#34;&amp;lt;backtab&amp;gt;&amp;#34; . company-select-previous) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . company-abort))) :custom `((company-transformers . &amp;#39;(company-sort-by-backend-importance)) (company-idle-delay . 0) (company-require-match . &amp;#39;never) (company-minimum-prefix-length . 2) (company-selection-wrap-around . t) (completion-ignore-case . t) (company-dabbrev-downcase . nil)) :config (defvar company-mode/enable-yas t &amp;#34;Enable yasnippet for all backends.&amp;#34;) (defun company-mode/backend-with-yas (backend) (if (or (not company-mode/enable-yas) (and (listp backend) (member &amp;#39;company-yasnippet backend))) backend (append (if (consp backend) backend (list backend)) &amp;#39;(:with company-yasnippet)))) (setq company-backends (mapcar #&amp;#39;company-mode/backend-with-yas company-backends))) </description>
     </item>
     
     <item>
@@ -872,12 +720,164 @@ darkroom-mode では、
     </item>
     
     <item>
+      <title>7.8. key-chord</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/key-chord/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/key-chord/</guid>
+      <description>[key-chord.el] 同時押しでキーバインド  同時押しというキーバインドを提供してくれるやつ 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。  (leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((&amp;#34;df&amp;#34; . counsel-descbinds) (&amp;#34;l;&amp;#34; . init-loader-show-log) (&amp;#34;@@&amp;#34; . howm-list-all) (&amp;#34;jk&amp;#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。
+改良版の作者の記事だと、直後判定は 0.25 秒で設定されていたが自分は Hydra の起動にも使っている上に、よく使うやつは覚えているので表示を待たずに次のキーを押すので 0.25 秒も待っていられないという事情があった。</description>
+    </item>
+    
+    <item>
+      <title>7.9. smartparens</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
+      <description>対応する括弧の挿入をアシスト smartparens.el の設定がいまいちよくわからず、とりあえず次のように設定して今のところ機嫌よく働いている。
+(leaf smartparens :ensure t :require smartparens-config :hook (prog-mode-hook . turn-on-smartparens-mode) :config (smartparens-global-mode t)) </description>
+    </item>
+    
+    <item>
       <title>7.9. toggle-fullscreen</title>
       <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
       <description>(global-set-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-fullscreen&amp;#39;) </description>
+    </item>
+    
+    <item>
+      <title>8.1. hydra-menu</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</guid>
+      <description>hydramenu は、いわば私の秘書のような役割です。 便宜上二つに分けていますが、どちらからでも相互にトグルで呼び出せるようにしています。  [hydra-quick-menu] Quick Dired hydra-quick-menu 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。 よく使うアプリ起動のショートカットなども設定しておくと便利です。
+(leaf *hydra-quick-menu :bind (&amp;#34;M-.&amp;#34; . hydra-quick/body) :hydra (hydra-quick (:hint nil :exit t) &amp;#34;  Quick Menu ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------------------------------------------------------------------------- _d_ropbox _e_macs.d^^ _i_nits _x_srv.jp^^^^ GH:_h_ root:_/_ _s_rc _._files howm:_@__,_ _m_d:_p_view _z_illa _r_estart magit_[__]_ _t_ramp _y_as:_n_:_v_ _j_unk _b_rowse _o_rg _&amp;lt;home&amp;gt;_ _c_ompile^^ make:_k_._g_ _a_g:🐾 &amp;#34; (&amp;#34;a&amp;#34; counsel-ag) (&amp;#34;o&amp;#34; my:org-dir) (&amp;#34;t&amp;#34; counsel-tramp) (&amp;#34;q&amp;#34; my:tramp-quit) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; my:home-dir) (&amp;#34;d&amp;#34; my:dropbox) (&amp;#34;.&amp;#34; my:dotfiles-dir) (&amp;#34;i&amp;#34; my:inits-dir) (&amp;#34;e&amp;#34; my:emacs-dir) (&amp;#34;h&amp;#34; my:gh-dir) (&amp;#34;x&amp;#34; my:xsrv-dir) (&amp;#34;y&amp;#34; company-yasnippet) (&amp;#34;n&amp;#34; yas/new-snippet) (&amp;#34;v&amp;#34; yas/visit-snippet-file) (&amp;#34;r&amp;#34; restart-emacs) (&amp;#34;m&amp;#34; hydra-markdown/body) (&amp;#34;p&amp;#34; livedown-preview) (&amp;#34;w&amp;#34; livedown-kill) (&amp;#34;b&amp;#34; hydra-browse/body) (&amp;#34;c&amp;#34; hydra-make/body) (&amp;#34;-&amp;#34; my:github-show) (&amp;#34;@&amp;#34; howm-list-all) (&amp;#34;,&amp;#34; howm-remember) (&amp;#34;j&amp;#34; open-junk-file) (&amp;#34;J&amp;#34; open-last-junk-file) (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;/&amp;#34; my:root-dir) (&amp;#34;_&amp;#34; my:delete-other-windows) (&amp;#34;[&amp;#34; git-timemachine-toggle) (&amp;#34;]&amp;#34; magit-status) (&amp;#34;s&amp;#34; my:scr-dir) (&amp;#34;l&amp;#34; my:open-capture) (&amp;#34;:&amp;#34; view-mode) (&amp;#34;z&amp;#34; filezilla) (&amp;#34;M-.</description>
+    </item>
+    
+    <item>
+      <title>8.2. hydra-make</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
+      <description>[hydra-make] ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Make command configurations ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *user-make-configulation :mode ((&amp;#34;\\.mak\\&amp;#39;&amp;#34; &amp;#34;makefile\\&amp;#39;&amp;#34;) . makefile-mode) :hydra (hydra-make (:hint nil :exit t) &amp;#34;  make:_k_ _u_psftp _m_ove _d_raft _b_klog _g_it _s_ort _c_lean 🐾 &amp;#34; (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;u&amp;#34; my:make-upsftp) (&amp;#34;m&amp;#34; my:make-move) (&amp;#34;d&amp;#34; my:make-draft) (&amp;#34;b&amp;#34; my:make-bklog) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;s&amp;#34; my:make-sort) (&amp;#34;c&amp;#34; my:make-clean) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (setq compilation-scroll-output t) (setq compilation-always-kill t) (setq compilation-finish-functions &amp;#39;compile-autoclose) (defun compile-autoclose (buffer string) &amp;#34;Automatically close the compilation buffer.&amp;#34; (cond ((string-match &amp;#34;finished&amp;#34; string) (bury-buffer &amp;#34;*compilation*&amp;#34;) (delete-other-windows) (message &amp;#34;Build successful.</description>
+    </item>
+    
+    <item>
+      <title>8.3. hydra-package</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</guid>
+      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for package utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf package-utils :ensure t :chord (&amp;#34;p@&amp;#34; . hydra-package/body) :hydra (hydra-package (:color red :hint nil) &amp;#34; 📦 Package: _m_elpa _i_nstall upgrade:_l_ist._n_ame._a_ll _r_emove _e_l-get &amp;#34; (&amp;#34;i&amp;#34; package-install) (&amp;#34;l&amp;#34; package-utils-list-upgrades) (&amp;#34;n&amp;#34; package-utils-upgrade-by-name) (&amp;#34;r&amp;#34; package-utils-remove-by-name) (&amp;#34;a&amp;#34; package-utils-upgrade-all-and-restart) (&amp;#34;m&amp;#34; package-list-packages) (&amp;#34;e&amp;#34; select-elget-command) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :preface (defun select-elget-command () &amp;#34;Narrow the only el-get command in `M-x&amp;#39;.&amp;#34; (interactive) (counsel-M-x &amp;#34;^el-get &amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title>8.4. hydra-markdown</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
+      <description>[hydra-markdown] (leaf *hydra-markdown :hydra (hydra-markdown (:color red :hint nil) &amp;#34;  Markdown: _i_talic 消線:_x_ foot_n_ote _t_able _m_arkup pre_v_iew md2:_p_df:_d_ocx&amp;#34; (&amp;#34;i&amp;#34; markdown-insert-italic) (&amp;#34;x&amp;#34; markdown-insert-strike-through) (&amp;#34;t&amp;#34; markdown-insert-table) (&amp;#34;n&amp;#34; markdown-insert-footnote) (&amp;#34;m&amp;#34; markdown-toggle-markup-hiding) (&amp;#34;v&amp;#34; livedown-preview) ;; Pndoc (&amp;#34;p&amp;#34; md2pdf) (&amp;#34;d&amp;#34; md2docx) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (leaf emacs-livedown :el-get shime/emacs-livedown) (custom-set-variables &amp;#39;(markdown-toc-user-toc-structure-manipulation-fn &amp;#39;cdr)) :config (defun md2pdf () &amp;#34;Generate pdf from currently open markdown.&amp;#34; (interactive) (let ((filename (buffer-file-name (current-buffer)))) ;; Use wkhtmltopdf without latex (shell-command-to-string (concat &amp;#34;pandoc &amp;#34; filename &amp;#34; -f markdown -t html5 -o &amp;#34; (file-name-sans-extension filename) &amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>8.5. hydra-view-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</guid>
+      <description>[hydra-view-mode] view-modeのヘルプ機能 vew-mode でバッファーを開いているとき、[.]/[?] キーを打つことでhydraが発動するようにしています。
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; hydra view mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-view-mode :hydra (hydra-view (:color red :hint nil) &amp;#34;  View mode -----------------------^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------------------------------------ _x_:del-chra _u_:undo winner:_[__]_ _s_wiper :_o_._0_._1_._2_ _%_:paren _-__\/__+_ help_._ _d_:del-line _y_:yank x_r_ef🐾_RET_ _g_oogle _w_:for-word^^^^^^ _@_:point _m_agit^^^^ ex_i_t_:_ &amp;#34; (&amp;#34;r&amp;#34; xref-find-references) (&amp;#34;RET&amp;#34; xref-find-definitions) (&amp;#34;x&amp;#34; my:view-del-char) (&amp;#34;w&amp;#34; forward-word) (&amp;#34;d&amp;#34; my:view-kill-region) (&amp;#34;y&amp;#34; my:view-yank) (&amp;#34;u&amp;#34; my:view-undo) (&amp;#34;[&amp;#34; winner-undo) (&amp;#34;]&amp;#34; winner-redo) (&amp;#34;n&amp;#34; my:org-view-next-heading) (&amp;#34;p&amp;#34; my:org-view-previous-heading) (&amp;#34;%&amp;#34; my:jump-brace) (&amp;#34;@&amp;#34; counsel-mark-ring) (&amp;#34;i&amp;#34; View-exit-and-edit :exit t) (&amp;#34;:&amp;#34; View-exit-and-edit :exit t) (&amp;#34;s&amp;#34; swiper-thing-at-point) (&amp;#34;m&amp;#34; magit-status) (&amp;#34;g&amp;#34; my:google) (&amp;#34;o&amp;#34; other-window-or-split) (&amp;#34;0&amp;#34; my:delete-window) (&amp;#34;1&amp;#34; my:delete-other-windows) (&amp;#34;2&amp;#34; my:split-window-below) (&amp;#34;3&amp;#34; my:split-window-right) (&amp;#34;+&amp;#34; text-scale-increase) (&amp;#34;-&amp;#34; text-scale-decrease) (&amp;#34;/&amp;#34; (text-scale-set 0)) (&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>8.6. hydra-browse</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</guid>
+      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for favorite utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-browse :hydra (hydra-browse (:hint nil :exit t) &amp;#34; ^ Shop^ ^ SNS^ ^🔃 Repos^ ^ Blog^ ^ Life^ ^ Social^ ^ Github^ oogle ^^^^^^^^------------------------------------------------------------------------------------------------------------------ _A_: Amazon _t_: Twitter _d_: Dropbox _g_: ghub.io _j_: Jorudan _k_: Keep _1_: minorugh _5_: Translate _R_: Rakuten _y_: Youtube _f_: Flickr _x_: xsrv.jp _n_: News _p_: Pocket _2_: gist _6_: Map _Y_: Yodobashi _I_: Instagram _G_: Gdrive _e_: Essay _w_: Weather _q_: Qiita _3_: explore _7_: Earth _K_: Kakaku _T_: Tumblr _X_: Xserver _b_: Blog _S_: SanyoBas _s_: Slack _4_: Centaur _8_: Photo &amp;#34; (&amp;#34;A&amp;#34; (browse-url &amp;#34;https://www.</description>
+    </item>
+    
+    <item>
+      <title>9.1. auto-save-buffer-enhanced</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
+      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+    </item>
+    
+    <item>
+      <title>9.2. undo-fua</title>
+      <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
+      <description>8.3. [undo-fu] シンプルな undo/redo を提供 undo-fu はシンプルな undo/redo 機能を提供してくれるやつです。
+昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
+(leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
+    </item>
+    
+    <item>
+      <title>9.3. auto-delete</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
+      <description>空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
+下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
+(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
+    </item>
+    
+    <item>
+      <title>9.4. recentf</title>
+      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
+      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
+    </item>
+    
+    <item>
+      <title>9.5. savehist</title>
+      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
+      <description>;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
+    </item>
+    
+    <item>
+      <title>9.6. hist-files</title>
+      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
+      <description>;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title>9.7. dired</title>
+      <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/dired/</guid>
+      <description>(leaf dired :hook ((dired-mode-hook . dired-my-append-buffer-name-hint) (dired-mode-hook . (lambda () (load &amp;#34;dired-x&amp;#34;) (dired-omit-mode 1)))) :bind (:dired-mode-map (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . dired-up-alternate-directory) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;RET&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;&amp;lt;&amp;#34; . beginning-of-buffer) (&amp;#34;&amp;gt;&amp;#34; . end-of-buffer) (&amp;#34;SPC&amp;#34; . my:dired-toggle-mark) (&amp;#34;C-g&amp;#34; . my:dired-unmark-all) (&amp;#34;f&amp;#34; . counsel-find-file) (&amp;#34;r&amp;#34; . wdired-change-to-wdired-mode) (&amp;#34;o&amp;#34; . dired-open-file) (&amp;#34;[&amp;#34; . dired-hide-details-mode) (&amp;#34;a&amp;#34; . toggle-dired-listing-switches) (&amp;#34;q&amp;#34; . dired-dwim-quit-window) (&amp;#34;i&amp;#34; . call-sxiv) (&amp;#34;s&amp;#34; . sudo-edit) (&amp;#34;e&amp;#34; . gedit-open-dired) (&amp;#34;@&amp;#34; . dired-do-gist) (&amp;#34;.&amp;#34; . dired-omit-mode)) :custom `((dired-dwim-target .</description>
+    </item>
+    
+    <item>
+      <title>9.8. neotree</title>
+      <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
+      <description>(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) (with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.&amp;#34; (interactive) (text-scale-adjust 0) (text-scale-decrease 0.8) (message nil)) (add-hook &amp;#39;neo-after-create-hook (lambda (_) (call-interactively &amp;#39;neotree-text-scale))) ;; neotree enter hide ;; Tips from https://github.com/jaypei/emacs-neotree/issues/77 (defun neo-open-file-hide (full-path &amp;amp;optional arg) &amp;#34;Neotree enter hide with FULL-PATH ARG.</description>
     </item>
     
   </channel>

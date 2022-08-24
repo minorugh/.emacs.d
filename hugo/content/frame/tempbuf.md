@@ -1,7 +1,6 @@
 +++
 title = "5.5. tempbuf"
 draft = false
-weight = 5
 +++
 
 * `tempbuf.el` は不要になったと思われるバッファを自動的に kill してくれるパッケージ。

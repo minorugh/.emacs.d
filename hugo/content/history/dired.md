@@ -1,7 +1,6 @@
 +++
 title = "9.7. dired"
 draft = false
-weight = 7
 +++
 
 ```elisp

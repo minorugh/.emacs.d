@@ -1,7 +1,6 @@
 +++
 title = "7.3. web-mode"
 draft = false
-weight = 3
 +++
 
 ### [web-mode] HTML編集をサポート

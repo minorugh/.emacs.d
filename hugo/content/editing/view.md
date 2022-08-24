@@ -1,7 +1,6 @@
 +++
 title = "7.2. veiw-mode"
 draft = false
-weight = 2
 +++
 ### 5.3. viewモード
 特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに [view-mode](https://www.emacswiki.org/emacs/ViewMode) を使います。

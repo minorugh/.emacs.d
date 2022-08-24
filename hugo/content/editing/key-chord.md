@@ -1,7 +1,6 @@
 +++
 title = "7.8. key-chord"
 draft = false
-weight = 8
 +++
 
 ### [key-chord.el] 同時押しでキーバインド

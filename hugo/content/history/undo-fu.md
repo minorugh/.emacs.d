@@ -1,7 +1,6 @@
 +++
 title = "9.2. undo-fua"
 draft = false
-weight = 1
 +++
 ### 8.3. [undo-fu] シンプルな undo/redo を提供
 [undo-fu](https://github.com/emacsmirror/undo-fu)  はシンプルな undo/redo 機能を提供してくれるやつです。

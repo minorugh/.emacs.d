@@ -1,7 +1,6 @@
 +++
 title = "5.3. scrool-other-Window"
 draft = false
-weight = 3
 +++
 
 `Scrool-other-Window` は、`deactive` なwindowをスクロールさせるための設定です。

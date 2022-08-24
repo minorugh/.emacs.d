@@ -1,7 +1,6 @@
 +++
 title = "5.2. dimmer-mode"
 draft = false
-weight = 2
 +++
 * [dimmer.el](https://github.com/gonewest818/dimmer.el) は、現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
  
