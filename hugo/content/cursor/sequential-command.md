@@ -3,9 +3,9 @@ title = "3.1. sequential-command"
 draft = false
 +++
 ### [sequential-command.el] バッファーの先頭と最終行への移動を簡単に
-`sequential-command` は、標準の `C-a` `C-e` を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
+🔗 [https://github.com/HKey/sequential-command](https://github.com/HKey/sequential-command)
 
-* [https://github.com/HKey/sequential-command](https://github.com/HKey/sequential-command)
+* `sequential-command` は、標準の `C-a` `C-e` を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
 * `C-a` を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動
 * `C-e` を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動
 
