@@ -50,7 +50,7 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 (leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みますが、変更したいときは下記のように指定すればいいようです。 自分は、デフォルトで使っています。
-(init-loader-load &amp;#34;~/.emacs.d/conf&amp;#34;) </description>
+;; Load configuration files in &amp;#39;/path/to/init-directory&amp;#39;. (init-loader-load &amp;#34;/path/to/init-directory&amp;#34;) </description>
     </item>
     
     <item>

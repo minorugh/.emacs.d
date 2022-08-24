@@ -26,5 +26,6 @@ draft = false
 自分は、デフォルトで使っています。
 
 ```elisp
- (init-loader-load "~/.emacs.d/conf")
+;; Load configuration files in '/path/to/init-directory'.
+(init-loader-load "/path/to/init-directory")
 ```
