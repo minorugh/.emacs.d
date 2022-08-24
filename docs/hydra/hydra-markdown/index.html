@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T10:17:40 JST">
-<title> :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-24T11:04:47 JST">
+<title>8.4. hydra-markdown :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -518,31 +518,45 @@
       <a href="/.emacs.d/hydra/"><b>8. </b>Hydra / コマンドディスパッチャ</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-quick/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/hydra/hydra-quick/">
+            8.1. hydra-menu
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-make/" class="dd-item">
         <div>
           <a href="/.emacs.d/hydra/hydra-make/">
-            
+            8.2. hydra-make
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-package/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/hydra/hydra-package/">
+            8.3. hydra-package
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/" class="dd-item">
         <div>
           <a href="/.emacs.d/hydra/hydra-markdown/">
-            
+            8.4. hydra-markdown
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-quick/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-view/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-quick/">
-            
+          <a href="/.emacs.d/hydra/hydra-view/">
+            8.5. hydra-view-mode
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-work/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-browse/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-work/">
-            
+          <a href="/.emacs.d/hydra/hydra-browse/">
+            8.6. hydra-browse
           </a>
         </div>
     </li>
@@ -688,7 +702,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/hydra/'>Hydra / コマンドディスパッチャ</a> > 
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/hydra/'>Hydra / コマンドディスパッチャ</a> > 8.4. hydra-markdown
 
  
 
@@ -701,7 +715,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#hydra-markdown">[hydra-markdown]</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -711,7 +733,7 @@
 
 <div id="body-inner">
   
-    <h1></h1>
+    <h1>8.4. hydra-markdown</h1>
   
 
 
@@ -719,7 +741,58 @@
     
     
     
+<h3 id="hydra-markdown">[hydra-markdown]</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*hydra-markdown</span>
+  <span style="color:#a90d91">:hydra</span>
+  (<span style="color:#000">hydra-markdown</span>
+   (<span style="color:#a90d91">:color</span> <span style="color:#000">red</span> <span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">    Markdown: _i_talic  消線:_x_  foot_n_ote  _t_able  _m_arkup  pre_v_iew  md2:_p_df:_d_ocx&#34;</span>
+   (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">markdown-insert-italic</span>)
+   (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">markdown-insert-strike-through</span>)
+   (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">markdown-insert-table</span>)
+   (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">markdown-insert-footnote</span>)
+   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">markdown-toggle-markup-hiding</span>)
+   (<span style="color:#c41a16">&#34;v&#34;</span> <span style="color:#000">livedown-preview</span>)
+   <span style="color:#177500">;; Pndoc</span>
+   (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">md2pdf</span>)
+   (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">md2docx</span>)
+   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">emacs-livedown</span> <span style="color:#a90d91">:el-get</span> <span style="color:#000">shime/emacs-livedown</span>)
+  (<span style="color:#000">custom-set-variables</span> <span style="color:#000">&#39;</span>(<span style="color:#000">markdown-toc-user-toc-structure-manipulation-fn</span> <span style="color:#c41a16">&#39;cdr</span>))
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">md2pdf</span> ()
+	<span style="color:#c41a16">&#34;Generate pdf from currently open markdown.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">filename</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))))
+	  <span style="color:#177500">;; Use wkhtmltopdf without latex</span>
+	  (<span style="color:#000">shell-command-to-string</span>
+	   (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;pandoc &#34;</span>
+			   <span style="color:#000">filename</span>
+			   <span style="color:#c41a16">&#34; -f markdown -t html5 -o &#34;</span>
+			   (<span style="color:#000">file-name-sans-extension</span> <span style="color:#000">filename</span>)
+			   <span style="color:#c41a16">&#34;.pdf&#34;</span>))
+	  (<span style="color:#000">shell-command-to-string</span>
+	   (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;evince &#34;</span>
+			   (<span style="color:#000">file-name-sans-extension</span> <span style="color:#000">filename</span>)
+			   <span style="color:#c41a16">&#34;.pdf&#34;</span>))))
 
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">md2docx</span> ()
+	<span style="color:#c41a16">&#34;Generate docx from currently open markdown.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">filename</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))))
+	  (<span style="color:#000">shell-command-to-string</span>
+	   (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;pandoc &#34;</span>
+			   <span style="color:#000">filename</span>
+			   <span style="color:#c41a16">&#34; -t docx -o &#34;</span>
+			   (<span style="color:#000">file-name-sans-extension</span> <span style="color:#000">filename</span>)
+			   <span style="color:#c41a16">&#34;.docx -V mainfont=IPAPGothic -V fontsize=16pt --highlight-style=zenburn&#34;</span>))
+	  (<span style="color:#000">shell-command-to-string</span>
+	   (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;xdg-open &#34;</span>
+			   (<span style="color:#000">file-name-sans-extension</span> <span style="color:#000">filename</span>)
+			   <span style="color:#c41a16">&#34;.docx&#34;</span>))))
+</code></pre></div>
 
     
     
@@ -730,8 +803,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/hydra/hydra-make/" title=""> <i class="fa fa-chevron-left"></i><label></label></a>
-    <a class="nav nav-next" href="/.emacs.d/hydra/hydra-quick/" title="" style="margin-right: 0px;"><label></label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/hydra/hydra-package/" title="8.3. hydra-package"> <i class="fa fa-chevron-left"></i><label>8.3. hydra-package</label></a>
+    <a class="nav nav-next" href="/.emacs.d/hydra/hydra-view/" title="8.5. hydra-view-mode" style="margin-right: 0px;"><label>8.5. hydra-view-mode</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

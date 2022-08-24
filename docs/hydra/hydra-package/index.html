@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-24T11:04:47 JST">
-<title>フォント / 配色関連 :: minoru&#39;s Emacs Configuration</title>
+<title>8.3. hydra-package :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/higlight/">
+  <body data-url="/.emacs.d/hydra/hydra-package/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -682,7 +682,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/hydra/hydra-package.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -699,7 +699,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > フォント / 配色関連
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/hydra/'>Hydra / コマンドディスパッチャ</a> > 8.3. hydra-package
+
+ 
 
  
 
@@ -720,7 +725,7 @@
 
 <div id="body-inner">
   
-    <h1>フォント / 配色関連</h1>
+    <h1>8.3. hydra-package</h1>
   
 
 
@@ -728,30 +733,32 @@
     
     
     
-
-<p>ここでは設定ファイルを見やすくするための配色関連の設定を記載している。</p>
-<dl>
-<dt><a href="/.emacs.d/higlight/font/">font</a></dt>
-<dd>フォントの設定とインストール</dd>
-<dt><a href="/.emacs.d/higlight/hl-line/">hl-line</a></dt>
-<dd>カーソル行に色をつける</dd>
-<dt><a href="/.emacs.d/higlight/blink-cursor/">blink-cursor</a></dt>
-<dd>カーソルの点滅を制御する</dd>
-<dt><a href="/.emacs.d/higlight/ivy-format/">my:ivy-format</a></dt>
-<dd>ivyの選択行をアイコンで強調する</dd>
-<dt><a href="/.emacs.d/higlight/volatile-highlights/">volatile-highlights</a></dt>
-<dd>コピペした領域を強調する</dd>
-<dt><a href="/.emacs.d/higlight/rainbow/">rainbow-mode</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/rainbow-delimiters/">rainbow-delimiters</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/paren/">paren</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/whitespace/">whitespace</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-</dl>
-
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#177500">;; Hydra for package utils</span>
+<span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">package-utils</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;p@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-package/body</span>)
+  <span style="color:#a90d91">:hydra</span>
+  (<span style="color:#000">hydra-package</span>
+   (<span style="color:#a90d91">:color</span> <span style="color:#000">red</span> <span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16"> 📦 Package: _m_elpa  _i_nstall  upgrade:_l_ist._n_ame._a_ll  _r_emove  _e_l-get
+</span><span style="color:#c41a16">&#34;</span>
+   (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">package-install</span>)
+   (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">package-utils-list-upgrades</span>)
+   (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">package-utils-upgrade-by-name</span>)
+   (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">package-utils-remove-by-name</span>)
+   (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">package-utils-upgrade-all-and-restart</span>)
+   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">package-list-packages</span>)
+   (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">select-elget-command</span>)
+   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
+  <span style="color:#a90d91">:preface</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">select-elget-command</span> ()
+    <span style="color:#c41a16">&#34;Narrow the only el-get command in </span><span style="color:#c41a16">`M-x&#39;</span><span style="color:#c41a16">.&#34;</span>
+    (<span style="color:#a90d91">interactive</span>)
+    (<span style="color:#000">counsel-M-x</span> <span style="color:#c41a16">&#34;^el-get &#34;</span>)))
+</code></pre></div>
 
     
     
@@ -762,8 +769,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/cursor/expand-region/" title="3.5. expand-region"> <i class="fa fa-chevron-left"></i><label>3.5. expand-region</label></a>
-    <a class="nav nav-next" href="/.emacs.d/higlight/font/" title="4.1. font setting" style="margin-right: 0px;"><label>4.1. font setting</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/hydra/hydra-make/" title="8.2. hydra-make"> <i class="fa fa-chevron-left"></i><label>8.2. hydra-make</label></a>
+    <a class="nav nav-next" href="/.emacs.d/hydra/hydra-markdown/" title="8.4. hydra-markdown" style="margin-right: 0px;"><label>8.4. hydra-markdown</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-24T11:04:47 JST">
-<title>フォント / 配色関連 :: minoru&#39;s Emacs Configuration</title>
+<title>8.5. hydra-view-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/higlight/">
+  <body data-url="/.emacs.d/hydra/hydra-view/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -682,7 +682,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/hydra/hydra-view.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -699,7 +699,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > フォント / 配色関連
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/hydra/'>Hydra / コマンドディスパッチャ</a> > 8.5. hydra-view-mode
+
+ 
 
  
 
@@ -720,7 +725,7 @@
 
 <div id="body-inner">
   
-    <h1>フォント / 配色関連</h1>
+    <h1>8.5. hydra-view-mode</h1>
   
 
 
@@ -728,30 +733,47 @@
     
     
     
-
-<p>ここでは設定ファイルを見やすくするための配色関連の設定を記載している。</p>
-<dl>
-<dt><a href="/.emacs.d/higlight/font/">font</a></dt>
-<dd>フォントの設定とインストール</dd>
-<dt><a href="/.emacs.d/higlight/hl-line/">hl-line</a></dt>
-<dd>カーソル行に色をつける</dd>
-<dt><a href="/.emacs.d/higlight/blink-cursor/">blink-cursor</a></dt>
-<dd>カーソルの点滅を制御する</dd>
-<dt><a href="/.emacs.d/higlight/ivy-format/">my:ivy-format</a></dt>
-<dd>ivyの選択行をアイコンで強調する</dd>
-<dt><a href="/.emacs.d/higlight/volatile-highlights/">volatile-highlights</a></dt>
-<dd>コピペした領域を強調する</dd>
-<dt><a href="/.emacs.d/higlight/rainbow/">rainbow-mode</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/rainbow-delimiters/">rainbow-delimiters</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/paren/">paren</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/whitespace/">whitespace</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-</dl>
-
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#177500">;; hydra view mode</span>
+<span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">*hydra-view-mode</span>
+  <span style="color:#a90d91">:hydra</span>
+  (<span style="color:#000">hydra-view</span>
+   (<span style="color:#a90d91">:color</span> <span style="color:#000">red</span> <span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">   View mode
+</span><span style="color:#c41a16">  -----------------------^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------------------------------------
+</span><span style="color:#c41a16">  _x_:del-chra   _u_:undo   winner:_[__]_   _s_wiper   :_o_._0_._1_._2_   _%_:paren   _-__\/__+_   help_._
+</span><span style="color:#c41a16">  _d_:del-line   _y_:yank   x_r_ef🐾_RET_   _g_oogle   _w_:for-word^^^^^^   _@_:point   _m_agit^^^^   ex_i_t_:_
+</span><span style="color:#c41a16">&#34;</span>
+   (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">xref-find-references</span>)
+   (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">xref-find-definitions</span>)
+   (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">my:view-del-char</span>)
+   (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">forward-word</span>)
+   (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">my:view-kill-region</span>)
+   (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">my:view-yank</span>)
+   (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">my:view-undo</span>)
+   (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">winner-undo</span>)
+   (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">winner-redo</span>)
+   (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">my:org-view-next-heading</span>)
+   (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">my:org-view-previous-heading</span>)
+   (<span style="color:#c41a16">&#34;%&#34;</span> <span style="color:#000">my:jump-brace</span>)
+   (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">counsel-mark-ring</span>)
+   (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">View-exit-and-edit</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">View-exit-and-edit</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">swiper-thing-at-point</span>)
+   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">magit-status</span>)
+   (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">my:google</span>)
+   (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">other-window-or-split</span>)
+   (<span style="color:#c41a16">&#34;0&#34;</span> <span style="color:#000">my:delete-window</span>)
+   (<span style="color:#c41a16">&#34;1&#34;</span> <span style="color:#000">my:delete-other-windows</span>)
+   (<span style="color:#c41a16">&#34;2&#34;</span> <span style="color:#000">my:split-window-below</span>)
+   (<span style="color:#c41a16">&#34;3&#34;</span> <span style="color:#000">my:split-window-right</span>)
+   (<span style="color:#c41a16">&#34;+&#34;</span> <span style="color:#000">text-scale-increase</span>)
+   (<span style="color:#c41a16">&#34;-&#34;</span> <span style="color:#000">text-scale-decrease</span>)
+   (<span style="color:#c41a16">&#34;/&#34;</span> (<span style="color:#000">text-scale-set</span> <span style="color:#1c01ce">0</span>))
+   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:cokor</span> <span style="color:#000">blue</span>)))
+</code></pre></div>
 
     
     
@@ -762,8 +784,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/cursor/expand-region/" title="3.5. expand-region"> <i class="fa fa-chevron-left"></i><label>3.5. expand-region</label></a>
-    <a class="nav nav-next" href="/.emacs.d/higlight/font/" title="4.1. font setting" style="margin-right: 0px;"><label>4.1. font setting</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/hydra/hydra-markdown/" title="8.4. hydra-markdown"> <i class="fa fa-chevron-left"></i><label>8.4. hydra-markdown</label></a>
+    <a class="nav nav-next" href="/.emacs.d/hydra/hydra-browse/" title="8.6. hydra-browse" style="margin-right: 0px;"><label>8.6. hydra-browse</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

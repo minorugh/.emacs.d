@@ -7,41 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/hydra/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>8.1. hydra-menu</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</guid>
-      <description>7.1. [hydra-menu] 作業選択メニュー hydra-work-menu には、 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。
-hydra-quick-menu の方には、 編集作業で頻繁に使うツール群のほか、my:dired でプロジェクトのディレクトリを一発で開くためのショートカットなどを設定しています。
-この２つの hydra は、いわば私の秘書のような役割で、どちらからでも相互にトグルで呼び出せるようにしています。</description>
+      <description>hydramenu は、いわば私の秘書のような役割です。 便宜上二つに分けていますが、どちらからでも相互にトグルで呼び出せるようにしています。  [hydra-quick-menu] Quick Dired hydra-quick-menu 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。 よく使うアプリ起動のショートカットなども設定しておくと便利です。
+(leaf *hydra-quick-menu :bind (&amp;#34;M-.&amp;#34; . hydra-quick/body) :hydra (hydra-quick (:hint nil :exit t) &amp;#34;  Quick Menu ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^----------------------------------------------------------------------------------------- _d_ropbox _e_macs.d^^ _i_nits _x_srv.jp^^^^ GH:_h_ root:_/_ _s_rc _._files howm:_@__,_ _m_d:_p_view _z_illa _r_estart magit_[__]_ _t_ramp _y_as:_n_:_v_ _j_unk _b_rowse _o_rg _&amp;lt;home&amp;gt;_ _c_ompile^^ make:_k_._g_ _a_g:🐾 &amp;#34; (&amp;#34;a&amp;#34; counsel-ag) (&amp;#34;o&amp;#34; my:org-dir) (&amp;#34;t&amp;#34; counsel-tramp) (&amp;#34;q&amp;#34; my:tramp-quit) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; my:home-dir) (&amp;#34;d&amp;#34; my:dropbox) (&amp;#34;.&amp;#34; my:dotfiles-dir) (&amp;#34;i&amp;#34; my:inits-dir) (&amp;#34;e&amp;#34; my:emacs-dir) (&amp;#34;h&amp;#34; my:gh-dir) (&amp;#34;x&amp;#34; my:xsrv-dir) (&amp;#34;y&amp;#34; company-yasnippet) (&amp;#34;n&amp;#34; yas/new-snippet) (&amp;#34;v&amp;#34; yas/visit-snippet-file) (&amp;#34;r&amp;#34; restart-emacs) (&amp;#34;m&amp;#34; hydra-markdown/body) (&amp;#34;p&amp;#34; livedown-preview) (&amp;#34;w&amp;#34; livedown-kill) (&amp;#34;b&amp;#34; hydra-browse/body) (&amp;#34;c&amp;#34; hydra-make/body) (&amp;#34;-&amp;#34; my:github-show) (&amp;#34;@&amp;#34; howm-list-all) (&amp;#34;,&amp;#34; howm-remember) (&amp;#34;j&amp;#34; open-junk-file) (&amp;#34;J&amp;#34; open-last-junk-file) (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;/&amp;#34; my:root-dir) (&amp;#34;_&amp;#34; my:delete-other-windows) (&amp;#34;[&amp;#34; git-timemachine-toggle) (&amp;#34;]&amp;#34; magit-status) (&amp;#34;s&amp;#34; my:scr-dir) (&amp;#34;l&amp;#34; my:open-capture) (&amp;#34;:&amp;#34; view-mode) (&amp;#34;z&amp;#34; filezilla) (&amp;#34;M-.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</link>
+      <title>8.2. hydra-make</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</guid>
-      <description></description>
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
+      <description>[hydra-make] ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Make command configurations ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *user-make-configulation :mode ((&amp;#34;\\.mak\\&amp;#39;&amp;#34; &amp;#34;makefile\\&amp;#39;&amp;#34;) . makefile-mode) :hydra (hydra-make (:hint nil :exit t) &amp;#34;  make:_k_ _u_psftp _m_ove _d_raft _b_klog _g_it _s_ort _c_lean 🐾 &amp;#34; (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;u&amp;#34; my:make-upsftp) (&amp;#34;m&amp;#34; my:make-move) (&amp;#34;d&amp;#34; my:make-draft) (&amp;#34;b&amp;#34; my:make-bklog) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;s&amp;#34; my:make-sort) (&amp;#34;c&amp;#34; my:make-clean) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (setq compilation-scroll-output t) (setq compilation-always-kill t) (setq compilation-finish-functions &amp;#39;compile-autoclose) (defun compile-autoclose (buffer string) &amp;#34;Automatically close the compilation buffer.&amp;#34; (cond ((string-match &amp;#34;finished&amp;#34; string) (bury-buffer &amp;#34;*compilation*&amp;#34;) (delete-other-windows) (message &amp;#34;Build successful.</description>
+    </item>
+    
+    <item>
+      <title>8.3. hydra-package</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</guid>
+      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for package utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf package-utils :ensure t :chord (&amp;#34;p@&amp;#34; . hydra-package/body) :hydra (hydra-package (:color red :hint nil) &amp;#34; 📦 Package: _m_elpa _i_nstall upgrade:_l_ist._n_ame._a_ll _r_emove _e_l-get &amp;#34; (&amp;#34;i&amp;#34; package-install) (&amp;#34;l&amp;#34; package-utils-list-upgrades) (&amp;#34;n&amp;#34; package-utils-upgrade-by-name) (&amp;#34;r&amp;#34; package-utils-remove-by-name) (&amp;#34;a&amp;#34; package-utils-upgrade-all-and-restart) (&amp;#34;m&amp;#34; package-list-packages) (&amp;#34;e&amp;#34; select-elget-command) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :preface (defun select-elget-command () &amp;#34;Narrow the only el-get command in `M-x&amp;#39;.&amp;#34; (interactive) (counsel-M-x &amp;#34;^el-get &amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title>8.4. hydra-markdown</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
+      <description>[hydra-markdown] (leaf *hydra-markdown :hydra (hydra-markdown (:color red :hint nil) &amp;#34;  Markdown: _i_talic 消線:_x_ foot_n_ote _t_able _m_arkup pre_v_iew md2:_p_df:_d_ocx&amp;#34; (&amp;#34;i&amp;#34; markdown-insert-italic) (&amp;#34;x&amp;#34; markdown-insert-strike-through) (&amp;#34;t&amp;#34; markdown-insert-table) (&amp;#34;n&amp;#34; markdown-insert-footnote) (&amp;#34;m&amp;#34; markdown-toggle-markup-hiding) (&amp;#34;v&amp;#34; livedown-preview) ;; Pndoc (&amp;#34;p&amp;#34; md2pdf) (&amp;#34;d&amp;#34; md2docx) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (leaf emacs-livedown :el-get shime/emacs-livedown) (custom-set-variables &amp;#39;(markdown-toc-user-toc-structure-manipulation-fn &amp;#39;cdr)) :config (defun md2pdf () &amp;#34;Generate pdf from currently open markdown.&amp;#34; (interactive) (let ((filename (buffer-file-name (current-buffer)))) ;; Use wkhtmltopdf without latex (shell-command-to-string (concat &amp;#34;pandoc &amp;#34; filename &amp;#34; -f markdown -t html5 -o &amp;#34; (file-name-sans-extension filename) &amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>8.5. hydra-view-mode</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</guid>
+      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; hydra view mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-view-mode :hydra (hydra-view (:color red :hint nil) &amp;#34;  View mode -----------------------^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------------------------------------ _x_:del-chra _u_:undo winner:_[__]_ _s_wiper :_o_._0_._1_._2_ _%_:paren _-__\/__+_ help_._ _d_:del-line _y_:yank x_r_ef🐾_RET_ _g_oogle _w_:for-word^^^^^^ _@_:point _m_agit^^^^ ex_i_t_:_ &amp;#34; (&amp;#34;r&amp;#34; xref-find-references) (&amp;#34;RET&amp;#34; xref-find-definitions) (&amp;#34;x&amp;#34; my:view-del-char) (&amp;#34;w&amp;#34; forward-word) (&amp;#34;d&amp;#34; my:view-kill-region) (&amp;#34;y&amp;#34; my:view-yank) (&amp;#34;u&amp;#34; my:view-undo) (&amp;#34;[&amp;#34; winner-undo) (&amp;#34;]&amp;#34; winner-redo) (&amp;#34;n&amp;#34; my:org-view-next-heading) (&amp;#34;p&amp;#34; my:org-view-previous-heading) (&amp;#34;%&amp;#34; my:jump-brace) (&amp;#34;@&amp;#34; counsel-mark-ring) (&amp;#34;i&amp;#34; View-exit-and-edit :exit t) (&amp;#34;:&amp;#34; View-exit-and-edit :exit t) (&amp;#34;s&amp;#34; swiper-thing-at-point) (&amp;#34;m&amp;#34; magit-status) (&amp;#34;g&amp;#34; my:google) (&amp;#34;o&amp;#34; other-window-or-split) (&amp;#34;0&amp;#34; my:delete-window) (&amp;#34;1&amp;#34; my:delete-other-windows) (&amp;#34;2&amp;#34; my:split-window-below) (&amp;#34;3&amp;#34; my:split-window-right) (&amp;#34;+&amp;#34; text-scale-increase) (&amp;#34;-&amp;#34; text-scale-decrease) (&amp;#34;/&amp;#34; (text-scale-set 0)) (&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>8.6. hydra-browse</title>
+      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</guid>
+      <description>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for favorite utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-browse :hydra (hydra-browse (:hint nil :exit t) &amp;#34; ^ Shop^ ^ SNS^ ^🔃 Repos^ ^ Blog^ ^ Life^ ^ Social^ ^ Github^ oogle ^^^^^^^^------------------------------------------------------------------------------------------------------------------ _A_: Amazon _t_: Twitter _d_: Dropbox _g_: ghub.io _j_: Jorudan _k_: Keep _1_: minorugh _5_: Translate _R_: Rakuten _y_: Youtube _f_: Flickr _x_: xsrv.jp _n_: News _p_: Pocket _2_: gist _6_: Map _Y_: Yodobashi _I_: Instagram _G_: Gdrive _e_: Essay _w_: Weather _q_: Qiita _3_: explore _7_: Earth _K_: Kakaku _T_: Tumblr _X_: Xserver _b_: Blog _S_: SanyoBas _s_: Slack _4_: Centaur _8_: Photo &amp;#34; (&amp;#34;A&amp;#34; (browse-url &amp;#34;https://www.</description>
     </item>
     
   </channel>

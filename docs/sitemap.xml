@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</loc>
   </url>
   
@@ -28,6 +32,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
   </url>
   
   <url>
@@ -51,6 +59,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
   </url>
   
@@ -68,6 +80,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
   </url>
   
   <url>
@@ -91,6 +107,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
   </url>
   
@@ -108,6 +128,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</loc>
   </url>
   
   <url>
@@ -204,22 +228,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/fontawesome/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-work/</loc>
   </url>
   
   <url>

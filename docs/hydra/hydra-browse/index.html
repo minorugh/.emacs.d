@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-24T11:04:47 JST">
-<title>フォント / 配色関連 :: minoru&#39;s Emacs Configuration</title>
+<title>8.6. hydra-browse :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/higlight/">
+  <body data-url="/.emacs.d/hydra/hydra-browse/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -682,7 +682,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/hydra/hydra-browse.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -699,7 +699,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > フォント / 配色関連
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/hydra/'>Hydra / コマンドディスパッチャ</a> > 8.6. hydra-browse
+
+ 
 
  
 
@@ -720,7 +725,7 @@
 
 <div id="body-inner">
   
-    <h1>フォント / 配色関連</h1>
+    <h1>8.6. hydra-browse</h1>
   
 
 
@@ -728,30 +733,57 @@
     
     
     
-
-<p>ここでは設定ファイルを見やすくするための配色関連の設定を記載している。</p>
-<dl>
-<dt><a href="/.emacs.d/higlight/font/">font</a></dt>
-<dd>フォントの設定とインストール</dd>
-<dt><a href="/.emacs.d/higlight/hl-line/">hl-line</a></dt>
-<dd>カーソル行に色をつける</dd>
-<dt><a href="/.emacs.d/higlight/blink-cursor/">blink-cursor</a></dt>
-<dd>カーソルの点滅を制御する</dd>
-<dt><a href="/.emacs.d/higlight/ivy-format/">my:ivy-format</a></dt>
-<dd>ivyの選択行をアイコンで強調する</dd>
-<dt><a href="/.emacs.d/higlight/volatile-highlights/">volatile-highlights</a></dt>
-<dd>コピペした領域を強調する</dd>
-<dt><a href="/.emacs.d/higlight/rainbow/">rainbow-mode</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/rainbow-delimiters/">rainbow-delimiters</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/paren/">paren</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-<dt><a href="/.emacs.d/higlight/whitespace/">whitespace</a></dt>
-<dd>カラーコードを実際の色に表示する</dd>
-</dl>
-
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span style="color:#177500">;; Hydra for favorite utils</span>
+<span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">*hydra-browse</span>
+  <span style="color:#a90d91">:hydra</span>
+  (<span style="color:#000">hydra-browse</span>
+   (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">  ^ Shop^        ^ SNS^        ^🔃 Repos^       ^ Blog^       ^ Life^        ^ Social^    ^ Github^      oogle
+</span><span style="color:#c41a16">  ^^^^^^^^------------------------------------------------------------------------------------------------------------------
+</span><span style="color:#c41a16">  _A_: Amazon      _t_: Twitter    _d_: Dropbox     _g_: ghub.io    _j_: Jorudan     _k_: Keep      _1_: minorugh    _5_: Translate
+</span><span style="color:#c41a16">  _R_: Rakuten     _y_: Youtube    _f_: Flickr      _x_: xsrv.jp    _n_: News        _p_: Pocket    _2_: gist        _6_: Map
+</span><span style="color:#c41a16">  _Y_: Yodobashi   _I_: Instagram  _G_: Gdrive      _e_: Essay      _w_: Weather     _q_: Qiita     _3_: explore     _7_: Earth
+</span><span style="color:#c41a16">  _K_: Kakaku      _T_: Tumblr     _X_: Xserver     _b_: Blog       _S_: SanyoBas    _s_: Slack     _4_: Centaur     _8_: Photo
+</span><span style="color:#c41a16">&#34;</span>
+   (<span style="color:#c41a16">&#34;A&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.amazon.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;R&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.rakuten.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;Y&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.yodobashi.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;K&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://kakaku.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;y&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.youtube.com/channel/UCnwoipb9aTyORVKHeTw159A/videos&#34;</span>))
+   (<span style="color:#c41a16">&#34;f&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.flickr.com/photos/minorugh/&#34;</span>))
+   (<span style="color:#c41a16">&#34;G&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://drive.google.com/drive/u/0/my-drive&#34;</span>))
+   (<span style="color:#c41a16">&#34;0&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://gist.github.com/minorugh&#34;</span>))
+   (<span style="color:#c41a16">&#34;1&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://github.com/minorugh&#34;</span>))
+   (<span style="color:#c41a16">&#34;2&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://gist.github.com/minorugh&#34;</span>))
+   (<span style="color:#c41a16">&#34;3&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://github.com/explore&#34;</span>))
+   (<span style="color:#c41a16">&#34;4&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://github.com/seagle0128/.emacs.d&#34;</span>))
+   (<span style="color:#c41a16">&#34;5&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://translate.google.co.jp/?hl=ja&#34;</span>))
+   (<span style="color:#c41a16">&#34;6&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.google.co.jp/maps&#34;</span>))
+   (<span style="color:#c41a16">&#34;7&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://earth.google.com/web/&#34;</span>))
+   (<span style="color:#c41a16">&#34;b&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://blog.wegh.net/&#34;</span>))
+   (<span style="color:#c41a16">&#34;e&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://essay.wegh.net/&#34;</span>))
+   (<span style="color:#c41a16">&#34;x&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://minorugh.xsrv.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;S&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;http://www.sanyo-bus.co.jp/pdf/20201124tarusan_schedule.pdf&#34;</span>))
+   (<span style="color:#c41a16">&#34;I&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.instagram.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;j&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.jorudan.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;n&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://news.yahoo.co.jp/&#34;</span>))
+   (<span style="color:#c41a16">&#34;X&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.xserver.ne.jp/login_server.php&#34;</span>))
+   (<span style="color:#c41a16">&#34;d&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://www.dropbox.com/home&#34;</span>))
+   (<span style="color:#c41a16">&#34;q&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://qiita.com/minoruGH&#34;</span>))
+   (<span style="color:#c41a16">&#34;8&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://photos.google.com/?pageId=none&#34;</span>))
+   (<span style="color:#c41a16">&#34;k&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://keep.google.com/u/0/&#34;</span>))
+   (<span style="color:#c41a16">&#34;T&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://minorugh.tumblr.com&#34;</span>))
+   (<span style="color:#c41a16">&#34;w&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://tenki.jp/week/6/31/&#34;</span>))
+   (<span style="color:#c41a16">&#34;g&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://minorugh.github.io/docs/config.html&#34;</span>))
+   (<span style="color:#c41a16">&#34;p&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://getpocket.com/a/queue/&#34;</span>))
+   (<span style="color:#c41a16">&#34;t&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://tweetdeck.twitter.com/&#34;</span>))
+   (<span style="color:#c41a16">&#34;s&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://emacs-jp.slack.com/messages/C1B73BWPJ/&#34;</span>))
+   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>)
+   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">nil</span>)))
+</code></pre></div>
 
     
     
@@ -762,8 +794,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/cursor/expand-region/" title="3.5. expand-region"> <i class="fa fa-chevron-left"></i><label>3.5. expand-region</label></a>
-    <a class="nav nav-next" href="/.emacs.d/higlight/font/" title="4.1. font setting" style="margin-right: 0px;"><label>4.1. font setting</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/hydra/hydra-view/" title="8.5. hydra-view-mode"> <i class="fa fa-chevron-left"></i><label>8.5. hydra-view-mode</label></a>
+    <a class="nav nav-next" href="/.emacs.d/history/" title="履歴 / ファイル管理" style="margin-right: 0px;"><label>履歴 / ファイル管理</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

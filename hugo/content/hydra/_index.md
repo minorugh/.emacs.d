@@ -10,6 +10,24 @@ disableToc = true
 
 日本では、[smartrep.el](http://sheephead.homelinux.org/2011/12/19/6930/) が有名だったようですが、hydra.elも同様の機能を提供します。
 
+[hydra-quick-menu]({{< relref "hydra-quick" >}})
+: ファイルの自動保存機能を提供します。
+
+[hydra-make]({{< relref "hydra-make" >}})
+: ファイルの自動保存機能を提供します。
+
+[hydra-markdown]({{< relref "hydra-markdown" >}})
+: ファイルの自動保存機能を提供します。
+
+[hydra-package-utility]({{< relref "hydra-package" >}})
+: ファイルの自動保存機能を提供します。
+
+[hydra-browse]({{< relref "hydra-browse" >}})
+: ファイルの自動保存機能を提供します。
+
+[hydra-view-mode]({{< relref "hydra-view" >}})
+: ファイルの自動保存機能を提供します。
+
 
 
 ### Qitta に詳しい記事を書いています。
