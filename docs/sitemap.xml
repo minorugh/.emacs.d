@@ -251,6 +251,34 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/function/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/gist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/flymake/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/quickrun/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/magit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/tramp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/memo-tool/howm/</loc>
   </url>
   

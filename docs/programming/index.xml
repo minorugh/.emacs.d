@@ -6,5 +6,75 @@
     <description>Recent content in 開発サポート on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10.1. function key</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/function/</guid>
+      <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
+   キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
+    </item>
+    
+    <item>
+      <title>10.2. gist interface</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/gist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
+      <description>Gistインターフェイス gist.el は、なにげに使いづらく、ローカルで管理する必要も感じないので簡単な関数を作りました。
+Emacsから使うためには、gist をinstallしておく必要があります。
+$ sudo apt install gist gist -o とするとポスト後の結果の URLをブラウザで開いてくれるので便利です。
+(leaf *gist-configurations :bind (&amp;#34;s-g&amp;#34; . gist-region-or-buffer) :init (defun gist-description () &amp;#34;Add gist description.&amp;#34; (code-quote-argument (read-from-minibuffer &amp;#34;Add gist description: &amp;#34;))) (defun gist-filename () &amp;#34;The character string entered in minibuffer is used as file-name. If enter is pressed without file-name, that&amp;#39;s will be buffer-file-neme.&amp;#34; (interactive) (let ((file (file-name-nondirectory (buffer-file-name (current-buffer))))) (read-from-minibuffer (format &amp;#34;File name (%s): &amp;#34; file) file))) (defun gist-region-or-buffer () &amp;#34;If region is selected, post from the region.</description>
+    </item>
+    
+    <item>
+      <title>10.3. flymake</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/flymake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
+      <description>[flymake] 構文エラー表示 Emacs26以降は、標準添付の flymake が使いやすくなったので、flycheck から移行しました。
+(leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook &amp;#39;flymake-diagnostic-functions &amp;#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . &amp;#34; &amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title>10.4. quickrun</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/quickrun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
+      <description>[quickrun.el] お手軽ビルド カレントバッファで編集中のソースコードをビルド・実行して別バッファに結果を得ます。
+(leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
+    </item>
+    
+    <item>
+      <title>10.5. magit</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/magit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
+      <description>[magit.el] Gitクライアント magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
+(leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
+    </item>
+    
+    <item>
+      <title>10.6. counsel-tramp</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/tramp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
+      <description>[counsel-tramp.el] (leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
+    </item>
+    
+    <item>
+      <title>10.7. easy-hugo</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
+      <description>[eagy-hugo.el] マルチブログ管理  easy-hugo.el は、Hugoで作成されたブログを書くための Emacs メジャー モードです。 https://github.com/minorugh/emacs.d/blob/main/inits/60_easy-hugo.el  (leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.minorugh.com&amp;#34;) (setq easy-hugo-sshdomain &amp;#34;xsrv&amp;#34;) (setq easy-hugo-root &amp;#34;/home/minorugh/minorugh.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,6 +6,27 @@ weight = 10
 disableToc = true
 +++
 
-ここでは各言語やフレームワーク毎の設定をまとめている。
-markdown-mode とか yaml-mode なんかはプログラム言語ではないけど面倒なので一旦ここにまとめている。
+ここでは開発ワークをサポートしてくれるツールの設定をまとめている。
+
+[counsel-tramp]({{< relref "tramp" >}})
+: 言語と文字コードの設定
+
+[easy-hugo]({{< relref "easy-hugo" >}})
+: 言語と文字コードの設定
+
+[flymake]({{< relref "flymake" >}})
+: 言語と文字コードの設定
+
+[gist]({{< relref "gist" >}})
+: 言語と文字コードの設定
+
+[function key]({{< relref "function" >}})
+: 言語と文字コードの設定
+
+[magit]({{< relref "magit" >}})
+: 言語と文字コードの設定
+
+[quickrun]({{< relref "quickrun" >}})
+: 言語と文字コードの設定
+
 
