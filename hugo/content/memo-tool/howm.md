@@ -3,7 +3,7 @@ title = "11.1. howm-modo"
 draft = false
 +++
 
-### howm-mode
+### [howm.el] お手軽メモ環境
 
 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 

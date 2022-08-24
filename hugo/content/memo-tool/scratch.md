@@ -3,7 +3,7 @@ title = "11.4. scratch-memo"
 draft = false
 +++
 
-### scratch-memo
+### [scratch-memo] scratchバッファーを付箋として使う
 
 * 作業中の編集画面から短期的なメモを気軽に使うために `*scratch*`バッファーを付箋メモに使えるように設定してみた。
 * Emacsを再起動しても`*scratch*` バッファーの内容が消えないように [`auto-save-buffers-enhanced`](http://emacs.rubikitch.com/auto-save-buffers-enhanced/) の `*scratch*` バッファー自動保存機能を併用しています。専用のパッケージもあるようです。
