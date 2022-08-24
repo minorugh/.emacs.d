@@ -8,7 +8,7 @@ disableToc = true
 
 ここでは Emacs ファイル管理関係の設定を載せている
 
-### 🐾 INDEX
+### # INDEX
 
 [auto-seve-buffer]({{< relref "auto-save-buffer" >}})
 : ファイルの自動保存機能を提供してる

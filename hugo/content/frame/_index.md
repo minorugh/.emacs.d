@@ -9,7 +9,7 @@ disableToc = true
 ここではバッファ / ウインドウ管理関係の設定を記載している
 
 
-### 🐾 INDEX
+### # INDEX
 
 [dimmer]({{< relref "dimmer" >}})
 : 現在のバッファ以外の輝度を落とす

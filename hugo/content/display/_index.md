@@ -9,7 +9,7 @@ disableToc = true
 ここにはファイル編集や入力補助の設定をまとめている
 
 
-### 🐾 INDEX
+### # INDEX
 
 [which-key]({{< relref "which-key" >}})
 : キーバインドの選択肢をポップアップする

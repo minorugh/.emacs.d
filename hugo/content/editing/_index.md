@@ -9,7 +9,7 @@ disableToc = true
 ここにはファイル編集や入力補助の設定をまとめている
 
 
-### 🐾 INDEX
+### # INDEX
 
 [markdown-mode]({{< relref "markdown" >}})
 : markdown記法での編集をサポートしてくれるマイナーモード。
