@@ -5,7 +5,18 @@ pre = "<b>12. </b>"
 weight = 12
 disableToc = true
 +++
+TPOで使い分けるメモツール
 
-ここでは org-mode 周りの設定をまとめている。
-org-mode だけでも書くことが多いからね……。
+[howm-mode]({{< relref "howm" >}})
+: 言語と文字コードの設定
+
+[org-mode]({{< relref "org" >}})
+: 言語と文字コードの設定
+
+[open-junk-file]({{< relref "junk" >}})
+: 言語と文字コードの設定
+
+[scratch-memo]({{< relref "scratch" >}})
+: 言語と文字コードの設定
+
 

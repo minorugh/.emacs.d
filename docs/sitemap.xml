@@ -255,6 +255,22 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/howm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/org/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/junk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/core/encode/</loc>
   </url>
   
