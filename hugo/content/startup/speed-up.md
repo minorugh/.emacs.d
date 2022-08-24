@@ -6,6 +6,7 @@ draft = false
 
 * Magic File Name を一時的に無効にすることで、起動時間を短縮できます。
 * GC設定とともに設定ファイル読み込み後に正常値に戻します。
+* `init.el` の先頭に書きます。
 
 ```elisp
 ;; Speed up startup
@@ -26,4 +27,3 @@ draft = false
             "Recover GC values after startup."
             (setq gc-cons-threshold 800000)))
 ```
-※ `init.el` の先頭に書きます。
