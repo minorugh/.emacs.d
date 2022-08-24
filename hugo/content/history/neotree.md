@@ -2,6 +2,8 @@
 title = "9.8. neotree"
 draft = false
 +++
+### [neotree.el] Emacs 上でディレクトリツリーを表示させる
+Rename, Deleteなどの簡単なコマンドもつかえる。
 
 ```elisp
 (leaf neotree
@@ -17,6 +19,7 @@ draft = false
   `((neo-keymap-style . 'concise)
     (neo-create-file-auto-open . t)))
 ```
+### カスタマイズ設定
 
 ```elisp
 (with-eval-after-load neotree

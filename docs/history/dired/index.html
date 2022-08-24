@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T16:23:13 JST">
+<meta name="revised" content="2022-08-24T16:39:37 JST">
 <title>9.7. dired :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,16 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#dired-ファイルシステムのディレクトリを編集する機能">[dired] ファイルシステムのディレクトリを編集する機能</a></li>
+        <li><a href="#カスタマイズ設定">カスタマイズ設定</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,6 +847,7 @@
     
     
     
+<h3 id="dired-ファイルシステムのディレクトリを編集する機能">[dired] ファイルシステムのディレクトリを編集する機能</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">dired</span>
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">dired-my-append-buffer-name-hint</span>)
 		 (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#000">load</span> <span style="color:#c41a16">&#34;dired-x&#34;</span>) (<span style="color:#000">dired-omit-mode</span> <span style="color:#1c01ce">1</span>))))
@@ -869,7 +879,8 @@
 	(<span style="color:#000">dired-omit-files</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;.elc&#34;</span>)
 	(<span style="color:#000">ls-lisp-use-insert-directory-program</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
 	(<span style="color:#000">ls-lisp-dirs-first</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+</code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span style="color:#177500">;; Dired custom configurations</span>
  <span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 (<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;dired</span>

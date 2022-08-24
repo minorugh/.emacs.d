@@ -2,6 +2,7 @@
 title = "9.7. dired"
 draft = false
 +++
+### [dired] ファイルシステムのディレクトリを編集する機能
 
 ```elisp
 (leaf dired
@@ -36,6 +37,7 @@ draft = false
 	(ls-lisp-use-insert-directory-program . nil)
 	(ls-lisp-dirs-first . t)))
 ```
+### カスタマイズ設定
 
 ```elisp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

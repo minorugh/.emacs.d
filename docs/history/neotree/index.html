@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T16:23:13 JST">
+<meta name="revised" content="2022-08-24T16:39:37 JST">
 <title>9.8. neotree :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,16 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#neotreeel-emacs-上でディレクトリツリーを表示させる">[neotree.el] Emacs 上でディレクトリツリーを表示させる</a></li>
+        <li><a href="#カスタマイズ設定">カスタマイズ設定</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,6 +847,8 @@
     
     
     
+<h3 id="neotreeel-emacs-上でディレクトリツリーを表示させる">[neotree.el] Emacs 上でディレクトリツリーを表示させる</h3>
+<p>Rename, Deleteなどの簡単なコマンドもつかえる。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">neotree</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-find</span>)
@@ -850,7 +861,8 @@
   <span style="color:#a90d91">:custom</span>
   <span style="color:#000">`</span>((<span style="color:#000">neo-keymap-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;concise</span>)
     (<span style="color:#000">neo-create-file-auto-open</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
-</code></pre></div><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#000">neotree</span>
+</code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#000">neotree</span>
   <span style="color:#177500">;; Change neotree&#39;s font size</span>
   <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/218</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-text-scale</span> ()
