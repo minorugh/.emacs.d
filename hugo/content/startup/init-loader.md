@@ -4,8 +4,7 @@ draft = false
 +++
 
 ### [init-loader.el] 設定ファイル群のローダー 
-
-* [emacs-jp/init-loader: Loader of configuration files.](https://github.com/emacs-jp/init-loader/) 
+🔗 [emacs-jp/init-loader: Loader of configuration files.](https://github.com/emacs-jp/init-loader/) 
 
 指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
 

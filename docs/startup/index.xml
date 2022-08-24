@@ -12,8 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/eary-init/</guid>
-      <description>[eary-init.el] 早期初期化ファイル  early-init.el は、Emacs27から導入されました。  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
-minorugh/.emacs.d/early-init.el
+      <description>[eary-init.el] 早期初期化ファイル 🔗 minorugh/.emacs.d/early-init.el
+ early-init.el は、Emacs27から導入されました。  init.el でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
 GCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。
 ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことが重要です。
 Package の初期化を抑制する Emacs27では、(package-initialize) が 2回実行されます。 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。
@@ -36,7 +36,7 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
-      <description>[leaf.el] 設定ファイルを明示的に書く Emacs入門から始めるleaf.el入門
+      <description>[leaf.el] 設定ファイルを明示的に書く 🔗 Emacs入門から始めるleaf.el入門
  Emacsの設定管理は、これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。  leaf.el に対応したinit.el Packageは、基本MELPAからインストールしていますが、el-get も使えるようにしています。 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。
  下記設定は、@conao3 さんの示されていたものを下敷きにています。  ;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*- ;;; Commentary: ;; ;; Compatible with Emacs 27 and later ;; Aiming for a fancy and fast Emacs configuration ;; ;;; Code: ;; (setq debug-on-error t) ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover file name handlers.</description>
     </item>
@@ -47,7 +47,8 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/init-loader/</guid>
-      <description>[init-loader.el] 設定ファイル群のローダー  emacs-jp/init-loader: Loader of configuration files.  指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
+      <description>[init-loader.el] 設定ファイル群のローダー 🔗 emacs-jp/init-loader: Loader of configuration files.
+指定されたディレクトリから構成ファイルをロードします。これにより、構成を分類して複数のファイルに分けることができます。
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 (leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みますが、変更したいときは下記のように指定すればいいようです。 自分は、デフォルトで使っています。
@@ -71,8 +72,8 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/dashboard/</guid>
-      <description>[dashboard.el]起動初期画面をイケメンにする 100分の1秒でもemacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、dashbord.el を導入してみた。
-emacs-dashboard: An extensible emacs startup screen
+      <description>[dashboard.el]起動初期画面をイケメンにする 🔗 emacs-dashboard: An extensible emacs startup screen
+100分の1秒でもemacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、dashbord.el を導入してみた。
  どのような状況からでも dashboard画面に戻れるように設定しています。 &amp;lt;home&amp;gt; キーのトグル操作で編集中のバッファーとdashboard画面とを行き来します。  (leaf dashboard :ensure t :hook ((after-init-hook . dashboard-setup-startup-hook) (dashboard-mode-hook . page-break-lines-mode)) :defun (dashboard-setup-startup-hook) :bind ((&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . open-dashboard) (:dashboard-mode-map (&amp;#34;c&amp;#34; . chromium-calendar) (&amp;#34;y&amp;#34; . chromium-yahoo-japan) (&amp;#34;n&amp;#34; . chromium-nhk-news) (&amp;#34;w&amp;#34; . chromium-weather) (&amp;#34;t&amp;#34; . chromium-tweetdeck) (&amp;#34;h&amp;#34; . chromium-homepage) (&amp;#34;m&amp;#34; . sylpheed) (&amp;#34;s&amp;#34; . slack) (&amp;#34;.&amp;#34; . hydra-browse/body) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . quit-dashboard))) :advice (:override emacs-init-time ad:emacs-init-time) :init (leaf page-break-lines :ensure t) :config ;; Set the title (setq dashboard-banner-logo-title (concat &amp;#34;GNU Emacs &amp;#34; emacs-version &amp;#34; kernel &amp;#34; (car (split-string (shell-command-to-string &amp;#34;uname -r&amp;#34;))) &amp;#34; Debian &amp;#34; (car (split-string (shell-command-to-string &amp;#34;cat /etc/debian_version&amp;#34;))) &amp;#34; 86_64 GNU/Linux&amp;#34;)) ;; Set the banner (setq dashboard-startup-banner (expand-file-name &amp;#34;emacs.</description>
     </item>
     

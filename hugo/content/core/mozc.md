@@ -21,7 +21,7 @@ Emacsをソースからビルドするときに `--without-xim` しなかった�
 Emacs*useXIM: false
 ```
 ### [mozc.el] Mozcサーバーを使って日本語テキストを入力
-[google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
+🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
 
 句読点などを入力したとき、わざわざ `mozc`に変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
 ```elisp

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T21:57:15 JST">
+<meta name="revised" content="2022-08-24T22:14:12 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -855,11 +855,11 @@
     
     
 <h3 id="eary-initel-早期初期化ファイル">[eary-init.el] 早期初期化ファイル</h3>
+<p>🔗 <a href="https://github.com/minorugh/.emacs.d/blob/main/early-init.el">minorugh/.emacs.d/early-init.el</a></p>
 <ul>
 <li><a href="https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html"><code>early-init.el</code></a> は、Emacs27から導入されました。</li>
 </ul>
 <p><code>init.el</code> でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
-<p><a href="https://github.com/minorugh/.emacs.d/blob/main/early-init.el">minorugh/.emacs.d/early-init.el</a></p>
 <h3 id="gcを減らす">GCを減らす</h3>
 <p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Defer garbage collection further back in the startup process</span>

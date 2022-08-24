@@ -23,7 +23,7 @@
       
       <guid>https://minorugh.github.io/.emacs.d/core/mozc/</guid>
       <description>[emacs-mozc] 日本語入力システム（Mozcサーバー）  Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
-! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false [mozc.el] Mozcサーバーを使って日本語テキストを入力 google/mozc.el: Input Japanese text using Mozc server.
+! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false [mozc.el] Mozcサーバーを使って日本語テキストを入力 🔗 google/mozc.el: Input Japanese text using Mozc server.
 句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
 (leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;？&amp;#34;))) (&amp;#34;!</description>
     </item>
@@ -43,8 +43,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</guid>
-      <description>[exec-path-from-shell.el] 設定をシェルから継承する  exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。 自分は、shell-commad や compile-command をよく使うので必須のパッケージです。  purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell
-(leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
+      <description>[exec-path-from-shell.el] 設定をシェルから継承する 🔗 purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell
+ exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。 自分は、shell-commad や compile-command をよく使うので必須のパッケージです。  (leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
     </item>
     
     <item>
