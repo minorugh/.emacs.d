@@ -6,5 +6,13 @@ weight = 12
 disableToc = true
 +++
 
-自動テストを実行するにあたり、追加インストールしているパッケージをここに載せている
+自作のユーティリティ関数を集めてここに載せている
+[ps-print]({{< relref "ps-print" >}})
+: 早期設定ファイルの設定
+
+[open-gnome-terminal]({{< relref "terminal" >}})
+: 早期設定ファイルの設定
+
+[open-thunar]({{< relref "thunar" >}})
+: 早期設定ファイルの設定
 
