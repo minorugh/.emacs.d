@@ -543,7 +543,7 @@
 	"title": "7.6. japanese-holidays",
 	"tags": [],
 	"description": "",
-	"content": "[japanese-holidays] カレンダーをカラフルにする  ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
+	"content": "[japanese-holidays.el] カレンダーをカラフルにする  ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar) (:calendar-mode-map (\u0026#34;\u0026lt;f7\u0026gt;\u0026#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/imenu/",

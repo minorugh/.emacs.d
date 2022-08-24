@@ -3,7 +3,7 @@ title = "7.6. japanese-holidays"
 draft = false
 +++
 
-### [japanese-holidays] カレンダーをカラフルにする
+### [japanese-holidays.el] カレンダーをカラフルにする
 * ビルドインの `holidays` と `japanese-holidays.el`を使います。
 * 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
 
