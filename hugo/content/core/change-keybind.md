@@ -1,5 +1,5 @@
 +++
-title = "2.7. gloal key bind"
+title = "2.7. change gloal keybind"
 draft = false
 +++
 グローバルキーバインドを自分好みにカスタマイズしました。 

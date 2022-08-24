@@ -23,6 +23,6 @@ Emacs の基本動作に関わる部分をここでは設定している
 [uniquify]({{< relref "uniquify" >}})
 : 同じバッファ名が開かれた場合に区別する
 
-[global-keibind]({{< relref "global-keybind" >}})
+[change-global-keibind]({{< relref "change-keybind" >}})
 : グローバルキーバインドのカスタマイズ設定
 

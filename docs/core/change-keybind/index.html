@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T10:01:58 JST">
-<title>コア設定 :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-24T10:01:57 JST">
+<title>2.7. change gloal keybind :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/core/">
+  <body data-url="/.emacs.d/core/change-keybind/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -668,7 +668,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/core/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/core/change-keybind.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -685,7 +685,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > コア設定
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.7. change gloal keybind
+
+ 
 
  
 
@@ -696,7 +701,11 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#グローバルキーバインドをカスタマイズする">グローバルキーバインドをカスタマイズする</a></li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -706,7 +715,7 @@
 
 <div id="body-inner">
   
-    <h1>コア設定</h1>
+    <h1>2.7. change gloal keybind</h1>
   
 
 
@@ -714,24 +723,40 @@
     
     
     
+<p>グローバルキーバインドを自分好みにカスタマイズしました。
+前準備として以下を設定しておきます。</p>
+<ul>
+<li>クリップボードを使えるようにする</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Use the X11 clipboard</span>
+(<span style="color:#a90d91">setq</span> <span style="color:#000">select-enable-clipboard</span>  <span style="color:#000">t</span>)
+</code></pre></div><ul>
+<li>マウスで選択した領域を自動コピー
+マウスで選択すると，勝手にペーストボードにデータが流れます．</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">mouse-drag-copy-region</span> <span style="color:#000">t</span>)
+</code></pre></div><h2 id="グローバルキーバインドをカスタマイズする">グローバルキーバインドをカスタマイズする</h2>
+<ul>
+<li><code>C-w</code> は、<code>kill-ring-save</code> に割り当てられたものですが、<code>region</code> 選択されていないときは、一行削除になるようにカスタマイズしてます。</li>
+<li><code>C-x k</code> の <code>kill-buffer</code> は、<code>yes/no</code> 確認されるのが煩わしいので、確認なしの <code>kill-this-buffer</code> を愛用しています。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Change global key bind</span>
+(<span style="color:#000">leaf</span> <span style="color:#000">cus-global-keybind</span>
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;M-w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-kill-ring-save</span>)
+		 (<span style="color:#c41a16">&#34;C-w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:kill-whole-line-or-region</span>)
+		 (<span style="color:#c41a16">&#34;s-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-kill-ring-save</span>)
+		 (<span style="color:#c41a16">&#34;s-v&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-yank</span>)
+		 (<span style="color:#c41a16">&#34;M-/&#34;</span> <span style="color:#000">.</span> <span style="color:#000">kill-this-buffer</span>)))
 
-<p>Emacs の基本動作に関わる部分をここでは設定している</p>
-<dl>
-<dt><a href="/.emacs.d/core/encode/">Language / Encode</a></dt>
-<dd>言語と文字コードの設定</dd>
-<dt><a href="/.emacs.d/core/mozc/">Mozc</a></dt>
-<dd>日本語入力の設定</dd>
-<dt><a href="/.emacs.d/core/server/">Server</a></dt>
-<dd>サーバー機能を使う設定</dd>
-<dt><a href="/.emacs.d/core/exec-path-from-shell/">exec-path-from-shell</a></dt>
-<dd>設定をシェルから継承する</dd>
-<dt><a href="/.emacs.d/core/uniquify/">uniquify</a></dt>
-<dd>同じバッファ名が開かれた場合に区別する</dd>
-<dt><a href="/.emacs.d/core/change-keybind/">change-global-keibind</a></dt>
-<dd>グローバルキーバインドのカスタマイズ設定</dd>
-</dl>
-
-
+<span style="color:#177500">;; Overwrite `C-w&#39; to the whole-line-or-region</span>
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:kill-whole-line-or-region</span> ()
+  <span style="color:#c41a16">&#34;If the region is active, to kill region.
+</span><span style="color:#c41a16">If the region is inactive, to kill whole line.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>)
+	  (<span style="color:#000">clipboard-kill-region</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>))
+    (<span style="color:#000">kill-whole-line</span>)))
+</code></pre></div>
 
     
     
@@ -742,8 +767,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/startup/dashboard/" title="1.6. dashboard"> <i class="fa fa-chevron-left"></i><label>1.6. dashboard</label></a>
-    <a class="nav nav-next" href="/.emacs.d/core/encode/" title="2.1. language / coding" style="margin-right: 0px;"><label>2.1. language / coding</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/core/uniquify/" title="2.6. uniguify"> <i class="fa fa-chevron-left"></i><label>2.6. uniguify</label></a>
+    <a class="nav nav-next" href="/.emacs.d/cursor/" title="カーソル移動" style="margin-right: 0px;"><label>カーソル移動</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
