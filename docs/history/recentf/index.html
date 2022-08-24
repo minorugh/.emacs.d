@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T16:10:42 JST">
+<meta name="revised" content="2022-08-24T16:16:37 JST">
 <title>9.4. recentf :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#recentf-開いたファイルの履歴を保存">[recentf] 開いたファイルの履歴を保存</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,6 +846,8 @@
     
     
     
+<h3 id="recentf-開いたファイルの履歴を保存">[recentf] 開いたファイルの履歴を保存</h3>
+<p>※ 複数の端末で設定ファイルを共有させている環境では、<code>recentf-auto-cleanup</code> を <code>never</code> にしておかないと大変なことになる。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; recentf</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">recentf</span>
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">recentf-auto-cleanup</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;never</span>)

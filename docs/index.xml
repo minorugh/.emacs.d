@@ -855,7 +855,8 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
-      <description>;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
+      <description>[recentf] 開いたファイルの履歴を保存 ※ 複数の端末で設定ファイルを共有させている環境では、recentf-auto-cleanup を never にしておかないと大変なことになる。
+;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
     </item>
     
     <item>

@@ -2,6 +2,9 @@
 title = "9.4. recentf"
 draft = false
 +++
+### [recentf] 開いたファイルの履歴を保存
+
+※ 複数の端末で設定ファイルを共有させている環境では、`recentf-auto-cleanup` を `never` にしておかないと大変なことになる。
 
 ```elisp
 ;; recentf
