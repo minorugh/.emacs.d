@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T22:14:11 JST">
+<meta name="revised" content="2022-08-24T22:38:21 JST">
 <title>3.5. expand-region :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -847,7 +847,10 @@
     
     
 <h3 id="expand-refionel-カーソル位置を起点に選択範囲を賢く広げてくれる">[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる</h3>
-<p><a href="https://github.com/magnars/expand-region.el"><code>expand-region.el</code></a> は、カーソル位置を起点として前後に選択範囲を広げてくれます。</p>
+<p>🔗 <a href="https://github.com/magnars/expand-region.el">magnars/expand-region.el: Expand region increases the selected region.</a></p>
+<ul>
+<li><code>expand-region.el</code>は、カーソル位置を起点として前後に選択範囲を広げてくれます。</li>
+</ul>
 <p>2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降は設定したキーバインドの最後の一文字を連打すれば OKです。その場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">expand-region</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>

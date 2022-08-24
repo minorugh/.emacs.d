@@ -3,7 +3,10 @@ title = "9.8. neotree"
 draft = false
 +++
 ### [neotree.el] Emacs 上でディレクトリツリーを表示させる
-Rename, Deleteなどの簡単なコマンドもつかえる。
+
+🔗 [jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.](https://github.com/jaypei/emacs-neotree) 
+
+* Rename, Deleteなどの簡単なコマンドもつかえる。
 
 ```elisp
 (leaf neotree
