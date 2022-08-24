@@ -2,7 +2,7 @@
 title = "3.3. my:jump-brace"
 draft = false
 +++
-### 括弧の先頭と最後へ交互にポイント移動
+### [my:jump-brace] 括弧の先頭と最後へ交互にポイント移動
 
 `my:jump-brace` は、括弧の先頭と最後へ交互にポイント移動します。
 
