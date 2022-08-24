@@ -2,10 +2,11 @@
 title = "2.7. change gloal keybind"
 draft = false
 +++
-グローバルキーバインドを自分好みにカスタマイズしました。 
-前準備として以下を設定しておきます。
+### [cus-global-keybind] グローバルキーバインドをカスタマイズする
 
-* クリップボードを使えるようにする
+* グローバルキーバインドを自分好みにカスタマイズした。 
+* 前準備としてクリップボードを使えるようにする。
+
 ```elisp
 ;; Use the X11 clipboard
 (setq select-enable-clipboard  t)
@@ -17,8 +18,6 @@ draft = false
 ```elisp
 (setq mouse-drag-copy-region t)
 ```
-
-## グローバルキーバインドをカスタマイズする
 
 * `C-w` は、`kill-ring-save` に割り当てられたものですが、`region` 選択されていないときは、一行削除になるようにカスタマイズしてます。
 * `C-x k` の `kill-buffer` は、`yes/no` 確認されるのが煩わしいので、確認なしの `kill-this-buffer` を愛用しています。

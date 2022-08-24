@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T22:42:42 JST">
+<meta name="revised" content="2022-08-24T22:46:32 JST">
 <title>2.7. change gloal keybind :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -822,7 +822,11 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#グローバルキーバインドをカスタマイズする">グローバルキーバインドをカスタマイズする</a></li>
+    <li>
+      <ul>
+        <li><a href="#cus-global-keybind-グローバルキーバインドをカスタマイズする">[cus-global-keybind] グローバルキーバインドをカスタマイズする</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -842,10 +846,10 @@
     
     
     
-<p>グローバルキーバインドを自分好みにカスタマイズしました。
-前準備として以下を設定しておきます。</p>
+<h3 id="cus-global-keybind-グローバルキーバインドをカスタマイズする">[cus-global-keybind] グローバルキーバインドをカスタマイズする</h3>
 <ul>
-<li>クリップボードを使えるようにする</li>
+<li>グローバルキーバインドを自分好みにカスタマイズした。</li>
+<li>前準備としてクリップボードを使えるようにする。</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Use the X11 clipboard</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">select-enable-clipboard</span>  <span style="color:#000">t</span>)
@@ -854,8 +858,7 @@
 マウスで選択すると，勝手にペーストボードにデータが流れます．</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">mouse-drag-copy-region</span> <span style="color:#000">t</span>)
-</code></pre></div><h2 id="グローバルキーバインドをカスタマイズする">グローバルキーバインドをカスタマイズする</h2>
-<ul>
+</code></pre></div><ul>
 <li><code>C-w</code> は、<code>kill-ring-save</code> に割り当てられたものですが、<code>region</code> 選択されていないときは、一行削除になるようにカスタマイズしてます。</li>
 <li><code>C-x k</code> の <code>kill-buffer</code> は、<code>yes/no</code> 確認されるのが煩わしいので、確認なしの <code>kill-this-buffer</code> を愛用しています。</li>
 </ul>
