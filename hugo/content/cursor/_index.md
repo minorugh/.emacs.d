@@ -8,6 +8,8 @@ disableToc = true
 * カーソル移動に関する設定です。
 * ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーと`PgUp` `PgDn` を使っています。
 
+### 🐾 INDEX
+
 [sequential-command]({{< relref "sequential-command" >}})
 : 標準の `C-a` `C-e` を拡張
 

@@ -7,6 +7,8 @@ disableToc = true
 +++
 TPOで使い分けるメモツール
 
+### 🐾 INDEX
+
 [howm-mode]({{< relref "howm" >}})
 : howm-modeの設定
 

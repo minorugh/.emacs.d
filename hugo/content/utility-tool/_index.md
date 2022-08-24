@@ -8,6 +8,8 @@ disableToc = true
 
 自作のユーティリティ関数を集めてここに載せている
 
+### 🐾 INDEX
+
 [emacs-lock]({{< relref "emacs-lock" >}})
 : scratchバッファーを決してKillさせない設定
 
