@@ -309,7 +309,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/hydra/",
-	"title": "Hydra / commandディスパッチャ",
+	"title": "Hydra/ コマンドディスパッチャ",
 	"tags": [],
 	"description": "",
 	"content": "hydra.el を使うとよく使う機能をまとめてシンプルなキーバインドを割り当てることができます。\n日本では、smartrep.el が有名だったようですが、hydra.elも同様の機能を提供します。\n hydra-quick-menu ファイルの自動保存機能を提供します。 hydra-make ファイルの自動保存機能を提供します。 hydra-markdown ファイルの自動保存機能を提供します。 hydra-package-utility ファイルの自動保存機能を提供します。 hydra-browse ファイルの自動保存機能を提供します。 hydra-view-mode ファイルの自動保存機能を提供します。  Qitta に詳しい記事を書いています。  Hydraで Emacsのキーバインド問題を解消  "
