@@ -2,7 +2,7 @@
 title = "4.1. font setting"
 draft = false
 +++
-### Cicaフォントを採用
+### Cicaフォント
 
 *GUI / CUI 共通で `Cica` を使っています。
 
