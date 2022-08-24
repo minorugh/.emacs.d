@@ -25,7 +25,7 @@
 	"title": "フォント / 配色関連",
 	"tags": [],
 	"description": "",
-	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードを実際の色に表示する rainbow-delimiters カラーコードを実際の色に表示する paren カラーコードを実際の色に表示する whitespace カラーコードを実際の色に表示する  "
+	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードを実際の色に表示する rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/",
@@ -319,35 +319,35 @@
 	"title": "4.2. hl-line-mode",
 	"tags": [],
 	"description": "",
-	"content": "ビルトインの hl-line-mode は、カーソル行に色をつける設定です。\n http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html https://www.emacswiki.org/emacs/highlight-current-line.el  機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。\n(global-hl-line-mode 1) "
+	"content": "カーソル行に色を付ける ビルトインの hl-line-mode を使ってカーソル行に色をつける設定です。\n http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html https://www.emacswiki.org/emacs/highlight-current-line.el  機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。\n(global-hl-line-mode 1) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/blink-cursor/",
 	"title": "4.3. blink-cursor-mode",
 	"tags": [],
 	"description": "",
-	"content": " blink-cursor-mode を設定してカーソルの点滅を制御します。  以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．\n(setq blink-cursor-blinks 0) (setq blink-cursor-interval 0.3) (setq blink-cursor-delay 10) (add-hook \u0026#39;emacs-startup-hook . blink-cursor-mode) "
+	"content": "カーソルの点滅を制御  ビルトインの blink-cursor-mode を設定してカーソルの点滅を制御します。  以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．\n(setq blink-cursor-blinks 0) (setq blink-cursor-interval 0.3) (setq blink-cursor-delay 10) (add-hook \u0026#39;emacs-startup-hook . blink-cursor-mode) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/ivy-format/",
 	"title": "4.4. ivy-format-function-arrow",
 	"tags": [],
 	"description": "",
-	"content": " ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) (setq ivy-format-functions-alist \u0026#39;((t . my:ivy-format-function-arrow))) "
+	"content": "選択行をアイコンで強調する  ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) (setq ivy-format-functions-alist \u0026#39;((t . my:ivy-format-function-arrow))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/paren/",
 	"title": "4.5. pare",
 	"tags": [],
 	"description": "",
-	"content": "(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . \u0026#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) "
+	"content": "対応するカッコをハイライトする ビルトインの paren を利用して対応するカッコをハイライトさせます。\n(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . \u0026#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/",
 	"title": "4.6. rainbow-delimiters",
 	"tags": [],
 	"description": "",
-	"content": "(leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) "
+	"content": "[rainbow-delimiters.el] 対応するカッコに色を付ける yanyingwang/rainbow-delimiters: Highlights delimiters such as parentheses.\n複数のカッコが重なる言語では、カッコの対応関係がひと目で理解し難い場合があります。 rainbow-delimiters を使うと対応するカッコを七色に色付けして見やすくできます。\n(leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/rainbow/",

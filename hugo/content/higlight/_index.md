@@ -28,10 +28,10 @@ disableToc = true
 : カラーコードを実際の色に表示する
 
 [rainbow-delimiters]({{< relref "rainbow-delimiters" >}})
-: カラーコードを実際の色に表示する
+: 対応するカッコに色を付ける
 
 [paren]({{< relref "paren" >}})
-: カラーコードを実際の色に表示する
+: 対応するカッコをハイライトする
 
 [whitespace]({{< relref "whitespace" >}})
 : カラーコードを実際の色に表示する

@@ -2,8 +2,9 @@
 title = "4.2. hl-line-mode"
 draft = false
 +++
+### カーソル行に色を付ける
 
-ビルトインの `hl-line-mode` は、カーソル行に色をつける設定です。
+ビルトインの `hl-line-mode` を使ってカーソル行に色をつける設定です。
 
 * http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html 
 * https://www.emacswiki.org/emacs/highlight-current-line.el

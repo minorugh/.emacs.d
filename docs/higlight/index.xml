@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/hl-line/</guid>
-      <description>ビルトインの hl-line-mode は、カーソル行に色をつける設定です。
+      <description>カーソル行に色を付ける ビルトインの hl-line-mode を使ってカーソル行に色をつける設定です。
  http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html https://www.emacswiki.org/emacs/highlight-current-line.el  機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。
 (global-hl-line-mode 1) </description>
     </item>
@@ -35,7 +35,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</guid>
-      <description> blink-cursor-mode を設定してカーソルの点滅を制御します。  以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．
+      <description>カーソルの点滅を制御  ビルトインの blink-cursor-mode を設定してカーソルの点滅を制御します。  以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．
 (setq blink-cursor-blinks 0) (setq blink-cursor-interval 0.3) (setq blink-cursor-delay 10) (add-hook &amp;#39;emacs-startup-hook . blink-cursor-mode) </description>
     </item>
     
@@ -45,7 +45,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</guid>
-      <description> ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) &amp;#34;Transform into a string for minibuffer with CANDS.&amp;#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon &amp;#34;chevron-right&amp;#34; :height 0.8 :v-adjust -0.05) &amp;#34;&amp;gt;&amp;#34;) (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) (ivy--add-face str &amp;#39;ivy-current-match))) (lambda (str) (concat (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) str)) cands &amp;#34;\n&amp;#34;)) (setq ivy-format-functions-alist &amp;#39;((t . my:ivy-format-function-arrow))) </description>
+      <description>選択行をアイコンで強調する  ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) &amp;#34;Transform into a string for minibuffer with CANDS.&amp;#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon &amp;#34;chevron-right&amp;#34; :height 0.8 :v-adjust -0.05) &amp;#34;&amp;gt;&amp;#34;) (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) (ivy--add-face str &amp;#39;ivy-current-match))) (lambda (str) (concat (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) str)) cands &amp;#34;\n&amp;#34;)) (setq ivy-format-functions-alist &amp;#39;((t . my:ivy-format-function-arrow))) </description>
     </item>
     
     <item>
@@ -54,7 +54,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/paren/</guid>
-      <description>(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . &amp;#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) </description>
+      <description>対応するカッコをハイライトする ビルトインの paren を利用して対応するカッコをハイライトさせます。
+(leaf paren :hook (after-init-hook . show-paren-mode) :custom `((show-paren-style . &amp;#39;parenthesis) (show-paren-when-point-inside-paren . t) (show-paren-when-point-in-periphery . t))) </description>
     </item>
     
     <item>
@@ -63,7 +64,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</guid>
-      <description>(leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) </description>
+      <description>[rainbow-delimiters.el] 対応するカッコに色を付ける yanyingwang/rainbow-delimiters: Highlights delimiters such as parentheses.
+複数のカッコが重なる言語では、カッコの対応関係がひと目で理解し難い場合があります。 rainbow-delimiters を使うと対応するカッコを七色に色付けして見やすくできます。
+(leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) </description>
     </item>
     
     <item>

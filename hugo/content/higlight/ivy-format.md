@@ -2,7 +2,7 @@
 title = "4.4. ivy-format-function-arrow"
 draft = false
 +++
-
+### 選択行をアイコンで強調する
 * `ivy-mode` の選択行をアイコンで強調する設定です。
 
 ```elisp

@@ -2,6 +2,8 @@
 title = "4.5. pare"
 draft = false
 +++
+### 対応するカッコをハイライトする
+ビルトインの `paren` を利用して対応するカッコをハイライトさせます。
 
 ```elisp
 (leaf paren
