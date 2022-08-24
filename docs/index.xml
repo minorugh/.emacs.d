@@ -35,9 +35,9 @@ Package の初期化を抑制する Emacs27では、(package-initialize) が 2�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
-      <description>Emacsの設定管理は、これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。
- Emacs入門から始めるleaf.el入門  leaf.el に対応したinit.el Packageは、基本MELPAからインストールしていますが、el-getも使えるようにしています。 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。
-;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*- ;;; Commentary: ;; ;; Compatible with Emacs 27 and later ;; Aiming for a fancy and fast Emacs configuration ;; ;;; Code: ;; (setq debug-on-error t) ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover file name handlers.</description>
+      <description>[leaf.el] 設定ファイルを明示的に書く Emacs入門から始めるleaf.el入門
+ Emacsの設定管理は、これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。  leaf.el に対応したinit.el Packageは、基本MELPAからインストールしていますが、el-get も使えるようにしています。 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。
+ 下記設定は、@conao3 さんの示されていたものを下敷きにています。  ;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*- ;;; Commentary: ;; ;; Compatible with Emacs 27 and later ;; Aiming for a fancy and fast Emacs configuration ;; ;;; Code: ;; (setq debug-on-error t) ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover file name handlers.</description>
     </item>
     
     <item>

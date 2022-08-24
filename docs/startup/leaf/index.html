@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T20:44:21 JST">
+<meta name="revised" content="2022-08-24T20:50:33 JST">
 <title>1.3. leaf.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -824,6 +824,7 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#leafel-設定ファイルを明示的に書く">[leaf.el] 設定ファイルを明示的に書く</a></li>
         <li><a href="#leafel-に対応したinitel">leaf.el に対応したinit.el</a></li>
       </ul>
     </li>
@@ -846,14 +847,18 @@
     
     
     
-<p>Emacsの設定管理は、これまで <code>use-pacage.el</code> を使っていましたが、
-<a href="https://qiita.com/conao3">@conao3</a> さんの開発された <code>leaf.el</code> に触発されて全面的に書き直しました。</p>
+<h3 id="leafel-設定ファイルを明示的に書く">[leaf.el] 設定ファイルを明示的に書く</h3>
+<p><a href="https://qiita.com/conao3/items/347d7e472afd0c58fbd7">Emacs入門から始めるleaf.el入門</a></p>
 <ul>
-<li><a href="https://qiita.com/conao3/items/347d7e472afd0c58fbd7">Emacs入門から始めるleaf.el入門</a></li>
+<li>Emacsの設定管理は、これまで <code>use-pacage.el</code> を使っていましたが、
+<a href="https://qiita.com/conao3">@conao3</a> さんの開発された <code>leaf.el</code> に触発されて全面的に書き直しました。</li>
 </ul>
 <h3 id="leafel-に対応したinitel">leaf.el に対応したinit.el</h3>
-<p>Packageは、基本MELPAからインストールしていますが、el-getも使えるようにしています。
+<p>Packageは、基本MELPAからインストールしていますが、<code>el-get</code> も使えるようにしています。
 自作パッケージもGitHubリポジトリで管理してel-getでインストールすることでシンプルなパッケージ管理が出来ます。</p>
+<ul>
+<li>下記設定は、<code>@conao3</code> さんの示されていたものを下敷きにています。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*-</span>
 <span style="color:#177500">;;; Commentary:</span>
 <span style="color:#177500">;;</span>
