@@ -67,7 +67,7 @@
 	"title": "開発サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここでは開発ワークをサポートしてくれるツールの設定をまとめている。\n counsel-tramp 言語と文字コードの設定 easy-hugo 言語と文字コードの設定 flymake 言語と文字コードの設定 gist 言語と文字コードの設定 function key 言語と文字コードの設定 magit 言語と文字コードの設定 quickrun 言語と文字コードの設定 open-junk-file 言語と文字コードの設定  "
+	"content": "ここでは開発ワークをサポートしてくれるツールの設定をまとめている。\n counsel-tramp counsel でtrampのインターフェースを提供 easy-hugo 言語と文字コードの設定 flymake 言語と文字コードの設定 gist 言語と文字コードの設定 function key ファンクションキーに便利キーバインド を設定 magit Gitクライアント quickrun お手軽ビルド環境を提供 open-junk-file 実験的なショートコードをクイックに書いて保存する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/",

@@ -9,7 +9,7 @@ disableToc = true
 ここでは開発ワークをサポートしてくれるツールの設定をまとめている。
 
 [counsel-tramp]({{< relref "tramp" >}})
-: 言語と文字コードの設定
+: counsel でtrampのインターフェースを提供
 
 [easy-hugo]({{< relref "easy-hugo" >}})
 : 言語と文字コードの設定
@@ -21,15 +21,15 @@ disableToc = true
 : 言語と文字コードの設定
 
 [function key]({{< relref "function" >}})
-: 言語と文字コードの設定
+: ファンクションキーに便利キーバインド を設定
 
 [magit]({{< relref "magit" >}})
-: 言語と文字コードの設定
+: Gitクライアント
 
 [quickrun]({{< relref "quickrun" >}})
-: 言語と文字コードの設定
+: お手軽ビルド環境を提供
 
 [open-junk-file]({{< relref "junk" >}})
-: 言語と文字コードの設定
+: 実験的なショートコードをクイックに書いて保存する
 
 
