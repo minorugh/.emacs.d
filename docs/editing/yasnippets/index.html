@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-24T14:34:57 JST">
-<title>9.3. auto-delete :: minoru&#39;s Emacs Configuration</title>
+<title>7.7. yasunippets :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/history/auto-delete/">
+  <body data-url="/.emacs.d/editing/yasnippets/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -787,7 +787,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/history/auto-delete.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/yasnippets.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/history/'>履歴 / ファイル管理</a> > 9.3. auto-delete
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>編集サポート / 入力補助</a> > 7.7. yasunippets
 
  
 
@@ -824,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#空になったファイルを自動的に削除">空になったファイルを自動的に削除</a></li>
+        <li><a href="#yasnippetsel-テンプレート-システム">[yasnippets.el] テンプレート システム</a></li>
       </ul>
     </li>
   </ul>
@@ -838,7 +838,7 @@
 
 <div id="body-inner">
   
-    <h1>9.3. auto-delete</h1>
+    <h1>7.7. yasunippets</h1>
   
 
 
@@ -846,19 +846,13 @@
     
     
     
-<h3 id="空になったファイルを自動的に削除">空になったファイルを自動的に削除</h3>
-<p>howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。</p>
-<p>下記の設定をしておくと、<code>C-x h</code> で全選択して delete したあと <code>kill-buffer</code> することで自動的にファイルが削除されるので便利です。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
-  <span style="color:#c41a16">&#34;Automatic deletion for empty files (Valid in all modes).&#34;</span>
-  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))
-			 (<span style="color:#000">=</span> (<span style="color:#000">point-min</span>) (<span style="color:#000">point-max</span>)))
-    (<span style="color:#000">delete-file</span>
-     (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
-(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">memq</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>))
-    (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
-		  (<span style="color:#000">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
-
+<h3 id="yasnippetsel-テンプレート-システム">[yasnippets.el] テンプレート システム</h3>
+<p><a href="https://github.com/joaotavora/yasnippet">joaotavora/yasnippet: Template system for Emacs.</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">yasnippet</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">yas-global-mode</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">yasnippet-snippets</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>))
 </code></pre></div>
 
     
@@ -870,8 +864,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/history/undo-fu/" title="9.2. undo-fua"> <i class="fa fa-chevron-left"></i><label>9.2. undo-fua</label></a>
-    <a class="nav nav-next" href="/.emacs.d/history/recentf/" title="9.4. recentf" style="margin-right: 0px;"><label>9.4. recentf</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/editing/ivy/" title="7.6. ivy / counsel"> <i class="fa fa-chevron-left"></i><label>7.6. ivy / counsel</label></a>
+    <a class="nav nav-next" href="/.emacs.d/editing/company/" title="7.8. company" style="margin-right: 0px;"><label>7.8. company</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -2,7 +2,7 @@
 title = "7.1. markdown-mode"
 draft = false
 +++
-### 5.2. markdownモード
+### [markdown-mode.el] markdownモード編集、入力支援
 [`markdown-mode.el`](https://github.com/jrblevin/markdown-mode) は、Markdown形式のテキストを編集するための主要なモードです。
 
 ```elisp

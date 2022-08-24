@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T14:06:27 JST">
+<meta name="revised" content="2022-08-24T14:34:57 JST">
 <title>7.2. veiw-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -348,6 +348,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/smartparens/">
+            7.10. smartparens
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/migemo/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/migemo/">
@@ -411,24 +418,24 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yasnippets/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/yasnippets/">
+            7.7. yasunippets
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/company/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/company/">
-            7.7. yasunippets / company
+            7.8. company
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/key-chord/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/key-chord/">
-            7.8. key-chord
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/smartparens/">
-            7.9. smartparens
+            7.9. key-chord
           </a>
         </div>
     </li>
@@ -817,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#53-viewモード">5.3. viewモード</a></li>
+        <li><a href="#view-mode-ファイル閲覧モード標準機能">[view-mode] ファイル閲覧モード（標準機能）</a></li>
       </ul>
     </li>
   </ul>
@@ -839,7 +846,7 @@
     
     
     
-<h3 id="53-viewモード">5.3. viewモード</h3>
+<h3 id="view-mode-ファイル閲覧モード標準機能">[view-mode] ファイル閲覧モード（標準機能）</h3>
 <p>特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに <a href="https://www.emacswiki.org/emacs/ViewMode">view-mode</a> を使います。</p>
 <p>下記の設定では、<code>my:auto-view-dirs</code> に追加したディレクトリのファイルを開くと <code>view-mode</code> が常に有効になります．</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">view</span>

@@ -2,7 +2,7 @@
 title = "7.6. ivy / counsel"
 draft = false
 +++
-
+### [ivy.el / counsel.el] Emacsの補完システム
 `ivy` は、`helm` と双璧を成す Emacsの補完システムです。
 
 リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。

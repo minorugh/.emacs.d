@@ -255,6 +255,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
   </url>
   
@@ -315,6 +319,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yasnippets/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
   </url>
   
@@ -324,10 +332,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
   </url>
   
   <url>

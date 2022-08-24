@@ -3,7 +3,7 @@ title = "7.5. darkroom"
 draft = false
 +++
 
-### [darkroom-mode] 執筆モード
+### [darkroom-mode.el] 執筆モード
 [`darkroom.el`](https://github.com/joaotavora/darkroom)  は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
 
 [https://github.com/joaotavora/darkroom](https://github.com/joaotavora/darkroom)

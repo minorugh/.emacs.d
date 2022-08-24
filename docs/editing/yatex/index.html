@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T14:06:27 JST">
+<meta name="revised" content="2022-08-24T14:34:57 JST">
 <title>7.4. yatex :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -348,6 +348,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/smartparens/">
+            7.10. smartparens
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/migemo/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/migemo/">
@@ -411,24 +418,24 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yasnippets/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/yasnippets/">
+            7.7. yasunippets
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/company/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/company/">
-            7.7. yasunippets / company
+            7.8. company
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/key-chord/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/key-chord/">
-            7.8. key-chord
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/smartparens/">
-            7.9. smartparens
+            7.9. key-chord
           </a>
         </div>
     </li>
@@ -817,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#56-yatex-yatexで-latex編集">5.6. [yatex] YaTexで LaTex編集</a></li>
+        <li><a href="#yatexel-yatexで-latex編集">[yatex.el] YaTexで LaTex編集</a></li>
       </ul>
     </li>
   </ul>
@@ -839,7 +846,7 @@
     
     
     
-<h3 id="56-yatex-yatexで-latex編集">5.6. [yatex] YaTexで LaTex編集</h3>
+<h3 id="yatexel-yatexで-latex編集">[yatex.el] YaTexで LaTex編集</h3>
 <p><a href="https://github.com/emacsmirror/yatex"><code>yatex.el</code></a> は、Emacsの上で動作する LaTeX の入力支援環境です。</p>
 <p>ごく一般的な設定例ですが、参考になるとしたら <code>dviprint-command-format</code> に <code>dvpd.sh</code> というスクリプトを設定して、<code>YateX.lpr</code>
 コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。</p>

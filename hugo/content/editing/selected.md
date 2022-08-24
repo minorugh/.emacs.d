@@ -3,7 +3,7 @@ title = "7.12. selected"
 draft = false
 +++
 
-### [selected] リージョン選択時のアクションを制御
+### [selected.el] リージョン選択時のアクションを制御
 [`selected.el`](https://github.com/Kungsgeten/selected.el) は、選択領域に対するスピードコマンドです。
 
 Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。

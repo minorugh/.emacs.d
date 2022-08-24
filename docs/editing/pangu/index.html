@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T14:06:26 JST">
+<meta name="revised" content="2022-08-24T14:34:57 JST">
 <title>7.13. pangu-spacing :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -348,6 +348,13 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/smartparens/">
+            7.10. smartparens
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/migemo/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/migemo/">
@@ -411,24 +418,24 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yasnippets/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/yasnippets/">
+            7.7. yasunippets
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/company/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/company/">
-            7.7. yasunippets / company
+            7.8. company
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/key-chord/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/key-chord/">
-            7.8. key-chord
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/smartparens/">
-            7.9. smartparens
+            7.9. key-chord
           </a>
         </div>
     </li>
@@ -813,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#pangu-spacingel-漢字と英字の間にスペースを自動追加">[pangu-spacing.el] 漢字と英字の間にスペースを自動追加</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -831,6 +846,14 @@
     
     
     
+<h3 id="pangu-spacingel-漢字と英字の間にスペースを自動追加">[pangu-spacing.el] 漢字と英字の間にスペースを自動追加</h3>
+<p><a href="https://github.com/coldnew/pangu-spacing">coldnew/pangu-spacing: Add space between Chinese and English characters.</a></p>
+<p><code>pangu-spacing</code>は、漢字と英字の間にスペースを自動追加してくれます。
+やや不満なところもあるので少しカスタマイズしました。</p>
+<ul>
+<li>英字の前方のみとし後方にはスペースは挿入しない。</li>
+<li>半角数字は、対象から除外。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Add space between full-width and half-width</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">pangu-spacing</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>

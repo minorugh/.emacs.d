@@ -2,7 +2,8 @@
 title = "7.2. veiw-mode"
 draft = false
 +++
-### 5.3. viewモード
+### [view-mode] ファイル閲覧モード（標準機能）
+
 特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに [view-mode](https://www.emacswiki.org/emacs/ViewMode) を使います。
 
 下記の設定では、`my:auto-view-dirs` に追加したディレクトリのファイルを開くと `view-mode` が常に有効になります．

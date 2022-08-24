@@ -1,17 +1,10 @@
 +++
-title = "7.7. yasunippets / company"
+title = "7.8. company"
 draft = false
 +++
+### [company.el] 入力補完機能を提供
 
-```elisp
-(leaf yasnippet
-  :ensure t
-  :hook (after-init-hook . yas-global-mode)
-  :config
-  (leaf yasnippet-snippets :ensure t))
-
-```
-
+[company-mode/company.el: Modular completion framework.](https://github.com/company-mode/company-mode/blob/master/company.el) 
 ```elisp
 (leaf company
   :ensure t

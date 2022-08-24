@@ -3,7 +3,7 @@ title = "7.4. yatex"
 draft = false
 +++
 
-### 5.6. [yatex] YaTexで LaTex編集
+### [yatex.el] YaTexで LaTex編集
 [`yatex.el`](https://github.com/emacsmirror/yatex) は、Emacsの上で動作する LaTeX の入力支援環境です。
 
 ごく一般的な設定例ですが、参考になるとしたら `dviprint-command-format` に `dvpd.sh` というスクリプトを設定して、`YateX.lpr`
