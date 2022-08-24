@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T09:41:12 JST">
+<meta name="revised" content="2022-08-24T09:56:56 JST">
 <title>1.6. dashboard :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -802,12 +802,7 @@
 (<span style="color:#a90d91">defun</span> <span style="color:#000">open-dashboard</span> ()
   <span style="color:#c41a16">&#34;Open the *dashboard* buffer and jump to the first widget.&#34;</span>
   (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">if</span> (<span style="color:#000">length&gt;</span> (<span style="color:#000">window-list-1</span>)
-			   (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">fboundp</span> <span style="color:#c41a16">&#39;treemacs-current-visibility</span>)
-                        (<span style="color:#000">eq</span> (<span style="color:#000">treemacs-current-visibility</span>) <span style="color:#c41a16">&#39;visible</span>))
-				   <span style="color:#1c01ce">2</span>
-				 <span style="color:#1c01ce">1</span>))
-	  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">t</span>))
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">t</span>)
   (<span style="color:#000">delete-other-windows</span>)
   (<span style="color:#000">dashboard-refresh-buffer</span>)
   (<span style="color:#000">dashboard-goto-recent-files</span>))

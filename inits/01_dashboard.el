@@ -69,12 +69,7 @@
 (defun open-dashboard ()
   "Open the *dashboard* buffer and jump to the first widget."
   (interactive)
-  (if (length> (window-list-1)
-			   (if (and (fboundp 'treemacs-current-visibility)
-                        (eq (treemacs-current-visibility) 'visible))
-				   2
-				 1))
-	  (setq dashboard-recover-layout-p t))
+  (setq dashboard-recover-layout-p t)
   (delete-other-windows)
   (dashboard-refresh-buffer)
   (dashboard-goto-recent-files))

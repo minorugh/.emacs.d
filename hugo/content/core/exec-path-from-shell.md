@@ -2,6 +2,8 @@
 title = "2.5. exec-path-from-shell"
 draft = false
 +++
+### [exec-path-from-shell.el] 設定をシェルから継承する
+
 * `exec-path-from-shell` は、シェルに設定した `PATH` の情報を継承して `exec-path` や `PATH` を設定してくれます。
 * 自分は、`shell-commad` や `compile-command` をよく使うので必須のパッケージです。
 

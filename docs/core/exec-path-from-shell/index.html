@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T09:41:12 JST">
+<meta name="revised" content="2022-08-24T09:56:56 JST">
 <title>2.5. exec-path-from-shell :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -701,7 +701,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#exec-path-from-shellel-設定をシェルから継承する">[exec-path-from-shell.el] 設定をシェルから継承する</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -719,6 +727,7 @@
     
     
     
+<h3 id="exec-path-from-shellel-設定をシェルから継承する">[exec-path-from-shell.el] 設定をシェルから継承する</h3>
 <ul>
 <li><code>exec-path-from-shell</code> は、シェルに設定した <code>PATH</code> の情報を継承して <code>exec-path</code> や <code>PATH</code> を設定してくれます。</li>
 <li>自分は、<code>shell-commad</code> や <code>compile-command</code> をよく使うので必須のパッケージです。</li>
