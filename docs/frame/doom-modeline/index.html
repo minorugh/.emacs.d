@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T20:33:05 JST">
+<meta name="revised" content="2022-08-24T20:40:57 JST">
 <title>5.8. doom-modeline :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -820,7 +820,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#doom-modelineel">[doom-modeline.el]</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -838,6 +846,12 @@
     
     
     
+<h3 id="doom-modelineel">[doom-modeline.el]</h3>
+<p><a href="https://github.com/seagle0128/doom-modeline">seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.</a></p>
+<ul>
+<li><a href="https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf">Emacsモダン化計画 -かわEmacs編</a> の記事に触発されて以来、<code>doom-modeline</code> を愛用しています。</li>
+<li><a href="https://github.com/TeMPOraL/nyan-mode">TeMPOraL/nyan-mode.el</a> も可愛くて癒やされています(^^)</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">doom-modeline</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">doom-modeline-mode</span>)

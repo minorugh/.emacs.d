@@ -417,7 +417,7 @@
 	"title": "5.8. doom-modeline",
 	"tags": [],
 	"description": "",
-	"content": "(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline \u0026#39;main \u0026#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) \u0026#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) "
+	"content": "[doom-modeline.el] seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.\n Emacsモダン化計画 -かわEmacs編 の記事に触発されて以来、doom-modeline を愛用しています。 TeMPOraL/nyan-mode.el も可愛くて癒やされています(^^)  (leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline \u0026#39;main \u0026#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) \u0026#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/markdown/",
