@@ -2,7 +2,7 @@
 title = "1.2. speed up startup"
 draft = false
 +++
-### [speed uo startup] 起動時間の短縮
+### [speed up startup] 起動時間の短縮
 
 * Magic File Name を一時的に無効にすることで、起動時間を短縮できます。
 * GC設定とともに設定ファイル読み込み後に正常値に戻します。
