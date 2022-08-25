@@ -284,7 +284,7 @@
 	"title": "3.2. other-window-or-split",
 	"tags": [],
 	"description": "",
-	"content": "[other-window-or-sprit] 画面分割時のカーソルの移動  other-window-or-split は、画面分割コマンド C-x 3 を拡張します。 画面分割されていないときは、左右分割して follow-mode dimmer-mode も ON にしています。（詳細後述） 画面移動だけなら C-c o でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。  (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key \u0026#34;C-q\u0026#34; \u0026#39;other-window-or-split) "
+	"content": "画面分割時のカーソルの移動 other-window-or-split は、画面分割コマンド C-x 3 を拡張します。\n画面分割されていないときは、左右分割して follow-mode dimmer-mode も ON にしています。（詳細後述）\n画面移動だけなら C-c o でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。\n(defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key \u0026#34;C-q\u0026#34; \u0026#39;other-window-or-split) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/jump-brace/",

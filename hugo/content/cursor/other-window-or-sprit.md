@@ -2,10 +2,12 @@
 title = "3.2. other-window-or-split"
 draft = false
 +++
-### [other-window-or-sprit] 画面分割時のカーソルの移動
-* `other-window-or-split` は、画面分割コマンド `C-x 3` を拡張します。
-* 画面分割されていないときは、左右分割して `follow-mode` `dimmer-mode` も `ON` にしています。（詳細後述）
-* 画面移動だけなら `C-c o` でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。
+### 画面分割時のカーソルの移動
+`other-window-or-split` は、画面分割コマンド `C-x 3` を拡張します。
+
+画面分割されていないときは、左右分割して `follow-mode` `dimmer-mode` も `ON` にしています。（詳細後述）
+
+画面移動だけなら `C-c o` でもいいですが，ワンアクションで分割と移動を賢くしてくれるので便利です。
 
 ```elisp
 (defun other-window-or-split ()
