@@ -5,8 +5,9 @@ draft = false
 ### [whitespace.el] 全角スペースを強調表示する
 🔗 [emacs/whitespace.el: visualize blanks (TAB, (HARD) SPACE and NEWLINE).](https://github.com/emacs-mirror/emacs/tree/master/lisp) 
 
-* `show-trailing-whitespace` は、便利だけれどtext-modなどでは多少うざいときもあるので、`prog-mode-hook` で使っている。
-* [ファイルの保存時に行末のスペースや末尾の改行を削除する](https://qiita.com/itiut@github/items/4d74da2412a29ef59c3a) というTipsもあるがジブは、手動で削除できるようにしている。
+`show-trailing-whitespace` は、便利だけれど`text-mode`などでは多少うざいときもあるので `prog-mode-hook` で使っている。
+
+[ファイルの保存時に行末のスペースや末尾の改行を削除する](https://qiita.com/itiut@github/items/4d74da2412a29ef59c3a) というTipsもあるがジブは、手動で削除できるようにしている。
 
 ```elisp
 (leaf whitespace
