@@ -30,7 +30,7 @@ Linux 環境でのインストールの方法です。
 ```codesesion
 $ unzip Cica-v5.0.1.zip
 ```
-3. LICENSE.txtを確認し、ファイルを `/usr/local/share/fonts/` または `~/.fonts/` にコピーします。
+3. 解凍したファイルを `~/.fonts/` にコピーします。
 
 ```codesession
 $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/

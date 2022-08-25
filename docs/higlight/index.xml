@@ -16,7 +16,7 @@
 (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) Cicaフォントを使っています。 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
  プログラミング用日本語等幅フォント Cica  フォントのインストール Linux 環境でのインストールの方法です。
 オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。
- ダウンロードページから、 Cica-v5.0.1.zip をダウンロードします。 zipファイルを展開します。  $ unzip Cica-v5.0.1.zip LICENSE.txtを確認し、ファイルを /usr/local/share/fonts/ または ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf </description>
+ ダウンロードページから、 Cica-v5.0.1.zip をダウンロードします。 zipファイルを展開します。  $ unzip Cica-v5.0.1.zip 解凍したファイルを ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf </description>
     </item>
     
     <item>
