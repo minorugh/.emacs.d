@@ -4,9 +4,10 @@ draft = false
 +++
 ### [speed up startup] 起動時間の短縮
 
-* Magic File Name を一時的に無効にすることで、起動時間を短縮できます。
-* GC設定とともに設定ファイル読み込み後に正常値に戻します。
-* `init.el` の先頭に書きます。
+Magic File Name を一時的に無効にすることで、起動時間を短縮できます。
+
+GC設定とともに設定ファイル読み込み後に正常値に戻します。
+`init.el` の先頭に書きましょう。
 
 ```elisp
 ;; Speed up startup
