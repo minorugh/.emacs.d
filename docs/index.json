@@ -354,7 +354,7 @@
 	"title": "4.7. rainbow-mode",
 	"tags": [],
 	"description": "",
-	"content": "[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.\nrainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードを実際の色に表示してくれる。\nglobal 設定にしているとうざいときもあるので、必要なときだけ使えるようにしています。\n(leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
+	"content": "[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.\nrainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードを実際の色に表示してくれる。\nglobal 設定にするとうざいと思うシーンもあるので、必要なときだけ使えるようにしています。\n(leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/",

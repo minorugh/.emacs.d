@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T08:38:11 JST">
+<meta name="revised" content="2022-08-26T08:39:19 JST">
 <title>4.7. rainbow-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -841,7 +841,7 @@
 <h3 id="rainbow-modeel-バッファ内のカラーコードに実際の色をつける">[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける</h3>
 <p>🔗 <a href="https://github.com/emacsmirror/rainbow-mode">emacsmirror/rainbow-mode: Colorize color names in buffers.</a></p>
 <p><code>rainbow-mode.el</code> は <code>red</code>, <code>green</code> などの色名や <code>#aabbcc</code> といったカラーコードを実際の色に表示してくれる。</p>
-<p><code>global</code> 設定にしているとうざいときもあるので、必要なときだけ使えるようにしています。</p>
+<p><code>global</code> 設定にするとうざいと思うシーンもあるので、必要なときだけ使えるようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">rainbow-mode</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-c r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">rainbow-mode</span>))
