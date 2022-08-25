@@ -79,7 +79,9 @@
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow/</guid>
       <description>[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.
- rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (&amp;#34;C-c r&amp;#34; . rainbow-mode)) </description>
+rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。
+常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。
+(leaf rainbow-mode :ensure t :bind (&amp;#34;C-c r&amp;#34; . rainbow-mode)) </description>
     </item>
     
     <item>
