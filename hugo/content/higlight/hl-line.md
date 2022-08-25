@@ -1,5 +1,5 @@
 +++
-title = "4.2. hl-line-mode"
+title = "4.2. hl-line"
 draft = false
 +++
 ### [hi-line.el] カーソル行に色を付ける
