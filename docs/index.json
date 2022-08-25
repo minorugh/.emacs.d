@@ -263,7 +263,7 @@
 	"title": "2.6. uniguify",
 	"tags": [],
 	"description": "",
-	"content": "[unquify.el] 同じバッファ名が開かれた場合に区別する ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
+	"content": "同じバッファ名が開かれた場合に区別する ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/change-keybind/",
