@@ -2,47 +2,58 @@
 title = "2.3. mozc"
 draft = false
 +++
-### Emacs上でmozcを使うための手順
-Linux環境を前提にした説明になりますが、ごめんなさい。
+<!-- ### Emacs上でmozcを使うための手順 -->
+<!-- Linux環境を前提にした説明になりますが、ごめんなさい。 -->
 
-1. Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、`fcitx-Mozc` です。
-2. Emacsでmozcを使うためのmozcサーバー `emacs-Mozc` をインストールします。
+<!-- 1. Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、`fcitx-Mozc` です。 -->
+<!-- 2. Emacsでmozcを使うためのmozcサーバー `emacs-Mozc` をインストールします。 -->
 
-`fcitx-mozc` のインストール
+<!-- `fcitx-mozc` のインストール -->
 
-```shellsession
-$ sudo apt install fcitx-mozc --install-recommends
-```
-インストールが済んだら `fcitx`を有効化します。
+<!-- ```shellsession -->
+<!-- $ sudo apt install fcitx-mozc --install-recommends -->
+<!-- ``` -->
+<!-- インストールが済んだら `fcitx`を有効化します。 -->
 
-```shellsession
-im-config -n fcitx
-```
-一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。
+<!-- ```shellsession -->
+<!-- im-config -n fcitx -->
+<!-- ``` -->
+<!-- 一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。 -->
 
-続いて、`emacs-mozc` をインストール
+<!-- 続いて、`emacs-mozc` をインストール -->
+
+
+ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。
+* 参考リンク: [Debian系の日本語入力をFcitx & Mozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
+
+
+### [emacs-mozc] Mozcサーバーをインストール
+EmacsからMozcを使えるようにするには、まず `mozc_emacs_helper` をインストールする必要があります。
+OSによって手法が異なりますが、Linuxの場合は簡単です。
 
 ```shellsession
 $ sudo apt install emacs-mozc
 ```
-`/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。
+`/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。 
 
-### [mozc.el] Mozcサーバーを使って日本語テキストを入力
-🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
+### Emacsでのインライン入力を無効にする
+デフォルトでは、`C-\` で `mozc`が起動します。
 
-デフォルトでは、`C-\` で `mozc`が起動しますが、できれば `<hiragana-katakana>` で使いたいので、Emacsでのインライン入力を無効にします。
+Emacsでも `<hiragana-katakana>` でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。
 
-`~/.Xresources` を作成して下記のように設定します。
+方法は簡単で、`~/.Xresources` を作成して下記のように設定します。
 
 ```shellsession
-! ~/.Xresources
 ! Emacs XIMを無効化
 Emacs*useXIM: false
 ```
 再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
 これで、`<hiragana-katakana>` をEmacsの `toggle-input-method` に割り当てることができます。
 
-また、句読点などを入力したとき、自動的に確定させるように `mozc-insert-str` を宣言します。
+### [mozc.el] Mozcサーバーを使って日本語テキストを入力
+🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
+
+句読点などを入力したとき、自動的に確定させるように `mozc-insert-str` を定義しました。
 
 ```elisp
 (leaf mozc

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T14:23:20 JST">
+<meta name="revised" content="2022-08-25T16:19:37 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -825,7 +825,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#emacs上でmozcを使うための手順">Emacs上でmozcを使うための手順</a></li>
+        <li><a href="#emacs-mozc-mozcサーバーをインストール">[emacs-mozc] Mozcサーバーをインストール</a></li>
+        <li><a href="#emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</a></li>
         <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
@@ -852,30 +853,40 @@
     
     
     
-<h3 id="emacs上でmozcを使うための手順">Emacs上でmozcを使うための手順</h3>
-<p>Linux環境を前提にした説明になりますが、ごめんなさい。</p>
-<ol>
-<li>Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、<code>fcitx-Mozc</code> です。</li>
-<li>Emacsでmozcを使うためのmozcサーバー <code>emacs-Mozc</code> をインストールします。</li>
-</ol>
-<p><code>fcitx-mozc</code> のインストール</p>
-<pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install fcitx-mozc --install-recommends
-</code></pre><p>インストールが済んだら <code>fcitx</code>を有効化します。</p>
-<pre><code class="language-shellsession" data-lang="shellsession">im-config -n fcitx
-</code></pre><p>一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。</p>
-<p>続いて、<code>emacs-mozc</code> をインストール</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。</p>
+<ul>
+<li>参考リンク: <a href="https://cloud-work.net/linux/fcitx-mozc/">Debian系の日本語入力をFcitx &amp; Mozcにする</a></li>
+</ul>
+<h3 id="emacs-mozc-mozcサーバーをインストール">[emacs-mozc] Mozcサーバーをインストール</h3>
+<p>EmacsからMozcを使えるようにするには、まず <code>mozc_emacs_helper</code> をインストールする必要があります。
+OSによって手法が異なりますが、Linuxの場合は簡単です。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install emacs-mozc
 </code></pre><p><code>/user/bin/</code> に <code>mozc_emacs_helper</code> がインストールされていたらOKです。</p>
-<h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
-<p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
-<p>デフォルトでは、<code>C-\</code> で <code>mozc</code>が起動しますが、できれば <code>&lt;hiragana-katakana&gt;</code> で使いたいので、Emacsでのインライン入力を無効にします。</p>
-<p><code>~/.Xresources</code> を作成して下記のように設定します。</p>
-<pre><code class="language-shellsession" data-lang="shellsession">! ~/.Xresources
-! Emacs XIMを無効化
+<h3 id="emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</h3>
+<p>デフォルトでは、<code>C-\</code> で <code>mozc</code>が起動します。</p>
+<p>Emacsでも <code>&lt;hiragana-katakana&gt;</code> でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。</p>
+<p>方法は簡単で、<code>~/.Xresources</code> を作成して下記のように設定します。</p>
+<pre><code class="language-shellsession" data-lang="shellsession">! Emacs XIMを無効化
 Emacs*useXIM: false
 </code></pre><p>再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
 これで、<code>&lt;hiragana-katakana&gt;</code> をEmacsの <code>toggle-input-method</code> に割り当てることができます。</p>
-<p>また、句読点などを入力したとき、自動的に確定させるように <code>mozc-insert-str</code> を宣言します。</p>
+<h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
+<p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
+<p>句読点などを入力したとき、自動的に確定させるように <code>mozc-insert-str</code> を定義しました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-input-method</span>)
