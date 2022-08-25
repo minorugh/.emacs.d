@@ -22,14 +22,12 @@ markdownファイルのプレビューには、`emacs-livedown`を使ってい�
 
 🔗 [shime/emacs-livedown: Emacs plugin for Livedown.](https://github.com/shime/emacs-livedown)
 
-`npm` がインストールされた`node`が入っていことを確認してから`livedown`をインストールします。
-
 ```session
 $ npm install -g livedown
 ```
+でインストールできます。
 
-次にEmacsの設定を書きます。
-MELPAにはないので`el-get` でインストールします。
+`emacs-livedown.elisp` は、`el-get` でインストールします。
 
 ```elisp
 (leaf emacs-livedown

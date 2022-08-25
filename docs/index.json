@@ -39,7 +39,7 @@
 	"title": "編集サポート / 入力補助",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdown記法での編集をサポートしてくれるマイナーモード。 view-mode ファイルの閲覧に特化した便利機能を提供してくれる。 web-mode HTML編集をするためのマイナーモードを提供してくれる。 yatex Emacsの上で動作する LaTeX の入力支援環境を提供する。 darkroom 書くことに集中できるようにバッファを調整してくれる。 ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。 yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる。 key-chord 同時押しというキーバインドを提供してくれる。 smartparens 括弧などのペアを自動的に挿入してくれる。 iedit 択領域を別の文字列に置き換える。 migemo ローマ字のまま日本語をインクリメンタル検索を可能にする。 selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる。 counsel-fontawesome Font-Awesomeの入力を支援してくれる。  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdown記法での編集をサポートしてくれるマイナーモード。 view-mode ファイルの閲覧に特化した便利機能を提供してくれる。 web-mode HTML編集をするためのマイナーモードを提供してくれる。 yatex Emacsの上で動作する LaTeX の入力支援環境を提供する。 darkroom 書くことに集中できるようにバッファを調整してくれる。 ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。 yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる。 key-chord 同時押しでのキーバインドを提供してくれる。 smartparens 括弧などのペアを自動的に挿入してくれる。 iedit 択領域を別の文字列に置き換える。 migemo ローマ字のまま日本語をインクリメンタル検索を可能にする。 selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる。 counsel-fontawesome Font-Awesomeの入力を支援してくれる。  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/",
@@ -424,7 +424,7 @@
 	"title": "7.1. markdown-mode",
 	"tags": [],
 	"description": "",
-	"content": "[markdown-mode.el] markdownモード編集、入力支援 🔗 jrblevin/markdown-mode: Emacs Markdown Mode.\nMarkdown形式のテキストを編集するための主要なモードです。\n(leaf markdown-mode :ensure t :mode (\u0026#34;\\\\.md\\\\\u0026#39;\u0026#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-code-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedownを使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。\n🔗 shime/emacs-livedown: Emacs plugin for Livedown.\nnpm がインストールされたnodeが入っていことを確認してからlivedownをインストールします。\n$ npm install -g livedown 次にEmacsの設定を書きます。 MELPAにはないのでel-get でインストールします。\n(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((\u0026#34;C-c C-c p\u0026#34; . livedown-preview) (\u0026#34;C-c C-c k\u0026#34; . livedown-kill))) "
+	"content": "[markdown-mode.el] markdownモード編集、入力支援 🔗 jrblevin/markdown-mode: Emacs Markdown Mode.\nMarkdown形式のテキストを編集するための主要なモードです。\n(leaf markdown-mode :ensure t :mode (\u0026#34;\\\\.md\\\\\u0026#39;\u0026#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-code-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedownを使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。\n🔗 shime/emacs-livedown: Emacs plugin for Livedown.\n$ npm install -g livedown でインストールできます。\nemacs-livedown.elisp は、el-get でインストールします。\n(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((\u0026#34;C-c C-c p\u0026#34; . livedown-preview) (\u0026#34;C-c C-c k\u0026#34; . livedown-kill))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/which-key/",
@@ -438,7 +438,7 @@
 	"title": "7.10. iedit",
 	"tags": [],
 	"description": "",
-	"content": "[iedit.el] 選択領域を別の文字列に置き換える 🔗 victorhge/iedit: Modify multiple occurrences simultaneously.\nバッファー内の複数箇所を同時に編集するツールです。\n同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。\n multi-cursors.el replace-from-region.el anzu.el  対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。\nここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定されiedet-modeを抜けます。\nかなりの頻度で使うので、Emacsでは使うことのない \u0026lt;insert\u0026gt; にキーバインドしています。\n"
+	"content": "[iedit.el] 選択領域を別の文字列に置き換える 🔗 victorhge/iedit: Modify multiple occurrences simultaneously.\nバッファー内の複数箇所を同時に編集するツールです。\n同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。\n対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインにキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。\nここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定され iedet-modeを抜けます。\nかなりの頻度で使うので、Emacsでは使うことのない \u0026lt;insert\u0026gt; にキーバインドしています。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/smartparens/",

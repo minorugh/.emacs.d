@@ -33,7 +33,7 @@ disableToc = true
 : キーをタイプした時点で自動的に補完候補が出てきてくれる。
 
 [key-chord]({{< relref "key-chord" >}})
-: 同時押しというキーバインドを提供してくれる。
+: 同時押しでのキーバインドを提供してくれる。
 
 [smartparens]({{< relref "smartparens" >}})
 : 括弧などのペアを自動的に挿入してくれる。
