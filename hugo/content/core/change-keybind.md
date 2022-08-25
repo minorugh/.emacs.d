@@ -10,14 +10,10 @@ draft = false
 ```elisp
 ;; Use the X11 clipboard
 (setq select-enable-clipboard  t)
-```
-
-マウスで選択した領域を自動コピー
-マウスで選択すると，勝手にペーストボードにデータが流れます．
-
-```elisp
 (setq mouse-drag-copy-region t)
 ```
+
+マウスで選択すると，勝手にペーストボードにデータが流れます．
 
 `C-w` は、`kill-ring-save` に割り当てられたものですが、`region` 選択されていないときは、一行削除になるようにカスタマイズしてます。
 
