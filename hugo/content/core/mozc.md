@@ -3,7 +3,7 @@ title = "2.3. mozc"
 draft = false
 +++
 Debianでの日本語入力環境構築が完了していることが前提です。
-* [Debian系の日本語入力をFcitx & Mozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
+* [Debian系の日本語入力をMozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
 
 
 ### Mozcサーバーをインストール
