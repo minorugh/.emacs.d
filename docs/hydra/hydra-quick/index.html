@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T22:16:20 JST">
+<meta name="revised" content="2022-08-25T22:21:20 JST">
 <title>8.1. hydra-menu :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -823,9 +823,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#hydra-quick-menu-quick-dired">[hydra-quick-menu] Quick Dired</a></li>
-        <li><a href="#hydra-work-menu-作業選択メニュー">[hydra-work-menu] 作業選択メニュー</a></li>
-        <li><a href="#作業コマンドは必要に応じて設定します">作業コマンドは必要に応じて設定します</a></li>
+        <li><a href="#hydra-quick-menu">[hydra-quick-menu]</a></li>
+        <li><a href="#hydra-work-menu">[hydra-work-menu]</a></li>
+        <li><a href="#必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</a></li>
       </ul>
     </li>
   </ul>
@@ -847,11 +847,9 @@
     
     
     
-<ul>
-<li><code>hydramenu</code> は、いわば私の秘書のような役割です。</li>
-<li>便宜上二つに分けていますが、どちらからでも相互にトグルで呼び出せるようにしています。</li>
-</ul>
-<h3 id="hydra-quick-menu-quick-dired">[hydra-quick-menu] Quick Dired</h3>
+<p><code>hydra-menu</code> は、いわば私の秘書のような役割です。</p>
+<p>便宜上,<code>quick-menu</code>と<code>work-menu</code> の二つに分けていますが、どちらからでも相互に呼び出せるようにしています。</p>
+<h3 id="hydra-quick-menu">[hydra-quick-menu]</h3>
 <p><a href="https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L5"><code>hydra-quick-menu</code></a>
 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。
 よく使うアプリ起動のショートカットなども設定しておくと便利です。</p>
@@ -904,7 +902,7 @@
    (<span style="color:#c41a16">&#34;z&#34;</span> <span style="color:#000">filezilla</span>)
    (<span style="color:#c41a16">&#34;M-.&#34;</span> <span style="color:#000">hydra-work/body</span>)
    (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>)))
-</code></pre></div><h3 id="hydra-work-menu-作業選択メニュー">[hydra-work-menu] 作業選択メニュー</h3>
+</code></pre></div><h3 id="hydra-work-menu">[hydra-work-menu]</h3>
 <p><a href="https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L57"><code>hydra-work-menu</code></a>
 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。</p>
 <p><img src="https://live.staticflickr.com/65535/50175364331_9fcf3c6c86_b.jpg" alt="hydra-work-menu"></p>
@@ -959,7 +957,7 @@
    (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">my:emacs.d-dir</span>)
    (<span style="color:#c41a16">&#34;&lt;henkan&gt;&#34;</span> <span style="color:#000">hydra-quick/body</span>)
    (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
-</code></pre></div><h3 id="作業コマンドは必要に応じて設定します">作業コマンドは必要に応じて設定します</h3>
+</code></pre></div><h3 id="必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</h3>
 <p>以下は一例です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:backup-all</span> ()
   <span style="color:#c41a16">&#34;Backup all.&#34;</span>

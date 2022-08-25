@@ -2,10 +2,11 @@
 title = "8.1. hydra-menu"
 draft = false
 +++
-* `hydramenu` は、いわば私の秘書のような役割です。
-* 便宜上二つに分けていますが、どちらからでも相互にトグルで呼び出せるようにしています。
+`hydra-menu` は、いわば私の秘書のような役割です。
 
-### [hydra-quick-menu] Quick Dired 
+便宜上,`quick-menu`と`work-menu` の二つに分けていますが、どちらからでも相互に呼び出せるようにしています。
+
+### [hydra-quick-menu]
 [`hydra-quick-menu`](https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L5) 
 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。
 よく使うアプリ起動のショートカットなども設定しておくと便利です。
@@ -62,7 +63,7 @@ draft = false
    ("M-." hydra-work/body)
    ("<muhenkan>" nil)))
 ```
-### [hydra-work-menu] 作業選択メニュー
+### [hydra-work-menu]
 [`hydra-work-menu`](https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L57) 
 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。
 
@@ -122,7 +123,7 @@ draft = false
    ("<muhenkan>" nil))
 ```
 
-### 作業コマンドは必要に応じて設定します
+### 必要に応じて作業コマンドを作成します
 以下は一例です。
 
 ```elisp
