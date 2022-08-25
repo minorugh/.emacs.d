@@ -18,7 +18,7 @@
 	"title": "カーソル移動",
 	"tags": [],
 	"description": "",
-	"content": " カーソル移動に関する設定です。 ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。  # INDEX  sequential-command 標準の `C-a / C-e' を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げてくれる  "
+	"content": "カーソル移動に関する設定です。\n文字移動、行移動、スクロールは、素直に上下左右の矢印キーとPgUp PgDn を使っています。\n# INDEX  sequential-command 標準の C-a / C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げてくれる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/",

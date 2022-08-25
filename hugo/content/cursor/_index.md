@@ -5,13 +5,14 @@ pre = "<b>3. </b>"
 weight = 3
 disableToc = true
 +++
-* カーソル移動に関する設定です。
-* ブラインドタッチは出来ない体質なので、文字移動、行移動、スクロールは、素直に上下左右の矢印キーと`PgUp` `PgDn` を使っています。
+カーソル移動に関する設定です。
+
+文字移動、行移動、スクロールは、素直に上下左右の矢印キーと`PgUp` `PgDn` を使っています。
 
 ### # INDEX
 
 [sequential-command]({{< relref "sequential-command" >}})
-: 標準の `C-a / C-e' を拡張
+: 標準の `C-a` / `C-e` を拡張
 
 [other-window-or-sptit]({{< relref "other-window-or-sprit" >}})
 : 画面分割時のカーソルの移動
