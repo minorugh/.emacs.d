@@ -44,7 +44,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
-      <description>[quickrun.el] お手軽ビルド カレントバッファで編集中のソースコードをビルド・実行して別バッファに結果を得ます。
+      <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
+カレントバッファで編集中のソースコードをビルド・実行して別バッファに結果を得ます。 open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に便利に使えて重宝です。
 (leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
     </item>
     
@@ -54,7 +55,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
-      <description>[magit.el] Gitクライアント magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
+      <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
+magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
 (leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
     </item>
     
@@ -64,7 +66,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
-      <description>[counsel-tramp.el] (leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
+      <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
+(leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
     </item>
     
     <item>
@@ -73,7 +76,9 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
-      <description>[eagy-hugo.el] マルチブログ管理  easy-hugo.el は、Hugoで作成されたブログを書くための Emacs メジャー モードです。 https://github.com/minorugh/emacs.d/blob/main/inits/60_easy-hugo.el  (leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.minorugh.com&amp;#34;) (setq easy-hugo-sshdomain &amp;#34;xsrv&amp;#34;) (setq easy-hugo-root &amp;#34;/home/minorugh/minorugh.</description>
+      <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
+Hugoで作成されたブログを書くための Emacs メジャー モードです。
+(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.</description>
     </item>
     
     <item>
@@ -82,7 +87,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
-      <description>open-junk-file  junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+      <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
+ junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
  Emacs で作成した使い捨てファイルを簡単に開く  (leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
     </item>
     

@@ -3,7 +3,7 @@ title = "5.7. doom-thmes"
 draft = false
 +++
 ### [doom-thems.el] テーマ設定
-[doomemacs/themes: Doom Emacs' Theme Pack.](https://github.com/doomemacs/themes) 
+🔗 [doomemacs/themes: Doom Emacs' Theme Pack.](https://github.com/doomemacs/themes) 
 
 * わんさかとthemeファイルがパックされています。自分は、`doom-dracula` を愛用しています。
 

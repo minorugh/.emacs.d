@@ -115,7 +115,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
-      <description>[quickrun.el] お手軽ビルド カレントバッファで編集中のソースコードをビルド・実行して別バッファに結果を得ます。
+      <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
+カレントバッファで編集中のソースコードをビルド・実行して別バッファに結果を得ます。 open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に便利に使えて重宝です。
 (leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
     </item>
     
@@ -125,7 +126,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
-      <description>[magit.el] Gitクライアント magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
+      <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
+magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
 (leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
     </item>
     
@@ -135,7 +137,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
-      <description>[counsel-tramp.el] (leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
+      <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
+(leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
     </item>
     
     <item>
@@ -144,7 +147,9 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
-      <description>[eagy-hugo.el] マルチブログ管理  easy-hugo.el は、Hugoで作成されたブログを書くための Emacs メジャー モードです。 https://github.com/minorugh/emacs.d/blob/main/inits/60_easy-hugo.el  (leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.minorugh.com&amp;#34;) (setq easy-hugo-sshdomain &amp;#34;xsrv&amp;#34;) (setq easy-hugo-root &amp;#34;/home/minorugh/minorugh.</description>
+      <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
+Hugoで作成されたブログを書くための Emacs メジャー モードです。
+(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.</description>
     </item>
     
     <item>
@@ -153,7 +158,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
-      <description>open-junk-file  junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+      <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
+ junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
  Emacs で作成した使い捨てファイルを簡単に開く  (leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
     </item>
     
@@ -163,7 +169,7 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/howm/</guid>
-      <description>[howm.el] お手軽メモ環境 howm: Write fragmentarily and read collectively.
+      <description>[howm.el] お手軽メモ環境 🔗 howm: Write fragmentarily and read collectively.
  Howm-menuは使わないので howm-list-all を初期画面として使っています。 上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。  (leaf howm :ensure t :hook ((emacs-startup-hook . howm-mode) ()) :chord (&amp;#34;@@&amp;#34; . howm-list-all) :init (setq howm-view-title-header &amp;#34;#&amp;#34;) (defun my:howm-create-file () &amp;#34;Make howm create file with &amp;#39;org-capture&amp;#39;.&amp;#34; (interactive) (format-time-string &amp;#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&amp;#34; (current-time))) :config (bind-key [backtab] &amp;#39;howm-view-summary-previous-section howm-view-summary-mode-map) (setq howm-directory &amp;#34;~/Dropbox/howm&amp;#34;) (setq howm-view-split-horizontally t) (setq howm-view-summary-persistent nil) (setq howm-normalizer &amp;#39;howm-sort-items-by-reverse-date) (setq howm-user-font-lock-keywords &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;gnus-group-mail-3)) (&amp;#34;note:&amp;#34; .</description>
     </item>
     
@@ -446,9 +452,8 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
-      <description>[dimmer.el] 現在のバッファ以外の輝度を落とす gonewest818/dimmer.el: Visually highlight the selected buffer.
- 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。  (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
-下記の通り発想転換すれば呪縛から逃れることができます。</description>
+      <description>[dimmer.el] 現在のバッファ以外の輝度を落とす 🔗 gonewest818/dimmer.el: Visually highlight the selected buffer.
+ 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。  (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。</description>
     </item>
     
     <item>
@@ -478,7 +483,7 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
-      <description>[tempbuf.el] 不要になったと思われるバッファを自動的に kill emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background
+      <description>[tempbuf.el] 不要になったと思われるバッファを自動的に kill 🔗 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background
  tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
  my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
     </item>
@@ -499,7 +504,7 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
-      <description>[doom-thems.el] テーマ設定 doomemacs/themes: Doom Emacs&#39; Theme Pack.
+      <description>[doom-thems.el] テーマ設定 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
  わんさかとthemeファイルがパックされています。自分は、doom-dracula を愛用しています。  (leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) [cycle-custom-themes] 複数テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
 (leaf cycle-custom-theme :doc &amp;#34;https://bre.is/5tE2BvUp&amp;#34; :config (setq my:themes (list &amp;#39;doom-dracula &amp;#39;iceberg &amp;#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () &amp;#34;Switch themes to cycle.&amp;#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message &amp;#34;%s&amp;#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc &amp;#34;modified version for myself&amp;#34; :el-get minorugh/iceberg-theme) (add-to-list &amp;#39;custom-theme-load-path &amp;#34;~/.</description>
     </item>
@@ -510,7 +515,7 @@ MELPAからインストールできますが、私は HKey氏の改良版を el-
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
-      <description>[doom-modeline.el] seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.
+      <description>[doom-modeline.el] 🔗 seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.
  Emacsモダン化計画 -かわEmacs編 の記事に触発されて以来、doom-modeline を愛用しています。 TeMPOraL/nyan-mode.el も可愛くて癒やされています(^^)  (leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
     </item>
     
@@ -865,7 +870,12 @@ company と連携することでとても便利になります。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
-      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+      <description>[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.
+auto-save-buffers-enhanced.el は、Emacsに本当の 自動保存 を提供します。
+デフォルトでは、0.5秒間入力がなければ自動で保存されます。
+(setq auto-save-buffers-enhanced-interval 0.5) 変えたければ上記の数値を変えて設定に加えます。
+Trampでファイル編集するときに固まることがあるので除外設定しています。
+;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
     </item>
     
     <item>
@@ -874,7 +884,8 @@ company と連携することでとても便利になります。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
-      <description>8.3. [undo-fu] シンプルな undo/redo を提供 undo-fu はシンプルな undo/redo 機能を提供してくれるやつです。
+      <description>8.3. [undo-fu.el] シンプルな undo/redo を提供 🔗 emacsmirror/undo-fu: Undo helper with redo.
+シンプルな undo/redo 機能を提供してくれるやつです。
 昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
 (leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
     </item>

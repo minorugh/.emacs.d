@@ -3,7 +3,7 @@ title = "5.2. dimmer-mode"
 draft = false
 +++
 ### [dimmer.el] 現在のバッファ以外の輝度を落とす
-[gonewest818/dimmer.el: Visually highlight the selected buffer.](https://github.com/gonewest818/dimmer.el) 
+🔗 [gonewest818/dimmer.el: Visually highlight the selected buffer.](https://github.com/gonewest818/dimmer.el) 
 
 * 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
 * [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。

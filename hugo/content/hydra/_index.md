@@ -5,8 +5,10 @@ pre = "<b>8. </b>"
 weight = 8
 disableToc = true
 +++
+## [hydra.el]
+🔗 [abo-abo/hydra: make Emacs bindings that stick around.](https://github.com/abo-abo/hydra) 
 
-[hydra.el](https://github.com/abo-abo/hydra) を使うとよく使う機能をまとめて独創的なコマンドディスパッチャを構築することが出来ます。
+`hydra.el` を使うとよく使う機能をまとめて独創的なコマンドディスパッチャを構築することが出来ます。
 
 ### # INDEX
 [hydra-menu]({{< relref "hydra-quick" >}})

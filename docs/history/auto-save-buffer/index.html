@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T11:51:15 JST">
+<meta name="revised" content="2022-08-25T12:59:40 JST">
 <title>9.1. auto-save-buffer-enhanced :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 
@@ -824,7 +824,15 @@
     
     <div class="progress">
       <div class="wrapper">
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#auto-save-buffer-enhancedel-ファイルの自動保存機能を提供">[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </div>
 	</div>
     
@@ -842,10 +850,13 @@
     
     
     
-<ul>
-<li><code>auto-save-buffer-enhanced</code> は、ファイルの自動保存機能を提供します。</li>
-<li><a href="https://github.com/kentaro/auto-save-buffers-enhanced">kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs</a></li>
-</ul>
+<h3 id="auto-save-buffer-enhancedel-ファイルの自動保存機能を提供">[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供</h3>
+<p>🔗 <a href="https://github.com/kentaro/auto-save-buffers-enhanced">kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.</a></p>
+<p><code>auto-save-buffers-enhanced.el</code> は、Emacsに本当の 自動保存 を提供します。</p>
+<p>デフォルトでは、0.5秒間入力がなければ自動で保存されます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-interval</span> <span style="color:#1c01ce">0.5</span>)
+</code></pre></div><p>変えたければ上記の数値を変えて設定に加えます。</p>
+<p>Trampでファイル編集するときに固まることがあるので除外設定しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; auto-save-buffers</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">auto-save-buffers-enhanced</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>

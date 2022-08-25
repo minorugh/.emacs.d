@@ -4,8 +4,9 @@ draft = false
 +++
 
 ### [eagy-hugo.el] マルチブログ管理
-* [easy-hugo.el](https://github.com/masasam/emacs-easy-hugo) は、Hugoで作成されたブログを書くための Emacs メジャー モードです。
-* [https://github.com/minorugh/emacs.d/blob/main/inits/60_easy-hugo.el](https://github.com/minorugh/emacs.d/blob/main/inits/60_easy-hugo.el)
+[masasam/emacs-easy-hugo: Emacs major mode for managing hugo.](https://github.com/masasam/emacs-easy-hugo) 
+
+Hugoで作成されたブログを書くための Emacs メジャー モードです。
 
 ```elisp
 (leaf easy-hugo

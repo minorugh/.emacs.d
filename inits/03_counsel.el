@@ -121,11 +121,10 @@ If the region isn't selected, `swiper'."
 ;; Tramp
 (leaf counsel-tramp
   :ensure t
-  :custom
-  `((tramp-persistency-file-name . ,"~/.emacs.d/tmp/tramp")
-	(tramp-default-method . "scp")
-	(counsel-tramp-custom-connections
-	 . '(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/)))
+  :custom `((tramp-persistency-file-name . ,"~/.emacs.d/tmp/tramp")
+			(tramp-default-method . "scp")
+			(counsel-tramp-custom-connections
+			 . '(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/)))
   :config
   (defun my:tramp-quit ()
 	"Quit tramp, if tramp connencted."

@@ -12,9 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
-      <description>[dimmer.el] 現在のバッファ以外の輝度を落とす gonewest818/dimmer.el: Visually highlight the selected buffer.
- 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。  (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
-下記の通り発想転換すれば呪縛から逃れることができます。</description>
+      <description>[dimmer.el] 現在のバッファ以外の輝度を落とす 🔗 gonewest818/dimmer.el: Visually highlight the selected buffer.
+ 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。  (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。</description>
     </item>
     
     <item>
@@ -44,7 +43,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
-      <description>[tempbuf.el] 不要になったと思われるバッファを自動的に kill emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background
+      <description>[tempbuf.el] 不要になったと思われるバッファを自動的に kill 🔗 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background
  tempbuf.el は不要になったと思われるバッファを自動的に kill してくれるパッケージ。  使っていた時間が長い程、裏に回った時には長い時間保持してくれる。 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
  my:tembuf-ignore-files: 勝手に kill させないファイルの指定 find-file-hook: find-file や dired で開いたファイルが対象 dired buffer /magit-buffer: 強制的に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files &amp;#39;(&amp;#34;~/Dropbox/org/task.org&amp;#34; &amp;#34;~/Dropbox/org/capture.org&amp;#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
     </item>
@@ -65,7 +64,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
-      <description>[doom-thems.el] テーマ設定 doomemacs/themes: Doom Emacs&#39; Theme Pack.
+      <description>[doom-thems.el] テーマ設定 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
  わんさかとthemeファイルがパックされています。自分は、doom-dracula を愛用しています。  (leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) [cycle-custom-themes] 複数テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
 (leaf cycle-custom-theme :doc &amp;#34;https://bre.is/5tE2BvUp&amp;#34; :config (setq my:themes (list &amp;#39;doom-dracula &amp;#39;iceberg &amp;#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () &amp;#34;Switch themes to cycle.&amp;#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message &amp;#34;%s&amp;#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc &amp;#34;modified version for myself&amp;#34; :el-get minorugh/iceberg-theme) (add-to-list &amp;#39;custom-theme-load-path &amp;#34;~/.</description>
     </item>
@@ -76,7 +75,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
-      <description>[doom-modeline.el] seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.
+      <description>[doom-modeline.el] 🔗 seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.
  Emacsモダン化計画 -かわEmacs編 の記事に触発されて以来、doom-modeline を愛用しています。 TeMPOraL/nyan-mode.el も可愛くて癒やされています(^^)  (leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline &amp;#39;main &amp;#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) &amp;#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) </description>
     </item>
     

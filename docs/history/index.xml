@@ -12,7 +12,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
-      <description> auto-save-buffer-enhanced は、ファイルの自動保存機能を提供します。 kentaro/auto-save-buffer-enhanced.el: Provide file autosave in Emacs  ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+      <description>[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.
+auto-save-buffers-enhanced.el は、Emacsに本当の 自動保存 を提供します。
+デフォルトでは、0.5秒間入力がなければ自動で保存されます。
+(setq auto-save-buffers-enhanced-interval 0.5) 変えたければ上記の数値を変えて設定に加えます。
+Trampでファイル編集するときに固まることがあるので除外設定しています。
+;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
     </item>
     
     <item>
@@ -21,7 +26,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
-      <description>8.3. [undo-fu] シンプルな undo/redo を提供 undo-fu はシンプルな undo/redo 機能を提供してくれるやつです。
+      <description>8.3. [undo-fu.el] シンプルな undo/redo を提供 🔗 emacsmirror/undo-fu: Undo helper with redo.
+シンプルな undo/redo 機能を提供してくれるやつです。
 昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
 (leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
     </item>

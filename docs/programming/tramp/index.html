@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T11:51:15 JST">
+<meta name="revised" content="2022-08-25T12:59:40 JST">
 <title>10.6. counsel-tramp :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 
@@ -851,13 +851,13 @@
     
     
 <h3 id="counsel-trampel">[counsel-tramp.el]</h3>
+<p>🔗 <a href="https://github.com/masasam/emacs-counsel-tramp">masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.</a></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">counsel-tramp</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">tramp-persistency-file-name</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/tramp&#34;</span>)
-	(<span style="color:#000">tramp-default-method</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;scp&#34;</span>)
-	(<span style="color:#000">counsel-tramp-custom-connections</span>
-	 <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#000">/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/</span>)))
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">tramp-persistency-file-name</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/tramp&#34;</span>)
+	        (<span style="color:#000">tramp-default-method</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;scp&#34;</span>)
+	        (<span style="color:#000">counsel-tramp-custom-connections</span>
+	         <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#000">/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/</span>)))
   <span style="color:#a90d91">:config</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:tramp-quit</span> ()
 	<span style="color:#c41a16">&#34;Quit tramp, if tramp connencted.&#34;</span>

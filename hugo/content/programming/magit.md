@@ -2,8 +2,9 @@
 title = "10.5. magit"
 draft = false
 +++
-
 ### [magit.el] Gitクライアント
+🔗 [magit/magit.el: Git user interface.](https://github.com/magit/magit/tree/master/lisp) 
+
 `magit status` は、デフォルトでは `other-window` に表示されますが、フルフレームで表示されるようにしました。
 
 ```elisp
