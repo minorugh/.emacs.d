@@ -269,7 +269,8 @@ Emacsでも &amp;lt;hiragana-katakana&amp;gt; でMozcのON/OFFをするには、
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/server/</guid>
-      <description>[server.el] クライアントサーバー  shell-command で emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。 重複起動させない設定です。  ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
+      <description>[server.el] クライアントサーバー emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。
+;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
     </item>
     
     <item>
@@ -279,7 +280,8 @@ Emacsでも &amp;lt;hiragana-katakana&amp;gt; でMozcのON/OFFをするには、
       
       <guid>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</guid>
       <description>[exec-path-from-shell.el] 設定をシェルから継承する 🔗 purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell
- exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。 自分は、shell-commad や compile-command をよく使うので必須のパッケージです。  (leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
+exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。
+(leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
     </item>
     
     <item>

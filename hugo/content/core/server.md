@@ -4,8 +4,7 @@ draft = false
 +++
 ### [server.el] クライアントサーバー
 
-* `shell-command` で `emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
-* 重複起動させない設定です。
+`emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
 
 ```elisp
 ;; Server start for emacs-client
