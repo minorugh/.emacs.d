@@ -403,7 +403,7 @@
 	"title": "5.6. winner-mode",
 	"tags": [],
 	"description": "",
-	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る  ビルトインの winner.el を使います．  ウィンドウ分割状況と各ウィンドウで表示していたバッファの履歴を辿ることができます。 winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n(leaf winner-mode :ensure nil :bind ((\u0026#34;C-c \u0026lt;left\u0026gt;\u0026#34; . winner-undo) (\u0026#34;C-c \u0026lt;right\u0026gt;\u0026#34; . winner-redo)) :init (winner-mode 1)) "
+	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る ビルトインの winner.el を使います．\n分割状況を含めて各ウィンドウで表示していたバッファの履歴を辿ることができます。\nwinner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n(leaf winner-mode :ensure nil :bind ((\u0026#34;C-c \u0026lt;left\u0026gt;\u0026#34; . winner-undo) (\u0026#34;C-c \u0026lt;right\u0026gt;\u0026#34; . winner-redo)) :init (winner-mode 1)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/doom-themes/",
