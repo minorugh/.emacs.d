@@ -42,19 +42,30 @@ Emacs27では、(package-initialize) が 2回実行されます。
 (setq frame-inhibit-implied-resize t)
 ```
 
-### これらを無効にする方が速い (初期化される前)
+### 常に最大化で起動
+メニューバー、ツールバー、スクロールなどの初期フレーム設定は、
+ここでこれらを無効にする方が速いです。 (初期化される前)
 
+起動時から画面最大化になるようにしてます。
 ```elisp
 ;; Faster to disable these here (before they've been initialized)
-(push '(fullscreen . maximized) default-frame-alist)
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
+(push '(fullscreen . maximized) default-frame-alist)
 ```
 
 ### 起動時の点滅を抑える
-Emacsが設定ファイルを読み込むプロセスで画面がちらつくのを抑制します。
+初期設定を読み終えるまではEmacsの画面表示を抑止しています。
+そこまでする必要はないのですが、起動時間短縮にもなるようで一石二鳥です。
 
+```elisp
+(set-frame-parameter nil 'fullscreen 'fullboth)
+```
+初期化終了後にフルスクリーンになるようにしているのは、
+うっかりタイトルバーの閉じるをクリックする悪癖を直すためです(^^)
+
+`M-x toggle-frame-fullscreen` することで最大化とフルスクリーンとを切り替えることが出来ます。
 ```elisp
 ;; Suppress flashing at startup
 (setq inhibit-redisplay t)
@@ -63,9 +74,10 @@ Emacsが設定ファイルを読み込むプロセスで画面がちらつくの
 		  (lambda ()
 			(setq inhibit-redisplay nil)
 			(setq inhibit-message nil)
-			(toggle-fullscreen)
-			(redisplay)))
+			(redisplay)
+			(set-frame-parameter nil 'fullscreen 'fullboth)))
 ```
+
 ### 起動直後の背景色をテーマのそれと合わせる
 Emacsが設定を読み込む色段階の背景色は白です。
 自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。
