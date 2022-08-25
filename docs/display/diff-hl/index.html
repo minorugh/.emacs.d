@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.8. diff-hl :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -847,6 +851,7 @@
     
     
 <h3 id="diff-hlel-編集差分をフレーム端で視覚化">[diff-hl.el] 編集差分をフレーム端で視覚化</h3>
+<p>🔗 <a href="https://github.com/dgutov/diff-hl">dgutov/diff-hl: Emacs package for highlighting uncommitted changes.</a></p>
 <p>編集差分の視覚化は、元々 <code>git-gutter</code> が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので <code>diff-hl</code> に乗り換えました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">diff-hl</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>

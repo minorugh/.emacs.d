@@ -4,7 +4,9 @@ draft = false
 +++
 
 ### [selected.el] リージョン選択時のアクションを制御
-[`selected.el`](https://github.com/Kungsgeten/selected.el) は、選択領域に対するスピードコマンドです。
+🔗 [Kungsgeten/selected.el: Keymap for when region is active.](https://github.com/Kungsgeten/selected.el) 
+
+選択領域に対するスピードコマンドです。
 
 Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。
 コマンドの数が増えてきたら、ヘルプ代わりに使える [`counsel-selected`](https://github.com/takaxp/counsel-selected) も便利そうです。

@@ -4,7 +4,9 @@ draft = false
 +++
 
 ### [yatex.el] YaTexで LaTex編集
-[`yatex.el`](https://github.com/emacsmirror/yatex) は、Emacsの上で動作する LaTeX の入力支援環境です。
+🔗 [emacsmirror/yatex: Yet Another tex-mode for emacs. //野鳥//](https://github.com/emacsmirror/yatex)
+
+Emacsの上で動作する LaTeX の入力支援環境です。
 
 ごく一般的な設定例ですが、参考になるとしたら `dviprint-command-format` に `dvpd.sh` というスクリプトを設定して、`YateX.lpr`
 コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
@@ -25,7 +27,7 @@ draft = false
 ```
 `YaTeX-lpr` は、`dviprint-command-format` を呼び出すコマンドです。
 
-dviファイルから dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、`chmod +x dvpd.sh ` として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
+dviファイルから `dvipdfmx` で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、`chmod +x dvpd.sh ` として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
 
 [dvpd.sh]
 ```shellsession

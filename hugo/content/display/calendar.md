@@ -2,8 +2,9 @@
 title = "7.6. japanese-holidays"
 draft = false
 +++
-
 ### [japanese-holidays.el] カレンダーをカラフルにする
+🔗 [emacs-jp/japanese-holidays: Display Japanese holidays in the Emacs calendar.](https://github.com/emacs-jp/japanese-holidays) 
+
 * ビルドインの `holidays` と `japanese-holidays.el`を使います。
 * 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
 

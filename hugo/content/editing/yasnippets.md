@@ -3,8 +3,12 @@ title = "7.7. yasunippets"
 draft = false
 +++
 ### [yasnippets.el] テンプレート システム
-[joaotavora/yasnippet: Template system for Emacs.](https://github.com/joaotavora/yasnippet) 
- 
+🔗 [joaotavora/yasnippet: Template system for Emacs.](https://github.com/joaotavora/yasnippet) 
+
+`yasnippet`は、Emacsのテンプレートシステムです。省略形を入力すると、それが関数テンプレートに自動的に展開されます。
+
+`company` と連携することでとても便利になります。
+
 ```elisp
 (leaf yasnippet
   :ensure t

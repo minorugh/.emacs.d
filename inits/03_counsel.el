@@ -114,9 +114,9 @@ If the region isn't selected, `swiper'."
   :bind ("s-f" . counsel-fontawesome))
 
 ;; CSS
-(leaf counsel-css
-  :ensure t
-  :hook (css-mode-hook . counsel-css-imenu-setup))
+;; (leaf counsel-css
+;;   :ensure t
+;;   :hook (css-mode-hook . counsel-css-imenu-setup))
 
 ;; Tramp
 (leaf counsel-tramp

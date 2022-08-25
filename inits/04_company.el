@@ -9,7 +9,7 @@
 (leaf company
   :ensure t
   :hook (after-init-hook . global-company-mode)
-  :bind (("C-<return>" . company-complete)
+  :bind (("C-1" . company-complete)
 		 ("C-<tab>" . company-yasnippet)
 		 (:company-active-map
 		  ("<tab>" . company-complete-common-or-cycle)

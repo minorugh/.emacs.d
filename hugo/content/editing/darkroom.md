@@ -4,14 +4,13 @@ draft = false
 +++
 
 ### [darkroom-mode.el] 執筆モード
-[`darkroom.el`](https://github.com/joaotavora/darkroom)  は、画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
+🔗 [joaotavora/darkroom: Simple distraction-free editing.](https://github.com/joaotavora/darkroom)
 
-[https://github.com/joaotavora/darkroom](https://github.com/joaotavora/darkroom)
+画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。
 
-[F12] キーで IN/OUT をトグルしています。
-`darkroom-mode` から抜けるときは、`revert-buffer` で再読込してもとに戻します。
+[F12] キーで モードのIN/OUT をトグルしています。
 
-yes/no確認を聞かれるのが煩わしいので `my:revery-buffer-no-confirm` の関数を作りました。
+`darkroom-mode` から抜けるときは、`revert-buffer` で再読込してもとに戻します。`yes/no`確認を聞かれるのが煩わしいので `my:revery-buffer-no-confirm` の関数を作りました。
 
 ```elisp
 (leaf darkroom

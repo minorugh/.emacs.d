@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.8. company :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -847,11 +851,16 @@
     
     
 <h3 id="companyel-入力補完機能を提供">[company.el] 入力補完機能を提供</h3>
-<p><a href="https://github.com/company-mode/company-mode/blob/master/company.el">company-mode/company.el: Modular completion framework.</a></p>
+<p>🔗 <a href="https://github.com/company-mode/company-mode/blob/master/company.el">company-mode/company.el: Modular completion framework.</a></p>
+<p>キーをタイプした時点で自動的に補完候補が出てきて、ミスタイプを減らして入力効率を上げる優れた補完機能です。
+同種のものに日本では auto-complete.el が有名ですが、company.elの方が先に登場しています。</p>
+<p>デフォルトで自動的に補完候補がポップアップしますが、煩わしければ、</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">company-idle-delay</span> <span style="color:#000">nil</span>)
+</code></pre></div><p>を指定すれば <code>company-complete</code> で手動で発動できます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">company</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">global-company-mode</span>)
-  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-&lt;return&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">company-complete</span>)
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-1&#34;</span> <span style="color:#000">.</span> <span style="color:#000">company-complete</span>)
 		 (<span style="color:#c41a16">&#34;C-&lt;tab&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">company-yasnippet</span>)
 		 (<span style="color:#a90d91">:company-active-map</span>
 		  (<span style="color:#c41a16">&#34;&lt;tab&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">company-complete-common-or-cycle</span>)

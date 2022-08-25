@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.4. display-line-numbers :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -847,8 +851,8 @@
     
     
 <h3 id="display-line-number-行番号を表示">[display-line-number] 行番号を表示</h3>
-<p>Emacsで左側に行数を表示する<code>linum-mode</code> は重いことで有名だった。
-軽くするためにはいろいろと設定しなくてはいけなかった。Emacs26でついに行数表示のネイティブ実装である <code>diplay-line-numbers-mode</code> が実装されたのでそちらを使います。.</p>
+<p>Emacsで左側に行数を表示する<code>linum-mode</code> は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。
+Emacs26でついに行数表示のネイティブ実装である <code>diplay-line-numbers-mode</code> が実装されたのでそちらを使います。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">display-line-numbers</span>
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">global-display-line-numbers-mode</span>)
 		 ((<span style="color:#000">lisp-interaction-mode-hook</span> <span style="color:#000">dired-mode-hook</span>)<span style="color:#000">.</span> <span style="color:#000">my:disable-modes</span>))

@@ -2,11 +2,14 @@
 title = "7.6. ivy / counsel"
 draft = false
 +++
-### [ivy.el / counsel.el] Emacsの補完システム
+### [ivy.el / counsel.el / swiper.el] Emacsの補完システム
+🔗 [abo-abo/swiper: Ivy - a generic completion frontend for Emacs, Swiper - isearch with an overview.](https://github.com/abo-abo/swiper) 
+
 `ivy` は、`helm` と双璧を成す Emacsの補完システムです。
 
 リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。
 このシンプルかつ極めて重要なタスクを `ivy` が手助けしてくれます．
+`counsel.el` をインストールすれば、`ivy.el` も `swiper.el` も一緒にインストールされます。
 
 ```elisp
 (leaf counsel
@@ -53,6 +56,8 @@ draft = false
 ```
 
 ### ivy-rich
+🔗 [Yevgnen/ivy-rich: More friendly interface for ivy.](https://github.com/Yevgnen/ivy-rich) 
+
 ivy-rich を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。
 
 ```elisp
@@ -62,6 +67,8 @@ ivy-rich を導入するとアイコンが追加され、さらに追加の情�
 ```
 
 ### amx
+🔗 [DarwinAwardWinner/amx: An alternative M-x interface for Emacs.](https://github.com/DarwinAwardWinner/amx) 
+
 `amx` は、Emacsコマンド `M-x` の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
 導入することで`counsel-M-x` とも自動的に連携して効率の良い補完システムを提供します。
 

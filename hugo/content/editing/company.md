@@ -3,13 +3,22 @@ title = "7.8. company"
 draft = false
 +++
 ### [company.el] 入力補完機能を提供
+🔗 [company-mode/company.el: Modular completion framework.](https://github.com/company-mode/company-mode/blob/master/company.el) 
 
-[company-mode/company.el: Modular completion framework.](https://github.com/company-mode/company-mode/blob/master/company.el) 
+キーをタイプした時点で自動的に補完候補が出てきて、ミスタイプを減らして入力効率を上げる優れた補完機能です。
+同種のものに日本では auto-complete.el が有名ですが、company.elの方が先に登場しています。
+
+デフォルトで自動的に補完候補がポップアップしますが、煩わしければ、
+```elisp
+(setq company-idle-delay nil)
+```
+を指定すれば `company-complete` で手動で発動できます。 
+
 ```elisp
 (leaf company
   :ensure t
   :hook (after-init-hook . global-company-mode)
-  :bind (("C-<return>" . company-complete)
+  :bind (("C-1" . company-complete)
 		 ("C-<tab>" . company-yasnippet)
 		 (:company-active-map
 		  ("<tab>" . company-complete-common-or-cycle)

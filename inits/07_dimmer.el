@@ -38,8 +38,7 @@
 		 ("C-x 3" . my:split-window-right)
 		 ("C-x 2" . my:split-window-below)
 		 ("C-x 1" . my:delete-other-windows)
-		 ("C-x 0" . my:delete-window)
-		 ("<C-return>" . window-swap-states))
+		 ("C-x 0" . my:delete-window))
   :init
   (defun other-window-or-split ()
 	"With turn on dimmer."

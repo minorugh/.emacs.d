@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.13. pangu-spacing :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -847,7 +851,7 @@
     
     
 <h3 id="pangu-spacingel-漢字と英字の間にスペースを自動追加">[pangu-spacing.el] 漢字と英字の間にスペースを自動追加</h3>
-<p><a href="https://github.com/coldnew/pangu-spacing">coldnew/pangu-spacing: Add space between Chinese and English characters.</a></p>
+<p>🔗 <a href="https://github.com/coldnew/pangu-spacing">coldnew/pangu-spacing: Add space between Chinese and English characters.</a></p>
 <p><code>pangu-spacing</code>は、漢字と英字の間にスペースを自動追加してくれます。
 やや不満なところもあるので少しカスタマイズしました。</p>
 <ul>
@@ -864,7 +868,6 @@
 		(<span style="color:#a90d91">rx</span> (<span style="color:#a90d91">or</span> (<span style="color:#a90d91">and</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">group-n</span> <span style="color:#1c01ce">3</span> (<span style="color:#000">any</span> <span style="color:#c41a16">&#34;。，！？；：「」（）、&#34;</span>))
 						 (<span style="color:#000">group-n</span> <span style="color:#1c01ce">1</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">category</span> <span style="color:#000">japanese</span>))))))
 			(<span style="color:#000">group-n</span> <span style="color:#1c01ce">2</span> (<span style="color:#000">in</span> <span style="color:#c41a16">&#34;a-zA-Z&#34;</span>)))))
-
 </code></pre></div>
 
     

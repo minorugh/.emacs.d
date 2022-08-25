@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.7. imenu-list :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -824,7 +828,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#612-imenu-listel-サイドバー的にファイル内容の目次要素を表示">6.12. [imenu-list.el] サイドバー的にファイル内容の目次要素を表示</a></li>
+        <li><a href="#imenu-listel-サイドバー的にファイル内容の目次要素を表示">[imenu-list.el] サイドバー的にファイル内容の目次要素を表示</a></li>
       </ul>
     </li>
   </ul>
@@ -846,21 +850,16 @@
     
     
     
-<h3 id="612-imenu-listel-サイドバー的にファイル内容の目次要素を表示">6.12. [imenu-list.el] サイドバー的にファイル内容の目次要素を表示</h3>
-<p><a href="https://github.com/takaxp/imenu-list">@takaxpさんの改良版/imenu-list</a> を使ってます。</p>
-<p><img src="https://live.staticflickr.com/65535/51419973025_01d97fe83b_b.jpg" alt="Alt Text"></p>
-<pre><code class="language-code" data-lang="code">(leaf imenu-list
-  :ensure t
-  :bind (&quot;&lt;f2&gt;&quot; . imenu-list-smart-toggle)
-  :custom
-  `((imenu-list-size . 30)
-	(imenu-list-position . 'left)
-	(imenu-list-focus-after-activation . t)))
-</code></pre><p><code>counsel-css.el</code> を導入すると便利です。</p>
-<pre><code class="language-code" data-lang="code">(leaf counsel-css
-  :ensure t
-  :hook (css-mode-hook . counsel-css-imenu-setup))
-</code></pre>
+<h3 id="imenu-listel-サイドバー的にファイル内容の目次要素を表示">[imenu-list.el] サイドバー的にファイル内容の目次要素を表示</h3>
+<p>🔗 <a href="https://github.com/bmag/imenu-list">bmag/imenu-list: Emacs plugin to show the current buffer&rsquo;s imenu entries in a separate buffer.</a></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">imenu-list</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f2&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">imenu-list-smart-toggle</span>)
+  <span style="color:#a90d91">:custom</span>
+  <span style="color:#000">`</span>((<span style="color:#000">imenu-list-size</span> <span style="color:#000">.</span> <span style="color:#1c01ce">30</span>)
+	(<span style="color:#000">imenu-list-position</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;left</span>)
+	(<span style="color:#000">imenu-list-focus-after-activation</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
+</code></pre></div>
 
     
     

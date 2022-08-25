@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
-      <description>[which-key.el] キーバインドの選択肢をポップアップする guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
+      <description>[which-key.el] キーバインドの選択肢をポップアップする 🔗 justbur/emacs-which-key: Emacs package that displays available keybindings in popup.
+guide-key.el の後発、ディスパッチャが見やすく直感的でとても使いやすい。
 (leaf which-key :ensure t :hook (after-init-hook . which-key-mode) :custom (which-key-max-description-length . 40)) </description>
     </item>
     
@@ -22,9 +23,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/all-the-icons/</guid>
-      <description>[all-the-icons.el] アイコン表示を可能する all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
- domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
-(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) [all-the-icons-dired.el] dired でファイルのアイコン表示をする  Emacs27以降、MELPA版は白色にしか表示されないので jtbm37/all-the-icons-dired をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook .</description>
+      <description>[all-the-icons.el] アイコン表示を可能する 🔗 domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.
+ all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
+(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) [all-the-icons-dired.el] dired でファイルのアイコン表示をする 🔗 jtbm37/all-the-icons-dired
+ Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook .</description>
     </item>
     
     <item>
@@ -33,7 +35,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
-      <description>[line-spacing] 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
+      <description>[my:line-spacing] 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
 darkroom-mode では、
 (setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときにもとに戻したいのですが、 @takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
 (defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &amp;#39;buffer-list-update-hook #&amp;#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。</description>
@@ -45,7 +47,7 @@ darkroom-mode では、
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/display-number/</guid>
-      <description>[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名だった。 軽くするためにはいろいろと設定しなくてはいけなかった。Emacs26でついに行数表示のネイティブ実装である diplay-line-numbers-mode が実装されたのでそちらを使います。.
+      <description>[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。 Emacs26でついに行数表示のネイティブ実装である diplay-line-numbers-mode が実装されたのでそちらを使います。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
     </item>
     
@@ -55,8 +57,9 @@ darkroom-mode では、
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
-      <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
-(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;quot;~/.emacs.d/tmp/prescient-save&amp;quot;)) :init (with-eval-after-load &#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
+      <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） 🔗 radian-software/prescient.el: Simple but effective sorting and filtering for Emacs.
+コマンド履歴を保存、コマンドのイニシャル入力を可能にする。
+(leaf prescient :ensure t :hook (after-init-hook . prescient-persist-mode) :custom `((prescient-aggressive-file-save . t) (prescient-save-file . &amp;#34;~/.emacs.d/tmp/prescient-save&amp;#34;)) :init (with-eval-after-load &amp;#39;prescient (leaf ivy-prescient :ensure t :global-minor-mode t) (leaf company-prescient :ensure t :global-minor-mode t))) </description>
     </item>
     
     <item>
@@ -65,7 +68,8 @@ darkroom-mode では、
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
-      <description>[japanese-holidays.el] カレンダーをカラフルにする  ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
+      <description>[japanese-holidays.el] カレンダーをカラフルにする 🔗 emacs-jp/japanese-holidays: Display Japanese holidays in the Emacs calendar.
+ ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
     </item>
     
     <item>
@@ -74,9 +78,8 @@ darkroom-mode では、
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
-      <description>6.12. [imenu-list.el] サイドバー的にファイル内容の目次要素を表示 @takaxpさんの改良版/imenu-list を使ってます。
-(leaf imenu-list :ensure t :bind (&amp;quot;&amp;lt;f2&amp;gt;&amp;quot; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &#39;left) (imenu-list-focus-after-activation . t))) counsel-css.el を導入すると便利です。
-(leaf counsel-css :ensure t :hook (css-mode-hook . counsel-css-imenu-setup)) </description>
+      <description>[imenu-list.el] サイドバー的にファイル内容の目次要素を表示 🔗 bmag/imenu-list: Emacs plugin to show the current buffer&amp;rsquo;s imenu entries in a separate buffer.
+(leaf imenu-list :ensure t :bind (&amp;#34;&amp;lt;f2&amp;gt;&amp;#34; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &amp;#39;left) (imenu-list-focus-after-activation . t))) </description>
     </item>
     
     <item>
@@ -85,7 +88,8 @@ darkroom-mode では、
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
-      <description>[diff-hl.el] 編集差分をフレーム端で視覚化 編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
+      <description>[diff-hl.el] 編集差分をフレーム端で視覚化 🔗 dgutov/diff-hl: Emacs package for highlighting uncommitted changes.
+編集差分の視覚化は、元々 git-gutter が提供している機能です。しかし有効にするとフレームの幅が若干広がってしまうなどの不便さがあったので diff-hl に乗り換えました。
 (leaf diff-hl :ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) </description>
     </item>
     

@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.6. ivy / counsel :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -824,7 +828,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#ivyel--counselel-emacsの補完システム">[ivy.el / counsel.el] Emacsの補完システム</a></li>
+        <li><a href="#ivyel--counselel--swiperel-emacsの補完システム">[ivy.el / counsel.el / swiper.el] Emacsの補完システム</a></li>
         <li><a href="#現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</a></li>
         <li><a href="#ivy-rich">ivy-rich</a></li>
         <li><a href="#amx">amx</a></li>
@@ -851,10 +855,12 @@
     
     
     
-<h3 id="ivyel--counselel-emacsの補完システム">[ivy.el / counsel.el] Emacsの補完システム</h3>
+<h3 id="ivyel--counselel--swiperel-emacsの補完システム">[ivy.el / counsel.el / swiper.el] Emacsの補完システム</h3>
+<p>🔗 <a href="https://github.com/abo-abo/swiper">abo-abo/swiper: Ivy - a generic completion frontend for Emacs, Swiper - isearch with an overview.</a></p>
 <p><code>ivy</code> は、<code>helm</code> と双璧を成す Emacsの補完システムです。</p>
 <p>リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す。
-このシンプルかつ極めて重要なタスクを <code>ivy</code> が手助けしてくれます．</p>
+このシンプルかつ極めて重要なタスクを <code>ivy</code> が手助けしてくれます．
+<code>counsel.el</code> をインストールすれば、<code>ivy.el</code> も <code>swiper.el</code> も一緒にインストールされます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">counsel</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:defer-config</span> (<span style="color:#000">ivy-mode</span>)
@@ -893,11 +899,13 @@
    <span style="color:#000">cands</span>
    <span style="color:#c41a16">&#34;\n&#34;</span>))
 </code></pre></div><h3 id="ivy-rich">ivy-rich</h3>
+<p>🔗 <a href="https://github.com/Yevgnen/ivy-rich">Yevgnen/ivy-rich: More friendly interface for ivy.</a></p>
 <p>ivy-rich を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">ivy-rich</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">ivy-rich-mode</span>))
 </code></pre></div><h3 id="amx">amx</h3>
+<p>🔗 <a href="https://github.com/DarwinAwardWinner/amx">DarwinAwardWinner/amx: An alternative M-x interface for Emacs.</a></p>
 <p><code>amx</code> は、Emacsコマンド <code>M-x</code> の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
 導入することで<code>counsel-M-x</code> とも自動的に連携して効率の良い補完システムを提供します。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">amx</span>

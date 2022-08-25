@@ -2,8 +2,9 @@
 title = "7.9. key-chord"
 draft = false
 +++
-
 ### [key-chord.el] 同時押しでキーバインド
+🔗 [emacsorphanage/key-chord: Map pairs of simultaneously pressed keys to commands.](https://github.com/emacsorphanage/key-chord) 
+
 * 同時押しというキーバインドを提供してくれるやつ
 * 同時押し時の許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定を入れている。
 

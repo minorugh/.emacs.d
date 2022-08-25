@@ -95,7 +95,7 @@
 
 ;; imenu-list
 (leaf imenu-list
-  :el-get takaxp/imenu-list
+  :ensure t
   :bind ("<f2>" . imenu-list-smart-toggle)
   :custom
   `((imenu-list-size . 30)

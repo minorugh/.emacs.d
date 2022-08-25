@@ -3,7 +3,9 @@ title = "7.1. markdown-mode"
 draft = false
 +++
 ### [markdown-mode.el] markdownモード編集、入力支援
-[`markdown-mode.el`](https://github.com/jrblevin/markdown-mode) は、Markdown形式のテキストを編集するための主要なモードです。
+🔗 [jrblevin/markdown-mode: Emacs Markdown Mode.](https://github.com/jrblevin/markdown-mode) 
+
+Markdown形式のテキストを編集するための主要なモードです。
 
 ```elisp
 (leaf markdown-mode
@@ -15,12 +17,12 @@ draft = false
 	(markdown-fontify-code-blocks-natively . t))
 ```
 
-markdownファイルのプレビューには、[`emacs-livedown`](https://github.com/shime/emacs-livedown) を使っています。
+markdownファイルのプレビューには、`emacs-livedown`を使っています。
 記事を書きながらライブでプレビュー出来るすぐれものです。
 
-[https://github.com/shime/emacs-livedown](https://github.com/shime/emacs-livedown)
+🔗 [shime/emacs-livedown: Emacs plugin for Livedown.](https://github.com/shime/emacs-livedown)
 
-npmがインストールされたnodeが入っていことを確認してからlivedownをインストールします。
+`npm` がインストールされた`node`が入っていことを確認してから`livedown`をインストールします。
 
 ```session
 $ npm install -g livedown

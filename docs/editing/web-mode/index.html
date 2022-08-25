@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.3. web-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -847,8 +851,9 @@
     
     
 <h3 id="web-modeel-html編集をサポート">[web-mode.el] HTML編集をサポート</h3>
-<p>HTML編集をするなら<a href="https://github.com/fxbois/web-mode">web-mode</a> がお勧めなのですが、私の場合あまり使っていません。</p>
-<p>出来上がったHTMLの内容を確認したり部分的に変更したり&hellip;という程度の使い方です。</p>
+<p>🔗 <a href="https://github.com/fxbois/web-mode">fxbois/web-mode: Web template editing mode for Emacs.</a></p>
+<p>タグ直打ちでHTML編集するならお勧めなのですが、私の場合あまり使っていません。
+出来上がったHTMLの内容を確認したり部分的に変更したり&hellip;という程度の使い方です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">web-mode</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.js?\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.html?\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.php?\\&#39;&#34;</span>)

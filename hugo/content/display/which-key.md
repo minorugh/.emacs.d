@@ -2,8 +2,9 @@
 title = "7.1. which-key"
 draft = false
 +++
-
 ### [which-key.el] キーバインドの選択肢をポップアップする
+🔗 [justbur/emacs-which-key: Emacs package that displays available keybindings in popup.](https://github.com/justbur/emacs-which-key) 
+
 `guide-key.el` の後発、ディスパッチャが見やすく直感的でとても使いやすい。
 
 ```elisp

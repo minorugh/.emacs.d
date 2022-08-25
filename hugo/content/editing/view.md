@@ -3,10 +3,11 @@ title = "7.2. veiw-mode"
 draft = false
 +++
 ### [view-mode] ファイル閲覧モード（標準機能）
+[view-mode](https://www.emacswiki.org/emacs/ViewMode) はビルトインの機能です。
 
-特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに [view-mode](https://www.emacswiki.org/emacs/ViewMode) を使います。
+特定の拡張子に対して常に `view-mode` で開きたいときやgzされた `elisp`ソースを見るときに使います。
 
-下記の設定では、`my:auto-view-dirs` に追加したディレクトリのファイルを開くと `view-mode` が常に有効になります．
+下記の設定では、`my:auto-view-dirs` に追加したディレクトリのファイルを開くと連携して `view-mode` が有効になります．
 
 ```elisp
 (leaf view
@@ -75,7 +76,11 @@ draft = false
 	(when (string-match "COMMIT_EDITMSG" buffer-file-name)
 	  (view-mode 0))))
 ```
-`view-mode` のときにモードラインの色を変えるのは [`viewer.el`]() を使うと設定が簡単です。
+
+### [viewer.el] モードラインの色を変える
+🔗 [rubikitch/viewer: Emacs view-mode extension.](https://github.com/rubikitch/viewer) 
+
+`view-mode` のときにモードラインの色を変えるのは `viewer.el`を使うと設定が簡単です。
 
 ```elisp
 ;; Change-modeline-color
@@ -86,6 +91,7 @@ draft = false
 	        (viewer-modeline-color-unwritable . "#2F6828")))
 ```
 
+### カスタマイズコマンド
 `view-mode` からでも簡単な編集ができるように `vim like` なコマンドをいくつか作りました。
 
 ```elisp

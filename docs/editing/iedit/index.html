@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.10. iedit :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -847,16 +851,14 @@
     
     
 <h3 id="ieditel-選択領域を別の文字列に置き換える">[iedit.el] 選択領域を別の文字列に置き換える</h3>
-<ul>
-<li><a href="https://github.com/victorhge/iedit"><code>idet.el</code></a> は、バッファー内の複数箇所を同時に編集するツールです。</li>
-</ul>
+<p>🔗 <a href="https://github.com/victorhge/iedit">victorhge/iedit: Modify multiple occurrences simultaneously.</a></p>
+<p>バッファー内の複数箇所を同時に編集するツールです。</p>
 <p>同じような機能のものは、複数あるようですが、わたしはこれを愛用しています。</p>
 <ul>
 <li><a href="https://github.com/magnars/multiple-cursors.el"><code>multi-cursors.el</code></a></li>
 <li><a href="https://www.emacswiki.org/emacs/replace-from-region.el"><code>replace-from-region.el</code></a></li>
 <li><a href="https://github.com/emacsorphanage/anzu"><code>anzu.el</code></a></li>
 </ul>
-<p>MELPAからpackage-installするだけで使えます。</p>
 <p>対象範囲を選択して <code>C-;</code> を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインに押すとIedit:とキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。</p>
 <p>ここで、ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 <code>C-;</code> を押すと確定されiedet-modeを抜けます。</p>
 <p>かなりの頻度で使うので、Emacsでは使うことのない <code>&lt;insert&gt;</code> にキーバインドしています。</p>

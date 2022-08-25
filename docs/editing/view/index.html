@@ -5,9 +5,12 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T09:17:28 JST">
+<meta name="revised" content="2022-08-25T11:40:08 JST">
 <title>7.2. veiw-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/5.6.0/css/font-awesome.min.css">
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
 <link href="/.emacs.d/css/hybrid.css" rel="stylesheet">
@@ -24,6 +27,7 @@
   }
 </style>
 <meta name="description" content="">
+
 
 
     
@@ -825,6 +829,8 @@
     <li>
       <ul>
         <li><a href="#view-mode-ファイル閲覧モード標準機能">[view-mode] ファイル閲覧モード（標準機能）</a></li>
+        <li><a href="#viewerel-モードラインの色を変える">[viewer.el] モードラインの色を変える</a></li>
+        <li><a href="#カスタマイズコマンド">カスタマイズコマンド</a></li>
       </ul>
     </li>
   </ul>
@@ -847,8 +853,9 @@
     
     
 <h3 id="view-mode-ファイル閲覧モード標準機能">[view-mode] ファイル閲覧モード（標準機能）</h3>
-<p>特定の拡張子に対して常に view モードで開きたいときやgzされた elisp ソースを見るときに <a href="https://www.emacswiki.org/emacs/ViewMode">view-mode</a> を使います。</p>
-<p>下記の設定では、<code>my:auto-view-dirs</code> に追加したディレクトリのファイルを開くと <code>view-mode</code> が常に有効になります．</p>
+<p><a href="https://www.emacswiki.org/emacs/ViewMode">view-mode</a> はビルトインの機能です。</p>
+<p>特定の拡張子に対して常に <code>view-mode</code> で開きたいときやgzされた <code>elisp</code>ソースを見るときに使います。</p>
+<p>下記の設定では、<code>my:auto-view-dirs</code> に追加したディレクトリのファイルを開くと連携して <code>view-mode</code> が有効になります．</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">view</span>
   <span style="color:#a90d91">:hook</span>
   (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:auto-view</span>)
@@ -914,14 +921,17 @@
 	<span style="color:#c41a16">&#34;Unlock view mode with git commit.&#34;</span>
 	(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;COMMIT_EDITMSG&#34;</span> <span style="color:#000">buffer-file-name</span>)
 	  (<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>))))
-</code></pre></div><p><code>view-mode</code> のときにモードラインの色を変えるのは <a href=""><code>viewer.el</code></a> を使うと設定が簡単です。</p>
+</code></pre></div><h3 id="viewerel-モードラインの色を変える">[viewer.el] モードラインの色を変える</h3>
+<p>🔗 <a href="https://github.com/rubikitch/viewer">rubikitch/viewer: Emacs view-mode extension.</a></p>
+<p><code>view-mode</code> のときにモードラインの色を変えるのは <code>viewer.el</code>を使うと設定が簡単です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Change-modeline-color</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">viewer</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">view-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">viewer-change-modeline-color-setup</span>)
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">viewer-modeline-color-view</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#852941&#34;</span>)
 	        (<span style="color:#000">viewer-modeline-color-unwritable</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#2F6828&#34;</span>)))
-</code></pre></div><p><code>view-mode</code> からでも簡単な編集ができるように <code>vim like</code> なコマンドをいくつか作りました。</p>
+</code></pre></div><h3 id="カスタマイズコマンド">カスタマイズコマンド</h3>
+<p><code>view-mode</code> からでも簡単な編集ができるように <code>vim like</code> なコマンドをいくつか作りました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;view</span>
   <span style="color:#177500">;; save-buffer no message</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:save-buffer</span> ()
