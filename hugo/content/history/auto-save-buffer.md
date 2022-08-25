@@ -1,5 +1,5 @@
 +++
-title = "9.1. auto-save-buffer-enhanced"
+title = "9.1. auto-save-buffer"
 draft = false
 +++
 ### [auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供
