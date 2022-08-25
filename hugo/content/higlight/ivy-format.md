@@ -2,9 +2,9 @@
 title = "4.4. ivy-format-function-arrow"
 draft = false
 +++
-### 選択行をアイコンで強調する
+### 選択行をアイコンで強調
 
-`ivy-mode` の選択行をアイコンで強調する設定です。
+`my:ivy-format-function-arrow` は、`ivy-mode` の選択行をアイコンで強調する設定です。
 
 ```elisp
   (defun my:ivy-format-function-arrow (cands)

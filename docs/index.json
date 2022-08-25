@@ -333,7 +333,7 @@
 	"title": "4.4. ivy-format-function-arrow",
 	"tags": [],
 	"description": "",
-	"content": "選択行をアイコンで強調する ivy-mode の選択行をアイコンで強調する設定です。\n(defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) (setq ivy-format-functions-alist \u0026#39;((t . my:ivy-format-function-arrow))) "
+	"content": "選択行をアイコンで強調 my:ivy-format-function-arrow は、ivy-mode の選択行をアイコンで強調する設定です。\n(defun my:ivy-format-function-arrow (cands) \u0026#34;Transform into a string for minibuffer with CANDS.\u0026#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon \u0026#34;chevron-right\u0026#34; :height 0.8 :v-adjust -0.05) \u0026#34;\u0026gt;\u0026#34;) (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) (ivy--add-face str \u0026#39;ivy-current-match))) (lambda (str) (concat (propertize \u0026#34; \u0026#34; \u0026#39;display `(space :align-to 2)) str)) cands \u0026#34;\\n\u0026#34;)) (setq ivy-format-functions-alist \u0026#39;((t . my:ivy-format-function-arrow))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/paren/",
