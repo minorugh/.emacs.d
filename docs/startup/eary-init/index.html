@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T16:47:21 JST">
+<meta name="revised" content="2022-08-25T16:54:24 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -830,7 +830,7 @@
         <li><a href="#フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</a></li>
         <li><a href="#これらを無効にする方が速い-初期化される前">これらを無効にする方が速い (初期化される前)</a></li>
         <li><a href="#起動時の点滅を抑える">起動時の点滅を抑える</a></li>
-        <li><a href="#起動時の背景色を指定する">起動時の背景色を指定する</a></li>
+        <li><a href="#起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</a></li>
         <li><a href="#emacsのを常駐環境を考えてみた">Emacsのを常駐環境を考えてみた</a></li>
       </ul>
     </li>
@@ -894,7 +894,7 @@
 			(<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-message</span> <span style="color:#000">nil</span>)
 			(<span style="color:#000">toggle-fullscreen</span>)
 			(<span style="color:#000">redisplay</span>)))
-</code></pre></div><h3 id="起動時の背景色を指定する">起動時の背景色を指定する</h3>
+</code></pre></div><h3 id="起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</h3>
 <p>Emacsが設定を読み込む色段階の背景色は白です。
 自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Startup setting</span>
@@ -907,8 +907,7 @@
 <ul>
 <li>Linux起動時に最小化で自動起動させる</li>
 <li><code>C-x C-c</code> で閉じれないようにする（restert-emacsに割り当てています）</li>
-<li>誤ってフレームの閉じるボタンを押せないようにする（常にフルスクリーンで使う）</li>
-<li>画面を閉じるときは、最小化（<code>C-z: suspend-frame</code>）させる</li>
+<li>フレームの閉じるボタンを隠す（常にフルスクリーンで使う）</li>
 </ul>
 <p>Emacsは、起動オプションに &ndash;iconic を付すことで最小化起動します。</p>
 <p>Linuxの場合、「セッションと起動」を立ち上げて「自動開始アプリケーション」に下記の設定を追加するといいです。</p>
