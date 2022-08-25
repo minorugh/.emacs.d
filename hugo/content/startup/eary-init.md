@@ -42,11 +42,11 @@ Emacs27では、(package-initialize) が 2回実行されます。
 (setq frame-inhibit-implied-resize t)
 ```
 
-### 常に最大化で起動
+### 画面最大化で起動
 メニューバー、ツールバー、スクロールなどの初期フレーム設定は、
-ここでこれらを無効にする方が速いです。 (初期化される前)
+ここで無効にする方が速くなります。 (初期化される前)
 
-起動時から画面最大化になるようにしてます。
+起動時から最大化するようにしてます。
 ```elisp
 ;; Faster to disable these here (before they've been initialized)
 (push '(menu-bar-lines . 0) default-frame-alist)

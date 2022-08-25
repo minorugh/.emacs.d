@@ -18,7 +18,7 @@ GCを減らす GC の閾値を最大にしておくことで GC を実質止め�
 ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) eary-init.el の先頭に書くことが重要です。
 パッケージの初期化を抑制する Emacs27では、(package-initialize) が 2回実行されます。 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。
 1回目を抑制するために以下を eary-init.el に記述することで初期化が少し早くなります。
-;; For slightly faster startup (setq package-enable-at-startup nil) 常に最新のバイトコードをロードする ;; Always load newest byte code (setq load-prefer-newer t) フレームのサイズ変更を禁止する ;; Inhibit resizing frame (setq frame-inhibit-implied-resize t) 常に最大化で起動 メニューバー、ツールバー、スクロールなどの初期フレーム設定は、 ここでこれらを無効にする方が速いです。 (初期化される前)</description>
+;; For slightly faster startup (setq package-enable-at-startup nil) 常に最新のバイトコードをロードする ;; Always load newest byte code (setq load-prefer-newer t) フレームのサイズ変更を禁止する ;; Inhibit resizing frame (setq frame-inhibit-implied-resize t) 画面最大化で起動 メニューバー、ツールバー、スクロールなどの初期フレーム設定は、 ここで無効にする方が速くなります。 (初期化される前)</description>
     </item>
     
     <item>
