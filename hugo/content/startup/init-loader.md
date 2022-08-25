@@ -20,11 +20,3 @@ draft = false
 ```
 
 デフォルトで `~/.emacs.d/inits` デレクトリ以下のファイルを読み込みます。
-
-変更するときは下記のように指定すればいいようです。
-自分は、デフォルトで使っています。
-
-```elisp
-;; Load configuration files in '/path/to/init-directory'.
-(init-loader-load "/path/to/init-directory")
-```

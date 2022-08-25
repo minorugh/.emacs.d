@@ -53,9 +53,7 @@ init.el に leaf.el の初期設定を書く @conao3 さんの示されていた
       <description>[init-loader.el] 設定ファイル群のローダー 🔗 emacs-jp/init-loader: Loader of configuration files.
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
-(leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みます。
-変更するときは下記のように指定すればいいようです。 自分は、デフォルトで使っています。
-;; Load configuration files in &amp;#39;/path/to/init-directory&amp;#39;. (init-loader-load &amp;#34;/path/to/init-directory&amp;#34;) </description>
+(leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みます。</description>
     </item>
     
     <item>
