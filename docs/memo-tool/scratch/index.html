@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T22:28:26 JST">
+<meta name="revised" content="2022-08-25T22:30:47 JST">
 <title>11.4. scratch-memo :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -846,10 +846,8 @@
     
     
 <h3 id="scratchバッファーを付箋として使う">scratchバッファーを付箋として使う</h3>
-<ul>
-<li>作業中の編集画面から短期的なメモを気軽に使うために <code>*scratch*</code>バッファーを付箋メモに使えるように設定してみた。</li>
-<li>Emacsを再起動しても<code>*scratch*</code> バッファーの内容が消えないように <a href="http://emacs.rubikitch.com/auto-save-buffers-enhanced/"><code>auto-save-buffers-enhanced</code></a> の <code>*scratch*</code> バッファー自動保存機能を併用しています。専用のパッケージもあるようです。</li>
-</ul>
+<p>作業中の編集画面から短期的なメモを気軽に使うために <code>*scratch*</code>バッファーを付箋メモに使えるように設定してみた。</p>
+<p>Emacsを再起動しても<code>*scratch*</code> バッファーの内容が消えないように <a href="http://emacs.rubikitch.com/auto-save-buffers-enhanced/"><code>auto-save-buffers-enhanced</code></a> の <code>*scratch*</code> バッファー自動保存機能を併用しています。専用のパッケージもあるようです。</p>
 <p><a href="http://emacs.rubikitch.com/persistent-scratch/">persistent-scratch.el: scratch バッファを永続化・自動保存・復元する</a></p>
 <p><code>toggle-scratch</code> は、編集中のバッファーと<code>scratch</code>バッファーとをトグルで切り替えます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Scratch for sticky-memo</span>

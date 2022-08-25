@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T22:28:26 JST">
+<meta name="revised" content="2022-08-25T22:30:47 JST">
 <title>11.1. howm-modo :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -847,10 +847,8 @@
     
 <h3 id="howmel-お手軽メモ環境">[howm.el] お手軽メモ環境</h3>
 <p>🔗 <a href="https://howm.osdn.jp/">howm: Write fragmentarily and read collectively.</a></p>
-<ul>
-<li>Howm-menuは使わないので <code>howm-list-all</code> を初期画面として使っています。</li>
-<li>上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。</li>
-</ul>
+<p>Howm-menuは使わないので <code>howm-list-all</code> を初期画面として使っています。</p>
+<p>上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">howm</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">emacs-startup-hook</span> <span style="color:#000">.</span> <span style="color:#000">howm-mode</span>)
