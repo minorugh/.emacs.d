@@ -371,10 +371,11 @@ expand-region.elは、カーソル位置を起点として前後に選択範囲�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/font/</guid>
-      <description>フォントの設定  メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。  (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) GUI / CUI 共通で Cica を使っています。 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
- プログラミング用日本語等幅フォント Cica Think Pad を2台使っていますので、環境を取得して設定を変えています。  フォントのインストール   Linux 環境でのインストールの方法です。
-  オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。
-   Cica-v5.0.1のダウンロードページから、 (Cica-v5.0.1.zip) をダウンロードします。 上記サイトの存続は怪しいので自分のサイトにも置いておきます。 Cica-v5.0.1.zip  zipファイルを展開します。  $ unzip Cica-v5.0.1.zip LICENSE.</description>
+      <description>フォントの設定 メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。
+(add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) Cicaフォントを使っています。 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
+ プログラミング用日本語等幅フォント Cica  フォントのインストール Linux 環境でのインストールの方法です。
+オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。
+ ダウンロードページから、 Cica-v5.0.1.zip をダウンロードします。 zipファイルを展開します。  $ unzip Cica-v5.0.1.zip LICENSE.txtを確認し、ファイルを /usr/local/share/fonts/ または ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf </description>
     </item>
     
     <item>
