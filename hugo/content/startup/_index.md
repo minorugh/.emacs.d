@@ -14,7 +14,7 @@ Emacs-27導入にあわせて `early-init.el' を設定しました。
 ```shellsession
 1. early-init.el の読み込み
 2. init.el の読み込み
-3. inits/ のファイル群を読み込み
+3. inits/ の設定ファイル群の読み込み
 ```
 
 ### # INDEX
