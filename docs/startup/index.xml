@@ -39,8 +39,8 @@ GC設定とともに設定ファイル読み込み後に正常値に戻します
       
       <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
       <description>[leaf.el] 設定ファイルを明示的に書く 🔗 Emacs入門から始めるleaf.el入門
-Emacsの設定管理は、これまで use-pacage.el を使っていましたが、 @conao3 さんの開発された leaf.el に触発されて全面的に書き直しました。
-init.el に leaf.el の初期設定を書く 下記設定は、@conao3 さんの示されていたものを下敷きにています。
+@conao3 さんの上記記事に触発されて、use-pacage.elから leaf.el に全面的に書き直しました。
+init.el に leaf.el の初期設定を書く @conao3 さんの示されていたものを下敷きにしています。
 ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover file name handlers.&amp;#34; (setq file-name-handler-alist (delete-dups (append file-name-handler-alist old-file-name-handler-alist))))))) ;; Defer garbage collection further back in the startup process (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover GC values after startup.&amp;#34; (setq gc-cons-threshold 800000))) ;; Package (eval-and-compile (customize-set-variable &amp;#39;package-archives &amp;#39;((&amp;#34;org&amp;#34; .</description>
     </item>
     

@@ -5,12 +5,10 @@ draft = false
 ### [leaf.el] 設定ファイルを明示的に書く
 🔗 [Emacs入門から始めるleaf.el入門](https://qiita.com/conao3/items/347d7e472afd0c58fbd7)
 
-Emacsの設定管理は、これまで `use-pacage.el` を使っていましたが、
-[@conao3](https://qiita.com/conao3) さんの開発された `leaf.el` に触発されて全面的に書き直しました。
-
+[@conao3](https://qiita.com/conao3) さんの上記記事に触発されて、`use-pacage.el`から `leaf.el` に全面的に書き直しました。
 
 ### init.el に leaf.el の初期設定を書く
-下記設定は、`@conao3` さんの示されていたものを下敷きにています。
+`@conao3` さんの示されていたものを下敷きにしています。
 
 ```elisp
 ;; Speed up startup

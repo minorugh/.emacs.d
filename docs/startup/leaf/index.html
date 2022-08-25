@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T17:27:33 JST">
+<meta name="revised" content="2022-08-25T17:30:40 JST">
 <title>1.3. leaf.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -848,10 +848,9 @@
     
 <h3 id="leafel-設定ファイルを明示的に書く">[leaf.el] 設定ファイルを明示的に書く</h3>
 <p>🔗 <a href="https://qiita.com/conao3/items/347d7e472afd0c58fbd7">Emacs入門から始めるleaf.el入門</a></p>
-<p>Emacsの設定管理は、これまで <code>use-pacage.el</code> を使っていましたが、
-<a href="https://qiita.com/conao3">@conao3</a> さんの開発された <code>leaf.el</code> に触発されて全面的に書き直しました。</p>
+<p><a href="https://qiita.com/conao3">@conao3</a> さんの上記記事に触発されて、<code>use-pacage.el</code>から <code>leaf.el</code> に全面的に書き直しました。</p>
 <h3 id="initel-に-leafel-の初期設定を書く">init.el に leaf.el の初期設定を書く</h3>
-<p>下記設定は、<code>@conao3</code> さんの示されていたものを下敷きにています。</p>
+<p><code>@conao3</code> さんの示されていたものを下敷きにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Speed up startup</span>
 (<span style="color:#a90d91">unless</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">daemonp</span>) <span style="color:#000">noninteractive</span> <span style="color:#000">init-file-debug</span>)
   (<span style="color:#a90d91">let</span> ((<span style="color:#000">old-file-name-handler-alist</span> <span style="color:#000">file-name-handler-alist</span>))
