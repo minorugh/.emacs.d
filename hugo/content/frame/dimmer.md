@@ -95,4 +95,4 @@ ON/OFF できるのが快適です。
 	(mapc 'kill-buffer (delq (current-buffer) (buffer-list)))
 	(message "killl-other-buffers!")))
 ```
-画面分割時に `follow-mode` もonにしておくと行数の多いバッファーを見るのに便利です。
+長行のファイルを画面分割で見るのに便利な `follow-mode` も有効にしています。
