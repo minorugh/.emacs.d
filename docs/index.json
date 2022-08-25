@@ -256,7 +256,7 @@
 	"title": "2.5. exec-path-from-shell",
 	"tags": [],
 	"description": "",
-	"content": "[exec-path-from-shell.el] 設定をシェルから継承する 🔗 purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user\u0026rsquo;s shell\nexec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。\n(leaf exec-path-from-shell :ensure t :when (memq window-system \u0026#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) "
+	"content": "[exec-path-from-shell.el] 設定をシェルから継承する 🔗 purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user\u0026rsquo;s shell\nシェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。\n(leaf exec-path-from-shell :ensure t :when (memq window-system \u0026#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/uniquify/",

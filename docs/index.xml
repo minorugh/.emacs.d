@@ -281,7 +281,7 @@ Emacsでも &amp;lt;hiragana-katakana&amp;gt; でmozcのON/OFFをしたいので
       
       <guid>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</guid>
       <description>[exec-path-from-shell.el] 設定をシェルから継承する 🔗 purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&amp;rsquo;s shell
-exec-path-from-shell は、シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。
+シェルに設定した PATH の情報を継承して exec-path や PATH を設定してくれます。
 (leaf exec-path-from-shell :ensure t :when (memq window-system &amp;#39;(mac ns x)) :hook (after-init-hook . exec-path-from-shell-initialize) :custom (exec-path-from-shell-check-startup-files . nil)) </description>
     </item>
     
