@@ -379,7 +379,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/scrool-other-window/",
-	"title": "5.3. scrool-other-Window",
+	"title": "5.3. scrool-other-window",
 	"tags": [],
 	"description": "",
 	"content": "[scrool-other-window] deactive なwindowをスクロールさせるための設定 scrool-other-window は、deactive なwindowをスクロールさせるための設定です。\n一画面のとき \u0026lt;next\u0026gt; / \u0026lt;prior\u0026gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。\n(leaf *my:scroll-other-window :bind ((\u0026#34;\u0026lt;next\u0026gt;\u0026#34; . my:scroll-other-window) (\u0026#34;\u0026lt;prior\u0026gt;\u0026#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () \u0026#34;If there are two windows, `scroll-other-window\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () \u0026#34;If there are two windows, `scroll-other-window-down\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) "
