@@ -5,8 +5,9 @@ draft = false
 ### [web-mode.el] HTML編集をサポート
 🔗 [fxbois/web-mode: Web template editing mode for Emacs.](https://github.com/fxbois/web-mode) 
 
-タグ直打ちでHTML編集するならお勧めなのですが、私の場合あまり使っていません。
-出来上がったHTMLの内容を確認したり部分的に変更したり...という程度の使い方です。
+タグ直打ちでHTML編集するならお勧めなのですが、私はあまり使っていません。
+
+HTMLの内容を確認したり部分的に変更したり...という程度の使い方です。
 
 ```elisp
 (leaf web-mode

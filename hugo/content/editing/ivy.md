@@ -70,6 +70,7 @@ ivy-rich を導入するとアイコンが追加され、さらに追加の情�
 🔗 [DarwinAwardWinner/amx: An alternative M-x interface for Emacs.](https://github.com/DarwinAwardWinner/amx) 
 
 `amx` は、Emacsコマンド `M-x` の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
+
 導入することで`counsel-M-x` とも自動的に連携して効率の良い補完システムを提供します。
 
 ```elisp

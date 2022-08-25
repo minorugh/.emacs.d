@@ -3,7 +3,7 @@ title = "7.4. yatex"
 draft = false
 +++
 
-### [yatex.el] YaTexで LaTex編集
+### [yatex.el] LaTex編集
 🔗 [emacsmirror/yatex: Yet Another tex-mode for emacs. //野鳥//](https://github.com/emacsmirror/yatex)
 
 Emacsの上で動作する LaTeX の入力支援環境です。
@@ -27,7 +27,7 @@ Emacsの上で動作する LaTeX の入力支援環境です。
 ```
 `YaTeX-lpr` は、`dviprint-command-format` を呼び出すコマンドです。
 
-dviファイルから `dvipdfmx` で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、`chmod +x dvpd.sh ` として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
+`dvipdfmx` で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、`chmod +x dvpd.sh ` として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
 
 [dvpd.sh]
 ```shellsession

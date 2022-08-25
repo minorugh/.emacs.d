@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T21:39:31 JST">
+<meta name="revised" content="2022-08-25T21:50:43 JST">
 <title>7.4. yatex :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -378,7 +378,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/fontawesome/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/fontawesome/">
-            7.14. fontawesome
+            7.14. font-awesome
           </a>
         </div>
     </li>
@@ -823,7 +823,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#yatexel-yatexで-latex編集">[yatex.el] YaTexで LaTex編集</a></li>
+        <li><a href="#yatexel-latex編集">[yatex.el] LaTex編集</a></li>
       </ul>
     </li>
   </ul>
@@ -845,7 +845,7 @@
     
     
     
-<h3 id="yatexel-yatexで-latex編集">[yatex.el] YaTexで LaTex編集</h3>
+<h3 id="yatexel-latex編集">[yatex.el] LaTex編集</h3>
 <p>🔗 <a href="https://github.com/emacsmirror/yatex">emacsmirror/yatex: Yet Another tex-mode for emacs. //野鳥//</a></p>
 <p>Emacsの上で動作する LaTeX の入力支援環境です。</p>
 <p>ごく一般的な設定例ですが、参考になるとしたら <code>dviprint-command-format</code> に <code>dvpd.sh</code> というスクリプトを設定して、<code>YateX.lpr</code>
@@ -863,7 +863,7 @@
 	<span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;M-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">YaTeX-typeset-buffer</span>)
 		   (<span style="color:#c41a16">&#34;M-v&#34;</span> <span style="color:#000">.</span> <span style="color:#000">YaTeX-lpr</span>))))
 </code></pre></div><p><code>YaTeX-lpr</code> は、<code>dviprint-command-format</code> を呼び出すコマンドです。</p>
-<p>dviファイルから <code>dvipdfmx</code> で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、<code>chmod +x dvpd.sh </code> として実行権限を付与してからPATHの通ったところに置きます。私は、<code>/usr/loca/bin</code> に置きました。</p>
+<p><code>dvipdfmx</code> で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、<code>chmod +x dvpd.sh </code> として実行権限を付与してからPATHの通ったところに置きます。私は、<code>/usr/loca/bin</code> に置きました。</p>
 <p>[dvpd.sh]</p>
 <pre><code class="language-shellsession" data-lang="shellsession">#!/bin/sh
 name=$1

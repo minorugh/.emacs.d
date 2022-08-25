@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T21:39:31 JST">
+<meta name="revised" content="2022-08-25T21:50:43 JST">
 <title>7.6. ivy / counsel :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -378,7 +378,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/fontawesome/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/fontawesome/">
-            7.14. fontawesome
+            7.14. font-awesome
           </a>
         </div>
     </li>
@@ -901,8 +901,8 @@
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">ivy-rich-mode</span>))
 </code></pre></div><h3 id="amx">amx</h3>
 <p>🔗 <a href="https://github.com/DarwinAwardWinner/amx">DarwinAwardWinner/amx: An alternative M-x interface for Emacs.</a></p>
-<p><code>amx</code> は、Emacsコマンド <code>M-x</code> の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
-導入することで<code>counsel-M-x</code> とも自動的に連携して効率の良い補完システムを提供します。</p>
+<p><code>amx</code> は、Emacsコマンド <code>M-x</code> の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。</p>
+<p>導入することで<code>counsel-M-x</code> とも自動的に連携して効率の良い補完システムを提供します。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">amx</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">amx-save-file</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/amx-items&#34;</span>)

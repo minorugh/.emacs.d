@@ -7,7 +7,7 @@ draft = false
 
 特定の拡張子に対して常に `view-mode` で開きたいときやgzされた `elisp`ソースを見るときに使います。
 
-下記の設定では、`my:auto-view-dirs` に追加したディレクトリのファイルを開くと連携して `view-mode` が有効になります．
+設定では、`my:auto-view-dirs` に追加したディレクトリのファイルを開くと連携して `view-mode` が有効になります．
 
 ```elisp
 (leaf view
