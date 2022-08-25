@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T19:47:27 JST">
+<meta name="revised" content="2022-08-25T19:48:54 JST">
 <title>3.4. my:exchange-point-and-mark :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -823,7 +823,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#myexchange-point-and-mark-直前の編集ポイントと現在のポイントとを行き来する設定">[my:exchange-point-and-mark] 直前の編集ポイントと現在のポイントとを行き来する設定</a></li>
+        <li><a href="#直前の編集ポイントと現在のポイントとを行き来する設定">直前の編集ポイントと現在のポイントとを行き来する設定</a></li>
       </ul>
     </li>
     <li><a href="#標準機能の-c-u-c-spc-でもマーク箇所を辿れます">標準機能の <code>C-u C-SPC</code> でもマーク箇所を辿れます。</a></li>
@@ -846,10 +846,8 @@
     
     
     
-<h3 id="myexchange-point-and-mark-直前の編集ポイントと現在のポイントとを行き来する設定">[my:exchange-point-and-mark] 直前の編集ポイントと現在のポイントとを行き来する設定</h3>
-<ul>
-<li><code>my:exchange-point-and-mark</code> は、直前の編集ポイントと現在のポイントとを行き来できる設定です。</li>
-</ul>
+<h3 id="直前の編集ポイントと現在のポイントとを行き来する設定">直前の編集ポイントと現在のポイントとを行き来する設定</h3>
+<p><code>my:exchange-point-and-mark</code> は、直前の編集ポイントと現在のポイントとを行き来できる設定です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:exchange-point-and-mark</span> ()
   <span style="color:#c41a16">&#34;No mark active </span><span style="color:#c41a16">`exchange-point-and-mark&#39;</span><span style="color:#c41a16">.&#34;</span>
   (<span style="color:#a90d91">interactive</span>)

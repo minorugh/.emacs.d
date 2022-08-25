@@ -298,7 +298,7 @@
 	"title": "3.4. my:exchange-point-and-mark",
 	"tags": [],
 	"description": "",
-	"content": "[my:exchange-point-and-mark] 直前の編集ポイントと現在のポイントとを行き来する設定  my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。  (defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) "
+	"content": "直前の編集ポイントと現在のポイントとを行き来する設定 my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。\n(defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) 標準機能の C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) (setq mark-ring-max 32) (setq global-mark-ring-max 64) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/expand-region/",
