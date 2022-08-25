@@ -23,9 +23,9 @@
       
       <guid>https://minorugh.github.io/.emacs.d/core/mozc/</guid>
       <description>ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。
- 参考リンク: Debian系の日本語入力をFcitx &amp;amp; Mozcにする  [emacs-mozc] Mozcサーバーをインストール EmacsからMozcを使えるようにするには、まず mozc_emacs_helper をインストールする必要があります。 OSによって手法が異なりますが、Linuxの場合は簡単です。
+ Debian系の日本語入力をFcitx &amp;amp; Mozcにする  [emacs-mozc] Mozcサーバーをインストール EmacsからMozcを使えるようにするには、まず mozc_emacs_helper をインストールする必要があります。 OSによって手法が異なりますが、Linuxの場合は簡単です。
 $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインストールされていたらOKです。
-Emacsでのインライン入力を無効にする デフォルトでは、C-\ で mozcが起動します。
+Emacsでのインライン入力を無効にする デフォルトはC-` で mozcが起動します。
 Emacsでも &amp;lt;hiragana-katakana&amp;gt; でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。
 方法は簡単で、~/.Xresources を作成して下記のように設定します。
 ! Emacs XIMを無効化 Emacs*useXIM: false 再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。 これで、&amp;lt;hiragana-katakana&amp;gt; をEmacsの toggle-input-method に割り当てることができます。

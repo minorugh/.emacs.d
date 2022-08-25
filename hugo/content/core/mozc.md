@@ -2,29 +2,8 @@
 title = "2.3. mozc"
 draft = false
 +++
-<!-- ### Emacs上でmozcを使うための手順 -->
-<!-- Linux環境を前提にした説明になりますが、ごめんなさい。 -->
-
-<!-- 1. Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、`fcitx-Mozc` です。 -->
-<!-- 2. Emacsでmozcを使うためのmozcサーバー `emacs-Mozc` をインストールします。 -->
-
-<!-- `fcitx-mozc` のインストール -->
-
-<!-- ```shellsession -->
-<!-- $ sudo apt install fcitx-mozc --install-recommends -->
-<!-- ``` -->
-<!-- インストールが済んだら `fcitx`を有効化します。 -->
-
-<!-- ```shellsession -->
-<!-- im-config -n fcitx -->
-<!-- ``` -->
-<!-- 一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。 -->
-
-<!-- 続いて、`emacs-mozc` をインストール -->
-
-
 ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。
-* 参考リンク: [Debian系の日本語入力をFcitx & Mozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
+* [Debian系の日本語入力をFcitx & Mozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
 
 
 ### [emacs-mozc] Mozcサーバーをインストール
@@ -37,7 +16,7 @@ $ sudo apt install emacs-mozc
 `/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。 
 
 ### Emacsでのインライン入力を無効にする
-デフォルトでは、`C-\` で `mozc`が起動します。
+デフォルトはC-\` で `mozc`が起動します。
 
 Emacsでも `<hiragana-katakana>` でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。
 
@@ -96,17 +75,16 @@ Emacsで文章編集中にShellコマンドで [`mozc-tool`](https://www.mk-mode
 ```
 
 ### Mozc 辞書の共有
-Linux環境でMozcを使うメリットは辞書の共有です。
+Linux環境でMozcを使うメリットは、本体のmozcとemacs-mozcとで辞書が共有できることです。
 
-1. Emacs以外のコンテンツでも同じMozc辞書を使うのでEmacsから単語登録しておけば全てのコンテンツで有効になる。
-2. 辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンで共有できる。
+辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンでの共有も可能です。
 
-### Dropboxで辞書を共有する
+### Dropboxで辞書共有
 やり方は簡単です。
 
 1. Dropboxに `~/Dropbox/mozc` フォルダを新規作成します。
-2. つぎに、`~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピーします。
-2. 最後に、`~/.mozc` を削除してDropboxにコピーした `.mozc` のシンボリックファイルを `~/` へ貼り付けます。
+2. つぎに `~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピー。
+2. 最後に`~/.mozc` を削除してDropboxにコピーした `.mozc` のシンボリックを `~/` へ貼り付けます。
 
 `makefile` で自動化するなら次のようになるかと思います。
 

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T17:05:51 JST">
+<meta name="revised" content="2022-08-25T17:12:32 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -828,7 +828,7 @@
         <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
-        <li><a href="#dropboxで辞書を共有する">Dropboxで辞書を共有する</a></li>
+        <li><a href="#dropboxで辞書共有">Dropboxで辞書共有</a></li>
         <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
       </ul>
     </li>
@@ -851,23 +851,9 @@
     
     
     
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <p>ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。</p>
 <ul>
-<li>参考リンク: <a href="https://cloud-work.net/linux/fcitx-mozc/">Debian系の日本語入力をFcitx &amp; Mozcにする</a></li>
+<li><a href="https://cloud-work.net/linux/fcitx-mozc/">Debian系の日本語入力をFcitx &amp; Mozcにする</a></li>
 </ul>
 <h3 id="emacs-mozc-mozcサーバーをインストール">[emacs-mozc] Mozcサーバーをインストール</h3>
 <p>EmacsからMozcを使えるようにするには、まず <code>mozc_emacs_helper</code> をインストールする必要があります。
@@ -875,7 +861,7 @@ OSによって手法が異なりますが、Linuxの場合は簡単です。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install emacs-mozc
 </code></pre><p><code>/user/bin/</code> に <code>mozc_emacs_helper</code> がインストールされていたらOKです。</p>
 <h3 id="emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</h3>
-<p>デフォルトでは、<code>C-\</code> で <code>mozc</code>が起動します。</p>
+<p>デフォルトはC-` で <code>mozc</code>が起動します。</p>
 <p>Emacsでも <code>&lt;hiragana-katakana&gt;</code> でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。</p>
 <p>方法は簡単で、<code>~/.Xresources</code> を作成して下記のように設定します。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">! Emacs XIMを無効化
@@ -918,17 +904,14 @@ Emacs*useXIM: false
 	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog&#34;</span>)
 	(<span style="color:#000">delete-other-windows</span>)))
 </code></pre></div><h3 id="mozc-辞書の共有">Mozc 辞書の共有</h3>
-<p>Linux環境でMozcを使うメリットは辞書の共有です。</p>
-<ol>
-<li>Emacs以外のコンテンツでも同じMozc辞書を使うのでEmacsから単語登録しておけば全てのコンテンツで有効になる。</li>
-<li>辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンで共有できる。</li>
-</ol>
-<h3 id="dropboxで辞書を共有する">Dropboxで辞書を共有する</h3>
+<p>Linux環境でMozcを使うメリットは、本体のmozcとemacs-mozcとで辞書が共有できることです。</p>
+<p>辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンでの共有も可能です。</p>
+<h3 id="dropboxで辞書共有">Dropboxで辞書共有</h3>
 <p>やり方は簡単です。</p>
 <ol>
 <li>Dropboxに <code>~/Dropbox/mozc</code> フォルダを新規作成します。</li>
-<li>つぎに、<code>~/.mozc</code> フォルダーを <code>~/Dropboc/mozc/</code> へコピーします。</li>
-<li>最後に、<code>~/.mozc</code> を削除してDropboxにコピーした <code>.mozc</code> のシンボリックファイルを <code>~/</code> へ貼り付けます。</li>
+<li>つぎに <code>~/.mozc</code> フォルダーを <code>~/Dropboc/mozc/</code> へコピー。</li>
+<li>最後に<code>~/.mozc</code> を削除してDropboxにコピーした <code>.mozc</code> のシンボリックを <code>~/</code> へ貼り付けます。</li>
 </ol>
 <p><code>makefile</code> で自動化するなら次のようになるかと思います。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">mozc_copy:
