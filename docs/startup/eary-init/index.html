@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T07:03:15 JST">
+<meta name="revised" content="2022-08-26T07:07:06 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -913,11 +913,12 @@
 <li>最小化で自動起動させる</li>
 <li><code>C-x C-c</code> で閉じれないようにする→他の用途に置き換えます</li>
 <li>フレームの閉じるボタンを隠す→常にフルスクリーンで使う</li>
+<li>Emacsを閉じたいときは、最小化（suspend-frame）する</li>
 </ul>
 <p>Emacsは、起動オプションに <code>--iconic</code> を付すことで最小化起動します。</p>
-<p>Linuxの場合、「セッションと起動」を立ち上げて「自動開始アプリケーション」に下記の設定を追加するといいです。</p>
 <pre><code class="language-sell" data-lang="sell">emacs --iconic
-</code></pre>
+</code></pre><p>Linuxの場合、「セッションと起動」を立ち上げて「自動開始アプリケーション」に設定を追加するといいです。</p>
+
 
     
     
