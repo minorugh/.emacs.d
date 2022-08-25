@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T20:10:32 JST">
+<meta name="revised" content="2022-08-25T20:12:28 JST">
 <title>5.5. tempbuf :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -847,11 +847,9 @@
     
 <h3 id="tempbufel-不要になったと思われるバッファを自動的に-kill">[tempbuf.el] 不要になったと思われるバッファを自動的に kill</h3>
 <p>🔗 <a href="https://www.emacswiki.org/emacs/tempbuf.el">emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background</a></p>
-<ul>
-<li><code>tempbuf.el</code> は不要になったと思われるバッファを自動的に kill してくれるパッケージ。</li>
-</ul>
-<p>使っていた時間が長い程、裏に回った時には長い時間保持してくれる。
-つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。</p>
+<p><code>tempbuf.el</code> は不要になったと思われるバッファを自動的に kill してくれるパッケージ。</p>
+<p>使っていた時間が長い程、裏に回った時には長い時間保持してくれる。</p>
+<p>つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。</p>
 <ul>
 <li><code>my:tembuf-ignore-files</code>: 勝手に kill させないファイルの指定</li>
 <li><code>find-file-hook</code>: <code>find-file</code> や <code>dired</code> で開いたファイルが対象</li>

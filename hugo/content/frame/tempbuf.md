@@ -5,9 +5,10 @@ draft = false
 ### [tempbuf.el] 不要になったと思われるバッファを自動的に kill
 🔗 [emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background](https://www.emacswiki.org/emacs/tempbuf.el)
 
-* `tempbuf.el` は不要になったと思われるバッファを自動的に kill してくれるパッケージ。
+`tempbuf.el` は不要になったと思われるバッファを自動的に kill してくれるパッケージ。
 
 使っていた時間が長い程、裏に回った時には長い時間保持してくれる。
+
 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなことをしがちなズボラな人間には便利なやつ。
 
 * `my:tembuf-ignore-files`: 勝手に kill させないファイルの指定

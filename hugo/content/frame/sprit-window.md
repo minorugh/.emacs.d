@@ -2,7 +2,8 @@
 title = "5.4. cus-sprit-window-functions"
 draft = false
 +++
-### [cus-sprit-window-functions]デフォルトの画面分割コマンドをカスタマイズ
+### デフォルトの画面分割コマンドをカスタマイズ
+
 `dimmer-mode` との連携をさせるために、デフォルトのコマンドをカスタマイズします。
 
 * 同じバッファーを分割したときは、`follow-mode` にする。
