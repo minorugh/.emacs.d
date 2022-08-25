@@ -62,7 +62,7 @@ Emacs27では、(package-initialize) が 2回実行されます。
 ```elisp
 (set-frame-parameter nil 'fullscreen 'fullboth)
 ```
-初期化終了後にフルスクリーンになるようにしているのは、
+初期化後にフルスクリーンにしているのは、
 うっかりタイトルバーの閉じるをクリックする悪癖を直すためです(^^)
 
 `M-x toggle-frame-fullscreen` することで最大化とフルスクリーンとを切り替えることが出来ます。
