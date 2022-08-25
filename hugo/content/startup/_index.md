@@ -9,7 +9,7 @@ disableToc = true
 Emacs の起動設定に関わる部分をここでは設定しています。
 Emacs-27導入にあわせて `early-init.el' を設定しました。 
 
-* ブートシーケンスは以下のとおり。
+ブートシーケンスは以下のとおり。
 
 ```shellsession
 1. early-init.el の読み込み
