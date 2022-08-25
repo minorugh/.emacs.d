@@ -1,5 +1,5 @@
 +++
-title = "5.4. cus-sprit-window-functions"
+title = "5.4. cus-sprit-window"
 draft = false
 +++
 ### デフォルトの画面分割コマンドをカスタマイズ

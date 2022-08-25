@@ -17,7 +17,7 @@ disableToc = true
 [scrool-other-window]({{< relref "scrool-other-window" >}})
 : deactive なwindowをスクロールさせる
 
-[custom-sprit-window-func]({{< relref "sprit-window" >}})
+[cus-sprit-window-functions]({{< relref "sprit-window" >}})
 : 画面分割コマンドのカスタマイズ設定
 
 [tempbuf]({{< relref "tempbuf" >}})
