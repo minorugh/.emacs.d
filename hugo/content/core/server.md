@@ -2,7 +2,7 @@
 title = "2.4. server"
 draft = false
 +++
-### [server.el] クライアントサーバー
+### クライアントサーバー
 
 `emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
 
