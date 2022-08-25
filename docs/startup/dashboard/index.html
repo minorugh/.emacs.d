@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T19:13:21 JST">
+<meta name="revised" content="2022-08-25T19:17:37 JST">
 <title>1.6. dashboard :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -850,8 +850,7 @@
 <p>🔗 <a href="https://github.com/emacs-dashboard/emacs-dashboard">emacs-dashboard: An extensible emacs startup screen</a></p>
 <p>Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、<code>dashbord.el</code> を導入してみた。</p>
 <p><img src="https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067" alt="dashboard"></p>
-<p>どのような状況からでも <code>dashboard</code>画面に戻れるように設定しています。</p>
-<p><code>&lt;home&gt;</code> キーのトグル操作で編集中のバッファーと<code>dashboard</code>画面とを行き来します。</p>
+<p>どのような状況からでも <code>&lt;home&gt;</code> キーを押すことで <code>dashboard</code>画面に戻ります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">dashboard</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-setup-startup-hook</span>)
