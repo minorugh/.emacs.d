@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T17:15:00 JST">
+<meta name="revised" content="2022-08-25T17:17:25 JST">
 <title>2.7. change gloal keybind :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -846,21 +846,15 @@
     
     
 <h3 id="cus-global-keybind-グローバルキーバインドをカスタマイズする">[cus-global-keybind] グローバルキーバインドをカスタマイズする</h3>
-<ul>
-<li>グローバルキーバインドを自分好みにカスタマイズした。</li>
-<li>前準備としてクリップボードを使えるようにする。</li>
-</ul>
+<p>グローバルキーバインドを自分好みにカスタマイズしています。</p>
+<p>前準備としてクリップボードを使えるようにします。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Use the X11 clipboard</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">select-enable-clipboard</span>  <span style="color:#000">t</span>)
-</code></pre></div><ul>
-<li>マウスで選択した領域を自動コピー
-マウスで選択すると，勝手にペーストボードにデータが流れます．</li>
-</ul>
+</code></pre></div><p>マウスで選択した領域を自動コピー
+マウスで選択すると，勝手にペーストボードにデータが流れます．</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">mouse-drag-copy-region</span> <span style="color:#000">t</span>)
-</code></pre></div><ul>
-<li><code>C-w</code> は、<code>kill-ring-save</code> に割り当てられたものですが、<code>region</code> 選択されていないときは、一行削除になるようにカスタマイズしてます。</li>
-<li><code>C-x k</code> の <code>kill-buffer</code> は、<code>yes/no</code> 確認されるのが煩わしいので、確認なしの <code>kill-this-buffer</code> を愛用しています。</li>
-</ul>
+</code></pre></div><p><code>C-w</code> は、<code>kill-ring-save</code> に割り当てられたものですが、<code>region</code> 選択されていないときは、一行削除になるようにカスタマイズしてます。</p>
+<p><code>C-x k</code> の <code>kill-buffer</code> は、<code>yes/no</code> 確認されるのが煩わしいので、確認なしの <code>kill-this-buffer</code> を愛用しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Change global key bind</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">cus-global-keybind</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;M-w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-kill-ring-save</span>)
