@@ -42,11 +42,10 @@ Emacs27では、(package-initialize) が 2回実行されます。
 (setq frame-inhibit-implied-resize t)
 ```
 
-### 画面最大化で起動
-メニューバー、ツールバー、スクロールなどの初期フレーム設定は、
-ここで無効にする方が速くなります。 (初期化される前)
+### 起動時画面最大化を設定
+メニューバー、ツールバー、スクロールなどは、ここで無効にする方が速くなります。 (初期化される前)
 
-起動時から最大化するようにしてます。
+ここで最大化を宣言しておくことで `M-x toggle-frame-fullscreen` は、「最大化<->フルスクリーン」を可能にします。
 ```elisp
 ;; Faster to disable these here (before they've been initialized)
 (push '(menu-bar-lines . 0) default-frame-alist)
@@ -63,9 +62,8 @@ Emacs27では、(package-initialize) が 2回実行されます。
 (set-frame-parameter nil 'fullscreen 'fullboth)
 ```
 初期化後にフルスクリーンにしているのは、
-うっかりタイトルバーの閉じるをクリックする悪癖を直すためです(^^)
+うっかりタイトルバーの閉じるをクリックする悪癖を直すための対策です(^^)
 
-`M-x toggle-frame-fullscreen` することで最大化とフルスクリーンとを切り替えることが出来ます。
 ```elisp
 ;; Suppress flashing at startup
 (setq inhibit-redisplay t)

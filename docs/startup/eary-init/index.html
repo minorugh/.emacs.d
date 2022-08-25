@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T07:24:03 JST">
+<meta name="revised" content="2022-08-26T08:05:18 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -821,7 +821,7 @@
         <li><a href="#パッケージの初期化を抑制する">パッケージの初期化を抑制する</a></li>
         <li><a href="#常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</a></li>
         <li><a href="#フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</a></li>
-        <li><a href="#画面最大化で起動">画面最大化で起動</a></li>
+        <li><a href="#起動時画面最大化を設定">起動時画面最大化を設定</a></li>
         <li><a href="#起動時の点滅を抑える">起動時の点滅を抑える</a></li>
         <li><a href="#起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</a></li>
         <li><a href="#emacsのを常駐環境を考えてみた">Emacsのを常駐環境を考えてみた</a></li>
@@ -867,10 +867,9 @@
 </code></pre></div><h3 id="フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</h3>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Inhibit resizing frame</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">frame-inhibit-implied-resize</span> <span style="color:#000">t</span>)
-</code></pre></div><h3 id="画面最大化で起動">画面最大化で起動</h3>
-<p>メニューバー、ツールバー、スクロールなどの初期フレーム設定は、
-ここで無効にする方が速くなります。 (初期化される前)</p>
-<p>起動時から最大化するようにしてます。</p>
+</code></pre></div><h3 id="起動時画面最大化を設定">起動時画面最大化を設定</h3>
+<p>メニューバー、ツールバー、スクロールなどは、ここで無効にする方が速くなります。 (初期化される前)</p>
+<p>ここで最大化を宣言しておくことで <code>M-x toggle-frame-fullscreen</code> は、「最大化&lt;-&gt;フルスクリーン」を可能にします。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Faster to disable these here (before they&#39;ve been initialized)</span>
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">menu-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">tool-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
@@ -881,8 +880,7 @@
 そこまでする必要はないのですが、起動時間短縮にもなるようで一石二鳥です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;fullboth</span>)
 </code></pre></div><p>初期化後にフルスクリーンにしているのは、
-うっかりタイトルバーの閉じるをクリックする悪癖を直すためです(^^)</p>
-<p><code>M-x toggle-frame-fullscreen</code> することで最大化とフルスクリーンとを切り替えることが出来ます。</p>
+うっかりタイトルバーの閉じるをクリックする悪癖を直すための対策です(^^)</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Suppress flashing at startup</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-redisplay</span> <span style="color:#000">t</span>)
 (<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-message</span> <span style="color:#000">t</span>)
