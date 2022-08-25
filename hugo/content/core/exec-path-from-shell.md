@@ -6,7 +6,7 @@ draft = false
 
 🔗 [purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user's shell](https://github.com/purcell/exec-path-from-shell) 
 
-シェルに設定した `PATH` の情報を継承して `exec-path` や `PATH` を設定してくれます。
+シェルに設定した `PATH`情報をEmacsにも継承して設定してくれます。
 
 ```elisp
 (leaf exec-path-from-shell

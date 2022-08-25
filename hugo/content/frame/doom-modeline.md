@@ -5,8 +5,9 @@ draft = false
 ### [doom-modeline.el]
 🔗 [seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.](https://github.com/seagle0128/doom-modeline) 
 
-* [Emacsモダン化計画 -かわEmacs編](https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf) の記事に触発されて以来、`doom-modeline` を愛用しています。 
-* [TeMPOraL/nyan-mode.el](https://github.com/TeMPOraL/nyan-mode) も可愛くて癒やされています(^^)
+[Emacsモダン化計画 -かわEmacs編](https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf) の記事に触発されて以来、`doom-modeline` を愛用しています。 
+
+[TeMPOraL/nyan-mode.el](https://github.com/TeMPOraL/nyan-mode) も可愛くて癒やされています(^^)
 
 ```emacs-lisp
 (leaf doom-modeline

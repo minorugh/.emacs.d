@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T20:14:38 JST">
+<meta name="revised" content="2022-08-25T20:25:11 JST">
 <title>2.5. exec-path-from-shell :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -847,7 +847,7 @@
     
 <h3 id="exec-path-from-shellel-設定をシェルから継承する">[exec-path-from-shell.el] 設定をシェルから継承する</h3>
 <p>🔗 <a href="https://github.com/purcell/exec-path-from-shell">purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&rsquo;s shell</a></p>
-<p>シェルに設定した <code>PATH</code> の情報を継承して <code>exec-path</code> や <code>PATH</code> を設定してくれます。</p>
+<p>シェルに設定した <code>PATH</code>情報をEmacsにも継承して設定してくれます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">exec-path-from-shell</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:when</span> (<span style="color:#000">memq</span> <span style="color:#000">window-system</span> <span style="color:#000">&#39;</span>(<span style="color:#000">mac</span> <span style="color:#000">ns</span> <span style="color:#000">x</span>))
