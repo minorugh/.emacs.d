@@ -2,15 +2,24 @@
 title = "1.3. leaf.el"
 draft = false
 +++
-### [leaf.el] 設定ファイルを明示的に書く
+### 設定ファイルを明示的に書く
 🔗 [Emacs入門から始めるleaf.el入門](https://qiita.com/conao3/items/347d7e472afd0c58fbd7)
 
 [@conao3](https://qiita.com/conao3) さんの上記記事に触発されて、`use-pacage.el`から `leaf.el` に全面的に書き直しました。
 
-### init.el に leaf.el の初期設定を書く
-`@conao3` さんの示されていたものを下敷きにしています。
+### leaf.el の初期設定
+`@conao3` さんの示されていたものを下敷きにして `init.el` を設定しています。
 
 ```elisp
+;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*-
+;;; Commentary:
+;;
+;; Compatible with Emacs 27 and later
+;; Aiming for a fancy and fast Emacs configuration
+;;
+;;; Code:
+;; (setq debug-on-error t)
+
 ;; Speed up startup
 (unless (or (daemonp) noninteractive init-file-debug)
   (let ((old-file-name-handler-alist file-name-handler-alist))
@@ -56,4 +65,9 @@ draft = false
   (custom-set-variables
    '(init-loader-show-log-after-init 'error-only))
   (init-loader-load))
+
+
+(provide 'init)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init.el ends here
 ```
