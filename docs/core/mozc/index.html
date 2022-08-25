@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T08:11:59 JST">
+<meta name="revised" content="2022-08-26T08:13:27 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -862,7 +862,7 @@ Emacs*useXIM: false
 <p>これで、<code>&lt;hiragana-katakana&gt;</code> を <code>toggle-input-method</code> に割り当てることができます。</p>
 <h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
 <p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
-<p>句読点などを入力したとき、自動的に確定させるように <code>mozc-insert-str</code> を定義しました。</p>
+<p>句読点などは、自動的に確定させるように <code>mozc-insert-str</code> を定義しました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-input-method</span>)

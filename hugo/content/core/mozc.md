@@ -33,7 +33,7 @@ Emacs*useXIM: false
 ### [mozc.el] Mozcサーバーを使って日本語テキストを入力
 🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
 
-句読点などを入力したとき、自動的に確定させるように `mozc-insert-str` を定義しました。
+句読点などは、自動的に確定させるように `mozc-insert-str` を定義しました。
 
 ```elisp
 (leaf mozc
