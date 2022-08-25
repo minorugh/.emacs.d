@@ -13,7 +13,11 @@
       
       <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
       <description>[dimmer.el] 現在のバッファ以外の輝度を落とす 🔗 gonewest818/dimmer.el: Visually highlight the selected buffer.
- 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。  (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) sprit-window と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。</description>
+現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
+takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
+(leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) 画面分割と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
+下記の通り発想転換すれば呪縛から逃れることができます。
+ 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じたときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
     </item>
     
     <item>
@@ -22,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
-      <description>[scrool-other-window] deactive なwindowをスクロールさせるための設定 scrool-other-window は、deactive なwindowをスクロールさせるための設定です。
+      <description>deactiveなwindowをスクロールさせる scrool-other-window は、deactive なwindowをスクロールさせるための設定です。
 一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
 (leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
     </item>

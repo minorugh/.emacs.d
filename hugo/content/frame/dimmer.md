@@ -5,8 +5,9 @@ draft = false
 ### [dimmer.el] 現在のバッファ以外の輝度を落とす
 🔗 [gonewest818/dimmer.el: Visually highlight the selected buffer.](https://github.com/gonewest818/dimmer.el) 
 
-* 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
-* [takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
+現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
+
+[takaxp.github.io](https://takaxp.github.io/init.html#org8ba0784e) の設定をそのままパクリました。
 ON/OFF できるのが快適です。
 
 ```emacs-lisp
@@ -34,7 +35,7 @@ ON/OFF できるのが快適です。
 	  (dimmer-process-all))))
 ```
 
-### sprit-window と連携させる
+### 画面分割と連携させる
 
 `dimmer-mode` を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 
@@ -94,4 +95,4 @@ ON/OFF できるのが快適です。
 	(mapc 'kill-buffer (delq (current-buffer) (buffer-list)))
 	(message "killl-other-buffers!")))
 ```
-* 画面分割時に `follow-mode` もonにしておくと行数の多いバッファーを見るのに便利です。
+画面分割時に `follow-mode` もonにしておくと行数の多いバッファーを見るのに便利です。
