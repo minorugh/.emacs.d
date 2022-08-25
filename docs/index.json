@@ -11,7 +11,7 @@
 	"title": "コア設定",
 	"tags": [],
 	"description": "",
-	"content": "Emacs の基本動作に関わる部分をここでは設定している\n# INDEX  Language / Encode 言語と文字コードの設定 Mozc 日本語入力の設定 Server サーバー機能を使う設定 exec-path-from-shell 設定をシェルから継承する uniquify 同じバッファ名が開かれた場合に区別する change-global-keibind グローバルキーバインドのカスタマイズ設定  "
+	"content": "Emacs の基本動作に関わる部分をここでは設定している\n# INDEX  Language / Encode 言語と文字コードの設定 Mozc 日本語入力の設定 Server サーバー機能を使う設定 exec-path-from-shell 設定をシェルから継承する uniquify 同じバッファ名が開かれた場合に区別 change-global-keibind 基本キーバインドのカスタマイズ  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/",
