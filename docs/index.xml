@@ -162,8 +162,10 @@ Hugoで作成されたブログを書くための Emacs メジャー モード�
       
       <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
       <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
- junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。 howmの [m: migemo検索] は、ローマ字での日本語検索も可能なのでとても便利です。  (leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 下記のTipsを参考にして、直近の junkファイルを即開けるように open-last-junk-file を定義しました。
- Emacs で作成した使い捨てファイルを簡単に開く  (leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
+junkファイルの保存も howmフォルダーに置くことで、howm-list からの検索機能が利用できて便利です。
+howmは、ローマ字での日本語検索も可能なのでとても便利です。
+(leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+(leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
     </item>
     
     <item>
