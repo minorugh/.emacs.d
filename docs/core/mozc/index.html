@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T08:13:27 JST">
+<meta name="revised" content="2022-08-26T08:16:00 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -903,7 +903,7 @@ Emacs*useXIM: false
 <li><code>~/.mozc</code> フォルダーを <code>~/Dropboc/mozc/</code> へコピーします。</li>
 <li>最後に<code>~/.mozc</code> を削除してDropboxにコピーした <code>.mozc</code> のシンボリックを <code>~/</code> へ貼り付けます。</li>
 </ol>
-<p><code>makefile</code> で自動化するなら次のようになるかと思います。</p>
+<p><code>makefile</code> で表現するほうがわかりやすいかも…</p>
 <pre><code class="language-shellsession" data-lang="shellsession">mozc_copy:
   mkdir -p ~/Dropbox/mozc
   cp -r ~/.mozc/ ~/Dropbox/mozc/

@@ -84,7 +84,7 @@ Emacs*useXIM: false
 2. `~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピーします。
 2. 最後に`~/.mozc` を削除してDropboxにコピーした `.mozc` のシンボリックを `~/` へ貼り付けます。
 
-`makefile` で自動化するなら次のようになるかと思います。
+`makefile` で表現するほうがわかりやすいかも…
 
 ```shellsession
 mozc_copy:
