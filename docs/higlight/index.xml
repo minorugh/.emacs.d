@@ -65,7 +65,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</guid>
-      <description>[rainbow-delimiters.el] 対応するカッコに色を付ける yanyingwang/rainbow-delimiters: Highlights delimiters such as parentheses.
+      <description>[rainbow-delimiters.el] 対応するカッコに色を付ける 🔗 yanyingwang/rainbow-delimiters: Highlights delimiters such as parentheses.
 複数のカッコが重なる言語では、カッコの対応関係がひと目で理解し難い場合があります。 rainbow-delimiters を使うと対応するカッコを七色に色付けして見やすくできます。
 (leaf rainbow-delimiters :ensure t :hook (prog-mode-hook . rainbow-delimiters-mode)) </description>
     </item>
@@ -76,7 +76,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow/</guid>
-      <description>[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける emacsmirror/rainbow-mode: Colorize color names in buffers.
+      <description>[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.
  rainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。 常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。  (leaf rainbow-mode :ensure t :bind (&amp;#34;C-c r&amp;#34; . rainbow-mode)) </description>
     </item>
     
@@ -86,7 +86,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</guid>
-      <description>[volatile-highlights.el] コピペした領域を強調 k-talo/volatile-highlights.el: Highlighting copied area.
+      <description>[volatile-highlights.el] コピペした領域を強調 🔗 k-talo/volatile-highlights.el: Highlighting copied area.
  volatile-highlights.el は、コピペした領域を強調します。 下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。  (leaf volatile-highlights :ensure t :hook (after-init-hook . volatile-highlights-mode) :config (when (fboundp &amp;#39;pulse-momentary-highlight-region) (defun my:vhl-pulse (beg end &amp;amp;optional _buf face) &amp;#34;Pulse the changes.&amp;#34; (pulse-momentary-highlight-region beg end face)) (advice-add #&amp;#39;vhl/.make-hl :override #&amp;#39;my:vhl-pulse))) </description>
     </item>
     
@@ -96,7 +96,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/whitespace/</guid>
-      <description>[whitespace.el] 全角スペースを強調表示する  show-trailing-whitespace は、便利だけれどtext-modなどでは多少うざいときもあるので、prog-mode-hook で使っている。 ファイルの保存時に行末のスペースや末尾の改行を削除する というTipsもあるがジブは、手動で削除できるようにしている。  (leaf whitespace :ensure t :bind (&amp;#34;C-c C-c&amp;#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () &amp;#34;Show tail whitespace.&amp;#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () &amp;#34;Remove contiguous line breaks at end of line + end of file.&amp;#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) </description>
+      <description>[whitespace.el] 全角スペースを強調表示する 🔗 emacs/whitespace.el: visualize blanks (TAB, (HARD) SPACE and NEWLINE).
+ show-trailing-whitespace は、便利だけれどtext-modなどでは多少うざいときもあるので、prog-mode-hook で使っている。 ファイルの保存時に行末のスペースや末尾の改行を削除する というTipsもあるがジブは、手動で削除できるようにしている。  (leaf whitespace :ensure t :bind (&amp;#34;C-c C-c&amp;#34; . my:cleanup-for-spaces) :hook (prog-mode-hook . my:enable-trailing-mode) :custom (show-trailing-whitespace . nil) :config (defun my:enable-trailing-mode () &amp;#34;Show tail whitespace.&amp;#34; (setq show-trailing-whitespace t)) (defun my:cleanup-for-spaces () &amp;#34;Remove contiguous line breaks at end of line + end of file.&amp;#34; (interactive) (delete-trailing-whitespace) (save-excursion (save-restriction (widen) (goto-char (point-max)) (delete-blank-lines))))) </description>
     </item>
     
   </channel>
