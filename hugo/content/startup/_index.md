@@ -13,7 +13,7 @@ Emacs の起動設定に関わる部分をここでは設定している
 ```shellsession
 1. early-init.el の読み込み
 2. init.el の読み込み
-3. inits/ のファイル群を読み込み （init-loader 使用）
+3. inits/ のファイル群を読み込み
 ```
 
 ### # INDEX
@@ -22,16 +22,16 @@ Emacs の起動設定に関わる部分をここでは設定している
 : 早期設定ファイルの設定
 
 [speed up startup]({{< relref "speed-up" >}})
-: Magic File Name を一時的に無効にして起動時間を短縮するためのおまじない(^^)
+: 起動時間を短縮するためのおまじない(^^)
 
-[leaf.el を使う]({{< relref "leaf" >}})
-: 設定ファイルを明示的に書くためのパッケージです。
+[leaf.el を使って]({{< relref "leaf" >}})
+: 設定ファイルを明示的に書く
 
 [init-loader.el を使う]({{< relref "init-loader" >}})
-: 設定ファイル群のローダーです。
+: 設定ファイル群のローダー
 
 [test.el]({{< relref "test" >}})
-: 最小限の emacs を起動させるための設定
+: 最小限の emacs を起動させる設定
 
 [dashboard]({{< relref "dashboard" >}})
 : dashboardを起動初期画面にする
