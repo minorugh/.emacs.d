@@ -26,7 +26,7 @@
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/hl-line/</guid>
       <description>[hi-line.el] カーソル行に色を付ける ビルトインの hl-line-mode を使ってカーソル行に色をつける設定です。
- http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html https://www.emacswiki.org/emacs/highlight-current-line.el  機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。
+機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。
 (global-hl-line-mode 1) </description>
     </item>
     
