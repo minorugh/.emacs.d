@@ -323,7 +323,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/blink-cursor/",
-	"title": "4.3. blink-cursor-mode",
+	"title": "4.3. blink-cursor",
 	"tags": [],
 	"description": "",
 	"content": "カーソルの点滅を制御 ビルトインの blink-cursor-mode を設定してカーソルの点滅を制御します。\n以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．\n(setq blink-cursor-blinks 0) (setq blink-cursor-interval 0.3) (setq blink-cursor-delay 10) (add-hook \u0026#39;emacs-startup-hook . blink-cursor-mode) "

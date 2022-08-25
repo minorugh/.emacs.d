@@ -1,5 +1,5 @@
 +++
-title = "4.3. blink-cursor-mode"
+title = "4.3. blink-cursor"
 draft = false
 +++
 ### カーソルの点滅を制御
