@@ -1,5 +1,5 @@
 +++
-title = "2.4. server / emacsclient"
+title = "2.4. server"
 draft = false
 +++
 ### [server.el] クライアントサーバー

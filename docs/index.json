@@ -246,7 +246,7 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/server/",
-	"title": "2.4. server / emacsclient",
+	"title": "2.4. server",
 	"tags": [],
 	"description": "",
 	"content": "[server.el] クライアントサーバー emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。\n;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
