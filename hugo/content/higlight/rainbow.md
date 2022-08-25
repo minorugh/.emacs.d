@@ -7,7 +7,7 @@ draft = false
 
 `rainbow-mode.el` は `red`, `green` などの色名や `#aabbcc` といったカラーコードを実際の色に表示してくれる。
 
-常時表示しているとうざいときもあるので、`global` 設定しないで必要なときだけ使えるようにしています。
+`global` 設定にしているとうざいときもあるので、必要なときだけ使えるようにしています。
 
 ```elisp
 (leaf rainbow-mode
