@@ -1409,6 +1409,9 @@ pre .copy-to-clipboard:hover {
   #body {
     margin-left: 0px; } }
 
-dt {margin-top: .5em;}
+dt {
+	margin-top: .5em;
+	font-weight: bold;
+}
 dd {margin-left: 0;}
 /*# sourceMappingURL=style.css.map */
