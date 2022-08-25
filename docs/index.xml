@@ -488,7 +488,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
       
       <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
       <description>deactiveなwindowをスクロールさせる scrool-other-window は、deactive なwindowをスクロールさせるための設定です。
-一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。 標準機能の C-v: scroll-uo-command / M-v: scroll-down-command を使い分ければ快適に二画面同時閲覧が可能となる。
+一画面のとき &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として使うが、画面分割のときだけ other-Window に対応させている。
 (leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
     </item>
     
