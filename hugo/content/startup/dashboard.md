@@ -6,12 +6,12 @@ draft = false
 ### [dashboard.el]起動初期画面をイケメンにする
 🔗 [emacs-dashboard: An extensible emacs startup screen](https://github.com/emacs-dashboard/emacs-dashboard) 
 
-Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、`dashbord.el` を導入してみた。
+Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、`dashbord.el` を導入しました。
 
 
 ![dashboard](https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067) 
 
-どのような状況からでも `<home>` キーを押すことで `dashboard`画面に戻ります。
+`<home>` キーを押すことで何処からでも `dashboard`画面に戻ります。
 
 ```elisp
 (leaf dashboard
