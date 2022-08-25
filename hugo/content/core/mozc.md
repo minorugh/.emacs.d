@@ -34,7 +34,7 @@ $ sudo apt install emacs-mozc
 
 `~/.Xresources` を作成して下記のように設定します。
 
-```zshrc
+```shellsession
 ! ~/.Xresources
 ! Emacs XIMを無効化
 Emacs*useXIM: false
@@ -99,7 +99,7 @@ Linux環境でMozcを使うメリットは辞書の共有です。
 
 `makefile` で自動化するなら次のようになるかと思います。
 
-```code
+```shellsession
 mozc_copy:
 	mkdir -p ~/Dropbox/mozc
 	cp -r ~/.mozc/ ~/Dropbox/mozc/

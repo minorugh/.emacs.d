@@ -15,10 +15,10 @@ disableToc = true
 : 現在のバッファ以外の輝度を落とす
 
 [scrool-other-window]({{< relref "scrool-other-window" >}})
-: `deactive` なwindowをスクロールさせる
+: deactive なwindowをスクロールさせる
 
 [custom-sprit-window-func]({{< relref "sprit-window" >}})
-: `dimmer-mode` 画面分割コマンドのカスタマイズ設定
+: 画面分割コマンドのカスタマイズ設定
 
 [tempbuf]({{< relref "tempbuf" >}})
 : 不要になったと思われるバッファを自動的に kill

@@ -1409,4 +1409,6 @@ pre .copy-to-clipboard:hover {
   #body {
     margin-left: 0px; } }
 
+dt {margin-top: .5em;}
+dd {margin-left: 1em;}
 /*# sourceMappingURL=style.css.map */

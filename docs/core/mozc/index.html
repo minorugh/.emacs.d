@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T13:36:20 JST">
+<meta name="revised" content="2022-08-25T13:59:57 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 
@@ -873,10 +873,10 @@
 <p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
 <p>デフォルトでは、<code>C-\</code> で <code>mozc</code>が起動しますが、できれば <code>&lt;hiragana-katakana&gt;</code> で使いたいので、Emacsでのインライン入力を無効にします。</p>
 <p><code>~/.Xresources</code> を作成して下記のように設定します。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">! ~/.Xresources
+<pre><code class="language-shellsession" data-lang="shellsession">! ~/.Xresources
 ! Emacs XIMを無効化
-Emacs*useXIM: <span style="color:#a90d91">false</span>
-</code></pre></div><p>再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
+Emacs*useXIM: false
+</code></pre><p>再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
 これで、<code>&lt;hiragana-katakana&gt;</code> をEmacsの <code>toggle-input-method</code> に割り当てることができます。</p>
 <p>また、句読点などを入力したとき、自動的に確定させるように <code>mozc-insert-str</code> を宣言します。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
@@ -925,7 +925,7 @@ Emacs*useXIM: <span style="color:#a90d91">false</span>
 <li>最後に、<code>~/.mozc</code> を削除してDropboxにコピーした <code>.mozc</code> のシンボリックファイルを <code>~/</code> へ貼り付けます。</li>
 </ol>
 <p><code>makefile</code> で自動化するなら次のようになるかと思います。</p>
-<pre><code class="language-code" data-lang="code">mozc_copy:
+<pre><code class="language-shellsession" data-lang="shellsession">mozc_copy:
 	mkdir -p ~/Dropbox/mozc
 	cp -r ~/.mozc/ ~/Dropbox/mozc/
 	test -L ~/.mozc || rm -rf ~/.mozc

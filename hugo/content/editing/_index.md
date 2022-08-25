@@ -45,7 +45,7 @@ disableToc = true
 : ローマ字のまま日本語をインクリメンタル検索を可能にする。
 
 [selected]({{< relref "selected" >}})
-: リージョン選択時のアクションを制御してくれる。Like `sendto` of windows.
+: リージョン選択時のアクションを制御してくれる。Like sendto of windows.
 
 [pangu-spacing]({{< relref "pangu" >}})
 : 全角と半角の間に自動でスペースを入れる。

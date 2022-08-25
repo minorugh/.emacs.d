@@ -5,9 +5,9 @@ draft = false
 ### [eary-init.el] 早期初期化ファイル
 🔗 [minorugh/.emacs.d/early-init.el](https://github.com/minorugh/.emacs.d/blob/main/early-init.el)
 
-* [`early-init.el`](https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html) は、Emacs27から導入されました。 
+* [early-init.el](https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html) は、Emacs27から導入されました。 
 
-`init.el` でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
+eary-init.el は、パッケージシステムやGUIの初期化が init.el で実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
 
 
 ### GCを減らす
@@ -23,7 +23,7 @@ eary-init.el の先頭に書くことが重要です。
 Emacs27では、(package-initialize) が 2回実行されます。
 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。
 
-1回目を抑制するために以下を `eary-init.el` に記述することで初期化が少し早くなります。
+1回目を抑制するために以下を eary-init.el に記述することで初期化が少し早くなります。
 
 ```elisp
 ;; For slightly faster startup
@@ -89,10 +89,10 @@ GUIのEmacsをシステム的に常駐化させるのは、自分にはハード
 * 誤ってフレームの閉じるボタンを押せないようにする（常にフルスクリーンで使う）
 * 画面を閉じるときは、最小化（`C-z: suspend-frame`）させる
 
-Emacsは、起動オプションに `--iconic` を付すことで最小化起動します。
+Emacsは、起動オプションに --iconic を付すことで最小化起動します。
 
 Linuxの場合、「セッションと起動」を立ち上げて「自動開始アプリケーション」に下記の設定を追加するといいです。
 ```sell
-$ emacs --iconic
+emacs --iconic
 ```
 

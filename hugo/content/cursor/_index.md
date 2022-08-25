@@ -11,7 +11,7 @@ disableToc = true
 ### # INDEX
 
 [sequential-command]({{< relref "sequential-command" >}})
-: 標準の `C-a` `C-e` を拡張
+: 標準の `C-a / C-e' を拡張
 
 [other-window-or-sptit]({{< relref "other-window-or-sprit" >}})
 : 画面分割時のカーソルの移動

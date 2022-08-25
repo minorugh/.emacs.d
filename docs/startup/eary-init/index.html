@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T13:36:20 JST">
+<meta name="revised" content="2022-08-25T13:59:57 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 
@@ -861,9 +861,9 @@
 <h3 id="eary-initel-早期初期化ファイル">[eary-init.el] 早期初期化ファイル</h3>
 <p>🔗 <a href="https://github.com/minorugh/.emacs.d/blob/main/early-init.el">minorugh/.emacs.d/early-init.el</a></p>
 <ul>
-<li><a href="https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html"><code>early-init.el</code></a> は、Emacs27から導入されました。</li>
+<li><a href="https://ayatakesi.github.io/emacs/28.1/html/Early-Init-File.html">early-init.el</a> は、Emacs27から導入されました。</li>
 </ul>
-<p><code>init.el</code> でパッケージシステムやGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
+<p>eary-init.el は、パッケージシステムやGUIの初期化が init.el で実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
 <h3 id="gcを減らす">GCを減らす</h3>
 <p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Defer garbage collection further back in the startup process</span>
@@ -872,7 +872,7 @@
 <h3 id="package-の初期化を抑制する">Package の初期化を抑制する</h3>
 <p>Emacs27では、(package-initialize) が 2回実行されます。
 (1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。</p>
-<p>1回目を抑制するために以下を <code>eary-init.el</code> に記述することで初期化が少し早くなります。</p>
+<p>1回目を抑制するために以下を eary-init.el に記述することで初期化が少し早くなります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; For slightly faster startup</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">package-enable-at-startup</span> <span style="color:#000">nil</span>)
 </code></pre></div><h3 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h3>
@@ -915,9 +915,9 @@
 <li>誤ってフレームの閉じるボタンを押せないようにする（常にフルスクリーンで使う）</li>
 <li>画面を閉じるときは、最小化（<code>C-z: suspend-frame</code>）させる</li>
 </ul>
-<p>Emacsは、起動オプションに <code>--iconic</code> を付すことで最小化起動します。</p>
+<p>Emacsは、起動オプションに &ndash;iconic を付すことで最小化起動します。</p>
 <p>Linuxの場合、「セッションと起動」を立ち上げて「自動開始アプリケーション」に下記の設定を追加するといいです。</p>
-<pre><code class="language-sell" data-lang="sell">$ emacs --iconic
+<pre><code class="language-sell" data-lang="sell">emacs --iconic
 </code></pre>
 
     
