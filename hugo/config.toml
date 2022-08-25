@@ -50,7 +50,7 @@ url = "https://twitter.com/minorugh"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-home'></i> 四時随順に戻る"
+name = "<i class='fa fa-home'></i> minorugh.github.io に戻る"
 url = "https://minorugh.github.io/"
 weight = 10
 
