@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T20:00:47 JST">
+<meta name="revised" content="2022-08-25T20:01:17 JST">
 <title>4.8. volatile-highlight :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -847,10 +847,8 @@
     
 <h3 id="volatile-highlightsel-コピペした領域を強調">[volatile-highlights.el] コピペした領域を強調</h3>
 <p>🔗 <a href="https://github.com/k-talo/volatile-highlights.el">k-talo/volatile-highlights.el: Highlighting copied area.</a></p>
-<ul>
-<li><code>volatile-highlights.el</code> は、コピペした領域を強調します。</li>
-<li>下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。</li>
-</ul>
+<p><code>volatile-highlights.el</code> は、コピペした領域を強調します。</p>
+<p>下記の設定は、コピペ直後の数秒に限定してコピペした領域をフラッシングさせます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">volatile-highlights</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">volatile-highlights-mode</span>)
