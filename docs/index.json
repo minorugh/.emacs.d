@@ -46,7 +46,7 @@
 	"title": "表示サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする line-spacing 行間を制御する display-number-mode 行番号を表示する prescient リスト項目の並び替えとイニシャル入力機能を提供 japanese-holidays カレンダーをカラフルにする imenu-list ファイル内の関数目次をサイドバー風に表示 diff-hl 編集差分をフレーム端で視覚化 toggle-fullscreen 画面最大化とフルスクリーンとをトグルで切り替え  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする line-spacing 行間を制御する display-number-mode 行番号を表示する prescient リスト項目の並び替えとイニシャル入力機能を提供 japanese-holidays カレンダーをカラフルにする imenu-list ファイル内の関数目次をサイドバー風に表示 diff-hl 編集差分をフレーム端で視覚化  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/hydra/",
@@ -579,13 +579,6 @@
 	"tags": [],
 	"description": "",
 	"content": "[key-chord.el] 同時押しでキーバインド 🔗 emacsorphanage/key-chord: Map pairs of simultaneously pressed keys to commands.\n同時押しというキーバインドを提供します。\n同時押しの許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定をしている。\n(leaf key-chord :ensure t :hook (after-init-hook . key-chord-mode) :chord ((\u0026#34;df\u0026#34; . counsel-descbinds) (\u0026#34;l;\u0026#34; . init-loader-show-log) (\u0026#34;@@\u0026#34; . howm-list-all) (\u0026#34;jk\u0026#34; . open-junk-file)) :custom `((key-chord-two-keys-delay . 0.25) (key-chord-safety-interval-backward . 0.1) (key-chord-safety-interval-forward . 0.15))) キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。\n"
-},
-{
-	"uri": "https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/",
-	"title": "7.9. toggle-frame-fullscreen",
-	"tags": [],
-	"description": "",
-	"content": "[toggle-frame-fullscreen] 画面を最大とフルスクリーンとにトグルで切替え Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを init.el に書きます。\n;; 最大化 (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;maximized) ;; フルスクリーン (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;fullboth) ところが、起動後に M-x toggle-frame-fullscreen/M-x toggle-frame-fullscreen とやっても思うような動きになりません。\nそこで、多少インチキくさい設定ですが、init.el にはまず、maxmized を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。\nこうすることで、あとは M-x toggle-frame-fullscreen で最大化フルスクリーンの切り替えが出来るようになります。\n;;; init.el ;; set maxmized for startup (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;maximized) ;; set fullscreen for window-setup-hook (add-hook \u0026#39;window-setup-hook (lambda () (set-frame-parameter nil \u0026#39;fullscreen \u0026#39;fullboth))) (bind-key \u0026#34;\u0026lt;f11\u0026gt;\u0026#34; \u0026#39;toggle-frame-fullscreen) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/hydra/hydra-quick/",

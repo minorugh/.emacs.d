@@ -35,6 +35,3 @@ disableToc = true
 [diff-hl]({{< relref "diff-hl" >}})
 : 編集差分をフレーム端で視覚化
 
-[toggle-fullscreen]({{< relref "toggle-fullscreen" >}})
-: 画面最大化とフルスクリーンとをトグルで切り替え
-

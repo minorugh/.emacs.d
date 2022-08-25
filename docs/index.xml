@@ -849,19 +849,6 @@ company と連携することでとても便利になります。
     </item>
     
     <item>
-      <title>7.9. toggle-frame-fullscreen</title>
-      <link>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
-      <description>[toggle-frame-fullscreen] 画面を最大とフルスクリーンとにトグルで切替え Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを init.el に書きます。
-;; 最大化 (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;maximized) ;; フルスクリーン (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;fullboth) ところが、起動後に M-x toggle-frame-fullscreen/M-x toggle-frame-fullscreen とやっても思うような動きになりません。
-そこで、多少インチキくさい設定ですが、init.el にはまず、maxmized を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。
-こうすることで、あとは M-x toggle-frame-fullscreen で最大化フルスクリーンの切り替えが出来るようになります。
-;;; init.el ;; set maxmized for startup (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;maximized) ;; set fullscreen for window-setup-hook (add-hook &amp;#39;window-setup-hook (lambda () (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;fullboth))) (bind-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-frame-fullscreen) </description>
-    </item>
-    
-    <item>
       <title>8.1. hydra-menu</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-quick/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
