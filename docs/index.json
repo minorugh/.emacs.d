@@ -32,7 +32,7 @@
 	"title": "フレーム / ウインドウ制御",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n# INDEX  dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせる custom-sprit-window-func 画面分割コマンドのカスタマイズ設定 tempbuf 不要になったと思われるバッファを自動的に kill winner-mode ウインドウ構成の履歴を辿る doom-themes テーマの設定 doom-modeline モードラインの設定  "
+	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n# INDEX  dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせる custom-sprit-window-func 画面分割コマンドのカスタマイズ設定 tempbuf 不要になったバッファを自動的に kill winner-mode ウインドウ構成の履歴を辿る doom-themes テーマの設定 doom-modeline モードラインの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/",

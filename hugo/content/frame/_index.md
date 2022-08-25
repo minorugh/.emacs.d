@@ -21,7 +21,7 @@ disableToc = true
 : 画面分割コマンドのカスタマイズ設定
 
 [tempbuf]({{< relref "tempbuf" >}})
-: 不要になったと思われるバッファを自動的に kill
+: 不要になったバッファを自動的に kill
 
 [winner-mode]({{< relref "winner" >}})
 : ウインドウ構成の履歴を辿る
