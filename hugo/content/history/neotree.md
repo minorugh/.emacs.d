@@ -6,7 +6,7 @@ draft = false
 
 🔗 [jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.](https://github.com/jaypei/emacs-neotree) 
 
-* Rename, Deleteなどの簡単なコマンドもつかえる。
+`Rename`, `Delete` などの簡単なコマンドもつかえる。
 
 ```elisp
 (leaf neotree

@@ -45,7 +45,8 @@ $ sudo apt install gist gist -o とするとポスト後の結果の URLをブ�
       
       <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
       <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
-カレントバッファで編集中のソースコードをビルド・実行して別バッファに結果を得ます。 open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に便利に使えて重宝です。
+編集中のソースコードをビルド・実行して別バッファに結果を得ます。
+open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に使えて重宝です。
 (leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
     </item>
     
