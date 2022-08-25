@@ -5,7 +5,7 @@ draft = false
 ### [expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる
 🔗 [magnars/expand-region.el: Expand region increases the selected region.](https://github.com/magnars/expand-region.el)
 
-`expand-region.el`は、カーソル位置を起点として前後に選択範囲を広げてくれます。
+`expand-region.el`は、カーソル位置を起点として選択範囲を広げてくれます。
 
 2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降はキーバインドの最後の一文字を連打すれば OKです。
 

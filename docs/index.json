@@ -305,7 +305,7 @@
 	"title": "3.5. expand-region",
 	"tags": [],
 	"description": "",
-	"content": "[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる 🔗 magnars/expand-region.el: Expand region increases the selected region.\nexpand-region.elは、カーソル位置を起点として前後に選択範囲を広げてくれます。\n2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降はキーバインドの最後の一文字を連打すれば OKです。\nその場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
+	"content": "[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる 🔗 magnars/expand-region.el: Expand region increases the selected region.\nexpand-region.elは、カーソル位置を起点として選択範囲を広げてくれます。\n2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降はキーバインドの最後の一文字を連打すれば OKです。\nその場合、選択範囲を狭める時は - を押し， 0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/font/",
@@ -354,7 +354,7 @@
 	"title": "4.7. rainbow-mode",
 	"tags": [],
 	"description": "",
-	"content": "[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.\nrainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードから実際の色を表示するマイナーモードです。\n常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。\n(leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
+	"content": "[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.\nrainbow-mode.el は red, green などの色名や #aabbcc といったカラーコードを実際の色に表示してくれる。\n常時表示しているとうざいときもあるので、global 設定しないで必要なときだけ使えるようにしています。\n(leaf rainbow-mode :ensure t :bind (\u0026#34;C-c r\u0026#34; . rainbow-mode)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/",
