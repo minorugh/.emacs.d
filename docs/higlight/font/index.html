@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T22:30:47 JST">
+<meta name="revised" content="2022-08-25T22:44:59 JST">
 <title>4.1. font setting :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -824,7 +824,7 @@
     <li>
       <ul>
         <li><a href="#フォントの設定">フォントの設定</a></li>
-        <li><a href="#cicaフォントを使っています">Cicaフォントを使っています。</a></li>
+        <li><a href="#cicaフォントとは">Cicaフォントとは</a></li>
         <li><a href="#フォントのインストール">フォントのインストール</a></li>
       </ul>
     </li>
@@ -848,12 +848,12 @@
     
     
 <h3 id="フォントの設定">フォントの設定</h3>
-<p>メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。</p>
+<p>メイン機: Thinkpad E590 とサブ機: Thinkpad X250 とでそれぞれに適した値を決めています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-18&#34;</span>))
 <span style="color:#177500">;; for sub-machine</span>
 (<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;x250&#34;</span> (<span style="color:#000">code-command-to-string</span> <span style="color:#c41a16">&#34;uname -n&#34;</span>))
   (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-15&#34;</span>)))
-</code></pre></div><h3 id="cicaフォントを使っています">Cicaフォントを使っています。</h3>
+</code></pre></div><h3 id="cicaフォントとは">Cicaフォントとは</h3>
 <p>Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。</p>
 <ul>
 <li><a href="https://github.com/miiton/Cica">プログラミング用日本語等幅フォント Cica</a></li>
@@ -866,9 +866,6 @@
 <li><a href="https://github.com/SSW-SCIENTIFIC/Cica/releases">ダウンロードページ</a>から、
 <a href="https://github.com/SSW-SCIENTIFIC/Cica/releases/download/v5.0.1-no-glyph-mod/Cica-v5.0.1.zip">Cica-v5.0.1.zip</a> をダウンロードします。</li>
 <li>zipファイルを展開します。</li>
-</ol>
-<pre><code class="language-codesesion" data-lang="codesesion">$ unzip Cica-v5.0.1.zip
-</code></pre><ol start="3">
 <li>解凍したファイルを <code>~/.fonts/</code> にコピーします。</li>
 </ol>
 <pre><code class="language-codesession" data-lang="codesession">$ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/

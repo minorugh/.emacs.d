@@ -3,7 +3,7 @@ title = "4.1. font setting"
 draft = false
 +++
 ### フォントの設定
-メイン機（Thinkpad E590）とサブ機（Thinkpad X250）とでそれぞれに適した値を決めています。
+メイン機: Thinkpad E590 とサブ機: Thinkpad X250 とでそれぞれに適した値を決めています。
 
 ```elisp
 (add-to-list 'default-frame-alist '(font . "Cica-18"))
@@ -12,7 +12,7 @@ draft = false
   (add-to-list 'default-frame-alist '(font . "Cica-15")))
 ```
 
-### Cicaフォントを使っています。
+### Cicaフォントとは
 Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
 
 * [プログラミング用日本語等幅フォント Cica](https://github.com/miiton/Cica)
@@ -26,10 +26,6 @@ Linux 環境でのインストールの方法です。
 1. [ダウンロードページ](https://github.com/SSW-SCIENTIFIC/Cica/releases)から、
 [Cica-v5.0.1.zip](https://github.com/SSW-SCIENTIFIC/Cica/releases/download/v5.0.1-no-glyph-mod/Cica-v5.0.1.zip) をダウンロードします。
 2. zipファイルを展開します。
-
-```codesesion
-$ unzip Cica-v5.0.1.zip
-```
 3. 解凍したファイルを `~/.fonts/` にコピーします。
 
 ```codesession
