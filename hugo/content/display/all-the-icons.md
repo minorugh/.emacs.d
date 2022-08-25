@@ -5,9 +5,9 @@ draft = false
 ### [all-the-icons.el] アイコン表示を可能する
 🔗 [domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.](https://github.com/domtronn/all-the-icons.el)
 
-* `all-the-icons.el` を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
+`all-the-icons.el` を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
 
-初めて使うときはパッケージを使えるようにした後、`M-x all-the-icons-install-fonts` すると自動的にフォントがインストールされます。以下の設定では自動化しています。
+初めて使うときは、フォントがインストール促されますが、設定では自動化しています。
 
 ```emacs-lisp
 (leaf display-line-numbers
@@ -25,7 +25,8 @@ draft = false
 ### [all-the-icons-dired.el] `dired` でファイルのアイコン表示をする
 🔗 [jtbm37/all-the-icons-dired](https://github.com/jtbm37/all-the-icons-dired)
 
-* Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先をel-getでインストールしています。
+Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先を`el-get`でインストールしています。
+
 ```elisp
 (leaf all-the-icons-dired
   :el-get jtbm37/all-the-icons-dired

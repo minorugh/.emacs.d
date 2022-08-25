@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T21:50:43 JST">
+<meta name="revised" content="2022-08-25T22:16:20 JST">
 <title>7.9. toggle-frame-fullscreen :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -823,7 +823,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#toggle-frame-fullscreen-表示画面を最大とフルスクリーンとにトグルで切り替え">[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え</a></li>
+        <li><a href="#toggle-frame-fullscreen-画面を最大とフルスクリーンとにトグルで切替え">[toggle-frame-fullscreen] 画面を最大とフルスクリーンとにトグルで切替え</a></li>
       </ul>
     </li>
   </ul>
@@ -845,7 +845,7 @@
     
     
     
-<h3 id="toggle-frame-fullscreen-表示画面を最大とフルスクリーンとにトグルで切り替え">[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え</h3>
+<h3 id="toggle-frame-fullscreen-画面を最大とフルスクリーンとにトグルで切替え">[toggle-frame-fullscreen] 画面を最大とフルスクリーンとにトグルで切替え</h3>
 <p>Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを <code>init.el</code> に書きます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; 最大化</span>
 (<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;maximized</span>)
@@ -853,8 +853,8 @@
 <span style="color:#177500">;; フルスクリーン</span>
 (<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;fullboth</span>)
 </code></pre></div><p>ところが、起動後に <code>M-x toggle-frame-fullscreen</code>/<code>M-x toggle-frame-fullscreen</code> とやっても思うような動きになりません。</p>
-<p>そこで、多少インチキくさい設定ですが、<code>init.el</code> にはまず、<code>maxmized</code> を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。
-こうすることで、あとは <code>M-x toggle-frame-fullscreen</code> で最大化フルスクリーンの切り替えが出来るようになります。</p>
+<p>そこで、多少インチキくさい設定ですが、<code>init.el</code> にはまず、<code>maxmized</code> を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。</p>
+<p>こうすることで、あとは <code>M-x toggle-frame-fullscreen</code> で最大化フルスクリーンの切り替えが出来るようになります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;; init.el</span>
 <span style="color:#177500">;; set maxmized for startup</span>
 (<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;maximized</span>)

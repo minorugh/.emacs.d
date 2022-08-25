@@ -661,9 +661,11 @@ Font-awesome の入力をcounsel で支援してくれる。
       
       <guid>https://minorugh.github.io/.emacs.d/display/all-the-icons/</guid>
       <description>[all-the-icons.el] アイコン表示を可能する 🔗 domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.
- all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。  初めて使うときはパッケージを使えるようにした後、M-x all-the-icons-install-fonts すると自動的にフォントがインストールされます。以下の設定では自動化しています。
+all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
+初めて使うときは、フォントがインストール促されますが、設定では自動化しています。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0))) [all-the-icons-dired.el] dired でファイルのアイコン表示をする 🔗 jtbm37/all-the-icons-dired
- Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先をel-getでインストールしています。  (leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook .</description>
+Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先をel-getでインストールしています。
+(leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) [all-the-icons-ivy-rich.el] ivy-mode でアイコン表示をする 🔗 seagle0128/all-the-icons-ivy-rich: Display icons for all buffers in ivy.</description>
     </item>
     
     <item>
@@ -686,8 +688,9 @@ Font-awesome の入力をcounsel で支援してくれる。
       <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
       <description>[my:line-spacing] 行間を制御する line-spacing 行間を制御する変数です。バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
 darkroom-mode では、
-(setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときにもとに戻したいのですが、 @takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
-(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &amp;#39;buffer-list-update-hook #&amp;#39;my:linespacing) my:linespacing はシンプルに、 global ではなく local 変数の line-spacing を書き換えます。 (minibufferp) で括っているのは、ミニバッファの行間を my:linespacing に左右されずに制御するためです。</description>
+(setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときにもとに戻します。
+@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
+(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook &amp;#39;buffer-list-update-hook #&amp;#39;my:linespacing) </description>
     </item>
     
     <item>
@@ -771,7 +774,9 @@ ivy は、helm と双璧を成す Emacsの補完システムです。
       
       <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
       <description>[japanese-holidays.el] カレンダーをカラフルにする 🔗 emacs-jp/japanese-holidays: Display Japanese holidays in the Emacs calendar.
- ビルドインの holidays と japanese-holidays.elを使います。 土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。  (leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
+ビルドインの holidays と japanese-holidays.elを使います。
+土日祝日に色を着けます。土曜日と日曜祝日で異なる配色にできます。
+(leaf calendar :leaf-defer t :bind ((&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar) (:calendar-mode-map (&amp;#34;&amp;lt;f7&amp;gt;&amp;#34; . calendar-exit))) :config (leaf japanese-holidays :ensure t :require t :hook ((calendar-today-visible-hook . japanese-holiday-mark-weekend) (calendar-today-invisible-hook . japanese-holiday-mark-weekend) (calendar-today-visible-hook . calendar-mark-today)) :config (setq calendar-holidays (append japanese-holidays holiday-local-holidays holiday-other-holidays)) (setq calendar-mark-holidays-flag t))) </description>
     </item>
     
     <item>
@@ -838,9 +843,10 @@ company と連携することでとても便利になります。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/toggle-fullscreen/</guid>
-      <description>[toggle-frame-fullscreen] 表示画面を最大とフルスクリーンとにトグルで切り替え Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを init.el に書きます。
+      <description>[toggle-frame-fullscreen] 画面を最大とフルスクリーンとにトグルで切替え Emacsの起動時に最大化 / フルスクリーンにするには、次のいづれかを init.el に書きます。
 ;; 最大化 (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;maximized) ;; フルスクリーン (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;fullboth) ところが、起動後に M-x toggle-frame-fullscreen/M-x toggle-frame-fullscreen とやっても思うような動きになりません。
-そこで、多少インチキくさい設定ですが、init.el にはまず、maxmized を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。 こうすることで、あとは M-x toggle-frame-fullscreen で最大化フルスクリーンの切り替えが出来るようになります。
+そこで、多少インチキくさい設定ですが、init.el にはまず、maxmized を設定し、全ての設定を詠み終えた最後にフルスクリーンに設定し直します。
+こうすることで、あとは M-x toggle-frame-fullscreen で最大化フルスクリーンの切り替えが出来るようになります。
 ;;; init.el ;; set maxmized for startup (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;maximized) ;; set fullscreen for window-setup-hook (add-hook &amp;#39;window-setup-hook (lambda () (set-frame-parameter nil &amp;#39;fullscreen &amp;#39;fullboth))) (bind-key &amp;#34;&amp;lt;f11&amp;gt;&amp;#34; &amp;#39;toggle-frame-fullscreen) </description>
     </item>
     

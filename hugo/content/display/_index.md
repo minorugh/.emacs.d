@@ -30,7 +30,7 @@ disableToc = true
 : カレンダーをカラフルにする
 
 [imenu-list]({{< relref "imenu" >}})
-: サイドバー風にファイル内容の目次要素を表示
+: ファイル内の関数目次をサイドバー風に表示
 
 [diff-hl]({{< relref "diff-hl" >}})
 : 編集差分をフレーム端で視覚化
