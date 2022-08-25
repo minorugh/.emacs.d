@@ -2,11 +2,11 @@
 title = "2.3. mozc"
 draft = false
 +++
-ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。
+Debianでの日本語入力環境構築が完了していることが前提です。
 * [Debian系の日本語入力をFcitx & Mozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
 
 
-### [emacs-mozc] Mozcサーバーをインストール
+### Mozcサーバーをインストール
 EmacsからMozcを使えるようにするには、まず `mozc_emacs_helper` をインストールする必要があります。
 OSによって手法が異なりますが、Linuxの場合は簡単です。
 
@@ -16,9 +16,9 @@ $ sudo apt install emacs-mozc
 `/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。 
 
 ### Emacsでのインライン入力を無効にする
-デフォルトはC-\` で `mozc`が起動します。
+デフォルトは`C-\` で mozcが起動します。
 
-Emacsでも `<hiragana-katakana>` でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。
+Emacsでも `<hiragana-katakana>` でmozcのON/OFFをしたいので、Emacsでのインライン入力を無効にします。
 
 方法は簡単で、`~/.Xresources` を作成して下記のように設定します。
 
@@ -26,8 +26,9 @@ Emacsでも `<hiragana-katakana>` でMozcのON/OFFをするには、Emacsでの�
 ! Emacs XIMを無効化
 Emacs*useXIM: false
 ```
-再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
-これで、`<hiragana-katakana>` をEmacsの `toggle-input-method` に割り当てることができます。
+再起動をするか `xrdb ~/.Xresources` を実行することで設定が有効になります。
+
+これで、`<hiragana-katakana>` を `toggle-input-method` に割り当てることができます。
 
 ### [mozc.el] Mozcサーバーを使って日本語テキストを入力
 🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
@@ -54,7 +55,7 @@ Emacs*useXIM: false
 
 ### Emacsから単語登録する
 
-Emacsで文章編集中にShellコマンドで [`mozc-tool`](https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/) を起動し、Emacsを閉じることなく単語登録できるようにしています。
+文章編集画面から [`mozc-tool`](https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/) を起動して単語登録できるようにしています。
 
 ```elisp
 (leaf *cus-mozc-tool
@@ -75,28 +76,26 @@ Emacsで文章編集中にShellコマンドで [`mozc-tool`](https://www.mk-mode
 ```
 
 ### Mozc 辞書の共有
-Linux環境でMozcを使うメリットは、本体のmozcとemacs-mozcとで辞書が共有できることです。
-
 辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンでの共有も可能です。
 
-### Dropboxで辞書共有
-やり方は簡単です。
+手順は簡単です。
 
 1. Dropboxに `~/Dropbox/mozc` フォルダを新規作成します。
-2. つぎに `~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピー。
+2. `~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピーします。
 2. 最後に`~/.mozc` を削除してDropboxにコピーした `.mozc` のシンボリックを `~/` へ貼り付けます。
 
 `makefile` で自動化するなら次のようになるかと思います。
 
 ```shellsession
 mozc_copy:
-	mkdir -p ~/Dropbox/mozc
-	cp -r ~/.mozc/ ~/Dropbox/mozc/
-	test -L ~/.mozc || rm -rf ~/.mozc
-	ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
+  mkdir -p ~/Dropbox/mozc
+  cp -r ~/.mozc/ ~/Dropbox/mozc/
+  test -L ~/.mozc || rm -rf ~/.mozc
+  ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
 ```
 
 ### 辞書共有の課題
-Dropboxに保存された辞書ファイルを複数マシンで同時アクセスした場合、複製（競合コピー）がいっぱい作られるという問題があります。
+Dropboxの辞書ファイルを複数端末から同時アクセスすると、複製（競合コピー）がいっぱい作られるという問題があります。
+
 Google Driveは大丈夫という情報もありますが試せてません。
 

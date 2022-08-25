@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T19:17:36 JST">
+<meta name="revised" content="2022-08-25T19:29:42 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -823,12 +823,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#emacs-mozc-mozcサーバーをインストール">[emacs-mozc] Mozcサーバーをインストール</a></li>
+        <li><a href="#mozcサーバーをインストール">Mozcサーバーをインストール</a></li>
         <li><a href="#emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</a></li>
         <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
-        <li><a href="#dropboxで辞書共有">Dropboxで辞書共有</a></li>
         <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
       </ul>
     </li>
@@ -851,23 +850,23 @@
     
     
     
-<p>ここでの設定は、Debianでの日本語入力環境構築が完了していることが前提です。</p>
+<p>Debianでの日本語入力環境構築が完了していることが前提です。</p>
 <ul>
 <li><a href="https://cloud-work.net/linux/fcitx-mozc/">Debian系の日本語入力をFcitx &amp; Mozcにする</a></li>
 </ul>
-<h3 id="emacs-mozc-mozcサーバーをインストール">[emacs-mozc] Mozcサーバーをインストール</h3>
+<h3 id="mozcサーバーをインストール">Mozcサーバーをインストール</h3>
 <p>EmacsからMozcを使えるようにするには、まず <code>mozc_emacs_helper</code> をインストールする必要があります。
 OSによって手法が異なりますが、Linuxの場合は簡単です。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install emacs-mozc
 </code></pre><p><code>/user/bin/</code> に <code>mozc_emacs_helper</code> がインストールされていたらOKです。</p>
 <h3 id="emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</h3>
-<p>デフォルトはC-` で <code>mozc</code>が起動します。</p>
-<p>Emacsでも <code>&lt;hiragana-katakana&gt;</code> でMozcのON/OFFをするには、Emacsでのインライン入力を無効にする必要があります。</p>
+<p>デフォルトは<code>C-\</code> で mozcが起動します。</p>
+<p>Emacsでも <code>&lt;hiragana-katakana&gt;</code> でmozcのON/OFFをしたいので、Emacsでのインライン入力を無効にします。</p>
 <p>方法は簡単で、<code>~/.Xresources</code> を作成して下記のように設定します。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">! Emacs XIMを無効化
 Emacs*useXIM: false
-</code></pre><p>再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
-これで、<code>&lt;hiragana-katakana&gt;</code> をEmacsの <code>toggle-input-method</code> に割り当てることができます。</p>
+</code></pre><p>再起動をするか <code>xrdb ~/.Xresources</code> を実行することで設定が有効になります。</p>
+<p>これで、<code>&lt;hiragana-katakana&gt;</code> を <code>toggle-input-method</code> に割り当てることができます。</p>
 <h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
 <p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
 <p>句読点などを入力したとき、自動的に確定させるように <code>mozc-insert-str</code> を定義しました。</p>
@@ -887,7 +886,7 @@ Emacs*useXIM: false
 	(<span style="color:#000">mozc-handle-event</span> <span style="color:#c41a16">&#39;enter</span>)
 	(<span style="color:#000">insert</span> <span style="color:#000">str</span>)))
 </code></pre></div><h3 id="emacsから単語登録する">Emacsから単語登録する</h3>
-<p>Emacsで文章編集中にShellコマンドで <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動し、Emacsを閉じることなく単語登録できるようにしています。</p>
+<p>文章編集画面から <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動して単語登録できるようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-mozc-tool</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;s-t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:mozc-dictionary-tool</span>)
 		 (<span style="color:#c41a16">&#34;s-d&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:mozc-word-regist</span>))
@@ -904,24 +903,22 @@ Emacs*useXIM: false
 	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog&#34;</span>)
 	(<span style="color:#000">delete-other-windows</span>)))
 </code></pre></div><h3 id="mozc-辞書の共有">Mozc 辞書の共有</h3>
-<p>Linux環境でMozcを使うメリットは、本体のmozcとemacs-mozcとで辞書が共有できることです。</p>
 <p>辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンでの共有も可能です。</p>
-<h3 id="dropboxで辞書共有">Dropboxで辞書共有</h3>
-<p>やり方は簡単です。</p>
+<p>手順は簡単です。</p>
 <ol>
 <li>Dropboxに <code>~/Dropbox/mozc</code> フォルダを新規作成します。</li>
-<li>つぎに <code>~/.mozc</code> フォルダーを <code>~/Dropboc/mozc/</code> へコピー。</li>
+<li><code>~/.mozc</code> フォルダーを <code>~/Dropboc/mozc/</code> へコピーします。</li>
 <li>最後に<code>~/.mozc</code> を削除してDropboxにコピーした <code>.mozc</code> のシンボリックを <code>~/</code> へ貼り付けます。</li>
 </ol>
 <p><code>makefile</code> で自動化するなら次のようになるかと思います。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">mozc_copy:
-	mkdir -p ~/Dropbox/mozc
-	cp -r ~/.mozc/ ~/Dropbox/mozc/
-	test -L ~/.mozc || rm -rf ~/.mozc
-	ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
+  mkdir -p ~/Dropbox/mozc
+  cp -r ~/.mozc/ ~/Dropbox/mozc/
+  test -L ~/.mozc || rm -rf ~/.mozc
+  ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
 </code></pre><h3 id="辞書共有の課題">辞書共有の課題</h3>
-<p>Dropboxに保存された辞書ファイルを複数マシンで同時アクセスした場合、複製（競合コピー）がいっぱい作られるという問題があります。
-Google Driveは大丈夫という情報もありますが試せてません。</p>
+<p>Dropboxの辞書ファイルを複数端末から同時アクセスすると、複製（競合コピー）がいっぱい作られるという問題があります。</p>
+<p>Google Driveは大丈夫という情報もありますが試せてません。</p>
 
 
     
