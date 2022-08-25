@@ -14,9 +14,3 @@ draft = false
   (deactivate-mark))		 
 (bind-key "C-x C-x" 'my:exchange-point-and-mark)
 ```
-
-## `C-u C-SPC` でもマーク箇所を辿れます。
-
-```elisp
-(setq set-mark-command-repeat-pop t)
-```

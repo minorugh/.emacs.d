@@ -47,7 +47,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/mark-command/</guid>
       <description>直前の編集ポイントと現在のポイントとを行き来する設定 my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。
-(defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) </description>
+(defun my:exchange-point-and-mark () &amp;#34;No mark active `exchange-point-and-mark&amp;#39;.&amp;#34; (interactive) (exchange-point-and-mark) (deactivate-mark))	(bind-key &amp;#34;C-x C-x&amp;#34; &amp;#39;my:exchange-point-and-mark) </description>
     </item>
     
     <item>
