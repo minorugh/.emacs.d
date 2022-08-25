@@ -47,7 +47,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</guid>
-      <description>選択行をアイコンで強調する  ivy-mode の選択行をアイコンで強調する設定です。  (defun my:ivy-format-function-arrow (cands) &amp;#34;Transform into a string for minibuffer with CANDS.&amp;#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon &amp;#34;chevron-right&amp;#34; :height 0.8 :v-adjust -0.05) &amp;#34;&amp;gt;&amp;#34;) (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) (ivy--add-face str &amp;#39;ivy-current-match))) (lambda (str) (concat (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) str)) cands &amp;#34;\n&amp;#34;)) (setq ivy-format-functions-alist &amp;#39;((t . my:ivy-format-function-arrow))) </description>
+      <description>選択行をアイコンで強調する ivy-mode の選択行をアイコンで強調する設定です。
+(defun my:ivy-format-function-arrow (cands) &amp;#34;Transform into a string for minibuffer with CANDS.&amp;#34; (ivy--format-function-generic (lambda (str) (concat (if (display-graphic-p) (all-the-icons-octicon &amp;#34;chevron-right&amp;#34; :height 0.8 :v-adjust -0.05) &amp;#34;&amp;gt;&amp;#34;) (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) (ivy--add-face str &amp;#39;ivy-current-match))) (lambda (str) (concat (propertize &amp;#34; &amp;#34; &amp;#39;display `(space :align-to 2)) str)) cands &amp;#34;\n&amp;#34;)) (setq ivy-format-functions-alist &amp;#39;((t . my:ivy-format-function-arrow))) </description>
     </item>
     
     <item>
