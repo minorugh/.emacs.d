@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T08:16:00 JST">
+<meta name="revised" content="2022-08-26T08:23:13 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -817,7 +817,7 @@
     <li>
       <ul>
         <li><a href="#mozcサーバーをインストール">Mozcサーバーをインストール</a></li>
-        <li><a href="#emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</a></li>
+        <li><a href="#インライン入力を無効にする">インライン入力を無効にする</a></li>
         <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
@@ -852,9 +852,9 @@
 OSによって手法が異なりますが、Linuxの場合は簡単です。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install emacs-mozc
 </code></pre><p><code>/user/bin/</code> に <code>mozc_emacs_helper</code> がインストールされていたらOKです。</p>
-<h3 id="emacsでのインライン入力を無効にする">Emacsでのインライン入力を無効にする</h3>
-<p>デフォルトは<code>C-\</code> で mozcが起動します。</p>
-<p>Emacsでも <code>&lt;hiragana-katakana&gt;</code> でmozcのON/OFFをしたいので、Emacsでのインライン入力を無効にします。</p>
+<h3 id="インライン入力を無効にする">インライン入力を無効にする</h3>
+<p>デフォルトは<code>C-\</code> で <code>emacs-mozc</code> が起動しますが、
+Emacsでも <code>&lt;hiragana-katakana&gt;</code> でON/OFFをしたいので、Emacsのインライン入力を無効にします。</p>
 <p>方法は簡単で、<code>~/.Xresources</code> を作成して下記のように設定します。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">! Emacs XIMを無効化
 Emacs*useXIM: false

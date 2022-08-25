@@ -15,10 +15,9 @@ $ sudo apt install emacs-mozc
 ```
 `/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。 
 
-### Emacsでのインライン入力を無効にする
-デフォルトは`C-\` で mozcが起動します。
-
-Emacsでも `<hiragana-katakana>` でmozcのON/OFFをしたいので、Emacsでのインライン入力を無効にします。
+### インライン入力を無効にする
+デフォルトは`C-\` で `emacs-mozc` が起動しますが、
+Emacsでも `<hiragana-katakana>` でON/OFFをしたいので、Emacsのインライン入力を無効にします。
 
 方法は簡単で、`~/.Xresources` を作成して下記のように設定します。
 
