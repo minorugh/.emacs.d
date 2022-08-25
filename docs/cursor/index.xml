@@ -37,11 +37,11 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</guid>
       <description>括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
-(defun jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  標準機能はなにげに使いにくいです。</description>
+(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  標準機能はなにげに使いにくいです。</description>
     </item>
     
     <item>
-      <title>3.4. my:exchange-point-and-mark</title>
+      <title>3.4. exchange-point-and-mark</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/mark-command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

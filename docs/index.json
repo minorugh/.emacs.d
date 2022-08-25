@@ -291,11 +291,11 @@
 	"title": "3.3. jump-brace",
 	"tags": [],
 	"description": "",
-	"content": "括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。\n(defun jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key \u0026#34;C-M-9\u0026#34; \u0026#39;jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  標準機能はなにげに使いにくいです。\n"
+	"content": "括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。\n(defun my:jump-brace () \u0026#34;Jump to the corresponding parenthesis.\u0026#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key \u0026#34;C-M-9\u0026#34; \u0026#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は，カーソル位置から順方向に選択． C-M-U (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．  標準機能はなにげに使いにくいです。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/cursor/mark-command/",
-	"title": "3.4. my:exchange-point-and-mark",
+	"title": "3.4. exchange-point-and-mark",
 	"tags": [],
 	"description": "",
 	"content": "直前の編集ポイントと現在のポイントとを行き来する設定 my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。\n(defun my:exchange-point-and-mark () \u0026#34;No mark active `exchange-point-and-mark\u0026#39;.\u0026#34; (interactive) (exchange-point-and-mark) (deactivate-mark))\t(bind-key \u0026#34;C-x C-x\u0026#34; \u0026#39;my:exchange-point-and-mark) C-u C-SPC でもマーク箇所を辿れます。 (setq set-mark-command-repeat-pop t) "
