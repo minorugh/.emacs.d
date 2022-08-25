@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-24T22:48:36 JST">
-<title>2.3. emacs-mozc :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-25T09:17:28 JST">
+<title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -123,7 +123,7 @@
       <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mozc/" class="dd-item">
         <div>
           <a href="/.emacs.d/core/mozc/">
-            2.3. emacs-mozc
+            2.3. mozc
           </a>
         </div>
     </li>
@@ -807,7 +807,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.3. emacs-mozc
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/core/'>コア設定</a> > 2.3. mozc
 
  
 
@@ -824,7 +824,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#emacs-mozc-日本語入力システムmozcサーバー">[emacs-mozc] 日本語入力システム（Mozcサーバー）</a></li>
+        <li><a href="#emacs上でmozcを使うための手順">Emacs上でmozcを使うための手順</a></li>
         <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
@@ -843,7 +843,7 @@
 
 <div id="body-inner">
   
-    <h1>2.3. emacs-mozc</h1>
+    <h1>2.3. mozc</h1>
   
 
 
@@ -851,20 +851,30 @@
     
     
     
-<h3 id="emacs-mozc-日本語入力システムmozcサーバー">[emacs-mozc] 日本語入力システム（Mozcサーバー）</h3>
-<ul>
-<li>Debian11 にインストールした Emacs上で <a href="https://wiki.debian.org/JapaneseEnvironment/Mozc"><code>emacs-mozc</code></a> を使っています。</li>
-<li>debian でのインストール手順は以下の通り。</li>
-</ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt-get install fcitx-mozc emacs-mozc
-</code></pre></div><p>Emacsをソースからビルドするときに <code>--without-xim</code> しなかったので、インライン XIMでも日本語入力ができてしまいます。
-特に使い分けする必要もなく紛らわしいので <code>.Xresources</code> で XIM無効化の設定をしました。</p>
+<h3 id="emacs上でmozcを使うための手順">Emacs上でmozcを使うための手順</h3>
+<p>Linux環境を前提にした説明になりますが、ごめんなさい。</p>
+<ol>
+<li>Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、<code>fcitx-Mozc</code> です。</li>
+<li>Emacsでmozcを使うためのmozcサーバー <code>emacs-Mozc</code> をインストールします。</li>
+</ol>
+<p><code>fcitx-mozc</code> のインストール</p>
+<pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install fcitx-mozc --install-recommends
+</code></pre><p>インストールが済んだら <code>fcitx</code>を有効化します。</p>
+<pre><code class="language-shellsession" data-lang="shellsession">im-config -n fcitx
+</code></pre><p>一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。</p>
+<p>続いて、<code>emacs-mozc</code> をインストール</p>
+<pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install emacs-mozc
+</code></pre><p><code>/user/bin/</code> に <code>mozc_emacs_helper</code> がインストールされていたらOKです。</p>
+<h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
+<p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
+<p>デフォルトでは、<code>C-\</code> で <code>mozc</code>が起動しますが、できれば <code>&lt;hiragana-katakana&gt;</code> で使いたいので、Emacsでのインライン入力を無効にします。</p>
+<p><code>~/.Xresources</code> を作成して下記のように設定します。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zshrc" data-lang="zshrc">! ~/.Xresources
 ! Emacs XIMを無効化
 Emacs*useXIM: <span style="color:#a90d91">false</span>
-</code></pre></div><h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
-<p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
-<p>句読点などを入力したとき、わざわざ <code>mozc</code>に変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。</p>
+</code></pre></div><p>再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
+これで、<code>&lt;hiragana-katakana&gt;</code> をEmacsの <code>toggle-input-method</code> に割り当てることができます。</p>
+<p>また、句読点などを入力したとき、自動的に確定させるように <code>mozc-insert-str</code> を宣言します。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-input-method</span>)
@@ -879,12 +889,7 @@ Emacs*useXIM: <span style="color:#a90d91">false</span>
   <span style="color:#a90d91">:config</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">mozc-insert-str</span> (<span style="color:#000">str</span>)
 	(<span style="color:#000">mozc-handle-event</span> <span style="color:#c41a16">&#39;enter</span>)
-	(<span style="color:#000">insert</span> <span style="color:#000">str</span>))
-  (<span style="color:#a90d91">defadvice</span> <span style="color:#000">toggle-input-method</span> (<span style="color:#000">around</span> <span style="color:#000">toggle-input-method-around</span> <span style="color:#000">activate</span>)
-	<span style="color:#c41a16">&#34;Input method function in key-chord.el not to be nil.&#34;</span>
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">input-method-function-save</span> <span style="color:#000">input-method-function</span>))
-	  <span style="color:#000">ad-do-it</span>
-	  (<span style="color:#a90d91">setq</span> <span style="color:#000">input-method-function</span> <span style="color:#000">input-method-function-save</span>))))
+	(<span style="color:#000">insert</span> <span style="color:#000">str</span>)))
 </code></pre></div><h3 id="emacsから単語登録する">Emacsから単語登録する</h3>
 <p>Emacsで文章編集中にShellコマンドで <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動し、Emacsを閉じることなく単語登録できるようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-mozc-tool</span>

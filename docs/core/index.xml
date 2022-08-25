@@ -17,15 +17,23 @@
     </item>
     
     <item>
-      <title>2.3. emacs-mozc</title>
+      <title>2.3. mozc</title>
       <link>https://minorugh.github.io/.emacs.d/core/mozc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/mozc/</guid>
-      <description>[emacs-mozc] 日本語入力システム（Mozcサーバー）  Debian11 にインストールした Emacs上で emacs-mozc を使っています。 debian でのインストール手順は以下の通り。  $ sudo apt-get install fcitx-mozc emacs-mozc Emacsをソースからビルドするときに --without-xim しなかったので、インライン XIMでも日本語入力ができてしまいます。 特に使い分けする必要もなく紛らわしいので .Xresources で XIM無効化の設定をしました。
-! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false [mozc.el] Mozcサーバーを使って日本語テキストを入力 🔗 google/mozc.el: Input Japanese text using Mozc server.
-句読点などを入力したとき、わざわざ mozcに変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
-(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;？&amp;#34;))) (&amp;#34;!</description>
+      <description>Emacs上でmozcを使うための手順 Linux環境を前提にした説明になりますが、ごめんなさい。
+ Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、fcitx-Mozc です。 Emacsでmozcを使うためのmozcサーバー emacs-Mozc をインストールします。  fcitx-mozc のインストール
+$ sudo apt install fcitx-mozc --install-recommends インストールが済んだら fcitxを有効化します。
+im-config -n fcitx 一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。
+続いて、emacs-mozc をインストール
+$ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインストールされていたらOKです。
+[mozc.el] Mozcサーバーを使って日本語テキストを入力 🔗 google/mozc.el: Input Japanese text using Mozc server.
+デフォルトでは、C-\ で mozcが起動しますが、できれば &amp;lt;hiragana-katakana&amp;gt; で使いたいので、Emacsでのインライン入力を無効にします。
+~/.Xresources を作成して下記のように設定します。
+! ~/.Xresources ! Emacs XIMを無効化 Emacs*useXIM: false 再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。 これで、&amp;lt;hiragana-katakana&amp;gt; をEmacsの toggle-input-method に割り当てることができます。
+また、句読点などを入力したとき、自動的に確定させるように mozc-insert-str を宣言します。
+(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; .</description>
     </item>
     
     <item>

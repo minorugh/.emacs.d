@@ -1,29 +1,49 @@
 +++
-title = "2.3. emacs-mozc"
+title = "2.3. mozc"
 draft = false
 +++
+### Emacs上でmozcを使うための手順
+Linux環境を前提にした説明になりますが、ごめんなさい。
 
-### [emacs-mozc] 日本語入力システム（Mozcサーバー）
+1. Linuxに日本語入力メソッドエンジンをインストールして有効化します。おすすめは、`fcitx-Mozc` です。
+2. Emacsでmozcを使うためのmozcサーバー `emacs-Mozc` をインストールします。
 
-* Debian11 にインストールした Emacs上で [`emacs-mozc`](https://wiki.debian.org/JapaneseEnvironment/Mozc) を使っています。
-* debian でのインストール手順は以下の通り。
+`fcitx-mozc` のインストール
 
-```shell
-$ sudo apt-get install fcitx-mozc emacs-mozc
+```shellsession
+$ sudo apt install fcitx-mozc --install-recommends
 ```
+インストールが済んだら `fcitx`を有効化します。
 
-Emacsをソースからビルドするときに `--without-xim` しなかったので、インライン XIMでも日本語入力ができてしまいます。
-特に使い分けする必要もなく紛らわしいので `.Xresources` で XIM無効化の設定をしました。
+```shellsession
+im-config -n fcitx
+```
+一旦、ログアウトし、ログインし直すと、mozcが使えるようになります。
+
+続いて、`emacs-mozc` をインストール
+
+```shellsession
+$ sudo apt install emacs-mozc
+```
+`/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。
+
+### [mozc.el] Mozcサーバーを使って日本語テキストを入力
+🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
+
+デフォルトでは、`C-\` で `mozc`が起動しますが、できれば `<hiragana-katakana>` で使いたいので、Emacsでのインライン入力を無効にします。
+
+`~/.Xresources` を作成して下記のように設定します。
 
 ```zshrc
 ! ~/.Xresources
 ! Emacs XIMを無効化
 Emacs*useXIM: false
 ```
-### [mozc.el] Mozcサーバーを使って日本語テキストを入力
-🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
+再起動をするか，xrdb ~/.Xresources を実行することで設定が有効になります。
+これで、`<hiragana-katakana>` をEmacsの `toggle-input-method` に割り当てることができます。
 
-句読点などを入力したとき、わざわざ `mozc`に変換してもらう必要はないので以下を設定しておくことでワンアクションスピーディーになります。
+また、句読点などを入力したとき、自動的に確定させるように `mozc-insert-str` を宣言します。
+
 ```elisp
 (leaf mozc
   :ensure t
@@ -39,12 +59,7 @@ Emacs*useXIM: false
   :config
   (defun mozc-insert-str (str)
 	(mozc-handle-event 'enter)
-	(insert str))
-  (defadvice toggle-input-method (around toggle-input-method-around activate)
-	"Input method function in key-chord.el not to be nil."
-	(let ((input-method-function-save input-method-function))
-	  ad-do-it
-	  (setq input-method-function input-method-function-save))))
+	(insert str)))
 ```
 
 ### Emacsから単語登録する
