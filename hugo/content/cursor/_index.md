@@ -7,8 +7,6 @@ disableToc = true
 +++
 カーソル移動に関する設定です。
 
-文字移動、行移動、スクロールは、素直に上下左右の矢印キーと`PgUp` `PgDn` を使っています。
-
 ### # INDEX
 
 [sequential-command]({{< relref "sequential-command" >}})
