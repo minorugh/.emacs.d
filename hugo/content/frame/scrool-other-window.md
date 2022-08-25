@@ -6,7 +6,7 @@ draft = false
 
 `scrool-other-window` は、`deactive` なwindowをスクロールさせるための設定です。
 
-一画面のとき `<next>` / `<prior>` は、PgUp / PgDn として使うが、画面分割のときだけ `other-Window` に対応させている。
+通常 `<next>` / `<prior>` は、PgUp / PgDn として使うが、画面分割のときは `other-Window` に対応させている。
 
 ```elisp
 (leaf *my:scroll-other-window
