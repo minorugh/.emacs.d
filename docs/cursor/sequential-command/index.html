@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-25T19:37:25 JST">
+<meta name="revised" content="2022-08-25T19:40:11 JST">
 <title>3.1. sequential-command :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -847,13 +847,13 @@
     
 <h3 id="sequential-commandel-バッファーの先頭と最終行への移動を簡単に">[sequential-command.el] バッファーの先頭と最終行への移動を簡単に</h3>
 <p>🔗 <a href="https://github.com/HKey/sequential-command">https://github.com/HKey/sequential-command</a></p>
+<p><code>sequential-command</code> は、標準の <code>C-a</code> <code>C-e</code> を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。</p>
 <ul>
-<li><code>sequential-command</code> は、標準の <code>C-a</code> <code>C-e</code> を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。</li>
-<li><code>C-a</code> を連続で打つことで行頭→ファイルの先頭→元の位置とカーソルが移動</li>
-<li><code>C-e</code> を連続で打つことで行末→ファイルの最終行→元の位置とカーソルが移動</li>
+<li><code>C-a</code> を連続で打つことで行頭→ページ先頭→元の位置とカーソルが移動</li>
+<li><code>C-e</code> を連続で打つことで行末→ページ最終行→元の位置とカーソルが移動</li>
 </ul>
-<p>地味ながら一度使うと便利すぎて止められません。</p>
-<p>MELPAからインストールできますが、私は HKey氏の改良版を <code>el-get</code> でインストールしました。</p>
+<p>地味ながら一度使うと便利すぎて止められません。
+MELPAからインストールできますが、私は HKey氏の改良版を <code>el-get</code> でインストールしました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">sequential-command</span>
   <span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://bre.is/6Xu4fQs6&#34;</span>
   <span style="color:#a90d91">:el-get</span> <span style="color:#000">HKey/sequential-command</span>
