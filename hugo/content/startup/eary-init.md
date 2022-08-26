@@ -45,7 +45,7 @@ Emacs27では、(package-initialize) が 2回実行されます。
 ### 起動時画面最大化を設定
 メニューバー、ツールバー、スクロールなどは、ここで無効にする方が速くなります。 (初期化される前)
 
-ここで最大化を宣言しておくことで `M-x toggle-frame-fullscreen` は、「最大化<->フルスクリーン」を可能にします。
+ここで最大化を宣言しておくことで `toggle-frame-fullscreen` での、[最大化<>フルスクリーン]を可能にします。
 ```elisp
 ;; Faster to disable these here (before they've been initialized)
 (push '(menu-bar-lines . 0) default-frame-alist)
