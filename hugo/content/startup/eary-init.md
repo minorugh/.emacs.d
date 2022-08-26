@@ -54,7 +54,7 @@ Emacs27では、`package-initialize` が 2回実行されます。
 (push '(fullscreen . maximized) default-frame-alist)
 ```
 
-### 起動時のちらつきを抑える
+### 起動時の画面のちらつきを抑える
 初期設定を読み終えるまでの画面変化を抑止しています。
 そこまでする必要はないのですが、起動時間の短縮にもなるようで一石二鳥です。
 
