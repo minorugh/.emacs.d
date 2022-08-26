@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T16:06:35 JST">
+<meta name="revised" content="2022-08-26T16:07:42 JST">
 <title>10.2. gist interface :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -867,7 +867,7 @@
 		  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -od &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">file</span>))
 		(<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -oPd &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; -f &#34;</span> (<span style="color:#000">gist-filename</span>)))))
 	(<span style="color:#000">delete-other-windows</span>))
-</code></pre></div><p><code>dired</code> からも使えるように設定しておくと便利です。</p>
+</code></pre></div><p><code>dired</code> からも使えるように定義しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-do-gist</span> ()
 	<span style="color:#c41a16">&#34;Dired-get-filename do gist and open in browser.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)

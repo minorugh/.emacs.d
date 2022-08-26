@@ -40,7 +40,7 @@ If region isn't selected, post from the buffer."
 		(compile (concat "gist -oPd " (gist-description) " -f " (gist-filename)))))
 	(delete-other-windows))
 ```
-`dired` からも使えるように設定しておくと便利です。
+`dired` からも使えるように定義しています。
 
 ```elisp
   (defun dired-do-gist ()
