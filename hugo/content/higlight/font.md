@@ -13,15 +13,16 @@ draft = false
 ```
 
 ### Cicaフォントとは
-Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
+Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、プログラミング用日本語等幅フォントです。
 
-* [プログラミング用日本語等幅フォント Cica](https://github.com/miiton/Cica)
+* [日本語等幅フォント Cica](https://github.com/miiton/Cica)
+
+[オフィシャルページ](https://github.com/miiton/Cica/releases/tag/v5.0.3)にある最新の `Cica v5.03` は、
+`page-break-lines` で表示が乱れるようです。
+
 
 ### フォントのインストール
 Linux 環境でのインストールの方法です。
-
-[オフィシャルページ](https://github.com/miiton/Cica/releases/tag/v5.0.3)にある最新の `Cica v5.03` は、
-`page-break-lines` で表示が乱れます。
 
 1. [ダウンロードページ](https://github.com/SSW-SCIENTIFIC/Cica/releases)から、
 [Cica-v5.0.1.zip](https://github.com/SSW-SCIENTIFIC/Cica/releases/download/v5.0.1-no-glyph-mod/Cica-v5.0.1.zip) をダウンロードします。
