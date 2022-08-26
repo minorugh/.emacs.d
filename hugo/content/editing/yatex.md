@@ -30,7 +30,9 @@ Emacsの上で動作する LaTeX の入力支援環境です。
 ```shellsession
 $ chmod +x dvpd.sh
 ```
-として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
+として実行権限を付与してからPATHの通ったところに置きます。
+
+私は `/usr/loca/bin` に置いています。
 
 ```shellsession
 #!/bin/sh
