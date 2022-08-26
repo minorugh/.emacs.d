@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T13:11:25 JST">
+<meta name="revised" content="2022-08-26T13:13:30 JST">
 <title>7.7. imenu-list :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -842,7 +842,7 @@
 <p>🔗 <a href="https://github.com/bmag/imenu-list">bmag/imenu-list: Emacs plugin to show the current buffer&rsquo;s imenu entries in a separate buffer.</a></p>
 <p><code>imenu-list</code> は、<code>imenu</code> の各エントリを <code>*Ilist*</code> バッファで一覧します。
 このバッファの当該エントリーでRETを押すと関数定義に移動します。</p>
-<p>カーソル位置の当該関数へジャンプしてくれるともっと嬉しいけれど、ビギナーな私は他力を待つしかない。</p>
+<p>カーソル位置の当該関数へ自動ジャンプしてくれるともっと嬉しいけれど、ビギナーな私は他力を待つしかない。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">imenu-list</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f2&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">imenu-list-smart-toggle</span>)
