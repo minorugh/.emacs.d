@@ -214,7 +214,7 @@
 	"title": "12.2. emacs-lok-mode",
 	"tags": [],
 	"description": "",
-	"content": "Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。\n;; Set buffer that can not be killed (with-current-buffer \u0026#34;*scratch*\u0026#34; (emacs-lock-mode \u0026#39;kill)) (with-current-buffer \u0026#34;*Messages*\u0026#34; (emacs-lock-mode \u0026#39;kill)) "
+	"content": "Scratch バッファーを消さない 難しく関数を設定せずともビルトインコマンドで簡単に実現できます。\n;; Set buffer that can not be killed (with-current-buffer \u0026#34;*scratch*\u0026#34; (emacs-lock-mode \u0026#39;kill)) (with-current-buffer \u0026#34;*Messages*\u0026#34; (emacs-lock-mode \u0026#39;kill)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/ps-print/",

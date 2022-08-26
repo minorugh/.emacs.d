@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T16:42:14 JST">
+<meta name="revised" content="2022-08-26T16:43:06 JST">
 <title>12.2. emacs-lok-mode :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -839,7 +839,7 @@
     
     
 <h3 id="scratch-バッファーを消さない">Scratch バッファーを消さない</h3>
-<p>難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。</p>
+<p>難しく関数を設定せずともビルトインコマンドで簡単に実現できます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Set buffer that can not be killed</span>
 (<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>
   (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))

@@ -231,7 +231,7 @@ toggle-scratch は、編集中のバッファーとscratchとをトグルで切�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</guid>
-      <description>Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。
+      <description>Scratch バッファーを消さない 難しく関数を設定せずともビルトインコマンドで簡単に実現できます。
 ;; Set buffer that can not be killed (with-current-buffer &amp;#34;*scratch*&amp;#34; (emacs-lock-mode &amp;#39;kill)) (with-current-buffer &amp;#34;*Messages*&amp;#34; (emacs-lock-mode &amp;#39;kill)) </description>
     </item>
     

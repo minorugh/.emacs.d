@@ -3,7 +3,7 @@ title = "12.2. emacs-lok-mode"
 draft = false
 +++
 ### Scratch バッファーを消さない
-難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。
+難しく関数を設定せずともビルトインコマンドで簡単に実現できます。
 
 ```elisp
 ;; Set buffer that can not be killed
