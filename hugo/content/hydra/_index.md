@@ -28,7 +28,3 @@ hydra.el を使うとよく使う機能をまとめて独創的なコマンド�
 
 [hydra-view-mode]({{< relref "hydra-view" >}})
 : view-modeにおけるキーバインドヘルプ
-
-### Qitta に詳しい記事を書いています。
-
-* [Hydraで Emacsのキーバインド問題を解消](https://qiita.com/minoruGH/items/3776090fba46b1f9c228)
