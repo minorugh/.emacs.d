@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T09:22:25 JST">
+<meta name="revised" content="2022-08-26T10:05:07 JST">
 <title>起動設定 :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -834,9 +834,9 @@
     
     
 
-<p>Emacs の起動設定に関わる部分をここでは設定しています。
+<p>Emacs の起動設定に関わる部分をまとめています。
 Emacs-27導入にあわせて <code>early-init.el</code> を設定しました。</p>
-<p>ブートシーケンスは以下のとおり。</p>
+<p>Emacsが起動するまでの流れは以下のとおり。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">1. early-init.el の読み込み
 2. init.el の読み込み
 3. inits/ の設定ファイル群の読み込み
