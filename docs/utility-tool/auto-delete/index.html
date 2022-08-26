@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T16:36:10 JST">
+<meta name="revised" content="2022-08-26T16:42:14 JST">
 <title>12.1. auto-delete :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -817,6 +817,7 @@
     <li>
       <ul>
         <li><a href="#空になったファイルを自動的に削除">空になったファイルを自動的に削除</a></li>
+        <li><a href="#開いているバッファーを閉じて当該ファイルを削除する">開いているバッファーを閉じて当該ファイルを削除する</a></li>
       </ul>
     </li>
   </ul>
@@ -839,7 +840,6 @@
     
     
 <h3 id="空になったファイルを自動的に削除">空になったファイルを自動的に削除</h3>
-<p>howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。</p>
 <p>下記の設定をしておくと、<code>C-x h</code> で全選択して delete したあと <code>kill-buffer</code> することで自動的にファイルが削除されるので便利です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
   <span style="color:#c41a16">&#34;Automatic deletion for empty files (Valid in all modes).&#34;</span>
@@ -850,7 +850,18 @@
 (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">memq</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>))
     (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
 		  (<span style="color:#000">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
-
+</code></pre></div><h3 id="開いているバッファーを閉じて当該ファイルを削除する">開いているバッファーを閉じて当該ファイルを削除する</h3>
+<p>やや危険なのであまりおすすめできませんが…</p>
+<p>安全を期すために確認するようにはしてます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-this-file</span> ()
+	<span style="color:#c41a16">&#34;Delete the current file, and kill the buffer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">unless</span> (<span style="color:#000">buffer-file-name</span>)
+      (<span style="color:#000">error</span> <span style="color:#c41a16">&#34;No file is currently being edited&#34;</span>))
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">yes-or-no-p</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;Really delete &#39;%s&#39;?&#34;</span>
+                               (<span style="color:#000">file-name-nondirectory</span> <span style="color:#000">buffer-file-name</span>)))
+      (<span style="color:#000">delete-file</span> (<span style="color:#000">buffer-file-name</span>))
+      (<span style="color:#000">kill-this-buffer</span>)))
 </code></pre></div>
 
     
