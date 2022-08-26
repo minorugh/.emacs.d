@@ -310,7 +310,7 @@ sudo-edit.elは、現在アクセスしているファイルをsudoユーザー�
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/translate/</guid>
       <description>[google-translate.el] 🔗 atykhonov/google-translate: Emacs interface to Google Translate.
 この設定は、@masasam の Sollst Work Blog で公開されている設定をパクりました。
-リージョンが日本語なら ja to en に、英語なら en to ja にと自動判別して実行してくれます。
+リージョンが日本語なら ja to en に、英語なら en to ja にと自動判別してくれます。
 (leaf google-translate :ensure t :bind (&amp;#34;C-t&amp;#34; . google-translate-auto) :config (defun google-translate-auto () &amp;#34;Automatically recognize and translate Japanese and English.&amp;#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))) (let ((string (read-string &amp;#34;Google Translate: &amp;#34;))) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))))) (defun google-translate--get-b-d1 () &amp;#34;Fix error of `Failed to search TKK`.</description>
     </item>
     
