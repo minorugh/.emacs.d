@@ -12,44 +12,44 @@ disableToc = true
 ### # INDEX
 
 [markdown-mode]({{< relref "markdown" >}})
-: markdown記法での編集をサポートしてくれるマイナーモード。
+: markdownでの編集をサポートしてくれる
 
 [view-mode]({{< relref "view" >}})
-: ファイルの閲覧に特化した便利機能を提供してくれる。
+: ファイルの閲覧に特化した便利機能
 
 [web-mode]({{< relref "web-mode" >}})
-: HTML編集をするためのマイナーモードを提供してくれる。
+: HTML編集をサポートしてくれる。
 
 [yatex]({{< relref "yatex" >}})
-: Emacsの上で動作する LaTeX の入力支援環境を提供する。
+: LaTeX の入力支援環境を提供する。
 
 [darkroom]({{< relref "darkroom" >}})
-: 書くことに集中できるようにバッファを調整してくれる。
+: 執筆モード（暗室モード）
 
 [ivy / counsel]({{< relref "ivy" >}})
-: 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。
+: 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール
 
 [yasunippets/ cpmpany]({{< relref "company" >}})
-: キーをタイプした時点で自動的に補完候補が出てきてくれる。
+: キーをタイプした時点で自動的に補完候補が出てきてくれる
 
 [key-chord]({{< relref "key-chord" >}})
-: 同時押しでのキーバインドを提供してくれる。
+: 同時押しのキーバインドを提供してくれる
 
 [smartparens]({{< relref "smartparens" >}})
-: 括弧などのペアを自動的に挿入してくれる。
+: 括弧などのペアを自動的に挿入してくれる
 
 [iedit]({{< relref "iedit" >}})
-: 択領域を別の文字列に置き換える。
+: 択領域を別の文字列に置き換える
 
 [migemo]({{< relref "iedit" >}})
-: ローマ字のまま日本語をインクリメンタル検索を可能にする。
+: ローマ字のまま日本語をインクリメンタル検索を可能にする
 
 [selected]({{< relref "selected" >}})
 : リージョン選択時のアクションを制御してくれる。Like sendto of windows.
 
 [pangu-spacing]({{< relref "pangu" >}})
-: 全角と半角の間に自動でスペースを入れる。
+: 全角と半角の間に自動でスペースを入れる
 
 [counsel-fontawesome]({{< relref "fontawesome" >}})
-: Font-Awesomeの入力を支援してくれる。
+: Font-Awesomeの入力を支援してくれる
 

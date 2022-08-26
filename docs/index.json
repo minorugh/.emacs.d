@@ -39,7 +39,7 @@
 	"title": "編集サポート / 入力補助",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdown記法での編集をサポートしてくれるマイナーモード。 view-mode ファイルの閲覧に特化した便利機能を提供してくれる。 web-mode HTML編集をするためのマイナーモードを提供してくれる。 yatex Emacsの上で動作する LaTeX の入力支援環境を提供する。 darkroom 書くことに集中できるようにバッファを調整してくれる。 ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール。 yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる。 key-chord 同時押しでのキーバインドを提供してくれる。 smartparens 括弧などのペアを自動的に挿入してくれる。 iedit 択領域を別の文字列に置き換える。 migemo ローマ字のまま日本語をインクリメンタル検索を可能にする。 selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる。 counsel-fontawesome Font-Awesomeの入力を支援してくれる。  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdownでの編集をサポートしてくれる view-mode ファイルの閲覧に特化した便利機能 web-mode HTML編集をサポートしてくれる。 yatex LaTeX の入力支援環境を提供する。 darkroom 執筆モード（暗室モード） ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる key-chord 同時押しのキーバインドを提供してくれる smartparens 括弧などのペアを自動的に挿入してくれる iedit 択領域を別の文字列に置き換える migemo ローマ字のまま日本語をインクリメンタル検索を可能にする selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる counsel-fontawesome Font-Awesomeの入力を支援してくれる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/display/",
