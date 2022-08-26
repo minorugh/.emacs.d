@@ -5,8 +5,10 @@ draft = false
 ### [open-junk-file.el] 使い捨てファイルを書く、開く
 🔗 [rubikitch/open-junk-file: Write a disposable file.](https://github.com/rubikitch/open-junk-file) 
 
-ファイルを howmフォルダーに保存すると、`howm-list` からの検索機能が利用できます。
-`howm`は、ローマ字での日本語検索も可能なのでとても便利です。
+ファイルは howmフォルダー `~/Dropbox/howm/junk/` に保存します。
+
+そうすることで `howm` の検索機能が利用でき、
+ローマ字（migemo）での日本語検索も可能になるのでとても便利です。
 
 ```elisp
 (leaf open-junk-file :ensure t
