@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T15:48:03 JST">
+<meta name="revised" content="2022-08-26T15:58:35 JST">
 <title>9.7. neotree :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -841,7 +841,7 @@
     
 <h3 id="neotreeel-emacs-上でディレクトリツリーを表示させる">[neotree.el] Emacs 上でディレクトリツリーを表示させる</h3>
 <p>🔗 <a href="https://github.com/jaypei/emacs-neotree">jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.</a></p>
-<p><code>Rename</code>, <code>Delete</code> などの簡単なコマンドもつかえる。</p>
+<p>最近は、<code>Dired</code> よりももっぱらこちらを愛用している。<code>Rename</code>, <code>Delete</code> などの簡単なコマンドも使えて便利。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">neotree</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-find</span>)
@@ -854,7 +854,11 @@
   <span style="color:#a90d91">:custom</span>
   <span style="color:#000">`</span>((<span style="color:#000">neo-keymap-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;concise</span>)
     (<span style="color:#000">neo-create-file-auto-open</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
+</code></pre></div><p>アイコンは <code>all-the-icons</code> より <code>doom-themes</code> のほうがシンプルで見やすい。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; doom-themes </span>
+(<span style="color:#000">doom-themes-neotree-config</span>)
 </code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+<p>ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#000">neotree</span>
   <span style="color:#177500">;; Change neotree&#39;s font size</span>
   <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/218</span>

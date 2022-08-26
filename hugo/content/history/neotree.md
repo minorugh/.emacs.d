@@ -6,7 +6,7 @@ draft = false
 
 🔗 [jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.](https://github.com/jaypei/emacs-neotree) 
 
-`Rename`, `Delete` などの簡単なコマンドもつかえる。
+最近は、`Dired` よりももっぱらこちらを愛用している。`Rename`, `Delete` などの簡単なコマンドも使えて便利。
 
 ```elisp
 (leaf neotree
@@ -22,7 +22,15 @@ draft = false
   `((neo-keymap-style . 'concise)
     (neo-create-file-auto-open . t)))
 ```
+アイコンは `all-the-icons` より `doom-themes` のほうがシンプルで見やすい。
+
+```elisp
+;; doom-themes 
+(doom-themes-neotree-config)
+```
+
 ### カスタマイズ設定
+ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。
 
 ```elisp
 (with-eval-after-load neotree

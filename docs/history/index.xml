@@ -81,8 +81,10 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
       
       <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
       <description>[neotree.el] Emacs 上でディレクトリツリーを表示させる 🔗 jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.
-Rename, Delete などの簡単なコマンドもつかえる。
-(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) カスタマイズ設定 (with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.&amp;#34; (interactive) (text-scale-adjust 0) (text-scale-decrease 0.8) (message nil)) (add-hook &amp;#39;neo-after-create-hook (lambda (_) (call-interactively &amp;#39;neotree-text-scale))) ;; neotree enter hide ;; Tips from https://github.</description>
+最近は、Dired よりももっぱらこちらを愛用している。Rename, Delete などの簡単なコマンドも使えて便利。
+(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) アイコンは all-the-icons より doom-themes のほうがシンプルで見やすい。
+;; doom-themes  (doom-themes-neotree-config) カスタマイズ設定 ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。
+(with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.</description>
     </item>
     
   </channel>
