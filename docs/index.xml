@@ -935,8 +935,7 @@ dashboard 画面からワンキーで呼び出せるようにもしていて便�
       <description>[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.
 auto-save-buffers-enhanced.el は、Emacsに本当の 自動保存 を提供します。
 デフォルトでは、0.5秒間入力がなければ自動で保存されます。
-(setq auto-save-buffers-enhanced-interval 0.5) 変えたければ上記の数値を変えて設定に加えます。
-Trampでファイル編集するときに固まることがあるので除外設定しています。
+(setq auto-save-buffers-enhanced-interval 0.5) Trampでファイル編集しているときに固まることがあるので除外設定しています。
 ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
     </item>
     

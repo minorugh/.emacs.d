@@ -11,9 +11,8 @@ draft = false
 ```elisp
 (setq auto-save-buffers-enhanced-interval 0.5)
 ```
-変えたければ上記の数値を変えて設定に加えます。
 
-Trampでファイル編集するときに固まることがあるので除外設定しています。
+Trampでファイル編集しているときに固まることがあるので除外設定しています。
 
 ```elisp
 ;; auto-save-buffers

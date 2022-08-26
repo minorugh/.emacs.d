@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T15:22:04 JST">
+<meta name="revised" content="2022-08-26T15:24:56 JST">
 <title>9.1. auto-save-buffer :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -843,8 +843,7 @@
 <p><code>auto-save-buffers-enhanced.el</code> は、Emacsに本当の 自動保存 を提供します。</p>
 <p>デフォルトでは、0.5秒間入力がなければ自動で保存されます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">auto-save-buffers-enhanced-interval</span> <span style="color:#1c01ce">0.5</span>)
-</code></pre></div><p>変えたければ上記の数値を変えて設定に加えます。</p>
-<p>Trampでファイル編集するときに固まることがあるので除外設定しています。</p>
+</code></pre></div><p>Trampでファイル編集しているときに固まることがあるので除外設定しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; auto-save-buffers</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">auto-save-buffers-enhanced</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
