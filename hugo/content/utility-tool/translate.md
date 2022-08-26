@@ -8,7 +8,7 @@ draft = false
 この設定は、[@masasam](https://twitter.com/SolistWork) の
 [Sollst Work Blog](https://solist.work/blog/posts/google-translate/) で公開されている設定をパクりました。
 
-リージョンが日本語なら `ja to en` に、英語なら `en to ja` にと自動判別して実行してくれます。
+リージョンが日本語なら `ja to en` に、英語なら `en to ja` にと自動判別してくれます。
 
 ```elisp
 (leaf google-translate
@@ -45,7 +45,7 @@ draft = false
 	(list 427110 1469889687)))
 ```
 
-最後の部分、は、ときどき `"Fix error of 'Failed to search TKK'."` というエラーが出て動かなくなるので、おまじないです。
+最後の部分、は、ときどき `"Fix error of 'Failed to search TKK'."` というエラーが出てとまるので、おまじないです。
 ```elisp
 (defun google-translate--get-b-d1 ()
   "Fix error of `Failed to search TKK`."
