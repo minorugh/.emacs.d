@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T22:39:16 JST">
+<meta name="revised" content="2022-08-26T22:41:04 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -881,7 +881,7 @@
 <p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Defer garbage collection further back in the startup process</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">gc-cons-threshold</span> <span style="color:#000">most-positive-fixnum</span>)
-</code></pre></div><p><code>eary-init.el</code> の先頭に書くことが重要です。</p>
+</code></pre></div><p><code>eary-init.el</code> の先頭に書きます。</p>
 <h3 id="パッケージの初期化を抑制する">パッケージの初期化を抑制する</h3>
 <p>Emacs27では、<code>package-initialize</code> が 2回実行されます。
 1回は、初期化ファイルの評価中に、もう 1回は、初期化ファイルの読み取りを終了した後にです。</p>

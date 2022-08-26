@@ -14,7 +14,7 @@ GC の閾値を最大にしておくことで GC を実質止めることがで�
 ;; Defer garbage collection further back in the startup process
 (setq gc-cons-threshold most-positive-fixnum)
 ```
-`eary-init.el` の先頭に書くことが重要です。
+`eary-init.el` の先頭に書きます。
 
 ### パッケージの初期化を抑制する 
 Emacs27では、`package-initialize` が 2回実行されます。
