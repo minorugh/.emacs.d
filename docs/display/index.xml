@@ -51,7 +51,8 @@ Emacs27以降、MELPA版は白色にしか表示されないので、上記リ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/display-number/</guid>
-      <description>[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。 Emacs26でついに行数表示のネイティブ実装である diplay-line-numbers-mode が実装されたのでそちらを使います。
+      <description>[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。
+Emacs26で、待望のCで書かれた diplay-line-numbers-mode が実装されたのでそちらを使います。
 (leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (&amp;#34;&amp;lt;f9&amp;gt;&amp;#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () &amp;#34;Disable modes in scrtch buffer.&amp;#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) </description>
     </item>
     

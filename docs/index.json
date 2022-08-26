@@ -508,7 +508,7 @@
 	"title": "7.4. display-line-numbers",
 	"tags": [],
 	"description": "",
-	"content": "[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。 Emacs26でついに行数表示のネイティブ実装である diplay-line-numbers-mode が実装されたのでそちらを使います。\n(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) "
+	"content": "[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。\nEmacs26で、待望のCで書かれた diplay-line-numbers-mode が実装されたのでそちらを使います。\n(leaf display-line-numbers :hook ((after-init-hook . global-display-line-numbers-mode) ((lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)) :bind (\u0026#34;\u0026lt;f9\u0026gt;\u0026#34; . display-line-numbers-mode) :custom (display-line-numbers-width-start . t) :init (defun my:disable-modes () \u0026#34;Disable modes in scrtch buffer.\u0026#34; (interactive) (display-line-numbers-mode 0) (flymake-mode 0) (nyan-mode 0))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/yatex/",
