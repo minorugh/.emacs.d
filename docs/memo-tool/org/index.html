@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T16:28:46 JST">
+<meta name="revised" content="2022-08-26T16:32:38 JST">
 <title>11.2. org-modo :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -839,9 +839,9 @@
     
     
 <h3 id="org-mode-ごくシンプルに使う設定">[org-mode] ごくシンプルに使う設定</h3>
-<p>メモ書きは、<code>howm</code>メインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに <code>org-capture</code> を利用しています。</p>
+<p>メモ書きは、<code>howm</code>メインなのですが、自動タグ挿入を兼ねてメニュー代わりに <code>org-capture</code> を利用しています。</p>
 <p><code>org-capture</code> から<code>howm-create</code> を発動できるように <code>org-capture-template</code> を作りました。</p>
-<p><code>org-capture</code> からだと画面が半分になるのがいやなので、最大化で開くようにしています。</p>
+<p><code>org-capture</code> からだとデフォルトでは、画面が半分（othe-window）になるのがいやなので、最大化で開くように変更しています。</p>
 <p><code>dashboard</code>画面に簡単なタスクを表示させるために <code>org-agenda</code> も使っています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">org</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">emacs-startup-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;org-protocol</span>)))

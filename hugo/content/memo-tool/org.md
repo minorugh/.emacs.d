@@ -4,11 +4,11 @@ draft = false
 +++
 ### [org-mode] ごくシンプルに使う設定 
 
-メモ書きは、`howm`メインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに `org-capture` を利用しています。
+メモ書きは、`howm`メインなのですが、自動タグ挿入を兼ねてメニュー代わりに `org-capture` を利用しています。
 
 `org-capture` から`howm-create` を発動できるように `org-capture-template` を作りました。
 
-`org-capture` からだと画面が半分になるのがいやなので、最大化で開くようにしています。
+`org-capture` からだとデフォルトでは、画面が半分（othe-window）になるのがいやなので、最大化で開くように変更しています。
 
 `dashboard`画面に簡単なタスクを表示させるために `org-agenda` も使っています。
 

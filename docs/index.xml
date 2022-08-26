@@ -192,9 +192,9 @@ org-capture から自動タグ挿入して howm-criate を呼び出せるよう�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
-      <description>[org-mode] ごくシンプルに使う設定 メモ書きは、howmメインですが、メモ環境をTPOで使い分けるために選択メニュー代わりに org-capture を利用しています。
+      <description>[org-mode] ごくシンプルに使う設定 メモ書きは、howmメインなのですが、自動タグ挿入を兼ねてメニュー代わりに org-capture を利用しています。
 org-capture からhowm-create を発動できるように org-capture-template を作りました。
-org-capture からだと画面が半分になるのがいやなので、最大化で開くようにしています。
+org-capture からだとデフォルトでは、画面が半分（othe-window）になるのがいやなので、最大化で開くように変更しています。
 dashboard画面に簡単なタスクを表示させるために org-agenda も使っています。
 (leaf org :hook (emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) :chord (&amp;#34;,,&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;org) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-startup-indented . t) (org-hide-leading-stars . t) (org-startup-folded .</description>
     </item>
