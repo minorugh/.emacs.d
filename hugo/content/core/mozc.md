@@ -70,9 +70,9 @@ Emacs*useXIM: false
 ### [mozc-cand-posframe.el] 変換候補をposframe表示 
 🔗 [akirak/mozc-posframe: Posframe frontend for mozc.el](https://github.com/akirak/mozc-posframe) 
 
-日本語用の Emacs 入力メソッドであるmozc.elの変換候補を表示させるposframeインターフェースです。
+`mozc.el` の変換候補を表示させる `posframe` インターフェースです。
 
-類似ツールはいくつかありますが一番スッキリしていると思いますし、カラーカスタマイズも容易です。
+カラーカスタマイズも容易です。
 
 ```elisp
 (leaf mozc-cand-posframe
