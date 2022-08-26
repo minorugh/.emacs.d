@@ -698,7 +698,7 @@ Emacs27以降、MELPA版は白色にしか表示されないので、上記リ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
-      <description>[my:line-spacing] 行間を制御する line-spacing は、行間を制御する変数ですがバッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
+      <description>[my:line-spacing] 行間を制御する line-spacing は、行間を制御する変数ですが、バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
 執筆モードの darkroom-mode では、
 (setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときに元に戻します。
 @takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。

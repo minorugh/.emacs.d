@@ -494,7 +494,7 @@
 	"title": "7.3. line-spacing",
 	"tags": [],
 	"description": "",
-	"content": "[my:line-spacing] 行間を制御する line-spacing は、行間を制御する変数ですがバッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。\n執筆モードの darkroom-mode では、\n(setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときに元に戻します。\n@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。\n(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook \u0026#39;buffer-list-update-hook #\u0026#39;my:linespacing) "
+	"content": "[my:line-spacing] 行間を制御する line-spacing は、行間を制御する変数ですが、バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。\n執筆モードの darkroom-mode では、\n(setq-local line-spacing 0.4) と行間を大きくするように設定していて、dark-room からでるときに元に戻します。\n@takaxpさんのブログ記事 のによると、global で 0.3 以下に設定すると nil に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。\n(defun my:linespacing () (unless (minibufferp) (setq-local line-spacing 0.2))) (add-hook \u0026#39;buffer-list-update-hook #\u0026#39;my:linespacing) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/web-mode/",
