@@ -152,7 +152,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>6.6. ivy / counsel</title>
+      <title>6.6. ivy / counsel / swiper</title>
       <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
