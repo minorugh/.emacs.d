@@ -5,9 +5,9 @@ draft = false
 ### 8.3. [undo-fu.el] シンプルな undo/redo を提供
 🔗 [emacsmirror/undo-fu: Undo helper with redo.](https://github.com/emacsmirror/undo-fu)
 
-シンプルな undo/redo 機能を提供してくれるやつです。
+`undo-fu` は、シンプルながら安定した `undo/redo` 機能を提供してくれるので重宝しています。
 
-昔はもっと色々できる [undo-tree](https://github.com/apchamberlain/undo-tree.el)  を使っていたけどそっちにバグがあるっぽいので乗り換えました。
+もっといろいろできる [undo-tree](https://github.com/apchamberlain/undo-tree.el)  を使っていたけど、何気に不安定だったので乗り換えました。
 
 ```elisp
 (leaf undo-fu

@@ -26,8 +26,8 @@ auto-save-buffers-enhanced.el は、Emacsに本当の 自動保存 を提供し�
       
       <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
       <description>8.3. [undo-fu.el] シンプルな undo/redo を提供 🔗 emacsmirror/undo-fu: Undo helper with redo.
-シンプルな undo/redo 機能を提供してくれるやつです。
-昔はもっと色々できる undo-tree を使っていたけどそっちにバグがあるっぽいので乗り換えました。
+undo-fu は、シンプルながら安定した undo/redo 機能を提供してくれるので重宝しています。
+もっといろいろできる undo-tree を使っていたけど、何気に不安定だったので乗り換えました。
 (leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
     </item>
     
