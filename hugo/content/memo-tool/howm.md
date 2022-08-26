@@ -6,9 +6,13 @@ draft = false
 ### [howm.el] お手軽メモ環境
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
- Howm-menuは使わないので `howm-list-all` を初期画面として使っています。
+`howm-menu` は使わないので `howm-list-all` を初期画面として使っています。
 
-上記画面からでも [新規(c)] [検索(s)] ほか一連のhowmコマンドは全て使えます。
+上記画面からでも [新規(c)] [検索(s)] ほか一連の `howm`コマンドは全て使えます。
+
+簡単なカテゴリ（memo:ショートメモ、note:記事のドラフト）に分けて、記事タイトルの頭に色付のタグをつけています。
+
+`org-capture` から自動タグ挿入して `howm-criate` を呼び出せるようにしています。
 
 ```elisp
 (leaf howm
