@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T12:15:02 JST">
+<meta name="revised" content="2022-08-26T12:26:33 JST">
 <title>7.5. prescient :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -840,7 +840,9 @@
     
 <h3 id="prescientel-リスト項目の並び替えとイニシャル入力機能ivy-and-company">[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company）</h3>
 <p>🔗 <a href="https://github.com/radian-software/prescient.el">radian-software/prescient.el: Simple but effective sorting and filtering for Emacs.</a></p>
-<p>コマンド履歴を保存、コマンドのイニシャル入力を可能にする。</p>
+<p><code>prescient.el</code> は、<code>ivy</code> や <code>company</code> などのパッケージを使用したときに表示される候補のリストをソートおよびフィルタリングするライブラリです。</p>
+<p><code>ivy-prescient.el</code> や <code>company-prescient.el</code> などの拡張パッケージは、さまざまなフレームワークで使用できるようにライブラリを適合させます。</p>
+<p>コマンド履歴を保存していて、コマンドのイニシャル入力も可能にします。例えば <code>counsel-M-x</code> で <code>cc</code> と入力すると <code>company-compile</code> が真っ先にヒットします。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">prescient</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">prescient-persist-mode</span>)
