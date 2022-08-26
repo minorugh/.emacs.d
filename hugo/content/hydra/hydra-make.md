@@ -7,7 +7,7 @@ draft = false
 🔗 [自動化のための nmake 入門講座: 石井勝](http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/nmake.html) 
 
 上記記事を読んで自分革命がありました。
-1. 同じことは2度しない（Once and Only Once）
+1. 同じことは2度しない
 2. 必ずしなければならない作業 → 自動化できないか考える
 
 …ということで、私は多くの日常ワークを `make` で自動化しています。目的に応じて選択実行するために `hydra-make` でメニュー化しています。
