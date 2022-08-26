@@ -988,7 +988,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</guid>
-      <description>Hydra for brows-url お気に入りサイトをChromeで一発で開くために hydra-browse でメニュー化しました。
+      <description>Hydra for brows-url お気に入りサイトをChromeで一発で開くために hydra でメニュー化しました。
 dashboard 画面からワンキーで呼び出せるようにもしていて便利です。
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for favorite utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-browse :hydra (hydra-browse (:hint nil :exit t) &amp;#34; ^ Shop^ ^ SNS^ ^🔃 Repos^ ^ Blog^ ^ Life^ ^ Social^ ^ Github^ oogle ^^^^^^^^------------------------------------------------------------------------------------------------------------------ _A_: Amazon _t_: Twitter _d_: Dropbox _g_: ghub.io _j_: Jorudan _k_: Keep _1_: minorugh _5_: Translate _R_: Rakuten _y_: Youtube _f_: Flickr _x_: xsrv.jp _n_: News _p_: Pocket _2_: gist _6_: Map _Y_: Yodobashi _I_: Instagram _G_: Gdrive _e_: Essay _w_: Weather _q_: Qiita _3_: explore _7_: Earth _K_: Kakaku _T_: Tumblr _X_: Xserver _b_: Blog _S_: SanyoBas _s_: Slack _4_: Centaur _8_: Photo &amp;#34; (&amp;#34;A&amp;#34; (browse-url &amp;#34;https://www.</description>
     </item>
