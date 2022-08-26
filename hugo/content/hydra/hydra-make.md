@@ -63,7 +63,7 @@ git:
 
 * [Emacsからの安全なシェルコマンド実行](https://qiita.com/tadsan/items/17d32514b81f1e8f208a) 
 
-`compile` 実行環境として以下を設定しています。
+`compile` コマンドの実行環境として以下を設定しています。
 
 * `*compilation*` バッファーを自動スクロールさせる
 * 正常終了したら確認なしで自動的にコンパイル実行をkillする
