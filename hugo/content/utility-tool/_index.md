@@ -31,5 +31,5 @@ disableToc = true
 : Emacsを再起動させる
 
 [sudo-edit]({{< relref "sudo-edit" >}})
-: Emacsを再起動させる
+: Root権限でファイルを開き直す
 

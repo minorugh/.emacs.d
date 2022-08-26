@@ -36,9 +36,7 @@
 	(dired-listing-switches . "-lgGhF")
 	(dired-omit-files . ".elc")
 	(ls-lisp-use-insert-directory-program . nil)
-	(ls-lisp-dirs-first . t))
-  :init
-  (leaf sudo-edit :ensure t :after dired))
+	(ls-lisp-dirs-first . t)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

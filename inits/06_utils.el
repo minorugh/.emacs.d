@@ -167,6 +167,13 @@
 		 ("C-/" . undo-fu-only-redo)))
 
 
+;; sudo-edit
+(leaf sudo-edit
+  :ensure t
+  ;; :after dired
+  :bind ("C-c s" . sudo-edit))
+
+
 ;; PS-printer
 (defalias 'ps-mule-header-string-charsets 'ignore)
 (setq ps-multibyte-buffer 'non-latin-printer

@@ -51,10 +51,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/eary-init/</loc>
   </url>
   
@@ -144,6 +140,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/utility-tool/restart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</loc>
   </url>
   
   <url>

@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T20:34:34 JST">
-<title> :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-26T21:12:44 JST">
+<title>12.7. sudo-edit :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -710,13 +710,6 @@
       <a href="/.emacs.d/utility-tool/"><b>12. </b>ユーティリティー関数</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/utility-tool/sudo-edit/">
-            
-          </a>
-        </div>
-    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/" class="dd-item">
         <div>
           <a href="/.emacs.d/utility-tool/auto-delete/">
@@ -756,6 +749,13 @@
         <div>
           <a href="/.emacs.d/utility-tool/restart/">
             12.6. restart-emacs
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/utility-tool/sudo-edit/">
+            12.7. sudo-edit
           </a>
         </div>
     </li>
@@ -813,7 +813,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.7. sudo-edit
 
  
 
@@ -844,7 +844,7 @@
 
 <div id="body-inner">
   
-    <h1></h1>
+    <h1>12.7. sudo-edit</h1>
   
 
 
@@ -854,38 +854,12 @@
     
 <h3 id="sudo-editel-root権限でファイルを開き直す">[sudo-edit.el] Root権限でファイルを開き直す</h3>
 <p>🔗 <a href="https://github.com/nflath/sudo-edit">nflath/sudo-edit: Utilities for opening files with sudo.</a></p>
-<p><code>sudo-edit.el</code> はカレントバッファ・任意のファイルを <code>root</code> 権限で開き直すコマンドを2つ提供しています。</p>
-<dl>
-<dt><code>M-x sudo-edit</code></dt>
-<dd>ファイルを <code>root</code>権限で開きます。システムファイルを編集するときに便利です。</dd>
-<dt><code>M-x sudo-edit-find-file</code></dt>
-<dd><code>root</code>権限で <code>find-file</code> します。</dd>
-</dl>
-<p>実用上は、<code>sudo-edit</code> だけで十分な気がします。自分は、<code>dired-mode</code> から <code>s</code> でコマンドを実行するようにしています。</p>
-<p>パッケージを使わずに関数設定だけで機能させるTipsも見つけました。</p>
-<p>🔗 <a href="https://ameblo.jp/grennarthmurmand1976/entry-12151018656.html">Emacs でファイルをsudoで開き直す</a></p>
-<p><code>dired</code> や <code>C-x C-f</code> で普通にファイルを開いたときに、それが <code>root</code>所有なファイルなら、自動的に<code>sudo</code>で開きなおすかを聞いてくれます。</p>
-<p>案外使いやすいので、とりあえず両方設定しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Automatically open root permission file with sudo</span>
-<span style="color:#177500">;; https://ameblo.jp/grennarthmurmand1976/entry-12151018656.html</span>
-(<span style="color:#a90d91">defun</span> <span style="color:#000">file-root-p</span> (<span style="color:#000">filename</span>)
-  <span style="color:#c41a16">&#34;Return t if file FILENAME created by root.&#34;</span>
-  (<span style="color:#000">eq</span> <span style="color:#1c01ce">0</span> (<span style="color:#000">nth</span> <span style="color:#1c01ce">2</span> (<span style="color:#000">file-attributes</span> <span style="color:#000">filename</span>))))
-                                                                        
-(<span style="color:#a90d91">defadvice</span> <span style="color:#000">find-file</span> (<span style="color:#000">around</span> <span style="color:#000">my:find-file</span> <span style="color:#000">activate</span>)
-  <span style="color:#c41a16">&#34;Open FILENAME using tramp&#39;s sudo method if it&#39;s root permission.&#34;</span>
-  (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">file-root-p</span> (<span style="color:#000">ad-get-arg</span> <span style="color:#1c01ce">0</span>))
-           (<span style="color:#000">not</span> (<span style="color:#000">file-writable-p</span> (<span style="color:#000">ad-get-arg</span> <span style="color:#1c01ce">0</span>)))
-           (<span style="color:#000">y-or-n-p</span> (<span style="color:#000">concat</span> (<span style="color:#000">ad-get-arg</span> <span style="color:#1c01ce">0</span>)
-                             <span style="color:#c41a16">&#34; is root permission. Open it as root? &#34;</span>)))
-      (<span style="color:#000">my:find-file-sudo</span> (<span style="color:#000">ad-get-arg</span> <span style="color:#1c01ce">0</span>))
-    <span style="color:#000">ad-do-it</span>))
-                                                                        
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:find-file-sudo</span> (<span style="color:#000">file</span>)
-  <span style="color:#c41a16">&#34;Opens FILE with root privileges.&#34;</span>
-  (<span style="color:#a90d91">interactive</span> <span style="color:#c41a16">&#34;F&#34;</span>)
-  (<span style="color:#000">set-buffer</span> (<span style="color:#000">find-file</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;/sudo::&#34;</span> <span style="color:#000">file</span>))))
-</code></pre></div>
+<p><code>sudo-edit.el</code>は、現在アクセスしているファイルをsudoユーザーとして開きなおします。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">sudo-edit</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-c s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">sudo-edit</span>))
+</code></pre></div><p><code>sudo-edit-find-file</code> というコマンドもあるようなのでお好みで…</p>
+
 
     
     
@@ -896,7 +870,7 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/utility-tool/" title="ユーティリティー関数"> <i class="fa fa-chevron-left"></i><label>ユーティリティー関数</label></a>
+<a class="nav nav-prev" href="/.emacs.d/utility-tool/restart/" title="12.6. restart-emacs"> <i class="fa fa-chevron-left"></i><label>12.6. restart-emacs</label></a>
     <a class="nav nav-next" href="/.emacs.d/utility-tool/auto-delete/" title="12.1. auto-delete" style="margin-right: 0px;"><label>12.1. auto-delete</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
