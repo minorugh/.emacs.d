@@ -26,10 +26,10 @@ guide-key.el の後発、ディスパッチャが見やすく直感的でとて�
       <description>[all-the-icons.el] アイコン表示を可能する 🔗 domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.
 all-the-icons.el を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
 初めて使うときは、フォントインストールを促されますが、設定では自動化しています。
-(leaf all-the-icons :ensure t :after doom-modeline :custom (all-the-icons-scale-factor . 0.9) :config (unless (member &amp;#34;all-the-icons&amp;#34; (font-family-list)) (all-the-icons-install-fonts t))) [all-the-icons-dired.el] dired でファイルのアイコン表示をする 🔗 jtbm37/all-the-icons-dired
+(leaf all-the-icons :ensure t :after doom-modeline :custom (all-the-icons-scale-factor . 0.9) :config (unless (member &amp;#34;all-the-icons&amp;#34; (font-family-list)) (all-the-icons-install-fonts t))) [all-the-icons-dired.el] diredでファイルのアイコン表示をする 🔗 jtbm37/all-the-icons-dired
 Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先をel-getでインストールしています。
-(leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) [all-the-icons-ivy-rich.el] ivy-mode でアイコン表示をする 🔗 seagle0128/all-the-icons-ivy-rich: Display icons for all buffers in ivy.
-(leaf all-the-icons-ivy-rich :ensure t :hook (after-init-hook .</description>
+(leaf all-the-icons-dired :el-get jtbm37/all-the-icons-dired :after doom-modeline :hook (dired-mode-hook . all-the-icons-dired-mode)) [all-the-icons-ivy-rich.el] ivy-modeでアイコン表示をする 🔗 seagle0128/all-the-icons-ivy-rich: Display icons for all buffers in ivy.
+(leaf all-the-icons-ivy-rich :ensure t :hook (after-init-hook . all-the-icons-ivy-rich-mode)) [all-the-icons-ibuffer.</description>
     </item>
     
     <item>

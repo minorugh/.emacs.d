@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T06:35:17 JST">
+<meta name="revised" content="2022-08-27T06:38:00 JST">
 <title>7.2. all-the-icons :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -845,9 +845,9 @@
     <li>
       <ul>
         <li><a href="#all-the-iconsel-アイコン表示を可能する">[all-the-icons.el] アイコン表示を可能する</a></li>
-        <li><a href="#all-the-icons-diredel-dired-でファイルのアイコン表示をする">[all-the-icons-dired.el] <code>dired</code> でファイルのアイコン表示をする</a></li>
-        <li><a href="#all-the-icons-ivy-richel-ivy-mode-でアイコン表示をする">[all-the-icons-ivy-rich.el] <code>ivy-mode</code> でアイコン表示をする</a></li>
-        <li><a href="#all-the-icons-ibufferel-ibuffer-mode-でアイコン表示をする">[all-the-icons-ibuffer.el] <code>ibuffer-mode</code> でアイコン表示をする。</a></li>
+        <li><a href="#all-the-icons-diredel-diredでファイルのアイコン表示をする">[all-the-icons-dired.el] diredでファイルのアイコン表示をする</a></li>
+        <li><a href="#all-the-icons-ivy-richel-ivy-modeでアイコン表示をする">[all-the-icons-ivy-rich.el] ivy-modeでアイコン表示をする</a></li>
+        <li><a href="#all-the-icons-ibufferel-ibuffer-modeでアイコン表示をする">[all-the-icons-ibuffer.el] ibuffer-modeでアイコン表示をする。</a></li>
       </ul>
     </li>
   </ul>
@@ -880,19 +880,19 @@
   <span style="color:#a90d91">:config</span>
   (<span style="color:#a90d91">unless</span> (<span style="color:#000">member</span> <span style="color:#c41a16">&#34;all-the-icons&#34;</span> (<span style="color:#000">font-family-list</span>))
 	(<span style="color:#000">all-the-icons-install-fonts</span> <span style="color:#000">t</span>)))
-</code></pre></div><h3 id="all-the-icons-diredel-dired-でファイルのアイコン表示をする">[all-the-icons-dired.el] <code>dired</code> でファイルのアイコン表示をする</h3>
+</code></pre></div><h3 id="all-the-icons-diredel-diredでファイルのアイコン表示をする">[all-the-icons-dired.el] diredでファイルのアイコン表示をする</h3>
 <p>🔗 <a href="https://github.com/jtbm37/all-the-icons-dired">jtbm37/all-the-icons-dired</a></p>
 <p>Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先を<code>el-get</code>でインストールしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-dired</span>
   <span style="color:#a90d91">:el-get</span> <span style="color:#000">jtbm37/all-the-icons-dired</span>
   <span style="color:#a90d91">:after</span> <span style="color:#000">doom-modeline</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-dired-mode</span>))
-</code></pre></div><h3 id="all-the-icons-ivy-richel-ivy-mode-でアイコン表示をする">[all-the-icons-ivy-rich.el] <code>ivy-mode</code> でアイコン表示をする</h3>
+</code></pre></div><h3 id="all-the-icons-ivy-richel-ivy-modeでアイコン表示をする">[all-the-icons-ivy-rich.el] ivy-modeでアイコン表示をする</h3>
 <p>🔗 <a href="https://github.com/seagle0128/all-the-icons-ivy-rich">seagle0128/all-the-icons-ivy-rich: Display icons for all buffers in ivy.</a></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-ivy-rich</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">all-the-icons-ivy-rich-mode</span>))
-</code></pre></div><h3 id="all-the-icons-ibufferel-ibuffer-mode-でアイコン表示をする">[all-the-icons-ibuffer.el] <code>ibuffer-mode</code> でアイコン表示をする。</h3>
+</code></pre></div><h3 id="all-the-icons-ibufferel-ibuffer-modeでアイコン表示をする">[all-the-icons-ibuffer.el] ibuffer-modeでアイコン表示をする。</h3>
 <p>🔗 <a href="https://github.com/seagle0128/all-the-icons-ibuffer">seagle0128/all-the-icons-ibuffer: Display icons for all buffers in ibuffer.</a></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">all-the-icons-ibuffer</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>

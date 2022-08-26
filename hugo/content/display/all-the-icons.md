@@ -19,7 +19,7 @@ draft = false
 	(all-the-icons-install-fonts t)))
 ```
 
-### [all-the-icons-dired.el] `dired` でファイルのアイコン表示をする
+### [all-the-icons-dired.el] diredでファイルのアイコン表示をする
 🔗 [jtbm37/all-the-icons-dired](https://github.com/jtbm37/all-the-icons-dired)
 
 Emacs27以降、MELPA版は白色にしか表示されないので、上記リンク先を`el-get`でインストールしています。
@@ -30,7 +30,7 @@ Emacs27以降、MELPA版は白色にしか表示されないので、上記リ�
   :after doom-modeline
   :hook (dired-mode-hook . all-the-icons-dired-mode))
 ```
-### [all-the-icons-ivy-rich.el] `ivy-mode` でアイコン表示をする
+### [all-the-icons-ivy-rich.el] ivy-modeでアイコン表示をする
 🔗 [seagle0128/all-the-icons-ivy-rich: Display icons for all buffers in ivy.](https://github.com/seagle0128/all-the-icons-ivy-rich) 
 
 ```elisp
@@ -39,7 +39,7 @@ Emacs27以降、MELPA版は白色にしか表示されないので、上記リ�
   :hook (after-init-hook . all-the-icons-ivy-rich-mode))
 ```
 
-### [all-the-icons-ibuffer.el] `ibuffer-mode` でアイコン表示をする。
+### [all-the-icons-ibuffer.el] ibuffer-modeでアイコン表示をする。
 🔗 [seagle0128/all-the-icons-ibuffer: Display icons for all buffers in ibuffer.](https://github.com/seagle0128/all-the-icons-ibuffer) 
 
 ```elisp
