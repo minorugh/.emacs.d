@@ -662,7 +662,7 @@
 	"title": "9.5. hist-files",
 	"tags": [],
 	"description": "",
-	"content": "Emacsのいろいろな機能の履歴ファイルは、デフォルトではみな ~/.emacs.d/ に保存される。\n日毎、設定ファイルを育てている自分は、ここに雑多な履歴ファイルがあると見づらいので、~/.emace.d/tmp/ に保存場所を変更している。\n;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . \u0026#34;~/.emacs.d/tmp/recentf\u0026#34;) (save-place-file . \u0026#34;~/.emacs.d/tmp/places\u0026#34;) (savehist-file . \u0026#34;~/.emacs.d/tmp/history\u0026#34;) (url-configuration-directory . \u0026#34;~/.emacs.d/tmp/url\u0026#34;) (bookmark-file . \u0026#34;~/.emacs.d/tmp/bookmarks\u0026#34;))) "
+	"content": "Emacsのいろいろな機能の履歴ファイルは、デフォルトではみな ~/.emacs.d/ に保存される。\n日毎、Emacsを育てている私は、ここに雑多な履歴ファイルがあると見づらいので、~/.emace.d/tmp/ に保存場所を変更している。\n;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . \u0026#34;~/.emacs.d/tmp/recentf\u0026#34;) (save-place-file . \u0026#34;~/.emacs.d/tmp/places\u0026#34;) (savehist-file . \u0026#34;~/.emacs.d/tmp/history\u0026#34;) (url-configuration-directory . \u0026#34;~/.emacs.d/tmp/url\u0026#34;) (bookmark-file . \u0026#34;~/.emacs.d/tmp/bookmarks\u0026#34;))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/dired/",
