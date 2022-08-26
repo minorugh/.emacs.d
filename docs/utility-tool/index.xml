@@ -95,5 +95,17 @@ sudo-edit.elは、現在アクセスしているファイルをsudoユーザー�
 (leaf eshell :after popwin :bind (&amp;#34;s-z&amp;#34; . eshell) :custom `((eshell-directory-name . ,&amp;#34;~/.emacs.d/tmp/eshell&amp;#34;) (eshell-cmpl-ignore-case . t) (eshell-ask-to-save-history . (quote always)) (eshell-cmpl-cycle-completions . t) (eshell-cmpl-cycle-cutoff-length . 5) (eshell-history-file-name . ,&amp;#34;~/Dropbox/backup/zsh/.zsh_history&amp;#34;) (eshell-hist-ignoredups . t) (eshell-prompt-function . &amp;#39;my:eshell-prompt) (eshell-prompt-regexp . &amp;#34;^[^#$]*[$#] &amp;#34;)) :config (setq eshell-command-aliases-list (append (list (list &amp;#34;cl&amp;#34; &amp;#34;clear eshell&amp;#34;) (list &amp;#34;ll&amp;#34; &amp;#34;ls -ltr&amp;#34;) (list &amp;#34;la&amp;#34; &amp;#34;ls -a&amp;#34;) (list &amp;#34;ex&amp;#34; &amp;#34;exit&amp;#34;)))) :init (push &amp;#39;(&amp;#34;*eshell*&amp;#34; :height 0.6) popwin:special-display-config) (defun my:eshell-prompt () &amp;#34;Prompt change string.</description>
     </item>
     
+    <item>
+      <title>12.9. Google-translate</title>
+      <link>https://minorugh.github.io/.emacs.d/utility-tool/translate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/utility-tool/translate/</guid>
+      <description>[google-translate.el] 🔗 atykhonov/google-translate: Emacs interface to Google Translate.
+この設定は、@masasam の Sollst Work Blog で公開されている設定をパクりました。
+リージョンが日本語なら ja to en に、英語なら en to ja 自動判別して google-Translate を実行してくれます。
+(leaf google-translate :ensure t :bind (&amp;#34;C-t&amp;#34; . google-translate-auto) :config (defun google-translate-auto () &amp;#34;Automatically recognize and translate Japanese and English.&amp;#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))) (let ((string (read-string &amp;#34;Google Translate: &amp;#34;))) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))))) (defun google-translate--get-b-d1 () &amp;#34;Fix error of `Failed to search TKK`.</description>
+    </item>
+    
   </channel>
 </rss>

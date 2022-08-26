@@ -36,3 +36,6 @@ disableToc = true
 [eshell]({{< relref "eshell" >}})
 : Emacs上から使えるターミナルエミュレータ
 
+[google-translate]({{< relref "translate" >}})
+: Emacs上から使えるターミナルエミュレータ
+

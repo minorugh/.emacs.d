@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-26T22:00:06 JST">
-<title>3.5. expand-region :: minoru&#39;s Emacs Configuration</title>
+<title>12.9. Google-translate :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/cursor/expand-region/">
+  <body data-url="/.emacs.d/utility-tool/translate/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -807,7 +807,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/cursor/expand-region.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/utility-tool/translate.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -827,7 +827,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/cursor/'>カーソル移動</a> > 3.5. expand-region
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.9. Google-translate
 
  
 
@@ -844,7 +844,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#expand-refionel-カーソル位置を起点に選択範囲を賢く広げてくれる">[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる</a></li>
+        <li><a href="#google-translateel">[google-translate.el]</a></li>
       </ul>
     </li>
   </ul>
@@ -858,7 +858,7 @@
 
 <div id="body-inner">
   
-    <h1>3.5. expand-region</h1>
+    <h1>12.9. Google-translate</h1>
   
 
 
@@ -866,14 +866,47 @@
     
     
     
-<h3 id="expand-refionel-カーソル位置を起点に選択範囲を賢く広げてくれる">[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる</h3>
-<p>🔗 <a href="https://github.com/magnars/expand-region.el">magnars/expand-region.el: Expand region increases the selected region.</a></p>
-<p><code>expand-region.el</code>は、カーソル位置を起点として選択範囲を広げてくれます。</p>
-<p>2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降はキーバインドの最後の一文字を連打すれば OKです。</p>
-<p>その場合、選択範囲を狭める時は - を押し、0 を押せばリセットされます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">expand-region</span>
+<h3 id="google-translateel">[google-translate.el]</h3>
+<p>🔗 <a href="https://github.com/atykhonov/google-translate">atykhonov/google-translate: Emacs interface to Google Translate.</a></p>
+<p>この設定は、<a href="https://twitter.com/SolistWork">@masasam</a> の
+<a href="https://solist.work/blog/posts/google-translate/">Sollst Work Blog</a> で公開されている設定をパクりました。</p>
+<p>リージョンが日本語なら <code>ja to en</code> に、英語なら <code>en to ja</code> 自動判別して <code>google-Translate</code> を実行してくれます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">google-translate</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">er/expand-region</span>))
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">google-translate-auto</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">google-translate-auto</span> ()
+	<span style="color:#c41a16">&#34;Automatically recognize and translate Japanese and English.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>)
+		(<span style="color:#a90d91">let</span> ((<span style="color:#000">string</span> (<span style="color:#000">buffer-substring-no-properties</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>))))
+		  (<span style="color:#000">deactivate-mark</span>)
+		  (<span style="color:#a90d91">if</span> (<span style="color:#000">string-match</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;\\`[%s]+\\&#39;&#34;</span> <span style="color:#c41a16">&#34;[:ascii:]&#34;</span>)
+							<span style="color:#000">string</span>)
+			  (<span style="color:#000">google-translate-translate</span>
+			   <span style="color:#c41a16">&#34;en&#34;</span> <span style="color:#c41a16">&#34;ja&#34;</span>
+			   <span style="color:#000">string</span>)
+			(<span style="color:#000">google-translate-translate</span>
+			 <span style="color:#c41a16">&#34;ja&#34;</span> <span style="color:#c41a16">&#34;en&#34;</span>
+			 <span style="color:#000">string</span>)))
+	  (<span style="color:#a90d91">let</span> ((<span style="color:#000">string</span> (<span style="color:#000">read-string</span> <span style="color:#c41a16">&#34;Google Translate: &#34;</span>)))
+		(<span style="color:#a90d91">if</span> (<span style="color:#000">string-match</span>
+			 (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;\\`[%s]+\\&#39;&#34;</span> <span style="color:#c41a16">&#34;[:ascii:]&#34;</span>)
+			 <span style="color:#000">string</span>)
+			(<span style="color:#000">google-translate-translate</span>
+			 <span style="color:#c41a16">&#34;en&#34;</span> <span style="color:#c41a16">&#34;ja&#34;</span>
+			 <span style="color:#000">string</span>)
+		  (<span style="color:#000">google-translate-translate</span>
+		   <span style="color:#c41a16">&#34;ja&#34;</span> <span style="color:#c41a16">&#34;en&#34;</span>
+		   <span style="color:#000">string</span>)))))
+
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">google-translate--get-b-d1</span> ()
+	<span style="color:#c41a16">&#34;Fix error of `Failed to search TKK`.&#34;</span>
+	(<span style="color:#000">list</span> <span style="color:#1c01ce">427110</span> <span style="color:#1c01ce">1469889687</span>)))
+</code></pre></div><p>最後の部分、は、ときどき &ldquo;Fix error of <code>Failed to search TKK</code>.&rdquo; というエラーが出て動かなくなるので、おまじないです。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">google-translate--get-b-d1</span> ()
+  <span style="color:#c41a16">&#34;Fix error of `Failed to search TKK`.&#34;</span>
+  (<span style="color:#000">list</span> <span style="color:#1c01ce">427110</span> <span style="color:#1c01ce">1469889687</span>))
 </code></pre></div>
 
     
@@ -885,8 +918,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/cursor/mark-command/" title="3.4. exchange-point-and-mark"> <i class="fa fa-chevron-left"></i><label>3.4. exchange-point-and-mark</label></a>
-    <a class="nav nav-next" href="/.emacs.d/higlight/" title="フォント / 配色関連" style="margin-right: 0px;"><label>フォント / 配色関連</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/utility-tool/eshell/" title="12.8. eshell"> <i class="fa fa-chevron-left"></i><label>12.8. eshell</label></a>
+    <a class="nav nav-next" href="/.emacs.d/utility-tool/auto-delete/" title="12.1. auto-delete" style="margin-right: 0px;"><label>12.1. auto-delete</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

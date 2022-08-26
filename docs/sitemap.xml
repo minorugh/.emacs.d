@@ -151,6 +151,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/translate/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/core/encode/</loc>
   </url>
   
