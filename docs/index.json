@@ -655,7 +655,7 @@
 	"title": "9.4. savehist",
 	"tags": [],
 	"description": "",
-	"content": "[savehist] ミニバッファの履歴などを保存してくれる機能 プログラミングを生業にしている人にはとても重要なものらしい。\n;; Don\u0026#39;t clear kill-ring when restart emacs (savehist-additional-variables . \u0026#39;(kill-ring)) "
+	"content": "ミニバッファの履歴などを保存してくれる機能 プログラミングを生業にしている人にはとても重要なものらしい。\n;; Don\u0026#39;t clear kill-ring when restart emacs (savehist-additional-variables . \u0026#39;(kill-ring)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/hist-files/",
