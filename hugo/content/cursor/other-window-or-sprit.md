@@ -7,7 +7,7 @@ draft = false
 
 画面分割されていないときは、左右分割に加えて `follow-mode` `dimmer-mode` を `ON` にしています。（詳細後述）
 
-ワンアクションで画面分割と移動とを賢く判断してくれるので便利です。
+画面分割と移動とを賢く判断してくれるので便利です。
 
 ```elisp
 (defun other-window-or-split ()

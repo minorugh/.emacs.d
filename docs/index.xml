@@ -339,7 +339,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
       <guid>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</guid>
       <description>画面分割時のカーソルの移動 other-window-or-split は、画面分割コマンド C-x 3 を拡張するもので、状況判断して画面移動の C-c o にもなります。
 画面分割されていないときは、左右分割に加えて follow-mode dimmer-mode を ON にしています。（詳細後述）
-ワンアクションで画面分割と移動とを賢く判断してくれるので便利です。
+画面分割と移動とを賢く判断してくれるので便利です。
 (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (bind-key &amp;#34;C-q&amp;#34; &amp;#39;other-window-or-split) </description>
     </item>
     
