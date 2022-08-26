@@ -3,7 +3,7 @@ title = "10.3. flymake"
 draft = false
 +++
 ### [flymake] 構文エラー表示
-標準添付の `flymake` が軽くて使いやすくなったので、`flycheck` から移行しました。
+ビルトインの `flymake-mode` が軽くて使いやすくなったので、`flycheck` から移行しました。
 
 ```elisp
 (leaf flymake

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T06:53:37 JST">
+<meta name="revised" content="2022-08-27T06:55:14 JST">
 <title>10.3. flymake :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -867,7 +867,7 @@
     
     
 <h3 id="flymake-構文エラー表示">[flymake] 構文エラー表示</h3>
-<p>標準添付の <code>flymake</code> が軽くて使いやすくなったので、<code>flycheck</code> から移行しました。</p>
+<p>ビルトインの <code>flymake-mode</code> が軽くて使いやすくなったので、<code>flycheck</code> から移行しました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">flymake</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">flymake-mode</span>)
   <span style="color:#a90d91">:config</span>
