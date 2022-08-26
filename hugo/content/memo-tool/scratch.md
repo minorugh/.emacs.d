@@ -5,13 +5,15 @@ draft = false
 
 ### scratchバッファーを付箋として使う
 
-作業中の編集画面から短期的なメモを気軽に使うために `*scratch*`バッファーを付箋メモに使えるように設定してみた。
+Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに `*scratch*`バッファーが使えるように設定してみた。
 
-Emacsを再起動しても`*scratch*` バッファーの内容が消えないように [`auto-save-buffers-enhanced`](http://emacs.rubikitch.com/auto-save-buffers-enhanced/) の `*scratch*` バッファー自動保存機能を併用しています。専用のパッケージもあるようです。
+再起動しても`*scratch*` バッファーの内容が消えないように [`auto-save-buffers`](http://emacs.rubikitch.com/auto-save-buffers-enhanced/) の `*scratch*` 自動保存機能を併用しています。
+
+専用のパッケージもあるようです。
 
 [persistent-scratch.el: scratch バッファを永続化・自動保存・復元する](http://emacs.rubikitch.com/persistent-scratch/) 
 
-`toggle-scratch` は、編集中のバッファーと`scratch`バッファーとをトグルで切り替えます。
+`toggle-scratch` は、編集中のバッファーと`scratch`とをトグルで切り替えます。
 
 ```elisp
 ;; Scratch for sticky-memo
