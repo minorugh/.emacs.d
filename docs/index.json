@@ -550,7 +550,7 @@
 	"title": "7.7. imenu-list",
 	"tags": [],
 	"description": "",
-	"content": "[imenu-list.el] サイドバー的にファイル内容の目次要素を表示 🔗 bmag/imenu-list: Emacs plugin to show the current buffer\u0026rsquo;s imenu entries in a separate buffer.\nimenu-list は、imenu の各エントリを *Ilist* バッファで一覧します。 このバッファの当該エントリーでRETを押すと関数定義に移動します。\n*Ilist* 上のエントリーをカーソルで選ぶと自動的に当該関数へジャンプしてくれるともっと嬉しいけれど、ビギナーな私は他力を待つしかない。\n(leaf imenu-list :ensure t :bind (\u0026#34;\u0026lt;f2\u0026gt;\u0026#34; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . \u0026#39;left) (imenu-list-focus-after-activation . t))) "
+	"content": "[imenu-list.el] サイドバー的にファイル内容の目次要素を表示 🔗 bmag/imenu-list: Emacs plugin to show the current buffer\u0026rsquo;s imenu entries in a separate buffer.\nimenu-list は、imenu の各エントリを *Ilist* バッファで一覧します。 このバッファの当該エントリーでRETを押すと関数定義に移動します。\nカーソル位置の当該関数へジャンプしてくれるともっと嬉しいけれど、ビギナーな私は他力を待つしかない。\n(leaf imenu-list :ensure t :bind (\u0026#34;\u0026lt;f2\u0026gt;\u0026#34; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . \u0026#39;left) (imenu-list-focus-after-activation . t))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/yasnippets/",
