@@ -67,7 +67,7 @@ git:
 
 * 実行中の `*compilation*` バッファーを自動スクロールさせる
 * 正常終了したら確認なしで自動的にコンパイル実行をkillする
-* 終了した `*compilation*` バッファーを自動で閉じる
+* 実行終了した `*compilation*` バッファーを自動で閉じる
 
 ```elisp
 (setq compilation-scroll-output t)
