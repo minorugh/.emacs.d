@@ -42,7 +42,7 @@ ON/OFF できるのが快適です。
 下記の通り発想転換すれば呪縛から逃れることができます。
 
 * 画面分割したときは、`dimmer-mode-on` にする。
-* 画面分割を閉じたときは、`dimmer-mode-off` にする。
+* 画面分割を閉じるときは、`dimmer-mode-off` にする。
 
 ```emacs-lisp
 (leaf *sprit-window-configurations
