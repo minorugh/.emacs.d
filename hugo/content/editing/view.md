@@ -80,7 +80,7 @@ draft = false
 ### [viewer.el] モードラインの色を変える
 🔗 [rubikitch/viewer: Emacs view-mode extension.](https://github.com/rubikitch/viewer) 
 
-`view-mode` のときにモードラインの色を変えるのは `viewer.el`を使うと設定が簡単です。
+モードラインの色を変えたいときは `viewer.el`を使うと設定が簡単です。
 
 ```elisp
 ;; Change-modeline-color
