@@ -1,5 +1,5 @@
 +++
-title = "12.9. Google-translate"
+title = "12.9. google-translate"
 draft = false
 +++
 ### [google-translate.el] 
