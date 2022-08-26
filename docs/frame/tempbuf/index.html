@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T11:18:24 JST">
+<meta name="revised" content="2022-08-26T11:21:18 JST">
 <title>5.5. tempbuf :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -845,7 +845,7 @@
 <p>つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなズボラな自分には便利です。</p>
 <ul>
 <li><code>my:tembuf-ignore-files</code> は、勝手に kill させないファイルの指定</li>
-<li><code>find-file-hook</code> は、<code>find-file</code> や <code>dired</code> で開いたファイルが削除対象</li>
+<li><code>find-file-hook</code> は、<code>find-file</code> で開いたファイルが削除対象</li>
 <li><code>dired buffer</code> /<code>magit-buffer</code> は、無条件に削除</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">tempbuf</span>
