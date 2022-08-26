@@ -4,7 +4,7 @@ draft = false
 +++
 
 ### Gistインターフェイス
-[`gist.el`](https://github.com/defunkt/gist.el) も便利ですが、そもそもローカルで管理する必要がないから `Gist`を使うのだと思うので `post` 専用の簡単な関数を作りました。
+リスト管理などもできる [`gist.el`](https://github.com/defunkt/gist.el) というパッケージを使っていましたが、そもそもローカルで管理する必要がないから `Gist`を使うのだと思うので `post` 専用の簡単な関数を作りました。
 
 `gist` をinstallしておく必要があります。
 

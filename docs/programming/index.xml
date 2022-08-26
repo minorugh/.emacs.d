@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
-      <description>Gistインターフェイス gist.el も便利ですが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
+      <description>Gistインターフェイス リスト管理などもできる gist.el というパッケージを使っていましたが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
 gist をinstallしておく必要があります。
 $ sudo apt install gist ターミナルで gist --help と打つと沢山の起動オプションが表示される。
 gist -o でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。
