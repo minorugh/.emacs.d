@@ -8,8 +8,7 @@ draft = false
 
 Emacsの上で動作する LaTeX の入力支援環境です。
 
-ごく一般的な設定例ですが、参考になるとしたら `dviprint-command-format` に `dvpd.sh` というスクリプトを設定して、`YateX.lpr`
-コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
+ごく一般的な設定例ですが、参考になるとしたら `YateX.lpr` コマンドでPDF作成からプレビューまでの手順を自動化している点でしょうか。
 
 ```elisp
 (leaf yatex

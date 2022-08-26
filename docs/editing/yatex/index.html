@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T11:27:59 JST">
+<meta name="revised" content="2022-08-26T11:30:39 JST">
 <title>7.4. yatex :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -841,8 +841,7 @@
 <h3 id="yatexel-latex編集">[yatex.el] LaTex編集</h3>
 <p>🔗 <a href="https://github.com/emacsmirror/yatex">emacsmirror/yatex: Yet Another tex-mode for emacs. //野鳥//</a></p>
 <p>Emacsの上で動作する LaTeX の入力支援環境です。</p>
-<p>ごく一般的な設定例ですが、参考になるとしたら <code>dviprint-command-format</code> に <code>dvpd.sh</code> というスクリプトを設定して、<code>YateX.lpr</code>
-コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。</p>
+<p>ごく一般的な設定例ですが、参考になるとしたら <code>YateX.lpr</code> コマンドでPDF作成からプレビューまでの手順を自動化している点でしょうか。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">yatex</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.tex\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.sty\\&#39;&#34;</span> <span style="color:#c41a16">&#34;\\.cls\\&#39;&#34;</span>)
