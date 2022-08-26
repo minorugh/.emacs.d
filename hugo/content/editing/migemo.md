@@ -1,5 +1,5 @@
 +++
-title = "7.11. migemo"
+title = "6.11. migemo"
 draft = false
 +++
 

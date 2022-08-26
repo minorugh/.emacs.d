@@ -1,5 +1,5 @@
 +++
-title = "7.5. darkroom"
+title = "6.5. darkroom"
 draft = false
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = "7.1. markdown-mode"
+title = "6.1. markdown-mode"
 draft = false
 +++
 ### [markdown-mode.el] markdownモード編集、入力支援

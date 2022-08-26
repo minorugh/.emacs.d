@@ -1,5 +1,5 @@
 +++
-title = "7.13. pangu-spacing"
+title = "6.13. pangu-spacing"
 draft = false
 +++
 ### [pangu-spacing.el] 漢字と英字の間にスペースを自動追加

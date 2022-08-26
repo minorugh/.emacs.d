@@ -1,5 +1,5 @@
 +++
-title = "7.10. smartparens"
+title = "6.10. smartparens"
 draft = false
 +++
 ### [smartparens.el] 対応する括弧の挿入をアシスト

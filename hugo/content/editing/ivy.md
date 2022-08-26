@@ -1,5 +1,5 @@
 +++
-title = "7.6. ivy / counsel"
+title = "6.6. ivy / counsel"
 draft = false
 +++
 ### [ivy.el / counsel.el / swiper.el] Emacsの補完システム

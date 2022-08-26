@@ -1,5 +1,5 @@
 +++
-title = "7.4. yatex"
+title = "6.4. yatex"
 draft = false
 +++
 

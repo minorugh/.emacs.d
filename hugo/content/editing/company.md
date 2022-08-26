@@ -1,5 +1,5 @@
 +++
-title = "7.8. company"
+title = "6.8. company"
 draft = false
 +++
 ### [company.el] 入力補完機能を提供

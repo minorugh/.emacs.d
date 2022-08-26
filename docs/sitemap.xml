@@ -267,10 +267,6 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
   </url>
   
@@ -295,23 +291,11 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
   </url>
   
   <url>
@@ -323,19 +307,7 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
-  </url>
-  
-  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
   </url>
   
   <url>
@@ -347,11 +319,39 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
   </url>
   
   <url>

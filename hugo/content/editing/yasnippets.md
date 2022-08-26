@@ -1,5 +1,5 @@
 +++
-title = "7.7. yasunippets"
+title = "6.7. yasunippets"
 draft = false
 +++
 ### [yasnippets.el] テンプレート システム

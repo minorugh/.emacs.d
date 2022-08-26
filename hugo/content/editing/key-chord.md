@@ -1,5 +1,5 @@
 +++
-title = "7.9. key-chord"
+title = "6.9. key-chord"
 draft = false
 +++
 ### [key-chord.el] 同時押しでキーバインド

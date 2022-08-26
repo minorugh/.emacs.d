@@ -1,5 +1,5 @@
 +++
-title = "7.3. web-mode"
+title = "6.3. web-mode"
 draft = false
 +++
 ### [web-mode.el] HTML編集をサポート

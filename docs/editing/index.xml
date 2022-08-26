@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/editing/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>7.1. markdown-mode</title>
+      <title>6.1. markdown-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,7 @@ emacs-livedown.elisp は、el-get でインストールします。
     </item>
     
     <item>
-      <title>7.10. iedit</title>
+      <title>6.10. iedit</title>
       <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -35,7 +35,7 @@ Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドし
     </item>
     
     <item>
-      <title>7.10. smartparens</title>
+      <title>6.10. smartparens</title>
       <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -47,7 +47,7 @@ Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドし
     </item>
     
     <item>
-      <title>7.11. migemo</title>
+      <title>6.11. migemo</title>
       <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -63,7 +63,7 @@ avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど�
     </item>
     
     <item>
-      <title>7.12. selected</title>
+      <title>6.12. selected</title>
       <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -76,7 +76,7 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
     </item>
     
     <item>
-      <title>7.13. pangu-spacing</title>
+      <title>6.13. pangu-spacing</title>
       <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -87,7 +87,7 @@ pangu-spacingは、漢字と英字の間にスペースを自動追加してく�
     </item>
     
     <item>
-      <title>7.14. font-awesome</title>
+      <title>6.14. font-awesome</title>
       <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -98,7 +98,7 @@ Font-awesome の入力をcounsel で支援してくれる。
     </item>
     
     <item>
-      <title>7.2. veiw-mode</title>
+      <title>6.2. veiw-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/view/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -110,7 +110,7 @@ Font-awesome の入力をcounsel で支援してくれる。
     </item>
     
     <item>
-      <title>7.3. web-mode</title>
+      <title>6.3. web-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/web-mode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -122,7 +122,7 @@ HTMLの内容を確認したり部分的に変更したり&amp;hellip;という�
     </item>
     
     <item>
-      <title>7.4. yatex</title>
+      <title>6.4. yatex</title>
       <link>https://minorugh.github.io/.emacs.d/editing/yatex/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -138,7 +138,7 @@ $ chmod +x dvpd.sh として実行権限を付与してからPATHの通ったと
     </item>
     
     <item>
-      <title>7.5. darkroom</title>
+      <title>6.5. darkroom</title>
       <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -152,7 +152,7 @@ yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm 
     </item>
     
     <item>
-      <title>7.6. ivy / counsel</title>
+      <title>6.6. ivy / counsel</title>
       <link>https://minorugh.github.io/.emacs.d/editing/ivy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -165,7 +165,7 @@ counsel.el をインストールすれば、ivy.el も swiper.el も一緒にイ
     </item>
     
     <item>
-      <title>7.7. yasunippets</title>
+      <title>6.7. yasunippets</title>
       <link>https://minorugh.github.io/.emacs.d/editing/yasnippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -177,7 +177,7 @@ company と連携することでとても便利になります。
     </item>
     
     <item>
-      <title>7.8. company</title>
+      <title>6.8. company</title>
       <link>https://minorugh.github.io/.emacs.d/editing/company/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -190,7 +190,7 @@ company と連携することでとても便利になります。
     </item>
     
     <item>
-      <title>7.9. key-chord</title>
+      <title>6.9. key-chord</title>
       <link>https://minorugh.github.io/.emacs.d/editing/key-chord/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

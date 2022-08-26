@@ -1,5 +1,5 @@
 +++
-title = "7.10. iedit"
+title = "6.10. iedit"
 draft = false
 +++
 ### [iedit.el] 選択領域を別の文字列に置き換える

@@ -1,5 +1,5 @@
 +++
-title = "7.2. veiw-mode"
+title = "6.2. veiw-mode"
 draft = false
 +++
 ### [view-mode] ファイル閲覧モード（標準機能）

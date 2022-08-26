@@ -1,5 +1,5 @@
 +++
-title = "7.14. font-awesome"
+title = "6.14. font-awesome"
 draft = false
 +++
 ### [font-awesom.el] 絵文字フォント入力支援
