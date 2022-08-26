@@ -4,7 +4,7 @@
 	"title": "起動設定",
 	"tags": [],
 	"description": "",
-	"content": "Emacs の起動設定に関わる部分をここでは設定しています。 Emacs-27導入にあわせて `early-init.el' を設定しました。\nブートシーケンスは以下のとおり。\n1. early-init.el の読み込み 2. init.el の読み込み 3. inits/ の設定ファイル群の読み込み # INDEX  eary-init.el を使う 早期設定ファイルの設定 speed up startup 起動時間を短縮するためのおまじない(^^) leaf.el を使って 設定ファイルを明示的に書く init-loader.el を使う 設定ファイル群のローダー test.el 最小限の emacs を起動させる設定 dashboard dashboardを起動初期画面にする  "
+	"content": "Emacs の起動設定に関わる部分をここでは設定しています。 Emacs-27導入にあわせて early-init.el を設定しました。\nブートシーケンスは以下のとおり。\n1. early-init.el の読み込み 2. init.el の読み込み 3. inits/ の設定ファイル群の読み込み # INDEX  eary-init.el を使う 早期設定ファイルの設定 speed up startup 起動時間を短縮するためのおまじない(^^) leaf.el を使って 設定ファイルを明示的に書く init-loader.el を使う 設定ファイル群のローダー test.el 最小限の emacs を起動させる設定 dashboard dashboardを起動初期画面にする  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/",
