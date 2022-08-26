@@ -319,7 +319,7 @@
 	"title": "4.2. hl-line",
 	"tags": [],
 	"description": "",
-	"content": "カーソル行に色を付ける ビルトインの hl-line-mode を使ってカーソル行に色をつける設定です。\n機能別にhl-line のON/OFF や色を変えたりという設定もできますが、 私の場合は、シンプルに global 設定して色は theme に依存というスタイルです。\n(global-hl-line-mode 1) "
+	"content": "カーソル行に色を付ける ビルトインの hl-line.el を使ってカーソル行に色をつける設定です。\n機能別にhl-line をON/OFF したり色を変えたりという設定もできますが、 自分は、シンプルに global 設定して、色は doome-themes に依存というスタイルです。\n(global-hl-line-mode 1) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/higlight/blink-cursor/",
