@@ -5,7 +5,7 @@ draft = false
 ### [doom-thems.el] テーマ
 🔗 [doomemacs/themes: Doom Emacs' Theme Pack.](https://github.com/doomemacs/themes) 
 
-わんさかとthemeファイルがパックされています。自分は、`doom-dracula` を愛用しています。
+`doom-themes` には、わんさかと`theme` ファイルがパックされています。自分は、`doom-dracula` を愛用しています。
 
 ```emacs-lisp
 (leaf doom-themes
@@ -19,7 +19,7 @@ draft = false
   (doom-themes-org-config))
 ```
 
-### [cycle-custom-themes] テーマを切り替えて使う
+### テーマを切り替えて使う
 作業用途によってテーマを変える設定です。
 いまは使ってません。
 

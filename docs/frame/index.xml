@@ -73,8 +73,8 @@ winner-undo で直前の状態に戻せます。例えば、誤って C-x 0 で�
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
       <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
-わんさかとthemeファイルがパックされています。自分は、doom-dracula を愛用しています。
-(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) [cycle-custom-themes] テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
+doom-themes には、わんさかとtheme ファイルがパックされています。自分は、doom-dracula を愛用しています。
+(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
 (leaf cycle-custom-theme :doc &amp;#34;https://bre.is/5tE2BvUp&amp;#34; :config (setq my:themes (list &amp;#39;doom-dracula &amp;#39;iceberg &amp;#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () &amp;#34;Switch themes to cycle.&amp;#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message &amp;#34;%s&amp;#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc &amp;#34;modified version for myself&amp;#34; :el-get minorugh/iceberg-theme) (add-to-list &amp;#39;custom-theme-load-path &amp;#34;~/.</description>
     </item>
     
