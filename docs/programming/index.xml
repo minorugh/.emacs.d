@@ -22,9 +22,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
-      <description>Gistインターフェイス gist.el は、なにげに使いづらく、ローカルで管理する必要も感じないので簡単な関数を作りました。
-Emacsから使うためには、gist をinstallしておく必要があります。
-$ sudo apt install gist gist -o とするとポスト後の結果の URLをブラウザで開いてくれるので便利です。
+      <description>Gistインターフェイス gist.el も便利ですが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
+gist をinstallしておく必要があります。
+$ sudo apt install gist ターミナルで gist --help と打つと沢山の起動オプションが表示される。
+gist -o でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。
 (leaf *gist-configurations :bind (&amp;#34;s-g&amp;#34; . gist-region-or-buffer) :init (defun gist-description () &amp;#34;Add gist description.&amp;#34; (code-quote-argument (read-from-minibuffer &amp;#34;Add gist description: &amp;#34;))) (defun gist-filename () &amp;#34;The character string entered in minibuffer is used as file-name. If enter is pressed without file-name, that&amp;#39;s will be buffer-file-neme.&amp;#34; (interactive) (let ((file (file-name-nondirectory (buffer-file-name (current-buffer))))) (read-from-minibuffer (format &amp;#34;File name (%s): &amp;#34; file) file))) (defun gist-region-or-buffer () &amp;#34;If region is selected, post from the region.</description>
     </item>
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T15:58:36 JST">
+<meta name="revised" content="2022-08-26T16:06:35 JST">
 <title>10.2. gist interface :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -839,10 +839,11 @@
     
     
 <h3 id="gistインターフェイス">Gistインターフェイス</h3>
-<p><a href="https://github.com/defunkt/gist.el"><code>gist.el</code></a> は、なにげに使いづらく、ローカルで管理する必要も感じないので簡単な関数を作りました。</p>
-<p>Emacsから使うためには、<code>gist</code> をinstallしておく必要があります。</p>
+<p><a href="https://github.com/defunkt/gist.el"><code>gist.el</code></a> も便利ですが、そもそもローカルで管理する必要がないから <code>Gist</code>を使うのだと思うので <code>post</code> 専用の簡単な関数を作りました。</p>
+<p><code>gist</code> をinstallしておく必要があります。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install gist
-</code></pre><p><code>gist -o</code> とするとポスト後の結果の URLをブラウザで開いてくれるので便利です。</p>
+</code></pre><p>ターミナルで <code>gist --help</code> と打つと沢山の起動オプションが表示される。</p>
+<p><code>gist -o</code> でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*gist-configurations</span>
   <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;s-g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gist-region-or-buffer</span>)
   <span style="color:#a90d91">:init</span>

@@ -4,14 +4,16 @@ draft = false
 +++
 
 ### Gistインターフェイス
-[`gist.el`](https://github.com/defunkt/gist.el) は、なにげに使いづらく、ローカルで管理する必要も感じないので簡単な関数を作りました。
+[`gist.el`](https://github.com/defunkt/gist.el) も便利ですが、そもそもローカルで管理する必要がないから `Gist`を使うのだと思うので `post` 専用の簡単な関数を作りました。
 
-Emacsから使うためには、`gist` をinstallしておく必要があります。
+`gist` をinstallしておく必要があります。
 
 ```shellsession 
 $ sudo apt install gist
 ```
-`gist -o` とするとポスト後の結果の URLをブラウザで開いてくれるので便利です。
+ターミナルで `gist --help` と打つと沢山の起動オプションが表示される。
+
+`gist -o` でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。
 
 ```elisp
 (leaf *gist-configurations
