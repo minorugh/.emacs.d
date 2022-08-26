@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T17:30:37 JST">
+<meta name="revised" content="2022-08-26T17:51:15 JST">
 <title>10.5. magit :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -817,6 +817,8 @@
     <li>
       <ul>
         <li><a href="#magitel-gitクライアント">[magit.el] Gitクライアント</a></li>
+        <li><a href="#git-timemachineel">[git-timemachine.el]</a></li>
+        <li><a href="#browse-at-remoteel">[browse-at-remote.el]</a></li>
       </ul>
     </li>
   </ul>
@@ -858,7 +860,24 @@
   (<span style="color:#000">leaf</span> <span style="color:#000">browse-at-remote</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
 	<span style="color:#a90d91">:custom</span> (<span style="color:#000">browse-at-remote-prefer-symbolic</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)))
 (<span style="color:#a90d91">setq</span> <span style="color:#000">magit-display-buffer-function</span> <span style="color:#000">#&#39;</span><span style="color:#000">magit-display-buffer-fullframe-status-v1</span>)
-</code></pre></div>
+</code></pre></div><h3 id="git-timemachineel">[git-timemachine.el]</h3>
+<p>🔗 <a href="https://github.com/emacsmirror/git-timemachine">emacsmirror/git-timemachine: Walk through git revisions of a file.</a></p>
+<p>次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。</p>
+<ul>
+<li><code>p</code> 以前の履歴バージョンにアクセスする</li>
+<li><code>n</code> 次の履歴バージョンにアクセス</li>
+<li><code>w</code> 現在の履歴バージョンの省略されたハッシュをコピーします</li>
+<li><code>W</code> 現在の履歴バージョンの完全なハッシュをコピーします</li>
+<li><code>g</code> n 番目のリビジョンに移動</li>
+<li><code>t</code> 選択したコミットメッセージでリビジョンに移動</li>
+<li><code>q</code> タイムマシンを終了します。</li>
+<li><code>b</code> 現在アクセスしているリビジョンで実行magit-blameします (magit が利用可能な場合)。</li>
+<li><code>c</code> magit を使用して現在のコミットを表示します (magit が利用可能な場合)。</li>
+</ul>
+<h3 id="browse-at-remoteel">[browse-at-remote.el]</h3>
+<p>🔗 <a href="https://github.com/rmuslimov/browse-at-remote">rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers</a></p>
+<p><code>browse-at-remote.el</code> は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</p>
+
 
     
     

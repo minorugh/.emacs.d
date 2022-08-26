@@ -26,3 +26,23 @@ draft = false
 	:custom (browse-at-remote-prefer-symbolic . nil)))
 (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 ```
+
+### [git-timemachine.el]
+🔗 [emacsmirror/git-timemachine: Walk through git revisions of a file.](https://github.com/emacsmirror/git-timemachine) 
+
+次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
+* `p` 以前の履歴バージョンにアクセスする
+* `n` 次の履歴バージョンにアクセス
+* `w` 現在の履歴バージョンの省略されたハッシュをコピーします
+* `W` 現在の履歴バージョンの完全なハッシュをコピーします
+* `g` n 番目のリビジョンに移動
+* `t` 選択したコミットメッセージでリビジョンに移動
+* `q` タイムマシンを終了します。
+* `b` 現在アクセスしているリビジョンで実行magit-blameします (magit が利用可能な場合)。
+* `c` magit を使用して現在のコミットを表示します (magit が利用可能な場合)。
+
+### [browse-at-remote.el]
+🔗 [rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers](https://github.com/rmuslimov/browse-at-remote) 
+
+`browse-at-remote.el` は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。
+
