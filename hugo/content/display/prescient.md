@@ -9,8 +9,8 @@ draft = false
 
 `ivy-prescient.el` や `company-prescient.el` などの拡張パッケージは、さまざまなフレームワークで使用できるようにライブラリを適合させます。
 
-コマンド履歴を保存していて、コマンドのイニシャル入力も可能にします。例えば `counsel-M-x` で `cc` と入力すると `company-compile` が真っ先にヒットします。
-
+コマンド履歴を保存していて、コマンドのイニシャル入力も可能にします。例えば `counsel-M-x` で `cc` と入力すると `company-compile` が真っ先にヒットします。これなしではやっていけない体質になりました。
+ 
 ```elisp
 (leaf prescient
   :ensure t
