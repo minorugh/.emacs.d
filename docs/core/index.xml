@@ -40,7 +40,7 @@ $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインスト�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/server/</guid>
-      <description>クライアントサーバー emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。
+      <description>クライアントサーバー コマンドラインから emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。
 ;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) </description>
     </item>
     

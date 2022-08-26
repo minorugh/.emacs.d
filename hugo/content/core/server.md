@@ -4,7 +4,7 @@ draft = false
 +++
 ### クライアントサーバー
 
-`emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
+コマンドラインから `emacsclient` をよく使うので、Emacs起動時にビルトインの `server` を起動させています。
 
 ```elisp
 ;; Server start for emacs-client
