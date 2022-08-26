@@ -3,7 +3,7 @@ title = "4.1. font setting"
 draft = false
 +++
 ### フォントの設定
-メイン機: Thinkpad E590 とサブ機: Thinkpad X250 とでそれぞれに適した値を決めています。
+メイン機: Thinkpad E590 とサブ機: X250 とでそれぞれに適した値を設定することで設定ファイルを共有しています。
 
 ```elisp
 (add-to-list 'default-frame-alist '(font . "Cica-18"))

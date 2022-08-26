@@ -382,7 +382,7 @@ expand-region.elは、カーソル位置を起点として選択範囲を広げ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/font/</guid>
-      <description>フォントの設定 メイン機: Thinkpad E590 とサブ機: Thinkpad X250 とでそれぞれに適した値を決めています。
+      <description>フォントの設定 メイン機: Thinkpad E590 とサブ機: X250 とでそれぞれに適した値を設定することで設定ファイルを共有しています。
 (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) Cicaフォントとは Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、日本語の等幅フォントです。
  プログラミング用日本語等幅フォント Cica  フォントのインストール Linux 環境でのインストールの方法です。
 オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れます。
