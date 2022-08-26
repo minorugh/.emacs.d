@@ -7,7 +7,7 @@ Debianでの日本語入力環境構築が完了していることが前提で�
 
 
 ### Mozcサーバーをインストール
-EmacsからMozcを使えるようにするには、まず `mozc_emacs_helper` をインストールする必要があります。
+EmacsからMozcを使えるようにするには、`mozc_emacs_helper` をインストールする必要があります。
 OSによって手法が異なりますが、Linuxの場合は簡単です。
 
 ```shellsession
