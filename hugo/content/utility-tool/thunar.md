@@ -4,7 +4,8 @@ draft = false
 +++
 ### Thunarを Emacsから呼び出す
 
-Emacsで開いている`buffer` の`current-dir` で `Debian` の `Thuner` を開くというものです。
+Emacsで開いている `buffer` の`current-dir` で `Debian` の `Thuner` を開きます。
+
 使う機会は少ないと思いますが...
 
 ```elisp

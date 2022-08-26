@@ -228,14 +228,14 @@
 	"title": "12.4. open terminal",
 	"tags": [],
 	"description": "",
-	"content": "nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
+	"content": "nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させます。\nこちらを使うようになってからはeshell を使う機会が減りました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/thunar/",
 	"title": "12.5. open thunar",
 	"tags": [],
 	"description": "",
-	"content": "Thunarを Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026#34;Open filer in current dir.\u0026#34; (interactive) (compile (concat \u0026#34;Thunar \u0026#34; default-directory))) (bind-key \u0026#34;\u0026lt;f3\u0026gt;\u0026#34; \u0026#39;filer-current-dir-open) "
+	"content": "Thunarを Emacsから呼び出す Emacsで開いている buffer のcurrent-dir で Debian の Thuner を開きます。\n使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026#34;Open filer in current dir.\u0026#34; (interactive) (compile (concat \u0026#34;Thunar \u0026#34; default-directory))) (bind-key \u0026#34;\u0026lt;f3\u0026gt;\u0026#34; \u0026#39;filer-current-dir-open) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",

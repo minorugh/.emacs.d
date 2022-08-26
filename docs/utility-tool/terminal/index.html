@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T16:47:27 JST">
+<meta name="revised" content="2022-08-26T16:50:15 JST">
 <title>12.4. open terminal :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -839,8 +839,8 @@
     
     
 <h3 id="nome-terminal-を-emacsから呼び出す">nome-terminal を Emacsから呼び出す</h3>
-<p>Emacsで開いている<code>buffer</code> の<code>current-dir</code> で <code>gonome-terminal</code> を起動させるのでとても便利です。
-こちらを使うようになってからは<code>eelisp</code> を使わななりました。</p>
+<p>Emacsで開いている<code>buffer</code> の<code>current-dir</code> で <code>gonome-terminal</code> を起動させます。</p>
+<p>こちらを使うようになってからは<code>eshell</code> を使う機会が減りました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">term-current-dir-open</span> ()
   <span style="color:#c41a16">&#34;Open terminal application in current dir.&#34;</span>
   (<span style="color:#a90d91">interactive</span>)

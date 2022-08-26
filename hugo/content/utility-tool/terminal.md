@@ -3,8 +3,9 @@ title = "12.4. open terminal"
 draft = false
 +++
 ### nome-terminal を Emacsから呼び出す
-Emacsで開いている`buffer` の`current-dir` で `gonome-terminal` を起動させるのでとても便利です。
-こちらを使うようになってからは`eelisp` を使わななりました。
+Emacsで開いている`buffer` の`current-dir` で `gonome-terminal` を起動させます。
+
+こちらを使うようになってからは`eshell` を使う機会が減りました。
 
 ```elisp
 (defun term-current-dir-open ()
