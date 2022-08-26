@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T06:07:34 JST">
+<meta name="revised" content="2022-08-27T06:21:37 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -885,7 +885,7 @@
 <h3 id="パッケージの初期化を抑制する">パッケージの初期化を抑制する</h3>
 <p>Emacs27では、<code>package-initialize</code> が 2回実行されます。
 1回は、初期化ファイルの評価中に、もう 1回は、初期化ファイルの読み取りを終了した後にです。</p>
-<p>1回目を抑制するために以下を <code>eary-init.el</code> に記述することで初期化が少し早くなります。</p>
+<p>1回目の実行を抑制するために以下を <code>eary-init.el</code> に記述することで初期化が少し早くなります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; For slightly faster startup</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">package-enable-at-startup</span> <span style="color:#000">nil</span>)
 </code></pre></div><h3 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h3>
