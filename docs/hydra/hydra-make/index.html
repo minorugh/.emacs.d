@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T14:46:47 JST">
+<meta name="revised" content="2022-08-26T14:50:08 JST">
 <title>8.2. hydra-make :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -892,9 +892,9 @@
 </ul>
 <p><code>compile</code> 実行環境として以下を設定しています。</p>
 <ul>
-<li><code>*Compile*</code> バッファーを自動スクロールさせる</li>
+<li><code>*compilation*</code> バッファーを自動スクロールさせる</li>
 <li>正常終了したら確認なしで自動的にコンパイル実行をkillする</li>
-<li><code>*Compiltion*</code> バッファーを自動で閉じる</li>
+<li>終了した <code>*compilation*</code> バッファーを自動で閉じる</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-scroll-output</span> <span style="color:#000">t</span>)
 (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-always-kill</span> <span style="color:#000">t</span>)

@@ -65,9 +65,9 @@ git:
 
 `compile` 実行環境として以下を設定しています。
 
-* `*Compile*` バッファーを自動スクロールさせる
+* `*compilation*` バッファーを自動スクロールさせる
 * 正常終了したら確認なしで自動的にコンパイル実行をkillする
-* `*Compiltion*` バッファーを自動で閉じる
+* 終了した `*compilation*` バッファーを自動で閉じる
 
 ```elisp
 (setq compilation-scroll-output t)
