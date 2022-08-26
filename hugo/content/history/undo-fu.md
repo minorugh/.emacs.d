@@ -1,5 +1,5 @@
 +++
-title = "9.2. undo-fua"
+title = "9.2. undo-fu"
 draft = false
 +++
 ### 8.3. [undo-fu.el] シンプルな undo/redo を提供

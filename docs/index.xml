@@ -923,7 +923,7 @@ Trampでファイル編集するときに固まることがあるので除外設
     </item>
     
     <item>
-      <title>9.2. undo-fua</title>
+      <title>9.2. undo-fu</title>
       <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
