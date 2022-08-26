@@ -5,8 +5,8 @@ draft = false
 ### [rainbow-delimiters.el] 対応するカッコに色を付ける
 🔗 [yanyingwang/rainbow-delimiters: Highlights delimiters such as parentheses.](https://github.com/Fanael/rainbow-delimiters) 
 
-複数のカッコが重なる言語では、カッコの対応関係がひと目で理解し難い場合があります。
-`rainbow-delimiters` を使うと対応するカッコを七色に色付けして見やすくできます。
+複数の括弧が重なる言語では、括弧の対応関係がひと目で理解し難い場合があります。
+`rainbow-delimiters.el` を使うと対応するカッコを七色に色付けして見やすくできます。
 
 ```elisp
 (leaf rainbow-delimiters
