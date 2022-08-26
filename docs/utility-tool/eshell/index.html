@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-26T21:31:40 JST">
-<title>4.1. font setting :: minoru&#39;s Emacs Configuration</title>
+<title>12.8. eshell :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/higlight/font/">
+  <body data-url="/.emacs.d/utility-tool/eshell/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -800,7 +800,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/higlight/font.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/utility-tool/eshell.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -820,7 +820,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/higlight/'>フォント / 配色関連</a> > 4.1. font setting
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.8. eshell
 
  
 
@@ -837,9 +837,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#フォントの設定">フォントの設定</a></li>
-        <li><a href="#cicaフォントとは">Cicaフォントとは</a></li>
-        <li><a href="#フォントのインストール">フォントのインストール</a></li>
+        <li><a href="#eshell-を使う">eshell を使う</a></li>
       </ul>
     </li>
   </ul>
@@ -853,7 +851,7 @@
 
 <div id="body-inner">
   
-    <h1>4.1. font setting</h1>
+    <h1>12.8. eshell</h1>
   
 
 
@@ -861,30 +859,45 @@
     
     
     
-<h3 id="フォントの設定">フォントの設定</h3>
-<p>メイン機: Thinkpad E590 とサブ機: X250 とでそれぞれに適した値を設定することで設定ファイルを共有しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-18&#34;</span>))
-<span style="color:#177500">;; for sub-machine</span>
-(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;x250&#34;</span> (<span style="color:#000">code-command-to-string</span> <span style="color:#c41a16">&#34;uname -n&#34;</span>))
-  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-15&#34;</span>)))
-</code></pre></div><h3 id="cicaフォントとは">Cicaフォントとは</h3>
-<p>Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、プログラミング用日本語等幅フォントです。</p>
-<ul>
-<li><a href="https://github.com/miiton/Cica">日本語等幅フォント Cica</a></li>
-</ul>
-<p><a href="https://github.com/miiton/Cica/releases/tag/v5.0.3">オフィシャルページ</a>にある最新の <code>Cica v5.03</code> は、
-<code>page-break-lines</code> で表示が乱れるようです。</p>
-<h3 id="フォントのインストール">フォントのインストール</h3>
-<p>Linux 環境でのインストールの方法です。</p>
-<ol>
-<li><a href="https://github.com/SSW-SCIENTIFIC/Cica/releases">ダウンロードページ</a>から、
-<a href="https://github.com/SSW-SCIENTIFIC/Cica/releases/download/v5.0.1-no-glyph-mod/Cica-v5.0.1.zip">Cica-v5.0.1.zip</a> をダウンロードします。</li>
-<li>zipファイルを展開します。</li>
-<li>解凍したファイルを <code>~/.fonts/</code> にコピーします。</li>
-</ol>
-<pre><code class="language-codesession" data-lang="codesession">$ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/
-$ sudo fc-cache -vf
-</code></pre>
+<h3 id="eshell-を使う">eshell を使う</h3>
+<p><code>eshell</code> はEmacs上で使えるビルトインのターミナルエミュレータートです。</p>
+<p>現在のバッファのディレクトリをカレントとしてeshell を起動するようにしています。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">eshell</span>
+  <span style="color:#a90d91">:after</span> <span style="color:#000">popwin</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;s-z&#34;</span> <span style="color:#000">.</span> <span style="color:#000">eshell</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">eshell-directory-name</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/eshell&#34;</span>)
+			(<span style="color:#000">eshell-cmpl-ignore-case</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">eshell-ask-to-save-history</span> <span style="color:#000">.</span> (<span style="color:#a90d91">quote</span> <span style="color:#000">always</span>))
+			(<span style="color:#000">eshell-cmpl-cycle-completions</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">eshell-cmpl-cycle-cutoff-length</span> <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)
+			(<span style="color:#000">eshell-history-file-name</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/Dropbox/backup/zsh/.zsh_history&#34;</span>)
+			(<span style="color:#000">eshell-hist-ignoredups</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">eshell-prompt-function</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;my:eshell-prompt</span>)
+			(<span style="color:#000">eshell-prompt-regexp</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;^[^#$]*[$#] &#34;</span>))
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">eshell-command-aliases-list</span>
+		(<span style="color:#000">append</span>
+		 (<span style="color:#000">list</span>
+		  (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;cl&#34;</span> <span style="color:#c41a16">&#34;clear eshell&#34;</span>)
+		  (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;ll&#34;</span> <span style="color:#c41a16">&#34;ls -ltr&#34;</span>)
+		  (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;la&#34;</span> <span style="color:#c41a16">&#34;ls -a&#34;</span>)
+		  (<span style="color:#000">list</span> <span style="color:#c41a16">&#34;ex&#34;</span> <span style="color:#c41a16">&#34;exit&#34;</span>))))
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;*eshell*&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">0.6</span>) <span style="color:#000">popwin:special-display-config</span>)
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:eshell-prompt</span> ()
+	<span style="color:#c41a16">&#34;Prompt change string.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">concat</span>
+	 (<span style="color:#000">eshell/pwd</span>)
+	 (<span style="color:#a90d91">if</span> (<span style="color:#000">=</span> (<span style="color:#000">user-uid</span>) <span style="color:#1c01ce">0</span>) <span style="color:#c41a16">&#34;\n# &#34;</span> <span style="color:#c41a16">&#34;\n$ &#34;</span>)))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">eshell-on-current-buffer</span> ()
+	<span style="color:#c41a16">&#34;Set the eshell directory to the current buffer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">path</span> (<span style="color:#000">file-name-directory</span> (<span style="color:#a90d91">or</span>  (<span style="color:#000">buffer-file-name</span>) <span style="color:#000">default-directory</span>))))
+	  (<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*eshell*&#34;</span>
+		(<span style="color:#000">cd</span> <span style="color:#000">path</span>)
+		(<span style="color:#000">eshell-emit-prompt</span>)))))
+</code></pre></div>
 
     
     
@@ -895,8 +908,8 @@ $ sudo fc-cache -vf
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/higlight/" title="フォント / 配色関連"> <i class="fa fa-chevron-left"></i><label>フォント / 配色関連</label></a>
-    <a class="nav nav-next" href="/.emacs.d/higlight/hl-line/" title="4.2. hl-line" style="margin-right: 0px;"><label>4.2. hl-line</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/utility-tool/sudo-edit/" title="12.7. sudo-edit"> <i class="fa fa-chevron-left"></i><label>12.7. sudo-edit</label></a>
+    <a class="nav nav-next" href="/.emacs.d/utility-tool/auto-delete/" title="12.1. auto-delete" style="margin-right: 0px;"><label>12.1. auto-delete</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

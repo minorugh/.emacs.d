@@ -147,6 +147,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/core/encode/</loc>
   </url>
   

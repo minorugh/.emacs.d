@@ -81,7 +81,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定 restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す  "
+	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定 restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs上から使えるターミナルエミュレータ  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
@@ -250,6 +250,13 @@
 	"tags": [],
 	"description": "",
 	"content": "[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.\nsudo-edit.elは、現在アクセスしているファイルをsudoユーザーとして開きなおします。\n(leaf sudo-edit :ensure t :bind (\u0026#34;C-c s\u0026#34; . sudo-edit)) sudo-edit-find-file というコマンドもあるようなのでお好みで…\n"
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/eshell/",
+	"title": "12.8. eshell",
+	"tags": [],
+	"description": "",
+	"content": "eshell を使う eshell はEmacs上で使えるビルトインのターミナルエミュレータートです。\n現在のバッファのディレクトリをカレントとしてeshell を起動するようにしています。\n(leaf eshell :after popwin :bind (\u0026#34;s-z\u0026#34; . eshell) :custom `((eshell-directory-name . ,\u0026#34;~/.emacs.d/tmp/eshell\u0026#34;) (eshell-cmpl-ignore-case . t) (eshell-ask-to-save-history . (quote always)) (eshell-cmpl-cycle-completions . t) (eshell-cmpl-cycle-cutoff-length . 5) (eshell-history-file-name . ,\u0026#34;~/Dropbox/backup/zsh/.zsh_history\u0026#34;) (eshell-hist-ignoredups . t) (eshell-prompt-function . \u0026#39;my:eshell-prompt) (eshell-prompt-regexp . \u0026#34;^[^#$]*[$#] \u0026#34;)) :config (setq eshell-command-aliases-list (append (list (list \u0026#34;cl\u0026#34; \u0026#34;clear eshell\u0026#34;) (list \u0026#34;ll\u0026#34; \u0026#34;ls -ltr\u0026#34;) (list \u0026#34;la\u0026#34; \u0026#34;ls -a\u0026#34;) (list \u0026#34;ex\u0026#34; \u0026#34;exit\u0026#34;)))) :init (push \u0026#39;(\u0026#34;*eshell*\u0026#34; :height 0.6) popwin:special-display-config) (defun my:eshell-prompt () \u0026#34;Prompt change string.\u0026#34; (interactive) (concat (eshell/pwd) (if (= (user-uid) 0) \u0026#34;\\n# \u0026#34; \u0026#34;\\n$ \u0026#34;))) (defun eshell-on-current-buffer () \u0026#34;Set the eshell directory to the current buffer.\u0026#34; (interactive) (let ((path (file-name-directory (or (buffer-file-name) default-directory)))) (with-current-buffer \u0026#34;*eshell*\u0026#34; (cd path) (eshell-emit-prompt))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",

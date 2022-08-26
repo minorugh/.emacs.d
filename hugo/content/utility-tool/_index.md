@@ -33,3 +33,6 @@ disableToc = true
 [sudo-edit]({{< relref "sudo-edit" >}})
 : Root権限でファイルを開き直す
 
+[eshell]({{< relref "eshell" >}})
+: Emacs上から使えるターミナルエミュレータ
+

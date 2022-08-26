@@ -292,6 +292,17 @@ sudo-edit.elは、現在アクセスしているファイルをsudoユーザー�
     </item>
     
     <item>
+      <title>12.8. eshell</title>
+      <link>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</guid>
+      <description>eshell を使う eshell はEmacs上で使えるビルトインのターミナルエミュレータートです。
+現在のバッファのディレクトリをカレントとしてeshell を起動するようにしています。
+(leaf eshell :after popwin :bind (&amp;#34;s-z&amp;#34; . eshell) :custom `((eshell-directory-name . ,&amp;#34;~/.emacs.d/tmp/eshell&amp;#34;) (eshell-cmpl-ignore-case . t) (eshell-ask-to-save-history . (quote always)) (eshell-cmpl-cycle-completions . t) (eshell-cmpl-cycle-cutoff-length . 5) (eshell-history-file-name . ,&amp;#34;~/Dropbox/backup/zsh/.zsh_history&amp;#34;) (eshell-hist-ignoredups . t) (eshell-prompt-function . &amp;#39;my:eshell-prompt) (eshell-prompt-regexp . &amp;#34;^[^#$]*[$#] &amp;#34;)) :config (setq eshell-command-aliases-list (append (list (list &amp;#34;cl&amp;#34; &amp;#34;clear eshell&amp;#34;) (list &amp;#34;ll&amp;#34; &amp;#34;ls -ltr&amp;#34;) (list &amp;#34;la&amp;#34; &amp;#34;ls -a&amp;#34;) (list &amp;#34;ex&amp;#34; &amp;#34;exit&amp;#34;)))) :init (push &amp;#39;(&amp;#34;*eshell*&amp;#34; :height 0.6) popwin:special-display-config) (defun my:eshell-prompt () &amp;#34;Prompt change string.</description>
+    </item>
+    
+    <item>
       <title>2.1. language / coding</title>
       <link>https://minorugh.github.io/.emacs.d/core/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
