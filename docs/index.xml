@@ -736,9 +736,8 @@ HTMLの内容を確認したり部分的に変更したり&amp;hellip;という�
 Emacsの上で動作する LaTeX の入力支援環境です。
 ごく一般的な設定例ですが、参考になるとしたら dviprint-command-format に dvpd.sh というスクリプトを設定して、YateX.lpr コマンドでPDF作成 → プレビューまでの手順を一気に出来るように自動化している点でしょうか。
 (leaf yatex :ensure t :mode (&amp;#34;\\.tex\\&amp;#39;&amp;#34; &amp;#34;\\.sty\\&amp;#39;&amp;#34; &amp;#34;\\.cls\\&amp;#39;&amp;#34;) :custom `((tex-command . &amp;#34;platex&amp;#34;) (dviprint-command-format . &amp;#34;dvpd.sh %s&amp;#34;) (YaTeX-kanji-code . nil) (YaTeX-latex-message-code . &amp;#39;utf-8) (YaTeX-default-pop-window-height . 15)) :config (leaf yatexprc :bind ((&amp;#34;M-c&amp;#34; . YaTeX-typeset-buffer) (&amp;#34;M-v&amp;#34; . YaTeX-lpr)))) YaTeX-lpr は、dviprint-command-format を呼び出すコマンドです。
-dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、chmod +x dvpd.sh  として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。
-[dvpd.sh]
-#!/bin/sh name=$1 dvipdfmx $1 &amp;amp;&amp;amp; evince ${name%.</description>
+dvipdfmx で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイル dvpd.sh に書き、
+$ chmod +x dvpd.sh として実行権限を付与してからPATHの通ったところに置きます。私は、/usr/loca/bin に置きました。</description>
     </item>
     
     <item>

@@ -27,9 +27,12 @@ Emacsの上で動作する LaTeX の入力支援環境です。
 ```
 `YaTeX-lpr` は、`dviprint-command-format` を呼び出すコマンドです。
 
-`dvipdfmx` で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、`chmod +x dvpd.sh ` として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
+`dvipdfmx` で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイル `dvpd.sh` に書き、
+```shellsession
+$ chmod +x dvpd.sh
+```
+として実行権限を付与してからPATHの通ったところに置きます。私は、`/usr/loca/bin` に置きました。
 
-[dvpd.sh]
 ```shellsession
 #!/bin/sh
 name=$1
@@ -37,7 +40,7 @@ dvipdfmx $1 && evince ${name%.*}.pdf
 # Delete unnecessary files
 rm *.au* *.dv* *.lo*
 ```
-上記の例では、ビューアーに Linux の evince を設定していますが、Mac の場合は、下記のようになるかと思います。
+上記の例では、ビューアーに Linuxの `evince` を設定していますが、Macの場合は、下記のようになるかと思います。
 
 ```shellsession
 dvipdfmx $1 && open -a Preview.app ${name%.*}.pdf

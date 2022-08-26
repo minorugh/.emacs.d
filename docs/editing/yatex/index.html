@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T11:21:18 JST">
+<meta name="revised" content="2022-08-26T11:27:59 JST">
 <title>7.4. yatex :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -856,14 +856,15 @@
 	<span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;M-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">YaTeX-typeset-buffer</span>)
 		   (<span style="color:#c41a16">&#34;M-v&#34;</span> <span style="color:#000">.</span> <span style="color:#000">YaTeX-lpr</span>))))
 </code></pre></div><p><code>YaTeX-lpr</code> は、<code>dviprint-command-format</code> を呼び出すコマンドです。</p>
-<p><code>dvipdfmx</code> で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイルに書き、<code>chmod +x dvpd.sh </code> として実行権限を付与してからPATHの通ったところに置きます。私は、<code>/usr/loca/bin</code> に置きました。</p>
-<p>[dvpd.sh]</p>
+<p><code>dvipdfmx</code> で PDF作成したあと、ビューアーを起動させて表示させるところまでをバッチファイル <code>dvpd.sh</code> に書き、</p>
+<pre><code class="language-shellsession" data-lang="shellsession">$ chmod +x dvpd.sh
+</code></pre><p>として実行権限を付与してからPATHの通ったところに置きます。私は、<code>/usr/loca/bin</code> に置きました。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">#!/bin/sh
 name=$1
 dvipdfmx $1 &amp;&amp; evince ${name%.*}.pdf
 # Delete unnecessary files
 rm *.au* *.dv* *.lo*
-</code></pre><p>上記の例では、ビューアーに Linux の evince を設定していますが、Mac の場合は、下記のようになるかと思います。</p>
+</code></pre><p>上記の例では、ビューアーに Linuxの <code>evince</code> を設定していますが、Macの場合は、下記のようになるかと思います。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">dvipdfmx $1 &amp;&amp; open -a Preview.app ${name%.*}.pdf
 </code></pre>
 
