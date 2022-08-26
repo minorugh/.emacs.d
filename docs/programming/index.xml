@@ -35,7 +35,7 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
-      <description>[flymake] 構文エラー表示 Emacs26以降は、標準添付の flymake が使いやすくなったので、flycheck から移行しました。
+      <description>[flymake] 構文エラー表示 標準添付の flymake が軽くて使いやすくなったので、flycheck から移行しました。
 (leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook &amp;#39;flymake-diagnostic-functions &amp;#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . &amp;#34; &amp;#34;))) </description>
     </item>
     

@@ -2,9 +2,8 @@
 title = "10.3. flymake"
 draft = false
 +++
-
 ### [flymake] 構文エラー表示
-Emacs26以降は、標準添付の `flymake` が使いやすくなったので、`flycheck` から移行しました。
+標準添付の `flymake` が軽くて使いやすくなったので、`flycheck` から移行しました。
 
 ```elisp
 (leaf flymake

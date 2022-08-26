@@ -144,7 +144,7 @@
 	"title": "10.3. flymake",
 	"tags": [],
 	"description": "",
-	"content": "[flymake] 構文エラー表示 Emacs26以降は、標準添付の flymake が使いやすくなったので、flycheck から移行しました。\n(leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook \u0026#39;flymake-diagnostic-functions \u0026#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . \u0026#34; \u0026#34;))) "
+	"content": "[flymake] 構文エラー表示 標準添付の flymake が軽くて使いやすくなったので、flycheck から移行しました。\n(leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook \u0026#39;flymake-diagnostic-functions \u0026#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . \u0026#34; \u0026#34;))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/quickrun/",
