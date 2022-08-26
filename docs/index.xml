@@ -803,7 +803,7 @@ counsel.el をインストールすれば、ivy.el も swiper.el も一緒にイ
       
       <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
       <description>[imenu-list.el] サイドバー的にファイル内容の目次要素を表示 🔗 bmag/imenu-list: Emacs plugin to show the current buffer&amp;rsquo;s imenu entries in a separate buffer.
-imenu-list は、imenu の各エントリを *Ilist* バッファで一覧します。 このバッファでRETを押すと関数定義に移動します。
+imenu-list は、imenu の各エントリを *Ilist* バッファで一覧します。 このバッファの当該エントリーでRETを押すと関数定義に移動します。
 *Ilist* 上のエントリーをカーソルで選ぶと自動的に当該関数へジャンプしてくれるともっと嬉しいけれど、ビギナーな私は他力を待つしかない。
 (leaf imenu-list :ensure t :bind (&amp;#34;&amp;lt;f2&amp;gt;&amp;#34; . imenu-list-smart-toggle) :custom `((imenu-list-size . 30) (imenu-list-position . &amp;#39;left) (imenu-list-focus-after-activation . t))) </description>
     </item>
