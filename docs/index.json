@@ -242,7 +242,7 @@
 	"title": "12.6. restart-emacs",
 	"tags": [],
 	"description": "",
-	"content": "[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.\nrestart-emacs は、Emacsを再起動させるコマンドです。\nC-u の数によって再起動の方法を制御できます。\n M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs \u0026ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) "
+	"content": "[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.\nrestart-emacs は、Emacsを再起動させるコマンドです。\nC-u の数で再起動の方法を制御できます。\n M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs \u0026ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/",

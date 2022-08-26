@@ -7,7 +7,7 @@ draft = false
 
 `restart-emacs` は、Emacsを再起動させるコマンドです。
 
-`C-u` の数によって再起動の方法を制御できます。
+`C-u` の数で再起動の方法を制御できます。
 
 `M-x restart-emacs`
 : 通常のEmacsを立ち上げる
