@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T13:22:49 JST">
+<meta name="revised" content="2022-08-26T13:33:30 JST">
 <title>8.2. hydra-make :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -816,7 +816,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#hydra-make">[hydra-make]</a></li>
+        <li><a href="#hydra-make">hydra-make</a></li>
         <li><a href="#make-command-functions">make command functions</a></li>
       </ul>
     </li>
@@ -839,7 +839,14 @@
     
     
     
-<h3 id="hydra-make">[hydra-make]</h3>
+<h3 id="hydra-make">hydra-make</h3>
+<p>🔗 <a href="http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/nmake.html">自動化のための nmake 入門講座: 石井勝</a></p>
+<p>上記記事を読んで自分革命がありました。</p>
+<ol>
+<li>同じことは2度しない（Once and Only Once）</li>
+<li>必ずしなければならない作業 → 自動化できないか考える</li>
+</ol>
+<p>…ということで、私は多くの日常ワークを <code>make</code> で自動化しています。必要に応じでそれを選択するために <code>hydra</code> でメニューを作っています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span style="color:#177500">;; Make command configurations</span>
 <span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
@@ -873,6 +880,7 @@
 		   (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
 		  (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>)))))
 </code></pre></div><h3 id="make-command-functions">make command functions</h3>
+<p>適宜必要な <code>make</code> コマンドを定義しています。以下は一例です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
 <span style="color:#177500">;; My make command functions</span>
 <span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
