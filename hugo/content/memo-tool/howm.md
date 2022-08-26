@@ -1,5 +1,5 @@
 +++
-title = "11.1. howm-modo"
+title = "11.1. howm"
 draft = false
 +++
 

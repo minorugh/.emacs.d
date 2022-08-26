@@ -1,5 +1,5 @@
 +++
-title = "11.2. org-modo"
+title = "11.2. org"
 draft = false
 +++
 ### [org-mode] ごくシンプルに使う設定 
