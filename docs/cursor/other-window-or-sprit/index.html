@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T10:39:15 JST">
+<meta name="revised" content="2022-08-26T10:40:37 JST">
 <title>3.2. other-window-or-split :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -839,7 +839,7 @@
     
     
 <h3 id="画面分割時のカーソルの移動">画面分割時のカーソルの移動</h3>
-<p><code>other-window-or-split</code> は、画面分割コマンド <code>C-x 3</code> を拡張するもので、状況判断して画面移動の <code>C-c o</code> にもなります。</p>
+<p><code>other-window-or-split</code> は、画面分割コマンド <code>C-x 3</code> を拡張するもので、状況判断して画面移動の <code>C-x o</code> にもなります。</p>
 <p>画面分割されていないときは、左右分割に加えて <code>follow-mode</code> <code>dimmer-mode</code> を <code>ON</code> にしています。（詳細後述）</p>
 <p>画面分割と移動とを賢く判断してくれるので便利です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">other-window-or-split</span> ()
