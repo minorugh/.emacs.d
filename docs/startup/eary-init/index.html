@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T09:17:47 JST">
+<meta name="revised" content="2022-08-26T09:18:23 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -869,7 +869,7 @@
 (<span style="color:#a90d91">setq</span> <span style="color:#000">frame-inhibit-implied-resize</span> <span style="color:#000">t</span>)
 </code></pre></div><h3 id="起動時画面最大化を設定">起動時画面最大化を設定</h3>
 <p>メニューバー、ツールバー、スクロールなどは、ここで無効にする方が速くなります。 (初期化される前)</p>
-<p>ここで最大化を宣言しておくことで <code>toggle-frame-fullscreen</code> での、[最大化&lt;&gt;フルスクリーン]を可能にします。</p>
+<p>ここで最大化を宣言しておくことで <code>toggle-frame-fullscreen</code> コマンドでの、[最大化&lt;&gt;フルスクリーン]を可能にします。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Faster to disable these here (before they&#39;ve been initialized)</span>
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">menu-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">tool-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
