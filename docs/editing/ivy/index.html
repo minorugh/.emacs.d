@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T08:30:41 JST">
+<meta name="revised" content="2022-08-27T08:35:07 JST">
 <title>6.6. ivy / counsel / swiper :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -900,7 +900,7 @@
 			(<span style="color:#000">ivy-format-functions-alist</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>((<span style="color:#000">t</span> <span style="color:#000">.</span> <span style="color:#000">my:ivy-format-function-arrow</span>)))))
 </code></pre></div><h3 id="現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</h3>
 <p><code>ivy-format-functions-alist</code> にカスタマイズした関数を追加すれば、プロンプトの下部に位置するカーソル行の表示を変更できます。
-<code>all-the-icons</code> を導入して好みのアイコンでカーソル行のある選択候補を目立たせましょう。</p>
+<code>all-the-icons</code> を導入して好みのアイコンでカーソル行の選択候補を目立たせましょう。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:ivy-format-function-arrow</span> (<span style="color:#000">cands</span>)
   <span style="color:#c41a16">&#34;Transform into a string for minibuffer with CANDS.&#34;</span>
   (<span style="color:#000">ivy--format-function-generic</span>

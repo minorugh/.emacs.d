@@ -38,7 +38,7 @@ draft = false
 
 ### 現在の選択候補をわかりやすくする
 `ivy-format-functions-alist` にカスタマイズした関数を追加すれば、プロンプトの下部に位置するカーソル行の表示を変更できます。
-`all-the-icons` を導入して好みのアイコンでカーソル行のある選択候補を目立たせましょう。
+`all-the-icons` を導入して好みのアイコンでカーソル行の選択候補を目立たせましょう。
 
 ```elisp
 (defun my:ivy-format-function-arrow (cands)
