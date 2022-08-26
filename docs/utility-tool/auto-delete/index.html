@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T22:50:45 JST">
+<meta name="revised" content="2022-08-26T22:51:50 JST">
 <title>12.1. auto-delete :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -879,8 +879,8 @@
     (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
 		  (<span style="color:#000">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
 </code></pre></div><h3 id="開いているバッファーを閉じて当該ファイルを削除する">開いているバッファーを閉じて当該ファイルを削除する</h3>
-<p>やや危険なのであまりおすすめできませんが…</p>
-<p>安全を期すために確認するようにはしてます。</p>
+<p>危険なのであまりお薦めできませんが…</p>
+<p>安全のために確認するようにしてます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-this-file</span> ()
 	<span style="color:#c41a16">&#34;Delete the current file, and kill the buffer.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)

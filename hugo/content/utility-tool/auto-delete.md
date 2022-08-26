@@ -18,9 +18,9 @@ draft = false
 ```
 
 ### 開いているバッファーを閉じて当該ファイルを削除する
-やや危険なのであまりおすすめできませんが…
+危険なのであまりお薦めできませんが…
 
-安全を期すために確認するようにはしてます。
+安全のために確認するようにしてます。
 ```elisp
 (defun my:delete-this-file ()
 	"Delete the current file, and kill the buffer."
