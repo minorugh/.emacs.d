@@ -80,10 +80,10 @@ Emacs*useXIM: false
 手順は簡単です。
 
 1. Dropboxに `~/Dropbox/mozc` フォルダを新規作成します。
-2. `~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピーします。
+2. つぎに `~/.mozc` フォルダーを `~/Dropboc/mozc/` へコピー。
 2. 最後に`~/.mozc` を削除してDropboxにコピーした `.mozc` のシンボリックを `~/` へ貼り付けます。
 
-`makefile` で表現するほうがわかりやすいかも…
+この手順は、`makefile` で表現するほうがわかりやすいかも…
 
 ```shellsession
 mozc_copy:
