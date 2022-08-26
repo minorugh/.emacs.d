@@ -4,7 +4,7 @@ draft = false
 +++
 `hydra-menu` は、いわば私の秘書のような役割です。
 
-便宜上,`quick-menu`と`work-menu` の二つに分けていますが、どちらからでも相互に呼び出せるようにしています。
+便宜上、`quick-menu`と`work-menu` に分けていますが、どちらからでも相互に呼び出せるようにしています。
 
 ### [hydra-quick-menu]
 [`hydra-quick-menu`](https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L5) 
