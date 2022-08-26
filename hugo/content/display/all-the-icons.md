@@ -7,21 +7,18 @@ draft = false
 
 `all-the-icons.el` を使うとバッファ内やモードライン、ミニバッファでアイコンを表示できるようになります。
 
-初めて使うときは、フォントがインストール促されますが、設定では自動化しています。
+初めて使うときは、フォントインストールを促されますが、設定では自動化しています。
 
 ```emacs-lisp
-(leaf display-line-numbers
-  :hook ((after-init-hook . global-display-line-numbers-mode)
-		 (lisp-interaction-mode-hook dired-mode-hook). my:disable-modes)
-  :bind ("<f9>" . display-line-numbers-mode)
-  :custom (display-line-numbers-width-start . t)
-  :init
-  (defun my:disable-modes ()
-	"Disable modes in scrtch buffer."
-	(interactive)
-	(display-line-numbers-mode 0)
-	(flymake-mode 0)))
+(leaf all-the-icons
+  :ensure t
+  :after doom-modeline
+  :custom (all-the-icons-scale-factor . 0.9)
+  :config
+  (unless (member "all-the-icons" (font-family-list))
+	(all-the-icons-install-fonts t)))
 ```
+
 ### [all-the-icons-dired.el] `dired` でファイルのアイコン表示をする
 🔗 [jtbm37/all-the-icons-dired](https://github.com/jtbm37/all-the-icons-dired)
 
