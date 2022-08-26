@@ -252,7 +252,7 @@ Postscript 対応のプリンターが必要です。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</guid>
-      <description>nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させます。
+      <description>gnome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gnome-terminal を起動させます。
 こちらを使うようになってからはeshell を使う機会が減りました。
 (defun term-current-dir-open () &amp;#34;Open terminal application in current dir.&amp;#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat &amp;#34;gnome-terminal --working-directory &amp;#34; dir)))) (bind-key &amp;#34;&amp;lt;f4&amp;gt;&amp;#34; &amp;#39;term-current-dir-open) </description>
     </item>

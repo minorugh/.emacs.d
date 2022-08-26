@@ -2,8 +2,8 @@
 title = "12.4. open terminal"
 draft = false
 +++
-### nome-terminal を Emacsから呼び出す
-Emacsで開いている`buffer` の`current-dir` で `gonome-terminal` を起動させます。
+### gnome-terminal を Emacsから呼び出す
+Emacsで開いている`buffer` の`current-dir` で `gnome-terminal` を起動させます。
 
 こちらを使うようになってからは`eshell` を使う機会が減りました。
 

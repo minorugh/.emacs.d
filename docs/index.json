@@ -228,7 +228,7 @@
 	"title": "12.4. open terminal",
 	"tags": [],
 	"description": "",
-	"content": "nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させます。\nこちらを使うようになってからはeshell を使う機会が減りました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
+	"content": "gnome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gnome-terminal を起動させます。\nこちらを使うようになってからはeshell を使う機会が減りました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/thunar/",
