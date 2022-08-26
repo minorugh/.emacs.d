@@ -9,7 +9,6 @@ draft = false
 選択領域に対するスピードコマンドです。
 
 Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。
-コマンドの数が増えてきたら、ヘルプ代わりに使える [`counsel-selected`](https://github.com/takaxp/counsel-selected) も便利そうです。
 
 ```elisp
 (leaf selected
