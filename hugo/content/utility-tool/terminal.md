@@ -1,5 +1,5 @@
 +++
-title = "12.3. open terminal"
+title = "12.4. open terminal"
 draft = false
 +++
 ### nome-terminal を Emacsから呼び出す

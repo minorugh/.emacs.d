@@ -119,6 +119,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</loc>
   </url>
   
@@ -364,10 +368,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/history/undo-fu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/history/auto-delete/</loc>
   </url>
   
   <url>

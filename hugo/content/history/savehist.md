@@ -1,5 +1,5 @@
 +++
-title = "9.5. savehist"
+title = "9.4. savehist"
 draft = false
 +++
 ### [savehist] ミニバッファの履歴などを保存してくれる機能

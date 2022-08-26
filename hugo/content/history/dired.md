@@ -1,5 +1,5 @@
 +++
-title = "9.7. dired"
+title = "9.6. dired"
 draft = false
 +++
 ### [dired] ファイルシステムのディレクトリを編集する機能

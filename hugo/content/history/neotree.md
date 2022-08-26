@@ -1,5 +1,5 @@
 +++
-title = "9.8. neotree"
+title = "9.7. neotree"
 draft = false
 +++
 ### [neotree.el] Emacs 上でディレクトリツリーを表示させる

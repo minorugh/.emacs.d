@@ -60,7 +60,7 @@
 	"title": "履歴 / ファイル管理",
 	"tags": [],
 	"description": "",
-	"content": "ここでは Emacs ファイル管理関係の設定を載せている\n# INDEX  auto-seve-buffer ファイルの自動保存機能を提供してる undo-fu シンプルな undo/redo を提供 auto-deleter 空になったファイルを自動的に削除する recentf 開いたファイルの履歴を保存してくれる機能 savehist ミニバッファの履歴を保存してくれる機能 hist-files 履歴ファイル類の保存場所を整理 dired ディレクトリを編集する機能 neotree デレクトリやファイル一覧をツリー形式で表示、編集できる機能  "
+	"content": "ここでは Emacs ファイル管理関係の設定を載せている\n# INDEX  auto-seve-buffer ファイルの自動保存機能を提供してる undo-fu シンプルな undo/redo を提供 recentf 開いたファイルの履歴を保存してくれる機能 savehist ミニバッファの履歴を保存してくれる機能 hist-files 履歴ファイル類の保存場所を整理 dired ディレクトリを編集する機能 neotree デレクトリやファイル一覧をツリー形式で表示、編集できる機能  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/",
@@ -81,7 +81,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定  "
+	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
@@ -203,29 +203,36 @@
 	"content": "scratchバッファーを付箋として使う 作業中の編集画面から短期的なメモを気軽に使うために *scratch*バッファーを付箋メモに使えるように設定してみた。\nEmacsを再起動しても*scratch* バッファーの内容が消えないように auto-save-buffers-enhanced の *scratch* バッファー自動保存機能を併用しています。専用のパッケージもあるようです。\npersistent-scratch.el: scratch バッファを永続化・自動保存・復元する\ntoggle-scratch は、編集中のバッファーとscratchバッファーとをトグルで切り替えます。\n;; Scratch for sticky-memo (leaf *scratch-memo :after auto-save-buffers-enhanced :bind (\u0026#34;S-\u0026lt;return\u0026gt;\u0026#34; . toggle-scratch) :custom ((auto-save-buffers-enhanced-save-scratch-buffer-to-file-p . t) (auto-save-buffers-enhanced-file-related-with-scratch-buffer . \u0026#34;~/.emacs.d/tmp/scratch\u0026#34;)) :init (defun toggle-scratch () \u0026#34;Toggle current buffer and *scratch* buffer.\u0026#34; (interactive) (if (not (string= \u0026#34;*scratch*\u0026#34; (buffer-name))) (progn (setq toggle-scratch-prev-buffer (buffer-name)) (switch-to-buffer \u0026#34;*scratch*\u0026#34;)) (switch-to-buffer toggle-scratch-prev-buffer))) (defun read-scratch-data () (let ((file \u0026#34;~/.emacs.d/tmp/scratch\u0026#34;)) (when (file-exists-p file) (set-buffer (get-buffer \u0026#34;*scratch*\u0026#34;)) (erase-buffer) (insert-file-contents file)))) (read-scratch-data)) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/",
+	"title": "12.1. auto-delete",
+	"tags": [],
+	"description": "",
+	"content": "空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。\n下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。\n(defun my:delete-file-if-no-contents () \u0026#34;Automatic deletion for empty files (Valid in all modes).\u0026#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq \u0026#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons \u0026#39;my:delete-file-if-no-contents after-save-hook))) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/",
-	"title": "12.1. emacs-lok-mode",
+	"title": "12.2. emacs-lok-mode",
 	"tags": [],
 	"description": "",
 	"content": "Scratch バッファーを消さない 難しく関数を設定せずとも内蔵コマンドで簡単に実現できます。\n;; Set buffer that can not be killed (with-current-buffer \u0026#34;*scratch*\u0026#34; (emacs-lock-mode \u0026#39;kill)) (with-current-buffer \u0026#34;*Messages*\u0026#34; (emacs-lock-mode \u0026#39;kill)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/ps-print/",
-	"title": "12.2. ps-priter",
+	"title": "12.3. ps-priter",
 	"tags": [],
 	"description": "",
 	"content": "PS-Printer へのファイルの出力 基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。\n(defalias 'ps-mule-header-string-charsets 'ignore) (setq ps-multibyte-buffer 'non-latin-printer ps-paper-type 'a4 ps-font-size 9 ;; ps-font-family 'Helvetica ps-font-family 'Courier ps-line-number-font 'Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/terminal/",
-	"title": "12.3. open terminal",
+	"title": "12.4. open terminal",
 	"tags": [],
 	"description": "",
 	"content": "nome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gonome-terminal を起動させるのでとても便利です。 こちらを使うようになってからはeelisp を使わななりました。\n(defun term-current-dir-open () \u0026#34;Open terminal application in current dir.\u0026#34; (interactive) (let ((dir (directory-file-name default-directory))) (compile (concat \u0026#34;gnome-terminal --working-directory \u0026#34; dir)))) (bind-key \u0026#34;\u0026lt;f4\u0026gt;\u0026#34; \u0026#39;term-current-dir-open) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/thunar/",
-	"title": "12.4. open thunar",
+	"title": "12.5. open thunar",
 	"tags": [],
 	"description": "",
 	"content": "Thunarを Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で Debian の Thuner を開くというものです。 使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026#34;Open filer in current dir.\u0026#34; (interactive) (compile (concat \u0026#34;Thunar \u0026#34; default-directory))) (bind-key \u0026#34;\u0026lt;f3\u0026gt;\u0026#34; \u0026#39;filer-current-dir-open) "
@@ -627,7 +634,7 @@
 	"title": "9.1. auto-save-buffer",
 	"tags": [],
 	"description": "",
-	"content": "[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.\nauto-save-buffers-enhanced.el は、Emacsに本当の 自動保存 を提供します。\nデフォルトでは、0.5秒間入力がなければ自動で保存されます。\n(setq auto-save-buffers-enhanced-interval 0.5) Trampでファイル編集しているときに固まることがあるので除外設定しています。\n;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . \u0026#39;(\u0026#34;^/ssh:\u0026#34; \u0026#34;^/scp:\u0026#34; \u0026#34;/sudo:\u0026#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) "
+	"content": "[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.\nauto-save-buffers-enhanced.el は、快適かつ安全な自動保存機能を提供します。\nデフォルトでは、0.5秒間入力がなければ自動で保存されます。\n(setq auto-save-buffers-enhanced-interval 0.5) Tramp でファイル編集しているときに固まることがあるので除外設定しています。\n;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . \u0026#39;(\u0026#34;^/ssh:\u0026#34; \u0026#34;^/scp:\u0026#34; \u0026#34;/sudo:\u0026#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/undo-fu/",
@@ -637,43 +644,36 @@
 	"content": "8.3. [undo-fu.el] シンプルな undo/redo を提供 🔗 emacsmirror/undo-fu: Undo helper with redo.\nundo-fu は、シンプルながら安定した undo/redo 機能を提供してくれるので重宝しています。\nもっといろいろできる undo-tree を使っていたけど、何気に不安定だったので乗り換えました。\n(leaf undo-fu :ensure t :bind ((\u0026#34;C-_\u0026#34; . undo-fu-only-undo) (\u0026#34;C-/\u0026#34; . undo-fu-only-redo))) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/history/auto-delete/",
-	"title": "9.3. auto-delete",
-	"tags": [],
-	"description": "",
-	"content": "空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。\n下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。\n(defun my:delete-file-if-no-contents () \u0026#34;Automatic deletion for empty files (Valid in all modes).\u0026#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq \u0026#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons \u0026#39;my:delete-file-if-no-contents after-save-hook))) "
-},
-{
 	"uri": "https://minorugh.github.io/.emacs.d/history/recentf/",
-	"title": "9.4. recentf",
+	"title": "9.3. recentf",
 	"tags": [],
 	"description": "",
 	"content": "[recentf] 開いたファイルの履歴を保存 複数端末で設定ファイルを共有させている環境では、recentf-auto-cleanup を never にしておかないと大変なことになる。\n;; recentf (leaf recentf :custom `((recentf-auto-cleanup . \u0026#39;never) (recentf-exclude . \u0026#39;(\u0026#34;\\\\.howm-keys\u0026#34; \u0026#34;Dropbox/backup\u0026#34; \u0026#34;.emacs.d/tmp/\u0026#34; \u0026#34;.emacs.d/elpa/\u0026#34; \u0026#34;/scp:\u0026#34;)))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/savehist/",
-	"title": "9.5. savehist",
+	"title": "9.4. savehist",
 	"tags": [],
 	"description": "",
 	"content": "[savehist] ミニバッファの履歴などを保存してくれる機能 プログラミングを生業にしている人にはとても重要なものらしい。\n;; Don\u0026#39;t clear kill-ring when restart emacs (savehist-additional-variables . \u0026#39;(kill-ring)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/hist-files/",
-	"title": "9.6. hist-files",
+	"title": "9.5. hist-files",
 	"tags": [],
 	"description": "",
 	"content": "Emacsのいろいろな機能の履歴ファイルは、デフォルトではみな ~/.emacs.d/ に保存される。\n日毎、設定ファイルを育てている自分は、ここに雑多な履歴ファイルがあると見づらいので、~/.emace.d/tmp/ に保存場所を変更している。\n;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . \u0026#34;~/.emacs.d/tmp/recentf\u0026#34;) (save-place-file . \u0026#34;~/.emacs.d/tmp/places\u0026#34;) (savehist-file . \u0026#34;~/.emacs.d/tmp/history\u0026#34;) (url-configuration-directory . \u0026#34;~/.emacs.d/tmp/url\u0026#34;) (bookmark-file . \u0026#34;~/.emacs.d/tmp/bookmarks\u0026#34;))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/dired/",
-	"title": "9.7. dired",
+	"title": "9.6. dired",
 	"tags": [],
 	"description": "",
 	"content": "[dired] ファイルシステムのディレクトリを編集する機能 (leaf dired :hook ((dired-mode-hook . dired-my-append-buffer-name-hint) (dired-mode-hook . (lambda () (load \u0026#34;dired-x\u0026#34;) (dired-omit-mode 1)))) :bind (:dired-mode-map (\u0026#34;\u0026lt;left\u0026gt;\u0026#34; . dired-up-alternate-directory) (\u0026#34;\u0026lt;right\u0026gt;\u0026#34; . dired-open-in-accordance-with-situation) (\u0026#34;RET\u0026#34; . dired-open-in-accordance-with-situation) (\u0026#34;\u0026lt;\u0026#34; . beginning-of-buffer) (\u0026#34;\u0026gt;\u0026#34; . end-of-buffer) (\u0026#34;SPC\u0026#34; . my:dired-toggle-mark) (\u0026#34;C-g\u0026#34; . my:dired-unmark-all) (\u0026#34;f\u0026#34; . counsel-find-file) (\u0026#34;r\u0026#34; . wdired-change-to-wdired-mode) (\u0026#34;o\u0026#34; . dired-open-file) (\u0026#34;[\u0026#34; . dired-hide-details-mode) (\u0026#34;a\u0026#34; . toggle-dired-listing-switches) (\u0026#34;q\u0026#34; . dired-dwim-quit-window) (\u0026#34;i\u0026#34; . call-sxiv) (\u0026#34;s\u0026#34; . sudo-edit) (\u0026#34;e\u0026#34; . gedit-open-dired) (\u0026#34;@\u0026#34; . dired-do-gist) (\u0026#34;.\u0026#34; . dired-omit-mode)) :custom `((dired-dwim-target . t) (delete-by-moving-to-trash . t) (dired-recursive-copies . \u0026#39;always) (dired-recursive-deletes . \u0026#39;always) (dired-listing-switches . \u0026#34;-lgGhF\u0026#34;) (dired-omit-files . \u0026#34;.elc\u0026#34;) (ls-lisp-use-insert-directory-program . nil) (ls-lisp-dirs-first . t))) カスタマイズ設定 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Dired custom configurations ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (with-eval-after-load \u0026#39;dired (defun toggle-dired-listing-switches () \u0026#34;Toggle `dired-mode\u0026#39;switch between with and without \u0026#39;A\u0026#39; option to show or hide dot files.\u0026#34; (interactive) (progn (if (string-match \u0026#34;[Aa]\u0026#34; dired-listing-switches) (setq dired-listing-switches \u0026#34;-lgGhF\u0026#34;) (setq dired-listing-switches \u0026#34;-lgGhFA\u0026#34;)) (reload-current-dired-buffer))) (defun reload-current-dired-buffer () \u0026#34;Reload current `dired-mode\u0026#39;buffer.\u0026#34; (let* ((dir (dired-current-directory))) (progn (kill-buffer (current-buffer)) (dired dir)))) (defun dired-my-append-buffer-name-hint () \u0026#34;Append a auxiliary string [Dir] to a name of dired buffer.\u0026#34; (when (eq major-mode \u0026#39;dired-mode) (let* ((dir (expand-file-name list-buffers-directory)) ;; Add a drive letter for Windows (drive (if (and (eq \u0026#39;system-type \u0026#39;windows-nt) (string-match \u0026#34;^\\\\([a-zA-Z]:\\\\)/\u0026#34; dir)) (match-string 1 dir) \u0026#34;\u0026#34;))) (rename-buffer (concat (buffer-name) \u0026#34; [\u0026#34; drive \u0026#34;dir]\u0026#34;) t)))) (defun dired-dwim-quit-window () \u0026#34;`quit-window \u0026#39;according to screen division.\u0026#34; (interactive) (quit-window (not (delq (selected-window) (get-buffer-window-list))))) (defun dired-open-in-accordance-with-situation () \u0026#34;Files are opened in separate buffers, directories are opened in the same buffer.\u0026#34; (interactive) (let ((file (dired-get-filename))) (if (file-directory-p file) (dired-find-alternate-file) (dired-find-file) ;; If in org-mode, open with view-mode (if (equal major-mode \u0026#39;org-mode) (view-mode 1))))) (defun dired-up-alternate-directory () \u0026#34;Move to higher directory without make new buffer.\u0026#34; (interactive) (let* ((dir (dired-current-directory)) (up (file-name-directory (directory-file-name dir)))) (or (dired-goto-file (directory-file-name dir)) ;; Only try dired-goto-subdir if buffer has more than one dir. (and (cdr dired-subdir-alist) (dired-goto-subdir up)) (progn (find-alternate-file up) (dired-goto-file dir))))) (defun dired-open-file () \u0026#34;In dired, open the file in associated application.\u0026#34; (interactive) (let* ((file (dired-get-filename nil t))) (call-process \u0026#34;xdg-open\u0026#34; nil 0 nil file))) (defun my:dired-toggle-mark (arg) \u0026#34;ARG toggle the current next files.\u0026#34; (interactive \u0026#34;p\u0026#34;) (let ((dired-marker-char (if (save-excursion (beginning-of-line) (looking-at \u0026#34; \u0026#34;)) dired-marker-char ?\\040))) (dired-mark arg))) (defun my:dired-unmark-all () \u0026#34;Dired unmark all.\u0026#34; (interactive) (call-interactively \u0026#39;dired-unmark-all-marks) (call-interactively \u0026#39;revert-buffer)) ;; Show all images in the directory ;; https://gist.github.com/kobapan/28908b564b610bd3e6f3fae78637ac8b (defun call-sxiv () \u0026#34;Image viewer.\u0026#34; (interactive) (let ((image-files (delq nil (mapcar (lambda (f) (when (string-match \u0026#34;\\.\\\\(jpe?g\\\\|png\\\\|gif\\\\|bmp\\\\)$\u0026#34; f) f)) (directory-files default-directory))))) ;; File list in the current directory in alphabetical order (start-process-shell-command \u0026#34;sxiv\u0026#34; nil (format \u0026#34;sxiv -f -t -n %s %s\u0026#34; (length image-files) (mapconcat \u0026#39;identity image-files \u0026#34; \u0026#34;)))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/history/neotree/",
-	"title": "9.8. neotree",
+	"title": "9.7. neotree",
 	"tags": [],
 	"description": "",
 	"content": "[neotree.el] Emacs 上でディレクトリツリーを表示させる 🔗 jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.\nRename, Delete などの簡単なコマンドもつかえる。\n(leaf neotree :ensure t :bind ((\u0026#34;\u0026lt;f10\u0026gt;\u0026#34; . neotree-find) (:neotree-mode-map (\u0026#34;RET\u0026#34; . neotree-enter-hide) (\u0026#34;a\u0026#34; . neotree-hidden-file-toggle) (\u0026#34;\u0026lt;left\u0026gt;\u0026#34; . neotree-select-up-node) (\u0026#34;\u0026lt;right\u0026gt;\u0026#34; . neotree-change-root) (\u0026#34;\u0026lt;f10\u0026gt;\u0026#34; . neotree-toggle))) :custom `((neo-keymap-style . \u0026#39;concise) (neo-create-file-auto-open . t))) カスタマイズ設定 (with-eval-after-load neotree ;; Change neotree\u0026#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () \u0026#34;Neotree text scale.\u0026#34; (interactive) (text-scale-adjust 0) (text-scale-decrease 0.8) (message nil)) (add-hook \u0026#39;neo-after-create-hook (lambda (_) (call-interactively \u0026#39;neotree-text-scale))) ;; neotree enter hide ;; Tips from https://github.com/jaypei/emacs-neotree/issues/77 (defun neo-open-file-hide (full-path \u0026amp;optional arg) \u0026#34;Neotree enter hide with FULL-PATH ARG.\u0026#34; (neo-global--select-mru-window arg) (find-file full-path) (neotree-hide)) (defun neotree-enter-hide (\u0026amp;optional arg) \u0026#34;Neotree enter hide with ARG.\u0026#34; (interactive \u0026#34;P\u0026#34;) (neo-buffer--execute arg \u0026#39;neo-open-file-hide \u0026#39;neo-open-dir))) "

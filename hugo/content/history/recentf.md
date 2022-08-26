@@ -1,5 +1,5 @@
 +++
-title = "9.4. recentf"
+title = "9.3. recentf"
 draft = false
 +++
 ### [recentf] 開いたファイルの履歴を保存

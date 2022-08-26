@@ -1,5 +1,5 @@
 +++
-title = "9.3. auto-delete"
+title = "12.1. auto-delete"
 draft = false
 +++
 ### 空になったファイルを自動的に削除

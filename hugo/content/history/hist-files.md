@@ -1,5 +1,5 @@
 +++
-title = "9.6. hist-files"
+title = "9.5. hist-files"
 draft = false
 +++
 Emacsのいろいろな機能の履歴ファイルは、デフォルトではみな `~/.emacs.d/` に保存される。

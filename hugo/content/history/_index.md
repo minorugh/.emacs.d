@@ -16,9 +16,6 @@ disableToc = true
 [undo-fu]({{< relref "undo-fu" >}})
 : シンプルな undo/redo を提供
 
-[auto-deleter]({{< relref "auto-delete" >}})
-: 空になったファイルを自動的に削除する
-
 [recentf]({{< relref "recentf" >}})
 : 開いたファイルの履歴を保存してくれる機能
 

@@ -1,5 +1,5 @@
 +++
-title = "12.1. emacs-lok-mode"
+title = "12.2. emacs-lok-mode"
 draft = false
 +++
 ### Scratch バッファーを消さない

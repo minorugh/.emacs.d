@@ -13,9 +13,9 @@
       
       <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
       <description>[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.
-auto-save-buffers-enhanced.el は、Emacsに本当の 自動保存 を提供します。
+auto-save-buffers-enhanced.el は、快適かつ安全な自動保存機能を提供します。
 デフォルトでは、0.5秒間入力がなければ自動で保存されます。
-(setq auto-save-buffers-enhanced-interval 0.5) Trampでファイル編集しているときに固まることがあるので除外設定しています。
+(setq auto-save-buffers-enhanced-interval 0.5) Tramp でファイル編集しているときに固まることがあるので除外設定しています。
 ;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
     </item>
     
@@ -32,18 +32,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     </item>
     
     <item>
-      <title>9.3. auto-delete</title>
-      <link>https://minorugh.github.io/.emacs.d/history/auto-delete/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/history/auto-delete/</guid>
-      <description>空になったファイルを自動的に削除 howm や org でメモをとるときに、ゴミファイルが残らないように時々メンテしています。ファイルを開いて中味を確認してから、一度閉じて dited で削除するというプロセスは手間がかかりすぎます。
-下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
-(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) </description>
-    </item>
-    
-    <item>
-      <title>9.4. recentf</title>
+      <title>9.3. recentf</title>
       <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -53,7 +42,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     </item>
     
     <item>
-      <title>9.5. savehist</title>
+      <title>9.4. savehist</title>
       <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -63,7 +52,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     </item>
     
     <item>
-      <title>9.6. hist-files</title>
+      <title>9.5. hist-files</title>
       <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -74,7 +63,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     </item>
     
     <item>
-      <title>9.7. dired</title>
+      <title>9.6. dired</title>
       <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -83,7 +72,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     </item>
     
     <item>
-      <title>9.8. neotree</title>
+      <title>9.7. neotree</title>
       <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
