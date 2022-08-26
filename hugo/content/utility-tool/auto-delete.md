@@ -3,7 +3,7 @@ title = "12.1. auto-delete"
 draft = false
 +++
 ### 空になったファイルを自動的に削除
-下記の設定をしておくと、`C-x h` で全選択して delete したあと `kill-buffer` することで自動的にファイルが削除されるので便利です。
+下記の設定をしておくと、`C-x h` で全選択して delete したあと `kill-buffer` することで自動的にファイルが削除されます。
 
 ```elisp
 (defun my:delete-file-if-no-contents ()

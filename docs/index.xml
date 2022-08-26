@@ -219,7 +219,7 @@ toggle-scratch は、編集中のバッファーとscratchとをトグルで切�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</guid>
-      <description>空になったファイルを自動的に削除 下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されるので便利です。
+      <description>空になったファイルを自動的に削除 下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されます。
 (defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) 開いているバッファーを閉じて当該ファイルを削除する やや危険なのであまりおすすめできませんが…
 安全を期すために確認するようにはしてます。
 (defun my:delete-this-file () &amp;#34;Delete the current file, and kill the buffer.&amp;#34; (interactive) (unless (buffer-file-name) (error &amp;#34;No file is currently being edited&amp;#34;)) (when (yes-or-no-p (format &amp;#34;Really delete &amp;#39;%s&amp;#39;?&amp;#34; (file-name-nondirectory buffer-file-name))) (delete-file (buffer-file-name)) (kill-this-buffer))) </description>

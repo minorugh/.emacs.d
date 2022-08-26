@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T22:46:54 JST">
+<meta name="revised" content="2022-08-26T22:50:45 JST">
 <title>12.1. auto-delete :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -868,7 +868,7 @@
     
     
 <h3 id="空になったファイルを自動的に削除">空になったファイルを自動的に削除</h3>
-<p>下記の設定をしておくと、<code>C-x h</code> で全選択して delete したあと <code>kill-buffer</code> することで自動的にファイルが削除されるので便利です。</p>
+<p>下記の設定をしておくと、<code>C-x h</code> で全選択して delete したあと <code>kill-buffer</code> することで自動的にファイルが削除されます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
   <span style="color:#c41a16">&#34;Automatic deletion for empty files (Valid in all modes).&#34;</span>
   (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))
