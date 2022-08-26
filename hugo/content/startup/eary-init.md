@@ -5,7 +5,7 @@ draft = false
 ### 早期初期化ファイル
 🔗 [minorugh/.emacs.d/early-init.el](https://github.com/minorugh/.emacs.d/blob/main/early-init.el)
 
-Emacs27から導入された `eary-init.el`は、パッケージシステムやGUIの初期化が init.el で実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
+Emacs27から導入された `eary-init.el`は、パッケージシステムやGUIの初期化が `init.el` で実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
 
 ### GCを減らす
 GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。
@@ -14,13 +14,13 @@ GC の閾値を最大にしておくことで GC を実質止めることがで�
 ;; Defer garbage collection further back in the startup process
 (setq gc-cons-threshold most-positive-fixnum)
 ```
-eary-init.el の先頭に書くことが重要です。
+`eary-init.el` の先頭に書くことが重要です。
 
 ### パッケージの初期化を抑制する 
-Emacs27では、(package-initialize) が 2回実行されます。
-(1回は init ファイルの評価中に、もう 1回は Emacs が initファイルの読み取りを終了した後に)。
+Emacs27では、`package-initialize` が 2回実行されます。
+1回は、初期化ファイルの評価中に、もう 1回は、初期化ファイルの読み取りを終了した後にです。
 
-1回目を抑制するために以下を eary-init.el に記述することで初期化が少し早くなります。
+1回目を抑制するために以下を `eary-init.el` に記述することで初期化が少し早くなります。
 
 ```elisp
 ;; For slightly faster startup
