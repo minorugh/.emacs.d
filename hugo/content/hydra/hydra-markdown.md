@@ -3,8 +3,9 @@ title = "8.4. hydra-markdown"
 draft = false
 +++
 
-### [hydra-markdown]
+### Hydra for markdown-mode
 ```elisp
+;; Hydra for markdown-mode
 (leaf *hydra-markdown
   :hydra
   (hydra-markdown

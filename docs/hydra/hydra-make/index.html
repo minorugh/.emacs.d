@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T14:30:55 JST">
+<meta name="revised" content="2022-08-26T14:37:09 JST">
 <title>8.2. hydra-make :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -816,7 +816,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#hydra-make">hydra-make</a></li>
+        <li><a href="#hydra-for-make-command">Hydra for make command</a></li>
         <li><a href="#make-command-functions">make command functions</a></li>
       </ul>
     </li>
@@ -839,7 +839,7 @@
     
     
     
-<h3 id="hydra-make">hydra-make</h3>
+<h3 id="hydra-for-make-command">Hydra for make command</h3>
 <p>🔗 <a href="http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/nmake.html">自動化のための nmake 入門講座: 石井勝</a></p>
 <p>上記記事を読んで自分革命がありました。</p>
 <ol>
@@ -847,9 +847,7 @@
 <li>必ずしなければならない作業 → 自動化できないか考える</li>
 </ol>
 <p>と、いうことで、私は多くの日常ワークを <code>make</code> で自動化しています。目的に応じて選択実行するために <code>hydra-make</code> でメニュー化しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#177500">;; Make command configurations</span>
-<span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Hydra for make command</span>
 (<span style="color:#000">leaf</span> <span style="color:#000">*user-make-configulation</span>
   <span style="color:#a90d91">:mode</span> ((<span style="color:#c41a16">&#34;\\.mak\\&#39;&#34;</span> <span style="color:#c41a16">&#34;makefile\\&#39;&#34;</span>) <span style="color:#000">.</span> <span style="color:#000">makefile-mode</span>)
   <span style="color:#a90d91">:hydra</span>
@@ -910,9 +908,7 @@
 		 (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
 		 (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>))))
 </code></pre></div><p>実行コマンドの一例は以下のとおり。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#177500">;; My make command functions</span>
-<span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; My make command functions</span>
 (<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-k</span> ()
   <span style="color:#c41a16">&#34;Make k.&#34;</span>
   (<span style="color:#a90d91">interactive</span>)

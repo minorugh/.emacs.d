@@ -3,7 +3,7 @@ title = "8.2. hydra-make"
 draft = false
 +++
 
-### hydra-make 
+### Hydra for make command 
 🔗 [自動化のための nmake 入門講座: 石井勝](http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/nmake.html) 
 
 上記記事を読んで自分革命がありました。
@@ -13,9 +13,7 @@ draft = false
 と、いうことで、私は多くの日常ワークを `make` で自動化しています。目的に応じて選択実行するために `hydra-make` でメニュー化しています。
 
 ```elisp
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Make command configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Hydra for make command
 (leaf *user-make-configulation
   :mode (("\\.mak\\'" "makefile\\'") . makefile-mode)
   :hydra
@@ -88,9 +86,7 @@ git:
 実行コマンドの一例は以下のとおり。
 
 ```elisp
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My make command functions
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun my:make-k ()
   "Make k."
   (interactive)
