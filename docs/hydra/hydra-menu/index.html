@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-26T13:17:41 JST">
-<title>7.13. pangu-spacing :: minoru&#39;s Emacs Configuration</title>
+<title>8.1. hydra-menu :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/editing/pangu/">
+  <body data-url="/.emacs.d/hydra/hydra-menu/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -779,7 +779,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/pangu.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/hydra/hydra-menu.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -799,7 +799,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>編集サポート / 入力補助</a> > 7.13. pangu-spacing
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/hydra/'>Hydra</a> > 8.1. hydra-menu
 
  
 
@@ -816,7 +816,9 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#pangu-spacingel-漢字と英字の間にスペースを自動追加">[pangu-spacing.el] 漢字と英字の間にスペースを自動追加</a></li>
+        <li><a href="#hydra-quick-menu">[hydra-quick-menu]</a></li>
+        <li><a href="#hydra-work-menu">[hydra-work-menu]</a></li>
+        <li><a href="#必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</a></li>
       </ul>
     </li>
   </ul>
@@ -830,7 +832,7 @@
 
 <div id="body-inner">
   
-    <h1>7.13. pangu-spacing</h1>
+    <h1>8.1. hydra-menu</h1>
   
 
 
@@ -838,24 +840,141 @@
     
     
     
-<h3 id="pangu-spacingel-漢字と英字の間にスペースを自動追加">[pangu-spacing.el] 漢字と英字の間にスペースを自動追加</h3>
-<p>🔗 <a href="https://github.com/coldnew/pangu-spacing">coldnew/pangu-spacing: Add space between Chinese and English characters.</a></p>
-<p><code>pangu-spacing</code>は、漢字と英字の間にスペースを自動追加してくれます。
-少しカスタマイズしました。</p>
-<ul>
-<li>英字の前方のみとし後方にはスペースは挿入しない。</li>
-<li>半角数字は、対象から除外。</li>
-</ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Add space between full-width and half-width</span>
-(<span style="color:#000">leaf</span> <span style="color:#000">pangu-spacing</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:after</span> <span style="color:#000">mozc</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">markdown-mode-hook</span> <span style="color:#000">text-mode-hook</span>) <span style="color:#000">.</span> <span style="color:#000">pangu-spacing-mode</span>)
-  <span style="color:#a90d91">:config</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">pangu-spacing-include-regexp</span>
-		(<span style="color:#a90d91">rx</span> (<span style="color:#a90d91">or</span> (<span style="color:#a90d91">and</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">group-n</span> <span style="color:#1c01ce">3</span> (<span style="color:#000">any</span> <span style="color:#c41a16">&#34;。，！？；：「」（）、&#34;</span>))
-						 (<span style="color:#000">group-n</span> <span style="color:#1c01ce">1</span> (<span style="color:#a90d91">or</span> (<span style="color:#000">category</span> <span style="color:#000">japanese</span>))))))
-			(<span style="color:#000">group-n</span> <span style="color:#1c01ce">2</span> (<span style="color:#000">in</span> <span style="color:#c41a16">&#34;a-zA-Z&#34;</span>)))))
+<p><code>hydra-menu</code> は、いわば私の秘書のような役割です。</p>
+<p>便宜上,<code>quick-menu</code>と<code>work-menu</code> の二つに分けていますが、どちらからでも相互に呼び出せるようにしています。</p>
+<h3 id="hydra-quick-menu">[hydra-quick-menu]</h3>
+<p><a href="https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L5"><code>hydra-quick-menu</code></a>
+編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。
+よく使うアプリ起動のショートカットなども設定しておくと便利です。</p>
+<p><img src="https://live.staticflickr.com/65535/50174826063_b4fa442b1e_b.jpg" alt="hydra-quick-menu"></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*hydra-quick-menu</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;M-.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-quick/body</span>)
+  <span style="color:#a90d91">:hydra</span>
+  (<span style="color:#000">hydra-quick</span>
+   (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">   Quick Menu
+</span><span style="color:#c41a16">  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------
+</span><span style="color:#c41a16">  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rc  _._files   howm:_@__,_   _m_d:_p_view   _z_illa
+</span><span style="color:#c41a16">  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg  _&lt;home&gt;_   _c_ompile^^   make:_k_._g_   _a_g:🐾
+</span><span style="color:#c41a16">&#34;</span>
+   (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">counsel-ag</span>)
+   (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">my:org-dir</span>)
+   (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">counsel-tramp</span>)
+   (<span style="color:#c41a16">&#34;q&#34;</span> <span style="color:#000">my:tramp-quit</span>)
+   (<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">my:home-dir</span>)
+   (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">my:dropbox</span>)
+   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">my:dotfiles-dir</span>)
+   (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">my:inits-dir</span>)
+   (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">my:emacs-dir</span>)
+   (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">my:gh-dir</span>)
+   (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">my:xsrv-dir</span>)
+   (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">company-yasnippet</span>)
+   (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">yas/new-snippet</span>)
+   (<span style="color:#c41a16">&#34;v&#34;</span> <span style="color:#000">yas/visit-snippet-file</span>)
+   (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">restart-emacs</span>)
+   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">hydra-markdown/body</span>)
+   (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">livedown-preview</span>)
+   (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">livedown-kill</span>)
+   (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">hydra-browse/body</span>)
+   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">hydra-make/body</span>)
+   (<span style="color:#c41a16">&#34;-&#34;</span> <span style="color:#000">my:github-show</span>)
+   (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">howm-list-all</span>)
+   (<span style="color:#c41a16">&#34;,&#34;</span> <span style="color:#000">howm-remember</span>)
+   (<span style="color:#c41a16">&#34;j&#34;</span> <span style="color:#000">open-junk-file</span>)
+   (<span style="color:#c41a16">&#34;J&#34;</span> <span style="color:#000">open-last-junk-file</span>)
+   (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">my:make-k</span>)
+   (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">my:make-git</span>)
+   (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">my:root-dir</span>)
+   (<span style="color:#c41a16">&#34;_&#34;</span> <span style="color:#000">my:delete-other-windows</span>)
+   (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">git-timemachine-toggle</span>)
+   (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">magit-status</span>)
+   (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">my:scr-dir</span>)
+   (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">my:open-capture</span>)
+   (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">view-mode</span>)
+   (<span style="color:#c41a16">&#34;z&#34;</span> <span style="color:#000">filezilla</span>)
+   (<span style="color:#c41a16">&#34;M-.&#34;</span> <span style="color:#000">hydra-work/body</span>)
+   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>)))
+</code></pre></div><h3 id="hydra-work-menu">[hydra-work-menu]</h3>
+<p><a href="https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L57"><code>hydra-work-menu</code></a>
+ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。</p>
+<p><img src="https://live.staticflickr.com/65535/50175364331_9fcf3c6c86_b.jpg" alt="hydra-work-menu"></p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*hydra-work-menu</span>
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;henkan&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-work/body</span>)
+  <span style="color:#a90d91">:hydra</span>
+  (<span style="color:#000">hydra-work</span>
+   (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+   <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">   Work Menu
+</span><span style="color:#c41a16">  ------^^^^^^^^^^^^^^^^^^^^^^^^---------------------------------------------------------------------------
+</span><span style="color:#c41a16">  _d_:日記   _m_:毎日   _w_:毎週   _k_:兼題^^   _t_:定例   _s_:吟行^^   近詠:_n_   創作:_[_._]_   keep:_;_
+</span><span style="color:#c41a16">  _a_:合評   _e_:hugo   _b_ackup   _g_ist:_L_   pass_x_c   repo:_@_^^   view:_:_   _p_rint:_r_e   Pages_._
+</span><span style="color:#c41a16">&#34;</span>
+   (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#000">ps-print-buffer</span>)
+   (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">ps-print-region</span>)
+   (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">my:apvoice</span>)
+   (<span style="color:#c41a16">&#34;A&#34;</span> <span style="color:#000">my:apvoice-new-post</span>)
+   (<span style="color:#c41a16">&#34;P&#34;</span> <span style="color:#000">ps-print-buffer</span>)
+   (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">my:backup-all</span>)
+   (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">browse-at-remote</span>)
+   (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">easy-hugo</span>)
+   (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">my:diary</span>)
+   (<span style="color:#c41a16">&#34;D&#34;</span> <span style="color:#000">my:diary-new-post</span>)
+   (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">gist-region-or-buffer</span>)
+   (<span style="color:#c41a16">&#34;L&#34;</span> <span style="color:#000">lepton</span>)
+   (<span style="color:#c41a16">&#34;j&#34;</span> <span style="color:#000">my:junk-dir</span>)
+   (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">iedit-mode</span>)
+   (<span style="color:#c41a16">&#34;l&#34;</span> <span style="color:#000">open-last-junk-file</span>)
+   (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">my:teirei</span>)
+   (<span style="color:#c41a16">&#34;T&#34;</span> <span style="color:#000">my:teirei-new-post</span>)
+   (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">my:swan</span>)
+   (<span style="color:#c41a16">&#34;S&#34;</span> <span style="color:#000">my:swan-new-post</span>)
+   (<span style="color:#c41a16">&#34;N&#34;</span> <span style="color:#000">my:kinnei</span>)
+   (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">my:kinnei-draft</span>)
+   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">my:make-draft</span>)
+   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">my:d_kukai</span>)
+   (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">my:w_kukai</span>)
+   (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">my:m_kukai</span>)
+   (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">livedown-kill</span>)
+   (<span style="color:#c41a16">&#34;v&#34;</span> <span style="color:#000">markdown-preview</span>)
+   (<span style="color:#c41a16">&#34;f&#34;</span> <span style="color:#000">flymake-show-diagnostics-buffer</span>)
+   (<span style="color:#c41a16">&#34;x&#34;</span> <span style="color:#000">keepassxc</span>)
+   (<span style="color:#c41a16">&#34;+&#34;</span> <span style="color:#000">text-scale-adjust</span>)
+   (<span style="color:#c41a16">&#34;_&#34;</span> <span style="color:#000">my:delete-other-windows</span>)
+   (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">my:haiku-note</span>)
+   (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">my:haiku-note-post</span>)
+   (<span style="color:#c41a16">&#34;;&#34;</span> (<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://keep.google.com/u/0/&#34;</span>))
+   (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">view-mode</span>)
+   (<span style="color:#c41a16">&#34;z&#34;</span> <span style="color:#000">select-mozc-tool</span>)
+   (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">my:github.io-dir</span>)
+   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">my:emacs.d-dir</span>)
+   (<span style="color:#c41a16">&#34;&lt;henkan&gt;&#34;</span> <span style="color:#000">hydra-quick/body</span>)
+   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
+</code></pre></div><h3 id="必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</h3>
+<p>以下は一例です。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:backup-all</span> ()
+  <span style="color:#c41a16">&#34;Backup all.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">let*</span> ((<span style="color:#000">default-directory</span> (<span style="color:#000">expand-file-name</span> <span style="color:#c41a16">&#34;~/Dropbox/backup&#34;</span>)))
+  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make -k&#34;</span>)))
+                                                                                                               
+(<span style="color:#a90d91">defun</span> <span style="color:#000">filezilla</span> ()
+  <span style="color:#c41a16">&#34;Open filezilla.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;filezilla -s&#34;</span>)
+  (<span style="color:#000">delete-other-windows</span>))
+                                                                                                               
+(<span style="color:#a90d91">defun</span> <span style="color:#000">lepton</span> () 
+  <span style="color:#c41a16">&#34;Open lepton.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;~/Appimage/Lepton-1.10.0.AppImage&#34;</span>)
+  (<span style="color:#000">delete-other-windows</span>))
+                                                                                                               
+(<span style="color:#a90d91">defun</span> <span style="color:#000">keepassxc</span> ()
+  <span style="color:#c41a16">&#34;Open keepassxc with auto passwd input.&#34;</span> 
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;secret-tool lookup type kdb | keepassxc --pw-stdin ~/Dropbox/backup/passwd/keypassX/20191105.kdbx&#34;</span>)
+  (<span style="color:#000">delete-other-windows</span>))
 </code></pre></div>
 
     
@@ -867,8 +986,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/editing/selected/" title="7.12. selected"> <i class="fa fa-chevron-left"></i><label>7.12. selected</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/fontawesome/" title="7.14. font-awesome" style="margin-right: 0px;"><label>7.14. font-awesome</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/hydra/" title="Hydra"> <i class="fa fa-chevron-left"></i><label>Hydra</label></a>
+    <a class="nav nav-next" href="/.emacs.d/hydra/hydra-make/" title="8.2. hydra-make" style="margin-right: 0px;"><label>8.2. hydra-make</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
