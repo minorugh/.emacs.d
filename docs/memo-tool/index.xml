@@ -16,7 +16,7 @@
 howm-menu は使わないので howm-list-all を初期画面として使っています。
 上記画面からでも [新規(c)] [検索(s)] ほか一連の howmコマンドは全て使えます。
 簡単なカテゴリ（memo:ショートメモ、note:記事のドラフト）に分けて、記事タイトルの頭に色付のタグをつけています。
-org-capture から自動タグ挿入して howm-criate を呼び出せるようにしています。
+org-capture から自動タグ挿入して howm-criate を起動しています。
 (leaf howm :ensure t :hook ((emacs-startup-hook . howm-mode) ()) :chord (&amp;#34;@@&amp;#34; . howm-list-all) :init (setq howm-view-title-header &amp;#34;#&amp;#34;) (defun my:howm-create-file () &amp;#34;Make howm create file with &amp;#39;org-capture&amp;#39;.&amp;#34; (interactive) (format-time-string &amp;#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&amp;#34; (current-time))) :config (bind-key [backtab] &amp;#39;howm-view-summary-previous-section howm-view-summary-mode-map) (setq howm-directory &amp;#34;~/Dropbox/howm&amp;#34;) (setq howm-view-split-horizontally t) (setq howm-view-summary-persistent nil) (setq howm-normalizer &amp;#39;howm-sort-items-by-reverse-date) (setq howm-user-font-lock-keywords &amp;#39;((&amp;#34;memo:&amp;#34; .</description>
     </item>
     

@@ -12,7 +12,7 @@ draft = false
 
 簡単なカテゴリ（memo:ショートメモ、note:記事のドラフト）に分けて、記事タイトルの頭に色付のタグをつけています。
 
-`org-capture` から自動タグ挿入して `howm-criate` を呼び出せるようにしています。
+`org-capture` から自動タグ挿入して `howm-criate` を起動しています。
 
 ```elisp
 (leaf howm
