@@ -52,8 +52,39 @@ Emacs*useXIM: false
 	(insert str)))
 ```
 
-### Emacsから単語登録する
+### [mozc-cursor-color.el] カーソルの色を変える
+🔗 [iRi-E/mozc-el-extensions: ](https://github.com/iRi-E/mozc-el-extensions) 
 
+`direct`, `read-only`, `hiragana` の3通りの色を簡単に変更できます。
+```elisp
+(leaf mozc-cursor-color
+  :el-get iRi-E/mozc-el-extensions
+  :hook (after-init-hook . mozc-cursor-color-setup)
+  :config
+  (setq mozc-cursor-color-alist
+        '((direct . "#50fa7b")
+          (read-only . "#f8f8f2")
+          (hiragana . "#ff5555"))))
+```
+
+### [mozc-cand-posframe.el] 変換候補をposframe表示 
+🔗 [akirak/mozc-posframe: Posframe frontend for mozc.el](https://github.com/akirak/mozc-posframe) 
+
+日本語用の Emacs 入力メソッドであるmozc.elの変換候補を表示させるposframeインターフェースです。
+
+類似ツールはいくつかありますが一番スッキリしていると思いますし、カラーカスタマイズも容易です。
+
+```elisp
+(leaf mozc-cand-posframe
+  :ensure t
+  :after mozc
+  :require t
+  :custom	(mozc-candidate-style . 'posframe)
+  :init
+  (leaf posframe :ensure t))
+```
+
+### Emacsから単語登録する
 文章編集画面から [`mozc-tool`](https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/) を起動して単語登録できるようにしています。
 
 ```elisp

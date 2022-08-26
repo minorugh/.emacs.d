@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T17:05:30 JST">
+<meta name="revised" content="2022-08-26T17:25:43 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -819,6 +819,8 @@
         <li><a href="#mozcサーバーをインストール">Mozcサーバーをインストール</a></li>
         <li><a href="#インライン入力を無効にする">インライン入力を無効にする</a></li>
         <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
+        <li><a href="#mozc-cursor-colorel-カーソルの色を変える">[mozc-cursor-color.el] カーソルの色を変える</a></li>
+        <li><a href="#mozc-cand-posframeel-変換候補をposframe表示">[mozc-cand-posframe.el] 変換候補をposframe表示</a></li>
         <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
         <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
         <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
@@ -878,6 +880,28 @@ Emacs*useXIM: false
   (<span style="color:#a90d91">defun</span> <span style="color:#000">mozc-insert-str</span> (<span style="color:#000">str</span>)
 	(<span style="color:#000">mozc-handle-event</span> <span style="color:#c41a16">&#39;enter</span>)
 	(<span style="color:#000">insert</span> <span style="color:#000">str</span>)))
+</code></pre></div><h3 id="mozc-cursor-colorel-カーソルの色を変える">[mozc-cursor-color.el] カーソルの色を変える</h3>
+<p>🔗 <a href="https://github.com/iRi-E/mozc-el-extensions">iRi-E/mozc-el-extensions: </a></p>
+<p><code>direct</code>, <code>read-only</code>, <code>hiragana</code> の3通りの色を簡単に変更できます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc-cursor-color</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">iRi-E/mozc-el-extensions</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">mozc-cursor-color-setup</span>)
+  <span style="color:#a90d91">:config</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">mozc-cursor-color-alist</span>
+        <span style="color:#000">&#39;</span>((<span style="color:#000">direct</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#50fa7b&#34;</span>)
+          (<span style="color:#000">read-only</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#f8f8f2&#34;</span>)
+          (<span style="color:#000">hiragana</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#ff5555&#34;</span>))))
+</code></pre></div><h3 id="mozc-cand-posframeel-変換候補をposframe表示">[mozc-cand-posframe.el] 変換候補をposframe表示</h3>
+<p>🔗 <a href="https://github.com/akirak/mozc-posframe">akirak/mozc-posframe: Posframe frontend for mozc.el</a></p>
+<p>日本語用の Emacs 入力メソッドであるmozc.elの変換候補を表示させるposframeインターフェースです。</p>
+<p>類似ツールはいくつかありますが一番スッキリしていると思いますし、カラーカスタマイズも容易です。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc-cand-posframe</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:after</span> <span style="color:#000">mozc</span>
+  <span style="color:#a90d91">:require</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:custom</span>	(<span style="color:#000">mozc-candidate-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;posframe</span>)
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#000">leaf</span> <span style="color:#000">posframe</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>))
 </code></pre></div><h3 id="emacsから単語登録する">Emacsから単語登録する</h3>
 <p>文章編集画面から <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動して単語登録できるようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-mozc-tool</span>
