@@ -54,15 +54,9 @@ Emacs27では、`package-initialize` が 2回実行されます。
 (push '(fullscreen . maximized) default-frame-alist)
 ```
 
-### 起動時の点滅を抑える
+### 起動時のちらつきを抑える
 初期設定を読み終えるまではEmacsの画面表示を抑止しています。
 そこまでする必要はないのですが、起動時間短縮にもなるようで一石二鳥です。
-
-```elisp
-(set-frame-parameter nil 'fullscreen 'fullboth)
-```
-初期化後にフルスクリーンにしているのは、
-うっかりタイトルバーの閉じるをクリックする悪癖を直すための対策です(^^)
 
 ```elisp
 ;; Suppress flashing at startup
@@ -75,6 +69,8 @@ Emacs27では、`package-initialize` が 2回実行されます。
 			(redisplay)
 			(set-frame-parameter nil 'fullscreen 'fullboth)))
 ```
+初期化後にフルスクリーンにしているのは、
+うっかりタイトルバーの閉じるをクリックする悪癖を直すための対策です(^^)
 
 ### 起動直後の背景色をテーマのそれと合わせる
 Emacsが設定を読み込む色段階の背景色は白です。
