@@ -63,7 +63,7 @@ git:
 
 実行関数は、コマンドを実行しながら、Emacs上で別の作業をさせることができる `compile` を使います。
 
-* 参考: [Emacsからの安全なシェルコマンド実行: @tadsan](https://qiita.com/tadsan/items/17d32514b81f1e8f208a) 
+* [Emacsからの安全なシェルコマンド実行](https://qiita.com/tadsan/items/17d32514b81f1e8f208a) 
 
 `compile` 実行環境として以下を設定しています。
 
