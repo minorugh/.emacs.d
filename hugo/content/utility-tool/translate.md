@@ -45,7 +45,7 @@ draft = false
 	(list 427110 1469889687)))
 ```
 
-最後の部分は、`Failed to search TKK` というエラーが出てときどきとまるので、おまじないです。
+最後の部分は、`Failed to search TKK` というエラーが出てときどきとまることがあるので、おまじないです。
 ```elisp
 (defun google-translate--get-b-d1 ()
   "Fix error of `Failed to search TKK`."
