@@ -8,7 +8,7 @@ draft = false
 [@conao3](https://qiita.com/conao3) さんの上記記事に触発されて、`use-pacage.el`から `leaf.el` に全面的に書き直しました。
 
 ### leaf.el の初期設定
-`@conao3` さんの示されていたものを下敷きにして `init.el` を設定しています。
+[@conao3](https://qiita.com/conao3) さんの示されていたものを下敷きにして `init.el` を設定しています。
 
 ```elisp
 ;;; init.el --- Emacs first Configuration. -*- lexical-binding: t -*-
