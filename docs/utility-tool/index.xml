@@ -35,7 +35,7 @@
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</guid>
       <description>PS-Printer での印刷 EmacsからPostscript経由で印刷する際の個人的な設定です。
-Postscript 対応のプリンターが必要です。
+Postscript 対応のプリンターが必要。
 (defalias &#39;ps-mule-header-string-charsets &#39;ignore) (setq ps-multibyte-buffer &#39;non-latin-printer ps-paper-type &#39;a4 ps-font-size 9 ;; ps-font-family &#39;Helvetica ps-font-family &#39;Courier ps-line-number-font &#39;Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) </description>
     </item>
     
