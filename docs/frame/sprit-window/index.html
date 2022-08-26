@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T11:09:20 JST">
+<meta name="revised" content="2022-08-26T11:12:18 JST">
 <title>5.4. cus-sprit-window :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -841,9 +841,8 @@
 <h3 id="デフォルトの画面分割コマンドをカスタマイズ">デフォルトの画面分割コマンドをカスタマイズ</h3>
 <p><code>dimmer-mode</code> 連携のためにデフォルトのコマンドをカスタマイズします。</p>
 <ul>
-<li>同じバッファーを分割したときは、<code>follow-mode</code> にする。</li>
-<li>画面分割したときは、<code>dimmer-mode-on</code> にする。</li>
-<li>画面分割を閉じたときは、<code>dimmer-mode-off</code> にする。</li>
+<li>画面分割したときは、<code>dimmer-mode on</code> + <code>follow-mode on</code> にする。</li>
+<li>画面分割を閉じたときは、<code>dimmer-mode off</code> にする。</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-sprit-window-functions</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-q&#34;</span> <span style="color:#000">.</span> <span style="color:#000">other-window-or-split</span>)

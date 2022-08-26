@@ -6,9 +6,8 @@ draft = false
 
 `dimmer-mode` 連携のためにデフォルトのコマンドをカスタマイズします。
 
-* 同じバッファーを分割したときは、`follow-mode` にする。
-* 画面分割したときは、`dimmer-mode-on` にする。
-* 画面分割を閉じたときは、`dimmer-mode-off` にする。
+* 画面分割したときは、`dimmer-mode on` + `follow-mode on` にする。
+* 画面分割を閉じたときは、`dimmer-mode off` にする。
 
 ```emacs-lisp
 (leaf *cus-sprit-window-functions
