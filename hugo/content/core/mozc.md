@@ -117,6 +117,7 @@ Emacs*useXIM: false
 この手順は、`makefile` で表現するほうがわかりやすいかも…
 
 ```shellsession
+# makefile for mozc copy 
 mozc_copy:
   mkdir -p ~/Dropbox/mozc
   cp -r ~/.mozc/ ~/Dropbox/mozc/
