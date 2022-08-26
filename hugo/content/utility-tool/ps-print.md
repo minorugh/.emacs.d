@@ -3,8 +3,10 @@ title = "12.3. ps-priter"
 draft = false
 +++
 
-### PS-Printer へのファイルの出力
-基本的には Postscript ファイルを打ち出すことのできるPostscript プリンターが必要です。
+### PS-Printer での印刷
+Emacsから`Postscript`経由で印刷する際の個人的な設定です。
+
+`Postscript` 対応のプリンターが必要です。
 
 ```code
 (defalias 'ps-mule-header-string-charsets 'ignore)
