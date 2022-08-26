@@ -406,7 +406,7 @@ expand-region.elは、カーソル位置を起点として選択範囲を広げ�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</guid>
-      <description>カーソルの点滅を制御 ビルトインの blink-cursor-mode を設定してカーソルの点滅を制御します。
+      <description>カーソルの点滅を制御 ビルトインの blink-cursor.el を設定してカーソルの点滅を制御します。
 以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．
 (setq blink-cursor-blinks 0) (setq blink-cursor-interval 0.3) (setq blink-cursor-delay 10) (add-hook &amp;#39;emacs-startup-hook . blink-cursor-mode) </description>
     </item>
