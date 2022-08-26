@@ -50,7 +50,7 @@ draft = false
 ### make command functions
 適宜必要な `make` 実行コマンドを定義しています。
 
-例えば、詳細に `commit message` を残さなくてもいいような Gitリポジトリは、自動コミットです。
+例えば、詳細に `commit message` を残さなくてもいい Gitリポジトリは、`magit` は使わずに `make` で自動コミットします。
 `make git` で実行されます。
 
 ```makefile
