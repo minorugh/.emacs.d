@@ -48,7 +48,43 @@ draft = false
 ```
 
 ### make command functions
-適宜必要な `make` コマンドを定義しています。以下は一例です。
+適宜必要な `make` コマンドを定義しています。
+
+詳細に `commit message` を残さなくてもいいような Gitリポジトリは、自動コミットです。
+
+```makefile
+# auto commit maikefile
+git:
+	git add . && git diff --cached --exit-code --quiet && echo "\nnothing to commit, working tree clean!"|| \
+	git commit -a -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`" && \
+	git push origin master
+```
+
+実行関数は、コマンドを実行しながら、Emacs上で別の作業をさせることができる `compile` を使います。
+
+* 参考: [Emacsからの安全なシェルコマンド実行: @tadsan](https://qiita.com/tadsan/items/17d32514b81f1e8f208a) 
+
+`compile` 実行環境として以下を設定しています。
+
+* コンパイルが進むのに合わせてスクロールさせる
+* 常に確認なしで自動的にコンパイルをkillする
+* 正常終了したら `*Compiltion*` バッファーを自動で閉じる
+
+```elisp
+(setq compilation-scroll-output t)
+(setq compilation-always-kill t)
+(setq compilation-finish-functions 'compile-autoclose)
+
+(defun compile-autoclose (buffer string)
+  "Automatically close the compilation buffer."
+  (cond ((string-match "finished" string)
+         (bury-buffer "*compilation*")
+		 (delete-other-windows)
+		 (message "Build successful."))
+		 (t (message "Compilation exited abnormally: %s" string))))
+```
+
+目的別の実行コマンドの一例はいかのとおり。
 
 ```elisp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
