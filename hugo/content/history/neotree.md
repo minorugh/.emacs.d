@@ -22,7 +22,7 @@ draft = false
   `((neo-keymap-style . 'concise)
     (neo-create-file-auto-open . t)))
 ```
-アイコンは `all-the-icons` より `doom-themes` のほうがシンプルで見やすい。
+アイコンは `all-the-icons` より `doom-themes` の拡張設定のほうがシンプルで見やすい。
 
 ```elisp
 ;; doom-themes 
