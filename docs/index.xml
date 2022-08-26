@@ -7,6 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</guid>
+      <description>[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.
+sudo-edit.el はカレントバッファ・任意のファイルを root 権限で開き直すコマンドを2つ提供しています。
+ M-x sudo-edit ファイルを root権限で開きます。システムファイルを編集するときに便利です。 M-x sudo-edit-find-file root権限で find-file します。  実用上は、sudo-edit だけで十分な気がします。自分は、dired-mode から s でコマンドを実行するようにしています。
+パッケージを使わずに関数設定だけで機能させるTipsも見つけました。
+🔗 Emacs でファイルをsudoで開き直す
+dired や C-x C-f で普通にファイルを開いたときに、それが root所有なファイルなら、自動的にsudoで開きなおすかを聞いてくれます。
+案外使いやすいので、とりあえず両方設定しています。
+;; Automatically open root permission file with sudo ;; https://ameblo.jp/grennarthmurmand1976/entry-12151018656.html (defun file-root-p (filename) &amp;#34;Return t if file FILENAME created by root.&amp;#34; (eq 0 (nth 2 (file-attributes filename)))) (defadvice find-file (around my:find-file activate) &amp;#34;Open FILENAME using tramp&amp;#39;s sudo method if it&amp;#39;s root permission.</description>
+    </item>
+    
+    <item>
       <title>1.1. eary-init.el</title>
       <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -274,9 +290,9 @@ Postscript 対応のプリンターが必要です。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/restart/</guid>
-      <description>[rstert-emacs.el] Emacsを再起動させる 🔗 Link Text
+      <description>[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.
 restart-emacs は、Emacsを再起動させるコマンドです。
-C-uの数によって再起動の方法を制御できます。
+C-u の数によって再起動の方法を制御できます。
  M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>
     </item>
     

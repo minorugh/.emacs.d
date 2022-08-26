@@ -182,7 +182,6 @@
 	  ps-print-footer nil)
 
 
-
 (provide '06_utils)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 06_utils.el ends here

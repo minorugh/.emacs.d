@@ -30,3 +30,6 @@ disableToc = true
 [restart-emacs]({{< relref "restart" >}})
 : Emacsを再起動させる
 
+[sudo-edit]({{< relref "sudo-edit" >}})
+: Emacsを再起動させる
+
