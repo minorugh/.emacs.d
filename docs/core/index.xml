@@ -71,7 +71,7 @@ $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインスト�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/change-keybind/</guid>
-      <description>デフォルトキーバインドの挙動をカスタマイズする デフォルトの挙動を自分好みにカスタマイズしています。 その前準備としてクリップボードを使えるようにします。
+      <description>デフォルトキーバインドの挙動をカスタマイズ デフォルトの挙動を自分好みにカスタマイズしています。 その前準備としてクリップボードを使えるようにします。
 ;; Use the X11 clipboard (setq select-enable-clipboard t) (setq mouse-drag-copy-region t) マウスで選択すると，勝手にペーストボードにデータが流れます．
 C-w は、kill-ring-save に割り当てられたものですが、region 選択されていないときは、一行削除になるようにカスタマイズしてます。
 kill-buffer は、yes/no 確認されるのが煩わしいので、確認なしの kill-this-buffer を愛用しています。
