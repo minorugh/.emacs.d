@@ -5,6 +5,10 @@ draft = false
 ### [counsel-tramp.el] 
 🔗 [masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.](https://github.com/masasam/emacs-counsel-tramp) 
 
+管理している俳句サイトのれたるサーバーを除くのに `counsel-tramp` を使っています。
+
+サーバー上のファイルを直に編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
+
 ```elisp
 (leaf counsel-tramp
   :ensure t
