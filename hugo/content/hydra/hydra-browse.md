@@ -2,7 +2,10 @@
 title = "8.6. hydra-browse"
 draft = false
 +++
+### Hydra for brows-url
+お気に入りサイトをChromeで一発で開くために `hydra-browse` でメニュー化しました。
 
+`dashboard` 画面からワンキーで呼び出せるようにもしていて便利です。
 ```elisp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Hydra for favorite utils
