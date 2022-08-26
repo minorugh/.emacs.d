@@ -249,7 +249,7 @@
 	"title": "12.7. sudo-edit",
 	"tags": [],
 	"description": "",
-	"content": "[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.\nsudo-edit.elは、現在アクセスしているファイルをsudoユーザーとして開きなおします。\n(leaf sudo-edit :ensure t :bind (\u0026#34;C-c s\u0026#34; . sudo-edit)) sudo-edit-find-file というコマンドもあるようなのでお好みで…\n"
+	"content": "[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.\nsudo-edit.elは、現在アクセスしているファイルをsudoで開きなおします。\n(leaf sudo-edit :ensure t :bind (\u0026#34;C-c s\u0026#34; . sudo-edit)) sudo-edit-find-file というコマンドもあるようなのでお好みで…\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/eshell/",

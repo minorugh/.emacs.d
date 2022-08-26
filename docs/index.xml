@@ -287,7 +287,7 @@ C-u の数で再起動の方法を制御できます。
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</guid>
       <description>[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.
-sudo-edit.elは、現在アクセスしているファイルをsudoユーザーとして開きなおします。
+sudo-edit.elは、現在アクセスしているファイルをsudoで開きなおします。
 (leaf sudo-edit :ensure t :bind (&amp;#34;C-c s&amp;#34; . sudo-edit)) sudo-edit-find-file というコマンドもあるようなのでお好みで…</description>
     </item>
     
