@@ -53,7 +53,7 @@ draft = false
 詳細に `commit message` を残さなくてもいいような Gitリポジトリは、自動コミットです。
 
 ```makefile
-# auto commit maikefile
+# makefile for auto commit
 git:
 	git add . && git diff --cached --exit-code --quiet && echo "\nnothing to commit, working tree clean!"|| \
 	git commit -a -m "Updated: `date +'%Y-%m-%d %H:%M:%S'`" && \
