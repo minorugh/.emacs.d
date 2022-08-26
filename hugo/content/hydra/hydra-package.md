@@ -2,6 +2,7 @@
 title = "8.3. hydra-package"
 draft = false
 +++
+### hydra-package
 MELPAのパッケージ管理には、`Package-utils` を使っています。
 また、`el-get` にもいろいろとコマンドがあるようですが、どちらもあまり使いこなせてません。
 

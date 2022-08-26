@@ -37,7 +37,7 @@ hydra-quick-menu 編集作業で頻繁にアクセスするプロジェクトの
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</guid>
-      <description>MELPAのパッケージ管理には、Package-utils を使っています。 また、el-get にもいろいろとコマンドがあるようですが、どちらもあまり使いこなせてません。
+      <description>hydra-package MELPAのパッケージ管理には、Package-utils を使っています。 また、el-get にもいろいろとコマンドがあるようですが、どちらもあまり使いこなせてません。
 とりあえず主なコマンドをを hydra-package でメニュー化しています。
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for package utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf package-utils :ensure t :chord (&amp;#34;p@&amp;#34; . hydra-package/body) :hydra (hydra-package (:color red :hint nil) &amp;#34; 📦 Package: _m_elpa _i_nstall upgrade:_l_ist._n_ame._a_ll _r_emove _e_l-get &amp;#34; (&amp;#34;i&amp;#34; package-install) (&amp;#34;l&amp;#34; package-utils-list-upgrades) (&amp;#34;n&amp;#34; package-utils-upgrade-by-name) (&amp;#34;r&amp;#34; package-utils-remove-by-name) (&amp;#34;a&amp;#34; package-utils-upgrade-all-and-restart) (&amp;#34;m&amp;#34; package-list-packages) (&amp;#34;e&amp;#34; select-elget-command) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :preface (defun select-elget-command () &amp;#34;Narrow the only el-get command in `M-x&amp;#39;.&amp;#34; (interactive) (counsel-M-x &amp;#34;^el-get &amp;#34;))) </description>
     </item>
