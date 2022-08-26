@@ -81,7 +81,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定  "
+	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定 restart-emacs Emacsを再起動させる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/startup/eary-init/",
@@ -236,6 +236,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Thunarを Emacsから呼び出す Emacsで開いている buffer のcurrent-dir で Debian の Thuner を開きます。\n使う機会は少ないと思いますが\u0026hellip;\n(defun filer-current-dir-open () \u0026#34;Open filer in current dir.\u0026#34; (interactive) (compile (concat \u0026#34;Thunar \u0026#34; default-directory))) (bind-key \u0026#34;\u0026lt;f3\u0026gt;\u0026#34; \u0026#39;filer-current-dir-open) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/restart/",
+	"title": "12.6. restart-emacs",
+	"tags": [],
+	"description": "",
+	"content": "[rstert-emacs.el] Emacsを再起動させる 🔗 Link Text\nrestart-emacs は、Emacsを再起動させるコマンドです。\nC-uの数によって再起動の方法を制御できます。\n M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs \u0026ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",

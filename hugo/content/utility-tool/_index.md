@@ -27,3 +27,6 @@ disableToc = true
 [open-thunar]({{< relref "thunar" >}})
 : カレントデレクトリでLinuxのファイラーを開く設定
 
+[restart-emacs]({{< relref "restart" >}})
+: Emacsを再起動させる
+

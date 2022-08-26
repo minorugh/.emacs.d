@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-26T19:33:29 JST">
-<title>7.10. smartparens :: minoru&#39;s Emacs Configuration</title>
+<title>12.6. restart-emacs :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/editing/smartparens/">
+  <body data-url="/.emacs.d/utility-tool/restart/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -786,7 +786,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/smartparens.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/utility-tool/restart.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -806,7 +806,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>編集サポート / 入力補助</a> > 7.10. smartparens
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.6. restart-emacs
 
  
 
@@ -823,7 +823,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#smartparensel-対応する括弧の挿入をアシスト">[smartparens.el] 対応する括弧の挿入をアシスト</a></li>
+        <li><a href="#rstert-emacsel-emacsを再起動させる">[rstert-emacs.el] Emacsを再起動させる</a></li>
       </ul>
     </li>
   </ul>
@@ -837,7 +837,7 @@
 
 <div id="body-inner">
   
-    <h1>7.10. smartparens</h1>
+    <h1>12.6. restart-emacs</h1>
   
 
 
@@ -845,17 +845,23 @@
     
     
     
-<h3 id="smartparensel-対応する括弧の挿入をアシスト">[smartparens.el] 対応する括弧の挿入をアシスト</h3>
-<p>🔗 <a href="https://github.com/Fuco1/smartparens">Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.</a></p>
-<p>設定がいまいちよくわからず、試行錯誤しましたが、</p>
-<pre><code>(require 'smartparens-config)
-</code></pre><p>を追加したところとても賢く機能するようになりました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">smartparens</span>
+<h3 id="rstert-emacsel-emacsを再起動させる">[rstert-emacs.el] Emacsを再起動させる</h3>
+<p>🔗 <a href="URL">Link Text</a></p>
+<p><code>restart-emacs</code> は、Emacsを再起動させるコマンドです。</p>
+<p>C-uの数によって再起動の方法を制御できます。</p>
+<dl>
+<dt><code>M-x restart-emacs</code></dt>
+<dd>通常のEmacsを立ち上げる</dd>
+<dt><code>C-u M-x restart-emacs</code></dt>
+<dd>emacs &ndash;debug-init</dd>
+<dt><code>C-u C-u M-x restart-emacs</code></dt>
+<dd>emacs -Q</dd>
+<dt><code>C-u C-u C-u M-x restart-emacs</code></dt>
+<dd>引数を尋ねる</dd>
+</dl>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">restart-emacs</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">smartparens-global-mode</span>)
-		 (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-smartparens-mode</span>))
-  <span style="color:#a90d91">:config</span>
-  (<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;smartparens-config</span>))
+  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;C-x C-c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">restart-emacs</span>))
 </code></pre></div>
 
     
@@ -867,8 +873,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/editing/iedit/" title="7.10. iedit"> <i class="fa fa-chevron-left"></i><label>7.10. iedit</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/migemo/" title="7.11. migemo" style="margin-right: 0px;"><label>7.11. migemo</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/utility-tool/thunar/" title="12.5. open thunar"> <i class="fa fa-chevron-left"></i><label>12.5. open thunar</label></a>
+    <a class="nav nav-next" href="/.emacs.d/utility-tool/auto-delete/" title="12.1. auto-delete" style="margin-right: 0px;"><label>12.1. auto-delete</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

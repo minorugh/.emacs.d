@@ -269,6 +269,18 @@ Postscript 対応のプリンターが必要です。
     </item>
     
     <item>
+      <title>12.6. restart-emacs</title>
+      <link>https://minorugh.github.io/.emacs.d/utility-tool/restart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/utility-tool/restart/</guid>
+      <description>[rstert-emacs.el] Emacsを再起動させる 🔗 Link Text
+restart-emacs は、Emacsを再起動させるコマンドです。
+C-uの数によって再起動の方法を制御できます。
+ M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>
+    </item>
+    
+    <item>
       <title>2.1. language / coding</title>
       <link>https://minorugh.github.io/.emacs.d/core/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
