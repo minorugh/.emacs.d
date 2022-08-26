@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-26T16:08:46 JST">
+<meta name="revised" content="2022-08-26T16:11:44 JST">
 <title>10.8. open-junk-file :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -840,8 +840,8 @@
     
 <h3 id="open-junk-fileel-使い捨てファイルを書く開く">[open-junk-file.el] 使い捨てファイルを書く、開く</h3>
 <p>🔗 <a href="https://github.com/rubikitch/open-junk-file">rubikitch/open-junk-file: Write a disposable file.</a></p>
-<p>junkファイルの保存も howmフォルダーに置くことで、<code>howm-list</code> からの検索機能が利用できて便利です。</p>
-<p><code>howm</code>は、ローマ字での日本語検索も可能なのでとても便利です。</p>
+<p>ファイルを howmフォルダーに保存すると、<code>howm-list</code> からの検索機能が利用できます。
+<code>howm</code>は、ローマ字での日本語検索も可能なのでとても便利です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">open-junk-file</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:config</span>
   (<span style="color:#a90d91">setq</span> <span style="color:#000">open-junk-file-format</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/junk/%Y%m%d.&#34;</span>)
