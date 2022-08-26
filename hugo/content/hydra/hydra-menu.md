@@ -6,9 +6,9 @@ draft = false
 
 便宜上、`quick-menu`と`work-menu` に分けていますが、どちらからでも相互に呼び出せるようにしています。
 
-### [hydra-quick-menu]
-[`hydra-quick-menu`](https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L5) 
+### hydra-quick-menu
 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。
+
 よく使うアプリ起動のショートカットなども設定しておくと便利です。
 
 ![hydra-quick-menu](https://live.staticflickr.com/65535/50174826063_b4fa442b1e_b.jpg) 
@@ -63,8 +63,7 @@ draft = false
    ("M-." hydra-work/body)
    ("<muhenkan>" nil)))
 ```
-### [hydra-work-menu]
-[`hydra-work-menu`](https://github.com/minorugh/dotfiles/blob/31fbe8f956d453db9804e60f1a244919c6876689/.emacs.d/inits/20_hydra-menu.el#L57) 
+### hydra-work-menu
 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。
 
 ![hydra-work-menu](https://live.staticflickr.com/65535/50175364331_9fcf3c6c86_b.jpg) 
