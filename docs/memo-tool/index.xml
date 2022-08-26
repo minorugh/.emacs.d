@@ -40,7 +40,7 @@ dashboard画面に簡単なタスクを表示させるために org-agenda も�
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</guid>
       <description>scratchバッファーを付箋として使う Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに *scratch*バッファーが使えるように設定してみた。
-再起動しても*scratch* バッファーの内容が消えないように auto-save-buffers の *scratch* 自動保存機能を併用しています。
+再起動しても*scratch* の内容が消えないように auto-save-buffers の *scratch* 自動保存機能を併用しています。
 専用のパッケージもあるようです。
 persistent-scratch.el: scratch バッファを永続化・自動保存・復元する
 toggle-scratch は、編集中のバッファーとscratchとをトグルで切り替えます。

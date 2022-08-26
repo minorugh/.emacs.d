@@ -7,7 +7,7 @@ draft = false
 
 Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに `*scratch*`バッファーが使えるように設定してみた。
 
-再起動しても`*scratch*` バッファーの内容が消えないように [`auto-save-buffers`](http://emacs.rubikitch.com/auto-save-buffers-enhanced/) の `*scratch*` 自動保存機能を併用しています。
+再起動しても`*scratch*` の内容が消えないように [`auto-save-buffers`](http://emacs.rubikitch.com/auto-save-buffers-enhanced/) の `*scratch*` 自動保存機能を併用しています。
 
 専用のパッケージもあるようです。
 
