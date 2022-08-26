@@ -11,9 +11,9 @@ draft = false
 
 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなズボラな自分には便利です。
 
-* `my:tembuf-ignore-files`: 勝手に kill させないファイルの指定
-* `find-file-hook`: `find-file` や `dired` で開いたファイルが対象
-* `dired buffer` /`magit-buffer`: 強制的に削除
+* `my:tembuf-ignore-files` は、勝手に kill させないファイルの指定
+* `find-file-hook` は、`find-file` や `dired` で開いたファイルが削除対象
+* `dired buffer` /`magit-buffer` は、無条件に削除
 
 ```elisp
 (leaf tempbuf
