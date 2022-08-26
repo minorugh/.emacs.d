@@ -8,11 +8,11 @@ draft = false
 キーをタイプした時点で自動的に補完候補が出てきて、ミスタイプを減らして入力効率を上げる優れた補完機能です。
 同種のものに日本では `auto-complete.el` が有名ですが、昨今は`company.el` の方が一般化しているようです。
 
-デフォルトで自動的に補完候補がポップアップしますが、煩わしければ、
+デフォルトは自動的に補完候補がポップアップしますが、煩わしければ、
 ```elisp
 (setq company-idle-delay nil)
 ```
-とし、`company-complete` で手動で発動できます。 
+としておいて、`company-complete` で手動で発動できます。 
 
 ```elisp
 (leaf company
