@@ -14,7 +14,7 @@ draft = false
 と行間を大きくするように設定していて、`dark-room` を出るときに元に戻します。
 
 [@takaxpさんのブログ記事](https://pxaka.tokyo/blog/2019/emacs-buffer-list-update-hook/) のによると、`global` で `0.3` 以下に設定すると 
-`nil` に戻せないという不具合があるとのことなので、Tipsをパクって以下のように設定をしました。
+`nil` に戻せないという不具合があるとのことなので、次のように設定しました。
 
 ```elisp
 (defun my:linespacing ()
