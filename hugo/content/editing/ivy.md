@@ -59,7 +59,7 @@ draft = false
 ### ivy-rich
 🔗 [Yevgnen/ivy-rich: More friendly interface for ivy.](https://github.com/Yevgnen/ivy-rich) 
 
-ivy-rich を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。
+`ivy-rich.el` を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。
 
 ```elisp
 (leaf ivy-rich
@@ -70,7 +70,7 @@ ivy-rich を導入するとアイコンが追加され、さらに追加の情�
 ### amx
 🔗 [DarwinAwardWinner/amx: An alternative M-x interface for Emacs.](https://github.com/DarwinAwardWinner/amx) 
 
-`amx` は、Emacsコマンド `M-x` の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
+`amx.el` は、Emacsコマンド `M-x` の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
 
 導入することで`counsel-M-x` とも自動的に連携して効率の良い補完システムを提供します。
 
@@ -95,7 +95,7 @@ If the region isn't selected, `swiper'."
     (swiper-thing-at-point)))
 ```
 
-### 高速全文検索
+### [counsel-ag] 高速全文検索
 2文字でも検索が発動するようにカスタマイズしています。`@takaxp` さんのTipsからパクってきました。
 
 ```elisp
