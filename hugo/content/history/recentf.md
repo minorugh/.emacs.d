@@ -4,7 +4,7 @@ draft = false
 +++
 ### 開いたファイルの履歴を保存
 
-複数端末で設定ファイルを共有させている環境では、`recentf-auto-cleanup` を `never` にしておかないと大変なことになる。
+複数端末で設定ファイルを共有している場合、`recentf-auto-cleanup` を `never` にしておかないと大変なことになる。
 
 ```elisp
 ;; recentf
