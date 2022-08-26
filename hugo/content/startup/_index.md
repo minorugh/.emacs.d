@@ -9,7 +9,7 @@ disableToc = true
 Emacs の起動設定に関わる部分をまとめています。
 Emacs-27導入にあわせて `early-init.el` を設定しました。 
 
-Emacsが起動するまでの流れは以下のとおり。
+起動するまでの流れは以下のとおり。
 
 ```shellsession
 1. early-init.el の読み込み
