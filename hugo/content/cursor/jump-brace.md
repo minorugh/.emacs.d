@@ -20,7 +20,7 @@ draft = false
 
 ### 標準機能
 
-* `C-M-SPC` (mark-sexp) は，カーソル位置から順方向に選択．
-* `C-M-U` (backward-up-list) は，一つ外のカッコの先頭にポイントを移す．
+* `C-M-SPC` (mark-sexp) は、カーソル位置から順方向に選択
+* `C-M-U` (backward-up-list) は、一つ外のカッコの先頭にポイントを移す
 
 標準機能はなにげに使いにくいです。
