@@ -39,7 +39,7 @@
 	"title": "コア設定",
 	"tags": [],
 	"description": "",
-	"content": "Emacs の基本動作に関わる部分をここでは設定している\n# INDEX  Language / Encode 言語と文字コードの設定 Mozc 日本語入力の設定 Server サーバー機能を使う設定 exec-path-from-shell 設定をシェルから継承する uniquify 同じバッファ名が開かれた場合に区別 change-global-keibind 基本キーバインドのカスタマイズ  "
+	"content": "Emacs の基本動作に関わる部分をここでは設定している\n# INDEX  Language / Encode 言語と文字コードの設定 Mozc 日本語入力の設定 Server サーバー機能を使う設定 exec-path-from-shell 設定をシェルから継承する uniquify 同じバッファ名が開かれた場合に区別 change-global-keibind 基本キーバインドのカスタマイズ aggresive-indent 即時整形バッファー  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/flymake/",
@@ -123,7 +123,7 @@
 	"title": "編集サポート / 入力補助",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdownでの編集をサポートしてくれる view-mode ファイルの閲覧に特化した便利機能 web-mode HTML編集をサポートしてくれる。 yatex LaTeX の入力支援環境を提供する。 darkroom 執筆モード（暗室モード） ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール yasunippets/ cpmpany キーをタイプした時点で自動的に補完候補が出てきてくれる key-chord 同時押しのキーバインドを提供してくれる smartparens 括弧などのペアを自動的に挿入してくれる iedit 択領域を別の文字列に置き換える migemo ローマ字のまま日本語をインクリメンタル検索を可能にする selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる counsel-fontawesome Font-Awesomeの入力を支援してくれる  "
+	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdownでの編集をサポートしてくれる view-mode ファイルの閲覧に特化した便利機能 web-mode HTML編集をサポートしてくれる。 yatex LaTeX の入力支援環境を提供する。 darkroom 執筆モード（暗室モード） ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール yasunippets キーをタイプした時点で自動的に補完候補が出てきてくれる campany キーをタイプした時点で自動的に補完候補が出てきてくれる key-chord 同時押しのキーバインドを提供してくれる iedit 択領域を別の文字列に置き換える migemo ローマ字のまま日本語をインクリメンタル検索を可能にする swiper-migemo ローマ字のまま日本語をインクリメンタル検索を可能にする smartparens 括弧などのペアを自動的に挿入してくれる selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる counsel-fontawesome Font-Awesomeの入力を支援してくれる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/browsepoint/",
@@ -214,7 +214,7 @@
 	"title": "6.11. migemo",
 	"tags": [],
 	"description": "",
-	"content": "[migemo.el] ローマ字のまま日本語をインクリメンタル検索可能にする。 🔗 emacs-jp/migemo: emacs migemo client.\nmigemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。\n$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。\n$ cmigemo --help Emacsの設定は下記のとおりです。\n(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find \u0026#34;cmigemo\u0026#34;) :custom `((migemo-command . \u0026#34;cmigemo\u0026#34;) (migemo-dictionary . \u0026#34;/usr/share/cmigemo/utf-8/migemo-dict\u0026#34;))) [swiper-migemo.el] swiperでもmigemoを使う 🔗 tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.\navy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。\nつい最近、avy-migemo を使わない swiper-migemo.elを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-getで取得しています。\n(leaf swiper-migemo :doc \u0026#34;https://github.com/tam17aki/swiper-migemo\u0026#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) "
+	"content": "[migemo.el] ローマ字のまま日本語をインクリメンタル検索可能にする。 🔗 emacs-jp/migemo: emacs migemo client.\nmigemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。\n$ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。\n$ cmigemo --help Emacsの設定は下記のとおりです。\n(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find \u0026#34;cmigemo\u0026#34;) :custom `((migemo-command . \u0026#34;cmigemo\u0026#34;) (migemo-dictionary . \u0026#34;/usr/share/cmigemo/utf-8/migemo-dict\u0026#34;))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/memo-tool/",
@@ -224,36 +224,43 @@
 	"content": "TPOで使い分けるメモツール\n# INDEX  howm-mode howm-modeの設定 org-mode org-modeの設定 scratch-memo scratchを付箋として使う設定  "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/editing/smartparens/",
-	"title": "6.12. smartparens",
+	"uri": "https://minorugh.github.io/.emacs.d/editing/swiper-migemo/",
+	"title": "6.12. swiper-migemo",
 	"tags": [],
 	"description": "",
-	"content": "[smartparens.el] 対応する括弧の挿入をアシスト 🔗 Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.\n設定がいまいちよくわからず、試行錯誤しましたが、\n(require 'smartparens-config) を追加したところとても賢く機能するようになりました。\n(leaf smartparens :ensure t :hook ((after-init-hook . smartparens-global-mode) (prog-mode-hook . turn-on-smartparens-mode)) :config (require \u0026#39;smartparens-config)) "
+	"content": "[swiper-migemo.el] swiperでもmigemoを使う 🔗 tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.\navy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。\nつい最近、avy-migemo を使わない swiper-migemo.elを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-getで取得しています。\n(leaf swiper-migemo :doc \u0026#34;https://github.com/tam17aki/swiper-migemo\u0026#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/",
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定 restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs上から使えるターミナルエミュレータ google-translate Emacs上から使えるターミナルエミュレータ  "
+	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない設定\n emacs-lock scratchバッファーを決してKillさせない設定 ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く設定 open-thunar カレントデレクトリでLinuxのファイラーを開く設定 restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Emacs から直接 Google翻訳サービスを使用して文字列を翻訳  "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/editing/smartparens/",
+	"title": "6.13. smartparens",
+	"tags": [],
+	"description": "",
+	"content": "[smartparens.el] 対応する括弧の挿入をアシスト 🔗 Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.\n設定がいまいちよくわからず、試行錯誤しましたが、\n(require 'smartparens-config) を追加したところとても賢く機能するようになりました。\n(leaf smartparens :ensure t :hook ((after-init-hook . smartparens-global-mode) (prog-mode-hook . turn-on-smartparens-mode)) :config (require \u0026#39;smartparens-config)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/selected/",
-	"title": "6.13. selected",
+	"title": "6.14. selected",
 	"tags": [],
 	"description": "",
 	"content": "[selected.el] リージョン選択時のアクションを制御 🔗 Kungsgeten/selected.el: Keymap for when region is active.\n選択領域に対するスピードコマンドです。\nEmacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。\n(leaf selected :ensure t :hook (after-init-hook . selected-global-mode) :bind (:selected-keymap (\u0026#34;;\u0026#34; . comment-dwim) (\u0026#34;c\u0026#34; . clipboard-kill-ring-save) (\u0026#34;s\u0026#34; . swiper-thing-at-point) (\u0026#34;t\u0026#34; . google-translate-auto) (\u0026#34;T\u0026#34; . chromium-translate) (\u0026#34;W\u0026#34; . my:weblio) (\u0026#34;k\u0026#34; . my:koujien) (\u0026#34;e\u0026#34; . my:eijiro) (\u0026#34;g\u0026#34; . my:google))) browse-urlで検索サイトで開く 検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。\n(defun my:koujien (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://sakura-paris.org/dict/広辞苑/prefix/%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:weblio (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://www.weblio.jp/content/%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:eijiro (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://eow.alc.co.jp/%s/UTF-8/\u0026#34; (upcase (url-hexify-string str))))) (defun my:google (str) (interactive (list (my:get-region nil))) (browse-url (format \u0026#34;https://www.google.com/search?hl=ja\u0026amp;q=%s\u0026#34; (upcase (url-hexify-string str))))) (defun my:get-region (r) \u0026#34;Get search word from region.\u0026#34; (buffer-substring-no-properties (region-beginning) (region-end))) IME のオン・オフを自動制御する selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。\n領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、 @takaxp さんの Qiitaの記事 にあったので、私の環境（emacs-mozc ）にあうように設定したら、すんなり動いてくれました。感謝！\n(leaf *cus-selected :hook ((activate-mark-hook . my:activate-selected) (activate-mark-hook . (lambda () (setq my:ime-flag current-input-method) (my:ime-off))) (deactivate-mark-hook . (lambda () (unless (null my:ime-flag) (my:ime-on))))) :init ;; Control mozc when seleceted (defun my:activate-selected () (selected-global-mode 1) (selected--on) (remove-hook \u0026#39;activate-mark-hook #\u0026#39;my:activate-selected)) (add-hook \u0026#39;activate-mark-hook #\u0026#39;my:activate-selected) (defun my:ime-on () (interactive) (when (null current-input-method) (toggle-input-method))) (defun my:ime-off () (interactive) (inactivate-input-method)) (defvar my:ime-flag nil) (add-hook \u0026#39;activate-mark-hook #\u0026#39;(lambda () (setq my:ime-flag current-input-method) (my:ime-off))) (add-hook \u0026#39;deactivate-mark-hook #\u0026#39;(lambda () (unless (null my:ime-flag) (my:ime-on))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/pangu/",
-	"title": "6.14. pangu-spacing",
+	"title": "6.15. pangu-spacing",
 	"tags": [],
 	"description": "",
 	"content": "[pangu-spacing.el] 漢字と英字の間にスペースを自動追加 🔗 coldnew/pangu-spacing: Add space between Chinese and English characters.\npangu-spacingは、漢字と英字の間にスペースを自動追加してくれます。 少しカスタマイズしました。\n 英字の前方のみとし後方にはスペースは挿入しない。 半角数字は、対象から除外。  ;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any \u0026#34;。，！？；：「」（）、\u0026#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in \u0026#34;a-zA-Z\u0026#34;))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/fontawesome/",
-	"title": "6.15. font-awesome",
+	"title": "6.16. font-awesome",
 	"tags": [],
 	"description": "",
 	"content": "[font-awesom.el] 絵文字フォント入力支援 🔗 krismolendyke/font-awesome.el: A simple library for using Font Awesome icons in Emacs.\nFont-awesome の入力をcounsel で支援してくれる。\n(leaf font-awesome :ensure t :bind (\u0026#34;s-f\u0026#34; . counsel-fontwesame)) "
@@ -382,7 +389,7 @@
 	"title": "12.9. google-translate",
 	"tags": [],
 	"description": "",
-	"content": "[google-translate.el] 🔗 atykhonov/google-translate: Emacs interface to Google Translate.\nこの設定は、@masasam の Sollst Work Blog で公開されている設定をパクりました。\nリージョンが日本語なら ja to en に、英語なら en to ja にと自動判別して実行してくれます。\n(leaf google-translate :ensure t :bind (\u0026#34;C-t\u0026#34; . google-translate-auto) :config (defun google-translate-auto () \u0026#34;Automatically recognize and translate Japanese and English.\u0026#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format \u0026#34;\\\\`[%s]+\\\\\u0026#39;\u0026#34; \u0026#34;[:ascii:]\u0026#34;) string) (google-translate-translate \u0026#34;en\u0026#34; \u0026#34;ja\u0026#34; string) (google-translate-translate \u0026#34;ja\u0026#34; \u0026#34;en\u0026#34; string))) (let ((string (read-string \u0026#34;Google Translate: \u0026#34;))) (if (string-match (format \u0026#34;\\\\`[%s]+\\\\\u0026#39;\u0026#34; \u0026#34;[:ascii:]\u0026#34;) string) (google-translate-translate \u0026#34;en\u0026#34; \u0026#34;ja\u0026#34; string) (google-translate-translate \u0026#34;ja\u0026#34; \u0026#34;en\u0026#34; string))))) (defun google-translate--get-b-d1 () \u0026#34;Fix error of `Failed to search TKK`.\u0026#34; (list 427110 1469889687))) 最後の部分は、Failed to search TKK というエラーが出てときどきとまることがあるので、おまじないです。\n(defun google-translate--get-b-d1 () \u0026#34;Fix error of `Failed to search TKK`.\u0026#34; (list 427110 1469889687)) "
+	"content": "[google-translate.el] Google翻訳サービスを使用して文字列を翻訳 🔗 atykhonov/google-translate: Emacs interface to Google Translate.\nこの設定は、@masasam の Sollst Work Blog で公開されている設定をパクりました。\nリージョンが日本語なら ja to en に、英語なら en to ja にと自動判別して実行してくれます。\n(leaf google-translate :ensure t :bind ((\u0026#34;C-t\u0026#34; . google-translate-auto) (\u0026#34;C-c t\u0026#34; chromium-translate)) :config (defun google-translate-auto () \u0026#34;Automatically recognize and translate Japanese and English.\u0026#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format \u0026#34;\\\\`[%s]+\\\\\u0026#39;\u0026#34; \u0026#34;[:ascii:]\u0026#34;) string) (google-translate-translate \u0026#34;en\u0026#34; \u0026#34;ja\u0026#34; string) (google-translate-translate \u0026#34;ja\u0026#34; \u0026#34;en\u0026#34; string))) (let ((string (read-string \u0026#34;Google Translate: \u0026#34;))) (if (string-match (format \u0026#34;\\\\`[%s]+\\\\\u0026#39;\u0026#34; \u0026#34;[:ascii:]\u0026#34;) string) (google-translate-translate \u0026#34;en\u0026#34; \u0026#34;ja\u0026#34; string) (google-translate-translate \u0026#34;ja\u0026#34; \u0026#34;en\u0026#34; string))))) (defun google-translate--get-b-d1 () \u0026#34;Fix error of `Failed to search TKK`.\u0026#34; (list 427110 1469889687))) 最後の部分は、Failed to search TKK というエラーが出てときどきとまることがあるので、おまじないです。\n(defun google-translate--get-b-d1 () \u0026#34;Fix error of `Failed to search TKK`.\u0026#34; (list 427110 1469889687)) プラウザのGoogle翻訳サービスを使用して文字列を翻訳 前述のように、google-translate は、Google側のサービスシステムの都合上ときどき止まることがあります。 そのようなときの待避策としてプラウザからでも使えるようにという設定です。\nこちらも Sollst Work Blog で公開されているものです。\n(defun chromium-translate () \u0026#34;Open google translate with chromium.\u0026#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format \u0026#34;\\\\`[%s]+\\\\\u0026#39;\u0026#34; \u0026#34;[:ascii:]\u0026#34;) string) (browse-url (concat \u0026#34;https://translate.google.com/?source=gtx#en/ja/\u0026#34; (url-hexify-string string))) (browse-url (concat \u0026#34;https://translate.google.com/?source=gtx#ja/en/\u0026#34; (url-hexify-string string))))) (let ((string (read-string \u0026#34;Google Translate: \u0026#34;))) (if (string-match (format \u0026#34;\\\\`[%s]+\\\\\u0026#39;\u0026#34; \u0026#34;[:ascii:]\u0026#34;) string) (browse-url (concat \u0026#34;https://translate.google.com/?source=gtx#en/ja/\u0026#34; (url-hexify-string string))) (browse-url (concat \u0026#34;https://translate.google.com/?source=gtx#ja/en/\u0026#34; (url-hexify-string string))))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",
@@ -418,6 +425,13 @@
 	"tags": [],
 	"description": "",
 	"content": "同じバッファ名が開かれた場合に区別する ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。\n(setq uniquify-buffer-name-style \u0026#39;post-forward-angle-brackets) "
+},
+{
+	"uri": "https://minorugh.github.io/.emacs.d/core/aggresive-indent/",
+	"title": "2.7. aggressive-indent",
+	"tags": [],
+	"description": "",
+	"content": "[aggressive-indent.el] 即時バッファ整形 特定のメジャーモードで，とにかく整形しまくります。\n(leaf aggressive-indent :ensure t :hook ((emacs-lisp-mode-hook css-mode-hook) . aggressive-indent-mode)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/change-keybind/",

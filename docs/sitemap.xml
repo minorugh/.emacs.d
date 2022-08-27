@@ -131,11 +131,15 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/swiper-migemo/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/utility-tool/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
   </url>
   
   <url>
@@ -240,6 +244,10 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/core/uniquify/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/aggresive-indent/</loc>
   </url>
   
   <url>

@@ -29,20 +29,26 @@ disableToc = true
 [ivy / counsel]({{< relref "ivy" >}})
 : 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール
 
-[yasunippets/ cpmpany]({{< relref "company" >}})
+[yasunippets]({{< relref "yasnippets" >}})
+: キーをタイプした時点で自動的に補完候補が出てきてくれる
+
+[campany]({{< relref "company" >}})
 : キーをタイプした時点で自動的に補完候補が出てきてくれる
 
 [key-chord]({{< relref "key-chord" >}})
 : 同時押しのキーバインドを提供してくれる
-
-[smartparens]({{< relref "smartparens" >}})
-: 括弧などのペアを自動的に挿入してくれる
 
 [iedit]({{< relref "iedit" >}})
 : 択領域を別の文字列に置き換える
 
 [migemo]({{< relref "iedit" >}})
 : ローマ字のまま日本語をインクリメンタル検索を可能にする
+
+[swiper-migemo]({{< relref "swiper-migemo" >}})
+: ローマ字のまま日本語をインクリメンタル検索を可能にする
+
+[smartparens]({{< relref "smartparens" >}})
+: 括弧などのペアを自動的に挿入してくれる
 
 [selected]({{< relref "selected" >}})
 : リージョン選択時のアクションを制御してくれる。Like sendto of windows.

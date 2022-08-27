@@ -29,3 +29,6 @@ Emacs の基本動作に関わる部分をここでは設定している
 [change-global-keibind]({{< relref "change-keybind" >}})
 : 基本キーバインドのカスタマイズ
 
+[aggresive-indent]({{< relref "aggresive-indent" >}})
+: 即時整形バッファー
+

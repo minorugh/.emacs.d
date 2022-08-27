@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T10:18:34 JST">
+<meta name="revised" content="2022-08-27T11:42:56 JST">
 <title>6.11. migemo :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -144,6 +144,13 @@
         <div>
           <a href="/.emacs.d/core/uniquify/">
             2.6. uniguify
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/aggresive-indent/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/core/aggresive-indent/">
+            2.7. aggressive-indent
           </a>
         </div>
     </li>
@@ -410,31 +417,38 @@
           </a>
         </div>
     </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/swiper-migemo/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/editing/swiper-migemo/">
+            6.12. swiper-migemo
+          </a>
+        </div>
+    </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/smartparens/">
-            6.12. smartparens
+            6.13. smartparens
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/selected/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/selected/">
-            6.13. selected
+            6.14. selected
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/pangu/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/pangu/">
-            6.14. pangu-spacing
+            6.15. pangu-spacing
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/fontawesome/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/fontawesome/">
-            6.15. font-awesome
+            6.16. font-awesome
           </a>
         </div>
     </li>
@@ -859,7 +873,6 @@
     <li>
       <ul>
         <li><a href="#migemoel-ローマ字のまま日本語をインクリメンタル検索可能にする">[migemo.el] ローマ字のまま日本語をインクリメンタル検索可能にする。</a></li>
-        <li><a href="#swiper-migemoel-swiperでもmigemoを使う">[swiper-migemo.el] swiperでもmigemoを使う</a></li>
       </ul>
     </li>
   </ul>
@@ -896,16 +909,6 @@ aptでインストール。</p>
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">migemo-command</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;cmigemo&#34;</span>)
 			(<span style="color:#000">migemo-dictionary</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/usr/share/cmigemo/utf-8/migemo-dict&#34;</span>)))
 
-</code></pre></div><h3 id="swiper-migemoel-swiperでもmigemoを使う">[swiper-migemo.el] swiperでもmigemoを使う</h3>
-<p>🔗 <a href="https://github.com/tam17aki/swiper-migemo">tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.</a></p>
-<p><code>avy-migemo-e.g.swiper.el</code> を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。</p>
-<p>つい最近、avy-migemo を使わない <code>swiper-migemo.el</code>を GitHubで見つけたので試した処、機嫌よく動いてくれています。
-MELPAにはアップされていないみたいなので <code>el-get</code>で取得しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">swiper-migemo</span>
-	<span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://github.com/tam17aki/swiper-migemo&#34;</span>
-	<span style="color:#a90d91">:el-get</span> <span style="color:#000">tam17aki/swiper-migemo</span>
-	<span style="color:#a90d91">:config</span>
-	(<span style="color:#000">global-swiper-migemo-mode</span> <span style="color:#1c01ce">+1</span>))
 </code></pre></div>
 
     
@@ -918,7 +921,7 @@ MELPAにはアップされていないみたいなので <code>el-get</code>で�
 
 <div id="navigation">
 <a class="nav nav-prev" href="/.emacs.d/editing/iedit/" title="6.10. iedit"> <i class="fa fa-chevron-left"></i><label>6.10. iedit</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/smartparens/" title="6.12. smartparens" style="margin-right: 0px;"><label>6.12. smartparens</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/.emacs.d/editing/swiper-migemo/" title="6.12. swiper-migemo" style="margin-right: 0px;"><label>6.12. swiper-migemo</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

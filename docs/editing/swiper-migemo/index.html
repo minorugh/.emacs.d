@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-27T11:42:56 JST">
-<title>6.9. key-chord :: minoru&#39;s Emacs Configuration</title>
+<title>6.12. swiper-migemo :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/editing/key-chord/">
+  <body data-url="/.emacs.d/editing/swiper-migemo/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -835,7 +835,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/key-chord.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/editing/swiper-migemo.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -855,7 +855,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>編集サポート / 入力補助</a> > 6.9. key-chord
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>編集サポート / 入力補助</a> > 6.12. swiper-migemo
 
  
 
@@ -872,7 +872,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#key-chordel-同時押しでキーバインド">[key-chord.el] 同時押しでキーバインド</a></li>
+        <li><a href="#swiper-migemoel-swiperでもmigemoを使う">[swiper-migemo.el] swiperでもmigemoを使う</a></li>
       </ul>
     </li>
   </ul>
@@ -886,7 +886,7 @@
 
 <div id="body-inner">
   
-    <h1>6.9. key-chord</h1>
+    <h1>6.12. swiper-migemo</h1>
   
 
 
@@ -894,24 +894,17 @@
     
     
     
-<h3 id="key-chordel-同時押しでキーバインド">[key-chord.el] 同時押しでキーバインド</h3>
-<p>🔗 <a href="https://github.com/emacsorphanage/key-chord">emacsorphanage/key-chord: Map pairs of simultaneously pressed keys to commands.</a></p>
-<p>同時押しというキーバインドを提供します。</p>
-<p>同時押しの許容時間、その前後で別のキーが押されていたら発動しない判断をする、みたいな設定をしている。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">key-chord</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">key-chord-mode</span>)
-  <span style="color:#a90d91">:chord</span> ((<span style="color:#c41a16">&#34;df&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-descbinds</span>)
-		  (<span style="color:#c41a16">&#34;l;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">init-loader-show-log</span>)
-		  (<span style="color:#c41a16">&#34;@@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">howm-list-all</span>)
-		  (<span style="color:#c41a16">&#34;jk&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-junk-file</span>))
-  <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">key-chord-two-keys-delay</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0.25</span>)
-	(<span style="color:#000">key-chord-safety-interval-backward</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0.1</span>)
-	(<span style="color:#000">key-chord-safety-interval-forward</span>  <span style="color:#000">.</span> <span style="color:#1c01ce">0.15</span>)))
-</code></pre></div><p>キーの同時押し判定は 0.15 秒で、それらのキーが押される直前の 0.1 秒以内、または直後の 0.15 秒に押されていたら発動しない、という設定にしている。</p>
-<p>誤爆防止のためには試行錯誤しつつ「自分流」を追求するしかない。</p>
-
+<h3 id="swiper-migemoel-swiperでもmigemoを使う">[swiper-migemo.el] swiperでもmigemoを使う</h3>
+<p>🔗 <a href="https://github.com/tam17aki/swiper-migemo">tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.</a></p>
+<p><code>avy-migemo-e.g.swiper.el</code> を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。</p>
+<p>つい最近、avy-migemo を使わない <code>swiper-migemo.el</code>を GitHubで見つけたので試した処、機嫌よく動いてくれています。
+MELPAにはアップされていないみたいなので <code>el-get</code>で取得しています。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">swiper-migemo</span>
+	<span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://github.com/tam17aki/swiper-migemo&#34;</span>
+	<span style="color:#a90d91">:el-get</span> <span style="color:#000">tam17aki/swiper-migemo</span>
+	<span style="color:#a90d91">:config</span>
+	(<span style="color:#000">global-swiper-migemo-mode</span> <span style="color:#1c01ce">+1</span>))
+</code></pre></div>
 
     
     
@@ -922,8 +915,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/editing/company/" title="6.8. company"> <i class="fa fa-chevron-left"></i><label>6.8. company</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/iedit/" title="6.10. iedit" style="margin-right: 0px;"><label>6.10. iedit</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/editing/migemo/" title="6.11. migemo"> <i class="fa fa-chevron-left"></i><label>6.11. migemo</label></a>
+    <a class="nav nav-next" href="/.emacs.d/editing/smartparens/" title="6.13. smartparens" style="margin-right: 0px;"><label>6.13. smartparens</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

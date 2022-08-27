@@ -263,14 +263,23 @@ Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドし
 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。 aptでインストール。
 $ sudo apt install cmigemo インストール完了したら、下記コマンドで実行できる事を確認しておきます。
 $ cmigemo --help Emacsの設定は下記のとおりです。
-(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) [swiper-migemo.el] swiperでもmigemoを使う 🔗 tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.
+(leaf migemo :ensure t :hook (after-init-hook . migemo-init) :when (executable-find &amp;#34;cmigemo&amp;#34;) :custom `((migemo-command . &amp;#34;cmigemo&amp;#34;) (migemo-dictionary . &amp;#34;/usr/share/cmigemo/utf-8/migemo-dict&amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title>6.12. swiper-migemo</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/swiper-migemo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/swiper-migemo/</guid>
+      <description>[swiper-migemo.el] swiperでもmigemoを使う 🔗 tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.
 avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。
 つい最近、avy-migemo を使わない swiper-migemo.elを GitHubで見つけたので試した処、機嫌よく動いてくれています。 MELPAにはアップされていないみたいなので el-getで取得しています。
 (leaf swiper-migemo :doc &amp;#34;https://github.com/tam17aki/swiper-migemo&amp;#34; :el-get tam17aki/swiper-migemo :config (global-swiper-migemo-mode +1)) </description>
     </item>
     
     <item>
-      <title>6.12. smartparens</title>
+      <title>6.13. smartparens</title>
       <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -282,7 +291,7 @@ avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど�
     </item>
     
     <item>
-      <title>6.13. selected</title>
+      <title>6.14. selected</title>
       <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -295,7 +304,7 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
     </item>
     
     <item>
-      <title>6.14. pangu-spacing</title>
+      <title>6.15. pangu-spacing</title>
       <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -306,7 +315,7 @@ pangu-spacingは、漢字と英字の間にスペースを自動追加してく�
     </item>
     
     <item>
-      <title>6.15. font-awesome</title>
+      <title>6.16. font-awesome</title>
       <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -527,10 +536,10 @@ sudo-edit.elは、現在アクセスしているファイルをsudoで開きな�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/translate/</guid>
-      <description>[google-translate.el] 🔗 atykhonov/google-translate: Emacs interface to Google Translate.
+      <description>[google-translate.el] Google翻訳サービスを使用して文字列を翻訳 🔗 atykhonov/google-translate: Emacs interface to Google Translate.
 この設定は、@masasam の Sollst Work Blog で公開されている設定をパクりました。
 リージョンが日本語なら ja to en に、英語なら en to ja にと自動判別して実行してくれます。
-(leaf google-translate :ensure t :bind (&amp;#34;C-t&amp;#34; . google-translate-auto) :config (defun google-translate-auto () &amp;#34;Automatically recognize and translate Japanese and English.&amp;#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))) (let ((string (read-string &amp;#34;Google Translate: &amp;#34;))) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))))) (defun google-translate--get-b-d1 () &amp;#34;Fix error of `Failed to search TKK`.</description>
+(leaf google-translate :ensure t :bind ((&amp;#34;C-t&amp;#34; . google-translate-auto) (&amp;#34;C-c t&amp;#34; chromium-translate)) :config (defun google-translate-auto () &amp;#34;Automatically recognize and translate Japanese and English.&amp;#34; (interactive) (if (use-region-p) (let ((string (buffer-substring-no-properties (region-beginning) (region-end)))) (deactivate-mark) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))) (let ((string (read-string &amp;#34;Google Translate: &amp;#34;))) (if (string-match (format &amp;#34;\\`[%s]+\\&amp;#39;&amp;#34; &amp;#34;[:ascii:]&amp;#34;) string) (google-translate-translate &amp;#34;en&amp;#34; &amp;#34;ja&amp;#34; string) (google-translate-translate &amp;#34;ja&amp;#34; &amp;#34;en&amp;#34; string))))) (defun google-translate--get-b-d1 () &amp;#34;Fix error of `Failed to search TKK`.</description>
     </item>
     
     <item>
@@ -590,6 +599,16 @@ $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインスト�
       <guid>https://minorugh.github.io/.emacs.d/core/uniquify/</guid>
       <description>同じバッファ名が開かれた場合に区別する ビルトインの uniquify は、同じバッファ名が開かれた場合に区別する設定です。
 (setq uniquify-buffer-name-style &amp;#39;post-forward-angle-brackets) </description>
+    </item>
+    
+    <item>
+      <title>2.7. aggressive-indent</title>
+      <link>https://minorugh.github.io/.emacs.d/core/aggresive-indent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/core/aggresive-indent/</guid>
+      <description>[aggressive-indent.el] 即時バッファ整形 特定のメジャーモードで，とにかく整形しまくります。
+(leaf aggressive-indent :ensure t :hook ((emacs-lisp-mode-hook css-mode-hook) . aggressive-indent-mode)) </description>
     </item>
     
     <item>

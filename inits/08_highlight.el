@@ -31,8 +31,8 @@
   :custom (show-trailing-whitespace . nil)
   :config
   (defun my:enable-trailing-mode ()
-    "Show tail whitespace."
-    (setq show-trailing-whitespace t))
+	"Show tail whitespace."
+	(setq show-trailing-whitespace t))
   (defun my:cleanup-for-spaces ()
     "Remove contiguous line breaks at end of line + end of file."
     (interactive)

@@ -1,7 +1,7 @@
 +++
-title = "6.12. smartparens"
+title = "6.13. smartparens"
 draft = false
-weight = 12
+weight = 13
 +++
 ### [smartparens.el] 対応する括弧の挿入をアシスト
 🔗 [Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.](https://github.com/Fuco1/smartparens) 

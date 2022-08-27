@@ -34,8 +34,8 @@ disableToc = true
 : Root権限でファイルを開き直す
 
 [eshell]({{< relref "eshell" >}})
-: Emacs上から使えるターミナルエミュレータ
+: Emacs から使えるターミナルエミュレータ
 
 [google-translate]({{< relref "translate" >}})
-: Emacs上から使えるターミナルエミュレータ
+: Emacs から直接 Google翻訳サービスを使用して文字列を翻訳
 
