@@ -25,7 +25,7 @@
 
 
 (leaf whitespace
-  :ensure t
+  :ensure nil
   :bind ("C-c C-c" . my:cleanup-for-spaces)
   :hook (prog-mode-hook . my:enable-trailing-mode)
   :custom (show-trailing-whitespace . nil)
@@ -34,11 +34,11 @@
 	"Show tail whitespace."
 	(setq show-trailing-whitespace t))
   (defun my:cleanup-for-spaces ()
-    "Remove contiguous line breaks at end of line + end of file."
-    (interactive)
-    (delete-trailing-whitespace)
-    (save-excursion
-      (save-restriction
+	"Remove contiguous line breaks at end of line + end of file."
+	(interactive)
+	(delete-trailing-whitespace)
+	(save-excursion
+	  (save-restriction
 		(widen)
 		(goto-char (point-max))
 		(delete-blank-lines)))))

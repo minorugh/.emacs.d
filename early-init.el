@@ -32,7 +32,8 @@
 			(setq inhibit-redisplay nil)
 			(setq inhibit-message nil)
 			(redisplay)
-			(set-frame-parameter nil 'fullscreen 'fullboth)))
+			;; (set-frame-parameter nil 'fullscreen 'fullboth)
+			))
 
 ;; Startup setting
 (setq inhibit-splash-screen t)
