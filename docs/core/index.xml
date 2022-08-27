@@ -71,7 +71,8 @@ $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインスト�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/core/aggresive-indent/</guid>
-      <description>[aggressive-indent.el] 即時バッファ整形 特定のメジャーモードで，とにかく整形しまくります。
+      <description>[aggressive-indent.el] 即時バッファ整形 🔗 Malabarba/aggressive-indent-mode: Emacs minor mode that keeps your code always indented. More reliable than electric-indent-mode.
+特定のメジャーモードで，とにかく整形しまくります。 あまりにも強烈なので、現在は emacs-lisp-mode と css-mode だけにしています。
 (leaf aggressive-indent :ensure t :hook ((emacs-lisp-mode-hook css-mode-hook) . aggressive-indent-mode)) </description>
     </item>
     

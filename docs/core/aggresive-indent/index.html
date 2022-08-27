@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T11:42:56 JST">
+<meta name="revised" content="2022-08-27T11:52:51 JST">
 <title>2.7. aggressive-indent :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -895,7 +895,9 @@
     
     
 <h3 id="aggressive-indentel-即時バッファ整形">[aggressive-indent.el] 即時バッファ整形</h3>
-<p>特定のメジャーモードで，とにかく整形しまくります。</p>
+<p>🔗 <a href="https://github.com/Malabarba/aggressive-indent-mode">Malabarba/aggressive-indent-mode: Emacs minor mode that keeps your code always indented. More reliable than electric-indent-mode.</a></p>
+<p>特定のメジャーモードで，とにかく整形しまくります。
+あまりにも強烈なので、現在は <code>emacs-lisp-mode</code> と <code>css-mode</code> だけにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">aggressive-indent</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">emacs-lisp-mode-hook</span> <span style="color:#000">css-mode-hook</span>) <span style="color:#000">.</span> <span style="color:#000">aggressive-indent-mode</span>))
