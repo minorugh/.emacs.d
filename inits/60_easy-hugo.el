@@ -37,6 +37,10 @@
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/gg/"))
 		  ;; blog3 setting
+		  ((easy-hugo-basedir . "~/src/github.com/minorugh/.emacs.d/hugo/")
+		   (easy-hugo-url . "https://minorugh.github.io/.emacs.d")
+		   (easy-hugo-postdir . "content/startup"))
+		  ;; blog3 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/blog/")
 		   (easy-hugo-url . "https://blog.gospel-haiku.com")
 		   (easy-hugo-sshdomain . "xsrv")
@@ -68,7 +72,7 @@
   n .. New blog post    r .. Rename file     p .. Preview          g .. Refresh
   d .. Delete post      a .. Search blog ag  P .. Publish clever   e .. Edit easy-hugo
   c .. Open config      s .. Sort time       < .. Previous blog    > .. Next bloge
-  N .. No help [tab]    / .. Select postdir  o .. Open base dir    v .. View window
+  N .. No help [tab]    - .. Prev postdir    + .. Next postdir     o .. Open base dir
 ")
   :preface
   (leaf popup :ensure t)
