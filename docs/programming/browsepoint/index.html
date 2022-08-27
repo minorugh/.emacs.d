@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-08-27T09:30:55 JST">
-<title>12.3. ps-priter :: minoru&#39;s Emacs Configuration</title>
+<title>10.7. browse-at-point :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/utility-tool/ps-print/">
+  <body data-url="/.emacs.d/programming/browsepoint/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -821,7 +821,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/utility-tool/ps-print.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/programming/browse@point.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -841,7 +841,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.3. ps-priter
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/programming/'>開発サポート</a> > 10.7. browse-at-point
 
  
 
@@ -858,7 +858,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#ps-printer-での印刷">PS-Printer での印刷</a></li>
+        <li><a href="#git-timemachineel">[git-timemachine.el]</a></li>
+        <li><a href="#browse-at-remoteel">[browse-at-remote.el]</a></li>
       </ul>
     </li>
   </ul>
@@ -872,7 +873,7 @@
 
 <div id="body-inner">
   
-    <h1>12.3. ps-priter</h1>
+    <h1>10.7. browse-at-point</h1>
   
 
 
@@ -880,22 +881,12 @@
     
     
     
-<h3 id="ps-printer-での印刷">PS-Printer での印刷</h3>
-<p>Emacsから<code>Postscript</code>経由で印刷する際の個人的な設定です。</p>
-<p><code>Postscript</code> 対応のプリンターが必要。</p>
-<pre><code class="language-code" data-lang="code">(defalias 'ps-mule-header-string-charsets 'ignore)
-(setq ps-multibyte-buffer 'non-latin-printer
-	  ps-paper-type 'a4
-	  ps-font-size 9
-	  ;; ps-font-family 'Helvetica
-	  ps-font-family 'Courier
-	  ps-line-number-font 'Courier
-	  ps-printer-name nil
-	  ps-print-header nil
-	  ps-show-n-of-n t
-	  ps-line-number t
-	  ps-print-footer nil)
-</code></pre>
+<h3 id="git-timemachineel">[git-timemachine.el]</h3>
+<p>🔗 <a href="https://github.com/emacsmirror/git-timemachine">emacsmirror/git-timemachine: Walk through git revisions of a file.</a></p>
+<h3 id="browse-at-remoteel">[browse-at-remote.el]</h3>
+<p>🔗 <a href="https://github.com/rmuslimov/browse-at-remote">rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers</a></p>
+<p><code>browse-at-remote.el</code> は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</p>
+
 
     
     
@@ -906,8 +897,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/utility-tool/emacs-lock/" title="12.2. emacs-lok-mode"> <i class="fa fa-chevron-left"></i><label>12.2. emacs-lok-mode</label></a>
-    <a class="nav nav-next" href="/.emacs.d/utility-tool/terminal/" title="12.4. open terminal" style="margin-right: 0px;"><label>12.4. open terminal</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/programming/git-timemachine/" title="10.6. git-timemachine"> <i class="fa fa-chevron-left"></i><label>10.6. git-timemachine</label></a>
+    <a class="nav nav-next" href="/.emacs.d/programming/tramp/" title="10.8. counsel-tramp" style="margin-right: 0px;"><label>10.8. counsel-tramp</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

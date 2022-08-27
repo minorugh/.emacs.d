@@ -1,5 +1,5 @@
 +++
-title = "10.7. easy-hugo"
+title = "10.9. easy-hugo"
 draft = false
 +++
 

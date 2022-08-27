@@ -26,6 +26,12 @@ disableToc = true
 [magit]({{< relref "magit" >}})
 : Gitクライアント
 
+[git-timemachine]({{< relref "git-timemachine" >}})
+: ファイルの履歴バージョンをナビケート
+
+[browse-at-point]({{< relref "browse@point" >}})
+: バッファーからgithubのリンクを瞬時に開く
+
 [counsel-tramp]({{< relref "tramp" >}})
 : counsel でtrampのインターフェースを提供
 

@@ -1,5 +1,5 @@
 +++
-title = "10.8. open-junk-file"
+title = "10.10. open-junk-file"
 draft = false
 +++
 ### [open-junk-file.el] 使い捨てファイルを書く、開く

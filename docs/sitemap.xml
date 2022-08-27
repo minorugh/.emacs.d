@@ -79,6 +79,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/junk/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/programming/gist/</loc>
   </url>
   
@@ -95,15 +99,19 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/browsepoint/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/programming/tramp/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/junk/</loc>
   </url>
   
   <url>

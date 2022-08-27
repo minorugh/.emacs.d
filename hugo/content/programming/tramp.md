@@ -1,5 +1,5 @@
 +++
-title = "10.6. counsel-tramp"
+title = "10.8. counsel-tramp"
 draft = false
 +++
 ### [counsel-tramp.el] 
