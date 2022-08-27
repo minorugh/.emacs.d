@@ -1,6 +1,7 @@
 +++
 title = "10.3. flymake"
 draft = false
+weght = 3
 +++
 ### [flymake] 構文エラー表示
 ビルトインの `flymake-mode` が軽くて使いやすくなったので、`flycheck` から移行しました。

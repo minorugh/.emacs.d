@@ -1,6 +1,7 @@
 +++
 title = "6.6. ivy / counsel / swiper"
 draft = false
+weight = 6
 +++
 ### [ivy.el / counsel.el / swiper.el] Emacsの補完システム
 🔗 [abo-abo/swiper: Ivy - a generic completion frontend for Emacs, Swiper - isearch with an overview.](https://github.com/abo-abo/swiper) 

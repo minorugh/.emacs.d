@@ -1,6 +1,7 @@
 +++
 title = "6.4. yatex"
 draft = false
+weight = 4
 +++
 
 ### [yatex.el] LaTex編集

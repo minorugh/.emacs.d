@@ -1,6 +1,7 @@
 +++
 title = "6.2. veiw-mode"
 draft = false
+weight = 2 
 +++
 ### [view-mode] ファイル閲覧モード（標準機能）
 [view-mode](https://www.emacswiki.org/emacs/ViewMode) はビルトインの機能です。

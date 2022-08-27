@@ -1,6 +1,7 @@
 +++
 title = "6.13. selected"
 draft = false
+weight = 13
 +++
 
 ### [selected.el] リージョン選択時のアクションを制御

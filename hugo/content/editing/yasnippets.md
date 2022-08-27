@@ -1,6 +1,7 @@
 +++
 title = "6.7. yasunippets"
 draft = false
+weight = 7
 +++
 ### [yasnippets.el] テンプレート システム
 🔗 [joaotavora/yasnippet: Template system for Emacs.](https://github.com/joaotavora/yasnippet) 

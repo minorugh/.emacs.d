@@ -1,6 +1,7 @@
 +++
 title = "10.9. easy-hugo"
 draft = false
+weght = 9
 +++
 
 ### [eagy-hugo.el] マルチブログ管理

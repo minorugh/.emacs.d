@@ -1,6 +1,7 @@
 +++
 title = "6.9. key-chord"
 draft = false
+weight = 9
 +++
 ### [key-chord.el] 同時押しでキーバインド
 🔗 [emacsorphanage/key-chord: Map pairs of simultaneously pressed keys to commands.](https://github.com/emacsorphanage/key-chord) 

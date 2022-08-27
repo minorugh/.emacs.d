@@ -1,6 +1,7 @@
 +++
 title = "6.5. darkroom"
 draft = false
+weight = 5
 +++
 
 ### [darkroom-mode.el] 執筆モード

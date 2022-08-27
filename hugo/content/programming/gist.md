@@ -1,6 +1,7 @@
 +++
 title = "10.2. gist interface"
 draft = false
+weght = 2
 +++
 
 ### Gistインターフェイス

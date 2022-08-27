@@ -1,6 +1,7 @@
 +++
 title = "6.11. migemo"
 draft = false
+weight = 11
 +++
 
 ### [migemo.el] ローマ字のまま日本語をインクリメンタル検索可能にする。

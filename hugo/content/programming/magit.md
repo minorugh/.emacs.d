@@ -1,6 +1,7 @@
 +++
 title = "10.5. magit"
 draft = false
+weght = 5
 +++
 ### [magit.el] Gitクライアント
 🔗 [magit/magit.el: Git user interface.](https://github.com/magit/magit/tree/master/lisp) 
@@ -26,10 +27,4 @@ draft = false
 	:custom (browse-at-remote-prefer-symbolic . nil)))
 (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 ```
-
-
-### [browse-at-remote.el]
-🔗 [rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers](https://github.com/rmuslimov/browse-at-remote) 
-
-`browse-at-remote.el` は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。
 

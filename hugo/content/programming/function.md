@@ -1,6 +1,7 @@
 +++
 title = "10.1. function key"
 draft = false
+weght = 1
 +++
 ### 便利キーバインド
 便利機能をワンキーアクションで使えるように設定しています。

@@ -1,6 +1,7 @@
 +++
 title = "6.15. font-awesome"
 draft = false
+weight = 15
 +++
 ### [font-awesom.el] 絵文字フォント入力支援
 🔗 [krismolendyke/font-awesome.el: A simple library for using Font Awesome icons in Emacs.](https://github.com/krismolendyke/font-awesome.el) 

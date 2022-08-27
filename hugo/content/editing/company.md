@@ -1,6 +1,7 @@
 +++
 title = "6.8. company"
 draft = false
+weight = 8
 +++
 ### [company.el] 入力補完機能を提供
 🔗 [company-mode/company.el: Modular completion framework.](https://github.com/company-mode/company-mode/blob/master/company.el) 
