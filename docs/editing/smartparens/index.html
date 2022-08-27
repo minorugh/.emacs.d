@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T19:35:44 JST">
-<title>6.13. smartparens :: minoru&#39;s Emacs Configuration</title>
+<meta name="revised" content="2022-08-27T19:52:43 JST">
+<title>smartparens :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -56,279 +56,158 @@
             <li data-nav-id="/.emacs.d/" class="dd-item">
             <a href="/.emacs.d/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/startup/"><b>1. </b>起動設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/basics/"><b>1. </b>基本設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/eary-init/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/auth-source/" class="dd-item">
         <div>
-          <a href="/.emacs.d/startup/eary-init/">
-            1.1. eary-init.el
+          <a href="/.emacs.d/basics/auth-source/">
+            auth-source
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/speed-up/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/auto-format/" class="dd-item">
         <div>
-          <a href="/.emacs.d/startup/speed-up/">
-            1.2. speed up startup
+          <a href="/.emacs.d/basics/auto-format/">
+            auto-format
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/leaf/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/auto-save/" class="dd-item">
         <div>
-          <a href="/.emacs.d/startup/leaf/">
-            1.3. leaf.el
+          <a href="/.emacs.d/basics/auto-save/">
+            auto-save
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/init-loader/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/custom-file/" class="dd-item">
         <div>
-          <a href="/.emacs.d/startup/init-loader/">
-            1.4. init-loader.el
+          <a href="/.emacs.d/basics/custom-file/">
+            custom-file
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/test/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/ddskk/" class="dd-item">
         <div>
-          <a href="/.emacs.d/startup/test/">
-            1.5. test.el
+          <a href="/.emacs.d/basics/ddskk/">
+            ddskk
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/startup/dashboard/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/exec-path/" class="dd-item">
         <div>
-          <a href="/.emacs.d/startup/dashboard/">
-            1.6. dashboard
+          <a href="/.emacs.d/basics/exec-path/">
+            exec-path
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/font-config/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/font-config/">
+            font-config
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/load-path/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/load-path/">
+            load-path
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/migemo/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/migemo/">
+            migemo
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/savehist/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/savehist/">
+            savehist
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/server/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/server/">
+            server
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/gcmh/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/gcmh/">
+            ガベージコレクション
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/basics/load-libraries/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/basics/load-libraries/">
+            ライブラリの読み込み
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/core/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer-management/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/core/"><b>2. </b>コア設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/buffer-management/"><b>2. </b>バッファ管理</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/encode/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer-management/scratch-log/" class="dd-item">
         <div>
-          <a href="/.emacs.d/core/encode/">
-            2.1. language / coding
+          <a href="/.emacs.d/buffer-management/scratch-log/">
+            scratch-log
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/mozc/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/buffer-management/tempbuf/" class="dd-item">
         <div>
-          <a href="/.emacs.d/core/mozc/">
-            2.3. mozc
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/server/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/server/">
-            2.4. server
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/exec-path-from-shell/">
-            2.5. exec-path-from-shell
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/uniquify/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/uniquify/">
-            2.6. uniguify
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/aggresive-indent/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/aggresive-indent/">
-            2.7. aggressive-indent
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/core/change-keybind/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/core/change-keybind/">
-            2.7. change gloal keybind
+          <a href="/.emacs.d/buffer-management/tempbuf/">
+            tempbuf
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/keybinds/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/cursor/"><b>3. </b>カーソル移動</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/keybinds/"><b>3. </b>キーバインド</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/sequential-command/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/keybinds/google-integration/" class="dd-item">
         <div>
-          <a href="/.emacs.d/cursor/sequential-command/">
-            3.1. sequential-command
+          <a href="/.emacs.d/keybinds/google-integration/">
+            Google 連携
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/keybinds/key-chord/" class="dd-item">
         <div>
-          <a href="/.emacs.d/cursor/other-window-or-sprit/">
-            3.2. other-window-or-split
+          <a href="/.emacs.d/keybinds/key-chord/">
+            key-chord
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/jump-brace/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/keybinds/sticky-control/" class="dd-item">
         <div>
-          <a href="/.emacs.d/cursor/jump-brace/">
-            3.3. jump-brace
+          <a href="/.emacs.d/keybinds/sticky-control/">
+            sticky-control
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/mark-command/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/keybinds/global-keybinds/" class="dd-item">
         <div>
-          <a href="/.emacs.d/cursor/mark-command/">
-            3.4. exchange-point-and-mark
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/cursor/expand-region/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/cursor/expand-region/">
-            3.5. expand-region
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/.emacs.d/higlight/"><b>4. </b>フォント / 配色関連</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/font/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/font/">
-            4.1. font setting
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/hl-line/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/hl-line/">
-            4.2. hl-line
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/blink-cursor/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/blink-cursor/">
-            4.3. blink-cursor
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/ivy-format/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/ivy-format/">
-            4.4. ivy-format-function-arrow
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/paren/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/paren/">
-            4.5. pare
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/rainbow-delimiters/">
-            4.6. rainbow-delimiters
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/rainbow/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/rainbow/">
-            4.7. rainbow-mode
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/volatile-highlights/">
-            4.8. volatile-highlight
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/higlight/whitespace/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/higlight/whitespace/">
-            4.9. whitespace
-          </a>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/.emacs.d/frame/"><b>5. </b>フレーム / ウインドウ制御</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/dimmer/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/dimmer/">
-            5.1. dimmer-mode
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/scrool-other-window/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/scrool-other-window/">
-            5.2. scrool-other-window
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/sprit-window/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/sprit-window/">
-            5.3. cus-sprit-window
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/tempbuf/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/tempbuf/">
-            5.4. tempbuf
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/winner/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/winner/">
-            5.5. winner-mode
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/doom-themes/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/doom-themes/">
-            5.6. doom-thmes
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/frame/doom-modeline/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/frame/doom-modeline/">
-            5.7. doom-modeline
+          <a href="/.emacs.d/keybinds/global-keybinds/">
+            グローバルキーバインド
           </a>
         </div>
     </li>
@@ -337,289 +216,267 @@
     <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/editing/"><b>6. </b>編集サポート / 入力補助</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/editing/"><b>4. </b>ファイル編集/入力補助</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/markdown/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/editing-base/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/markdown/">
-            6.1. markdown-mode
+          <a href="/.emacs.d/editing/editing-base/">
+            基本設定
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/view/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/auto-insert/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/view/">
-            6.2. veiw-mode
+          <a href="/.emacs.d/editing/auto-insert/">
+            auto-insert
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/web-mode/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/company-mode/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/web-mode/">
-            6.3. web-mode
+          <a href="/.emacs.d/editing/company-mode/">
+            company-mode
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yatex/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/emojify/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/yatex/">
-            6.4. yatex
+          <a href="/.emacs.d/editing/emojify/">
+            emojify
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/darkroom/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/multiple-cursors/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/darkroom/">
-            6.5. darkroom
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/ivy/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/ivy/">
-            6.6. ivy / counsel / swiper
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yasnippets/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/yasnippets/">
-            6.7. yasunippets
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/company/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/company/">
-            6.8. company
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/key-chord/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/key-chord/">
-            6.9. key-chord
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/iedit/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/iedit/">
-            6.10. iedit
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/migemo/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/migemo/">
-            6.11. migemo
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/swiper-migemo/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/editing/swiper-migemo/">
-            6.12. swiper-migemo
+          <a href="/.emacs.d/editing/multiple-cursors/">
+            multiple-cursors
           </a>
         </div>
     </li>
       <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/smartparens/" class="dd-item">
         <div>
           <a href="/.emacs.d/editing/smartparens/">
-            6.13. smartparens
+            smartparens
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/selected/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/undo-fu/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/selected/">
-            6.14. selected
+          <a href="/.emacs.d/editing/undo-fu/">
+            undo-fu
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/pangu/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/view-mode/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/pangu/">
-            6.15. pangu-spacing
+          <a href="/.emacs.d/editing/view-mode/">
+            view-mode
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/fontawesome/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/whitespace/" class="dd-item">
         <div>
-          <a href="/.emacs.d/editing/fontawesome/">
-            6.16. font-awesome
+          <a href="/.emacs.d/editing/whitespace/">
+            whitespace
           </a>
         </div>
     </li>
-        </ul>
-    </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/display/" class="dd-item haschildren
-        ">
-      <div>
-      <a href="/.emacs.d/display/"><b>7. </b>表示サポート</a><i class="fa fa-angle-right fa-lg category-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/which-key/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/editing/yasnippet/" class="dd-item">
         <div>
-          <a href="/.emacs.d/display/which-key/">
-            7.1. which-key
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/all-the-icons/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/all-the-icons/">
-            7.2. all-the-icons
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/linespacing/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/linespacing/">
-            7.3. line-spacing
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/display-number/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/display-number/">
-            7.4. display-line-numbers
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/prescient/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/prescient/">
-            7.5. prescient
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/calendar/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/calendar/">
-            7.6. japanese-holidays
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/imenu/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/imenu/">
-            7.7. imenu-list
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/display/diff-hl/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/display/diff-hl/">
-            7.8. diff-hl
+          <a href="/.emacs.d/editing/yasnippet/">
+            yasnippet
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/hydra/"><b>8. </b>Hydra</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/ui/"><b>5. </b>UI</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-menu/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/alert/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-menu/">
-            8.1. hydra-menu
+          <a href="/.emacs.d/ui/alert/">
+            alert
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-make/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/all-the-icons/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-make/">
-            8.2. hydra-make
+          <a href="/.emacs.d/ui/all-the-icons/">
+            all-the-icons
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-package/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/color-theme-molokai/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-package/">
-            8.3. hydra-package
+          <a href="/.emacs.d/ui/color-theme-molokai/">
+            color-theme-molokai
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/dashboard/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-markdown/">
-            8.4. hydra-markdown
+          <a href="/.emacs.d/ui/dashboard/">
+            dashboard
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-view/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/frame-cmds/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-view/">
-            8.5. hydra-view-mode
+          <a href="/.emacs.d/ui/frame-cmds/">
+            frame-cmds
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/hydra/hydra-browse/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/fullscreen/" class="dd-item">
         <div>
-          <a href="/.emacs.d/hydra/hydra-browse/">
-            8.6. hydra-browse
+          <a href="/.emacs.d/ui/fullscreen/">
+            fullscreen
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/git-gutter-fringe/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/git-gutter-fringe/">
+            git-gutter-fringe
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/highlight-indent-guides/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/highlight-indent-guides/">
+            highlight-indent-guides
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/hydra/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/hydra/">
+            hydra
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/ido-mode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/ido-mode/">
+            ido-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/ivy/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/ivy/">
+            ivy
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/mode-line/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/mode-line/">
+            mode-line
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/neotree/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/neotree/">
+            Neotree
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/posframe/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/posframe/">
+            posframe
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/show-paren-mode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/show-paren-mode/">
+            show-paren-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/toolbar/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/toolbar/">
+            toolbar
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/uniquify/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/uniquify/">
+            uniquify
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/yascroll/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/yascroll/">
+            yascroll
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/zoom/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/zoom/">
+            zoom
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/ui/zoom-window/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/ui/zoom-window/">
+            zoom-window
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/history/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/nav/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/history/"><b>9. </b>履歴 / ファイル管理</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/nav/"><b>6. </b>ナビゲーション</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/auto-save-buffer/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/nav/ace-window/" class="dd-item">
         <div>
-          <a href="/.emacs.d/history/auto-save-buffer/">
-            9.1. auto-save-buffer
+          <a href="/.emacs.d/nav/ace-window/">
+            ace-window
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/undo-fu/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/nav/avy/" class="dd-item">
         <div>
-          <a href="/.emacs.d/history/undo-fu/">
-            9.2. undo-fu
+          <a href="/.emacs.d/nav/avy/">
+            avy
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/recentf/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/nav/browse-at-remote/" class="dd-item">
         <div>
-          <a href="/.emacs.d/history/recentf/">
-            9.3. recentf
+          <a href="/.emacs.d/nav/browse-at-remote/">
+            browse-at-remote
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/savehist/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/nav/dumb-jump/" class="dd-item">
         <div>
-          <a href="/.emacs.d/history/savehist/">
-            9.4. savehist
+          <a href="/.emacs.d/nav/dumb-jump/">
+            dumb-jump
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/hist-files/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/nav/projectile/" class="dd-item">
         <div>
-          <a href="/.emacs.d/history/hist-files/">
-            9.5. hist-files
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/dired/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/history/dired/">
-            9.6. dired
-          </a>
-        </div>
-    </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/history/neotree/" class="dd-item">
-        <div>
-          <a href="/.emacs.d/history/neotree/">
-            9.7. neotree
+          <a href="/.emacs.d/nav/projectile/">
+            projectile
           </a>
         </div>
     </li>
@@ -628,176 +485,367 @@
     <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/programming/"><b>10. </b>開発サポート</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/programming/"><b>7. </b>プログラミング関係の設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/function/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/emacs-lisp/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/function/">
-            10.1. function key
+          <a href="/.emacs.d/programming/emacs-lisp/">
+            emacs-lisp
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/gist/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/ember-js/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/gist/">
-            10.2. gist interface
+          <a href="/.emacs.d/programming/ember-js/">
+            Ember.js
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/flymake/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/es6/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/flymake/">
-            10.3. flymake
+          <a href="/.emacs.d/programming/es6/">
+            es6
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/quickrun/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/flycheck/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/quickrun/">
-            10.4. quickrun
+          <a href="/.emacs.d/programming/flycheck/">
+            flycheck
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/magit/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/gnuplot-mode/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/magit/">
-            10.5. magit
+          <a href="/.emacs.d/programming/gnuplot-mode/">
+            gnuplot-mode
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/git-timemachine/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/lsp-mode/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/git-timemachine/">
-            10.6. git-timemachine
+          <a href="/.emacs.d/programming/lsp-mode/">
+            lsp-mode
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/markdown/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/browsepoint/">
-            10.7. browse-at-point
+          <a href="/.emacs.d/programming/markdown/">
+            markdown
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/tramp/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/plantuml-mode/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/tramp/">
-            10.8. counsel-tramp
+          <a href="/.emacs.d/programming/plantuml-mode/">
+            plantuml-mode
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/easy-hugo/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/rails/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/easy-hugo/">
-            10.9. easy-hugo
+          <a href="/.emacs.d/programming/rails/">
+            rails
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/junk/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/react-js/" class="dd-item">
         <div>
-          <a href="/.emacs.d/programming/junk/">
-            10.10. open-junk-file
+          <a href="/.emacs.d/programming/react-js/">
+            React.js
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/rspec-mode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/programming/rspec-mode/">
+            rspec-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/ruby/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/programming/ruby/">
+            ruby
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/scss/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/programming/scss/">
+            scss
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/typescript/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/programming/typescript/">
+            TypeScript
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/vue-js/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/programming/vue-js/">
+            Vue.js
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/programming/yaml-mode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/programming/yaml-mode/">
+            yaml-mode
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/memo-tool/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/memo-tool/"><b>11. </b>メモ環境</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/external-tool/"><b>8. </b>外部連携ツール設定</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/memo-tool/howm/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/emacs-w3m/" class="dd-item">
         <div>
-          <a href="/.emacs.d/memo-tool/howm/">
-            11.1. howm
+          <a href="/.emacs.d/external-tool/emacs-w3m/">
+            emacs-w3m
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/memo-tool/org/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/esa/" class="dd-item">
         <div>
-          <a href="/.emacs.d/memo-tool/org/">
-            11.2. org
+          <a href="/.emacs.d/external-tool/esa/">
+            esa.el
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/memo-tool/scratch/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/forge/" class="dd-item">
         <div>
-          <a href="/.emacs.d/memo-tool/scratch/">
-            11.4. scratch-memo
+          <a href="/.emacs.d/external-tool/forge/">
+            forge
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/google-this/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/google-this/">
+            google-this
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/google-translate/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/google-translate/">
+            google-translate
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/magit/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/magit/">
+            magit
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/notify-slack/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/notify-slack/">
+            notify-slack
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/todoist/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/todoist/">
+            todoist
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/twmode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/twmode/">
+            twmode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/wakatime-mode/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/wakatime-mode/">
+            wakatime-mode
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/external-tool/browse-url/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/external-tool/browse-url/">
+            ブラウザ設定
           </a>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/" class="dd-item haschildren
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/" class="dd-item haschildren
         ">
       <div>
-      <a href="/.emacs.d/utility-tool/"><b>12. </b>ユーティリティー関数</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="/.emacs.d/org-mode/"><b>9. </b>org-mode</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/base/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/auto-delete/">
-            12.1. auto-delete
+          <a href="/.emacs.d/org-mode/base/">
+            基本設定
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-babel/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/emacs-lock/">
-            12.2. emacs-lok-mode
+          <a href="/.emacs.d/org-mode/org-babel/">
+            org-babel
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/ps-print/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/calendar/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/ps-print/">
-            12.3. ps-priter
+          <a href="/.emacs.d/org-mode/calendar/">
+            予定のカレンダー表示
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/terminal/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/agenda/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/terminal/">
-            12.4. open terminal
+          <a href="/.emacs.d/org-mode/agenda/">
+            Agenda 関係の設定
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/thunar/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-capture/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/thunar/">
-            12.5. open thunar
+          <a href="/.emacs.d/org-mode/org-capture/">
+            org-capture
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/restart/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-clock/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/restart/">
-            12.6. restart-emacs
+          <a href="/.emacs.d/org-mode/org-clock/">
+            org-clock
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-export/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/sudo-edit/">
-            12.7. sudo-edit
+          <a href="/.emacs.d/org-mode/org-export/">
+            org-export
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/eshell/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-gcal/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/eshell/">
-            12.8. eshell
+          <a href="/.emacs.d/org-mode/org-gcal/">
+            org-gcal
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/translate/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-ql/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/translate/">
-            12.9. google-translate
+          <a href="/.emacs.d/org-mode/org-ql/">
+            org-ql
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-refile/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/org-mode/org-refile/">
+            org-refile
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-trello/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/org-mode/org-trello/">
+            org-trello
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/ox-hugo/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/org-mode/ox-hugo/">
+            ox-hugo
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-commands/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/org-mode/org-commands/">
+            org-mode 用の独自コマンド
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/org-mode-keybinds/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/org-mode/org-mode-keybinds/">
+            org-mode 関係の keybinds
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/org-mode/nippou/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/org-mode/nippou/">
+            日報用の設定(旧)
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/testing-tool/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/testing-tool/"><b>10. </b>テスト用ツール</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/testing-tool/with-simulated-input/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/testing-tool/with-simulated-input/">
+            with-simulated-input
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/testing-tool/mocker-el/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/testing-tool/mocker-el/">
+            mocker.el
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://minorugh.github.io/.emacs.d/testing/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/.emacs.d/testing/"><b>11. </b>テストコード</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/testing/execution/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/testing/execution/">
+            実行方法
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/testing/run-tests/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/testing/run-tests/">
+            run-tests
+          </a>
+        </div>
+    </li>
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/testing/my-org-commands-test/" class="dd-item">
+        <div>
+          <a href="/.emacs.d/testing/my-org-commands-test/">
+            my-org-commands-test
           </a>
         </div>
     </li>
@@ -855,7 +903,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>編集サポート / 入力補助</a> > 6.13. smartparens
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/editing/'>ファイル編集/入力補助</a> > smartparens
 
  
 
@@ -870,11 +918,10 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#smartparensel-対応する括弧の挿入をアシスト">[smartparens.el] 対応する括弧の挿入をアシスト</a></li>
-      </ul>
-    </li>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#インストール">インストール</a></li>
+    <li><a href="#設定">設定</a></li>
+    <li><a href="#その他">その他</a></li>
   </ul>
 </nav>
       </div>
@@ -886,7 +933,7 @@
 
 <div id="body-inner">
   
-    <h1>6.13. smartparens</h1>
+    <h1>smartparens</h1>
   
 
 
@@ -894,18 +941,18 @@
     
     
     
-<h3 id="smartparensel-対応する括弧の挿入をアシスト">[smartparens.el] 対応する括弧の挿入をアシスト</h3>
-<p>🔗 <a href="https://github.com/Fuco1/smartparens">Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.</a></p>
-<p>設定がいまいちよくわからず、試行錯誤しましたが、</p>
-<pre><code>(require 'smartparens-config)
-</code></pre><p>を追加したところとても賢く機能するようになりました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">smartparens</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">smartparens-global-mode</span>)
-		 (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-smartparens-mode</span>))
-  <span style="color:#a90d91">:config</span>
-  (<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;smartparens-config</span>))
-</code></pre></div>
+<h2 id="概要">概要</h2>
+<p><a href="https://github.com/Fuco1/smartparens">smartparens</a> はカッコとかクォートとかのペアになるようなものの入力補助をしてくれるやつ。</p>
+<p>strict モードだとペアが崩れないように強制するので雑に C-k で行削除しててもペアが維持されて便利。</p>
+<h2 id="インストール">インストール</h2>
+<p>いつも透り el-get で導入している</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">el-get-bundle</span> <span style="color:#000">smartparens</span>)
+</code></pre></div><h2 id="設定">設定</h2>
+<p>実は導入して間もないので、提供されてるオススメ設定のみ突っ込んでいる。オススメ設定は別途 reqiure したら良いという作りなので、以下のようにして突っ込んでいる。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;smartparens-config</span>)
+</code></pre></div><h2 id="その他">その他</h2>
+<p>各言語の hook で <code>smartparens-strict-mode</code> を有効にしている。なんか常に有効だと困りそうな気がしたので。</p>
+
 
     
     
@@ -916,8 +963,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/editing/swiper-migemo/" title="6.12. swiper-migemo"> <i class="fa fa-chevron-left"></i><label>6.12. swiper-migemo</label></a>
-    <a class="nav nav-next" href="/.emacs.d/editing/selected/" title="6.14. selected" style="margin-right: 0px;"><label>6.14. selected</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/editing/multiple-cursors/" title="multiple-cursors"> <i class="fa fa-chevron-left"></i><label>multiple-cursors</label></a>
+    <a class="nav nav-next" href="/.emacs.d/editing/undo-fu/" title="undo-fu" style="margin-right: 0px;"><label>undo-fu</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

@@ -71,7 +71,7 @@
 (leaf ox-hugo
   :ensure t
   :after ox
-  :custom ((org-hugo-front-matter-format . "yaml")))
+  :require t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

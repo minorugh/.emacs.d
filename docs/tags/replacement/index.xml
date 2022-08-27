@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>replacement on minoru&#39;s Emacs Configuration</title>
+    <link>https://minorugh.github.io/.emacs.d/tags/replacement/</link>
+    <description>Recent content in replacement on minoru&#39;s Emacs Configuration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/tags/replacement/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>org-gcal</title>
+      <link>https://minorugh.github.io/.emacs.d/org-mode/org-gcal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/org-mode/org-gcal/</guid>
+      <description>概要 org-gcal は org-mode と Google Calendar を連携させるためのパッケージ。
+オリジナルは https://github.com/myuhe/org-gcal.el なのだけど今は fork されてるやつが MELPA にも登録されていて el-get のレシピもそっちを見ている。
+インストール org-gcal が依存しているので parsist を入れている。
+(el-get-bundle persist) あとは当然 org-gcal 本体を入れないと動かない
+(el-get-bundle org-gcal) 設定 とりあえず require をしないといけない
+(require &amp;#39;org-gcal) あとは設定ファイルは公開したくないので別ファイルに分けてる。
+(my/load-config &amp;#34;my-org-gcal-config&amp;#34;) 隠したい部分だけ .authinfo.gpg にでも分離したら公開できるようになるかもしれない。
+appt Emacs にはデフォルトで約束の通知ができる機能が appt.el で定義されている。 org-gcal で取得したデータをそれで通知できるように appt の設定をここで行っている
+通知形式の設定 window 通知を使う設定にしている。
+(setq appt-display-format &amp;#39;window) これだけだと、通知する時間になったらピョコッと window が生えて来るのだけど、後の方で、この設定の時に使う関数を差し替えている
+通知用関数の定義 通知には alert.el を使いたいので自前で関数を定義。 alert.el は別のところで設定していてそこで dunst を使って通知するようにしている。
+(defun my/appt-alert (min-to-app _new-time msg) (interactive) (let ((title (format &amp;#34;あと %s 分&amp;#34; min-to-app))) (alert msg :title title))) この関数を使うように appt-disp-window-function を変更している。</description>
+    </item>
+    
+    <item>
+      <title>auto-save</title>
+      <link>https://minorugh.github.io/.emacs.d/basics/auto-save/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/basics/auto-save/</guid>
+      <description>概要 編集中状態の自動保存や、編集前や保存直後の状態のバックアップに関する設定をここでは書いている。
+Emacs ではデフォルトでも編集中ファイルの自動保存や、編集前の状態の自動バックアップもしてくれるが開いているファイルとは違う場所に保存したりすることで、より便利になるのでいくつかの設定を入れている。
+設定 自動保存設定 デフォルトだと #hoge.txt# みたいなファイル名で作られる、自動保存に関する設定。
+まあこの自動保存されてやつを活用できてる気がしないのでこの自動保存自体不要な気はしているが、とりあえず場所を移動して邪魔にはならないようにはしている。
+自動保存のタイミング 自動保存のタイミングは
+ auto-save-timeout auto-save-interval  で制御されている。
+まず auto-save-timeout で設定した秒数が経過すると再度自動保存が実行される。
+これがデフォルトだと 30 秒なのだが、ちょっと長いのでその半分の 15 秒で保存されるように設定を変更している。
+(setq auto-save-timeout 15) また auto-save-interval で設定した回数のキーイベントが発生すると再度自動保存を実行する。
+これもデフォルトだと 300 と結構なキーを叩く必要があるので 60 回としている。
+(setq auto-save-interval 60) 自動保存先を変更する 自動保存はそのままだと弄ってるファイルの場所に作られる。が、これは以下のようにすると ~/.emacs.d/backup/ 一応変更可能。
+(setq auto-save-file-name-transforms &amp;#39;((&amp;#34;.*&amp;#34; &amp;#34;~/.emacs.d/backup/&amp;#34; t))) ただ、デフォルト値が
+((&amp;#34;\\`/[^/]*:\\([^/]*/\\)*\\([^/]*\\)\\&amp;#39;&amp;#34; &amp;#34;/tmp/\\2&amp;#34; t)) なので .* にしているのは乱暴そうな気がしている。
+というわけで https://masutaka.net/chalow/2014-05-11-1.html に書かれているのを真似して
+((&amp;#34;~/\\([^/]*/\\)*\\([^/]*\\)$&amp;#34; &amp;#34;~/.emacs.d/backup/\\2&amp;#34; t)) とでもした方が良いかもしれない。
+バックアップファイル 自動保存とは別に、ファイルを開いた時点のバージョンや保存した時点のバージョンを取っておいてくれる自動バックアップ機能もあるのでその設定も弄っている。
+バックアップ先のフォルダ指定 デフォルトでは編集しているファイルと同じフォルダにバックアップファイルを作成するようになっている。
+だけど、こいつが結構邪魔なのでバックアップファイルは ~/.emacs.d/backup/ に全部保存するようにしている。
+また、普段 tramp は使っていないが何かの拍子で使った時にバックアップが取られると邪魔そうなのでそれは保存しないようにしている。</description>
+    </item>
+    
+    <item>
+      <title>Neotree</title>
+      <link>https://minorugh.github.io/.emacs.d/ui/neotree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/ui/neotree/</guid>
+      <description>概要 Neotree は Emacs でフォルダのツリー表示ができるやつ。メンテは活発じゃないようなので、その内乗り換えたい。
+レシピ Neotree でメンテされているのは dev ブランチだけど el-get の公式のレシピでは master ブランチを見ているので自前で recipe を用意してそれを使っている。
+(:name emacs-neotree-dev :website &amp;#34;https://github.com/jaypei/emacs-neotree&amp;#34; :description &amp;#34;An Emacs tree plugin like NerdTree for Vim.&amp;#34; :type github :branch &amp;#34;dev&amp;#34; :pkgname &amp;#34;jaypei/emacs-neotree&amp;#34;) インストール 上に書いたレシピを使ってインストールしている。
+(el-get-bundle emacs-neotree-dev) 使わなくなったコード 元々設定していたが、 counsel-projectile を使ってると projectile-switch-project-action を設定していても反映されず意味がないのに気付いたので使わなくなった
+https://github.com/mugijiru/.emacs.d/pull/183/files#r541843206
+(setq projectile-switch-project-action &amp;#39;neotree-projectile-action) テーマの設定 GUI で起動している時はアイコン表示しそうでない場合は ▾ とかで表示する
+(setq neo-theme (if (display-graphic-p) &amp;#39;icons &amp;#39;arrow)) のだけど、実際に今使ってるやつだともっとグラフィカルな表示なので all-the-icons の設定で上書きしている気がするので要確認
+major-mode-hydra いちいちキーバインドを覚えてられないので major-mode-hydra を使って主要なキーバインドは hydra で使えるようにしている。
+とはいえ、この文書を書く前日ぐらいに設定しているのでまだ使い慣れてないというか、ほとんど使えてない。</description>
+    </item>
+    
+  </channel>
+</rss>
