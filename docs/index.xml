@@ -7,6 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>6.10. iedit</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
+      <description>[iedit.el] 選択領域を別の文字列に置き換える 🔗 victorhge/iedit: Modify multiple occurrences simultaneously.
+バッファー内の複数箇所を同時に編集するツールです。
+対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインにキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
+ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定され iedet-modeを抜けます。
+Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドして重宝しています。</description>
+    </item>
+    
+    <item>
       <title>1.1. eary-init.el</title>
       <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -669,31 +682,6 @@ emacs-livedown.elisp は、el-get でインストールします。
     </item>
     
     <item>
-      <title>6.10. iedit</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/iedit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/iedit/</guid>
-      <description>[iedit.el] 選択領域を別の文字列に置き換える 🔗 victorhge/iedit: Modify multiple occurrences simultaneously.
-バッファー内の複数箇所を同時に編集するツールです。
-対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインにキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
-ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定され iedet-modeを抜けます。
-Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドして重宝しています。</description>
-    </item>
-    
-    <item>
-      <title>6.10. smartparens</title>
-      <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
-      <description>[smartparens.el] 対応する括弧の挿入をアシスト 🔗 Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.
-設定がいまいちよくわからず、試行錯誤しましたが、
-(require &#39;smartparens-config) を追加したところとても賢く機能するようになりました。
-(leaf smartparens :ensure t :hook ((after-init-hook . smartparens-global-mode) (prog-mode-hook . turn-on-smartparens-mode)) :config (require &amp;#39;smartparens-config)) </description>
-    </item>
-    
-    <item>
       <title>6.11. migemo</title>
       <link>https://minorugh.github.io/.emacs.d/editing/migemo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -710,7 +698,19 @@ avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど�
     </item>
     
     <item>
-      <title>6.12. selected</title>
+      <title>6.11. smartparens</title>
+      <link>https://minorugh.github.io/.emacs.d/editing/smartparens/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/editing/smartparens/</guid>
+      <description>[smartparens.el] 対応する括弧の挿入をアシスト 🔗 Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.
+設定がいまいちよくわからず、試行錯誤しましたが、
+(require &#39;smartparens-config) を追加したところとても賢く機能するようになりました。
+(leaf smartparens :ensure t :hook ((after-init-hook . smartparens-global-mode) (prog-mode-hook . turn-on-smartparens-mode)) :config (require &amp;#39;smartparens-config)) </description>
+    </item>
+    
+    <item>
+      <title>6.13. selected</title>
       <link>https://minorugh.github.io/.emacs.d/editing/selected/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -723,7 +723,7 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
     </item>
     
     <item>
-      <title>6.13. pangu-spacing</title>
+      <title>6.14. pangu-spacing</title>
       <link>https://minorugh.github.io/.emacs.d/editing/pangu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -734,7 +734,7 @@ pangu-spacingは、漢字と英字の間にスペースを自動追加してく�
     </item>
     
     <item>
-      <title>6.14. font-awesome</title>
+      <title>6.15. font-awesome</title>
       <link>https://minorugh.github.io/.emacs.d/editing/fontawesome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

@@ -39,6 +39,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/programming/</loc>
   </url>
   
@@ -275,15 +279,11 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
   </url>
   
   <url>
