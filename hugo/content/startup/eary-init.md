@@ -5,7 +5,7 @@ draft = false
 ### 早期初期化ファイル
 🔗 [minorugh/.emacs.d/early-init.el](https://github.com/minorugh/.emacs.d/blob/main/early-init.el)
 
-Emacs27から導入された `eary-init.el`は、`init.el` でパッケージシステムGUIの初期化が実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。
+Emacs27から導入された `eary-init.el`は、`init.el` でGUIやパッケージシステムの初期化が実行される前にロードされるので、UI関係や `package-enable-at-startup` のようなパッケージ初期化プロセスに影響を与える変数を先に書くことで起動を早くすることが出来るようです。
 
 ### GCを減らす
 GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。

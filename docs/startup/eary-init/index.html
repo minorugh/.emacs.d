@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-27T08:42:53 JST">
+<meta name="revised" content="2022-08-27T09:16:06 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -876,7 +876,7 @@
     
 <h3 id="早期初期化ファイル">早期初期化ファイル</h3>
 <p>🔗 <a href="https://github.com/minorugh/.emacs.d/blob/main/early-init.el">minorugh/.emacs.d/early-init.el</a></p>
-<p>Emacs27から導入された <code>eary-init.el</code>は、<code>init.el</code> でパッケージシステムGUIの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数をカスタマイズできます。</p>
+<p>Emacs27から導入された <code>eary-init.el</code>は、<code>init.el</code> でGUIやパッケージシステムの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数を先に書くことで起動を早くすることが出来るようです。</p>
 <h3 id="gcを減らす">GCを減らす</h3>
 <p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Defer garbage collection further back in the startup process</span>
