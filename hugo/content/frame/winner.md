@@ -1,5 +1,5 @@
 +++
-title = "5.6. winner-mode"
+title = "5.5. winner-mode"
 draft = false
 +++
 

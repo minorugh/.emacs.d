@@ -1,5 +1,5 @@
 +++
-title = "5.8. doom-modeline"
+title = "5.7. doom-modeline"
 draft = false
 +++
 ### [doom-modeline.el]

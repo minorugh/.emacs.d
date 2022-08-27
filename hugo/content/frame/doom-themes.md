@@ -1,5 +1,5 @@
 +++
-title = "5.7. doom-thmes"
+title = "5.6. doom-thmes"
 draft = false
 +++
 ### [doom-thems.el] テーマ

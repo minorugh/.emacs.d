@@ -1,5 +1,5 @@
 +++
-title = "5.5. tempbuf"
+title = "5.4. tempbuf"
 draft = false
 +++
 ### [tempbuf.el] 不要になったと思われるバッファを自動的に kill

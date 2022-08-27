@@ -526,49 +526,49 @@
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/dimmer/",
-	"title": "5.2. dimmer-mode",
+	"title": "5.1. dimmer-mode",
 	"tags": [],
 	"description": "",
 	"content": "[dimmer.el] 現在のバッファ以外の輝度を落とす 🔗 gonewest818/dimmer.el: Visually highlight the selected buffer.\n現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。\ntakaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。\n(leaf dimmer :ensure t :chord (\u0026#34;..\u0026#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps \u0026#39;(\u0026#34;^ \\\\*which-key\\\\|^ \\\\*LV\\\\|^ \\\\*.*posframe.*buffer.*\\\\*$\u0026#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) 画面分割と連携させる dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。\n下記の通り発想転換すれば呪縛から逃れることができます。\n 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じるときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 3\u0026#34; . my:split-window-right) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-right () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-right) (follow-mode 1) (dimmer-mode 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (when (one-window-p) (dimmer-mode -1))) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;))) 長行のファイルを画面分割で見るのに便利な follow-mode も有効にしています。\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/scrool-other-window/",
-	"title": "5.3. scrool-other-window",
+	"title": "5.2. scrool-other-window",
 	"tags": [],
 	"description": "",
 	"content": "deactiveなwindowをスクロールさせる scrool-other-window は、deactive なwindowをスクロールさせるためのキーバインド設定です。\n通常 \u0026lt;next\u0026gt; / \u0026lt;prior\u0026gt; は、PgUp / PgDn として機能するが、画面分割のときは other-Window に対応させている。\n(leaf *my:scroll-other-window :bind ((\u0026#34;\u0026lt;next\u0026gt;\u0026#34; . my:scroll-other-window) (\u0026#34;\u0026lt;prior\u0026gt;\u0026#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () \u0026#34;If there are two windows, `scroll-other-window\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () \u0026#34;If there are two windows, `scroll-other-window-down\u0026#39;.\u0026#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/sprit-window/",
-	"title": "5.4. cus-sprit-window",
+	"title": "5.3. cus-sprit-window",
 	"tags": [],
 	"description": "",
 	"content": "デフォルトの画面分割コマンドをカスタマイズ dimmer-mode 連携のためにデフォルトのコマンドをカスタマイズします。\n 画面分割したときは、dimmer-mode on + follow-mode on にする。 画面分割を閉じたときは、dimmer-mode off にする。  (leaf *cus-sprit-window-functions :bind ((\u0026#34;C-q\u0026#34; . other-window-or-split) (\u0026#34;C-x 2\u0026#34; . my:split-window-below) (\u0026#34;C-x 1\u0026#34; . my:delete-other-windows) (\u0026#34;C-x 0\u0026#34; . my:delete-window) (\u0026#34;\u0026lt;C-return\u0026gt;\u0026#34; . window-swap-states)) :init (defun other-window-or-split () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () \u0026#34;With turn on dimmer.\u0026#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-window) (follow-mode -1) (dimmer-mode -1)) (defun my:delete-other-windows () \u0026#34;With turn off dimmer.\u0026#34; (interactive) (delete-other-windows) (follow-mode -1) (dimmer-mode -1)) (defun kill-other-buffers () \u0026#34;Kill all other buffers.\u0026#34; (interactive) (mapc \u0026#39;kill-buffer (delq (current-buffer) (buffer-list))) (message \u0026#34;killl-other-buffers!\u0026#34;)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/tempbuf/",
-	"title": "5.5. tempbuf",
+	"title": "5.4. tempbuf",
 	"tags": [],
 	"description": "",
 	"content": "[tempbuf.el] 不要になったと思われるバッファを自動的に kill 🔗 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background\ntempbuf.el は不要になったと思われるバッファを自動的に kill してくれます。\n使っていた時間が長い程、裏に回った時には長い時間保持してくれる。\nつまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなズボラな自分には便利です。\n my:tembuf-ignore-files は、勝手に kill させないファイルの指定 find-file-hook は、find-file で開いたファイルが削除対象 dired buffer /magit-buffer は、無条件に削除  (leaf tempbuf :el-get minorugh/tempbuf :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :init (setq my:tempbuf-ignore-files \u0026#39;(\u0026#34;~/Dropbox/org/task.org\u0026#34; \u0026#34;~/Dropbox/org/capture.org\u0026#34;)) (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar \u0026#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/winner/",
-	"title": "5.6. winner-mode",
+	"title": "5.5. winner-mode",
 	"tags": [],
 	"description": "",
 	"content": "11.3. [Winner.el] ウインドウ構成の履歴を辿る ビルトインの winner.el を使います．\n分割状況を含めて各ウィンドウで表示していたバッファの履歴を辿ることができます。\nwinner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。\n(leaf winner-mode :ensure nil :bind ((\u0026#34;C-c \u0026lt;left\u0026gt;\u0026#34; . winner-undo) (\u0026#34;C-c \u0026lt;right\u0026gt;\u0026#34; . winner-redo)) :init (winner-mode 1)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/doom-themes/",
-	"title": "5.7. doom-thmes",
+	"title": "5.6. doom-thmes",
 	"tags": [],
 	"description": "",
 	"content": "[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs' Theme Pack.\ndoom-themes には、わんさかとtheme ファイルがパックされています。自分は、doom-dracula を愛用しています。\n(leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme \u0026#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。\n(leaf cycle-custom-theme :doc \u0026#34;https://bre.is/5tE2BvUp\u0026#34; :config (setq my:themes (list \u0026#39;doom-dracula \u0026#39;iceberg \u0026#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () \u0026#34;Switch themes to cycle.\u0026#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message \u0026#34;%s\u0026#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc \u0026#34;modified version for myself\u0026#34; :el-get minorugh/iceberg-theme) (add-to-list \u0026#39;custom-theme-load-path \u0026#34;~/.emacs.d/el-get/iceberg-theme/\u0026#34;)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/frame/doom-modeline/",
-	"title": "5.8. doom-modeline",
+	"title": "5.7. doom-modeline",
 	"tags": [],
 	"description": "",
 	"content": "[doom-modeline.el] 🔗 seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.\nEmacsモダン化計画 -かわEmacs編 の記事に触発されて以来、doom-modeline を愛用しています。\nTeMPOraL/nyan-mode.el も可愛くて癒やされています(^^)\n(leaf doom-modeline :ensure t :hook (after-init-hook . doom-modeline-mode) :custom (doom-modeline-icon . t) (doom-modeline-major-mode-icon . nil) (doom-modeline-minor-modes . nil) :config (line-number-mode 0) (column-number-mode 0) (doom-modeline-def-modeline \u0026#39;main \u0026#39;(bar window-number matches buffer-info remote-host buffer-position parrot selection-info) \u0026#39;(misc-info persp-name lsp github debug minor-modes input-method major-mode process vcs checker)) :init (leaf nyan-mode :ensure t :config (nyan-mode 1) (nyan-start-animation))) "

@@ -1,5 +1,5 @@
 +++
-title = "5.3. scrool-other-window"
+title = "5.2. scrool-other-window"
 draft = false
 +++
 ### deactiveなwindowをスクロールさせる

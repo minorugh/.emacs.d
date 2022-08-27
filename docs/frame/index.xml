@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>5.2. dimmer-mode</title>
+      <title>5.1. dimmer-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -21,7 +21,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     </item>
     
     <item>
-      <title>5.3. scrool-other-window</title>
+      <title>5.2. scrool-other-window</title>
       <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -32,7 +32,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     </item>
     
     <item>
-      <title>5.4. cus-sprit-window</title>
+      <title>5.3. cus-sprit-window</title>
       <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -42,7 +42,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     </item>
     
     <item>
-      <title>5.5. tempbuf</title>
+      <title>5.4. tempbuf</title>
       <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -55,7 +55,7 @@ tempbuf.el は不要になったと思われるバッファを自動的に kill 
     </item>
     
     <item>
-      <title>5.6. winner-mode</title>
+      <title>5.5. winner-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -67,7 +67,7 @@ winner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィ�
     </item>
     
     <item>
-      <title>5.7. doom-thmes</title>
+      <title>5.6. doom-thmes</title>
       <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -79,7 +79,7 @@ doom-themes には、わんさかとtheme ファイルがパックされてい�
     </item>
     
     <item>
-      <title>5.8. doom-modeline</title>
+      <title>5.7. doom-modeline</title>
       <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
