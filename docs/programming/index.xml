@@ -1,250 +1,123 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>プログラミング関係の設定 on minoru&#39;s Emacs Configuration</title>
+    <title>開発サポート on minoru&#39;s Emacs Configuration</title>
     <link>https://minorugh.github.io/.emacs.d/programming/</link>
-    <description>Recent content in プログラミング関係の設定 on minoru&#39;s Emacs Configuration</description>
+    <description>Recent content in 開発サポート on minoru&#39;s Emacs Configuration</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>emacs-lisp</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/emacs-lisp/</link>
+      <title>10.1. function key</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/emacs-lisp/</guid>
-      <description>概要 Emacs Lisp を書くための設定。まあそんなにしっかり書いてないので、あんまり設定は入ってない
-Hook Hook 用の関数を定義してその中に色々書いている。
- とりあえず行数表示が欲しいので display-line-numbers-mode を有効化 当然補完もしたいので company-mode を有効にしている カッコの対応などもいい感じに動いて欲しいので smartparens-mode とその strict-mode を有効にしている  (defun my/emacs-lisp-mode-hook () (display-line-numbers-mode 1) (company-mode 1) (smartparens-mode 1) (turn-on-smartparens-strict-mode)) そんで最後にその関数を hook に突っ込んでる。
-(add-hook &amp;#39;emacs-lisp-mode-hook &amp;#39;my/emacs-lisp-mode-hook) アイコン挿入コマンドの用意 時々 UI 設定目的で絵文字を使うことがあるので挿入できるコマンドを用意している。最近使った記憶ないけど。
-(defun my/insert-all-the-icons-code (family) (interactive) (let* ((candidates (all-the-icons--read-candidates-for-family family)) (prompt (format &amp;#34;%s Icon: &amp;#34; (funcall (all-the-icons--family-name family)))) (selection (completing-read prompt candidates nil t))) (insert &amp;#34;(all-the-icons-&amp;#34; (symbol-name family) &amp;#34; \&amp;#34;&amp;#34; selection &amp;#34;\&amp;#34;)&amp;#34;))) キーバインド emacs-lisp-mode 用に major-mode-hydra を設定している。けどそんなにしっかり Emacs Lisp を書いてるわけではないのがバレバレな感じである。</description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/function/</guid>
+      <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
+   キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
     </item>
     
     <item>
-      <title>Ember.js</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/ember-js/</link>
+      <title>10.2. gist interface</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/gist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/ember-js/</guid>
-      <description>概要 Ember.js 用の Emacs の拡張としては ember-mode と handlebars-mode が存在する
-ember-mode unused ember-mode は Ember.js アプリケーションのファイルナビゲーションや生成を行ってくれるモード。実は麦汁さんは使えてない。
-インストールするだけではダメで、 ember-mode を明示的に起動しないといけない。
-そのためには dir-locals を使うとか projectile なんかがやってるようにフォルダ構成から判定させるみたいなことが必要そう。だるい。
-というわけで死蔵中。
-ついでにいうとキーバインドもだるい系なので使う時は Hydra を用意した方が良さそう
-インストールは GitHub からできるが el-get.lock を用いたバージョン更新確認スクリプトのためレシピを追加している
-(:name madnificent/ember-mode :website &amp;#34;https://github.com/madnificent/ember-mode&amp;#34; :description &amp;#34;Ember-mode speeds up navigation in EmberJS projects.&amp;#34; :type github :pkgname &amp;#34;madnificent/ember-mode&amp;#34;) このレシピを用意した上で以下でインストール
-(el-get-bundle ember-mode) handlebars-mode improvement handlebars-mode は Ember.js のテンプレートエンジンとして採用されている Handlebars を書くためのモード。
-syntax highlight と、いくつかの編集機能を備えている。が、今のところ麦汁さんは syntax highlight しか使えてない。
-編集コマンドは major-mode-hydra で使えるようにしてあげれば良さそう
-(el-get-bundle handlebars-mode) </description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
+      <description>Gistインターフェイス リスト管理などもできる gist.el というパッケージを使っていましたが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
+gist をinstallしておく必要があります。
+$ sudo apt install gist ターミナルで gist --help と打つと沢山の起動オプションが表示される。
+gist -o でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。
+(leaf *gist-configurations :bind (&amp;#34;s-g&amp;#34; . gist-region-or-buffer) :init (defun gist-description () &amp;#34;Add gist description.&amp;#34; (code-quote-argument (read-from-minibuffer &amp;#34;Add gist description: &amp;#34;))) (defun gist-filename () &amp;#34;The character string entered in minibuffer is used as file-name. If enter is pressed without file-name, that&amp;#39;s will be buffer-file-neme.&amp;#34; (interactive) (let ((file (file-name-nondirectory (buffer-file-name (current-buffer))))) (read-from-minibuffer (format &amp;#34;File name (%s): &amp;#34; file) file))) (defun gist-region-or-buffer () &amp;#34;If region is selected, post from the region.</description>
     </item>
     
     <item>
-      <title>es6</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/es6/</link>
+      <title>10.3. flymake</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/flymake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/es6/</guid>
-      <description>概要 ES5 以前ではない JS を書くための設定。 es6 といいつつ ES2016(ES7) などもこの設定のまま書いている。
-sprockets-es6 を使って ES6 対応をしていた時に es6 という拡張子を使っていたのでこのファイル名になっている。
-インストール es6 はつまり JS なのでとりあえず el-get で js2-mode を入れている。
-(el-get-bundle js2-mode) Hook  flycheck を有効にしてリアルタイムに文法チェックをしている  また javascript-eslint を使いたいので他2つは disable にしている   company-mode で補完できるようにしている smartparens-strict-mode でカッコなどの入力補助をしている インデントは空白2文字としている  (defun my/js2-mode-hook () (flycheck-mode 1) (setq flycheck-disabled-checkers &amp;#39;(javascript-standard javascript-jshint)) (company-mode 1) (turn-on-smartparens-strict-mode) (setq js2-basic-offset 2)) という Hook 用関数を用意しておいて
-(add-hook &amp;#39;js2-mode-hook &amp;#39;my/js2-mode-hook) という感じで js2-mode-hook に追加している。
-Lambda で一括でやる方法もあるけども、関数名つけて分離しておくと中身を簡単に入れ替えられて便利。</description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
+      <description>[flymake] 構文エラー表示 ビルトインの flymake-mode が軽くて使いやすくなったので、flycheck から移行しました。
+(leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook &amp;#39;flymake-diagnostic-functions &amp;#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . &amp;#34; &amp;#34;))) </description>
     </item>
     
     <item>
-      <title>flycheck</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/flycheck/</link>
+      <title>10.4. quickrun</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/quickrun/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/flycheck/</guid>
-      <description>概要 flycheck はリアルタイムで文法チェックなんかをするのに便利なモード。 flymake よりモダンなやつだったんだけど最近は flymake に戻る人もいるっぽいのでどっちが良いかよくわかってない
-インストール flycheck と同時にカーソルのそばに pos-tip で通知内容を表示してくれる flycheck-pos-tip をインストールしている
-(el-get-bundle flycheck) (el-get-bundle flycheck-pos-tip) 設定 flycheck を読んだ後で flycheck-pos-tip-mode が有効になるようにしている。これは公式に書かれているやりかたに則っている https://github.com/flycheck/flycheck-pos-tip#installation
-また web-mode はデフォルトでは flycheck が使えないので flycheck-add-mode を使って web-mode でも flycheck が使えるようにしている
-(with-eval-after-load &amp;#39;flycheck (flycheck-pos-tip-mode) (flycheck-add-mode &amp;#39;javascript-eslint &amp;#39;web-mode)) その他 flycheck-posframe flycheck-pos-tip は flycheck 公式のプラグインなので採用しているけど同じことを posframe でやってくれる flycheck-posframe に置き換えた方が見た目麗しくなりそうな気がしている。
-言語毎の設定 各言語向けの設定もあるけどそれは各言語の設定ファイル内に書いているのでここでは書いてない
-プログラミング関係の設定 &amp;gt; ruby とか プログラミング関係の設定 &amp;gt; scss とかに書いているはず</description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
+      <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
+編集中のソースコードをビルド・実行して別バッファに結果を得ます。
+open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に使えて重宝です。
+(leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
     </item>
     
     <item>
-      <title>gnuplot-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/gnuplot-mode/</link>
+      <title>10.5. magit</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/magit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/gnuplot-mode/</guid>
-      <description>概要 gnuplot-mode はグラフ作成ソフトである gnuplot を Emacs で使うためのパッケージ。 Syntax Highlight や 補完機能 などを提供する。
-まあほとんど使ってないんだけど。
-インストール いつも通り el-get で入れている
-(el-get-bundle gnuplot-mode) その他 org-mode から使ってた記憶があるのでそっちの方で何か設定があるかもしれない</description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
+      <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
+magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
+(leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
     </item>
     
     <item>
-      <title>lsp-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/lsp-mode/</link>
+      <title>10.6. git-timemachine</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/lsp-mode/</guid>
-      <description>概要 lsp-mode は Emacs で Language server protocol が使えるようにするパッケージ。
-より軽そうなやつに eglot というのもあるがこっちは試したことがない。
-インストール lsp-mode 本体と UI 周りを担当する lsp-ui-mode の両方をインストールしている。また lsp-mode が有効になる際に lsp-ui-mode も同時に有効になるようにしている。
-(el-get-bundle lsp-mode) (el-get-bundle lsp-ui) (add-hook &amp;#39;lsp-mode-hook &amp;#39;lsp-ui-mode) 設定 lsp-ui-doc はカーソル位置にある変数や関数などの説明を child frame で表示してくれるやつ。
-これがデフォルトではフレーム基準で右上に表示するのだが大きめの画面を分割して使っていると大分遠くに表示されてしまうので window 基準で表示するように設定を変更している
-(setq lsp-ui-doc-alignment &amp;#39;window) </description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</guid>
+      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
+次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
+ p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  </description>
     </item>
     
     <item>
-      <title>markdown</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/markdown/</link>
+      <title>10.7. browse-at-point</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/browsepoint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/markdown/</guid>
-      <description>概要 Markdown を書くための設定。といいつつ markdown-mode を入れてるだけだけども。
-手元でテキストドキュメントを弄るのは org-mode が多いからなあ……
-インストール いつも通り el-get で入れている。
-(el-get-bundle markdown-mode) </description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/browsepoint/</guid>
+      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
+[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
+browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</description>
     </item>
     
     <item>
-      <title>plantuml-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/plantuml-mode/</link>
+      <title>10.8. counsel-tramp</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/tramp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/plantuml-mode/</guid>
-      <description>概要 plantuml-mode は PlantUML という、テキストだけで UML 図などが描けるツール用のモード。
-インストール いつも通り el-get で入れてる
-(el-get-bundle plantuml-mode) 設定 実行モードは &#39;jar を指定している。デフォルトは &#39;server なんだけどオフラインの時も使いたいししね。
-(setq plantuml-default-exec-mode &amp;#39;jar) el-get でインスコすると jar ファイルも自動で拾って来て plantuml-mode と同じディレクトリに設置して plantuml-jar-path も通してくれるからそっち使う方が便利だしね。
-その他 最新の develop ブランチだとインデントを調整できる機能が入っているので乗り換えたいけどそのためには el-get のレシピを書いてあげる必要がありそうで放置している。</description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
+      <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
+管理している俳句サイトのれたるサーバーを除くのに counsel-tramp を使っています。
+サーバー上のファイルを直に編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
+(leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
     </item>
     
     <item>
-      <title>rails</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/rails/</link>
+      <title>10.9. easy-hugo</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/rails/</guid>
-      <description>概要 Rails 開発関係だけど Ruby 開発とはちょっと違う設定をここに書いている。
-関連パッケージのインストール テンプレートエンジンには haml を使っているので haml-mode を入れていてファイルナビゲーションには projectile の拡張である projectile-rails を利用している。
-(el-get-bundle haml-mode) (el-get-bundle projectile-rails) (projectile-rails-global-mode 1) projectile-rails 用のコマンド追加 自身のプロジェクトだと少しナビゲーション用のコマンドが不足していたので projectile-rails の実装を参考にコマンドを追加している
-Uploader Finder app/uploaders に格納している upload に関連するファイルを検索するコマンド
-(defun my/projectile-rails-find-uploader () &amp;#34;Find a Uploader.&amp;#34; (interactive) (projectile-rails-find-resource &amp;#34;uploader: &amp;#34; &amp;#39;((&amp;#34;app/uploaders/&amp;#34; &amp;#34;\\(.+\\)\\.rb$&amp;#34;)) &amp;#34;app/uploaders/${filename}.rb&amp;#34;)) Admin Finder Active Admin 用のファイルを検索するためのコマンド
-(defun my/projectile-rails-find-admin () &amp;#34;Find a ActiveAdmin file.&amp;#34; (interactive) (projectile-rails-find-resource &amp;#34;admin: &amp;#34; &amp;#39;((&amp;#34;app/admin/&amp;#34; &amp;#34;\\(.+\\)\\.rb$&amp;#34;)) &amp;#34;app/admin/${filename}.rb&amp;#34;)) Form Object Finder Form Object を探すためのコマンド</description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
+      <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
+Hugoで作成されたブログを書くための Emacs メジャー モードです。
+(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.</description>
     </item>
     
     <item>
-      <title>React.js</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/react-js/</link>
+      <title>10.10. open-junk-file</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/junk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/react-js/</guid>
-      <description>概要 React.js を書くための設定をここにまとめている
-dap-mode Debug Adapter Protocol をサポートするモード。入れておいた方がきっとデバッグしやすいんだろうということで入れている。
-lsp-mode の仲間なので、本当はそっち側で入れるようにした方が良さそうだけどひとまず React のために入れているので React 用の設定ファイルに書いている。
-(el-get-bundle dap-mode) 同時に treemacs や lsp-treemacs も入ってくる罠がある。 Neotree 使ってるからちょっとアレだなあ。いずれ乗り換えようとはしていたけども。
-web-mode とりあえず tsx を弄る上では web-mode が良いという話もあるので入れておく。
-(el-get-bundle web-mode) メジャーモードの紐付け jsx/tsx ファイルを開いた時には web-mode で動いてほしいので auto-mode-alist で関連付けをする
-(add-to-list &amp;#39;auto-mode-alist &amp;#39;(&amp;#34;\\.[jt]sx&amp;#34; . web-mode)) lsp-mode などの有効化 jsx/tsx ファイルを開く時に web-mode が有効になるようにしているのでその web-mode の hook で
- display-line-numbers-mode lsp lsp-ui-mode company-mode flycheck  を有効にしている。
-flycheck では lsp と eslint を使いたいのでそれ以外の JS の checker は disable にしている</description>
-    </item>
-    
-    <item>
-      <title>rspec-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/rspec-mode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/rspec-mode/</guid>
-      <description>概要 rspec-mode は Emacs で RSpec を実行したりする時に便利なパッケージ。といいつつ麦汁さんはちゃんと使いこなしていない……
-インストール (el-get-bundle rspec-mode) 有効化 rspec 実行バッファで byebug などで止まった際に C-x C-q したら inf-ruby が動くようにしている。
-(add-hook &amp;#39;after-init-hook &amp;#39;inf-ruby-switch-setup) binding.pry は何故かまともに動かないので byebug か binding.irb 推奨。麦汁さんはいつも debugger とコードに入れて使っている。
-キーバインド C-c C-c で開いている rspec ファイルのカーソルがある行のテストを実行できるようにしている。
-(define-key rspec-mode-map (kbd &amp;#34;C-c C-c&amp;#34;) &amp;#39;rspec-verify-single) 他にも色々な機能があるのだけどキーバインド未設定なのでこれだけしか使ってない。</description>
-    </item>
-    
-    <item>
-      <title>ruby</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/ruby/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/ruby/</guid>
-      <description>概要 Ruby のコードを編集する上での設定をここには書いている。別の箇所で rspec-mode などの設定も書いているのでいつか記述場所を統合した方が良さそうな気もする
-rbenv.el Ruby のバージョンを切り替えられる rbenv を使ってるので Emacs 上でもそれが使えるように rbenv.el を導入している。
-インストール インストールはいつも通り el-get でやっている
-(el-get-bundle rbenv) 有効化 そして global に有効化している。というか global じゃない有効化ってあるのかなってのと、あるとしても意味があるのかな的な。
-(global-rbenv-mode) enh-ruby-mode メジャーモードは enhanced-ruby-mode を利用している。が、最近は ruby-mode の方がやっぱり良いみたいな話もどこかで見た気がするので戻ってみるのも手かもしれないと思っている。
-インストール いつも通り el-get で入れている。
-(el-get-bundle enh-ruby-mode) カスタム設定 enh-ruby-mode が読み込まれた後に setq で以下のように設定されている
-(with-eval-after-load &amp;#39;enh-ruby-mode (setq enh-ruby-add-encoding-comment-on-save nil) (setq enh-ruby-deep-indent-paren nil) (setq enh-ruby-bounce-deep-indent t)) encoding のマジックコメントが入らないようにする enh-ruby-add-encoding-comment-on-save を nil にすることで encoding 設定のマジックコメントが入らないようにしている。
-これは昔は有効にしておいた方が良かったけど最近の Ruby では設定しなくても UTF-8 が前提になるからむしろ無い方が良いというお話だったはず。
-そういう状況に変わったのも大分前なので詳細は忘れた。
-ただとりあえず 最新の enhanced-ruby-mode を見るとデフォルトが nil なのでわざわざ設定しなくて良さそう。</description>
-    </item>
-    
-    <item>
-      <title>scss</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/scss/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/scss/</guid>
-      <description>概要 scss を使う上での設定をここではまとめている。長いこと手を入れてないので今はより良い設定がありそうな気がする。
-rainbow-mode rainbow-mode はカラーコードを入力した際に、そのカラーコード部分の背景色をカラーコードの色に変化させるパッケージ。ぱっと見で大体どんな色かわかって便利なやつ
-インストール 自分はel-get で入れている。
-(el-get-bundle rainbow-mode) ELPA に登録されているので package-install でもいける
-scss-mode scss-mode は Emacs 組込みの css-mode の中で定義されているメジャーモード。なのでインストール不要で使えるし .scss という拡張子なら自動的に scss-mode で開いてくれるようになっている。
-設定 improvement インデントはデフォルトだと半角空白 4 つとなっているが麦汁さん的には 2 の方が良いのでそのように変更している。
-(with-eval-after-load &amp;#39;scss-mode (setq css-indent-offset 2)) with-eval-after-load を使っているが css-indent-offset は defcustom で定義されているので custom-set-variables を使うように修正した方が良さそう
-hook improvement scss を使う上で hook を使って色々有効化したりしている。
-(defun my/scss-mode-hook () (flycheck-mode 1) (setq-local lsp-prefer-flymake nil) (lsp) (lsp-ui-mode -1) (smartparens-strict-mode 1) ;; lsp-ui とかより後に設定しないと上書きされるのでここに移動した (setq-local flycheck-checker &amp;#39;scss-stylelint) (setq-local flycheck-check-syntax-automatically &amp;#39;(save new-line idle-change)) (company-mode 1) (display-line-numbers-mode 1) (rainbow-mode)) (add-hook &amp;#39;scss-mode-hook &amp;#39;my/scss-mode-hook)  flycheck-mode の有効化  これによりリアルタイムに lint 結果が分かって便利になる   lsp-prefer-flymake の無効化  flycheck が有効にならない問題を防いでいる。どうも自分の設定の書き方が悪い気もするが……。   lsp-mode を有効化しつつ lsp-ui は無効にしている  lsp-ui が有効だと画面上でガチャガチャ height とかのプロパティの説明をしてうざいので   smartparens-strict-mode を入れることで {} のペアが維持されるようにしている flycheck-checker, flycheck-check-syntax-automatically の設定  lsp-ui とかより後に設定しないと上書きされるので、それらより後に設定している 設定の書き方の悪さのせいな気もする   company-mode の有効化。これがないと補完できなくて厳しいよね display-line-numbers-mode の有効化。行数表示も欲しいよね。巨大ファイルだと邪魔だけど巨大にしなきゃいい rainbow-mode の有効化  カラーコード→ CSS Variable の置き換え 外部コマンドで fetch-color-var というのを定義してそいつにカラーコードを渡すとプロジェクトで使ってる CSS Variable を返してくるようにしている。</description>
-    </item>
-    
-    <item>
-      <title>TypeScript</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/typescript/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/typescript/</guid>
-      <description>概要 TypeScript ファイル(.ts) を使う上での設定を書いている。とりあえず簡単な設定だけ。
-typescript-mode typescript-mode は TypeScript 向けの Syntax Highlight とかを提供してくれるメジャーモード。
-インストール 自分はいつも通り el-get で入れている
-(el-get-bundle typescript-mode) カスタム変数 indent は2文字がいいのでデフォルトから変更している
-(custom-set-variables &amp;#39;(typescript-indent-level 2)) auto-fix の hook 関数 保存した時に自動で整形してほしいなと思ったので auto-fix.el で自動で保存されるように hook 関数を用意している
-(defun my/auto-fix-mode-hook-for-ts () (add-hook &amp;#39;before-save-hook &amp;#39;auto-fix-before-save)) (add-hook &amp;#39;auto-fix-mode-hook &amp;#39;my/auto-fix-mode-hook-for-ts) hook  company-mode smartparens-strict-mode lsp/lsp-ui flycheck  などのプログラミングで便利な各種のモードを hook を使って有効化している
-auto-fix はここでもなんか設定しているのでなんか設定まとめたいなあって感じはある。
-(defun my/ts-mode-hook () (company-mode 1) (turn-on-smartparens-strict-mode) (display-line-numbers-mode t) (lsp) (lsp-ui-mode 1) (flycheck-mode 1) (setq flycheck-disabled-checkers &amp;#39;(javascript-standard javascript-jshint)) (flycheck-add-next-checker &amp;#39;lsp &amp;#39;(warning .</description>
-    </item>
-    
-    <item>
-      <title>Vue.js</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/vue-js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/vue-js/</guid>
-      <description>概要 ここでは Vue.js アプリケーションを書く上での設定を書いている。
-auto-insert の設定 Vue.js のコンポーネントファイルを新規作成する時にテンプレートが自動挿入できるようにしている
-テンプレート Vue.js の単一ファイルコンポーネントなので template, script, style を出力している。
-template には pug を、CSS には scss を使っている。
-&amp;lt;template lang=&amp;#39;pug&amp;#39;&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { }; &amp;lt;/script&amp;gt; &amp;lt;style lang=&amp;#39;scss&amp;#39; scoped&amp;gt; &amp;lt;/style&amp;gt; テンプレートを適用可能にする .vue という拡張子のファイルを新規作成する時には上で定義したテンプレートが自動的に挿入されるようにする。
-(define-auto-insert &amp;#34;\\.vue$&amp;#34; &amp;#34;template.vue&amp;#34;) パッケージのインストール ここでは Vue.js 開発に使っている関連パッケージを入れている。
-vue-mode vue-mode は mmm-mode をベースにして作られた Vue.js の単一ファイルコンポーネント用のモード。 mmm-mode ベースなので template, script, css 部分でそれぞれ別のメジャーモードが動くようになっている。
-インストール いつも透り el-get で入れている
-(el-get-bundle vue-mode) 備考 あまり更新は活発でなく微妙な挙動もあるので mmm-mode に乗り換えたり web-mode を使うようにしている人も多い様子。</description>
-    </item>
-    
-    <item>
-      <title>yaml-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/yaml-mode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/yaml-mode/</guid>
-      <description>概要 yaml-mode は yaml を編集する時のメジャーモード。インデントを調整しやすい。
-インストール いつも通り el-get でインストール
-(el-get-bundle yaml-mode) hook mode に対する hook は関数を定義してその中で呼びたいコードを書いていくようにしている。
-lambda で書いてしまうと hook を弄りたい時に結構面倒なのだけど関数を定義しておくと、その関数の中身を変更して評価しておくだけで hook で動作する中身が変更できて便利。
-とりあえず yaml-mode では以下のようにして highlight-indent-guides を有効にしている。
-(defun my/yaml-mode-hook () (highlight-indent-guides-mode 1)) で、その hook を最後に yaml-mode-hook に追加している。
-(add-hook &amp;#39;yaml-mode-hook &amp;#39;my/yaml-mode-hook) </description>
+      <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
+      <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
+ファイルは howmフォルダー ~/Dropbox/howm/junk/ に保存します。
+そうすることで howm の検索機能が利用でき、 ローマ字（migemo）での日本語検索も可能になるのでとても便利です。
+(leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+(leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
     </item>
     
   </channel>

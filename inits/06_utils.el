@@ -16,12 +16,11 @@
 	(key-chord-safety-interval-backward . 0.1)
 	(key-chord-safety-interval-forward  . 0.25)))
 
-
 ;; auto-save-buffers
 (leaf auto-save-buffers-enhanced
   :ensure t
   :custom
-  `((auto-save-buffers-enhanced-exclude-regexps . '("^/ssh:" "^/scp:" "/sudo:"))
+  `((auto-save-buffers-enhanced-exclude-regexps . '("^/ssh:" "^/scp:" "/sudo:" "\\.org$"))
 	(auto-save-buffers-enhanced-quiet-save-p . t)
 	;; Disable to prevent freeze in tramp-mode
 	(auto-save-buffers-enhanced-include-only-checkout-path . nil))

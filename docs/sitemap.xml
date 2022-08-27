@@ -3,55 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing-tool/with-simulated-input/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/function/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/editing-base/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/base/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/gist/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing/execution/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing-tool/mocker-el/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/core/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-babel/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/flymake/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing/run-tests/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer-management/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing/my-org-commands-test/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/quickrun/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/keybinds/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/calendar/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/agenda/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/magit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
   </url>
   
   <url>
@@ -59,23 +75,47 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-capture/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/browsepoint/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yasnippets/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-clock/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/display/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/nav/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/programming/tramp/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-export/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/junk/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
   </url>
   
   <url>
@@ -83,299 +123,19 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-gcal/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/swiper-migemo/</loc>
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-ql/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-refile/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing-tool/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-trello/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/testing/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/ox-hugo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-commands/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/org-mode-keybinds/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/org-mode/nippou/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/nav/ace-window/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/alert/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/all-the-icons/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/auth-source/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/auto-format/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/auto-insert/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/auto-save/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/nav/avy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/nav/browse-at-remote/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/color-theme-molokai/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/company-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/custom-file/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/dashboard/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/ddskk/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/nav/dumb-jump/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/emacs-lisp/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/emacs-w3m/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/ember-js/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/emojify/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/es6/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/esa/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/exec-path/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/flycheck/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/font-config/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/forge/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/frame-cmds/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/fullscreen/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/git-gutter-fringe/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/gnuplot-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/keybinds/google-integration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/google-this/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/google-translate/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/highlight-indent-guides/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/hydra/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/ido-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/tags/improvement/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/ivy/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/keybinds/key-chord/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/load-path/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/lsp-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/magit/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/markdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/migemo/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/mode-line/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/multiple-cursors/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/neotree/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/notify-slack/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/plantuml-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/posframe/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/nav/projectile/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/rails/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/react-js/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/tags/replacement/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/rspec-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/ruby/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/savehist/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer-management/scratch-log/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/scss/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/server/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/show-paren-mode/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/</loc>
   </url>
   
   <url>
@@ -383,95 +143,295 @@
   </url>
   
   <url>
-    <loc>https://minorugh.github.io/.emacs.d/keybinds/sticky-control/</loc>
+    <loc>https://minorugh.github.io/.emacs.d/editing/selected/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/fontawesome/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/eary-init/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/speed-up/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/leaf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/init-loader/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/dashboard/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/howm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/org/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/restart/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/translate/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/encode/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/mozc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/server/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/uniquify/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/aggresive-indent/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/change-keybind/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/mark-command/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/expand-region/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/font/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/hl-line/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/paren/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/whitespace/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/dimmer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/sprit-window/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/tempbuf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/winner/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-themes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-menu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/undo-fu/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/buffer-management/tempbuf/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/todoist/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/toolbar/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/twmode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/typescript/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/undo-fu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/uniquify/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/tags/unused/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/view-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/vue-js/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/wakatime-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/whitespace/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/yaml-mode/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/yascroll/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/editing/yasnippet/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/zoom/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/ui/zoom-window/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/gcmh/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/keybinds/global-keybinds/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/external-tool/browse-url/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/basics/load-libraries/</loc>
   </url>
   
 </urlset>

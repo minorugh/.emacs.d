@@ -1,34 +1,22 @@
 +++
-title = "smartparens"
-author = ["minorugh"]
+title = "6.13. smartparens"
 draft = false
+weight = 13
 +++
+### [smartparens.el] 対応する括弧の挿入をアシスト
+🔗 [Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.](https://github.com/Fuco1/smartparens) 
 
-## 概要 {#概要}
-
-[smartparens](https://github.com/Fuco1/smartparens) はカッコとかクォートとかのペアになるようなものの入力補助をしてくれるやつ。
-
-strict モードだとペアが崩れないように強制するので雑に C-k で行削除しててもペアが維持されて便利。
-
-
-## インストール {#インストール}
-
-いつも透り el-get で導入している
-
-```emacs-lisp
-(el-get-bundle smartparens)
+設定がいまいちよくわからず、試行錯誤しましたが、
 ```
-
-
-## 設定 {#設定}
-
-実は導入して間もないので、提供されてるオススメ設定のみ突っ込んでいる。オススメ設定は別途 reqiure したら良いという作りなので、以下のようにして突っ込んでいる。
-
-```emacs-lisp
 (require 'smartparens-config)
 ```
+を追加したところとても賢く機能するようになりました。 
 
-
-## その他 {#その他}
-
-各言語の hook で `smartparens-strict-mode` を有効にしている。なんか常に有効だと困りそうな気がしたので。
+```elisp
+(leaf smartparens
+  :ensure t
+  :hook ((after-init-hook . smartparens-global-mode)
+		 (prog-mode-hook . turn-on-smartparens-mode))
+  :config
+  (require 'smartparens-config))
+```

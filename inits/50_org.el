@@ -16,30 +16,22 @@
 		 ("C-c i" . org-edit-src-exit)
 		 (:org-mode-map
 		  ("C-c i" . org-edit-special)))
-  :custom `(
-			;; (org-log-done . 'org)
-			;; 			(timep-use-speed-commands . t)
-			;; 			(org-src-fontify-natively . t)
-			;; 			(org-startup-indented . t)
-			;; 			(org-hide-leading-stars . t)
-			;; 			(org-startup-folded . 'content)
-			;; 			(org-indent-mode-turns-on-hiding-stars . nil)
-			;; 			(org-indent-indentation-per-level . 4)
-			;; 			(org-startup-folded . 'content)
+  :custom `((org-log-done . 'org)
+			(timep-use-speed-commands . t)
+			(org-src-fontify-natively . t)
+			(org-startup-indented . t)
+			(org-hide-leading-stars . t)
+			(org-startup-folded . 'content)
+			(org-indent-mode-turns-on-hiding-stars . nil)
+			(org-indent-indentation-per-level . 4)
+			(org-startup-folded . 'content)
 			(org-agenda-files . '("~/Dropbox/org/task.org"))
 			(org-agenda-span . 30))
   :config
-  (setq org-log-done 'time)
-  (setq org-use-speed-commands t)
-  (setq org-src-tab-acts-natively t)
-  (setq org-src-fontify-natively t)
-  ;; (setq org-agenda-files '("~/backup/emacs/org/task.org"))
-  (setq calendar-holidays nil)
-  (setq org-clock-clocked-in-display 'frame-title)
   (defun my:howm-create-file ()
-	"Make howm create file with 'org-capture'."
-	(interactive)
-	(format-time-string "~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md" (current-time)))
+    "Make howm create file with 'org-capture'."
+    (interactive)
+    (format-time-string "~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md" (current-time)))
   ;; Caputure Settings
   (setq org-capture-templates
 		'(("m" " Memo with howm" plain (file my:howm-create-file)
@@ -74,9 +66,9 @@
   :require t)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Calendar configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ;; Calendar configurations
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf calendar
   :leaf-defer t
   :bind (("<f7>" . calendar)
@@ -96,5 +88,5 @@
 
 
 (provide '50_org)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; 50_org.el ends here

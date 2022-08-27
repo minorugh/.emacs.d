@@ -1,5 +1,5 @@
 +++
-title = "基本設定"
+title = "起動設定"
 author = ["minorugh"]
 draft = false
 pre = "<b>1. </b>"
@@ -7,10 +7,19 @@ weight = 1
 disableToc = true
 +++
 
-Emacs の基本動作に関わる部分をここでは設定している
+Emacs の起動設定に関わる部分をまとめています。
+Emacs-27導入にあわせて \`early-init.el\` を設定しました。
 
-[auth-source]({{< relref "auth-source" >}})
-: 認証情報の取り扱いファイルの設定
+起動するまでの流れは以下のとおり。
+
+```text
+1. early-init.el の読み込み
+2. init.el の読み込み
+3. inits/ の設定ファイル群の読み込み
+```
+
+[eary-init]({{< relref "eary-init" >}})
+: 早期設定ファイルの設定
 
 [auto-format]({{< relref "auto-format" >}})
 : ファイル保存時に自動で整形してくれるやつ
@@ -47,3 +56,27 @@ Emacs の基本動作に関わる部分をここでは設定している
 
 [ライブラリの読み込み]({{< relref "load-libraries" >}})
 : Emacs Lisp を書く上で便利なライブラリの読み込み
+
+
+## eary-init {#eary-init}
+
+
+## 早期初期化ファイル {#早期初期化ファイル}
+
+🔗 [minorugh/.emacs.d/early-init.el](https://github.com/minorugh/.emacs.d/blob/main/early-init.el)
+
+Emacs27から導入された eary-init.el は、init.el でGUIやパッケージシステムの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数を先に書くことで起動を早くすることが出来るようです。
+
+
+## GCを減らす {#gcを減らす}
+
+GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。
+
+<div class="emacs-lisp">
+
+;; Defer garbage collection further back in the startup process
+(setq gc-cons-threshold most-positive-fixnum)
+
+</div>
+
+eary-init.el の先頭に書きます。

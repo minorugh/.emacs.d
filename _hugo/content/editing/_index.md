@@ -1,61 +1,40 @@
 +++
-title = "編集サポート / 入力補助"
+title = "ファイル編集/入力補助"
+author = ["minorugh"]
 draft = false
-pre = "<b>6. </b>"
-weight = 6
+pre = "<b>4. </b>"
+weight = 4
 disableToc = true
 +++
 
 ここにはファイル編集や入力補助の設定をまとめている
 
+[基本設定]({{< relref "editing-base" >}})
+: 編集周りの基本的な設定
 
-### # INDEX
+[auto-insert]({{< relref "auto-insert" >}})
+: ファイル新規作成時にテンプレートを挿入する機能
 
-[markdown-mode]({{< relref "markdown" >}})
-: markdownでの編集をサポートしてくれる
+[company-mode]({{< relref "company-mode" >}})
+: プラグイン拡張方式を採用した、入力補完インターフェースを提供してくれるやつ
 
-[view-mode]({{< relref "view" >}})
-: ファイルの閲覧に特化した便利機能
+[emojify]({{< relref "emojify" >}})
+: Slack や GitHub みたいに `:smile:` とか入れると笑顔の絵文字を表示する、みたいなやつ
 
-[web-mode]({{< relref "web-mode" >}})
-: HTML編集をサポートしてくれる。
-
-[yatex]({{< relref "yatex" >}})
-: LaTeX の入力支援環境を提供する。
-
-[darkroom]({{< relref "darkroom" >}})
-: 執筆モード（暗室モード）
-
-[ivy / counsel]({{< relref "ivy" >}})
-: 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール
-
-[yasunippets]({{< relref "yasnippets" >}})
-: キーをタイプした時点で自動的に補完候補が出てきてくれる
-
-[campany]({{< relref "company" >}})
-: キーをタイプした時点で自動的に補完候補が出てきてくれる
-
-[key-chord]({{< relref "key-chord" >}})
-: 同時押しのキーバインドを提供してくれる
-
-[iedit]({{< relref "iedit" >}})
-: 択領域を別の文字列に置き換える
-
-[migemo]({{< relref "iedit" >}})
-: ローマ字のまま日本語をインクリメンタル検索を可能にする
-
-[swiper-migemo]({{< relref "swiper-migemo" >}})
-: ローマ字のまま日本語をインクリメンタル検索を可能にする
+[multiple-cursors]({{< relref "global-keybinds#multiple-cursors" >}})
+: カーソルを増やして複数箇所を同時に編集できるようになるやつ
 
 [smartparens]({{< relref "smartparens" >}})
-: 括弧などのペアを自動的に挿入してくれる
+: カッコや引用符などのペアになるやつの入力補助をしてくれるやつ
 
-[selected]({{< relref "selected" >}})
-: リージョン選択時のアクションを制御してくれる。Like sendto of windows.
+[undo-fu]({{< relref "undo-fu" >}})
+: シンプルな undo/redo の機能を提供してくれるやつ
 
-[pangu-spacing]({{< relref "pangu" >}})
-: 全角と半角の間に自動でスペースを入れる
+[view-mode]({{< relref "view-mode" >}})
+: Emacs に組込まれてる閲覧専用のモード。コードリーディングの時に有効にすると便利
 
-[counsel-fontawesome]({{< relref "fontawesome" >}})
-: Font-Awesomeの入力を支援してくれる
+[whitespace]({{< relref "whitespace" >}})
+: 空白文字を可視化したり自動的に消したりする便利なやつ
 
+[yasnippet]({{< relref "yasnippet" >}})
+: テンプレート挿入機能を提供してくれるやつ
