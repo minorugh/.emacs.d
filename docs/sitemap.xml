@@ -3,11 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/function/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/gist/</loc>
   </url>
   
   <url>
@@ -19,11 +27,19 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/flymake/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/cursor/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/quickrun/</loc>
   </url>
   
   <url>
@@ -35,11 +51,19 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/magit/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/frame/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</loc>
   </url>
   
   <url>
@@ -51,6 +75,10 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/browsepoint/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/yasnippets/</loc>
   </url>
   
@@ -59,11 +87,19 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/tramp/</loc>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
   </url>
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/hydra/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</loc>
   </url>
   
   <url>
@@ -136,42 +172,6 @@
   
   <url>
     <loc>https://minorugh.github.io/.emacs.d/startup/dashboard/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/function/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/gist/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/flymake/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/quickrun/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/magit/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/browsepoint/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/tramp/</loc>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</loc>
   </url>
   
   <url>

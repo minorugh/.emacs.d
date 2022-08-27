@@ -7,19 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>10.10. open-junk-file</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/junk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
-      <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
-ファイルは howmフォルダー ~/Dropbox/howm/junk/ に保存します。
-そうすることで howm の検索機能が利用でき、 ローマ字（migemo）での日本語検索も可能になるのでとても便利です。
-(leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 直近の junkファイルを即開けるように open-last-junk-file を定義しました。
-(leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
-    </item>
-    
-    <item>
       <title>10.1. function key</title>
       <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -118,6 +105,19 @@ browse-at-remote.el は、Git管理しているEmacsバッファーからgithub�
       <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
 Hugoで作成されたブログを書くための Emacs メジャー モードです。
 (leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.</description>
+    </item>
+    
+    <item>
+      <title>10.10. open-junk-file</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/junk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
+      <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
+ファイルは howmフォルダー ~/Dropbox/howm/junk/ に保存します。
+そうすることで howm の検索機能が利用でき、 ローマ字（migemo）での日本語検索も可能になるのでとても便利です。
+(leaf open-junk-file :ensure t :config (setq open-junk-file-format &amp;#34;~/Dropbox/howm/junk/%Y%m%d.&amp;#34;) (setq open-junk-file-find-file-function &amp;#39;find-file)) 直近の junkファイルを即開けるように open-last-junk-file を定義しました。
+(leaf em-glob :require t :config (defvar junk-file-dir &amp;#34;~/Dropbox/howm/junk/&amp;#34;) (defun open-last-junk-file () &amp;#34;Open last created junk-file.&amp;#34; (interactive) (find-file (car (last (eelisp-extended-glob (concat (file-name-as-directory junk-file-dir) &amp;#34;*.*.*&amp;#34;))))))) </description>
     </item>
     
   </channel>

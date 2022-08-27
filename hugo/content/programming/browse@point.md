@@ -1,7 +1,7 @@
 +++
 title = "10.7. browse-at-point"
 draft = false
-weght = 7
+weight = 7
 +++
 ### [git-timemachine.el]
 🔗 [emacsmirror/git-timemachine: Walk through git revisions of a file.](https://github.com/emacsmirror/git-timemachine) 

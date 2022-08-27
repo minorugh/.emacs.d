@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>10.1. function key</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/function/</guid>
+      <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
+   キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
+    </item>
+    
+    <item>
       <title>6.1. markdown-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -22,6 +32,19 @@ emacs-livedown.elisp は、el-get でインストールします。
     </item>
     
     <item>
+      <title>10.2. gist interface</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/gist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
+      <description>Gistインターフェイス リスト管理などもできる gist.el というパッケージを使っていましたが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
+gist をinstallしておく必要があります。
+$ sudo apt install gist ターミナルで gist --help と打つと沢山の起動オプションが表示される。
+gist -o でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。
+(leaf *gist-configurations :bind (&amp;#34;s-g&amp;#34; . gist-region-or-buffer) :init (defun gist-description () &amp;#34;Add gist description.&amp;#34; (code-quote-argument (read-from-minibuffer &amp;#34;Add gist description: &amp;#34;))) (defun gist-filename () &amp;#34;The character string entered in minibuffer is used as file-name. If enter is pressed without file-name, that&amp;#39;s will be buffer-file-neme.&amp;#34; (interactive) (let ((file (file-name-nondirectory (buffer-file-name (current-buffer))))) (read-from-minibuffer (format &amp;#34;File name (%s): &amp;#34; file) file))) (defun gist-region-or-buffer () &amp;#34;If region is selected, post from the region.</description>
+    </item>
+    
+    <item>
       <title>6.2. veiw-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/view/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,6 +57,16 @@ emacs-livedown.elisp は、el-get でインストールします。
     </item>
     
     <item>
+      <title>10.3. flymake</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/flymake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
+      <description>[flymake] 構文エラー表示 ビルトインの flymake-mode が軽くて使いやすくなったので、flycheck から移行しました。
+(leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook &amp;#39;flymake-diagnostic-functions &amp;#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . &amp;#34; &amp;#34;))) </description>
+    </item>
+    
+    <item>
       <title>6.3. web-mode</title>
       <link>https://minorugh.github.io/.emacs.d/editing/web-mode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -43,6 +76,18 @@ emacs-livedown.elisp は、el-get でインストールします。
 タグ直打ちでHTML編集するならお勧めなのですが、私はあまり使っていません。
 HTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
 (leaf web-mode :ensure t :mode (&amp;#34;\\.js?\\&amp;#39;&amp;#34; &amp;#34;\\.html?\\&amp;#39;&amp;#34; &amp;#34;\\.php?\\&amp;#39;&amp;#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
+    </item>
+    
+    <item>
+      <title>10.4. quickrun</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/quickrun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
+      <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
+編集中のソースコードをビルド・実行して別バッファに結果を得ます。
+open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に使えて重宝です。
+(leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
     </item>
     
     <item>
@@ -62,6 +107,17 @@ $ chmod +x dvpd.sh として実行権限を付与してからPATHの通ったと
     </item>
     
     <item>
+      <title>10.5. magit</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/magit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
+      <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
+magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
+(leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
+    </item>
+    
+    <item>
       <title>6.5. darkroom</title>
       <link>https://minorugh.github.io/.emacs.d/editing/darkroom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -73,6 +129,17 @@ $ chmod +x dvpd.sh として実行権限を付与してからPATHの通ったと
 darkroom-mode から抜けるときは、revert-buffer でもとに戻します。
 yes/no確認を聞かれるのが煩わしいので my:revery-buffer-no-confirm の関数を作りました。
 (leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (view-mode 0) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-tentative-mode 1) (setq-local line-spacing 0.4)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (my:linespacing) (darkroom-tentative-mode 0) (display-line-numbers-mode 1) (my:revert-buffer-no-confirm)) (defun my:revert-buffer-no-confirm () &amp;#34;Revert buffer without confirmation.</description>
+    </item>
+    
+    <item>
+      <title>10.6. git-timemachine</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</guid>
+      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
+次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
+ p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  </description>
     </item>
     
     <item>
@@ -89,6 +156,17 @@ counsel.el をインストールすれば、ivy.el も swiper.el も一緒にイ
     </item>
     
     <item>
+      <title>10.7. browse-at-point</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/browsepoint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/browsepoint/</guid>
+      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
+[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
+browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</description>
+    </item>
+    
+    <item>
       <title>6.7. yasunippets</title>
       <link>https://minorugh.github.io/.emacs.d/editing/yasnippets/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -98,6 +176,18 @@ counsel.el をインストールすれば、ivy.el も swiper.el も一緒にイ
 yasnippetは、Emacsのテンプレートシステムです。省略形を入力すると、それが関数テンプレートに自動的に展開されます。
 company と連携することでとても便利になります。
 (leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) </description>
+    </item>
+    
+    <item>
+      <title>10.8. counsel-tramp</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/tramp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
+      <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
+管理している俳句サイトのれたるサーバーを除くのに counsel-tramp を使っています。
+サーバー上のファイルを直に編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
+(leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
     </item>
     
     <item>
@@ -111,6 +201,17 @@ company と連携することでとても便利になります。
 デフォルトは自動的に補完候補がポップアップしますが、煩わしければ、
 (setq company-idle-delay nil) としておいて、company-complete で手動で発動できます。
 (leaf company :ensure t :hook (after-init-hook . global-company-mode) :bind ((&amp;#34;C-1&amp;#34; . company-complete) (&amp;#34;C-&amp;lt;tab&amp;gt;&amp;#34; . company-yasnippet) (:company-active-map (&amp;#34;&amp;lt;tab&amp;gt;&amp;#34; . company-complete-common-or-cycle) (&amp;#34;&amp;lt;backtab&amp;gt;&amp;#34; . company-select-previous) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . company-abort))) :custom `((company-transformers . &amp;#39;(company-sort-by-backend-importance)) (company-idle-delay . 0) (company-require-match . &amp;#39;never) (company-minimum-prefix-length . 2) (company-selection-wrap-around . t) (completion-ignore-case . t) (company-dabbrev-downcase . nil)) :config (defvar company-mode/enable-yas t &amp;#34;Enable yasnippet for all backends.</description>
+    </item>
+    
+    <item>
+      <title>10.9. easy-hugo</title>
+      <link>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
+      <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
+Hugoで作成されたブログを書くための Emacs メジャー モードです。
+(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.</description>
     </item>
     
     <item>
@@ -288,107 +389,6 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
 Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、dashbord.el を導入しました。
 &amp;lt;home&amp;gt; キーを押すことで何処からでも dashboard画面に戻ります。
 (leaf dashboard :ensure t :hook ((after-init-hook . dashboard-setup-startup-hook) (dashboard-mode-hook . page-break-lines-mode)) :defun (dashboard-setup-startup-hook) :bind ((&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . open-dashboard) (:dashboard-mode-map (&amp;#34;c&amp;#34; . chromium-calendar) (&amp;#34;y&amp;#34; . chromium-yahoo-japan) (&amp;#34;n&amp;#34; . chromium-nhk-news) (&amp;#34;w&amp;#34; . chromium-weather) (&amp;#34;t&amp;#34; . chromium-tweetdeck) (&amp;#34;h&amp;#34; . chromium-homepage) (&amp;#34;m&amp;#34; . sylpheed) (&amp;#34;s&amp;#34; . slack) (&amp;#34;.&amp;#34; . hydra-browse/body) (&amp;#34;&amp;lt;home&amp;gt;&amp;#34; . quit-dashboard))) :advice (:override emacs-init-time ad:emacs-init-time) :init (leaf page-break-lines :ensure t) :config ;; Set the title (setq dashboard-banner-logo-title (concat &amp;#34;GNU Emacs &amp;#34; emacs-version &amp;#34; kernel &amp;#34; (car (split-string (shell-command-to-string &amp;#34;uname -r&amp;#34;))) &amp;#34; Debian &amp;#34; (car (split-string (shell-command-to-string &amp;#34;cat /etc/debian_version&amp;#34;))) &amp;#34; 86_64 GNU/Linux&amp;#34;)) ;; Set the banner (setq dashboard-startup-banner (expand-file-name &amp;#34;emacs.</description>
-    </item>
-    
-    <item>
-      <title>10.1. function key</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/function/</guid>
-      <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
-   キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
-    </item>
-    
-    <item>
-      <title>10.2. gist interface</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/gist/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
-      <description>Gistインターフェイス リスト管理などもできる gist.el というパッケージを使っていましたが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
-gist をinstallしておく必要があります。
-$ sudo apt install gist ターミナルで gist --help と打つと沢山の起動オプションが表示される。
-gist -o でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。
-(leaf *gist-configurations :bind (&amp;#34;s-g&amp;#34; . gist-region-or-buffer) :init (defun gist-description () &amp;#34;Add gist description.&amp;#34; (code-quote-argument (read-from-minibuffer &amp;#34;Add gist description: &amp;#34;))) (defun gist-filename () &amp;#34;The character string entered in minibuffer is used as file-name. If enter is pressed without file-name, that&amp;#39;s will be buffer-file-neme.&amp;#34; (interactive) (let ((file (file-name-nondirectory (buffer-file-name (current-buffer))))) (read-from-minibuffer (format &amp;#34;File name (%s): &amp;#34; file) file))) (defun gist-region-or-buffer () &amp;#34;If region is selected, post from the region.</description>
-    </item>
-    
-    <item>
-      <title>10.3. flymake</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/flymake/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
-      <description>[flymake] 構文エラー表示 ビルトインの flymake-mode が軽くて使いやすくなったので、flycheck から移行しました。
-(leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook &amp;#39;flymake-diagnostic-functions &amp;#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . &amp;#34; &amp;#34;))) </description>
-    </item>
-    
-    <item>
-      <title>10.4. quickrun</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/quickrun/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
-      <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
-編集中のソースコードをビルド・実行して別バッファに結果を得ます。
-open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に使えて重宝です。
-(leaf quickrun :ensure t :bind (&amp;#34;&amp;lt;f5&amp;gt;&amp;#34; . quickrun)) </description>
-    </item>
-    
-    <item>
-      <title>10.5. magit</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/magit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
-      <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
-magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
-(leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
-    </item>
-    
-    <item>
-      <title>10.6. git-timemachine</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</guid>
-      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
-次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
- p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  </description>
-    </item>
-    
-    <item>
-      <title>10.7. browse-at-point</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/browsepoint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/browsepoint/</guid>
-      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
-[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
-browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</description>
-    </item>
-    
-    <item>
-      <title>10.8. counsel-tramp</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/tramp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
-      <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
-管理している俳句サイトのれたるサーバーを除くのに counsel-tramp を使っています。
-サーバー上のファイルを直に編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
-(leaf counsel-tramp :ensure t :custom `((tramp-persistency-file-name . ,&amp;#34;~/.emacs.d/tmp/tramp&amp;#34;) (tramp-default-method . &amp;#34;scp&amp;#34;) (counsel-tramp-custom-connections . &amp;#39;(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/))) :config (defun my:tramp-quit () &amp;#34;Quit tramp, if tramp connencted.&amp;#34; (interactive) (when (get-buffer &amp;#34;*tramp/scp xsrv*&amp;#34;) (tramp-cleanup-all-connections) (counsel-tramp-quit) (message &amp;#34;Tramp Quit!&amp;#34;)))) </description>
-    </item>
-    
-    <item>
-      <title>10.9. easy-hugo</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
-      <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
-Hugoで作成されたブログを書くための Emacs メジャー モードです。
-(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . easy-hugo-view) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.</description>
     </item>
     
     <item>

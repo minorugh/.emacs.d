@@ -1,7 +1,7 @@
 +++
 title = "10.5. magit"
 draft = false
-weght = 5
+weight = 5
 +++
 ### [magit.el] Gitクライアント
 🔗 [magit/magit.el: Git user interface.](https://github.com/magit/magit/tree/master/lisp) 

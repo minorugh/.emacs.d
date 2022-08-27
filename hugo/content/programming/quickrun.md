@@ -1,7 +1,7 @@
 +++
 title = "10.4. quickrun"
 draft = false
-weght = 4
+weight = 4
 +++
 ### [quickrun.el] お手軽ビルド
 🔗 [emacsorphanage/quickrun: Run command quickly.](https://github.com/emacsorphanage/quickrun) 
