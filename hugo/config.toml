@@ -1,6 +1,6 @@
 baseURL = "https://minorugh.github.io/.emacs.d/"
 languageCode = "ja-jp"
-title = "minoru's Emacs Configuration"
+title = "minoru's Emacs Config"
 theme = "docdock"
 publishDir = "../docs"
 # relativeURLs = true
