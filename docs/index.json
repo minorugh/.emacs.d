@@ -235,7 +235,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない\n emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Emacs から直接 Google翻訳サービスを使用して文字列を翻訳  "
+	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない\n emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/smartparens/",

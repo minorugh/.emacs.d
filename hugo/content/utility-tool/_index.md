@@ -37,5 +37,5 @@ disableToc = true
 : Emacs から使えるターミナルエミュレータ
 
 [google-translate]({{< relref "translate" >}})
-: Emacs から直接 Google翻訳サービスを使用して文字列を翻訳
+: Google翻訳サービスを使用して文字列を翻訳
 
