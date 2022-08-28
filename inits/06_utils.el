@@ -20,7 +20,7 @@
 (leaf auto-save-buffers-enhanced
   :ensure t
   :custom
-  `((auto-save-buffers-enhanced-exclude-regexps . '("^/ssh:" "^/scp:" "/sudo:" "\\.org$"))
+  `((auto-save-buffers-enhanced-exclude-regexps . '("^/ssh:" "^/scp:" "/sudo:"))
 	(auto-save-buffers-enhanced-quiet-save-p . t)
 	;; Disable to prevent freeze in tramp-mode
 	(auto-save-buffers-enhanced-include-only-checkout-path . nil))
@@ -63,7 +63,7 @@
 
 ;; Syntax checking
 (leaf flymake
-  :hook (prog-mode-hook . flymake-mode)
+  :hook (emacs-lisp-mode-hook . flymake-mode)
   :config
   (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
   (leaf flymake-posframe
@@ -149,6 +149,7 @@
 		 (dired-mode-hook . turn-on-tempbuf-mode)
 		 (magit-mode-hook . turn-on-tempbuf-mode) )
   :init
+  (setq tempbuf-kill-message nil)
   (setq my:tempbuf-ignore-files
 		'("~/Dropbox/org/task.org"
           "~/Dropbox/org/capture.org"))

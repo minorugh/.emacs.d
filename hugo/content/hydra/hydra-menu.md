@@ -11,7 +11,7 @@ draft = false
 
 よく使うアプリ起動のショートカットなども設定しておくと便利です。
 
-![hydra-quick-menu](https://live.staticflickr.com/65535/50174826063_b4fa442b1e_b.jpg) 
+![hydra-quick-menu](/images/quick-menu.png) 
 
 ```elisp
 ;; Hydra for quick-menu
@@ -67,7 +67,7 @@ draft = false
 ## Hydra for work-menu
 ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。
 
-![hydra-work-menu](https://live.staticflickr.com/65535/50175364331_9fcf3c6c86_b.jpg) 
+![hydra-work-menu](/images/work-menu.png) 
 
 ```elisp
 ;; Hydra for work-menu

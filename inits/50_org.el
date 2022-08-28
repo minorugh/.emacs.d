@@ -60,12 +60,6 @@
   (add-hook 'org-capture-mode-hook 'delete-other-windows))
 
 
-(leaf ox-hugo
-  :ensure t
-  :after ox
-  :require t)
-
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;; Calendar configurations
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

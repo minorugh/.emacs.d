@@ -36,6 +36,10 @@
 		  ((easy-hugo-basedir . "~/src/github.com/minorugh/.emacs.d/hugo/")
 		   (easy-hugo-url . "https://minorugh.github.io/.emacs.d")
 		   (easy-hugo-postdir . "content/startup"))
+		  ;; ;; blog3 setting
+		  ((easy-hugo-basedir . "~/src/github.com/minorugh/minorugh.github.io/")
+		   (easy-hugo-url . "https://minorugh.github.io")
+		   (easy-hugo-postdir . "content/posts"))
 		  ;; blog3 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/gg/")
 		   (easy-hugo-url . "https://gg.gospel-haiku.com")
