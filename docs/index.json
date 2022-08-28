@@ -410,7 +410,7 @@
 	"title": "2.4. server",
 	"tags": [],
 	"description": "",
-	"content": "クライアントサーバー コマンドラインから emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。\n;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
+	"content": "emacsclientを使う コマンドラインから emacsclient をよく使うので、Emacs起動時にビルトインの server を起動させています。\n;; Server start for emacs-client (leaf server :require t :config (unless (server-running-p) (server-start))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/",
