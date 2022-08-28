@@ -3,7 +3,7 @@ title = "1.6. dashboard"
 draft = false
 +++
 
-## [dashboard.el]起動初期画面をイケメンにする
+## [dashboard.el]初期画面をイケメンにする
 🔗 [emacs-dashboard: An extensible emacs startup screen](https://github.com/emacs-dashboard/emacs-dashboard) 
 
 Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、`dashbord.el` を導入しました。
