@@ -35,7 +35,7 @@ ON/OFF できるのが快適です。
 	  (dimmer-process-all))))
 ```
 
-## 画面分割と連携させる
+## 画面分割との連携
 
 `dimmer-mode` を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 
