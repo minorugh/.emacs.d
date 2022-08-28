@@ -24,7 +24,7 @@ disableToc = true
 : 行番号を表示する
 
 [prescient]({{< relref "prescient" >}})
-: リスト項目の並び替えとイニシャル入力機能を提供
+: リストの並び替えとイニシャル入力機能を提供
 
 [japanese-holidays]({{< relref "calendar" >}})
 : カレンダーをカラフルにする
