@@ -72,7 +72,7 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/editing/web-mode/</guid>
-      <description>[web-mode.el] HTML編集をサポート 🔗 fxbois/web-mode: Web template editing mode for Emacs.
+      <description>[web-mode.el] HTML編集サポート 🔗 fxbois/web-mode: Web template editing mode for Emacs.
 タグ直打ちでHTML編集するならお勧めなのですが、私はあまり使っていません。
 HTMLの内容を確認したり部分的に変更したり&amp;hellip;という程度の使い方です。
 (leaf web-mode :ensure t :mode (&amp;#34;\\.js?\\&amp;#39;&amp;#34; &amp;#34;\\.html?\\&amp;#39;&amp;#34; &amp;#34;\\.php?\\&amp;#39;&amp;#34;) :custom `((web-mode-markup-indent-offset . 2) (web-mode-css-indent-offset . 2) (web-mode-code-indent-offset . 2))) </description>
