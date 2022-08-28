@@ -2,7 +2,7 @@
 title = "5.4. tempbuf"
 draft = false
 +++
-## [tempbuf.el] 不要になったと思われるバッファを自動的に kill
+## [tempbuf.el] 不要なバッファを自動的に kill
 🔗 [emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background](https://www.emacswiki.org/emacs/tempbuf.el)
 
 `tempbuf.el` は不要になったと思われるバッファを自動的に kill してくれます。
