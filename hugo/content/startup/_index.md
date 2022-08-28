@@ -6,7 +6,7 @@ weight = 1
 disableToc = true
 +++
 
-Emacs の起動設定に関わる部分をまとめています。
+Emacs の起動設定に関わる設定。
 Emacs-27導入にあわせて `early-init.el` を設定しました。 
 
 起動するまでの流れは以下のとおり。

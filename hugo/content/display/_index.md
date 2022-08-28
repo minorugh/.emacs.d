@@ -6,7 +6,7 @@ weight = 7
 disableToc = true
 +++
 
-ここにはファイル編集や入力補助の設定をまとめている
+画面表示関係の設定
 
 
 ## # INDEX

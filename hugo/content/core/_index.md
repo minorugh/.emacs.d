@@ -6,7 +6,7 @@ weight = 2
 disableToc = true
 +++
 
-Emacs の基本動作に関わる部分をここでは設定している
+Emacs の基本動作に関わる設定
 
 
 ## # INDEX

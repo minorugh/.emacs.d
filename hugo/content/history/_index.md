@@ -6,7 +6,7 @@ weight = 9
 disableToc = true
 +++
 
-ここでは Emacs ファイル管理関係の設定を載せている
+Emacs ファイル管理関係の設定
 
 ## # INDEX
 

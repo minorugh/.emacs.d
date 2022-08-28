@@ -5,7 +5,7 @@ pre = "<b>3. </b>"
 weight = 3
 disableToc = true
 +++
-カーソル移動に関する設定です。
+カーソル移動に関する設定
 
 ## # INDEX
 

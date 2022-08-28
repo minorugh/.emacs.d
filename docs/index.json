@@ -18,7 +18,7 @@
 	"title": "起動設定",
 	"tags": [],
 	"description": "",
-	"content": "Emacs の起動設定に関わる部分をまとめています。 Emacs-27導入にあわせて early-init.el を設定しました。\n起動するまでの流れは以下のとおり。\n1. early-init.el の読み込み 2. init.el の読み込み 3. inits/ の設定ファイル群の読み込み # INDEX  eary-init.el を使う 早期設定ファイルの設定 speed up startup 起動時間を短縮するためのおまじない(^^) leaf.el を使って 設定ファイルを明示的に書く init-loader.el を使う 設定ファイル群のローダー test.el 最小限の emacs を起動させる設定 dashboard dashboardを起動初期画面にする  "
+	"content": "Emacs の起動設定に関わる設定。 Emacs-27導入にあわせて early-init.el を設定しました。\n起動するまでの流れは以下のとおり。\n1. early-init.el の読み込み 2. init.el の読み込み 3. inits/ の設定ファイル群の読み込み # INDEX  eary-init.el を使う 早期設定ファイルの設定 speed up startup 起動時間を短縮するためのおまじない(^^) leaf.el を使って 設定ファイルを明示的に書く init-loader.el を使う 設定ファイル群のローダー test.el 最小限の emacs を起動させる設定 dashboard dashboardを起動初期画面にする  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/gist/",
@@ -39,7 +39,7 @@
 	"title": "コア設定",
 	"tags": [],
 	"description": "",
-	"content": "Emacs の基本動作に関わる部分をここでは設定している\n# INDEX  Language / Encode 言語と文字コードの設定 Mozc 日本語入力の設定 Server サーバー機能を使う設定 exec-path-from-shell 設定をシェルから継承する uniquify 同じバッファ名が開かれた場合に区別 change-global-keibind 基本キーバインドのカスタマイズ aggresive-indent 即時整形バッファー  "
+	"content": "Emacs の基本動作に関わる設定\n# INDEX  Language / Encode 言語と文字コードの設定 Mozc 日本語入力の設定 Server サーバー機能を使う設定 exec-path-from-shell 設定をシェルから継承する uniquify 同じバッファ名が開かれた場合に区別 change-global-keibind 基本キーバインドのカスタマイズ aggresive-indent 即時整形バッファー  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/flymake/",
@@ -60,7 +60,7 @@
 	"title": "カーソル移動",
 	"tags": [],
 	"description": "",
-	"content": "カーソル移動に関する設定です。\n# INDEX  sequential-command 標準の C-a / C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げる  "
+	"content": "カーソル移動に関する設定\n# INDEX  sequential-command 標準の C-a / C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/quickrun/",
@@ -81,7 +81,7 @@
 	"title": "フォント / 配色関連",
 	"tags": [],
 	"description": "",
-	"content": "ここでは設定ファイルを見やすくするための配色関連の設定を記載している。\n# INDEX  font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードに実際の色をつける rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
+	"content": "設定ファイルを見やすくするための配色関連の設定\n# INDEX  font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードに実際の色をつける rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/magit/",
@@ -102,7 +102,7 @@
 	"title": "フレーム / ウインドウ制御",
 	"tags": [],
 	"description": "",
-	"content": "ここではバッファ / ウインドウ管理関係の設定を記載している\n# INDEX  dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせる cus-sprit-window-functions 画面分割コマンドのカスタマイズ設定 tempbuf 不要になったバッファを自動的に kill winner-mode ウインドウ構成の履歴を辿る doom-themes テーマの設定 doom-modeline モードラインの設定  "
+	"content": "バッファ / ウインドウ管理関係の設定\n# INDEX  dimmer 現在のバッファ以外の輝度を落とす scrool-other-window deactive なwindowをスクロールさせる cus-sprit-window-functions 画面分割コマンドのカスタマイズ設定 tempbuf 不要になったバッファを自動的に kill winner-mode ウインドウ構成の履歴を辿る doom-themes テーマの設定 doom-modeline モードラインの設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/git-timemachine/",
@@ -123,7 +123,7 @@
 	"title": "編集サポート / 入力補助",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  markdown-mode markdownでの編集をサポートしてくれる view-mode ファイルの閲覧に特化した便利機能 web-mode HTML編集をサポートしてくれる。 yatex LaTeX の入力支援環境を提供する。 darkroom 執筆モード（暗室モード） ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール yasunippets キーをタイプした時点で自動的に補完候補が出てきてくれる campany キーをタイプした時点で自動的に補完候補が出てきてくれる key-chord 同時押しのキーバインドを提供してくれる iedit 択領域を別の文字列に置き換える migemo ローマ字のまま日本語をインクリメンタル検索を可能にする swiper-migemo ローマ字のまま日本語をインクリメンタル検索を可能にする smartparens 括弧などのペアを自動的に挿入してくれる selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる counsel-fontawesome Font-Awesomeの入力を支援してくれる  "
+	"content": "ファイル編集や入力補助の設定\n# INDEX  markdown-mode markdownでの編集をサポートしてくれる view-mode ファイルの閲覧に特化した便利機能 web-mode HTML編集をサポートしてくれる。 yatex LaTeX の入力支援環境を提供する。 darkroom 執筆モード（暗室モード） ivy / counsel 多くの選択肢から、使いたいものを高速に絞り込んでくれる補完ツール yasunippets キーをタイプした時点で自動的に補完候補が出てきてくれる campany キーをタイプした時点で自動的に補完候補が出てきてくれる key-chord 同時押しのキーバインドを提供してくれる iedit 択領域を別の文字列に置き換える migemo ローマ字のまま日本語をインクリメンタル検索を可能にする swiper-migemo ローマ字のまま日本語をインクリメンタル検索を可能にする smartparens 括弧などのペアを自動的に挿入してくれる selected リージョン選択時のアクションを制御してくれる。Like sendto of windows. pangu-spacing 全角と半角の間に自動でスペースを入れる counsel-fontawesome Font-Awesomeの入力を支援してくれる  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/browsepoint/",
@@ -144,7 +144,7 @@
 	"title": "表示サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここにはファイル編集や入力補助の設定をまとめている\n# INDEX  which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする line-spacing 行間を制御する display-number-mode 行番号を表示する prescient リストの並び替えとイニシャル入力機能を提供 japanese-holidays カレンダーをカラフルにする imenu-list ファイル内の関数目次をサイドバー風に表示 diff-hl 編集差分をフレーム端で視覚化  "
+	"content": "画面表示関係の設定\n# INDEX  which-key キーバインドの選択肢をポップアップする all-the-icons Emacsでアイコンを表示できるようにする line-spacing 行間を制御する display-number-mode 行番号を表示する prescient リストの並び替えとイニシャル入力機能を提供 japanese-holidays カレンダーをカラフルにする imenu-list ファイル内の関数目次をサイドバー風に表示 diff-hl 編集差分をフレーム端で視覚化  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/tramp/",
@@ -186,7 +186,7 @@
 	"title": "履歴 / ファイル管理",
 	"tags": [],
 	"description": "",
-	"content": "ここでは Emacs ファイル管理関係の設定を載せている\n# INDEX  auto-seve-buffer ファイルの自動保存機能を提供してる undo-fu シンプルな undo/redo を提供 recentf 開いたファイルの履歴を保存してくれる機能 savehist ミニバッファの履歴を保存してくれる機能 hist-files 履歴ファイル類の保存場所を整理 dired ディレクトリを編集する機能 neotree デレクトリやファイル一覧をツリー形式で表示、編集できる機能  "
+	"content": "Emacs ファイル管理関係の設定\n# INDEX  auto-seve-buffer ファイルの自動保存機能を提供してる undo-fu シンプルな undo/redo を提供 recentf 開いたファイルの履歴を保存してくれる機能 savehist ミニバッファの履歴を保存してくれる機能 hist-files 履歴ファイル類の保存場所を整理 dired ディレクトリを編集する機能 neotree デレクトリやファイル一覧をツリー形式で表示、編集できる機能  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/junk/",
@@ -207,7 +207,7 @@
 	"title": "開発サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここでは開発ワークをサポートしてくれるツールの設定をまとめている。\n# INDEX  function key ファンクションキーに便利キーバインド を設定 gist Gistインターフェイス flymake 構文エラー表示 quickrun お手軽ビルド環境を提供 magit Gitクライアント git-timemachine ファイルの履歴バージョンをナビケート browse-at-point バッファーからgithubのリンクを瞬時に開く counsel-tramp counsel でtrampのインターフェースを提供 easy-hugo hugoで構築するマルチブログの管理 open-junk-file ショートコードをクイックに書いて保存する  "
+	"content": "開発ワークをサポートしてくれるツールの設定\n# INDEX  function key ファンクションキーに便利キーバインド を設定 gist Gistインターフェイス flymake 構文エラー表示 quickrun お手軽ビルド環境を提供 magit Gitクライアント git-timemachine ファイルの履歴バージョンをナビケート browse-at-point バッファーからgithubのリンクを瞬時に開く counsel-tramp counsel でtrampのインターフェースを提供 easy-hugo hugoで構築するマルチブログの管理 open-junk-file ショートコードをクイックに書いて保存する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/migemo/",
@@ -235,7 +235,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数を集めてここに載せている\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない\n emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  "
+	"content": "自作のユーティリティ関数など\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない\n emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/smartparens/",
