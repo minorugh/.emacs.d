@@ -13,19 +13,19 @@ disableToc = true
 [auto-delete-file]({{< relref "auto-delete" >}})
 : 空になったファイルを自動的に削除する
 
-: scratchバッファーを決してKillさせない設定
+: scratchバッファーを決してKillさせない
 
 [emacs-lock]({{< relref "emacs-lock" >}})
-: scratchバッファーを決してKillさせない設定
+: scratchバッファーを決してKillさせない
 
 [ps-print]({{< relref "ps-print" >}})
 : Script printerで印刷する設定
 
 [open-gnome-terminal]({{< relref "terminal" >}})
-: カレントデレクトリでLinuxのターミナルを開く設定
+: カレントデレクトリでLinuxのターミナルを開く
 
 [open-thunar]({{< relref "thunar" >}})
-: カレントデレクトリでLinuxのファイラーを開く設定
+: カレントデレクトリでLinuxのファイラーを開く
 
 [restart-emacs]({{< relref "restart" >}})
 : Emacsを再起動させる
