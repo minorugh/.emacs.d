@@ -81,7 +81,7 @@
 	"title": "フォント / 配色関連",
 	"tags": [],
 	"description": "",
-	"content": "設定ファイルを見やすくするための配色関連の設定\n# INDEX  font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードに実際の色をつける rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
+	"content": "設定ファイルを見やすくするための配色設定\n# INDEX  font フォントの設定とインストール hl-line カーソル行に色をつける blink-cursor カーソルの点滅を制御する my:ivy-format ivyの選択行をアイコンで強調する volatile-highlights コピペした領域を強調する rainbow-mode カラーコードに実際の色をつける rainbow-delimiters 対応するカッコに色を付ける paren 対応するカッコをハイライトする whitespace カラーコードを実際の色に表示する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/magit/",
