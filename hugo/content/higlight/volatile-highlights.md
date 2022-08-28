@@ -2,7 +2,7 @@
 title = "4.8. volatile-highlight"
 draft = false
 +++
-### [volatile-highlights.el] コピペした領域を強調
+## [volatile-highlights.el] コピペした領域を強調
 🔗 [k-talo/volatile-highlights.el: Highlighting copied area.](https://github.com/k-talo/volatile-highlights.el) 
 
 `volatile-highlights.el` は、コピペした領域を強調します。

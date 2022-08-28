@@ -17,7 +17,7 @@ Emacs-27導入にあわせて `early-init.el` を設定しました。
 3. inits/ の設定ファイル群の読み込み
 ```
 
-### # INDEX
+## # INDEX
 
 [eary-init.el を使う]({{< relref "eary-init" >}})
 : 早期設定ファイルの設定

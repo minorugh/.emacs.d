@@ -3,7 +3,7 @@ title = "6.8. company"
 draft = false
 weight = 8
 +++
-### [company.el] 入力補完機能を提供
+## [company.el] 入力補完機能を提供
 🔗 [company-mode/company.el: Modular completion framework.](https://github.com/company-mode/company-mode/blob/master/company.el) 
 
 キーをタイプした時点で自動的に補完候補が出てきて、ミスタイプを減らして入力効率を上げる優れた補完機能です。

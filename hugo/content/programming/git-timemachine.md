@@ -3,7 +3,7 @@ title = "10.6. git-timemachine"
 draft = false
 weight = 6
 +++
-### [git-timemachine.el]
+## [git-timemachine.el]
 🔗 [emacsmirror/git-timemachine: Walk through git revisions of a file.](https://github.com/emacsmirror/git-timemachine) 
 
 次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。

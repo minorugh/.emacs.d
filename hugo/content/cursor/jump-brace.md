@@ -2,7 +2,7 @@
 title = "3.3. jump-brace"
 draft = false
 +++
-### 括弧の先頭と最後へ交互にポイント移動
+## 括弧の先頭と最後へ交互にポイント移動
 
 `my:jump-brace` は、括弧の先頭と最後へ交互にポイント移動します。
 
@@ -18,7 +18,7 @@ draft = false
 (bind-key "C-M-9" 'my:jump-brace)
 ```
 
-### 標準機能
+## 標準機能
 
 * `C-M-SPC` (mark-sexp) は、カーソル位置から順方向に選択
 * `C-M-U` (backward-up-list) は、一つ外のカッコの先頭にポイントを移す

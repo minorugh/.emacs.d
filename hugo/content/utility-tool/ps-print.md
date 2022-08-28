@@ -3,7 +3,7 @@ title = "12.3. ps-priter"
 draft = false
 +++
 
-### PS-Printer での印刷
+## PS-Printer での印刷
 Emacsから`Postscript`経由で印刷する際の個人的な設定です。
 
 `Postscript` 対応のプリンターが必要。

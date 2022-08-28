@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:51 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>1.6. dashboard :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,12 +870,8 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#dashboardel起動初期画面をイケメンにする">[dashboard.el]起動初期画面をイケメンにする</a></li>
-        <li><a href="#カスタマイズ設定">カスタマイズ設定</a></li>
-      </ul>
-    </li>
+    <li><a href="#dashboardel起動初期画面をイケメンにする">[dashboard.el]起動初期画面をイケメンにする</a></li>
+    <li><a href="#カスタマイズ設定">カスタマイズ設定</a></li>
   </ul>
 </nav>
       </div>
@@ -895,7 +891,7 @@
     
     
     
-<h3 id="dashboardel起動初期画面をイケメンにする">[dashboard.el]起動初期画面をイケメンにする</h3>
+<h2 id="dashboardel起動初期画面をイケメンにする">[dashboard.el]起動初期画面をイケメンにする</h2>
 <p>🔗 <a href="https://github.com/emacs-dashboard/emacs-dashboard">emacs-dashboard: An extensible emacs startup screen</a></p>
 <p>Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、<code>dashbord.el</code> を導入しました。</p>
 <p><img src="https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067" alt="dashboard"></p>
@@ -950,7 +946,7 @@
   <span style="color:#177500">;; Insert custom item</span>
   (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-item-generators</span>  <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-insert-custom</span>))
   (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-items</span> <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span>) <span style="color:#000">t</span>))
-</code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+</code></pre></div><h2 id="カスタマイズ設定">カスタマイズ設定</h2>
 <p><code>dashbord</code> をカスタマイズするためのユーザー関数です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Custom configurations</span>
 (<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-goto-recent-files</span> ()

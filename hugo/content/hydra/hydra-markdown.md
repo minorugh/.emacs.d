@@ -3,7 +3,7 @@ title = "8.4. hydra-markdown"
 draft = false
 +++
 
-### Hydra for markdown-mode
+## Hydra for markdown-mode
 メモ書きや執筆関係の下書きには、`markdown-mode` をメインにしています。
 
 挿入テンプレートやライブビューアーのほか、`md2docx`  `md2pdf` などのコマンド群を `hydra` でメニュー化しました。

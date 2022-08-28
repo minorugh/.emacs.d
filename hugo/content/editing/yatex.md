@@ -4,7 +4,7 @@ draft = false
 weight = 4
 +++
 
-### [yatex.el] LaTex編集
+## [yatex.el] LaTex編集
 🔗 [emacsmirror/yatex: Yet Another tex-mode for emacs. //野鳥//](https://github.com/emacsmirror/yatex)
 
 Emacsの上で動作する LaTeX の入力支援環境です。

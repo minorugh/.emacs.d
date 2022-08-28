@@ -2,7 +2,7 @@
 title = "3.1. sequential-command"
 draft = false
 +++
-### [sequential-command.el] バッファーの先頭と最終行への移動を簡単に
+## [sequential-command.el] バッファーの先頭と最終行への移動を簡単に
 🔗 [https://github.com/HKey/sequential-command](https://github.com/HKey/sequential-command)
 
 `sequential-command` は、標準の `C-a` `C-e` を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。

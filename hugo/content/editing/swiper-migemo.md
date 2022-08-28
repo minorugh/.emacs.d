@@ -3,7 +3,7 @@ title = "6.12. swiper-migemo"
 draft = false
 weight = 12
 +++
-### [swiper-migemo.el] swiperでもmigemoを使う
+## [swiper-migemo.el] swiperでもmigemoを使う
 🔗 [tam17aki/swiper-migemo: Use ivy/counsel/swiper with migemo.](https://github.com/tam17aki/swiper-migemo)
 
 `avy-migemo-e.g.swiper.el` を使って出来ていたのですが、２年ほど前から更新が止まってしまっていて動きません。

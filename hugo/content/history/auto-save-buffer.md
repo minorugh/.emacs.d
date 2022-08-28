@@ -2,7 +2,7 @@
 title = "9.1. auto-save-buffer"
 draft = false
 +++
-### [auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供
+## [auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供
 🔗 [kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.](https://github.com/kentaro/auto-save-buffers-enhanced) 
 
 `auto-save-buffers-enhanced.el` は、快適かつ安全な自動保存機能を提供します。

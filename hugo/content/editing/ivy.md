@@ -3,7 +3,7 @@ title = "6.6. ivy / counsel / swiper"
 draft = false
 weight = 6
 +++
-### [ivy.el / counsel.el / swiper.el] Emacsの補完システム
+## [ivy.el / counsel.el / swiper.el] Emacsの補完システム
 🔗 [abo-abo/swiper: Ivy - a generic completion frontend for Emacs, Swiper - isearch with an overview.](https://github.com/abo-abo/swiper) 
 
 `ivy` は、`helm` と双璧を成す Emacsの補完システムです。
@@ -37,7 +37,7 @@ weight = 6
 			(ivy-format-functions-alist . '((t . my:ivy-format-function-arrow)))))
 ```
 
-### 現在の選択候補をわかりやすくする
+## 現在の選択候補をわかりやすくする
 `ivy-format-functions-alist` にカスタマイズした関数を追加すれば、プロンプトの下部に位置するカーソル行の表示を変更できます。
 `all-the-icons` を導入して好みのアイコンでカーソル行の選択候補を目立たせましょう。
 
@@ -57,7 +57,7 @@ weight = 6
    "\n"))
 ```
 
-### ivy-rich
+## ivy-rich
 🔗 [Yevgnen/ivy-rich: More friendly interface for ivy.](https://github.com/Yevgnen/ivy-rich) 
 
 `ivy-rich.el` を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。
@@ -68,7 +68,7 @@ weight = 6
   :hook (after-init-hook . ivy-rich-mode))
 ```
 
-### amx
+## amx
 🔗 [DarwinAwardWinner/amx: An alternative M-x interface for Emacs.](https://github.com/DarwinAwardWinner/amx) 
 
 `amx.el` は、Emacsコマンド `M-x` の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。
@@ -82,7 +82,7 @@ weight = 6
 	        (amx-history-length . 20)))
 ```
 
-### swiper-region
+## swiper-region
 `swiper-thing-at-point` は賢くて親切なのですが、key-wordを入力して検索したいときには使いづらいです。
 自分の使い勝手に合わせてカスタマイズしました。
 
@@ -96,7 +96,7 @@ If the region isn't selected, `swiper'."
     (swiper-thing-at-point)))
 ```
 
-### [counsel-ag] 高速全文検索
+## [counsel-ag] 高速全文検索
 2文字でも検索が発動するようにカスタマイズしています。`@takaxp` さんのTipsからパクってきました。
 
 ```elisp

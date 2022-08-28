@@ -3,7 +3,7 @@ title = "6.10. iedit"
 draft = false
 weight = 10
 +++
-### [iedit.el] 選択領域を別の文字列に置き換える
+## [iedit.el] 選択領域を別の文字列に置き換える
 🔗 [victorhge/iedit: Modify multiple occurrences simultaneously.](https://github.com/victorhge/iedit) 
 
 バッファー内の複数箇所を同時に編集するツールです。

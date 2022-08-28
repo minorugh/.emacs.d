@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:50 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>8.1. hydra-menu :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,13 +870,9 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#hydra-for-quick-menu">Hydra for quick-menu</a></li>
-        <li><a href="#hydra-for-work-menu">Hydra for work-menu</a></li>
-        <li><a href="#必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</a></li>
-      </ul>
-    </li>
+    <li><a href="#hydra-for-quick-menu">Hydra for quick-menu</a></li>
+    <li><a href="#hydra-for-work-menu">Hydra for work-menu</a></li>
+    <li><a href="#必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</a></li>
   </ul>
 </nav>
       </div>
@@ -898,7 +894,7 @@
     
 <p><code>hydra-menu</code> は、いわば私の秘書のような役割です。</p>
 <p>便宜上、<code>quick-menu</code>と<code>work-menu</code> に分けていますが、どちらからでも相互に呼び出せるようにしています。</p>
-<h3 id="hydra-for-quick-menu">Hydra for quick-menu</h3>
+<h2 id="hydra-for-quick-menu">Hydra for quick-menu</h2>
 <p>編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。</p>
 <p>よく使うアプリ起動のショートカットなども設定しておくと便利です。</p>
 <p><img src="https://live.staticflickr.com/65535/50174826063_b4fa442b1e_b.jpg" alt="hydra-quick-menu"></p>
@@ -951,7 +947,7 @@
    (<span style="color:#c41a16">&#34;z&#34;</span> <span style="color:#000">filezilla</span>)
    (<span style="color:#c41a16">&#34;M-.&#34;</span> <span style="color:#000">hydra-work/body</span>)
    (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>)))
-</code></pre></div><h3 id="hydra-for-work-menu">Hydra for work-menu</h3>
+</code></pre></div><h2 id="hydra-for-work-menu">Hydra for work-menu</h2>
 <p>ブログ記事のほかWEB日記や俳句関係のシリーズ記事の追加、編集など、毎日頻繁に開くワークスペースへのショートカットを設定しています。</p>
 <p><img src="https://live.staticflickr.com/65535/50175364331_9fcf3c6c86_b.jpg" alt="hydra-work-menu"></p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Hydra for work-menu</span>
@@ -1006,7 +1002,7 @@
    (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">my:emacs.d-dir</span>)
    (<span style="color:#c41a16">&#34;&lt;henkan&gt;&#34;</span> <span style="color:#000">hydra-quick/body</span>)
    (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
-</code></pre></div><h3 id="必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</h3>
+</code></pre></div><h2 id="必要に応じて作業コマンドを作成します">必要に応じて作業コマンドを作成します</h2>
 <p>以下は一例です。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:backup-all</span> ()
   <span style="color:#c41a16">&#34;Backup all.&#34;</span>

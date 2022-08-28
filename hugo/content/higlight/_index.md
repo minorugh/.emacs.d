@@ -9,7 +9,7 @@ disableToc = true
 ここでは設定ファイルを見やすくするための配色関連の設定を記載している。
 
 
-### # INDEX
+## # INDEX
 
 [font]({{< relref "font" >}})
 : フォントの設定とインストール

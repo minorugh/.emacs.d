@@ -3,7 +3,7 @@ title = "8.2. hydra-make"
 draft = false
 +++
 
-### Hydra for make command 
+## Hydra for make command 
 🔗 [自動化のための nmake 入門講座: 石井勝](http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/nmake.html) 
 
 上記記事を読んで自分革命がありました。
@@ -45,7 +45,7 @@ draft = false
 		  (t (message "Compilation exited abnormally: %s" string)))))
 ```
 
-### make command functions
+## make command functions
 必要な `make`実行コマンドを定義します。
 
 例えば、詳細に `commit message` を残さなくてもいい Gitリポジトリは、`magit` は使わずに `make` で自動コミットします。

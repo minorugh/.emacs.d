@@ -3,7 +3,7 @@ title = "11.4. scratch-memo"
 draft = false
 +++
 
-### scratchバッファーを付箋として使う
+## scratchバッファーを付箋として使う
 
 Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに `*scratch*`バッファーが使えるように設定してみた。
 

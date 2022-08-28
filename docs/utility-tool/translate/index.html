@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:51 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>12.9. google-translate :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,12 +870,8 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#google-translateel-google翻訳サービスを使用して文字列を翻訳">[google-translate.el] Google翻訳サービスを使用して文字列を翻訳</a></li>
-        <li><a href="#プラウザのgoogle翻訳サービスを使用して文字列を翻訳">プラウザのGoogle翻訳サービスを使用して文字列を翻訳</a></li>
-      </ul>
-    </li>
+    <li><a href="#google-translateel-google翻訳サービスを使用して文字列を翻訳">[google-translate.el] Google翻訳サービスを使用して文字列を翻訳</a></li>
+    <li><a href="#プラウザのgoogle翻訳サービスを使用して文字列を翻訳">プラウザのGoogle翻訳サービスを使用して文字列を翻訳</a></li>
   </ul>
 </nav>
       </div>
@@ -895,7 +891,7 @@
     
     
     
-<h3 id="google-translateel-google翻訳サービスを使用して文字列を翻訳">[google-translate.el] Google翻訳サービスを使用して文字列を翻訳</h3>
+<h2 id="google-translateel-google翻訳サービスを使用して文字列を翻訳">[google-translate.el] Google翻訳サービスを使用して文字列を翻訳</h2>
 <p>🔗 <a href="https://github.com/atykhonov/google-translate">atykhonov/google-translate: Emacs interface to Google Translate.</a></p>
 <p>この設定は、<a href="https://twitter.com/SolistWork">@masasam</a> の
 <a href="https://solist.work/blog/posts/google-translate/">Sollst Work Blog</a> で公開されている設定をパクりました。</p>
@@ -937,7 +933,7 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">google-translate--get-b-d1</span> ()
   <span style="color:#c41a16">&#34;Fix error of `Failed to search TKK`.&#34;</span>
   (<span style="color:#000">list</span> <span style="color:#1c01ce">427110</span> <span style="color:#1c01ce">1469889687</span>))
-</code></pre></div><h3 id="プラウザのgoogle翻訳サービスを使用して文字列を翻訳">プラウザのGoogle翻訳サービスを使用して文字列を翻訳</h3>
+</code></pre></div><h2 id="プラウザのgoogle翻訳サービスを使用して文字列を翻訳">プラウザのGoogle翻訳サービスを使用して文字列を翻訳</h2>
 <p>前述のように、<code>google-translate</code> は、Google側のサービスシステムの都合上ときどき止まることがあります。
 そのようなときの待避策としてプラウザからでも使えるようにという設定です。</p>
 <p>こちらも <a href="https://solist.work/blog/posts/google-translate/">Sollst Work Blog</a> で公開されているものです。</p>

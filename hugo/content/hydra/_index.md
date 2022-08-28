@@ -10,7 +10,7 @@ disableToc = true
 
 `hydra.el` を使うとよく使う機能をまとめて独創的なコマンドディスパッチャを構築することが出来ます。
 
-### # INDEX
+## # INDEX
 [hydra-menu]({{< relref "hydra-menu" >}})
 : プロジェクトのディレクトリや作業テーブルを一発で開くための設定
 

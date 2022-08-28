@@ -2,7 +2,7 @@
 title = "7.6. japanese-holidays"
 draft = false
 +++
-### [japanese-holidays.el] カレンダーをカラフルにする
+## [japanese-holidays.el] カレンダーをカラフルにする
 🔗 [emacs-jp/japanese-holidays: Display Japanese holidays in the Emacs calendar.](https://github.com/emacs-jp/japanese-holidays) 
 
 ビルドインの `holidays` と `japanese-holidays.el`を使います。

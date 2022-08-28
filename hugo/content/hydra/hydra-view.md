@@ -2,7 +2,7 @@
 title = "8.5. hydra-view-mode"
 draft = false
 +++
-### Hydra for view-mode: view-modeのヘルプ機能
+## Hydra for view-mode: view-modeのヘルプ機能
 `view-mode` の便利コマンド群、覚えてしまえばどうということはないのですが、認知も危ぶまれるような老骨なので、`hydra` でヘルプメニューを作りました。
 
 バッファーを`vew-mode` で開いているとき、[`.`]/[`?`] キーを打つことで`hydra-view` が発動します。

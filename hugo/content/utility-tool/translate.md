@@ -2,7 +2,7 @@
 title = "12.9. google-translate"
 draft = false
 +++
-### [google-translate.el] Google翻訳サービスを使用して文字列を翻訳
+## [google-translate.el] Google翻訳サービスを使用して文字列を翻訳
 🔗 [atykhonov/google-translate: Emacs interface to Google Translate.](https://github.com/atykhonov/google-translate) 
 
 この設定は、[@masasam](https://twitter.com/SolistWork) の
@@ -53,7 +53,7 @@ draft = false
   (list 427110 1469889687))
 ```
 
-### プラウザのGoogle翻訳サービスを使用して文字列を翻訳
+## プラウザのGoogle翻訳サービスを使用して文字列を翻訳
 前述のように、`google-translate` は、Google側のサービスシステムの都合上ときどき止まることがあります。
 そのようなときの待避策としてプラウザからでも使えるようにという設定です。
 

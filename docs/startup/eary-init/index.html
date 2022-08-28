@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:51 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>1.1. eary-init.el :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,19 +870,15 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#早期初期化ファイル">早期初期化ファイル</a></li>
-        <li><a href="#gcを減らす">GCを減らす</a></li>
-        <li><a href="#パッケージの初期化を抑制する">パッケージの初期化を抑制する</a></li>
-        <li><a href="#常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</a></li>
-        <li><a href="#フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</a></li>
-        <li><a href="#起動時画面最大化を設定">起動時画面最大化を設定</a></li>
-        <li><a href="#起動時の画面のちらつきを抑える">起動時の画面のちらつきを抑える</a></li>
-        <li><a href="#起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</a></li>
-        <li><a href="#常駐環境を考えてみた">常駐環境を考えてみた</a></li>
-      </ul>
-    </li>
+    <li><a href="#早期初期化ファイル">早期初期化ファイル</a></li>
+    <li><a href="#gcを減らす">GCを減らす</a></li>
+    <li><a href="#パッケージの初期化を抑制する">パッケージの初期化を抑制する</a></li>
+    <li><a href="#常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</a></li>
+    <li><a href="#フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</a></li>
+    <li><a href="#起動時画面最大化を設定">起動時画面最大化を設定</a></li>
+    <li><a href="#起動時の画面のちらつきを抑える">起動時の画面のちらつきを抑える</a></li>
+    <li><a href="#起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</a></li>
+    <li><a href="#常駐環境を考えてみた">常駐環境を考えてみた</a></li>
   </ul>
 </nav>
       </div>
@@ -902,28 +898,28 @@
     
     
     
-<h3 id="早期初期化ファイル">早期初期化ファイル</h3>
+<h2 id="早期初期化ファイル">早期初期化ファイル</h2>
 <p>🔗 <a href="https://github.com/minorugh/.emacs.d/blob/main/early-init.el">minorugh/.emacs.d/early-init.el</a></p>
 <p>Emacs27から導入された <code>eary-init.el</code>は、<code>init.el</code> でGUIやパッケージシステムの初期化が実行される前にロードされるので、UI関係や <code>package-enable-at-startup</code> のようなパッケージ初期化プロセスに影響を与える変数を先に書くことで起動を早くすることが出来るようです。</p>
-<h3 id="gcを減らす">GCを減らす</h3>
+<h2 id="gcを減らす">GCを減らす</h2>
 <p>GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Defer garbage collection further back in the startup process</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">gc-cons-threshold</span> <span style="color:#000">most-positive-fixnum</span>)
 </code></pre></div><p><code>eary-init.el</code> の先頭に書きます。</p>
-<h3 id="パッケージの初期化を抑制する">パッケージの初期化を抑制する</h3>
+<h2 id="パッケージの初期化を抑制する">パッケージの初期化を抑制する</h2>
 <p>Emacs27では、<code>package-initialize</code> が 2回実行されます。
 1回は、初期化ファイルの評価中に、もう 1回は、初期化ファイルの読み取りを終了した後にです。</p>
 <p><code>eary-init.el</code> に以下を書いて、1回目の実行を抑制することで少し早くなります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; For slightly faster startup</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">package-enable-at-startup</span> <span style="color:#000">nil</span>)
-</code></pre></div><h3 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h3>
+</code></pre></div><h2 id="常に最新のバイトコードをロードする">常に最新のバイトコードをロードする</h2>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Always load newest byte code</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">load-prefer-newer</span> <span style="color:#000">t</span>)
 
-</code></pre></div><h3 id="フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</h3>
+</code></pre></div><h2 id="フレームのサイズ変更を禁止する">フレームのサイズ変更を禁止する</h2>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Inhibit resizing frame</span>
 (<span style="color:#a90d91">setq</span> <span style="color:#000">frame-inhibit-implied-resize</span> <span style="color:#000">t</span>)
-</code></pre></div><h3 id="起動時画面最大化を設定">起動時画面最大化を設定</h3>
+</code></pre></div><h2 id="起動時画面最大化を設定">起動時画面最大化を設定</h2>
 <p>メニューバー、ツールバー、スクロールなどは、ここで無効にする方が速くなります。 (初期化される前)</p>
 <p>ここで最大化を宣言しておくことで <code>toggle-frame-fullscreen</code> コマンドによる「最大化&lt;-&gt;フルスクリーン」のトグル表示を可能にします。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Faster to disable these here (before they&#39;ve been initialized)</span>
@@ -931,7 +927,7 @@
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">tool-bar-lines</span> <span style="color:#000">.</span> <span style="color:#1c01ce">0</span>) <span style="color:#000">default-frame-alist</span>)
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">vertical-scroll-bars</span>) <span style="color:#000">default-frame-alist</span>)
 (<span style="color:#a90d91">push</span> <span style="color:#000">&#39;</span>(<span style="color:#000">fullscreen</span> <span style="color:#000">.</span> <span style="color:#000">maximized</span>) <span style="color:#000">default-frame-alist</span>)
-</code></pre></div><h3 id="起動時の画面のちらつきを抑える">起動時の画面のちらつきを抑える</h3>
+</code></pre></div><h2 id="起動時の画面のちらつきを抑える">起動時の画面のちらつきを抑える</h2>
 <p>初期設定を読み終えるまでに目まぐるしく変わる画面表示を抑止しています。
 そこまでする必要はないのですが、起動時間の短縮にもなるようなので採用しました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Suppress flashing at startup</span>
@@ -945,7 +941,7 @@
 			(<span style="color:#000">set-frame-parameter</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#39;fullscreen</span> <span style="color:#c41a16">&#39;fullboth</span>)))
 </code></pre></div><p>初期化後にフルスクリーンにしているのは、
 うっかりタイトルバーの閉じるをクリックする悪癖を直すための対策です(^^)</p>
-<h3 id="起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</h3>
+<h2 id="起動直後の背景色をテーマのそれと合わせる">起動直後の背景色をテーマのそれと合わせる</h2>
 <p>Emacsが設定を読み込む初期段階の背景色は白です。
 自分は、タークテーマを使っているので、起動時から即黒背景になるようにここで設定しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Startup setting</span>
@@ -953,7 +949,7 @@
 (<span style="color:#a90d91">setq</span> <span style="color:#000">inhibit-startup-message</span> <span style="color:#000">t</span>)
 (<span style="color:#a90d91">setq</span> <span style="color:#000">byte-compile-warnings</span> <span style="color:#000">&#39;</span>(<span style="color:#000">cl-functions</span>))
 (<span style="color:#000">custom-set-faces</span> <span style="color:#000">&#39;</span>(<span style="color:#000">default</span> ((<span style="color:#000">t</span> (<span style="color:#a90d91">:background</span> <span style="color:#c41a16">&#34;#282a36&#34;</span>)))))
-</code></pre></div><h3 id="常駐環境を考えてみた">常駐環境を考えてみた</h3>
+</code></pre></div><h2 id="常駐環境を考えてみた">常駐環境を考えてみた</h2>
 <p>GUI Emacsの常駐化は、ハードルの高い課題なので疑似環境ということで紹介します。</p>
 <ul>
 <li>最小化で自動起動させる</li>

@@ -2,7 +2,7 @@
 title = "8.3. hydra-package"
 draft = false
 +++
-### Hydra for package-urils
+## Hydra for package-urils
 MELPAの管理には `Package-utils` を使っています。
 また、`el-get` にもいろいろとコマンドがあるようです。
 

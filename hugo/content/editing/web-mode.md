@@ -3,7 +3,7 @@ title = "6.3. web-mode"
 draft = false
 weight = 3
 +++
-### [web-mode.el] HTML編集をサポート
+## [web-mode.el] HTML編集をサポート
 🔗 [fxbois/web-mode: Web template editing mode for Emacs.](https://github.com/fxbois/web-mode) 
 
 タグ直打ちでHTML編集するならお勧めなのですが、私はあまり使っていません。

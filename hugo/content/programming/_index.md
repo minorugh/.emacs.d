@@ -9,7 +9,7 @@ disableToc = true
 ここでは開発ワークをサポートしてくれるツールの設定をまとめている。
 
 
-### # INDEX
+## # INDEX
 
 [function key]({{< relref "function" >}})
 : ファンクションキーに便利キーバインド を設定

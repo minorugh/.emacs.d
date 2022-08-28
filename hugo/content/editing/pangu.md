@@ -3,7 +3,7 @@ title = "6.15. pangu-spacing"
 draft = false
 weight = 15
 +++
-### [pangu-spacing.el] 漢字と英字の間にスペースを自動追加
+## [pangu-spacing.el] 漢字と英字の間にスペースを自動追加
 🔗 [coldnew/pangu-spacing: Add space between Chinese and English characters.](https://github.com/coldnew/pangu-spacing) 
 
 `pangu-spacing`は、漢字と英字の間にスペースを自動追加してくれます。

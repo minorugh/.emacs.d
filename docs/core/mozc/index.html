@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:50 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>2.3. mozc :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,18 +870,14 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#mozcサーバーをインストール">Mozcサーバーをインストール</a></li>
-        <li><a href="#インライン入力を無効にする">インライン入力を無効にする</a></li>
-        <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
-        <li><a href="#mozc-cursor-colorel-カーソルの色を変える">[mozc-cursor-color.el] カーソルの色を変える</a></li>
-        <li><a href="#mozc-cand-posframeel-変換候補をposframe表示">[mozc-cand-posframe.el] 変換候補をposframe表示</a></li>
-        <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
-        <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
-        <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
-      </ul>
-    </li>
+    <li><a href="#mozcサーバーをインストール">Mozcサーバーをインストール</a></li>
+    <li><a href="#インライン入力を無効にする">インライン入力を無効にする</a></li>
+    <li><a href="#mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</a></li>
+    <li><a href="#mozc-cursor-colorel-カーソルの色を変える">[mozc-cursor-color.el] カーソルの色を変える</a></li>
+    <li><a href="#mozc-cand-posframeel-変換候補をposframe表示">[mozc-cand-posframe.el] 変換候補をposframe表示</a></li>
+    <li><a href="#emacsから単語登録する">Emacsから単語登録する</a></li>
+    <li><a href="#mozc-辞書の共有">Mozc 辞書の共有</a></li>
+    <li><a href="#辞書共有の課題">辞書共有の課題</a></li>
   </ul>
 </nav>
       </div>
@@ -905,12 +901,12 @@
 <ul>
 <li><a href="https://cloud-work.net/linux/fcitx-mozc/">Debian系の日本語入力をMozcにする</a></li>
 </ul>
-<h3 id="mozcサーバーをインストール">Mozcサーバーをインストール</h3>
+<h2 id="mozcサーバーをインストール">Mozcサーバーをインストール</h2>
 <p>EmacsからMozcを使えるようにするには、<code>mozc_emacs_helper</code> をインストールする必要があります。
 OSによって手法が異なりますが、Linuxの場合は簡単です。</p>
 <pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install emacs-mozc
 </code></pre><p><code>/user/bin/</code> に <code>mozc_emacs_helper</code> がインストールされていたらOKです。</p>
-<h3 id="インライン入力を無効にする">インライン入力を無効にする</h3>
+<h2 id="インライン入力を無効にする">インライン入力を無効にする</h2>
 <p>デフォルトは<code>C-\</code> で <code>emacs-mozc</code> が起動しますが、
 Emacsでも <code>&lt;hiragana-katakana&gt;</code> でON/OFFをしたいので、Emacsのインライン入力を無効にします。</p>
 <p>方法は簡単で、<code>~/.Xresources</code> を作成して下記のように設定します。</p>
@@ -918,7 +914,7 @@ Emacsでも <code>&lt;hiragana-katakana&gt;</code> でON/OFFをしたいので�
 Emacs*useXIM: false
 </code></pre><p>再起動をするか <code>xrdb ~/.Xresources</code> を実行することで設定が有効になります。</p>
 <p>これで、<code>&lt;hiragana-katakana&gt;</code> を <code>toggle-input-method</code> に割り当てることができます。</p>
-<h3 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h3>
+<h2 id="mozcel-mozcサーバーを使って日本語テキストを入力">[mozc.el] Mozcサーバーを使って日本語テキストを入力</h2>
 <p>🔗 <a href="https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el">google/mozc.el: Input Japanese text using Mozc server.</a></p>
 <p>句読点などは、自動的に確定させるように <code>mozc-insert-str</code> を定義しました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc</span>
@@ -936,7 +932,7 @@ Emacs*useXIM: false
   (<span style="color:#a90d91">defun</span> <span style="color:#000">mozc-insert-str</span> (<span style="color:#000">str</span>)
 	(<span style="color:#000">mozc-handle-event</span> <span style="color:#c41a16">&#39;enter</span>)
 	(<span style="color:#000">insert</span> <span style="color:#000">str</span>)))
-</code></pre></div><h3 id="mozc-cursor-colorel-カーソルの色を変える">[mozc-cursor-color.el] カーソルの色を変える</h3>
+</code></pre></div><h2 id="mozc-cursor-colorel-カーソルの色を変える">[mozc-cursor-color.el] カーソルの色を変える</h2>
 <p>🔗 <a href="https://github.com/iRi-E/mozc-el-extensions">iRi-E/mozc-el-extensions: </a></p>
 <p><code>direct</code>, <code>read-only</code>, <code>hiragana</code> の3通りの色を簡単に変更できます。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">mozc-cursor-color</span>
@@ -947,7 +943,7 @@ Emacs*useXIM: false
         <span style="color:#000">&#39;</span>((<span style="color:#000">direct</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#50fa7b&#34;</span>)
           (<span style="color:#000">read-only</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#f8f8f2&#34;</span>)
           (<span style="color:#000">hiragana</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#ff5555&#34;</span>))))
-</code></pre></div><h3 id="mozc-cand-posframeel-変換候補をposframe表示">[mozc-cand-posframe.el] 変換候補をposframe表示</h3>
+</code></pre></div><h2 id="mozc-cand-posframeel-変換候補をposframe表示">[mozc-cand-posframe.el] 変換候補をposframe表示</h2>
 <p>🔗 <a href="https://github.com/akirak/mozc-posframe">akirak/mozc-posframe: Posframe frontend for mozc.el</a></p>
 <p><code>mozc.el</code> の変換候補を表示させる <code>posframe</code> インターフェースです。</p>
 <p>カラーカスタマイズも容易です。</p>
@@ -958,7 +954,7 @@ Emacs*useXIM: false
   <span style="color:#a90d91">:custom</span>	(<span style="color:#000">mozc-candidate-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;posframe</span>)
   <span style="color:#a90d91">:init</span>
   (<span style="color:#000">leaf</span> <span style="color:#000">posframe</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>))
-</code></pre></div><h3 id="emacsから単語登録する">Emacsから単語登録する</h3>
+</code></pre></div><h2 id="emacsから単語登録する">Emacsから単語登録する</h2>
 <p>文章編集画面から <a href="https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/"><code>mozc-tool</code></a> を起動して単語登録できるようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-mozc-tool</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;s-t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:mozc-dictionary-tool</span>)
@@ -975,7 +971,7 @@ Emacs*useXIM: false
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;/usr/lib/mozc/mozc_tool --mode=word_register_dialog&#34;</span>)
 	(<span style="color:#000">delete-other-windows</span>)))
-</code></pre></div><h3 id="mozc-辞書の共有">Mozc 辞書の共有</h3>
+</code></pre></div><h2 id="mozc-辞書の共有">Mozc 辞書の共有</h2>
 <p>辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンでの共有も可能です。</p>
 <p>手順は簡単です。</p>
 <ol>
@@ -990,7 +986,7 @@ mozc_copy:
   cp -r ~/.mozc/ ~/Dropbox/mozc/
   test -L ~/.mozc || rm -rf ~/.mozc
   ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
-</code></pre><h3 id="辞書共有の課題">辞書共有の課題</h3>
+</code></pre><h2 id="辞書共有の課題">辞書共有の課題</h2>
 <p>Dropboxの辞書ファイルを複数端末から同時アクセスすると、複製（競合コピー）がいっぱい作られるという問題があります。</p>
 <p>Google Driveは大丈夫という情報もありますが試せてません。</p>
 

@@ -3,7 +3,7 @@ title = "6.1. markdown-mode"
 draft = false
 weight = 1
 +++
-### [markdown-mode.el] markdownモード編集、入力支援
+## [markdown-mode.el] markdownモード編集、入力支援
 🔗 [jrblevin/markdown-mode: Emacs Markdown Mode.](https://github.com/jrblevin/markdown-mode) 
 
 Markdown形式のテキストを編集するための主要なモードです。

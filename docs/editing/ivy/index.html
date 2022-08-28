@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:50 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>6.6. ivy / counsel / swiper :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,16 +870,12 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#ivyel--counselel--swiperel-emacsの補完システム">[ivy.el / counsel.el / swiper.el] Emacsの補完システム</a></li>
-        <li><a href="#現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</a></li>
-        <li><a href="#ivy-rich">ivy-rich</a></li>
-        <li><a href="#amx">amx</a></li>
-        <li><a href="#swiper-region">swiper-region</a></li>
-        <li><a href="#counsel-ag-高速全文検索">[counsel-ag] 高速全文検索</a></li>
-      </ul>
-    </li>
+    <li><a href="#ivyel--counselel--swiperel-emacsの補完システム">[ivy.el / counsel.el / swiper.el] Emacsの補完システム</a></li>
+    <li><a href="#現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</a></li>
+    <li><a href="#ivy-rich">ivy-rich</a></li>
+    <li><a href="#amx">amx</a></li>
+    <li><a href="#swiper-region">swiper-region</a></li>
+    <li><a href="#counsel-ag-高速全文検索">[counsel-ag] 高速全文検索</a></li>
   </ul>
 </nav>
       </div>
@@ -899,7 +895,7 @@
     
     
     
-<h3 id="ivyel--counselel--swiperel-emacsの補完システム">[ivy.el / counsel.el / swiper.el] Emacsの補完システム</h3>
+<h2 id="ivyel--counselel--swiperel-emacsの補完システム">[ivy.el / counsel.el / swiper.el] Emacsの補完システム</h2>
 <p>🔗 <a href="https://github.com/abo-abo/swiper">abo-abo/swiper: Ivy - a generic completion frontend for Emacs, Swiper - isearch with an overview.</a></p>
 <p><code>ivy</code> は、<code>helm</code> と双璧を成す Emacsの補完システムです。</p>
 <p>リスト表示された多くの選択肢から、自分が使いたいものを高速に絞り込んで効率良く選び出す…
@@ -926,7 +922,7 @@
 			(<span style="color:#000">enable-recursive-minibuffers</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
 			(<span style="color:#000">counsel-find-file-ignore-regexp</span> <span style="color:#000">.</span> (<span style="color:#000">regexp-opt</span> <span style="color:#000">completion-ignored-extensions</span>))
 			(<span style="color:#000">ivy-format-functions-alist</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>((<span style="color:#000">t</span> <span style="color:#000">.</span> <span style="color:#000">my:ivy-format-function-arrow</span>)))))
-</code></pre></div><h3 id="現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</h3>
+</code></pre></div><h2 id="現在の選択候補をわかりやすくする">現在の選択候補をわかりやすくする</h2>
 <p><code>ivy-format-functions-alist</code> にカスタマイズした関数を追加すれば、プロンプトの下部に位置するカーソル行の表示を変更できます。
 <code>all-the-icons</code> を導入して好みのアイコンでカーソル行の選択候補を目立たせましょう。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:ivy-format-function-arrow</span> (<span style="color:#000">cands</span>)
@@ -942,13 +938,13 @@
 	 (<span style="color:#000">concat</span> (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>)) <span style="color:#000">str</span>))
    <span style="color:#000">cands</span>
    <span style="color:#c41a16">&#34;\n&#34;</span>))
-</code></pre></div><h3 id="ivy-rich">ivy-rich</h3>
+</code></pre></div><h2 id="ivy-rich">ivy-rich</h2>
 <p>🔗 <a href="https://github.com/Yevgnen/ivy-rich">Yevgnen/ivy-rich: More friendly interface for ivy.</a></p>
 <p><code>ivy-rich.el</code> を導入するとアイコンが追加され、さらに追加の情報が空きスペースに記述されるようになります。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">ivy-rich</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">ivy-rich-mode</span>))
-</code></pre></div><h3 id="amx">amx</h3>
+</code></pre></div><h2 id="amx">amx</h2>
 <p>🔗 <a href="https://github.com/DarwinAwardWinner/amx">DarwinAwardWinner/amx: An alternative M-x interface for Emacs.</a></p>
 <p><code>amx.el</code> は、Emacsコマンド <code>M-x</code> の代替インターフェイスですが、コマンドの使用履歴を保存・利用してくれる優れものです。</p>
 <p><code>counsel-M-x</code> とも自動的に連携して効率の良い補完システムを提供します。</p>
@@ -956,7 +952,7 @@
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">amx-save-file</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/amx-items&#34;</span>)
 	        (<span style="color:#000">amx-history-length</span> <span style="color:#000">.</span> <span style="color:#1c01ce">20</span>)))
-</code></pre></div><h3 id="swiper-region">swiper-region</h3>
+</code></pre></div><h2 id="swiper-region">swiper-region</h2>
 <p><code>swiper-thing-at-point</code> は賢くて親切なのですが、key-wordを入力して検索したいときには使いづらいです。
 自分の使い勝手に合わせてカスタマイズしました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">swiper-region</span> ()
@@ -966,7 +962,7 @@
   (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
 	  (<span style="color:#000">swiper</span>)
     (<span style="color:#000">swiper-thing-at-point</span>)))
-</code></pre></div><h3 id="counsel-ag-高速全文検索">[counsel-ag] 高速全文検索</h3>
+</code></pre></div><h2 id="counsel-ag-高速全文検索">[counsel-ag] 高速全文検索</h2>
 <p>2文字でも検索が発動するようにカスタマイズしています。<code>@takaxp</code> さんのTipsからパクってきました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-no-warnings</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">ad:counsel-ag</span> (<span style="color:#000">f</span> <span style="color:#a90d91">&amp;optional</span> <span style="color:#000">initial-input</span> <span style="color:#000">initial-directory</span> <span style="color:#000">extra-ag-args</span> <span style="color:#000">ag-prompt</span> <span style="color:#000">caller</span>)

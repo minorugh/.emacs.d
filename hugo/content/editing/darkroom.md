@@ -4,7 +4,7 @@ draft = false
 weight = 5
 +++
 
-### [darkroom-mode.el] 執筆モード
+## [darkroom-mode.el] 執筆モード
 🔗 [joaotavora/darkroom: Simple distraction-free editing.](https://github.com/joaotavora/darkroom)
 
 画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。

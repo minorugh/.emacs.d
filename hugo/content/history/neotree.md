@@ -2,7 +2,7 @@
 title = "9.7. neotree"
 draft = false
 +++
-### [neotree.el] Emacs 上でディレクトリツリーを表示させる
+## [neotree.el] Emacs 上でディレクトリツリーを表示させる
 
 🔗 [jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.](https://github.com/jaypei/emacs-neotree) 
 

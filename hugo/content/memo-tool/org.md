@@ -2,7 +2,7 @@
 title = "11.2. org"
 draft = false
 +++
-### [org-mode] ごくシンプルに使う設定 
+## [org-mode] ごくシンプルに使う設定 
 
 メモ書きは、`howm`メインなのですが、自動タグ挿入を兼ねてメニュー代わりに `org-capture` を利用しています。
 

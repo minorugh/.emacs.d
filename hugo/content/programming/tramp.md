@@ -3,7 +3,7 @@ title = "10.8. counsel-tramp"
 draft = false
 weight = 8
 +++
-### [counsel-tramp.el] 
+## [counsel-tramp.el] 
 🔗 [masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.](https://github.com/masasam/emacs-counsel-tramp) 
 
 管理している俳句サイトのれたるサーバーを除くのに `counsel-tramp` を使っています。

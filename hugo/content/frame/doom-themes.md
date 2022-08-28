@@ -2,7 +2,7 @@
 title = "5.6. doom-thmes"
 draft = false
 +++
-### [doom-thems.el] テーマ
+## [doom-thems.el] テーマ
 🔗 [doomemacs/themes: Doom Emacs' Theme Pack.](https://github.com/doomemacs/themes) 
 
 `doom-themes` には、わんさかと`theme` ファイルがパックされています。自分は、`doom-dracula` を愛用しています。
@@ -19,7 +19,7 @@ draft = false
   (doom-themes-org-config))
 ```
 
-### テーマを切り替えて使う
+## テーマを切り替えて使う
 作業用途によってテーマを変える設定です。
 いまは使ってません。
 

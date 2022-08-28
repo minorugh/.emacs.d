@@ -2,7 +2,7 @@
 title = "3.5. expand-region"
 draft = false
 +++
-### [expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる
+## [expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる
 🔗 [magnars/expand-region.el: Expand region increases the selected region.](https://github.com/magnars/expand-region.el)
 
 `expand-region.el`は、カーソル位置を起点として選択範囲を広げてくれます。

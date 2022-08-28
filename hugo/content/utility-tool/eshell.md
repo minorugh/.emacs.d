@@ -2,7 +2,7 @@
 title = "12.8. eshell"
 draft = false
 +++
-### eshell を使う
+## eshell を使う
 `eshell` はEmacs上で使えるビルトインのターミナルエミュレータートです。
 
 現在のバッファのディレクトリをカレントとしてeshell を起動するようにしています。

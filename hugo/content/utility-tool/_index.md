@@ -8,7 +8,7 @@ disableToc = true
 
 自作のユーティリティ関数を集めてここに載せている
 
-### # INDEX
+## # INDEX
 
 [auto-delete-file]({{< relref "auto-delete" >}})
 : 空になったファイルを自動的に削除する

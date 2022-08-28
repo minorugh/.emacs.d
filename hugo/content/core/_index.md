@@ -9,7 +9,7 @@ disableToc = true
 Emacs の基本動作に関わる部分をここでは設定している
 
 
-### # INDEX
+## # INDEX
 
 [Language / Encode]({{< relref "encode" >}})
 : 言語と文字コードの設定

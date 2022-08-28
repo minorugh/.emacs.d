@@ -2,7 +2,7 @@
 title = "12.6. restart-emacs"
 draft = false
 +++
-### [rstert-emacs.el] Emacsを再起動させる
+## [rstert-emacs.el] Emacsを再起動させる
 🔗 [iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.](https://github.com/iqbalansari/restart-emacs) 
 
 `restart-emacs` は、Emacsを再起動させるコマンドです。

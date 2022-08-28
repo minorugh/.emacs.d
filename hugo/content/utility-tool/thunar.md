@@ -2,7 +2,7 @@
 title = "12.5. open thunar"
 draft = false
 +++
-### Thunarを Emacsから呼び出す
+## Thunarを Emacsから呼び出す
 
 Emacsで開いている `buffer` の`current-dir` で `Debian` の `Thuner` を開きます。
 

@@ -2,7 +2,7 @@
 title = "12.2. emacs-lok-mode"
 draft = false
 +++
-### Scratch バッファーを消さない
+## Scratch バッファーを消さない
 難しい関数を設定せずともビルトインコマンドで簡単に実現できます。
 
 ```elisp

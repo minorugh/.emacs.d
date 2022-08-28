@@ -2,7 +2,7 @@
 title = "5.1. dimmer-mode"
 draft = false
 +++
-### [dimmer.el] 現在のバッファ以外の輝度を落とす
+## [dimmer.el] 現在のバッファ以外の輝度を落とす
 🔗 [gonewest818/dimmer.el: Visually highlight the selected buffer.](https://github.com/gonewest818/dimmer.el) 
 
 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
@@ -35,7 +35,7 @@ ON/OFF できるのが快適です。
 	  (dimmer-process-all))))
 ```
 
-### 画面分割と連携させる
+## 画面分割と連携させる
 
 `dimmer-mode` を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 

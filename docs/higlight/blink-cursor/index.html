@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:50 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>4.3. blink-cursor :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,11 +870,7 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#カーソルの点滅を制御">カーソルの点滅を制御</a></li>
-      </ul>
-    </li>
+    <li><a href="#カーソルの点滅を制御">カーソルの点滅を制御</a></li>
   </ul>
 </nav>
       </div>
@@ -894,7 +890,7 @@
     
     
     
-<h3 id="カーソルの点滅を制御">カーソルの点滅を制御</h3>
+<h2 id="カーソルの点滅を制御">カーソルの点滅を制御</h2>
 <p>ビルトインの <code>blink-cursor.el</code> を設定してカーソルの点滅を制御します。</p>
 <p>以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-blinks</span> <span style="color:#1c01ce">0</span>)

@@ -2,7 +2,7 @@
 title = "4.9. whitespace"
 draft = false
 +++
-### [whitespace.el] 全角スペースを強調表示する
+## [whitespace.el] 全角スペースを強調表示する
 🔗 [emacs/whitespace.el: visualize blanks (TAB, (HARD) SPACE and NEWLINE).](https://github.com/emacs-mirror/emacs/tree/master/lisp) 
 
 `show-trailing-whitespace` は、便利だけれど`text-mode`などでは多少うざいときもあるので `prog-mode-hook` で使っている。

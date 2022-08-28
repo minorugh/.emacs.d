@@ -3,7 +3,7 @@ title = "6.7. yasunippets"
 draft = false
 weight = 7
 +++
-### [yasnippets.el] テンプレート システム
+## [yasnippets.el] テンプレート システム
 🔗 [joaotavora/yasnippet: Template system for Emacs.](https://github.com/joaotavora/yasnippet) 
 
 `yasnippet`は、Emacsのテンプレートシステムです。省略形を入力すると、それが関数テンプレートに自動的に展開されます。

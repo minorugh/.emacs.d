@@ -3,7 +3,7 @@ title = "10.10. open-junk-file"
 draft = false
 weight = 10
 +++
-### [open-junk-file.el] 使い捨てファイルを書く、開く
+## [open-junk-file.el] 使い捨てファイルを書く、開く
 🔗 [rubikitch/open-junk-file: Write a disposable file.](https://github.com/rubikitch/open-junk-file) 
 
 ファイルは howmフォルダー `~/Dropbox/howm/junk/` に保存します。

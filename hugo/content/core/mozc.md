@@ -6,7 +6,7 @@ Debianでの日本語入力環境構築が完了していることが前提で�
 * [Debian系の日本語入力をMozcにする](https://cloud-work.net/linux/fcitx-mozc/) 
 
 
-### Mozcサーバーをインストール
+## Mozcサーバーをインストール
 EmacsからMozcを使えるようにするには、`mozc_emacs_helper` をインストールする必要があります。
 OSによって手法が異なりますが、Linuxの場合は簡単です。
 
@@ -15,7 +15,7 @@ $ sudo apt install emacs-mozc
 ```
 `/user/bin/` に `mozc_emacs_helper` がインストールされていたらOKです。 
 
-### インライン入力を無効にする
+## インライン入力を無効にする
 デフォルトは`C-\` で `emacs-mozc` が起動しますが、
 Emacsでも `<hiragana-katakana>` でON/OFFをしたいので、Emacsのインライン入力を無効にします。
 
@@ -29,7 +29,7 @@ Emacs*useXIM: false
 
 これで、`<hiragana-katakana>` を `toggle-input-method` に割り当てることができます。
 
-### [mozc.el] Mozcサーバーを使って日本語テキストを入力
+## [mozc.el] Mozcサーバーを使って日本語テキストを入力
 🔗 [google/mozc.el: Input Japanese text using Mozc server.](https://github.com/google/mozc/blob/master/src/unix/emacs/mozc.el)
 
 句読点などは、自動的に確定させるように `mozc-insert-str` を定義しました。
@@ -52,7 +52,7 @@ Emacs*useXIM: false
 	(insert str)))
 ```
 
-### [mozc-cursor-color.el] カーソルの色を変える
+## [mozc-cursor-color.el] カーソルの色を変える
 🔗 [iRi-E/mozc-el-extensions: ](https://github.com/iRi-E/mozc-el-extensions) 
 
 `direct`, `read-only`, `hiragana` の3通りの色を簡単に変更できます。
@@ -67,7 +67,7 @@ Emacs*useXIM: false
           (hiragana . "#ff5555"))))
 ```
 
-### [mozc-cand-posframe.el] 変換候補をposframe表示 
+## [mozc-cand-posframe.el] 変換候補をposframe表示 
 🔗 [akirak/mozc-posframe: Posframe frontend for mozc.el](https://github.com/akirak/mozc-posframe) 
 
 `mozc.el` の変換候補を表示させる `posframe` インターフェースです。
@@ -84,7 +84,7 @@ Emacs*useXIM: false
   (leaf posframe :ensure t))
 ```
 
-### Emacsから単語登録する
+## Emacsから単語登録する
 文章編集画面から [`mozc-tool`](https://www.mk-mode.com/blog/2017/06/27/linux-mozc-tool-command/) を起動して単語登録できるようにしています。
 
 ```elisp
@@ -105,7 +105,7 @@ Emacs*useXIM: false
 	(delete-other-windows)))
 ```
 
-### Mozc 辞書の共有
+## Mozc 辞書の共有
 辞書ファイルをDropboxなどのクラウドに置くことで複数のマシンでの共有も可能です。
 
 手順は簡単です。
@@ -125,7 +125,7 @@ mozc_copy:
   ln -vsfn ~/Dropbox/mozc/.mozc ~/.mozc
 ```
 
-### 辞書共有の課題
+## 辞書共有の課題
 Dropboxの辞書ファイルを複数端末から同時アクセスすると、複製（競合コピー）がいっぱい作られるという問題があります。
 
 Google Driveは大丈夫という情報もありますが試せてません。

@@ -2,7 +2,7 @@
 title = "5.2. scrool-other-window"
 draft = false
 +++
-### deactiveなwindowをスクロールさせる
+## deactiveなwindowをスクロールさせる
 
 `scrool-other-window` は、`deactive` なwindowをスクロールさせるためのキーバインド設定です。
 

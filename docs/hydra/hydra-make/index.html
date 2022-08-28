@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T13:01:50 JST">
+<meta name="revised" content="2022-08-28T17:50:36 JST">
 <title>8.2. hydra-make :: minoru&#39;s Emacs Configuration</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -870,12 +870,8 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#hydra-for-make-command">Hydra for make command</a></li>
-        <li><a href="#make-command-functions">make command functions</a></li>
-      </ul>
-    </li>
+    <li><a href="#hydra-for-make-command">Hydra for make command</a></li>
+    <li><a href="#make-command-functions">make command functions</a></li>
   </ul>
 </nav>
       </div>
@@ -895,7 +891,7 @@
     
     
     
-<h3 id="hydra-for-make-command">Hydra for make command</h3>
+<h2 id="hydra-for-make-command">Hydra for make command</h2>
 <p>🔗 <a href="http://objectclub.jp/community/memorial/homepage3.nifty.com/masarl/article/nmake.html">自動化のための nmake 入門講座: 石井勝</a></p>
 <p>上記記事を読んで自分革命がありました。</p>
 <ol>
@@ -933,7 +929,7 @@
 		   (<span style="color:#000">delete-other-windows</span>)
 		   (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
 		  (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>)))))
-</code></pre></div><h3 id="make-command-functions">make command functions</h3>
+</code></pre></div><h2 id="make-command-functions">make command functions</h2>
 <p>必要な <code>make</code>実行コマンドを定義します。</p>
 <p>例えば、詳細に <code>commit message</code> を残さなくてもいい Gitリポジトリは、<code>magit</code> は使わずに <code>make</code> で自動コミットします。
 <code>make git</code> で実行されます。</p>

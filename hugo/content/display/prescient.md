@@ -2,7 +2,7 @@
 title = "7.5. prescient"
 draft = false
 +++
-### [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company）
+## [prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company）
 🔗 [radian-software/prescient.el: Simple but effective sorting and filtering for Emacs.](https://github.com/radian-software/prescient.el) 
 
 `prescient.el` は、`ivy` や `company` などのパッケージを使用したときに表示される候補のリストをソートおよびフィルタリングするライブラリです。

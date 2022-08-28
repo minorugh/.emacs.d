@@ -7,7 +7,7 @@ disableToc = true
 +++
 カーソル移動に関する設定です。
 
-### # INDEX
+## # INDEX
 
 [sequential-command]({{< relref "sequential-command" >}})
 : 標準の `C-a` / `C-e` を拡張

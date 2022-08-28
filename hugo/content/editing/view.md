@@ -3,7 +3,7 @@ title = "6.2. veiw-mode"
 draft = false
 weight = 2 
 +++
-### [view-mode] ファイル閲覧モード（標準機能）
+## [view-mode] ファイル閲覧モード（標準機能）
 [view-mode](https://www.emacswiki.org/emacs/ViewMode) はビルトインの機能です。
 
 特定の拡張子に対して常に `view-mode` で開きたいときやgzされた `elisp`ソースを見るときに使います。
@@ -78,7 +78,7 @@ weight = 2
 	  (view-mode 0))))
 ```
 
-### [viewer.el] モードラインの色を変える
+## [viewer.el] モードラインの色を変える
 🔗 [rubikitch/viewer: Emacs view-mode extension.](https://github.com/rubikitch/viewer) 
 
 モードラインの色を変えたいときは `viewer.el`を使うと設定が簡単です。
@@ -92,7 +92,7 @@ weight = 2
 	        (viewer-modeline-color-unwritable . "#2F6828")))
 ```
 
-### カスタマイズコマンド
+## カスタマイズコマンド
 `view-mode` からでも簡単な編集ができるように `vim like` なコマンドをいくつか作りました。
 
 ```elisp

@@ -2,7 +2,7 @@
 title = "7.7. imenu-list"
 draft = false
 +++
-### [imenu-list.el] サイドバー的にファイル内容の目次要素を表示
+## [imenu-list.el] サイドバー的にファイル内容の目次要素を表示
 🔗 [bmag/imenu-list: Emacs plugin to show the current buffer's imenu entries in a separate buffer.](https://github.com/bmag/imenu-list) 
 
 `imenu-list` は、`imenu` の各エントリを `*Ilist*` バッファで一覧します。

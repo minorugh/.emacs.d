@@ -3,7 +3,7 @@ title = "11.1. howm"
 draft = false
 +++
 
-### [howm.el] お手軽メモ環境
+## [howm.el] お手軽メモ環境
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
 `howm-menu` は使わないので `howm-list-all` を初期画面として使っています。

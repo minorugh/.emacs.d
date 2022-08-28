@@ -2,7 +2,7 @@
 title = "7.3. line-spacing"
 draft = false
 +++
-### [my:line-spacing] 行間を制御する
+## [my:line-spacing] 行間を制御する
 
 `line-spacing` は、行間を制御する変数ですが、バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
 

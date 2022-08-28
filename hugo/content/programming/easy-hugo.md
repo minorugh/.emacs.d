@@ -4,7 +4,7 @@ draft = false
 weight = 9
 +++
 
-### [eagy-hugo.el] マルチブログ管理
+## [eagy-hugo.el] マルチブログ管理
 [masasam/emacs-easy-hugo: Emacs major mode for managing hugo.](https://github.com/masasam/emacs-easy-hugo) 
 
 Hugoで作成されたブログを書くための Emacs メジャー モードです。

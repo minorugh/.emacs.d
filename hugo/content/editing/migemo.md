@@ -4,7 +4,7 @@ draft = false
 weight = 11
 +++
 
-### [migemo.el] ローマ字のまま日本語をインクリメンタル検索可能にする。
+## [migemo.el] ローマ字のまま日本語をインクリメンタル検索可能にする。
 🔗 [emacs-jp/migemo: emacs migemo client.](https://github.com/emacs-jp/migemo) 
 
 migemo は元々 Ruby で書かれていたようですが，最近の Ruby では動かないので C 言語で再実装された cmigemo を使うのが一般的のよう。
