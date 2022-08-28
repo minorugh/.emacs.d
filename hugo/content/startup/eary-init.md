@@ -66,11 +66,8 @@ Emacs27では、`package-initialize` が 2回実行されます。
 		  (lambda ()
 			(setq inhibit-redisplay nil)
 			(setq inhibit-message nil)
-			(redisplay)
-			(set-frame-parameter nil 'fullscreen 'fullboth)))
+			(redisplay)))
 ```
-初期化後にフルスクリーンにしているのは、
-うっかりタイトルバーの閉じるをクリックする悪癖を直すための対策です(^^)
 
 ## 起動直後の背景色をテーマと合わせる
 Emacsが設定を読み込む初期段階の背景色は白です。
@@ -89,7 +86,6 @@ GUI Emacsの常駐化は、ハードルの高い課題なので疑似環境と�
 
 * 最小化で自動起動させる
 * `C-x C-c` で閉じれないようにする→他の用途に置き換えます
-* フレームの閉じるボタンを隠す→常にフルスクリーンで使う
 * Emacsを閉じたいときは、最小化（suspend-frame）する
 
 Emacsは、起動オプションに `--iconic` を付すことで最小化起動します。
