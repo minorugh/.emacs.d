@@ -16,6 +16,7 @@
 		  ("<return>" . easy-hugo-view)
 		  ("o" . easy-hugo-open-basedir)
 		  ("r" . easy-hugo-rename)
+		  ("v" . my:github-preview)
 		  ("e" . my:edit-easy-hugo)))
   :config
   ;; Sort-publishday on startup
@@ -32,35 +33,35 @@
   ;; Bloglist
   (setq easy-hugo-bloglist
 		'(;; blog2 setting
-		  ((easy-hugo-basedir . "~/Dropbox/GH/gg/")
-		   (easy-hugo-url . "https://gg.gospel-haiku.com")
-		   (easy-hugo-sshdomain . "xsrv")
-		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/gg/"))
-		  ;; blog3 setting
 		  ((easy-hugo-basedir . "~/src/github.com/minorugh/.emacs.d/hugo/")
 		   (easy-hugo-url . "https://minorugh.github.io/.emacs.d")
 		   (easy-hugo-postdir . "content/startup"))
 		  ;; blog3 setting
+		  ((easy-hugo-basedir . "~/Dropbox/GH/gg/")
+		   (easy-hugo-url . "https://gg.gospel-haiku.com")
+		   (easy-hugo-sshdomain . "xsrv")
+		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/gg/"))
+		  ;; blog4 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/blog/")
 		   (easy-hugo-url . "https://blog.gospel-haiku.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/blog/"))
-		  ;; blog4 setting
+		  ;; blog5 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/es/")
 		   (easy-hugo-url . "https://es.gospel-haiku.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/es/"))
-		  ;; blog5 setting
+		  ;; blog6 setting
 		  ((easy-hugo-basedir . "~/Dropbox/minorugh/bible/")
 		   (easy-hugo-url . "https://bible.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/minorugh.com/public_html/bible/"))
-		  ;; blog6 setting
+		  ;; blog7 setting
 		  ((easy-hugo-basedir . "~/Dropbox/minorugh/tube/")
 		   (easy-hugo-url . "https://tube.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/minorugh.com/public_html/tube/"))
-		  ;; blog7 setting
+		  ;; blog8 setting
 		  ((easy-hugo-basedir . "~/Dropbox/minorugh/ryo/")
 		   (easy-hugo-url . "https://ryo.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
@@ -70,14 +71,20 @@
   (setq easy-hugo-help-line 4
 		easy-hugo-help "
   n .. New blog post    r .. Rename file     p .. Preview          g .. Refresh
-  d .. Delete post      a .. Search blog ag  P .. Publish clever   e .. Edit easy-hugo
+  d .. Delete post      a .. Search blog ag  P .. Publish clever   o .. Open base dir
   c .. Open config      s .. Sort time       < .. Previous blog    > .. Next bloge
-  N .. No help [tab]    - .. Prev postdir    + .. Next postdir     o .. Open base dir
+  N .. No help [tab]    ± .. Change postdir  G .. GitHub deploy    v .. GitHub preview
 ")
   :preface
   (leaf popup :ensure t)
   (leaf request	:ensure t
 	:custom (request-storage-directory . "~/.emacs.d/tmp/request"))
+
+  (defun my:github-preview ()
+	"Edit setting file for 'easy-hugo'."
+	(interactive)
+    (setq default-directory easy-hugo-basedir)
+	(compile "make preview"))
 
   (defun my:edit-easy-hugo ()
 	"Edit setting file for 'easy-hugo'."
