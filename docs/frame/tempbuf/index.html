@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T21:16:58 JST">
+<meta name="revised" content="2022-08-28T21:22:15 JST">
 <title>5.4. tempbuf :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -901,15 +901,13 @@
 <li><code>dired buffer</code> /<code>magit-buffer</code> は、無条件に削除</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">tempbuf</span>
-  <span style="color:#a90d91">:el-get</span> <span style="color:#000">minorugh/tempbuf</span>
+  <span style="color:#a90d91">:el-get</span> (<span style="color:#000">tempbuf</span> <span style="color:#a90d91">:url</span> <span style="color:#c41a16">&#34;http://www.emacswiki.org/emacs/download/tempbuf.el&#34;</span>)
   <span style="color:#a90d91">:hook</span> ((<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:find-file-tempbuf-hook</span>)
 		 (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-tempbuf-mode</span>)
 		 (<span style="color:#000">magit-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-tempbuf-mode</span>) )
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">tempbuf-kill-message</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+			(<span style="color:#000">my:tempbuf-ignore-files</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span>))
   <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">my:tempbuf-ignore-files</span>
-		<span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span>
-          <span style="color:#c41a16">&#34;~/Dropbox/org/capture.org&#34;</span>))
-
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:find-file-tempbuf-hook</span> ()
 	(<span style="color:#a90d91">let</span> ((<span style="color:#000">ignore-file-names</span> (<span style="color:#000">mapcar</span> <span style="color:#c41a16">&#39;expand-file-name</span> <span style="color:#000">my:tempbuf-ignore-files</span>)))
       (<span style="color:#a90d91">unless</span> (<span style="color:#000">member</span> (<span style="color:#000">buffer-file-name</span>) <span style="color:#000">ignore-file-names</span>)
