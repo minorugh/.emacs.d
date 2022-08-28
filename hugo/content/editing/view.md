@@ -92,7 +92,7 @@ weight = 2
 	        (viewer-modeline-color-unwritable . "#2F6828")))
 ```
 
-## カスタマイズコマンド
+## VIMライクにする
 `view-mode` からでも簡単な編集ができるように `vim like` なコマンドをいくつか作りました。
 
 ```elisp

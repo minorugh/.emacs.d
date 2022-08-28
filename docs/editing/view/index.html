@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-28T19:59:08 JST">
+<meta name="revised" content="2022-08-28T20:01:36 JST">
 <title>6.2. veiw-mode :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -872,7 +872,7 @@
   <ul>
     <li><a href="#view-mode-ファイル閲覧モード標準機能">[view-mode] ファイル閲覧モード（標準機能）</a></li>
     <li><a href="#viewerel-モードラインの色を変える">[viewer.el] モードラインの色を変える</a></li>
-    <li><a href="#カスタマイズコマンド">カスタマイズコマンド</a></li>
+    <li><a href="#vimライクにする">VIMライクにする</a></li>
   </ul>
 </nav>
       </div>
@@ -970,7 +970,7 @@
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">view-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">viewer-change-modeline-color-setup</span>)
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">viewer-modeline-color-view</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#852941&#34;</span>)
 	        (<span style="color:#000">viewer-modeline-color-unwritable</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;#2F6828&#34;</span>)))
-</code></pre></div><h2 id="カスタマイズコマンド">カスタマイズコマンド</h2>
+</code></pre></div><h2 id="vimライクにする">VIMライクにする</h2>
 <p><code>view-mode</code> からでも簡単な編集ができるように <code>vim like</code> なコマンドをいくつか作りました。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;view</span>
   <span style="color:#177500">;; save-buffer no message</span>
