@@ -207,7 +207,7 @@
 	"title": "開発サポート",
 	"tags": [],
 	"description": "",
-	"content": "ここでは開発ワークをサポートしてくれるツールの設定をまとめている。\n# INDEX  function key ファンクションキーに便利キーバインド を設定 gist Gistインターフェイス flymake 構文エラー表示 quickrun お手軽ビルド環境を提供 magit Gitクライアント git-timemachine ファイルの履歴バージョンをナビケート browse-at-point バッファーからgithubのリンクを瞬時に開く counsel-tramp counsel でtrampのインターフェースを提供 easy-hugo hugoで構築するマルチブログの管理を便利にしてくれる open-junk-file 実験的なショートコードをクイックに書いて保存する  "
+	"content": "ここでは開発ワークをサポートしてくれるツールの設定をまとめている。\n# INDEX  function key ファンクションキーに便利キーバインド を設定 gist Gistインターフェイス flymake 構文エラー表示 quickrun お手軽ビルド環境を提供 magit Gitクライアント git-timemachine ファイルの履歴バージョンをナビケート browse-at-point バッファーからgithubのリンクを瞬時に開く counsel-tramp counsel でtrampのインターフェースを提供 easy-hugo hugoで構築するマルチブログの管理 open-junk-file ショートコードをクイックに書いて保存する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/migemo/",

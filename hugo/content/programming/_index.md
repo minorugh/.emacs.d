@@ -36,9 +36,9 @@ disableToc = true
 : counsel でtrampのインターフェースを提供
 
 [easy-hugo]({{< relref "easy-hugo" >}})
-: hugoで構築するマルチブログの管理を便利にしてくれる
+: hugoで構築するマルチブログの管理
 
 [open-junk-file]({{< relref "junk" >}})
-: 実験的なショートコードをクイックに書いて保存する
+: ショートコードをクイックに書いて保存する
 
 
