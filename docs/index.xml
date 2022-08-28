@@ -925,7 +925,7 @@ Emacs26で、待望のCで書かれた diplay-line-numbers-mode が実装され�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
-      <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy and company） 🔗 radian-software/prescient.el: Simple but effective sorting and filtering for Emacs.
+      <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy &amp;amp; company） 🔗 radian-software/prescient.el: Simple but effective sorting and filtering for Emacs.
 prescient.el は、ivy や company などのパッケージを使用したときに表示される候補のリストをソートおよびフィルタリングするライブラリです。
 ivy-prescient.el や company-prescient.el などの拡張パッケージは、さまざまなフレームワークで使用できるようにライブラリを適合させます。
 コマンド履歴を保存していて、コマンドのイニシャル入力も可能にします。例えば counsel-M-x で cc と入力すると company-compile が真っ先にヒットします。これなしではやっていけない体質になりました。
