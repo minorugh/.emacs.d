@@ -13,13 +13,10 @@
    (:hint nil :exit t)
    "
    Quick Menu
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------------------
-  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rc  _._files   howm:_@__,_   _m_d:_p_view   _z_illa   twmode_1_._2_
-  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg  _<home>_   _c_ompile^^   make:_k_._g_   _a_g:🐾   s_u_do-edit^^
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------
+  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rc  _._files   howm:_@__,_   _m_d:_p_view   _z_illa
+  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg  _<home>_   _c_ompile^^   make:_k_._g_   _a_g:🐾
 "
-   ("1" twit-1)
-   ("2" twit-2)
-   ("u" sudo-edit)
    ("a" counsel-ag)
    ("o" my:org-dir)
    ("t" counsel-tramp)
@@ -42,7 +39,7 @@
    ("c" hydra-make/body)
    ("-" my:github-show)
    ("@" howm-list-all)
-   ("," howm-remember)
+   ("," howm-create-memo)
    ("j" open-junk-file)
    ("J" open-last-junk-file)
    ("k" my:make-k)
@@ -69,9 +66,9 @@
    (:hint nil :exit t)
    "
    Work Menu
-  ------^^^^^^^^^^^^^^^^^^^^^^^^---------------------------------------------------------------------------
-  _d_:日記   _m_:毎日   _w_:毎週   _k_:兼題^^   _t_:定例   _s_:吟行^^   近詠:_n_   創作:_[_._]_   keep:_;_
-  _a_:合評   _e_:hugo   _b_ackup   _g_ist:_L_   pass_x_c   repo:_@_^^   view:_:_   _p_rint:_r_e   Pages_._
+  ------^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------
+  _d_:日記   _m_:毎日   _w_:毎週   _k_:兼題^^   _t_:定例   _s_:吟行^^   近詠:_n_   創作:_[_._]_   keep_;_   delete-this_/_
+  _a_:合評   _e_:hugo   _b_ackup   _g_ist:_L_   pass_x_c   _@_:my^^   view:_:_   _p_rint:_r_e   _h_   minorugh_._com
 "
    ("p" ps-print-buffer)
    ("r" ps-print-region)
@@ -86,7 +83,7 @@
    ("g" gist-region-or-buffer)
    ("L" lepton)
    ("j" my:junk-dir)
-   ("i" iedit-mode)
+   ("h" chromium-tegaki)
    ("l" open-last-junk-file)
    ("t" my:teirei)
    ("T" my:teirei-new-post)
@@ -98,7 +95,7 @@
    ("m" my:d_kukai)
    ("w" my:w_kukai)
    ("k" my:m_kukai)
-   ("/" livedown-kill)
+   ("/" my:delete-this-file)
    ("v" markdown-preview)
    ("f" flymake-show-diagnostics-buffer)
    ("x" keepassxc)
@@ -106,11 +103,10 @@
    ("_" my:delete-other-windows)
    ("]" my:haiku-note)
    ("[" my:haiku-note-post)
+   ("." my:minorugh-dir)
    (";" (browse-url "https://keep.google.com/u/0/"))
    (":" view-mode)
    ("z" select-mozc-tool)
-   ("h" my:github.io-dir)
-   ("." my:emacs.d-dir)
    ("<henkan>" hydra-quick/body)
    ("<muhenkan>" nil))
   :init

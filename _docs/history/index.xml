@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>履歴 / ファイル管理 on minoru&#39;s Emacs Config</title>
+    <link>https://minorugh.github.io/.emacs.d/history/</link>
+    <description>Recent content in 履歴 / ファイル管理 on minoru&#39;s Emacs Config</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:58:29 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/history/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>9.1. auto-save-buffer</title>
+      <link>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
+      <description>[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.
+auto-save-buffers-enhanced.el は、快適かつ安全な自動保存機能を提供します。
+デフォルトでは、0.5秒間入力がなければ自動で保存されます。
+(setq auto-save-buffers-enhanced-interval 0.5) Tramp でファイル編集しているときに固まることがあるので除外設定しています。
+;; auto-save-buffers (leaf auto-save-buffers-enhanced :ensure t :custom `((auto-save-buffers-enhanced-exclude-regexps . &amp;#39;(&amp;#34;^/ssh:&amp;#34; &amp;#34;^/scp:&amp;#34; &amp;#34;/sudo:&amp;#34;)) (auto-save-buffers-enhanced-quiet-save-p . t) ;; Disable to prevent freeze in tramp-mode (auto-save-buffers-enhanced-include-only-checkout-path . nil)) :config (auto-save-buffers-enhanced t)) </description>
+    </item>
+    
+    <item>
+      <title>9.2. undo-fu</title>
+      <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
+      <description>8.3. [undo-fu.el] シンプルな undo/redo を提供 🔗 emacsmirror/undo-fu: Undo helper with redo.
+undo-fu は、シンプルながら安定した undo/redo 機能を提供してくれるので重宝しています。
+もっといろいろできる undo-tree を使っていたけど、何気に不安定だったので乗り換えました。
+(leaf undo-fu :ensure t :bind ((&amp;#34;C-_&amp;#34; . undo-fu-only-undo) (&amp;#34;C-/&amp;#34; . undo-fu-only-redo))) </description>
+    </item>
+    
+    <item>
+      <title>9.3. recentf</title>
+      <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
+      <description>開いたファイルの履歴を保存 複数端末で設定ファイルを共有している場合、auto-cleanup を never にしておかないと大変なことになる。
+;; recentf (leaf recentf :custom `((recentf-auto-cleanup . &amp;#39;never) (recentf-exclude . &amp;#39;(&amp;#34;\\.howm-keys&amp;#34; &amp;#34;Dropbox/backup&amp;#34; &amp;#34;.emacs.d/tmp/&amp;#34; &amp;#34;.emacs.d/elpa/&amp;#34; &amp;#34;/scp:&amp;#34;)))) </description>
+    </item>
+    
+    <item>
+      <title>9.4. savehist</title>
+      <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
+      <description>ミニバッファの履歴などを保存してくれる機能 プログラミングを生業にしている人にはとても重要なものらしい。
+;; Don&amp;#39;t clear kill-ring when restart emacs (savehist-additional-variables . &amp;#39;(kill-ring)) </description>
+    </item>
+    
+    <item>
+      <title>9.5. hist-files</title>
+      <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
+      <description>Emacsのいろいろな機能の履歴ファイルは、デフォルトではみな ~/.emacs.d/ に保存される。
+日毎、Emacsを育てている私は、ここに雑多な履歴ファイルがあると見づらいので、~/.emace.d/tmp/ に保存場所を変更している。
+;; change-default-file-location (leaf change-default-file-location :custom `((recentf-save-file . &amp;#34;~/.emacs.d/tmp/recentf&amp;#34;) (save-place-file . &amp;#34;~/.emacs.d/tmp/places&amp;#34;) (savehist-file . &amp;#34;~/.emacs.d/tmp/history&amp;#34;) (url-configuration-directory . &amp;#34;~/.emacs.d/tmp/url&amp;#34;) (bookmark-file . &amp;#34;~/.emacs.d/tmp/bookmarks&amp;#34;))) </description>
+    </item>
+    
+    <item>
+      <title>9.6. dired</title>
+      <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/dired/</guid>
+      <description>ファイルシステムのディレクトリを編集する機能 Emacs入門当初は、多機能な dired を追求してやまなかった。
+現在は使用頻度も減り、あれやこれやとカスタマイズした備忘録として残しています。
+最近の進化といえば、all-the-icons-dired.el で多少ビジアルになったくらい。
+(leaf dired :hook ((dired-mode-hook . dired-my-append-buffer-name-hint) (dired-mode-hook . (lambda () (load &amp;#34;dired-x&amp;#34;) (dired-omit-mode 1)))) :bind (:dired-mode-map (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . dired-up-alternate-directory) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;RET&amp;#34; . dired-open-in-accordance-with-situation) (&amp;#34;&amp;lt;&amp;#34; . beginning-of-buffer) (&amp;#34;&amp;gt;&amp;#34; . end-of-buffer) (&amp;#34;SPC&amp;#34; . my:dired-toggle-mark) (&amp;#34;C-g&amp;#34; . my:dired-unmark-all) (&amp;#34;f&amp;#34; . counsel-find-file) (&amp;#34;r&amp;#34; . wdired-change-to-wdired-mode) (&amp;#34;o&amp;#34; . dired-open-file) (&amp;#34;[&amp;#34; . dired-hide-details-mode) (&amp;#34;a&amp;#34; . toggle-dired-listing-switches) (&amp;#34;q&amp;#34; . dired-dwim-quit-window) (&amp;#34;i&amp;#34; . call-sxiv) (&amp;#34;s&amp;#34; . sudo-edit) (&amp;#34;e&amp;#34; . gedit-open-dired) (&amp;#34;@&amp;#34; .</description>
+    </item>
+    
+    <item>
+      <title>9.7. neotree</title>
+      <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
+      <description>[neotree.el] Emacs 上でディレクトリツリーを表示させる 🔗 jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.
+最近は、Dired よりももっぱらこちらを愛用している。Rename, Delete などの簡単なコマンドも使えて便利。
+(leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) アイコンは all-the-icons より doom-themes の拡張設定のほうがシンプルで見やすい。
+;; doom-themes  (doom-themes-neotree-config) カスタマイズ設定 ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。
+(with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/function/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/gist/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/flymake/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/web-mode/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/</loc>
+    <lastmod>2022-08-29T05:50:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/quickrun/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yatex/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/magit/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/darkroom/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/ivy/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/browsepoint/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/yasnippets/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/tramp/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/company/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/key-chord/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/junk/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/programming/</loc>
+    <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/iedit/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/migemo/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/swiper-migemo/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/smartparens/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/selected/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/pangu/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/editing/fontawesome/</loc>
+    <lastmod>2022-08-29T05:53:26+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/del-no-contents/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/restart/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/open-sudo/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/utility-tool/translate/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/</loc>
+    <lastmod>2022-08-29T06:03:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/howm/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/org/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-menu/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</loc>
+    <lastmod>2022-08-29T05:59:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/undo-fu/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/recentf/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/savehist/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/hist-files/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/dired/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/history/neotree/</loc>
+    <lastmod>2022-08-29T05:58:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/font/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/hl-line/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/paren/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/rainbow/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/higlight/whitespace/</loc>
+    <lastmod>2022-08-29T05:57:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/dimmer/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/sprit-window/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/tempbuf/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/winner/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-themes/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</loc>
+    <lastmod>2022-08-29T05:55:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/which-key/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/all-the-icons/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/linespacing/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/display-number/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/prescient/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/calendar/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/imenu/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/display/diff-hl/</loc>
+    <lastmod>2022-08-29T05:52:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</loc>
+    <lastmod>2022-08-29T05:50:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</loc>
+    <lastmod>2022-08-29T05:50:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</loc>
+    <lastmod>2022-08-29T05:50:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/mark-command/</loc>
+    <lastmod>2022-08-29T05:50:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/cursor/expand-region/</loc>
+    <lastmod>2022-08-29T05:50:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/encode/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/mozc/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/server/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/exec-path-from-shell/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/uniquify/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/aggresive-indent/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/core/change-keybind/</loc>
+    <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/eary-init/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/speed-up/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/leaf/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/init-loader/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/test/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/startup/dashboard/</loc>
+    <lastmod>2022-08-29T05:45:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/tags/</loc>
+  </url>
+  
+</urlset>

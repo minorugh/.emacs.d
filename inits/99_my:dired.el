@@ -18,11 +18,11 @@
   (setq dired-listing-switches "-lgGhFA")
   (find-file "/"))
 
-(defun my:emacs.d-dir ()
-  "Open root dir."
+(defun my:minorugh-dir ()
+  "Open minorugh.com."
   (interactive)
   (setq dired-listing-switches "-lgGhFA")
-  (find-file "src/github.com/minorugh/emacs.d/"))
+  (find-file "~/Dropbox/minorugh.com/"))
 
 (defun my:github.io-dir ()
   "Open root dir."

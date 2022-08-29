@@ -148,12 +148,9 @@
   :hook ((find-file-hook . my:find-file-tempbuf-hook)
 		 (dired-mode-hook . turn-on-tempbuf-mode)
 		 (magit-mode-hook . turn-on-tempbuf-mode) )
+  :custom `((tempbuf-kill-message . nil)
+			(my:tempbuf-ignore-files . '("~/Dropbox/org/task.org")))
   :init
-  (setq tempbuf-kill-message nil)
-  (setq my:tempbuf-ignore-files
-		'("~/Dropbox/org/task.org"
-          "~/Dropbox/org/capture.org"))
-
   (defun my:find-file-tempbuf-hook ()
 	(let ((ignore-file-names (mapcar 'expand-file-name my:tempbuf-ignore-files)))
       (unless (member (buffer-file-name) ignore-file-names)
@@ -165,13 +162,6 @@
   :ensure t
   :bind (("C-_" . undo-fu-only-undo)
 		 ("C-/" . undo-fu-only-redo)))
-
-
-;; sudo-edit
-(leaf sudo-edit
-  :ensure t
-  ;; :after dired
-  :bind ("C-c s" . sudo-edit))
 
 
 ;; PS-printer

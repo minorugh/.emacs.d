@@ -36,8 +36,8 @@
 		dashboard-set-heading-icons t
 		dashboard-set-file-icons t
 		show-week-agenda-p t
-		dashboard-items '((recents  . 5)
-						  (agenda . 5)))
+		dashboard-items '((recents  . 8)))
+  ;; (agenda . 5)))
 
   ;; Set the footer
   (setq dashboard-footer-messages

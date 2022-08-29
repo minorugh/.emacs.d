@@ -10,6 +10,7 @@
   :bind	 (("<f3>" . thunar-open)
 		  ("<f4>" . terminal-open)
 		  ("<f8>" . toggle-menu-bar-mode-from-frame)
+		  ("C-x /" . my:delete-this-file)
 		  ("<muhenkan>" . minibuffer-keyboard-quit)
 		  ("C-c <left>" . winner-undo)
 		  ("C-c <right>" . winner-redo))
@@ -48,23 +49,23 @@
 
   ;; Automatically open root permission file with sudo
   ;; https://ameblo.jp/grennarthmurmand1976/entry-12151018656.html
-  ;; (defun file-root-p (filename)
-  ;; 	"Return t if file FILENAME created by root."
-  ;; 	(eq 0 (nth 2 (file-attributes filename))))
+  (defun file-root-p (filename)
+	"Return t if file FILENAME created by root."
+	(eq 0 (nth 2 (file-attributes filename))))
 
-  ;; (defadvice find-file (around my:find-file activate)
-  ;; 	"Open FILENAME using tramp's sudo method if it's root permission."
-  ;; 	(if (and (file-root-p (ad-get-arg 0))
-  ;; 			 (not (file-writable-p (ad-get-arg 0)))
-  ;; 			 (y-or-n-p (concat (ad-get-arg 0)
-  ;; 							   " is root permission. Open it as root? ")))
-  ;; 		(my:find-file-sudo (ad-get-arg 0))
-  ;; 	  ad-do-it))
+  (defadvice find-file (around my:find-file activate)
+	"Open FILENAME using tramp's sudo method if it's root permission."
+	(if (and (file-root-p (ad-get-arg 0))
+			 (not (file-writable-p (ad-get-arg 0)))
+			 (y-or-n-p (concat (ad-get-arg 0)
+							   " is root permission. Open it as root? ")))
+		(my:find-file-sudo (ad-get-arg 0))
+	  ad-do-it))
 
-  ;; (defun my:find-file-sudo (file)
-  ;; 	"Opens FILE with root privileges."
-  ;; 	(interactive "F")
-  ;; 	(set-buffer (find-file (concat "/sudo::" file))))
+  (defun my:find-file-sudo (file)
+	"Opens FILE with root privileges."
+	(interactive "F")
+	(set-buffer (find-file (concat "/sudo::" file))))
   )
 
 
