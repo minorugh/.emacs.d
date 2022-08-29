@@ -228,7 +228,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数など\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない\n emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる sudo-edit Root権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  "
+	"content": "自作のユーティリティ関数など\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する  scratchバッファーを決してKillさせない\n emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる open-with-sudo Sudo権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  1\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/swiper-migemo/",
@@ -308,11 +308,11 @@
 	"content": "[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.\nrestart-emacs は、Emacsを再起動させるコマンドです。\nC-u の数で再起動の方法を制御できます。\n M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs \u0026ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/",
-	"title": "12.7. sudo-edit",
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/open-sudo/",
+	"title": "12.7. open with sudo",
 	"tags": [],
 	"description": "",
-	"content": "[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.\nsudo-edit.elは、現在アクセスしているファイルをsudoで開きなおします。\n(leaf sudo-edit :ensure t :bind (\u0026#34;C-c s\u0026#34; . sudo-edit)) sudo-edit-find-file というコマンドもあるようなのでお好みで…\n"
+	"content": "ファイルをsudoで開き直す 🔗 Emacs でファイルをsudoで開き直す\n上記Tipsからのパクリです。 root所有なファイルを開いた時だけ、sudoで開き直すか聞いてきます。\n;; Automatically open root permission file with sudo (defun file-root-p (filename) \u0026#34;Return t if file FILENAME created by root.\u0026#34; (eq 0 (nth 2 (file-attributes filename)))) (defadvice find-file (around my:find-file activate) \u0026#34;Open FILENAME using tramp\u0026#39;s sudo method if it\u0026#39;s root permission.\u0026#34; (if (and (file-root-p (ad-get-arg 0)) (not (file-writable-p (ad-get-arg 0))) (y-or-n-p (concat (ad-get-arg 0) \u0026#34; is root permission. Open it as root? \u0026#34;))) (my:find-file-sudo (ad-get-arg 0)) ad-do-it)) (defun my:find-file-sudo (file) \u0026#34;Opens FILE with root privileges.\u0026#34; (interactive \u0026#34;F\u0026#34;) (set-buffer (find-file (concat \u0026#34;/sudo::\u0026#34; file)))) 以前は、MELPAにある下記パッケージを使っていました。\n nflath/sudo-edit: Utilities for opening files with sudo.  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/eshell/",

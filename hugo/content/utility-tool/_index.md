@@ -31,8 +31,8 @@ disableToc = true
 [restart-emacs]({{< relref "restart" >}})
 : Emacsを再起動させる
 
-[sudo-edit]({{< relref "sudo-edit" >}})
-: Root権限でファイルを開き直す
+[open-with-sudo]({{< relref "open-sudo" >}})
+: Sudo権限でファイルを開き直す
 
 [eshell]({{< relref "eshell" >}})
 : Emacs から使えるターミナルエミュレータ
@@ -40,3 +40,4 @@ disableToc = true
 [google-translate]({{< relref "translate" >}})
 : Google翻訳サービスを使用して文字列を翻訳
 
+1
