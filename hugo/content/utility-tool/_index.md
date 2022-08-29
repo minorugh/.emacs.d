@@ -38,4 +38,3 @@ disableToc = true
 [google-translate]({{< relref "translate" >}})
 : Google翻訳サービスを使用して文字列を翻訳
 
-1
