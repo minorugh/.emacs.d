@@ -1,11 +1,12 @@
 +++
 date = "2022-08-29T06:03:08+09:00"
-title = "12.1. auto-delete"
+title = "12.1. delete-no-contens"
 draft = false
 +++
 ## 空になったファイルを自動的に削除
-下記の設定をしておくと、`C-x h` で全選択して delete したあと `kill-buffer` することで自動的にファイルが削除されます。
+空になったファイルを `kill-buffer` することで自動的にファイルを削除します。
 
+なにげに便利なのですが、とりあえずファイル名だけつけて内容は後で…というようなシーンでは空行を入れておくなどしないと消えてしまいます。
 ```elisp
 (defun my:delete-file-if-no-contents ()
   "Automatic deletion for empty files (Valid in all modes)."
@@ -13,12 +14,13 @@ draft = false
 			 (= (point-min) (point-max)))
     (delete-file
      (buffer-file-name (current-buffer)))))
+
 (if (not (memq 'my:delete-file-if-no-contents after-save-hook))
     (setq after-save-hook
 		  (cons 'my:delete-file-if-no-contents after-save-hook)))
 ```
 
-## 開いているバッファーを閉じて当該ファイルを削除する
+## バッファーのファイルを強制的に削除
 危険なのであまりお薦めできませんが…
 
 安全のために確認するようにしてます。

@@ -327,13 +327,14 @@ Font-awesome の入力をcounsel で支援してくれる。
     </item>
     
     <item>
-      <title>12.1. auto-delete</title>
-      <link>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</link>
+      <title>12.1. delete-no-contens</title>
+      <link>https://minorugh.github.io/.emacs.d/utility-tool/del-no-contents/</link>
       <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</guid>
-      <description>空になったファイルを自動的に削除 下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されます。
-(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) 開いているバッファーを閉じて当該ファイルを削除する 危険なのであまりお薦めできませんが…
+      <guid>https://minorugh.github.io/.emacs.d/utility-tool/del-no-contents/</guid>
+      <description>空になったファイルを自動的に削除 空になったファイルを kill-buffer することで自動的にファイルを削除します。
+なにげに便利なのですが、とりあえずファイル名だけつけて内容は後で…というようなシーンでは空行を入れておくなどしないと消えてしまいます。
+(defun my:delete-file-if-no-contents () &amp;#34;Automatic deletion for empty files (Valid in all modes).&amp;#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq &amp;#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons &amp;#39;my:delete-file-if-no-contents after-save-hook))) バッファーのファイルを強制的に削除 危険なのであまりお薦めできませんが…
 安全のために確認するようにしてます。
 (defun my:delete-this-file () &amp;#34;Delete the current file, and kill the buffer.&amp;#34; (interactive) (unless (buffer-file-name) (error &amp;#34;No file is currently being edited&amp;#34;)) (when (yes-or-no-p (format &amp;#34;Really delete &amp;#39;%s&amp;#39;?&amp;#34; (file-name-nondirectory buffer-file-name))) (delete-file (buffer-file-name)) (kill-this-buffer))) </description>
     </item>

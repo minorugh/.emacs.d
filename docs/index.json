@@ -228,7 +228,7 @@
 	"title": "ユーティリティー関数",
 	"tags": [],
 	"description": "",
-	"content": "自作のユーティリティ関数など\n# INDEX  auto-delete-file 空になったファイルを自動的に削除する emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる open-with-sudo Sudo権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  1\n"
+	"content": "自作のユーティリティ関数など\n# INDEX  delete-no-contents 空になったファイルを自動的に削除する emacs-lock scratchバッファーを決してKillさせない ps-print Script printerで印刷する設定 open-gnome-terminal カレントデレクトリでLinuxのターミナルを開く open-thunar カレントデレクトリでLinuxのファイラーを開く restart-emacs Emacsを再起動させる open-with-sudo Sudo権限でファイルを開き直す eshell Emacs から使えるターミナルエミュレータ google-translate Google翻訳サービスを使用して文字列を翻訳  1\n"
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/swiper-migemo/",
@@ -266,11 +266,11 @@
 	"content": "[font-awesom.el] 絵文字フォント入力支援 🔗 krismolendyke/font-awesome.el: A simple library for using Font Awesome icons in Emacs.\nFont-awesome の入力をcounsel で支援してくれる。\n(leaf font-awesome :ensure t :bind (\u0026#34;s-f\u0026#34; . counsel-fontwesame)) "
 },
 {
-	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/",
-	"title": "12.1. auto-delete",
+	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/del-no-contents/",
+	"title": "12.1. delete-no-contens",
 	"tags": [],
 	"description": "",
-	"content": "空になったファイルを自動的に削除 下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されます。\n(defun my:delete-file-if-no-contents () \u0026#34;Automatic deletion for empty files (Valid in all modes).\u0026#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq \u0026#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons \u0026#39;my:delete-file-if-no-contents after-save-hook))) 開いているバッファーを閉じて当該ファイルを削除する 危険なのであまりお薦めできませんが…\n安全のために確認するようにしてます。\n(defun my:delete-this-file () \u0026#34;Delete the current file, and kill the buffer.\u0026#34; (interactive) (unless (buffer-file-name) (error \u0026#34;No file is currently being edited\u0026#34;)) (when (yes-or-no-p (format \u0026#34;Really delete \u0026#39;%s\u0026#39;?\u0026#34; (file-name-nondirectory buffer-file-name))) (delete-file (buffer-file-name)) (kill-this-buffer))) "
+	"content": "空になったファイルを自動的に削除 空になったファイルを kill-buffer することで自動的にファイルを削除します。\nなにげに便利なのですが、とりあえずファイル名だけつけて内容は後で…というようなシーンでは空行を入れておくなどしないと消えてしまいます。\n(defun my:delete-file-if-no-contents () \u0026#34;Automatic deletion for empty files (Valid in all modes).\u0026#34; (when (and (buffer-file-name (current-buffer)) (= (point-min) (point-max))) (delete-file (buffer-file-name (current-buffer))))) (if (not (memq \u0026#39;my:delete-file-if-no-contents after-save-hook)) (setq after-save-hook (cons \u0026#39;my:delete-file-if-no-contents after-save-hook))) バッファーのファイルを強制的に削除 危険なのであまりお薦めできませんが…\n安全のために確認するようにしてます。\n(defun my:delete-this-file () \u0026#34;Delete the current file, and kill the buffer.\u0026#34; (interactive) (unless (buffer-file-name) (error \u0026#34;No file is currently being edited\u0026#34;)) (when (yes-or-no-p (format \u0026#34;Really delete \u0026#39;%s\u0026#39;?\u0026#34; (file-name-nondirectory buffer-file-name))) (delete-file (buffer-file-name)) (kill-this-buffer))) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/",

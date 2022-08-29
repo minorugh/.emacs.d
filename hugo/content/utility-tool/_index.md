@@ -11,7 +11,7 @@ disableToc = true
 
 ## # INDEX
 
-[auto-delete-file]({{< relref "auto-delete" >}})
+[delete-no-contents]({{< relref "del-no-contents" >}})
 : 空になったファイルを自動的に削除する
 
 [emacs-lock]({{< relref "emacs-lock" >}})
