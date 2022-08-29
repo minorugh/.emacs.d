@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:48:41+09:00"
 title = "2.3. mozc"
-draft = false
 +++
 Debianでの日本語入力環境構築が完了していることが前提です。
 * [Debian系の日本語入力をMozcにする](https://cloud-work.net/linux/fcitx-mozc/) 

@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/cursor/</link>
     <description>Recent content in カーソル移動 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/cursor/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:50:55 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/cursor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3.1. sequential-command</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:50:55 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/sequential-command/</guid>
       <description>[sequential-command.el] バッファーの先頭と最終行への移動を簡単に 🔗 https://github.com/HKey/sequential-command
@@ -21,7 +22,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
     <item>
       <title>3.2. other-window-or-split</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:50:55 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/other-window-or-sprit/</guid>
       <description>画面分割時のカーソルの移動 other-window-or-split は、画面分割コマンド C-x 3 を拡張するもので、状況判断して画面移動の C-x o にもなります。
@@ -33,7 +34,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
     <item>
       <title>3.3. jump-brace</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:50:55 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/jump-brace/</guid>
       <description>括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
@@ -43,7 +44,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
     <item>
       <title>3.4. exchange-point-and-mark</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/mark-command/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:50:55 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/mark-command/</guid>
       <description>直前の編集ポイントと現在のポイントとを行き来する設定 my:exchange-point-and-mark は、直前の編集ポイントと現在のポイントとを行き来できる設定です。
@@ -53,7 +54,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
     <item>
       <title>3.5. expand-region</title>
       <link>https://minorugh.github.io/.emacs.d/cursor/expand-region/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:50:55 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/cursor/expand-region/</guid>
       <description>[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる 🔗 magnars/expand-region.el: Expand region increases the selected region.

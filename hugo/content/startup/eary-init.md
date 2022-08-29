@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "1.1. eary-init.el"
-draft = false
 +++
 ## 早期初期化ファイル
 🔗 [minorugh/.emacs.d/early-init.el](https://github.com/minorugh/.emacs.d/blob/main/early-init.el)

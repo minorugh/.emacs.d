@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "起動設定"
-draft = false
 pre = "<b>1. </b>"
 weight = 1
 disableToc = true

@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/hydra/</link>
     <description>Recent content in Hydra on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/hydra/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:59:34 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/hydra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>8.1. hydra-menu</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-menu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-menu/</guid>
       <description>hydra-menu は、いわば私の秘書のような役割です。
@@ -22,7 +23,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     <item>
       <title>8.2. hydra-make</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
       <description>Hydra for make command 🔗 自動化のための nmake 入門講座: 石井勝
@@ -34,7 +35,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     <item>
       <title>8.3. hydra-package</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</guid>
       <description>Hydra for package-urils MELPAの管理には Package-utils を使っています。 また、el-get にもいろいろとコマンドがあるようです。
@@ -45,7 +46,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     <item>
       <title>8.4. hydra-markdown</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
       <description>Hydra for markdown-mode メモ書きや執筆関係の下書きには、markdown-mode をメインにしています。
@@ -56,7 +57,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     <item>
       <title>8.5. hydra-view-mode</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</guid>
       <description>Hydra for view-mode: view-modeのヘルプ機能 view-mode の便利コマンド群、覚えてしまえばどうということはないのですが、認知も危ぶまれるような老骨なので、hydra でヘルプメニューを作りました。
@@ -67,7 +68,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     <item>
       <title>8.6. hydra-browse</title>
       <link>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</guid>
       <description>Hydra for brows-url お気に入りサイトをChromeで一発で開くために hydra でメニュー化しました。

@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/frame/</link>
     <description>Recent content in フレーム / ウインドウ制御 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:55:43 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5.1. dimmer-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
       <description>[dimmer.el] 現在のバッファ以外の輝度を落とす 🔗 gonewest818/dimmer.el: Visually highlight the selected buffer.
@@ -23,7 +24,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     <item>
       <title>5.2. scrool-other-window</title>
       <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
       <description>deactiveなwindowをスクロールさせる scrool-other-window は、deactive なwindowをスクロールさせるためのキーバインド設定です。
@@ -34,7 +35,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     <item>
       <title>5.3. cus-sprit-window</title>
       <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
       <description>デフォルトの画面分割コマンドをカスタマイズ dimmer-mode 連携のためにデフォルトのコマンドをカスタマイズします。
@@ -44,7 +45,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     <item>
       <title>5.4. tempbuf</title>
       <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
       <description>[tempbuf.el] 不要なバッファを自動的に kill 🔗 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background
@@ -57,7 +58,7 @@ tempbuf.el は不要になったと思われるバッファを自動的に kill 
     <item>
       <title>5.5. winner-mode</title>
       <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
       <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る ビルトインの winner.el を使います．
@@ -69,7 +70,7 @@ winner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィ�
     <item>
       <title>5.6. doom-thmes</title>
       <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
       <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
@@ -81,7 +82,7 @@ doom-themes には、わんさかとtheme ファイルがパックされてい�
     <item>
       <title>5.7. doom-modeline</title>
       <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
       <description>[doom-modeline.el] モードライン 🔗 seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.

@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:59:34+09:00"
 title = "Hydra"
 draft = false
 pre = "<b>8. </b>"

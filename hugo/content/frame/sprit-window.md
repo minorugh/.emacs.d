@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:55:43+09:00"
 title = "5.3. cus-sprit-window"
 draft = false
 +++

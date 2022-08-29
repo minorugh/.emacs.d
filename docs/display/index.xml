@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/display/</link>
     <description>Recent content in 表示サポート on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/display/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:52:08 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/display/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>7.1. which-key</title>
       <link>https://minorugh.github.io/.emacs.d/display/which-key/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/which-key/</guid>
       <description>[which-key.el] キーバインドの選択肢をポップアップする 🔗 justbur/emacs-which-key: Emacs package that displays available keybindings in popup.
@@ -20,7 +21,7 @@ guide-key.el の後発、ディスパッチャが見やすく直感的でとて�
     <item>
       <title>7.2. all-the-icons</title>
       <link>https://minorugh.github.io/.emacs.d/display/all-the-icons/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/all-the-icons/</guid>
       <description>[all-the-icons.el] アイコン表示を可能する 🔗 domtronn/all-the-icons.el: A utility package to collect various Icon Fonts and propertize them within Emacs.
@@ -35,7 +36,7 @@ Emacs27以降、MELPA版は白色にしか表示されないので、上記リ�
     <item>
       <title>7.3. line-spacing</title>
       <link>https://minorugh.github.io/.emacs.d/display/linespacing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/linespacing/</guid>
       <description>[my:line-spacing] 行間を制御する line-spacing は、行間を制御する変数ですが、バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。
@@ -48,7 +49,7 @@ Emacs27以降、MELPA版は白色にしか表示されないので、上記リ�
     <item>
       <title>7.4. display-line-numbers</title>
       <link>https://minorugh.github.io/.emacs.d/display/display-number/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/display-number/</guid>
       <description>[display-line-number] 行番号を表示 Emacsで左側に行数を表示するlinum-mode は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。
@@ -59,7 +60,7 @@ Emacs26で、待望のCで書かれた diplay-line-numbers-mode が実装され�
     <item>
       <title>7.5. prescient</title>
       <link>https://minorugh.github.io/.emacs.d/display/prescient/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/prescient/</guid>
       <description>[prescient.el] リスト項目の並び替えとイニシャル入力機能（ivy &amp;amp; company） 🔗 radian-software/prescient.el: Simple but effective sorting and filtering for Emacs.
@@ -72,7 +73,7 @@ ivy-prescient.el や company-prescient.el などの拡張パッケージは、�
     <item>
       <title>7.6. japanese-holidays</title>
       <link>https://minorugh.github.io/.emacs.d/display/calendar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/calendar/</guid>
       <description>[japanese-holidays.el] カレンダーをカラフルにする 🔗 emacs-jp/japanese-holidays: Display Japanese holidays in the Emacs calendar.
@@ -84,7 +85,7 @@ ivy-prescient.el や company-prescient.el などの拡張パッケージは、�
     <item>
       <title>7.7. imenu-list</title>
       <link>https://minorugh.github.io/.emacs.d/display/imenu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/imenu/</guid>
       <description>[imenu-list.el] サイドバー的にファイル内容の目次要素を表示 🔗 bmag/imenu-list: Emacs plugin to show the current buffer&amp;rsquo;s imenu entries in a separate buffer.
@@ -96,7 +97,7 @@ imenu-list は、imenu の各エントリを *Ilist* バッファで一覧しま
     <item>
       <title>7.8. diff-hl</title>
       <link>https://minorugh.github.io/.emacs.d/display/diff-hl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:52:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/display/diff-hl/</guid>
       <description>[diff-hl.el] 編集差分をフレーム端で視覚化 🔗 dgutov/diff-hl: Emacs package for highlighting uncommitted changes.

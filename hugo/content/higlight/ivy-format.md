@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:57:02+09:00"
 title = "4.4. ivy-format-function-arrow"
 draft = false
 +++

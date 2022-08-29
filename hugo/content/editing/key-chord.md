@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:53:26+09:00"
 title = "6.9. key-chord"
 draft = false
 weight = 9

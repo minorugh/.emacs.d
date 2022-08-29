@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "1.6. dashboard"
-draft = false
 +++
 
 ## [dashboard.el]初期画面をイケメンにする

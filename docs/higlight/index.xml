@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/higlight/</link>
     <description>Recent content in フォント / 配色関連 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/higlight/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:57:02 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/higlight/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>4.1. font setting</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/font/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/font/</guid>
       <description>フォントの設定 メイン機: Thinkpad E590 とサブ機: X250 とでそれぞれに適した値を設定することで設定ファイルを共有しています。
@@ -22,7 +23,7 @@
     <item>
       <title>4.2. hl-line</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/hl-line/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/hl-line/</guid>
       <description>カーソル行に色を付ける ビルトインの hl-line.el を使ってカーソル行に色をつける設定です。
@@ -33,7 +34,7 @@
     <item>
       <title>4.3. blink-cursor</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/blink-cursor/</guid>
       <description>カーソルの点滅を制御 ビルトインの blink-cursor.el を設定してカーソルの点滅を制御します。
@@ -44,7 +45,7 @@
     <item>
       <title>4.4. ivy-format-function-arrow</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/ivy-format/</guid>
       <description>選択行をアイコンで強調 my:ivy-format-function-arrow は、ivy-mode の選択行をアイコンで強調する設定です。
@@ -54,7 +55,7 @@
     <item>
       <title>4.5. pare</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/paren/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/paren/</guid>
       <description>対応するカッコをハイライトする ビルトインの paren.el を利用して対応する括弧をハイライトさせます。
@@ -64,7 +65,7 @@
     <item>
       <title>4.6. rainbow-delimiters</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow-delimiters/</guid>
       <description>[rainbow-delimiters.el] 対応するカッコを色付する 🔗 yanyingwang/rainbow-delimiters: Highlights delimiters such as parentheses.
@@ -75,7 +76,7 @@
     <item>
       <title>4.7. rainbow-mode</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/rainbow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/rainbow/</guid>
       <description>[rainbow-mode.el] バッファ内のカラーコードに実際の色をつける 🔗 emacsmirror/rainbow-mode: Colorize color names in buffers.
@@ -87,7 +88,7 @@ global 設定にするとうざいと思うシーンもあるので、自分は�
     <item>
       <title>4.8. volatile-highlight</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/volatile-highlights/</guid>
       <description>[volatile-highlights.el] コピペ領域を強調 🔗 k-talo/volatile-highlights.el: Highlighting copied area.
@@ -99,7 +100,7 @@ volatile-highlights.el は、コピペした領域を強調します。
     <item>
       <title>4.9. whitespace</title>
       <link>https://minorugh.github.io/.emacs.d/higlight/whitespace/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:57:02 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/higlight/whitespace/</guid>
       <description>[whitespace.el] 全角スペースを強調表示する 🔗 emacs/whitespace.el: visualize blanks (TAB, (HARD) SPACE and NEWLINE).

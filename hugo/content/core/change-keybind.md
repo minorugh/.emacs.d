@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:48:41+09:00"
 title = "2.7. change gloal keybind"
-draft = false
 +++
 ## 基本キーバインドの挙動をカスタマイズ
 

@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "1.2. speed up startup"
-draft = false
 +++
 ## 起動時間の短縮
 

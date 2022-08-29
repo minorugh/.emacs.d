@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:48:41+09:00"
 title = "コア設定"
-draft = false
 pre = "<b>2. </b>"
 weight = 2
 disableToc = true

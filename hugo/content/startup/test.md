@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "1.5. test.el"
-draft = false
 +++
 ## [test.el] 最小限の emacs を起動させるための設定
 

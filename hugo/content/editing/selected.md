@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:53:26+09:00"
 title = "6.14. selected"
 draft = false
 weight = 14

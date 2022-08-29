@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:48:41+09:00"
 title = "2.5. exec-path-from-shell"
-draft = false
 +++
 ## [exec-path-from-shell.el] 設定をシェルから継承する
 

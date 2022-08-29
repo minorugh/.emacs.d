@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "1.4. init-loader.el"
-draft = false
 +++
 
 ## [init-loader.el] 設定ファイルのローダー 

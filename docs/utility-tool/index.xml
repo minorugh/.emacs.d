@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/utility-tool/</link>
     <description>Recent content in ユーティリティー関数 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/utility-tool/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 06:03:08 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/utility-tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>12.1. auto-delete</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/</guid>
       <description>空になったファイルを自動的に削除 下記の設定をしておくと、C-x h で全選択して delete したあと kill-buffer することで自動的にファイルが削除されます。
@@ -21,7 +22,7 @@
     <item>
       <title>12.2. emacs-lok-mode</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/emacs-lock/</guid>
       <description>Scratch バッファーを消さない 難しい関数を設定せずともビルトインコマンドで簡単に実現できます。
@@ -31,7 +32,7 @@
     <item>
       <title>12.3. ps-priter</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/ps-print/</guid>
       <description>PS-Printer での印刷 EmacsからPostscript経由で印刷する際の個人的な設定です。
@@ -42,7 +43,7 @@ Postscript 対応のプリンターが必要。
     <item>
       <title>12.4. open terminal</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/terminal/</guid>
       <description>gnome-terminal を Emacsから呼び出す Emacsで開いているbuffer のcurrent-dir で gnome-terminal を起動させます。
@@ -53,7 +54,7 @@ Postscript 対応のプリンターが必要。
     <item>
       <title>12.5. open thunar</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/thunar/</guid>
       <description>Thunarを Emacsから呼び出す Emacsで開いている buffer のcurrent-dir で Debian の Thuner を開きます。
@@ -64,7 +65,7 @@ Postscript 対応のプリンターが必要。
     <item>
       <title>12.6. restart-emacs</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/restart/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/restart/</guid>
       <description>[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.
@@ -76,7 +77,7 @@ C-u の数で再起動の方法を制御できます。
     <item>
       <title>12.7. sudo-edit</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/sudo-edit/</guid>
       <description>[sudo-edit.el] Root権限でファイルを開き直す 🔗 nflath/sudo-edit: Utilities for opening files with sudo.
@@ -87,7 +88,7 @@ sudo-edit.elは、現在アクセスしているファイルをsudoで開きな�
     <item>
       <title>12.8. eshell</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/eshell/</guid>
       <description>eshell を使う eshell はEmacs上で使えるビルトインのターミナルエミュレータートです。
@@ -98,7 +99,7 @@ sudo-edit.elは、現在アクセスしているファイルをsudoで開きな�
     <item>
       <title>12.9. google-translate</title>
       <link>https://minorugh.github.io/.emacs.d/utility-tool/translate/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/utility-tool/translate/</guid>
       <description>[google-translate.el] Google翻訳サービスを使用して文字列を翻訳 🔗 atykhonov/google-translate: Emacs interface to Google Translate.

@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T06:03:08+09:00"
 title = "12.6. restart-emacs"
 draft = false
 +++

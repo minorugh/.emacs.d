@@ -1,6 +1,6 @@
 +++
+date = "2022-08-29T05:45:20+09:00"
 title = "1.3. leaf.el"
-draft = false
 +++
 ## 設定ファイルを明示的に書く
 🔗 [Emacs入門から始めるleaf.el入門](https://qiita.com/conao3/items/347d7e472afd0c58fbd7)

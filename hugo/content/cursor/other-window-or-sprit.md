@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:50:55+09:00"
 title = "3.2. other-window-or-split"
 draft = false
 +++

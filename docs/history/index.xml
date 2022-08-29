@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/history/</link>
     <description>Recent content in 履歴 / ファイル管理 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/history/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 05:58:29 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/history/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>9.1. auto-save-buffer</title>
       <link>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/auto-save-buffer/</guid>
       <description>[auto-save-buffer-enhanced.el] ファイルの自動保存機能を提供 🔗 kentaro/auto-save-buffers-enhanced: Enables auto-saving along with vcs.
@@ -22,7 +23,7 @@ auto-save-buffers-enhanced.el は、快適かつ安全な自動保存機能を�
     <item>
       <title>9.2. undo-fu</title>
       <link>https://minorugh.github.io/.emacs.d/history/undo-fu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/undo-fu/</guid>
       <description>8.3. [undo-fu.el] シンプルな undo/redo を提供 🔗 emacsmirror/undo-fu: Undo helper with redo.
@@ -34,7 +35,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     <item>
       <title>9.3. recentf</title>
       <link>https://minorugh.github.io/.emacs.d/history/recentf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/recentf/</guid>
       <description>開いたファイルの履歴を保存 複数端末で設定ファイルを共有している場合、auto-cleanup を never にしておかないと大変なことになる。
@@ -44,7 +45,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     <item>
       <title>9.4. savehist</title>
       <link>https://minorugh.github.io/.emacs.d/history/savehist/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/savehist/</guid>
       <description>ミニバッファの履歴などを保存してくれる機能 プログラミングを生業にしている人にはとても重要なものらしい。
@@ -54,7 +55,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     <item>
       <title>9.5. hist-files</title>
       <link>https://minorugh.github.io/.emacs.d/history/hist-files/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/hist-files/</guid>
       <description>Emacsのいろいろな機能の履歴ファイルは、デフォルトではみな ~/.emacs.d/ に保存される。
@@ -65,7 +66,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     <item>
       <title>9.6. dired</title>
       <link>https://minorugh.github.io/.emacs.d/history/dired/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/dired/</guid>
       <description>ファイルシステムのディレクトリを編集する機能 Emacs入門当初は、多機能な dired を追求してやまなかった。
@@ -77,7 +78,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
     <item>
       <title>9.7. neotree</title>
       <link>https://minorugh.github.io/.emacs.d/history/neotree/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 05:58:29 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/history/neotree/</guid>
       <description>[neotree.el] Emacs 上でディレクトリツリーを表示させる 🔗 jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.

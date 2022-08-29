@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:57:02+09:00"
 title = "4.8. volatile-highlight"
 draft = false
 +++

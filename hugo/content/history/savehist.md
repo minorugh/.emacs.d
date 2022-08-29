@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:58:29+09:00"
 title = "9.4. savehist"
 draft = false
 +++

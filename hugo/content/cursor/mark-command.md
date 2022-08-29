@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T05:50:55+09:00"
 title = "3.4. exchange-point-and-mark"
 draft = false
 +++

@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/programming/</link>
     <description>Recent content in 開発サポート on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 06:01:24 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10.1. function key</title>
       <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/function/</guid>
       <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
@@ -19,7 +20,7 @@
     <item>
       <title>10.2. gist interface</title>
       <link>https://minorugh.github.io/.emacs.d/programming/gist/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
       <description>Gistインターフェイス リスト管理などもできる gist.el というパッケージを使っていましたが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
@@ -32,7 +33,7 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
     <item>
       <title>10.3. flymake</title>
       <link>https://minorugh.github.io/.emacs.d/programming/flymake/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
       <description>[flymake] 構文エラー表示 ビルトインの flymake-mode が軽くて使いやすくなったので、flycheck から移行しました。
@@ -42,7 +43,7 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
     <item>
       <title>10.4. quickrun</title>
       <link>https://minorugh.github.io/.emacs.d/programming/quickrun/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
       <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
@@ -54,7 +55,7 @@ open-junk-file でショートプログラムを書きながら、その都度 q
     <item>
       <title>10.5. magit</title>
       <link>https://minorugh.github.io/.emacs.d/programming/magit/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
       <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
@@ -65,7 +66,7 @@ magit status は、デフォルトでは other-window に表示されますが�
     <item>
       <title>10.6. git-timemachine</title>
       <link>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</guid>
       <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
@@ -76,7 +77,7 @@ magit status は、デフォルトでは other-window に表示されますが�
     <item>
       <title>10.7. browse-at-point</title>
       <link>https://minorugh.github.io/.emacs.d/programming/browsepoint/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/browsepoint/</guid>
       <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
@@ -87,7 +88,7 @@ browse-at-remote.el は、Git管理しているEmacsバッファーからgithub�
     <item>
       <title>10.8. counsel-tramp</title>
       <link>https://minorugh.github.io/.emacs.d/programming/tramp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
       <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
@@ -99,7 +100,7 @@ browse-at-remote.el は、Git管理しているEmacsバッファーからgithub�
     <item>
       <title>10.9. easy-hugo</title>
       <link>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
       <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
@@ -110,7 +111,7 @@ Hugoで作成されたブログを書くための Emacs メジャー モード�
     <item>
       <title>10.10. open-junk-file</title>
       <link>https://minorugh.github.io/.emacs.d/programming/junk/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
       <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.

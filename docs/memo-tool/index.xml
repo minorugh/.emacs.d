@@ -5,11 +5,12 @@
     <link>https://minorugh.github.io/.emacs.d/memo-tool/</link>
     <description>Recent content in メモ環境 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language><atom:link href="https://minorugh.github.io/.emacs.d/memo-tool/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-jp</language>
+    <lastBuildDate>Mon, 29 Aug 2022 06:00:38 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/memo-tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>11.1. howm</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/howm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/howm/</guid>
       <description>[howm.el] お手軽メモ環境 🔗 howm: Write fragmentarily and read collectively.
@@ -23,7 +24,7 @@ org-capture から自動タグ挿入して howm-criate を起動しています�
     <item>
       <title>11.2. org</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/org/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
       <description>[org-mode] ごくシンプルに使う設定 メモ書きは、howmメインなのですが、自動タグ挿入を兼ねてメニュー代わりに org-capture を利用しています。
@@ -36,7 +37,7 @@ dashboard画面に簡単なタスクを表示させるために org-agenda も�
     <item>
       <title>11.4. scratch-memo</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</guid>
       <description>scratchバッファーを付箋として使う Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに *scratch*バッファーが使えるように設定してみた。

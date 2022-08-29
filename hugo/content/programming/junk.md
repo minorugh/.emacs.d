@@ -1,4 +1,5 @@
 +++
+date = "2022-08-29T06:01:24+09:00"
 title = "10.10. open-junk-file"
 draft = false
 weight = 10
