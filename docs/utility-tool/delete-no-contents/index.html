@@ -5,8 +5,8 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-30T06:52:32 JST">
-<title>12.4. open terminal :: minoru&#39;s Emacs Config</title>
+<meta name="revised" content="2022-08-30T05:55:19 JST">
+<title>12.1. auto-delete :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/utility-tool/terminal/">
+  <body data-url="/.emacs.d/utility-tool/auto-delete/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -740,10 +740,10 @@
       <a href="/.emacs.d/utility-tool/"><b>12. </b>ユーティリティー関数</a><i class="fa fa-angle-right fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/del-no-contents/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/.emacs.d/utility-tool/auto-delete/" class="dd-item">
         <div>
-          <a href="/.emacs.d/utility-tool/del-no-contents/">
-            12.1. delete-no-contens
+          <a href="/.emacs.d/utility-tool/auto-delete/">
+            12.1. auto-delete
           </a>
         </div>
     </li>
@@ -837,7 +837,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/utility-tool/terminal.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/utility-tool/auto-delete.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -857,7 +857,7 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.4. open terminal
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/utility-tool/'>ユーティリティー関数</a> > 12.1. auto-delete
 
  
 
@@ -872,7 +872,8 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#gnome-terminal-を-emacsから呼び出す">gnome-terminal を Emacsから呼び出す</a></li>
+    <li><a href="#空になったファイルを自動的に削除">空になったファイルを自動的に削除</a></li>
+    <li><a href="#開いているバッファーを閉じて当該ファイルを削除する">開いているバッファーを閉じて当該ファイルを削除する</a></li>
   </ul>
 </nav>
       </div>
@@ -884,7 +885,7 @@
 
 <div id="body-inner">
   
-    <h1>12.4. open terminal</h1>
+    <h1>12.1. auto-delete</h1>
   
 
 
@@ -892,15 +893,29 @@
     
     
     
-<h2 id="gnome-terminal-を-emacsから呼び出す">gnome-terminal を Emacsから呼び出す</h2>
-<p>Emacsで開いている<code>buffer</code> の<code>current-dir</code> で <code>gnome-terminal</code> を起動させます。</p>
-<p>こちらを使うようになってからは<code>eshell</code> を使う機会が減りました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">term-current-dir-open</span> ()
-  <span style="color:#c41a16">&#34;Open terminal application in current dir.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">let</span> ((<span style="color:#000">dir</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">default-directory</span>)))
-    (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gnome-terminal --working-directory &#34;</span> <span style="color:#000">dir</span>))))
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;&lt;f4&gt;&#34;</span> <span style="color:#c41a16">&#39;term-current-dir-open</span>)
+<h2 id="空になったファイルを自動的に削除">空になったファイルを自動的に削除</h2>
+<p>下記の設定をしておくと、<code>C-x h</code> で全選択して delete したあと <code>kill-buffer</code> することで自動的にファイルが削除されます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
+  <span style="color:#c41a16">&#34;Automatic deletion for empty files (Valid in all modes).&#34;</span>
+  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))
+			 (<span style="color:#000">=</span> (<span style="color:#000">point-min</span>) (<span style="color:#000">point-max</span>)))
+    (<span style="color:#000">delete-file</span>
+     (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
+(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">memq</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>))
+    (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
+		  (<span style="color:#000">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
+</code></pre></div><h2 id="開いているバッファーを閉じて当該ファイルを削除する">開いているバッファーを閉じて当該ファイルを削除する</h2>
+<p>危険なのであまりお薦めできませんが…</p>
+<p>安全のために確認するようにしてます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-this-file</span> ()
+	<span style="color:#c41a16">&#34;Delete the current file, and kill the buffer.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#a90d91">unless</span> (<span style="color:#000">buffer-file-name</span>)
+      (<span style="color:#000">error</span> <span style="color:#c41a16">&#34;No file is currently being edited&#34;</span>))
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">yes-or-no-p</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;Really delete &#39;%s&#39;?&#34;</span>
+                               (<span style="color:#000">file-name-nondirectory</span> <span style="color:#000">buffer-file-name</span>)))
+      (<span style="color:#000">delete-file</span> (<span style="color:#000">buffer-file-name</span>))
+      (<span style="color:#000">kill-this-buffer</span>)))
 </code></pre></div>
 
     
@@ -912,8 +927,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/utility-tool/ps-print/" title="12.3. ps-priter"> <i class="fa fa-chevron-left"></i><label>12.3. ps-priter</label></a>
-    <a class="nav nav-next" href="/.emacs.d/utility-tool/thunar/" title="12.5. open thunar" style="margin-right: 0px;"><label>12.5. open thunar</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/utility-tool/" title="ユーティリティー関数"> <i class="fa fa-chevron-left"></i><label>ユーティリティー関数</label></a>
+    <a class="nav nav-next" href="/.emacs.d/utility-tool/emacs-lock/" title="12.2. emacs-lok-mode" style="margin-right: 0px;"><label>12.2. emacs-lok-mode</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
