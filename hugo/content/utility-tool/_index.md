@@ -14,8 +14,6 @@ disableToc = true
 [auto-delete-file]({{< relref "auto-delete" >}})
 : 空になったファイルを自動的に削除する
 
-: scratchバッファーを決してKillさせない
-
 [emacs-lock]({{< relref "emacs-lock" >}})
 : scratchバッファーを決してKillさせない
 
