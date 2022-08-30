@@ -70,22 +70,21 @@ If the region isn't selected, `swiper'."
 			 (or initial-directory default-directory))
            extra-ag-args ag-prompt caller))
 
-(with-eval-after-load "counsel"
-  (require 'thingatpt nil t)
-  (advice-add 'counsel-ag :around #'ad:counsel-ag)
-  ;; Make search trigger even with 2 characters
-  (add-to-list 'ivy-more-chars-alist '(counsel-ag . 2))
+  (with-eval-after-load "counsel"
+	(require 'thingatpt nil t)
+	(advice-add 'counsel-ag :around #'ad:counsel-ag)
+	;; Make search trigger even with 2 characters
+	(add-to-list 'ivy-more-chars-alist '(counsel-ag . 2))
 
-  (ivy-add-actions
-   'counsel-ag
-   '(("r" my:counsel-ag-in-dir "search in directory"))))
+	(ivy-add-actions
+	 'counsel-ag
+	 '(("r" my:counsel-ag-in-dir "search in directory"))))
 
-(defun my:counsel-ag-in-dir (_arg)
-"Search again with new root directory."
-(let ((current-prefix-arg '(4)))
-  (counsel-ag ivy-text nil ""))
-))
-
+  (defun my:counsel-ag-in-dir (_arg)
+	"Search again with new root directory."
+	(let ((current-prefix-arg '(4)))
+	  (counsel-ag ivy-text nil ""))
+	))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -13,11 +13,14 @@
    (:hint nil :exit t)
    "
    Quick Menu
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------
-  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rc  _._files   howm:_@__,_   _m_d:_p_view   _z_illa
-  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg  _<home>_   _c_ompile^^   make:_k_._g_   _a_g:🐾
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------------------
+  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rcgith_u_b  _._files   howm:_@__,_   _m_d:_p_view   _f_ileZilla
+  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg:_C_apture  _<home>_   _c_ompile^^   make:_k_._g_   _j_ourna_l_
 "
-   ("a" counsel-ag)
+   ("j" org-journal-new-entry)
+   ;; ("l" org-journal-schedule-view)
+   ("l" hydra-journal/body)
+   (";" hydra-journal/body)
    ("o" my:org-dir)
    ("t" counsel-tramp)
    ("q" my:tramp-quit)
@@ -40,8 +43,8 @@
    ("-" my:github-show)
    ("@" howm-list-all)
    ("," howm-create-memo)
-   ("j" open-junk-file)
-   ("J" open-last-junk-file)
+   ("J" open-junk-file)
+   ("L" open-last-junk-file)
    ("k" my:make-k)
    ("g" my:make-git)
    ("/" my:root-dir)
@@ -49,9 +52,10 @@
    ("[" git-timemachine-toggle)
    ("]" magit-status)
    ("s" my:scr-dir)
-   ("l" my:open-capture)
+   ("u" my:github-dir)
+   ("C" my:open-capture)
    (":" view-mode)
-   ("z" filezilla)
+   ("f" filezilla)
    ("M-." hydra-work/body)
    ("<muhenkan>" nil)))
 
@@ -82,7 +86,7 @@
    ("D" my:diary-new-post)
    ("g" gist-region-or-buffer)
    ("L" lepton)
-   ("j" my:junk-dir)
+   ("j" org-journal-new-entry)
    ("h" chromium-tegaki)
    ("l" open-last-junk-file)
    ("t" my:teirei)

@@ -57,6 +57,7 @@
   (save-place-mode 1)
   (savehist-mode 1)
   (winner-mode 1)
+  ;; (org-journal-mode 1)
   (global-auto-revert-mode 1)
   (global-font-lock-mode 1)
   (global-hl-line-mode 1)
@@ -135,6 +136,7 @@
 		 ("s-c" . clipboard-kill-ring-save)
 		 ("s-v" . clipboard-yank)
 		 ("M-/" . kill-this-buffer)
+		 ("M-_" . delete-window)
 		 ("<end>" . suspend-frame)))
 
 ;; Overwrite `C-w' to the whole-line-or-region

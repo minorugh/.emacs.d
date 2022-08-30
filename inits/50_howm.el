@@ -24,8 +24,8 @@
 			(howm-normalizer . 'howm-sort-items-by-reverse-date)
 			(howm-user-font-lock-keywords
 			 . '(("memo:" . (0 'compilation-error))
-				 ("hoku:" . (0 'compilation-info))
-				 ("tech" . (0 'buffer-menu-buffer)))))
+				 ("note:" . (0 'compilation-info))
+				 ("tech:" . (0 'buffer-menu-buffer)))))
   :config
   (setq howm-template '("# %title%cursor\n%date%file"
 						"# memo: %cursor\n%date%file"

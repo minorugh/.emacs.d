@@ -36,6 +36,12 @@
   (setq dired-listing-switches "-lgGhFA")
   (find-file "~/src/"))
 
+(defun my:github-dir ()
+  "Open scr dir."
+  (interactive)
+  (setq dired-listing-switches "-lgGhFA")
+  (find-file "~/src/github.com/minorugh/"))
+
 (defun my:junk-dir ()
   "Open junk file dir."
   (interactive)

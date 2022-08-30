@@ -65,8 +65,7 @@
   (defun my:find-file-sudo (file)
 	"Opens FILE with root privileges."
 	(interactive "F")
-	(set-buffer (find-file (concat "/sudo::" file))))
-  )
+	(set-buffer (find-file (concat "/sudo::" file)))))
 
 
 (provide '10_custom)

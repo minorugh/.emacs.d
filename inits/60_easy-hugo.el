@@ -35,36 +35,36 @@
 		   (easy-hugo-url . "https://minorugh.github.io/.emacs.d")
 		   (easy-hugo-postdir . "content/startup")
 		   (easy-hugo-preview-url . "http://localhost:1313/.emacs.d/"))
-		  ;; ;; blog3 setting
+		  ;; blog3 setting
 		  ((easy-hugo-basedir . "~/src/github.com/minorugh/minorugh.github.io/")
 		   (easy-hugo-url . "https://minorugh.github.io")
 		   (easy-hugo-postdir . "content/posts"))
-		  ;; blog3 setting
+		  ;; blog4 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/gg/")
 		   (easy-hugo-url . "https://gg.gospel-haiku.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/gg/"))
-		  ;; blog4 setting
+		  ;; blog5 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/blog/")
 		   (easy-hugo-url . "https://blog.gospel-haiku.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/blog/"))
-		  ;; blog5 setting
+		  ;; blog6 setting
 		  ((easy-hugo-basedir . "~/Dropbox/GH/es/")
 		   (easy-hugo-url . "https://es.gospel-haiku.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/es/"))
-		  ;; blog6 setting
-		  ((easy-hugo-basedir . "~/Dropbox/minorugh.com/bible/")
+		  ;; blog7 setting
+		  ((easy-ugo-basedir . "~/Dropbox/minorugh.com/bible/")
 		   (easy-hugo-url . "https://bible.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/minorugh.com/public_html/bible/"))
-		  ;; blog7 setting
+		  ;; blog8 setting
 		  ((easy-hugo-basedir . "~/Dropbox/minorugh.com/tube/")
 		   (easy-hugo-url . "https://tube.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/minorugh.com/public_html/tube/"))
-		  ;; blog8 setting
+		  ;; blog9 setting
 		  ((easy-hugo-basedir . "~/Dropbox/minorugh.com/ryo/")
 		   (easy-hugo-url . "https://ryo.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
@@ -74,10 +74,10 @@
   (setq easy-hugo-help-line 5
 		easy-hugo-help "
   n .. New blog post    r .. Rename file     p .. Preview          g .. Refresh
-  d .. Delete post      a .. Search blog ag  P .. Publish clever   ; .. Select blog
+  d .. Delete post      a .. Search blog ag  P .. Publish clever   G .. GitHub deploy
   c .. Open config      o .. Open base dir   < .. Previous blog    > .. Next bloge
-  - .. Prev postdir     + .. Next postdir    / .. Select Postdir   G .. GitHub deploy
-  N .. No help [tab]    s .. Sort time       v .. Open view mode   e .. Edit easy-hugo
+  , .. Prev postdir     . .. Next postdir    ; .. Select blog      v .. Open view mode
+  N .. No help [tab]    s .. Sort time       u .. Sort Publish     e .. Edit easy-hugo
 ")
   :preface
   (leaf popup :ensure t)
@@ -88,6 +88,7 @@
 	"Edit setting file for 'easy-hugo'."
 	(interactive)
 	(find-file "~/.emacs.d/inits/60_easy-hugo.el")
+	(view-mode -1)
 	(forword-line 2)))
 
 
