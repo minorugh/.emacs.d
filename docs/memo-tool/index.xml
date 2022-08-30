@@ -22,16 +22,26 @@ org-capture から自動タグ挿入して howm-criate を起動しています�
     </item>
     
     <item>
-      <title>11.2. org</title>
+      <title>11.2. org-capture</title>
       <link>https://minorugh.github.io/.emacs.d/memo-tool/org/</link>
       <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
       <description>[org-mode] ごくシンプルに使う設定 メモ書きは、howmメインなのですが、自動タグ挿入を兼ねてメニュー代わりに org-capture を利用しています。
-org-capture からhowm-create を発動できるように org-capture-template を作りました。
+org-capture からhowm-create や org-journal を発動できるように org-capture-template を作りました。
 org-capture からだとデフォルトでは、画面が半分（othe-window）になるのがいやなので、最大化で開くように変更しています。
 dashboard画面に簡単なタスクを表示させるために org-agenda も使っています。
-(leaf org :hook (emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) :chord (&amp;#34;,,&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;org) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-startup-indented . t) (org-hide-leading-stars . t) (org-startup-folded .</description>
+(leaf org :hook ((emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) (org-capture-mode-hook . delete-other-windows)) :chord (&amp;#34;,,&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;org) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-startup-indented .</description>
+    </item>
+    
+    <item>
+      <title>11.3. org-journal</title>
+      <link>https://minorugh.github.io/.emacs.d/memo-tool/journal/</link>
+      <pubDate>Tue, 30 Aug 2022 19:35:34 +0900</pubDate>
+      
+      <guid>https://minorugh.github.io/.emacs.d/memo-tool/journal/</guid>
+      <description>[org-journal.el] 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
+(leaf org-journal :doc &amp;#34;https://www.emacswiki.org/emacs/OrgJournal&amp;#34; :ensure t :hook (emacs-startup-hook . org-journal-mode) :chord (&amp;#34;;;&amp;#34; . hydra-journal/body) :bind ((&amp;#34;C-c j&amp;#34; . org-journal-new-entry) (&amp;#34;C-c t&amp;#34; . journal-file-today) (&amp;#34;C-c y&amp;#34; . journal-file-yesterday)) :custom `((org-journal-dir . &amp;#34;~/Dropbox/howm/journal/&amp;#34;) (org-journal-file-format . &amp;#34;%Y%m%d&amp;#34;) (org-journal-date-format . &amp;#34;%Y-%m-%d (%A)&amp;#34;)) :hydra (hydra-journal (:color red :hint nil) &amp;#34;  Journal: 新規_;_  昨日.今日: _[_._]_  Task: 新規_._ 一覧_,_ : _@_  window: _0_._1_._/_&amp;#34; (&amp;#34;;&amp;#34; org-journal-new-entry) (&amp;#34;.</description>
     </item>
     
     <item>

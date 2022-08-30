@@ -2,6 +2,7 @@
 date = "2022-08-29T06:00:38+09:00"
 title = "11.1. howm"
 draft = false
+weight = 1
 +++
 
 ## [howm.el] お手軽メモ環境

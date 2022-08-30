@@ -13,8 +13,11 @@ TPOで使い分けるメモツール
 [howm-mode]({{< relref "howm" >}})
 : howm-modeの設定
 
-[org-mode]({{< relref "org" >}})
-: org-modeの設定
+[org-capture]({{< relref "org" >}})
+: org-captureの設定
+
+[org-journal]({{< relref "journal" >}})
+: org-journalの設定
 
 [scratch-memo]({{< relref "scratch" >}})
 : scratchを付箋として使う設定

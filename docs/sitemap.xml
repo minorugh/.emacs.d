@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/howm/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/markdown/</loc>
     <lastmod>2022-08-29T05:53:26+09:00</lastmod>
   </url>
@@ -23,6 +28,11 @@
   </url>
   
   <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/org/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://minorugh.github.io/.emacs.d/editing/view/</loc>
     <lastmod>2022-08-29T05:53:26+09:00</lastmod>
   </url>
@@ -30,6 +40,11 @@
   <url>
     <loc>https://minorugh.github.io/.emacs.d/core/</loc>
     <lastmod>2022-08-29T05:48:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/journal/</loc>
+    <lastmod>2022-08-30T19:35:34+09:00</lastmod>
   </url>
   
   <url>
@@ -50,6 +65,11 @@
   <url>
     <loc>https://minorugh.github.io/.emacs.d/programming/quickrun/</loc>
     <lastmod>2022-08-29T06:01:24+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</loc>
+    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
   </url>
   
   <url>
@@ -240,21 +260,6 @@
   <url>
     <loc>https://minorugh.github.io/.emacs.d/</loc>
     <lastmod>2022-08-29T06:03:08+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/memo-tool/howm/</loc>
-    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/memo-tool/org/</loc>
-    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</loc>
-    <lastmod>2022-08-29T06:00:38+09:00</lastmod>
   </url>
   
   <url>

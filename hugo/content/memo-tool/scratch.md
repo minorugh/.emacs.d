@@ -2,6 +2,7 @@
 date = "2022-08-29T06:00:38+09:00"
 title = "11.4. scratch-memo"
 draft = false
+weight = 4
 +++
 
 ## scratchバッファーを付箋として使う
