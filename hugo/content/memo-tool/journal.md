@@ -5,7 +5,7 @@ draft = false
 weight = 3
 +++
 ### [org-journal.el]
-🔗 [bastibe/org-journal: A simple org-mode based journaling mode.](https://github.com/bastib/org-journal) 
+🔗 [bastibe/org-journal: A simple org-mode based journaling mode.](https://github.com/bastibe/org-journal) 
 
 
 ```elisp
