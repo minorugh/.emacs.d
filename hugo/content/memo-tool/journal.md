@@ -12,13 +12,15 @@ weight = 3
 (leaf org-journal
   :doc "https://www.emacswiki.org/emacs/OrgJournal"
   :ensure t
-  :hook (emacs-startup-hook . org-journal-mode)
+  :hook (after-init-hook . org-journal-mode)
   :chord (";;" . hydra-journal/body)
-  :bind (("C-c j" . org-journal-new-entry)
+  :bind ((:org-journal-mode-map
+		  ("<muhenkan>" . org-journal-save-entry-and-exit))
+		 ("C-c j" . org-journal-new-entry)
 		 ("C-c t" . journal-file-today)
 		 ("C-c y" . journal-file-yesterday))
-  :custom `((org-journal-dir . "~/Dropbox/howm/journal/")
-			(org-journal-file-format . "%Y%m%d")
+  :custom `((org-journal-dir . "~/Dropbox/org/journal/")
+			(org-journal-file-format . "%Y%m%d.org")
 			(org-journal-date-format . "%Y-%m-%d (%A)"))
   :hydra
   (hydra-journal
@@ -37,7 +39,7 @@ weight = 3
   :preface
   (defun get-journal-file-today ()
     "Gets filename for today's journal entry."
-    (let ((daily-name (format-time-string "%Y%m%d")))
+    (let ((daily-name (format-time-string "%Y%m%d.org")))
       (expand-file-name (concat org-journal-dir daily-name))))
 
   (defun journal-file-today ()
@@ -48,7 +50,7 @@ weight = 3
   (defun get-journal-file-yesterday ()
 	"Gets filename for yesterday's journal entry."
 	(let* ((yesterday (time-subtract (current-time) (days-to-time 1)))
-           (daily-name (format-time-string "%Y%m%d" yesterday)))
+           (daily-name (format-time-string "%Y%m%d.org" yesterday)))
       (expand-file-name (concat org-journal-dir daily-name))))
 
   (defun journal-file-yesterday ()
@@ -56,9 +58,19 @@ weight = 3
 	(interactive)
 	(find-file (get-journal-file-yesterday)))
 
+  (defun org-journal-save-entry-and-exit()
+	"Simple convenience function.
+  Saves the buffer of the current day's entry and kills the window
+  Similar to org-capture like behavior"
+	(interactive)
+	(save-buffer)
+	(kill-buffer-and-window))
+  ;; (define-key org-journal-mode-map (kbd "C-x C-s") 'org-journal-save-entry-and-exit)
+
   (defun my:org-journal-schedule-view ()
 	(interactive)
 	(org-journal-schedule-view)
+	(view-mode 0)
 	(delete-other-windows))
 
   (defun my:journal-command ()

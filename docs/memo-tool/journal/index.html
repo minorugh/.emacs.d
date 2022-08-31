@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-30T20:40:42 JST">
+<meta name="revised" content="2022-08-31T09:47:50 JST">
 <title>11.3. org-journal :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -908,13 +908,15 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">org-journal</span>
   <span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://www.emacswiki.org/emacs/OrgJournal&#34;</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">emacs-startup-hook</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-mode</span>)
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-mode</span>)
   <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;;;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-journal/body</span>)
-  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c j&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-new-entry</span>)
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:org-journal-mode-map</span>
+		  (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-save-entry-and-exit</span>))
+		 (<span style="color:#c41a16">&#34;C-c j&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-new-entry</span>)
 		 (<span style="color:#c41a16">&#34;C-c t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">journal-file-today</span>)
 		 (<span style="color:#c41a16">&#34;C-c y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">journal-file-yesterday</span>))
-  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">org-journal-dir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/journal/&#34;</span>)
-			(<span style="color:#000">org-journal-file-format</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;%Y%m%d&#34;</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">org-journal-dir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/org/journal/&#34;</span>)
+			(<span style="color:#000">org-journal-file-format</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;%Y%m%d.org&#34;</span>)
 			(<span style="color:#000">org-journal-date-format</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;%Y-%m-%d (%A)&#34;</span>))
   <span style="color:#a90d91">:hydra</span>
   (<span style="color:#000">hydra-journal</span>
@@ -933,7 +935,7 @@
   <span style="color:#a90d91">:preface</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">get-journal-file-today</span> ()
     <span style="color:#c41a16">&#34;Gets filename for today&#39;s journal entry.&#34;</span>
-    (<span style="color:#a90d91">let</span> ((<span style="color:#000">daily-name</span> (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;%Y%m%d&#34;</span>)))
+    (<span style="color:#a90d91">let</span> ((<span style="color:#000">daily-name</span> (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;%Y%m%d.org&#34;</span>)))
       (<span style="color:#000">expand-file-name</span> (<span style="color:#000">concat</span> <span style="color:#000">org-journal-dir</span> <span style="color:#000">daily-name</span>))))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">journal-file-today</span> ()
@@ -944,7 +946,7 @@
   (<span style="color:#a90d91">defun</span> <span style="color:#000">get-journal-file-yesterday</span> ()
 	<span style="color:#c41a16">&#34;Gets filename for yesterday&#39;s journal entry.&#34;</span>
 	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">yesterday</span> (<span style="color:#000">time-subtract</span> (<span style="color:#000">current-time</span>) (<span style="color:#000">days-to-time</span> <span style="color:#1c01ce">1</span>)))
-           (<span style="color:#000">daily-name</span> (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;%Y%m%d&#34;</span> <span style="color:#000">yesterday</span>)))
+           (<span style="color:#000">daily-name</span> (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;%Y%m%d.org&#34;</span> <span style="color:#000">yesterday</span>)))
       (<span style="color:#000">expand-file-name</span> (<span style="color:#000">concat</span> <span style="color:#000">org-journal-dir</span> <span style="color:#000">daily-name</span>))))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">journal-file-yesterday</span> ()
@@ -952,9 +954,19 @@
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">find-file</span> (<span style="color:#000">get-journal-file-yesterday</span>)))
 
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">org-journal-save-entry-and-exit</span>()
+	<span style="color:#c41a16">&#34;Simple convenience function.
+</span><span style="color:#c41a16">  Saves the buffer of the current day&#39;s entry and kills the window
+</span><span style="color:#c41a16">  Similar to org-capture like behavior&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">save-buffer</span>)
+	(<span style="color:#000">kill-buffer-and-window</span>))
+  <span style="color:#177500">;; (define-key org-journal-mode-map (kbd &#34;C-x C-s&#34;) &#39;org-journal-save-entry-and-exit)</span>
+
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:org-journal-schedule-view</span> ()
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">org-journal-schedule-view</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
 	(<span style="color:#000">delete-other-windows</span>))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:journal-command</span> ()

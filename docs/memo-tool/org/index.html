@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-30T20:40:42 JST">
+<meta name="revised" content="2022-08-31T09:47:50 JST">
 <title>11.2. org-capture :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -910,52 +910,57 @@
   <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;,,&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-capture</span>)
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-agenda</span>)
 		 (<span style="color:#c41a16">&#34;C-c c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-capture</span>)
-		 (<span style="color:#c41a16">&#34;C-c k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-capture-kill</span>)
 		 (<span style="color:#c41a16">&#34;C-c o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-open-at-point</span>)
 		 (<span style="color:#c41a16">&#34;C-c i&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-edit-src-exit</span>)
 		 (<span style="color:#a90d91">:org-mode-map</span>
 		  (<span style="color:#c41a16">&#34;C-c i&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-edit-special</span>)))
-  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">org-log-done</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;org</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">org-log-done</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;time</span>)
 			(<span style="color:#000">timep-use-speed-commands</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
 			(<span style="color:#000">org-src-fontify-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-			(<span style="color:#000">org-startup-indented</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-			(<span style="color:#000">org-hide-leading-stars</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-			(<span style="color:#000">org-startup-folded</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;content</span>)
-			(<span style="color:#000">org-indent-mode-turns-on-hiding-stars</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
-			(<span style="color:#000">org-indent-indentation-per-level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">4</span>)
-			(<span style="color:#000">org-startup-folded</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;content</span>)
-			(<span style="color:#000">org-agenda-files</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span>))
+			(<span style="color:#000">org-agenda-files</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;~/Dropbox/org/journal/&#34;</span>))
 			(<span style="color:#000">org-agenda-span</span> <span style="color:#000">.</span> <span style="color:#1c01ce">30</span>))
   <span style="color:#a90d91">:config</span>
+  <span style="color:#177500">;; For `howm-create&#39; from org-capture</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:howm-create-file</span> ()
-	<span style="color:#c41a16">&#34;Make howm create file with &#39;org-capture&#39;.&#34;</span>
+	<span style="color:#c41a16">&#34;Howm create file for &#39;org-capture&#39;.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&#34;</span> (<span style="color:#000">current-time</span>)))
+
+  <span style="color:#177500">;; For `org-journal-new-entry&#39; from org-capture</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">org-journal-find-location</span> ()
+	<span style="color:#c41a16">&#34;Insert a heading and open today&#39;s journal.&#34;</span>
 	(<span style="color:#000">org-journal-new-entry</span> <span style="color:#000">t</span>)
+	(<span style="color:#a90d91">unless</span> (<span style="color:#000">eq</span> <span style="color:#000">org-journal-file-type</span> <span style="color:#c41a16">&#39;daily</span>)
+      (<span style="color:#000">org-narrow-to-subtree</span>))
 	(<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+
+  (<span style="color:#a90d91">defvar</span> <span style="color:#000">org-journal--date-location-scheduled-time</span> <span style="color:#000">nil</span>)
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">org-journal-date-location</span> (<span style="color:#a90d91">&amp;optional</span> <span style="color:#000">scheduled-time</span>)
+	<span style="color:#c41a16">&#34;Schedule tasks for future date.&#34;</span>
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">scheduled-time</span> (<span style="color:#a90d91">or</span> <span style="color:#000">scheduled-time</span> (<span style="color:#000">org-read-date</span> <span style="color:#000">nil</span> <span style="color:#000">nil</span> <span style="color:#000">nil</span> <span style="color:#c41a16">&#34;Date:&#34;</span>))))
+      (<span style="color:#a90d91">setq</span> <span style="color:#000">org-journal--date-location-scheduled-time</span> <span style="color:#000">scheduled-time</span>)
+      (<span style="color:#000">org-journal-new-entry</span> <span style="color:#000">t</span> (<span style="color:#000">org-time-string-to-time</span> <span style="color:#000">scheduled-time</span>))
+      (<span style="color:#a90d91">unless</span> (<span style="color:#000">eq</span> <span style="color:#000">org-journal-file-type</span> <span style="color:#c41a16">&#39;daily</span>)
+		(<span style="color:#000">org-narrow-to-subtree</span>))
+      (<span style="color:#000">goto-char</span> (<span style="color:#000">point-max</span>))))
+
   <span style="color:#177500">;; Caputure Settings</span>
   (<span style="color:#a90d91">setq</span> <span style="color:#000">org-capture-templates</span>
-		<span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#c41a16">&#34; Memo with howm&#34;</span> <span style="color:#000">plain</span> (<span style="color:#000">file</span> <span style="color:#000">my:howm-create-file</span>)
+		<span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#c41a16">&#34; Howm memo&#34;</span> <span style="color:#000">plain</span> (<span style="color:#000">file</span> <span style="color:#000">my:howm-create-file</span>)
 		   <span style="color:#c41a16">&#34;# memo: %?\n%U %i&#34;</span>)
-		  (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#c41a16">&#34; Note with howm&#34;</span> <span style="color:#000">plain</span> (<span style="color:#000">file</span> <span style="color:#000">my:howm-create-file</span>)
+		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#c41a16">&#34; Howm tech&#34;</span> <span style="color:#000">plain</span> (<span style="color:#000">file</span> <span style="color:#000">my:howm-create-file</span>)
 		   <span style="color:#c41a16">&#34;# note: %?\n%U %i&#34;</span>)
 		  (<span style="color:#c41a16">&#34;j&#34;</span> <span style="color:#c41a16">&#34; Journal entry&#34;</span> <span style="color:#000">entry</span> (<span style="color:#a90d91">function</span> <span style="color:#000">org-journal-find-location</span>)
-           <span style="color:#c41a16">&#34;* %(format-time-string org-journal-time-format)journal\n%i%?&#34;</span>)
-		  (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#c41a16">&#34; Journal emacs&#34;</span> <span style="color:#000">entry</span> (<span style="color:#a90d91">function</span> <span style="color:#000">org-journal-find-location</span>)
-           <span style="color:#c41a16">&#34;* %(format-time-string org-journal-time-format)emacs\n%i%?&#34;</span>)
-		  (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#c41a16">&#34; Schedule&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span> <span style="color:#c41a16">&#34;TASK&#34;</span>)
-		   <span style="color:#c41a16">&#34;** %?\n SCHEDULED: %^t \n&#34;</span> <span style="color:#a90d91">:empty-lines</span> <span style="color:#1c01ce">1</span> <span style="color:#a90d91">:jump-to-captured</span> <span style="color:#1c01ce">1</span>)
-		  (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#c41a16">&#34; Experiment&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/experiment.org&#34;</span> <span style="color:#c41a16">&#34;Experiment&#34;</span>)
-		   <span style="color:#c41a16">&#34;* %? %i\n#+BEGIN_SRC perl\n\n#+END_SRC\n\n%U&#34;</span>)
+           <span style="color:#c41a16">&#34;* %(format-time-string org-journal-time-format)%i%?&#34;</span>)
+		  (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#c41a16">&#34; Journal emacs&#34;</span> <span style="color:#000">entry</span> (<span style="color:#a90d91">function</span> <span style="color:#000">org-journal-find-location</span>)
+           <span style="color:#c41a16">&#34;* %(format-time-string org-journal-time-format)emacs: %i%?&#34;</span>)
+		  (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#c41a16">&#34; Journal schedule&#34;</span> <span style="color:#000">plain</span> (<span style="color:#a90d91">function</span> <span style="color:#000">org-journal-date-location</span>)
+           <span style="color:#c41a16">&#34;** TODO %?\n &lt;%(princ org-journal--date-location-scheduled-time)&gt;\n&#34;</span>
+           <span style="color:#a90d91">:jump-to-captured</span> <span style="color:#000">t</span>)
 		  (<span style="color:#c41a16">&#34;p&#34;</span> <span style="color:#c41a16">&#34; Code capture by protocol&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/capture.org&#34;</span> <span style="color:#c41a16">&#34;Code&#34;</span>)
 		   <span style="color:#c41a16">&#34;* %^{Title} \nSOURCE: %:link\nCAPTURED: %U\n\n#+BEGIN_SRC\n%i\n#+END_SRC\n&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)
 		  (<span style="color:#c41a16">&#34;L&#34;</span> <span style="color:#c41a16">&#34; Link capture by pritocol&#34;</span> <span style="color:#000">entry</span> (<span style="color:#000">file+headline</span> <span style="color:#c41a16">&#34;~/Dropbox/org/capture.org&#34;</span> <span style="color:#c41a16">&#34;Link&#34;</span>)
 		   <span style="color:#c41a16">&#34;* [[%:link][%:description]] \nCAPTURED: %U\nREMARKS: %?&#34;</span> <span style="color:#a90d91">:prepend</span> <span style="color:#000">t</span>)))
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">org-refile-targets</span>
-		<span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;~/Dropbox/org/archives.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>)
-		  (<span style="color:#c41a16">&#34;~/Dropbox/org/remember.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>)
-		  (<span style="color:#c41a16">&#34;~/Dropbox/org/task.org&#34;</span> <span style="color:#a90d91">:level</span> <span style="color:#000">.</span> <span style="color:#1c01ce">1</span>)))
 
   <span style="color:#177500">;; Maximize the org-capture buffer</span>
   (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:org-capture-before-config</span> <span style="color:#000">nil</span>
