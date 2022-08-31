@@ -80,7 +80,8 @@
 	(interactive)
 	(display-line-numbers-mode 0)
 	(flymake-mode 0)
-	(nyan-mode 0)))
+	(nyan-mode 0)
+	))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

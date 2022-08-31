@@ -13,8 +13,7 @@
 		  ([backtab] . howm-view-summary-previous-section)
 		  ("<return>" . howm-view-summary-open)
 		  ("," . howm-create-memo)
-		  ("t" . howm-create-tech)
-		  ("h" . howm-create-hoku)))
+		  ("t" . howm-create-tech)))
   :init
   (setq howm-view-title-header "#"
 		howm-directory "~/Dropbox/howm"
@@ -25,12 +24,11 @@
 			(howm-user-font-lock-keywords
 			 . '(("memo:" . (0 'compilation-error))
 				 ("note:" . (0 'compilation-info))
-				 ("tech:" . (0 'buffer-menu-buffer)))))
+				 ("tech:" . (0 'compilation-info)))))
   :config
   (setq howm-template '("# %title%cursor\n%date%file"
 						"# memo: %cursor\n%date%file"
-						"# tech: %cursor\n%date%file"
-						"# hoku: %cursor\n%date%file"))
+						"# tech: %cursor\n%date%file"))
   (defun howm-create-memo ()
 	"Hoge."
 	(interactive)
@@ -40,11 +38,6 @@
 	"Hoge."
 	(interactive)
 	(howm-create 3 nil)
-	(delete-other-windows))
-  (defun howm-create-hoku ()
-	"Hoge."
-	(interactive)
-	(howm-create 4 nil)
 	(delete-other-windows)))
 
 

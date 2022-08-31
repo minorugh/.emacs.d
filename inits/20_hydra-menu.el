@@ -15,12 +15,12 @@
    Quick Menu
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------------------
   _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rcgith_u_b  _._files   howm:_@__,_   _m_d:_p_view   _f_ileZilla
-  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg:_C_apture  _<home>_   _c_ompile^^   make:_k_._g_   _j_ourna_l_
+  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg:_C_apture  _<home>_   _c_ompile^^   make:_k_._g_   _j_ournal._;_
 "
    ("j" org-journal-new-entry)
    ;; ("l" org-journal-schedule-view)
    ("l" hydra-journal/body)
-   (";" hydra-journal/body)
+   (";" org-journal-new-scheduled-entry)
    ("o" my:org-dir)
    ("t" counsel-tramp)
    ("q" my:tramp-quit)
