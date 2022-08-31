@@ -8,11 +8,11 @@ weight = 3
 🔗 [bastibe/org-journal: A simple org-mode based journaling mode.](https://github.com/bastibe/org-journal) 
 
 
+
 ```elisp
 (leaf org-journal
   :doc "https://www.emacswiki.org/emacs/OrgJournal"
   :ensure t
-  :hook (after-init-hook . org-journal-mode)
   :chord (";;" . hydra-journal/body)
   :bind ((:org-journal-mode-map
 		  ("<muhenkan>" . org-journal-save-entry-and-exit))
@@ -21,12 +21,13 @@ weight = 3
 		 ("C-c y" . journal-file-yesterday))
   :custom `((org-journal-dir . "~/Dropbox/org/journal/")
 			(org-journal-file-format . "%Y%m%d.org")
-			(org-journal-date-format . "%Y-%m-%d (%A)"))
+			(org-journal-date-format . "%Y-%m-%d (%A)")
+			(org-journal-find-file . 'find-file))
   :hydra
   (hydra-journal
    (:color red :hint nil)
    "
-    Journal: 新規_;_   昨日.今日: _[_._]_    Task: 新規_._  一覧_,_   : _@_    window: _0_._1_._/_"
+    Journal: 新規_;_  Task: 新規_._    View: 昨日.今日.予定 _[_._]_._,_  command: _@_    window: _0_._1_._/_"
    (";" org-journal-new-entry)
    ("." org-journal-new-scheduled-entry)
    ("," my:org-journal-schedule-view)
@@ -36,7 +37,12 @@ weight = 3
    ("/" kill-this-buffer :exit t)
    ("0" delete-window :exit t)
    ("1" delete-other-windows :exit t))
-  :preface
+  :config
+  (defun my:org-journal-schedule-view ()
+	(interactive)
+	(org-journal-schedule-view)
+	(view-mode 0))
+
   (defun get-journal-file-today ()
     "Gets filename for today's journal entry."
     (let ((daily-name (format-time-string "%Y%m%d.org")))
@@ -65,13 +71,13 @@ weight = 3
 	(interactive)
 	(save-buffer)
 	(kill-buffer-and-window))
-  ;; (define-key org-journal-mode-map (kbd "C-x C-s") 'org-journal-save-entry-and-exit)
 
-  (defun my:org-journal-schedule-view ()
-	(interactive)
-	(org-journal-schedule-view)
-	(view-mode 0)
-	(delete-other-windows))
+  (defun org-journal-file-header-func (time)
+	"Custom function to create journal header."
+	(concat
+	 (pcase org-journal-file-type
+       (`daily "#+STARTUP: content indent inlineimages"))))
+  (setq org-journal-file-header 'org-journal-file-header-func)
 
   (defun my:journal-command ()
 	(interactive)
