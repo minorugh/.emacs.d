@@ -161,6 +161,17 @@ If the region is inactive, to kill whole line."
 (with-current-buffer "*Messages*"
   (emacs-lock-mode 'kill))
 
+;; M-x info-emacs-manual
+(add-to-list 'Info-directory-list (expand-file-name "info" user-emacs-directory))
+(defun Info-find-node--info-ja (orig-fn filename &rest args)
+  "Info as ORIG-FN FILENAME ARGS."
+  (apply orig-fn
+         (pcase filename
+           ("emacs" "emacs-ja")
+           (_ filename))
+         args))
+(advice-add 'Info-find-node :around 'Info-find-node--info-ja)
+
 
 (provide '00_base)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
