@@ -7,15 +7,16 @@ weight = 3
 ## [org-journal.el] ライフログを書く
 🔗 [bastibe/org-journal: A simple org-mode based journaling mode.](https://github.com/bastibe/org-journal) 
 
-日記を書くためのモードらしい。一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
+日記を書くためのモードらしい。使ってみて意外と優れもの。
 
-`org-mode`と同じルールでタスク管理もできて、ファイルの拡張子を`.org`にしておけば `agenda`にも反映してくれる。未達成だった昨日のTODOを自動的に今日に持ち越してくれるというのが優れもの。
+一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
+`org-mode`と同じルールでタスク管理もできて、ファイルの拡張子を`.org`にしておけば `agenda`にも反映してくれる。未達成だった昨日のTODOは、自動的に今日に持ち越してくれるというのが親切だ。
 
-`calender.el`との連動も素晴らしい。`M-x calendar` して [j]と打つと以下のコマンドが使える。
+`calender.el`との連動も具備していて、`M-x calendar` して `j` と打つと以下のコマンドが使える。
 
-* [d] .. `org-journal-display-entry` ... 編集できる 
-* [n] .. `org-journal-new-date-entry`... 選択した日付のエントリーを作成
-* [r] .. `org-journal-read-entry` ... 編集不可（read only）
+* `d` .. `org-journal-display-entry` ... 編集できる 
+* `n` .. `org-journal-new-date-entry`... 選択した日付のエントリーを作成
+* `r` .. `org-journal-read-entry` ... 編集不可（read only）
 
 ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
 ```elisp
