@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T18:07:25 JST">
+<meta name="revised" content="2022-09-01T18:27:13 JST">
 <title>3.6. point histry :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -887,6 +887,7 @@
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#point-historyel-過去のカーソル位置を記憶閲覧選択移動する">[point-history.el] 過去のカーソル位置を記憶・閲覧・選択・移動する</a></li>
+    <li><a href="#デレクトリバッファー名の末尾に-dirをつける">デレクトリバッファー名の末尾に [dir]をつける</a></li>
   </ul>
 </nav>
       </div>
@@ -911,6 +912,12 @@
 <p>過去に訪れた箇所の一覧をリストとして表示して、そこから戻りたい箇所を選択できます。
 デフォルトは <code>tab</code>移動ですが変更しています。また、<code>g</code> でリスト画面が消えてくれるので、わかりやすく<code>gg</code>で発動するようにキーバインドしています。</p>
 <p>リスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。</p>
+<p><code>ignore-buffer</code>の正規表現、なかなか難しいのですが…</p>
+<ul>
+<li><code>^*</code>:  <em>scratch</em> <em>dashboard</em> <em>Message</em> <em>init-log</em> などが有効になるようです。</li>
+<li><code>^magit</code>: 先頭に<code>magit</code> とつく<code>magit commit</code>時に作られる<code>buffer</code> を無視します。</li>
+<li><code>\]$</code> diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の<code>]</code>がマッチすれば無視します。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">point-history</span>
   <span style="color:#a90d91">:el-get</span> <span style="color:#000">blue0513/point-history</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">point-history-mode</span>)
@@ -921,6 +928,17 @@
   <span style="color:#a90d91">:custom</span> (<span style="color:#000">point-history-show-buffer-height</span> <span style="color:#000">.</span> <span style="color:#1c01ce">15</span>)
   <span style="color:#a90d91">:custom</span>
   (<span style="color:#000">point-history-ignore-buffer</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$&#34;</span>))
+</code></pre></div><h2 id="デレクトリバッファー名の末尾に-dirをつける">デレクトリバッファー名の末尾に [dir]をつける</h2>
+<p><code>counsel-switch-buffer</code> でファイルとデレクトリとを区別しやすいようにこのようにしてます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">dired-my-append-buffer-name-hint</span> ()
+  <span style="color:#c41a16">&#34;Append a auxiliary string [Dir] to a name of dired buffer.&#34;</span>
+  (<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#000">major-mode</span> <span style="color:#c41a16">&#39;dired-mode</span>)
+	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">list-buffers-directory</span>))
+    	   <span style="color:#177500">;; Add a drive letter for Windows</span>
+		   (<span style="color:#000">drive</span> (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">eq</span> <span style="color:#c41a16">&#39;system-type</span> <span style="color:#c41a16">&#39;windows-nt</span>)
+			               (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;^\\([a-zA-Z]:\\)/&#34;</span> <span style="color:#000">dir</span>))
+	                  (<span style="color:#000">match-string</span> <span style="color:#1c01ce">1</span> <span style="color:#000">dir</span>) <span style="color:#c41a16">&#34;&#34;</span>)))
+	  (<span style="color:#000">rename-buffer</span> (<span style="color:#000">concat</span> (<span style="color:#000">buffer-name</span>) <span style="color:#c41a16">&#34; [&#34;</span> <span style="color:#000">drive</span> <span style="color:#c41a16">&#34;dir]&#34;</span>) <span style="color:#000">t</span>))))
 </code></pre></div>
 
     

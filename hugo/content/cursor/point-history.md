@@ -12,6 +12,12 @@ draft = false
 
 リスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。
 
+`ignore-buffer`の正規表現、なかなか難しいのですが…
+
+* `^*`:  *scratch* *dashboard* *Message* *init-log* などが有効になるようです。
+* `^magit`: 先頭に`magit` とつく`magit commit`時に作られる`buffer` を無視します。
+* `\]$` diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の`]`がマッチすれば無視します。
+
 ```elisp
 (leaf point-history
   :el-get blue0513/point-history
@@ -25,3 +31,16 @@ draft = false
   (point-history-ignore-buffer . "^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$"))
 ```
 
+## デレクトリバッファー名の末尾に [dir]をつける
+`counsel-switch-buffer` でファイルとデレクトリとを区別しやすいようにこのようにしてます。
+```elisp
+(defun dired-my-append-buffer-name-hint ()
+  "Append a auxiliary string [Dir] to a name of dired buffer."
+  (when (eq major-mode 'dired-mode)
+	(let* ((dir (expand-file-name list-buffers-directory))
+    	   ;; Add a drive letter for Windows
+		   (drive (if (and (eq 'system-type 'windows-nt)
+			               (string-match "^\\([a-zA-Z]:\\)/" dir))
+	                  (match-string 1 dir) "")))
+	  (rename-buffer (concat (buffer-name) " [" drive "dir]") t))))
+```
