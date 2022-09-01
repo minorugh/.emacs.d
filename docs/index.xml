@@ -65,11 +65,9 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
       <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
-      <description>[org-mode] ごくシンプルに使う設定 メモ書きは、howmメインなのですが、自動タグ挿入を兼ねてメニュー代わりに org-capture を利用しています。
-org-capture からhowm-create や org-journal を発動できるように org-capture-template を作りました。
-org-capture からだとデフォルトでは、画面が半分（othe-window）になるのがいやなので、最大化で開くように変更しています。
-dashboard画面に簡単なタスクを表示させるために org-agenda も使っています。
-(leaf org :hook ((emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) (org-capture-mode-hook . delete-other-windows)) :chord (&amp;#34;,,&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;time) (timep-use-speed-commands . t) (org-src-fontify-natively . t) (org-agenda-files . &amp;#39;(&amp;#34;~/Dropbox/org/journal/&amp;#34;)) (org-agenda-span . 30)) :config ;; For `howm-create&amp;#39; from org-capture (defun my:howm-create-file () &amp;#34;Howm create file for &amp;#39;org-capture&amp;#39;.</description>
+      <description>[org-capture] ウエブページをキャプチャーする 🔗 sprig/org-capture-extension: A Chrome and firefox extension facilitating org-capture in emacs
+メモ書きは、howmとorg-journalがメインなので、GTD目的で org-capture を使うことはないのですが、 Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやCODEをワンクリックでEmacsにキャプチャーできるので便利に使っています。 導入法は上記リンク先に詳しいです。
+(leaf org :hook ((emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) (org-capture-mode-hook . delete-other-windows)) :chord (&amp;#34;;;&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;time) (timep-use-speed-commands . t) (org-src-fontify-natively .</description>
     </item>
     
     <item>
@@ -90,8 +88,10 @@ dashboard画面に簡単なタスクを表示させるために org-agenda も�
       <pubDate>Tue, 30 Aug 2022 19:35:34 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/journal/</guid>
-      <description>[org-journal.el] 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
-(leaf org-journal :doc &amp;#34;https://www.emacswiki.org/emacs/OrgJournal&amp;#34; :ensure t :chord (&amp;#34;;;&amp;#34; . hydra-journal/body) :bind ((:org-journal-mode-map (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . org-journal-save-entry-and-exit)) (&amp;#34;C-c j&amp;#34; . org-journal-new-entry) (&amp;#34;C-c t&amp;#34; . journal-file-today) (&amp;#34;C-c y&amp;#34; . journal-file-yesterday)) :custom `((org-journal-dir . &amp;#34;~/Dropbox/org/journal/&amp;#34;) (org-journal-file-format . &amp;#34;%Y%m%d.org&amp;#34;) (org-journal-date-format . &amp;#34;%Y-%m-%d (%A)&amp;#34;) (org-journal-find-file . &amp;#39;find-file)) :hydra (hydra-journal (:color red :hint nil) &amp;#34;  Journal: 新規_;_ Task: 新規_._  View: 昨日.今日.予定 _[_._]_._,_ command: _@_  window: _0_.</description>
+      <description>[org-journal.el] ライフログをかく 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
+日記を書くためのモードらしい。一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
+org-modeと同じルールでタスク管理もできて、ファイルの拡張子を.orgにしておけば agendaにも反映してくれる。未達成だった昨日のTODOを自動的に今日に持ち越してくれるという昨日はすごく親切だ。 ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
+(leaf org-journal :doc &amp;#34;https://www.emacswiki.org/emacs/OrgJournal&amp;#34; :ensure t :chord (&amp;#34;;;&amp;#34; . hydra-journal/body) :bind ((:org-journal-mode-map (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . org-journal-save-entry-and-exit)) (&amp;#34;C-c j&amp;#34; . org-journal-new-entry) (&amp;#34;C-c t&amp;#34; . journal-file-today) (&amp;#34;C-c y&amp;#34; . journal-file-yesterday)) :custom `((org-journal-dir . &amp;#34;~/Dropbox/org/journal/&amp;#34;) (org-journal-file-format . &amp;#34;%Y%m%d.org&amp;#34;) (org-journal-date-format . &amp;#34;%Y-%m-%d (%A)&amp;#34;) (org-journal-find-file . &amp;#39;find-file)) :hydra (hydra-journal (:color red :hint nil) &amp;#34;  Journal: 新規_;_ Task: 新規_._  View: 昨日.今日.予定 _[_.</description>
     </item>
     
     <item>

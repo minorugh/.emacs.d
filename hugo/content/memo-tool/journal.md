@@ -4,11 +4,13 @@ title = "11.3. org-journal"
 draft = false
 weight = 3
 +++
-### [org-journal.el]
+### [org-journal.el] ライフログをかく
 🔗 [bastibe/org-journal: A simple org-mode based journaling mode.](https://github.com/bastibe/org-journal) 
 
+日記を書くためのモードらしい。一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
 
-
+`org-mode`と同じルールでタスク管理もできて、ファイルの拡張子を`.org`にしておけば `agenda`にも反映してくれる。未達成だった昨日のTODOを自動的に今日に持ち越してくれるという昨日はすごく親切だ。
+ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
 ```elisp
 (leaf org-journal
   :doc "https://www.emacswiki.org/emacs/OrgJournal"
