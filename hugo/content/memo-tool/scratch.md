@@ -13,7 +13,7 @@ Emacsで作業中の編集画面から短期的なメモを気軽に書きたい
 
 専用のパッケージもあるようです。
 
-[persistent-scratch.el: scratch バッファを永続化・自動保存・復元する](http://emacs.rubikitch.com/persistent-scratch/) 
+* [persistent-scratch.el: scratch バッファを永続化・自動保存・復元する](http://emacs.rubikitch.com/persistent-scratch/) 
 
 `toggle-scratch` は、編集中のバッファーと`scratch`とをトグルで切り替えます。
 
