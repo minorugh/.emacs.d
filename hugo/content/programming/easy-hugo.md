@@ -8,7 +8,9 @@ weight = 9
 ## [eagy-hugo.el] マルチブログ管理
 [masasam/emacs-easy-hugo: Emacs major mode for managing hugo.](https://github.com/masasam/emacs-easy-hugo) 
 
-Hugoで作成されたブログを書くための Emacs メジャー モードです。
+Hugoで作成された複数のブログを管理するための Emacs メジャー モードです。
+
+作者の [@masasam](https://twitter.com/SolistWork) さんが、私の多くの要望を受け入れて完成してくださいました。感謝！ 
 
 静的サイトジェネレータ「Hugo」は、とても簡単に構築できるので、私の場合、公開ページの他にプライベートな書庫代わりとしても使っています。
 数えたらなんと９個も…
