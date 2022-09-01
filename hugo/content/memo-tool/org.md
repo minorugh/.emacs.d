@@ -7,8 +7,9 @@ weight = 2
 ## [org-capture.el] ウエブページをキャプチャーする 
 🔗 [sprig/org-capture-extension: A Chrome and firefox extension facilitating org-capture in emacs](https://github.com/sprig/org-capture-extension) 
 
-メモ書きは、`howm`と`org-journal`がメインなので、GTD目的で `org-capture` を使うことはないのですが、
-Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやCODEをワンクリックでEmacsにキャプチャーできるので便利に使っています。
+メモ書きは、`howm`と`org-journal`がメインなので、GTD目的で `org-capture` を使うことはないが、`org-mode` の勉強のために設定している。
+
+Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやCODEをワンクリックでEmacsにキャプチャーできる仕組みが便利です。
 導入法は上記リンク先に詳しいです。
 
 
