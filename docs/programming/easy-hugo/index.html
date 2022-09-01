@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T14:58:45 JST">
+<meta name="revised" content="2022-09-01T15:09:58 JST">
 <title>10.9. easy-hugo :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -902,6 +902,9 @@
 <h2 id="eagy-hugoel-マルチブログ管理">[eagy-hugo.el] マルチブログ管理</h2>
 <p><a href="https://github.com/masasam/emacs-easy-hugo">masasam/emacs-easy-hugo: Emacs major mode for managing hugo.</a></p>
 <p>Hugoで作成されたブログを書くための Emacs メジャー モードです。</p>
+<p>静的サイトジェネレータ「Hugo」は、とても簡単に構築できるので、私の場合、公開ページの他にプライベートな書庫代わりとしても使っています。
+数えたらなんと９個も…</p>
+<p><code>minorugh.github.io</code> をGitHub Pagesで公開しています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">easy-hugo</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c C-e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo</span>)
@@ -909,7 +912,6 @@
 		 (<span style="color:#c41a16">&#34;C-x P&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-publish</span>)
 		 (<span style="color:#a90d91">:easy-hugo-mode-map</span>
 		  ([<span style="color:#000">tab</span>] <span style="color:#000">.</span> <span style="color:#000">easy-hugo-no-help</span>)
-		  (<span style="color:#c41a16">&#34;&lt;return&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-view</span>)
 		  (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-open-basedir</span>)
 		  (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-rename</span>)
 		  (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:edit-easy-hugo</span>)))
@@ -920,7 +922,7 @@
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo--sort-publishday-flg</span> <span style="color:#1c01ce">1</span>)
   <span style="color:#a90d91">:init</span>
   <span style="color:#177500">;; Main blog (=blog1)</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-basedir</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh/snap/&#34;</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-basedir</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh.com/snap/&#34;</span>)
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-url</span> <span style="color:#c41a16">&#34;https://snap.minorugh.com&#34;</span>)
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-root</span> <span style="color:#c41a16">&#34;/home/minorugh/minorugh.com/public_html/snap/&#34;</span>)
@@ -928,43 +930,53 @@
   <span style="color:#177500">;; Bloglist</span>
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-bloglist</span>
 		<span style="color:#000">&#39;</span>(<span style="color:#177500">;; blog2 setting</span>
+		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/src/github.com/minorugh/.emacs.d/hugo/&#34;</span>)
+		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://minorugh.github.io/.emacs.d&#34;</span>)
+		   (<span style="color:#000">easy-hugo-postdir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;content/startup&#34;</span>)
+		   (<span style="color:#000">easy-hugo-preview-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;http://localhost:1313/.emacs.d/&#34;</span>))
+		  <span style="color:#177500">;; blog3 setting</span>
+		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/src/github.com/minorugh/minorugh.github.io/&#34;</span>)
+		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://minorugh.github.io&#34;</span>)
+		   (<span style="color:#000">easy-hugo-postdir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;content/posts&#34;</span>))
+		  <span style="color:#177500">;; blog4 setting</span>
 		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/gg/&#34;</span>)
 		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://gg.gospel-haiku.com&#34;</span>)
 		   (<span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
 		   (<span style="color:#000">easy-hugo-root</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/home/minorugh/gospel-haiku.com/public_html/gg/&#34;</span>))
-		  <span style="color:#177500">;; blog3 setting</span>
+		  <span style="color:#177500">;; blog5 setting</span>
 		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/blog/&#34;</span>)
 		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://blog.gospel-haiku.com&#34;</span>)
 		   (<span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
 		   (<span style="color:#000">easy-hugo-root</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/home/minorugh/gospel-haiku.com/public_html/blog/&#34;</span>))
-		  <span style="color:#177500">;; blog4 setting</span>
+		  <span style="color:#177500">;; blog6 setting</span>
 		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/es/&#34;</span>)
 		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://es.gospel-haiku.com&#34;</span>)
 		   (<span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
 		   (<span style="color:#000">easy-hugo-root</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/home/minorugh/gospel-haiku.com/public_html/es/&#34;</span>))
-		  <span style="color:#177500">;; blog5 setting</span>
-		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh/bible/&#34;</span>)
+		  <span style="color:#177500">;; blog7 setting</span>
+		  ((<span style="color:#000">easy-ugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh.com/bible/&#34;</span>)
 		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://bible.minorugh.com&#34;</span>)
 		   (<span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
 		   (<span style="color:#000">easy-hugo-root</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/home/minorugh/minorugh.com/public_html/bible/&#34;</span>))
-		  <span style="color:#177500">;; blog6 setting</span>
-		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh/tube/&#34;</span>)
+		  <span style="color:#177500">;; blog8 setting</span>
+		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh.com/tube/&#34;</span>)
 		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://tube.minorugh.com&#34;</span>)
 		   (<span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
 		   (<span style="color:#000">easy-hugo-root</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/home/minorugh/minorugh.com/public_html/tube/&#34;</span>))
-		  <span style="color:#177500">;; blog7 setting</span>
-		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh/ryo/&#34;</span>)
+		  <span style="color:#177500">;; blog9 setting</span>
+		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh.com/ryo/&#34;</span>)
 		   (<span style="color:#000">easy-hugo-url</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;https://ryo.minorugh.com&#34;</span>)
 		   (<span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
 		   (<span style="color:#000">easy-hugo-root</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;/home/minorugh/minorugh.com/public_html/ryo/&#34;</span>))))
 
   <span style="color:#177500">;; Customize for my help menu</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-help-line</span> <span style="color:#1c01ce">4</span>
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-help-line</span> <span style="color:#1c01ce">5</span>
 		<span style="color:#000">easy-hugo-help</span> <span style="color:#c41a16">&#34;
 </span><span style="color:#c41a16">  n .. New blog post    r .. Rename file     p .. Preview          g .. Refresh
-</span><span style="color:#c41a16">  d .. Delete post      a .. Search blog ag  P .. Publish clever   e .. Edit easy-hugo
-</span><span style="color:#c41a16">  c .. Open config      s .. Sort time       &lt; .. Previous blog    &gt; .. Next bloge
-</span><span style="color:#c41a16">  N .. No help [tab]    / .. Select postdir  o .. Open base dir    v .. View window
+</span><span style="color:#c41a16">  d .. Delete post      a .. Search blog ag  P .. Publish clever   G .. GitHub deploy
+</span><span style="color:#c41a16">  c .. Open config      o .. Open base dir   &lt; .. Previous blog    &gt; .. Next bloge
+</span><span style="color:#c41a16">  , .. Prev postdir     . .. Next postdir    ; .. Select blog      v .. Open view mode
+</span><span style="color:#c41a16">  N .. No help [tab]    s .. Sort time       u .. Sort Publish     e .. Edit easy-hugo
 </span><span style="color:#c41a16">&#34;</span>)
   <span style="color:#a90d91">:preface</span>
   (<span style="color:#000">leaf</span> <span style="color:#000">popup</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>)
@@ -975,9 +987,9 @@
 	<span style="color:#c41a16">&#34;Edit setting file for &#39;easy-hugo&#39;.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">find-file</span> <span style="color:#c41a16">&#34;~/.emacs.d/inits/60_easy-hugo.el&#34;</span>)
+	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">-1</span>)
 	(<span style="color:#000">forword-line</span> <span style="color:#1c01ce">2</span>)))
-</code></pre></div><p><code>GitHub Pages</code> へ <code>deploy</code> する機能もあるのですが、自分の場合は、<code>makefile</code> で自動化しています。</p>
-
+</code></pre></div>
 
     
     
