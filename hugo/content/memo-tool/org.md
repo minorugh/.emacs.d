@@ -4,7 +4,7 @@ title = "11.2. org-capture"
 draft = false
 weight = 2
 +++
-## [org-capture] ウエブページをキャプチャーする 
+## [org-capture.el] ウエブページをキャプチャーする 
 🔗 [sprig/org-capture-extension: A Chrome and firefox extension facilitating org-capture in emacs](https://github.com/sprig/org-capture-extension) 
 
 メモ書きは、`howm`と`org-journal`がメインなので、GTD目的で `org-capture` を使うことはないのですが、
