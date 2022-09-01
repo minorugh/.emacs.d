@@ -658,6 +658,13 @@
 	"content": "[expand-refion.el] カーソル位置を起点に選択範囲を賢く広げてくれる 🔗 magnars/expand-region.el: Expand region increases the selected region.\nexpand-region.elは、カーソル位置を起点として選択範囲を広げてくれます。\n2回以上呼ぶとその回数だけ賢く選択範囲が広がりますが、2回目以降はキーバインドの最後の一文字を連打すれば OKです。\nその場合、選択範囲を狭める時は - を押し、0 を押せばリセットされます。\n(leaf expand-region :ensure t :bind (\u0026#34;C-@\u0026#34; . er/expand-region)) "
 },
 {
+	"uri": "https://minorugh.github.io/.emacs.d/cursor/point-history/",
+	"title": "3.6. point histry",
+	"tags": [],
+	"description": "",
+	"content": "[point-history.el] 過去のカーソル位置を記憶・閲覧・選択・移動する 🔗 blue0513/point-history: Show the history of points you visited before.\n過去に訪れた箇所の一覧をリストとして表示して、そこから戻りたい箇所を選択できます。 デフォルトは tab移動ですが変更しています。また、g でリスト画面が消えてくれるので、わかりやすくggで発動するようにキーバインドしています。\nリスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。\n(leaf point-history :el-get blue0513/point-history :hook (after-init-hook . point-history-mode) :chord (\u0026#34;gg\u0026#34; . point-history-show) :bind ((:point-history-show-mode-map (\u0026#34;\u0026lt;SPC\u0026gt;\u0026#34; . point-history-next-line) (\u0026#34;b\u0026#34; . point-history-prev-line))) :custom (point-history-show-buffer-height . 15)) "
+},
+{
 	"uri": "https://minorugh.github.io/.emacs.d/core/encode/",
 	"title": "2.1. language / coding",
 	"tags": [],

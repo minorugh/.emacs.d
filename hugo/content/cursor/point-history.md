@@ -1,7 +1,7 @@
 +++
-date = "2022-09-01T15:21:37+09:00"
+date = "2022-08-29T05:50:55+09:00"
 title = "3.6. point histry"
-draft = true
+draft = false
 +++
 ## [point-history.el] 過去のカーソル位置を記憶・閲覧・選択・移動する
 
