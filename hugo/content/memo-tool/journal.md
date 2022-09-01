@@ -4,7 +4,7 @@ title = "11.3. org-journal"
 draft = false
 weight = 3
 +++
-### [org-journal.el] ライフログをかく
+### [org-journal.el] ライフログを書く
 🔗 [bastibe/org-journal: A simple org-mode based journaling mode.](https://github.com/bastibe/org-journal) 
 
 日記を書くためのモードらしい。一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
