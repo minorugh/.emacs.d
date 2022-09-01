@@ -24,7 +24,7 @@
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/howm/</guid>
       <description>[howm.el] お手軽メモ環境 🔗 howm: Write fragmentarily and read collectively.
-メモ書きに特化した使い方なのでhowm-menu は使わない。 howm-list-all の一覧画面をよく使うが、ここからでも [新規(c)] [検索(s)] ほか一連の howmコマンドは全て使える。
+メモ書きに特化した使い方なのでhowm-menu は使わない。 howm-list-all の一覧画面をよく使うが、ここからでも一連のワンキーコマンドは全て使える。
 タイトルの行頭にタグ（memo: note: など）を自動挿入して howm-create出来るように設定していて色付もしている。。
 (leaf howm :ensure t :hook (after-init-hook . howm-mode) :bind ((:howm-view-summary-mode-map ([backtab] . howm-view-summary-previous-section) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . howm-view-summary-open) (&amp;#34;,&amp;#34; . my:howm-create-memo) (&amp;#34;t&amp;#34; . my:howm-create-tech))) :init (setq howm-view-title-header &amp;#34;#&amp;#34; howm-directory &amp;#34;~/Dropbox/howm&amp;#34; howm-file-name-format &amp;#34;%Y/%m/%Y%m%d%H%M.md&amp;#34;) :custom `((howm-view-split-horizontally . t) (howm-view-summary-persistent . nil) (howm-normalizer . &amp;#39;howm-sort-items-by-reverse-date) (howm-user-font-lock-keywords . &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;compilation-error)) (&amp;#34;tech:&amp;#34; . (0 &amp;#39;compilation-info))))) :config (setq howm-template &amp;#39;(&amp;#34;# %title%cursor\n%date%file&amp;#34; &amp;#34;# memo: %cursor\n%date%file&amp;#34; &amp;#34;# tech: %cursor\n%date%file&amp;#34;)) (defun my:howm-create-memo () &amp;#34;Create by inserting tags automatically.</description>
     </item>
