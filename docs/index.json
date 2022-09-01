@@ -81,7 +81,7 @@
 	"title": "カーソル移動",
 	"tags": [],
 	"description": "",
-	"content": "カーソル移動に関する設定\n# INDEX  sequential-command 標準の C-a / C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げる  "
+	"content": "カーソル移動に関する設定\n# INDEX  sequential-command 標準の C-a / C-e を拡張 other-window-or-sptit 画面分割時のカーソルの移動 jump-brace 括弧の先頭と最後へ交互にポイント移動 my:exchange-point-and-mark 直前の編集ポイントと現在のポイントとを行き来する設定 expand-region カーソル位置を起点に選択範囲を賢く広げる point-history 過去のカーソル位置を記憶・閲覧・選択・移動する  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/programming/quickrun/",

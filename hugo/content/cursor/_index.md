@@ -25,3 +25,5 @@ disableToc = true
 [expand-region]({{< relref "expand-region" >}})
 : カーソル位置を起点に選択範囲を賢く広げる
 
+[point-history]({{< relref "point-history" >}})
+: 過去のカーソル位置を記憶・閲覧・選択・移動する
