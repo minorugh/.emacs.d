@@ -90,7 +90,8 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/journal/</guid>
       <description>[org-journal.el] ライフログを書く 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
 日記を書くためのモードらしい。一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
-org-modeと同じルールでタスク管理もできて、ファイルの拡張子を.orgにしておけば agendaにも反映してくれる。未達成だった昨日のTODOを自動的に今日に持ち越してくれるという昨日はすごく親切だ。 ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
+org-modeと同じルールでタスク管理もできて、ファイルの拡張子を.orgにしておけば agendaにも反映してくれる。未達成だった昨日のTODOを自動的に今日に持ち越してくれるというのが優れもの。
+ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
 (leaf org-journal :doc &amp;#34;https://www.emacswiki.org/emacs/OrgJournal&amp;#34; :ensure t :chord (&amp;#34;;;&amp;#34; . hydra-journal/body) :bind ((:org-journal-mode-map (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . org-journal-save-entry-and-exit)) (&amp;#34;C-c j&amp;#34; . org-journal-new-entry) (&amp;#34;C-c t&amp;#34; . journal-file-today) (&amp;#34;C-c y&amp;#34; . journal-file-yesterday)) :custom `((org-journal-dir . &amp;#34;~/Dropbox/org/journal/&amp;#34;) (org-journal-file-format . &amp;#34;%Y%m%d.org&amp;#34;) (org-journal-date-format . &amp;#34;%Y-%m-%d (%A)&amp;#34;) (org-journal-find-file . &amp;#39;find-file)) :hydra (hydra-journal (:color red :hint nil) &amp;#34;  Journal: 新規_;_ Task: 新規_._  View: 昨日.今日.予定 _[_.</description>
     </item>
     
