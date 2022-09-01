@@ -8,11 +8,10 @@ weight = 1
 ## [howm.el] お手軽メモ環境
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
-メモ書きだけに特化した使い方なので`howm-menu` は使わない。
-
+メモ書きに特化した使い方なので`howm-menu` は使わない。
 `howm-list-all` の一覧画面をよく使うが、ここからでも [新規(c)] [検索(s)] ほか一連の `howm`コマンドは全て使える。
 
-タイトルの行頭にタグ（memo: note: など）を自動挿入して `howm-create`出来るように設定していて、タグの色付もしている。。
+タイトルの行頭にタグ（memo: note: など）を自動挿入して `howm-create`出来るように設定していて色付もしている。。
 
 ```elisp
 (leaf howm
