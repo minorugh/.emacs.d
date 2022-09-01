@@ -11,6 +11,12 @@ weight = 3
 
 `org-mode`と同じルールでタスク管理もできて、ファイルの拡張子を`.org`にしておけば `agenda`にも反映してくれる。未達成だった昨日のTODOを自動的に今日に持ち越してくれるというのが優れもの。
 
+`calender.el`との連動も素晴らしい。`M-x calendar` して [j]と打つと以下のコマンドが使える。
+
+* [d] .. `org-journal-display-entry` ... 編集できる 
+* [n] .. `org-journal-new-date-entry`... 選択した日付のエントリーを作成
+* [r] .. `org-journal-read-entry` ... 編集不可（read only）
+
 ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
 ```elisp
 (leaf org-journal
