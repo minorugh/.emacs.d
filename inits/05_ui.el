@@ -80,16 +80,7 @@
 	(interactive)
 	(display-line-numbers-mode 0)
 	(flymake-mode 0)
-	(nyan-mode 0)
-	))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Aggressive indent
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(leaf aggressive-indent
-  :ensure t
-  :hook ((emacs-lisp-mode-hook css-mode-hook) . aggressive-indent-mode))
+	(nyan-mode 0)))
 
 
 (provide '05_ui)

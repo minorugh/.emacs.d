@@ -13,14 +13,14 @@
    (:hint nil :exit t)
    "
    Quick Menu
-  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-----------------------------------------------------------------------------------------------------
-  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rcgith_u_b  _._files   howm:_@__,_   _m_d:_p_view   _f_ileZilla
-  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg:_C_apture  _<home>_   _c_ompile^^   make:_k_._g_   _j_ournal._;_
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^--------------------------------------------------------------------------------------------------
+  _d_ropbox  _e_macs.d^^  _i_nits  _x_srv.jp^^^^  GH:_h_  root:_/_  _s_rcgith_u_b  _._files  f._z_illa   _m_d:_p_view  howm:_@__,__;_
+  _r_estart  magit_[__]_  _t_ramp  _y_as:_n_:_v_  _j_unk  _b_rowse  _o_rg:_C_apture  _<home>_  _c_ompile   make:_k_._g_  _j_ournal_:_^^
 "
+   ("a" my:journal-command)
    ("j" org-journal-new-entry)
-   ;; ("l" org-journal-schedule-view)
    ("l" hydra-journal/body)
-   (";" org-journal-new-scheduled-entry)
+   (":" org-journal-new-scheduled-entry)
    ("o" my:org-dir)
    ("t" counsel-tramp)
    ("q" my:tramp-quit)
@@ -42,7 +42,8 @@
    ("c" hydra-make/body)
    ("-" my:github-show)
    ("@" howm-list-all)
-   ("," howm-create-memo)
+   ("," my:howm-create-memo)
+   (";" my:howm-create-tech)
    ("J" open-junk-file)
    ("L" open-last-junk-file)
    ("k" my:make-k)
@@ -54,8 +55,7 @@
    ("s" my:scr-dir)
    ("u" my:github-dir)
    ("C" my:open-capture)
-   (":" view-mode)
-   ("f" filezilla)
+   ("z" filezilla)
    ("M-." hydra-work/body)
    ("<muhenkan>" nil)))
 

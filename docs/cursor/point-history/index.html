@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-09-01T18:02:16 JST">
-<title>コア設定 :: minoru&#39;s Emacs Config</title>
+<title>3.6. point histry :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
 <link href="/.emacs.d/css/font-awesome.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     
   </head>
-  <body data-url="/.emacs.d/core/">
+  <body data-url="/.emacs.d/cursor/point-history/">
     
     <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -851,7 +851,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/core/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/cursor/point-history.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -868,7 +868,12 @@
 
 
 
- <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > コア設定
+
+
+
+ <a href='https://minorugh.github.io/.emacs.d/'>minoru's Emacs Configuration</a> > <a href='https://minorugh.github.io/.emacs.d/cursor/'>カーソル移動</a> > 3.6. point histry
+
+ 
 
  
 
@@ -881,7 +886,7 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#-index"># INDEX</a></li>
+    <li><a href="#point-historyel-過去のカーソル位置を記憶閲覧選択移動する">[point-history.el] 過去のカーソル位置を記憶・閲覧・選択・移動する</a></li>
   </ul>
 </nav>
       </div>
@@ -893,7 +898,7 @@
 
 <div id="body-inner">
   
-    <h1>コア設定</h1>
+    <h1>3.6. point histry</h1>
   
 
 
@@ -901,27 +906,20 @@
     
     
     
-
-<p>Emacs の基本動作に関わる設定</p>
-<h2 id="-index"># INDEX</h2>
-<dl>
-<dt><a href="/.emacs.d/core/encode/">Language / Encode</a></dt>
-<dd>言語と文字コードの設定</dd>
-<dt><a href="/.emacs.d/core/mozc/">Mozc</a></dt>
-<dd>日本語入力の設定</dd>
-<dt><a href="/.emacs.d/core/server/">Server</a></dt>
-<dd>サーバー機能を使う設定</dd>
-<dt><a href="/.emacs.d/core/exec-path-from-shell/">exec-path-from-shell</a></dt>
-<dd>設定をシェルから継承する</dd>
-<dt><a href="/.emacs.d/core/uniquify/">uniquify</a></dt>
-<dd>同じバッファ名が開かれた場合に区別</dd>
-<dt><a href="/.emacs.d/core/change-keybind/">change-global-keibind</a></dt>
-<dd>基本キーバインドのカスタマイズ</dd>
-<dt><a href="/.emacs.d/core/aggresive-indent/">aggresive-indent</a></dt>
-<dd>即時整形バッファー</dd>
-</dl>
-
-
+<h2 id="point-historyel-過去のカーソル位置を記憶閲覧選択移動する">[point-history.el] 過去のカーソル位置を記憶・閲覧・選択・移動する</h2>
+<p>🔗 <a href="https://github.com/blue0513/point-history">blue0513/point-history: Show the history of points you visited before.</a></p>
+<p>過去に訪れた箇所の一覧をリストとして表示して、そこから戻りたい箇所を選択できます。
+デフォルトは <code>tab</code>移動ですが変更しています。また、<code>g</code> でリスト画面が消えてくれるので、わかりやすく<code>gg</code>で発動するようにキーバインドしています。</p>
+<p>リスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">point-history</span>
+  <span style="color:#a90d91">:el-get</span> <span style="color:#000">blue0513/point-history</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">point-history-mode</span>)
+  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;gg&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-show</span>)
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:point-history-show-mode-map</span>
+		  (<span style="color:#c41a16">&#34;&lt;SPC&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-next-line</span>)
+		  (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-prev-line</span>)))
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">point-history-show-buffer-height</span> <span style="color:#000">.</span> <span style="color:#1c01ce">15</span>))
+</code></pre></div>
 
     
     
@@ -932,8 +930,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-prev" href="/.emacs.d/startup/dashboard/" title="1.6. dashboard"> <i class="fa fa-chevron-left"></i><label>1.6. dashboard</label></a>
-    <a class="nav nav-next" href="/.emacs.d/core/encode/" title="2.1. language / coding" style="margin-right: 0px;"><label>2.1. language / coding</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/.emacs.d/cursor/expand-region/" title="3.5. expand-region"> <i class="fa fa-chevron-left"></i><label>3.5. expand-region</label></a>
+    <a class="nav nav-next" href="/.emacs.d/higlight/" title="フォント / 配色関連" style="margin-right: 0px;"><label>フォント / 配色関連</label><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">

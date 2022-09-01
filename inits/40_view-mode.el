@@ -27,7 +27,7 @@
 		 ("m" . magit-status)
 		 ("g" . my:google)
 		 ("s" . swiper-region)
-		 ("%" . my:jump-brace)
+		 ("%" . my:jump-brace) ;; Look 06_cursor.el
 		 ("@" . counsel-mark-ring)
 		 ("n" . my:org-view-next-heading)
 		 ("p" . my:org-view-previous-heading)
@@ -129,16 +129,6 @@ If the region is inactive, to kill whole line."
 	(yank)
 	(my:save-buffer)
 	(view-mode 1))
-
-  ;; Like as '%' of vim
-  (defun my:jump-brace ()
-	"Jump to the corresponding parenthesis."
-	(interactive)
-	(let ((c (following-char))
-		  (p (preceding-char)))
-	  (if (eq (char-syntax c) 40) (forward-list)
-		(if (eq (char-syntax p) 41) (backward-list)
-		  (backward-up-list)))))
 
   (defun my:org-view-next-heading ()
 	"Org-view-next-heading."

@@ -18,14 +18,14 @@
 	(view-mode 0)
 	(diff-hl-mode 0)
 	(display-line-numbers-mode 0)
-	(darkroom-tentative-mode 1)
+	(darkroom-mode 1)
 	(setq-local line-spacing .4))
 
   (defun my:darkroom-out ()
 	"Returns from `darkroom-mode' to the previous state."
 	(interactive)
 	(my:linespacing)
-	(darkroom-tentative-mode 0)
+	(darkroom-mode 0)
 	(display-line-numbers-mode 1)
 	(my:revert-buffer-no-confirm))
 

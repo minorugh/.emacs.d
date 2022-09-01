@@ -12,8 +12,8 @@
   :bind ((:howm-view-summary-mode-map
 		  ([backtab] . howm-view-summary-previous-section)
 		  ("<return>" . howm-view-summary-open)
-		  ("," . howm-create-memo)
-		  ("t" . howm-create-tech)))
+		  ("," . my:howm-create-memo)
+		  ("t" . my:howm-create-tech)))
   :init
   (setq howm-view-title-header "#"
 		howm-directory "~/Dropbox/howm"
@@ -29,16 +29,25 @@
   (setq howm-template '("# %title%cursor\n%date%file"
 						"# memo: %cursor\n%date%file"
 						"# tech: %cursor\n%date%file"))
-  (defun howm-create-memo ()
-	"Hoge."
+  (defun my:howm-create-memo ()
+    "Create by inserting tags automatically."
 	(interactive)
 	(howm-create 2 nil)
+	(my:howm-darkroom)
 	(delete-other-windows))
-  (defun howm-create-tech ()
-	"Hoge."
+
+  (defun my:howm-create-tech ()
+    "Create by inserting tags automatically."
 	(interactive)
 	(howm-create 3 nil)
-	(delete-other-windows)))
+	(my:howm-darkroom)
+	(delete-other-windows))
+
+  (defun my:howm-darkroom ()
+	"For `darkroom-mode-hook'."
+	(interactive)
+	(darkroom-mode 1)
+	(display-line-numbers-mode 0)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

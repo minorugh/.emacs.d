@@ -130,8 +130,7 @@
 
 ;; Change global key bind
 (leaf cus-global-keybind
-  :bind (("C-x C-x" . my:exchange-point-and-mark)
-		 ("M-w" . clipboard-kill-ring-save)
+  :bind (("M-w" . clipboard-kill-ring-save)
 		 ("C-w" . my:kill-whole-line-or-region)
 		 ("s-c" . clipboard-kill-ring-save)
 		 ("s-v" . clipboard-yank)
@@ -147,19 +146,6 @@ If the region is inactive, to kill whole line."
   (if (use-region-p)
 	  (clipboard-kill-region (region-beginning) (region-end))
     (kill-whole-line)))
-
-;; Return to last edit point
-(defun my:exchange-point-and-mark ()
-  "No mark active `exchange-point-and-mark'."
-  (interactive)
-  (exchange-point-and-mark)
-  (deactivate-mark))
-
-;; Set buffer that can not be killed
-(with-current-buffer "*scratch*"
-  (emacs-lock-mode 'kill))
-(with-current-buffer "*Messages*"
-  (emacs-lock-mode 'kill))
 
 ;; M-x info-emacs-manual
 (add-to-list 'Info-directory-list (expand-file-name "info" user-emacs-directory))

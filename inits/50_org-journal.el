@@ -3,10 +3,14 @@
 ;;; Code:
 ;; (setq debug-on-error t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org-journal configurations
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf org-journal
   :doc "https://www.emacswiki.org/emacs/OrgJournal"
   :ensure t
-  :chord (";;" . hydra-journal/body)
+  :hook (find-file-hook . my:journal-auto-darkroom)
+  :chord (",," . hydra-journal/body)
   :bind ((:org-journal-mode-map
 		  ("<muhenkan>" . org-journal-save-entry-and-exit))
 		 ("C-c j" . org-journal-new-entry)
@@ -20,25 +24,27 @@
   (hydra-journal
    (:color red :hint nil)
    "
-    Journal: 新規_;_  Task: 新規_._    View: 昨日.今日.予定 _[_._]_._,_  command: _@_    window: _0_._1_._/_"
-   (";" org-journal-new-entry)
-   ("." org-journal-new-scheduled-entry)
-   ("," my:org-journal-schedule-view)
-   ("]" journal-file-today)
+    Journal…   New._,_   Task._;_   昨日.今日.未来:_[__.__]_   Search._@_   Func._:_   Quit._/_"
+   ("," org-journal-new-entry)
+   (";" org-journal-new-scheduled-entry)
+   ("]" my:org-journal-schedule-view)
+   ("." journal-file-today)
    ("[" journal-file-yesterday)
-   ("@" my:journal-command)
-   ("/" kill-this-buffer :exit t)
-   ("0" delete-window :exit t)
-   ("1" delete-other-windows :exit t))
+   (":" my:journal-function)
+   ("@" org-journal-search-forever)
+   ("/" open-dashboard :exit t))
   :config
   (defun my:org-journal-schedule-view ()
+	"Turn on `darkroom', disable to `line-numbers' & `view-mode'."
 	(interactive)
 	(org-journal-schedule-view)
+	(darkroom-mode 1)
+	(display-line-numbers-mode 0)
 	(view-mode 0))
 
   (defun get-journal-file-today ()
-    "Gets filename for today's journal entry."
-    (let ((daily-name (format-time-string "%Y%m%d.org")))
+	"Gets filename for today's journal entry."
+	(let ((daily-name (format-time-string "%Y%m%d.org")))
       (expand-file-name (concat org-journal-dir daily-name))))
 
   (defun journal-file-today ()
@@ -70,11 +76,24 @@
 	(concat
 	 (pcase org-journal-file-type
        (`daily "#+STARTUP: content indent inlineimages"))))
-  (setq org-journal-file-header 'org-journal-file-header-func)
+  (setq org-journal-file-header 'org-journal-file-header-func))
 
-  (defun my:journal-command ()
-	(interactive)
-	(counsel-M-x "^org-journal-")))
+(defun my:journal-function ()
+  "Search Journal functions with counsel."
+  (interactive)
+  (counsel-M-x "^org-journal-"))
+
+;; Auto Darkroom for journal dir
+(defvar my:journal-dirs nil)
+(add-to-list 'my:journal-dirs "~/Dropbox/org/journal/")
+
+(defun my:journal-auto-darkroom ()
+  "Enable `darkroom', disable `line-numbers'."
+  (interactive)
+  (dolist (dir my:journal-dirs)
+	(when (eq 0 (string-match (expand-file-name dir) buffer-file-name))
+	  (darkroom-mode 1)
+	  (display-line-numbers-mode 0))))
 
 
 (provide '50_org-journal)
