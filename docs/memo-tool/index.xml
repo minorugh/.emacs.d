@@ -28,7 +28,7 @@
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
       <description>[org-capture.el] ウエブページをキャプチャーする 🔗 sprig/org-capture-extension: A Chrome and firefox extension facilitating org-capture in emacs
 メモ書きは、howmとorg-journalがメインなので、GTD目的で org-capture を使うことはないが、org-mode の勉強のために設定している。
-Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやCODEをワンクリックでEmacsにキャプチャーできる仕組みが便利です。 導入法は上記リンク先に詳しいです。
+Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリージョンしたCODEをワンクリックでEmacsにキャプチャーできる仕組みが便利。 導入法は上記リンク先に詳しいです。
 (leaf org :hook ((emacs-startup-hook . (lambda () (require &amp;#39;org-protocol))) (org-capture-mode-hook . delete-other-windows)) :chord (&amp;#34;;;&amp;#34; . org-capture) :bind ((&amp;#34;C-c a&amp;#34; . org-agenda) (&amp;#34;C-c c&amp;#34; . org-capture) (&amp;#34;C-c k&amp;#34; . org-capture-kill) (&amp;#34;C-c o&amp;#34; . org-open-at-point) (&amp;#34;C-c i&amp;#34; . org-edit-src-exit) (:org-mode-map (&amp;#34;C-c i&amp;#34; . org-edit-special))) :custom `((org-log-done . &amp;#39;time) (timep-use-speed-commands . t) (org-src-fontify-natively .</description>
     </item>
     

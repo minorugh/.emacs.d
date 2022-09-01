@@ -9,7 +9,7 @@ weight = 2
 
 メモ書きは、`howm`と`org-journal`がメインなので、GTD目的で `org-capture` を使うことはないが、`org-mode` の勉強のために設定している。
 
-Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやCODEをワンクリックでEmacsにキャプチャーできる仕組みが便利です。
+Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリージョンしたCODEをワンクリックでEmacsにキャプチャーできる仕組みが便利。
 導入法は上記リンク先に詳しいです。
 
 
