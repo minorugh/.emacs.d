@@ -242,7 +242,7 @@
 	"title": "メモ環境",
 	"tags": [],
 	"description": "",
-	"content": "TPOで使い分けるメモツール\n# INDEX  howm-mode howm-modeをメモ用とに特化して使う org-capture org-captureでウエブページをキャプチャーする org-journal org-journalでライフログを書く scratch-memo scratchを付箋として使う設定  "
+	"content": "TPOで使い分けるメモツール\n# INDEX  howm-mode howm-modeをメモ用途に特化して使う org-capture org-captureでウエブページをキャプチャーする org-journal org-journalでライフログを書く scratch-memo scratchを付箋として使う設定  "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/migemo/",

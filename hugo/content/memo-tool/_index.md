@@ -11,7 +11,7 @@ TPOで使い分けるメモツール
 ## # INDEX
 
 [howm-mode]({{< relref "howm" >}})
-: howm-modeをメモ用とに特化して使う
+: howm-modeをメモ用途に特化して使う
 
 [org-capture]({{< relref "org" >}})
 : org-captureでウエブページをキャプチャーする
