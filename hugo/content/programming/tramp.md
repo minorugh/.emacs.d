@@ -7,10 +7,9 @@ weight = 8
 ## [counsel-tramp.el] 
 🔗 [masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.](https://github.com/masasam/emacs-counsel-tramp) 
 
-管理している俳句サイトのレンタルサーバー`xsrver`を覗くのに `counsel-tramp` を使っています。
+管理している俳句サイトのレンタルサーバー`xsrver`をチラ見するのに使っています。
 
-サーバー上のファイルを直接編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
-手元が滑って重要なファイルを触ってしまわないように `view-mode` で開くようにしている。
+サーバー上のファイルを直接編集するというのはまずないのですが、うっかり手元が滑って重要なファイルを触ってしまわないように `view-mode` で開くようにしています。
 
 ```elisp
 (leaf counsel-tramp

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T14:48:39 JST">
+<meta name="revised" content="2022-09-01T14:51:28 JST">
 <title>10.8. counsel-tramp :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -901,9 +901,8 @@
     
 <h2 id="counsel-trampel">[counsel-tramp.el]</h2>
 <p>🔗 <a href="https://github.com/masasam/emacs-counsel-tramp">masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.</a></p>
-<p>管理している俳句サイトのレンタルサーバー<code>xsrver</code>を覗くのに <code>counsel-tramp</code> を使っています。</p>
-<p>サーバー上のファイルを直接編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
-手元が滑って重要なファイルを触ってしまわないように <code>view-mode</code> で開くようにしている。</p>
+<p>管理している俳句サイトのレンタルサーバー<code>xsrver</code>をチラ見するのに使っています。</p>
+<p>サーバー上のファイルを直接編集するというのはまずないのですが、うっかり手元が滑って重要なファイルを触ってしまわないように <code>view-mode</code> で開くようにしています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">counsel-tramp</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:auto-view</span>)
