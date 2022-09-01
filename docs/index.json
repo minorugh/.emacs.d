@@ -137,7 +137,7 @@
 	"title": "10.6. git-timemachine",
 	"tags": [],
 	"description": "",
-	"content": "[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.\n次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。\n p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  "
+	"content": "[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.\n次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。\n p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  (leaf git-timemachine\t:ensure t) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/ivy/",
@@ -158,7 +158,7 @@
 	"title": "10.7. browse-at-point",
 	"tags": [],
 	"description": "",
-	"content": "[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.\n[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers\nbrowse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。\n"
+	"content": "[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers\nbrowse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。\n(leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil)) "
 },
 {
 	"uri": "https://minorugh.github.io/.emacs.d/editing/yasnippets/",

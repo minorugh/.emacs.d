@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T14:51:28 JST">
+<meta name="revised" content="2022-09-01T14:58:45 JST">
 <title>10.7. browse-at-point :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -879,7 +879,6 @@
       <div class="wrapper">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#git-timemachineel">[git-timemachine.el]</a></li>
     <li><a href="#browse-at-remoteel">[browse-at-remote.el]</a></li>
   </ul>
 </nav>
@@ -900,12 +899,13 @@
     
     
     
-<h2 id="git-timemachineel">[git-timemachine.el]</h2>
-<p>🔗 <a href="https://github.com/emacsmirror/git-timemachine">emacsmirror/git-timemachine: Walk through git revisions of a file.</a></p>
 <h2 id="browse-at-remoteel">[browse-at-remote.el]</h2>
 <p>🔗 <a href="https://github.com/rmuslimov/browse-at-remote">rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers</a></p>
 <p><code>browse-at-remote.el</code> は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</p>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">browse-at-remote</span>
+  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">browse-at-remote-prefer-symbolic</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>))
+</code></pre></div>
 
     
     

@@ -19,3 +19,7 @@ weight = 6
 * `b` 現在アクセスしているリビジョンでmagit-blame 
 * `c` magit を使用して現在のコミットを表示
 
+
+```elisp
+  (leaf git-timemachine	:ensure t)
+```

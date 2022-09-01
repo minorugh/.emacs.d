@@ -71,7 +71,7 @@ magit status は、デフォルトでは other-window に表示されますが�
       <guid>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</guid>
       <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
 次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
- p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  </description>
+ p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  (leaf git-timemachine	:ensure t) </description>
     </item>
     
     <item>
@@ -80,9 +80,9 @@ magit status は、デフォルトでは other-window に表示されますが�
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
       <guid>https://minorugh.github.io/.emacs.d/programming/browsepoint/</guid>
-      <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
-[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
-browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。</description>
+      <description>[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
+browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。
+(leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil)) </description>
     </item>
     
     <item>
