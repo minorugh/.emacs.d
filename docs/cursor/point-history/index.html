@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T18:30:59 JST">
+<meta name="revised" content="2022-09-01T18:32:16 JST">
 <title>3.6. point histry :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -914,9 +914,9 @@
 <p>リスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。</p>
 <p><code>ignore-buffer</code>の正規表現、なかなか難しいのですが…</p>
 <ul>
-<li><code>^*</code>-&raquo;  <em>scratch</em> <em>dashboard</em> <em>Message</em> <em>init-log</em> などが有効になるようです。</li>
-<li><code>^magit</code>-&raquo; 先頭に<code>magit</code> とつく<code>magit commit</code>時に作られる<code>buffer</code> を無視します。</li>
-<li><code>\]$</code>-&raquo;  diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の<code>]</code>がマッチすれば無視します。</li>
+<li><code>^*</code> &raquo;&gt;  <em>scratch</em> <em>dashboard</em> <em>Message</em> <em>init-log</em> などが有効になるようです。</li>
+<li><code>^magit</code> &raquo;&gt; 先頭に<code>magit</code> とつく<code>magit commit</code>時に作られる<code>buffer</code> を無視します。</li>
+<li><code>\]$</code> &raquo;&gt;  diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の<code>]</code>がマッチすれば無視します。</li>
 </ul>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">point-history</span>
   <span style="color:#a90d91">:el-get</span> <span style="color:#000">blue0513/point-history</span>
