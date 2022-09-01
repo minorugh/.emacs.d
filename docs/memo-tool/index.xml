@@ -40,7 +40,8 @@ Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやCODE
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/journal/</guid>
       <description>[org-journal.el] ライフログを書く 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
 日記を書くためのモードらしい。使ってみて意外と優れもの。
-一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。 org-modeと同じルールでタスク管理もできて、ファイルの拡張子を.orgにしておけば agendaにも反映してくれる。未達成だった昨日のTODOは、自動的に今日に持ち越してくれるというのが親切だ。
+一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
+org-modeと同じルールでタスク管理もできて、ファイルの拡張子を.orgにしておけば agendaにも反映してくれるし、未達成だった昨日のTODOは、自動的に今日に持ち越してくれるというのが親切だ。
 calender.elとの連動も具備していて、M-x calendar して j と打つと以下のコマンドが使える。
  d .. org-journal-display-entry &amp;hellip; 編集できる n .. org-journal-new-date-entry&amp;hellip; 選択した日付のエントリーを作成 r .. org-journal-read-entry &amp;hellip; 編集不可（read only）  ひとりTwitterという感じでリラックスして使いたいので、自動的に執筆モードになるようにフックして快適である。
 (leaf org-journal :doc &amp;#34;https://www.emacswiki.org/emacs/OrgJournal&amp;#34; :ensure t :chord (&amp;#34;;;&amp;#34; . hydra-journal/body) :bind ((:org-journal-mode-map (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . org-journal-save-entry-and-exit)) (&amp;#34;C-c j&amp;#34; . org-journal-new-entry) (&amp;#34;C-c t&amp;#34; . journal-file-today) (&amp;#34;C-c y&amp;#34; . journal-file-yesterday)) :custom `((org-journal-dir . &amp;#34;~/Dropbox/org/journal/&amp;#34;) (org-journal-file-format . &amp;#34;%Y%m%d.</description>
