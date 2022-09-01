@@ -14,7 +14,7 @@ TPOで使い分けるメモツール
 : howm-modeをメモ用途に特化して使う
 
 [org-capture]({{< relref "org" >}})
-: org-captureでウエブページをキャプチャーする
+: ウエブページを自動でキャプチャーする
 
 [org-journal]({{< relref "journal" >}})
 : org-journalでライフログを書く
