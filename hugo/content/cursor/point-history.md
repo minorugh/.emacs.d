@@ -14,9 +14,9 @@ draft = false
 
 `ignore-buffer`の正規表現、なかなか難しいのですが…
 
-* `^*`:  *scratch* *dashboard* *Message* *init-log* などが有効になるようです。
-* `^magit`: 先頭に`magit` とつく`magit commit`時に作られる`buffer` を無視します。
-* `\]$` diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の`]`がマッチすれば無視します。
+* `^*`->>  *scratch* *dashboard* *Message* *init-log* などが有効になるようです。
+* `^magit`->> 先頭に`magit` とつく`magit commit`時に作られる`buffer` を無視します。
+* `\]$`->>  diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の`]`がマッチすれば無視します。
 
 ```elisp
 (leaf point-history
