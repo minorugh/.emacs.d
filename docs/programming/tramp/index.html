@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T14:05:24 JST">
+<meta name="revised" content="2022-09-01T14:48:39 JST">
 <title>10.8. counsel-tramp :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -901,15 +901,28 @@
     
 <h2 id="counsel-trampel">[counsel-tramp.el]</h2>
 <p>🔗 <a href="https://github.com/masasam/emacs-counsel-tramp">masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.</a></p>
-<p>管理している俳句サイトのれたるサーバーを除くのに <code>counsel-tramp</code> を使っています。</p>
-<p>サーバー上のファイルを直に編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。</p>
+<p>管理している俳句サイトのレンタルサーバー<code>xsrver</code>を覗くのに <code>counsel-tramp</code> を使っています。</p>
+<p>サーバー上のファイルを直接編集するというのはまずないのですが、サーバー内をチラ見するのに使っています。
+手元が滑って重要なファイルを触ってしまわないように <code>view-mode</code> で開くようにしている。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">counsel-tramp</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:auto-view</span>)
   <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">tramp-persistency-file-name</span> <span style="color:#000">.</span> <span style="color:#000">,</span><span style="color:#c41a16">&#34;~/.emacs.d/tmp/tramp&#34;</span>)
 	        (<span style="color:#000">tramp-default-method</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;scp&#34;</span>)
 	        (<span style="color:#000">counsel-tramp-custom-connections</span>
 	         <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#000">/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/</span>)))
   <span style="color:#a90d91">:config</span>
+  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:auto-view-dirs</span> <span style="color:#c41a16">&#34;/scp:xsrv:/home/minorugh/&#34;</span>)
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:auto-view</span> ()
+	<span style="color:#c41a16">&#34;Open a file with view mode.&#34;</span>
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">buffer-file-name</span>)
+	  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> <span style="color:#000">my:auto-view-regexp</span>
+				 (<span style="color:#000">string-match</span> <span style="color:#000">my:auto-view-regexp</span> <span style="color:#000">buffer-file-name</span>))
+		(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>))
+	  (<span style="color:#a90d91">dolist</span> (<span style="color:#000">dir</span> <span style="color:#000">my:auto-view-dirs</span>)
+		(<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#1c01ce">0</span> (<span style="color:#000">string-match</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">dir</span>) <span style="color:#000">buffer-file-name</span>))
+		  (<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>)))))
+
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:tramp-quit</span> ()
 	<span style="color:#c41a16">&#34;Quit tramp, if tramp connencted.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)

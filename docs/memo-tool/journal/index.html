@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T14:05:24 JST">
+<meta name="revised" content="2022-09-01T14:48:39 JST">
 <title>11.3. org-journal :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -914,7 +914,8 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">org-journal</span>
   <span style="color:#a90d91">:doc</span> <span style="color:#c41a16">&#34;https://www.emacswiki.org/emacs/OrgJournal&#34;</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;;;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-journal/body</span>)
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:journal-auto-darkroom</span>)
+  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;,,&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-journal/body</span>)
   <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:org-journal-mode-map</span>
 		  (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-save-entry-and-exit</span>))
 		 (<span style="color:#c41a16">&#34;C-c j&#34;</span> <span style="color:#000">.</span> <span style="color:#000">org-journal-new-entry</span>)
@@ -928,25 +929,27 @@
   (<span style="color:#000">hydra-journal</span>
    (<span style="color:#a90d91">:color</span> <span style="color:#000">red</span> <span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span>)
    <span style="color:#c41a16">&#34;
-</span><span style="color:#c41a16">    Journal: 新規_;_  Task: 新規_._    View: 昨日.今日.予定 _[_._]_._,_  command: _@_    window: _0_._1_._/_&#34;</span>
-   (<span style="color:#c41a16">&#34;;&#34;</span> <span style="color:#000">org-journal-new-entry</span>)
-   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">org-journal-new-scheduled-entry</span>)
-   (<span style="color:#c41a16">&#34;,&#34;</span> <span style="color:#000">my:org-journal-schedule-view</span>)
-   (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">journal-file-today</span>)
+</span><span style="color:#c41a16">    Journal…   New._,_   Task._;_   昨日.今日.未来:_[__.__]_   Search._@_   Func._:_   Quit._/_&#34;</span>
+   (<span style="color:#c41a16">&#34;,&#34;</span> <span style="color:#000">org-journal-new-entry</span>)
+   (<span style="color:#c41a16">&#34;;&#34;</span> <span style="color:#000">org-journal-new-scheduled-entry</span>)
+   (<span style="color:#c41a16">&#34;]&#34;</span> <span style="color:#000">my:org-journal-schedule-view</span>)
+   (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">journal-file-today</span>)
    (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">journal-file-yesterday</span>)
-   (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">my:journal-command</span>)
-   (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">kill-this-buffer</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;0&#34;</span> <span style="color:#000">delete-window</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   (<span style="color:#c41a16">&#34;1&#34;</span> <span style="color:#000">delete-other-windows</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>))
+   (<span style="color:#c41a16">&#34;:&#34;</span> <span style="color:#000">my:journal-function</span>)
+   (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">org-journal-search-forever</span>)
+   (<span style="color:#c41a16">&#34;/&#34;</span> <span style="color:#000">open-dashboard</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>))
   <span style="color:#a90d91">:config</span>
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:org-journal-schedule-view</span> ()
+	<span style="color:#c41a16">&#34;Turn on </span><span style="color:#c41a16">`darkroom&#39;</span><span style="color:#c41a16">, disable to </span><span style="color:#c41a16">`line-numbers&#39;</span><span style="color:#c41a16"> &amp; </span><span style="color:#c41a16">`view-mode&#39;</span><span style="color:#c41a16">.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">org-journal-schedule-view</span>)
+	(<span style="color:#000">darkroom-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
 	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">get-journal-file-today</span> ()
-    <span style="color:#c41a16">&#34;Gets filename for today&#39;s journal entry.&#34;</span>
-    (<span style="color:#a90d91">let</span> ((<span style="color:#000">daily-name</span> (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;%Y%m%d.org&#34;</span>)))
+	<span style="color:#c41a16">&#34;Gets filename for today&#39;s journal entry.&#34;</span>
+	(<span style="color:#a90d91">let</span> ((<span style="color:#000">daily-name</span> (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;%Y%m%d.org&#34;</span>)))
       (<span style="color:#000">expand-file-name</span> (<span style="color:#000">concat</span> <span style="color:#000">org-journal-dir</span> <span style="color:#000">daily-name</span>))))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">journal-file-today</span> ()
@@ -978,11 +981,24 @@
 	(<span style="color:#000">concat</span>
 	 (<span style="color:#a90d91">pcase</span> <span style="color:#000">org-journal-file-type</span>
        (<span style="color:#000">`</span><span style="color:#000">daily</span> <span style="color:#c41a16">&#34;#+STARTUP: content indent inlineimages&#34;</span>))))
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">org-journal-file-header</span> <span style="color:#c41a16">&#39;org-journal-file-header-func</span>)
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">org-journal-file-header</span> <span style="color:#c41a16">&#39;org-journal-file-header-func</span>))
 
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:journal-command</span> ()
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">counsel-M-x</span> <span style="color:#c41a16">&#34;^org-journal-&#34;</span>)))
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:journal-function</span> ()
+  <span style="color:#c41a16">&#34;Search Journal functions with counsel.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#000">counsel-M-x</span> <span style="color:#c41a16">&#34;^org-journal-&#34;</span>))
+
+<span style="color:#177500">;; Auto Darkroom for journal dir</span>
+(<span style="color:#a90d91">defvar</span> <span style="color:#000">my:journal-dirs</span> <span style="color:#000">nil</span>)
+(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;my:journal-dirs</span> <span style="color:#c41a16">&#34;~/Dropbox/org/journal/&#34;</span>)
+
+(<span style="color:#a90d91">defun</span> <span style="color:#000">my:journal-auto-darkroom</span> ()
+  <span style="color:#c41a16">&#34;Enable </span><span style="color:#c41a16">`darkroom&#39;</span><span style="color:#c41a16">, disable </span><span style="color:#c41a16">`line-numbers&#39;</span><span style="color:#c41a16">.&#34;</span>
+  (<span style="color:#a90d91">interactive</span>)
+  (<span style="color:#a90d91">dolist</span> (<span style="color:#000">dir</span> <span style="color:#000">my:journal-dirs</span>)
+	(<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#1c01ce">0</span> (<span style="color:#000">string-match</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">dir</span>) <span style="color:#000">buffer-file-name</span>))
+	  (<span style="color:#000">darkroom-mode</span> <span style="color:#1c01ce">1</span>)
+	  (<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>))))
 </code></pre></div>
 
     
