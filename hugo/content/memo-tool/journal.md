@@ -18,7 +18,7 @@ weight = 3
 * `n` .. `org-journal-new-date-entry`... 選択した日付のエントリーを作成
 * `r` .. `org-journal-read-entry` ... 編集不可（read only）
 
-ひとりTwitterという感じで気楽に使いたいので、自動的に執筆モードになるようにフックして快適である。
+ひとりTwitterという感じでリラックスして使いたいので、自動的に執筆モードになるようにフックして快適である。
 ```elisp
 (leaf org-journal
   :doc "https://www.emacswiki.org/emacs/OrgJournal"
