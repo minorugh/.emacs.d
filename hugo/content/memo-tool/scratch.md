@@ -42,3 +42,15 @@ Emacsで作業中の編集画面から短期的なメモを気軽に書きたい
 		(insert-file-contents file))))
   (read-scratch-data))
 ```
+
+## Scratch バッファーを消さない
+`scratch`付箋環境を実現させるのに必須なのは、決して`scratch`バッファーを消さないようにすること。
+難しい関数を設定せずともビルトインコマンドで簡単に実現できます。
+
+```elisp
+;; Set buffer that can not be killed
+(with-current-buffer "*scratch*"
+  (emacs-lock-mode 'kill))
+(with-current-buffer "*Messages*"
+  (emacs-lock-mode 'kill))
+```

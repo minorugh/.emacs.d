@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T18:33:41 JST">
+<meta name="revised" content="2022-09-01T19:29:02 JST">
 <title>11.4. scratch-memo :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -887,6 +887,7 @@
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#scratchバッファーを付箋として使う">scratchバッファーを付箋として使う</a></li>
+    <li><a href="#scratch-バッファーを消さない">Scratch バッファーを消さない</a></li>
   </ul>
 </nav>
       </div>
@@ -935,6 +936,14 @@
 		(<span style="color:#000">erase-buffer</span>)
 		(<span style="color:#000">insert-file-contents</span> <span style="color:#000">file</span>))))
   (<span style="color:#000">read-scratch-data</span>))
+</code></pre></div><h2 id="scratch-バッファーを消さない">Scratch バッファーを消さない</h2>
+<p><code>scratch</code>付箋環境を実現させるのに必須なのは、決して<code>scratch</code>バッファーを消さないようにすること。
+難しい関数を設定せずともビルトインコマンドで簡単に実現できます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Set buffer that can not be killed</span>
+(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>
+  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
+(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*Messages*&#34;</span>
+  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
 </code></pre></div>
 
     
