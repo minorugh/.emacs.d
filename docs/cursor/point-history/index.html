@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T18:29:15 JST">
+<meta name="revised" content="2022-09-01T18:30:59 JST">
 <title>3.6. point histry :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -939,6 +939,7 @@
 			               (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;^\\([a-zA-Z]:\\)/&#34;</span> <span style="color:#000">dir</span>))
 	                  (<span style="color:#000">match-string</span> <span style="color:#1c01ce">1</span> <span style="color:#000">dir</span>) <span style="color:#c41a16">&#34;&#34;</span>)))
 	  (<span style="color:#000">rename-buffer</span> (<span style="color:#000">concat</span> (<span style="color:#000">buffer-name</span>) <span style="color:#c41a16">&#34; [&#34;</span> <span style="color:#000">drive</span> <span style="color:#c41a16">&#34;dir]&#34;</span>) <span style="color:#000">t</span>))))
+(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;dired-mode-hook</span> <span style="color:#c41a16">&#39;dired-my-append-buffer-name-hint</span>)
 </code></pre></div>
 
     

@@ -43,4 +43,5 @@ draft = false
 			               (string-match "^\\([a-zA-Z]:\\)/" dir))
 	                  (match-string 1 dir) "")))
 	  (rename-buffer (concat (buffer-name) " [" drive "dir]") t))))
+(add-hook 'dired-mode-hook 'dired-my-append-buffer-name-hint)
 ```
