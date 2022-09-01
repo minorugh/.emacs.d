@@ -16,10 +16,12 @@ draft = false
 (leaf point-history
   :el-get blue0513/point-history
   :hook (after-init-hook . point-history-mode)
-  :chord ("gg" . point-history-show)
+  :chord ("gg" . point-history-show) ;; Since it disappears with `g'
   :bind ((:point-history-show-mode-map
 		  ("<SPC>" . point-history-next-line)
 		  ("b" . point-history-prev-line)))
-  :custom (point-history-show-buffer-height . 15))
+  :custom (point-history-show-buffer-height . 15)
+  :custom
+  (point-history-ignore-buffer . "^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$"))
 ```
 

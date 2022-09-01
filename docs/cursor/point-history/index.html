@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T18:02:16 JST">
+<meta name="revised" content="2022-09-01T18:07:25 JST">
 <title>3.6. point histry :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -914,11 +914,13 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">point-history</span>
   <span style="color:#a90d91">:el-get</span> <span style="color:#000">blue0513/point-history</span>
   <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">point-history-mode</span>)
-  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;gg&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-show</span>)
+  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;gg&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-show</span>) <span style="color:#177500">;; Since it disappears with `g&#39;</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:point-history-show-mode-map</span>
 		  (<span style="color:#c41a16">&#34;&lt;SPC&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-next-line</span>)
 		  (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">.</span> <span style="color:#000">point-history-prev-line</span>)))
-  <span style="color:#a90d91">:custom</span> (<span style="color:#000">point-history-show-buffer-height</span> <span style="color:#000">.</span> <span style="color:#1c01ce">15</span>))
+  <span style="color:#a90d91">:custom</span> (<span style="color:#000">point-history-show-buffer-height</span> <span style="color:#000">.</span> <span style="color:#1c01ce">15</span>)
+  <span style="color:#a90d91">:custom</span>
+  (<span style="color:#000">point-history-ignore-buffer</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$&#34;</span>))
 </code></pre></div>
 
     
