@@ -8,33 +8,52 @@ weight = 1
 ## [howm.el] お手軽メモ環境
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
-`howm-menu` は使わないので `howm-list-all` を初期画面として使っています。
+メモ書きだけに特化した使い方なので`howm-menu` は使わない。
 
-上記画面からでも [新規(c)] [検索(s)] ほか一連の `howm`コマンドは全て使えます。
+`howm-list-all` の一覧画面をよく使うが、ここからでも [新規(c)] [検索(s)] ほか一連の `howm`コマンドは全て使える。
 
-簡単なカテゴリ（memo:ショートメモ、note:記事のドラフト）に分けて、記事タイトルの頭に色付のタグをつけています。
-
-`org-capture` から自動タグ挿入して `howm-criate` を起動しています。
+タイトルの行頭にタグ（memo: note: など）を自動挿入して `howm-create`出来るように設定していて、タグの色付もしている。。
 
 ```elisp
 (leaf howm
   :ensure t
-  :hook ((emacs-startup-hook . howm-mode)
-         ())
-  :chord ("@@" . howm-list-all)
+  :hook (after-init-hook . howm-mode)
+  :bind ((:howm-view-summary-mode-map
+		  ([backtab] . howm-view-summary-previous-section)
+		  ("<return>" . howm-view-summary-open)
+		  ("," . my:howm-create-memo)
+		  ("t" . my:howm-create-tech)))
   :init
-  (setq howm-view-title-header "#")
-  (defun my:howm-create-file ()
-    "Make howm create file with 'org-capture'."
-    (interactive)
-    (format-time-string "~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md" (current-time)))
+  (setq howm-view-title-header "#"
+		howm-directory "~/Dropbox/howm"
+		howm-file-name-format "%Y/%m/%Y%m%d%H%M.md")
+  :custom `((howm-view-split-horizontally . t)
+			(howm-view-summary-persistent . nil)
+			(howm-normalizer . 'howm-sort-items-by-reverse-date)
+			(howm-user-font-lock-keywords
+			 . '(("memo:" . (0 'compilation-error))
+				 ("tech:" . (0 'compilation-info)))))
   :config
-  (bind-key [backtab] 'howm-view-summary-previous-section howm-view-summary-mode-map)
-  (setq howm-directory "~/Dropbox/howm")
-  (setq howm-view-split-horizontally t)
-  (setq howm-view-summary-persistent nil)
-  (setq howm-normalizer 'howm-sort-items-by-reverse-date)
-  (setq howm-user-font-lock-keywords
-		'(("memo:" . (0 'gnus-group-mail-3))
-		  ("note:" . (0 'epa-mark)))))
+  (setq howm-template '("# %title%cursor\n%date%file"
+						"# memo: %cursor\n%date%file"
+						"# tech: %cursor\n%date%file"))
+  (defun my:howm-create-memo ()
+    "Create by inserting tags automatically."
+	(interactive)
+	(howm-create 2 nil)
+	(my:darkroom-mode-hook)
+	(delete-other-windows))
+
+  (defun my:howm-create-tech ()
+    "Create by inserting tags automatically."
+	(interactive)
+	(howm-create 3 nil)
+	(my:darkroom-mode-hook)
+	(delete-other-windows))
+
+  (defun my:darkroom-mode-hook ()
+	"For `darkroom-mode-hook'."
+	(interactive)
+	(darkroom-mode 1)
+	(display-line-numbers-mode 0)))
 ```

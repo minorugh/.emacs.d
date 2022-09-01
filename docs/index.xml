@@ -24,11 +24,10 @@
       
       <guid>https://minorugh.github.io/.emacs.d/memo-tool/howm/</guid>
       <description>[howm.el] お手軽メモ環境 🔗 howm: Write fragmentarily and read collectively.
-howm-menu は使わないので howm-list-all を初期画面として使っています。
-上記画面からでも [新規(c)] [検索(s)] ほか一連の howmコマンドは全て使えます。
-簡単なカテゴリ（memo:ショートメモ、note:記事のドラフト）に分けて、記事タイトルの頭に色付のタグをつけています。
-org-capture から自動タグ挿入して howm-criate を起動しています。
-(leaf howm :ensure t :hook ((emacs-startup-hook . howm-mode) ()) :chord (&amp;#34;@@&amp;#34; . howm-list-all) :init (setq howm-view-title-header &amp;#34;#&amp;#34;) (defun my:howm-create-file () &amp;#34;Make howm create file with &amp;#39;org-capture&amp;#39;.&amp;#34; (interactive) (format-time-string &amp;#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&amp;#34; (current-time))) :config (bind-key [backtab] &amp;#39;howm-view-summary-previous-section howm-view-summary-mode-map) (setq howm-directory &amp;#34;~/Dropbox/howm&amp;#34;) (setq howm-view-split-horizontally t) (setq howm-view-summary-persistent nil) (setq howm-normalizer &amp;#39;howm-sort-items-by-reverse-date) (setq howm-user-font-lock-keywords &amp;#39;((&amp;#34;memo:&amp;#34; .</description>
+メモ書きだけに特化した使い方なのでhowm-menu は使わない。
+howm-list-all の一覧画面をよく使うが、ここからでも [新規(c)] [検索(s)] ほか一連の howmコマンドは全て使える。
+タイトルの行頭にタグ（memo: note: など）を自動挿入して howm-create出来るように設定していて、タグの色付もしている。。
+(leaf howm :ensure t :hook (after-init-hook . howm-mode) :bind ((:howm-view-summary-mode-map ([backtab] . howm-view-summary-previous-section) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . howm-view-summary-open) (&amp;#34;,&amp;#34; . my:howm-create-memo) (&amp;#34;t&amp;#34; . my:howm-create-tech))) :init (setq howm-view-title-header &amp;#34;#&amp;#34; howm-directory &amp;#34;~/Dropbox/howm&amp;#34; howm-file-name-format &amp;#34;%Y/%m/%Y%m%d%H%M.md&amp;#34;) :custom `((howm-view-split-horizontally . t) (howm-view-summary-persistent . nil) (howm-normalizer . &amp;#39;howm-sort-items-by-reverse-date) (howm-user-font-lock-keywords . &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;compilation-error)) (&amp;#34;tech:&amp;#34; . (0 &amp;#39;compilation-info))))) :config (setq howm-template &amp;#39;(&amp;#34;# %title%cursor\n%date%file&amp;#34; &amp;#34;# memo: %cursor\n%date%file&amp;#34; &amp;#34;# tech: %cursor\n%date%file&amp;#34;)) (defun my:howm-create-memo () &amp;#34;Create by inserting tags automatically.</description>
     </item>
     
     <item>

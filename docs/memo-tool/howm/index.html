@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-01T13:23:15 JST">
+<meta name="revised" content="2022-09-01T13:43:08 JST">
 <title>11.1. howm :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/.emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/.emacs.d/css/nucleus.css" rel="stylesheet">
@@ -901,30 +901,50 @@
     
 <h2 id="howmel-お手軽メモ環境">[howm.el] お手軽メモ環境</h2>
 <p>🔗 <a href="https://howm.osdn.jp/">howm: Write fragmentarily and read collectively.</a></p>
-<p><code>howm-menu</code> は使わないので <code>howm-list-all</code> を初期画面として使っています。</p>
-<p>上記画面からでも [新規(c)] [検索(s)] ほか一連の <code>howm</code>コマンドは全て使えます。</p>
-<p>簡単なカテゴリ（memo:ショートメモ、note:記事のドラフト）に分けて、記事タイトルの頭に色付のタグをつけています。</p>
-<p><code>org-capture</code> から自動タグ挿入して <code>howm-criate</code> を起動しています。</p>
+<p>メモ書きだけに特化した使い方なので<code>howm-menu</code> は使わない。</p>
+<p><code>howm-list-all</code> の一覧画面をよく使うが、ここからでも [新規(c)] [検索(s)] ほか一連の <code>howm</code>コマンドは全て使える。</p>
+<p>タイトルの行頭にタグ（memo: note: など）を自動挿入して <code>howm-create</code>出来るように設定していて、タグの色付もしている。。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">howm</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">emacs-startup-hook</span> <span style="color:#000">.</span> <span style="color:#000">howm-mode</span>)
-         ())
-  <span style="color:#a90d91">:chord</span> (<span style="color:#c41a16">&#34;@@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">howm-list-all</span>)
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">howm-mode</span>)
+  <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:howm-view-summary-mode-map</span>
+		  ([<span style="color:#000">backtab</span>] <span style="color:#000">.</span> <span style="color:#000">howm-view-summary-previous-section</span>)
+		  (<span style="color:#c41a16">&#34;&lt;return&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">howm-view-summary-open</span>)
+		  (<span style="color:#c41a16">&#34;,&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:howm-create-memo</span>)
+		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:howm-create-tech</span>)))
   <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-view-title-header</span> <span style="color:#c41a16">&#34;#&#34;</span>)
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:howm-create-file</span> ()
-    <span style="color:#c41a16">&#34;Make howm create file with &#39;org-capture&#39;.&#34;</span>
-    (<span style="color:#a90d91">interactive</span>)
-    (<span style="color:#000">format-time-string</span> <span style="color:#c41a16">&#34;~/Dropbox/howm/%Y/%m/%Y%m%d%H%M.md&#34;</span> (<span style="color:#000">current-time</span>)))
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-view-title-header</span> <span style="color:#c41a16">&#34;#&#34;</span>
+		<span style="color:#000">howm-directory</span> <span style="color:#c41a16">&#34;~/Dropbox/howm&#34;</span>
+		<span style="color:#000">howm-file-name-format</span> <span style="color:#c41a16">&#34;%Y/%m/%Y%m%d%H%M.md&#34;</span>)
+  <span style="color:#a90d91">:custom</span> <span style="color:#000">`</span>((<span style="color:#000">howm-view-split-horizontally</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+			(<span style="color:#000">howm-view-summary-persistent</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+			(<span style="color:#000">howm-normalizer</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;howm-sort-items-by-reverse-date</span>)
+			(<span style="color:#000">howm-user-font-lock-keywords</span>
+			 <span style="color:#000">.</span> <span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;memo:&#34;</span> <span style="color:#000">.</span> (<span style="color:#1c01ce">0</span> <span style="color:#c41a16">&#39;compilation-error</span>))
+				 (<span style="color:#c41a16">&#34;tech:&#34;</span> <span style="color:#000">.</span> (<span style="color:#1c01ce">0</span> <span style="color:#c41a16">&#39;compilation-info</span>)))))
   <span style="color:#a90d91">:config</span>
-  (<span style="color:#000">bind-key</span> [<span style="color:#000">backtab</span>] <span style="color:#c41a16">&#39;howm-view-summary-previous-section</span> <span style="color:#000">howm-view-summary-mode-map</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-directory</span> <span style="color:#c41a16">&#34;~/Dropbox/howm&#34;</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-view-split-horizontally</span> <span style="color:#000">t</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-view-summary-persistent</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-normalizer</span> <span style="color:#c41a16">&#39;howm-sort-items-by-reverse-date</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-user-font-lock-keywords</span>
-		<span style="color:#000">&#39;</span>((<span style="color:#c41a16">&#34;memo:&#34;</span> <span style="color:#000">.</span> (<span style="color:#1c01ce">0</span> <span style="color:#c41a16">&#39;gnus-group-mail-3</span>))
-		  (<span style="color:#c41a16">&#34;note:&#34;</span> <span style="color:#000">.</span> (<span style="color:#1c01ce">0</span> <span style="color:#c41a16">&#39;epa-mark</span>)))))
+  (<span style="color:#a90d91">setq</span> <span style="color:#000">howm-template</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;# %title%cursor\n%date%file&#34;</span>
+						<span style="color:#c41a16">&#34;# memo: %cursor\n%date%file&#34;</span>
+						<span style="color:#c41a16">&#34;# tech: %cursor\n%date%file&#34;</span>))
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:howm-create-memo</span> ()
+    <span style="color:#c41a16">&#34;Create by inserting tags automatically.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">howm-create</span> <span style="color:#1c01ce">2</span> <span style="color:#000">nil</span>)
+	(<span style="color:#000">my:darkroom-mode-hook</span>)
+	(<span style="color:#000">delete-other-windows</span>))
+
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:howm-create-tech</span> ()
+    <span style="color:#c41a16">&#34;Create by inserting tags automatically.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">howm-create</span> <span style="color:#1c01ce">3</span> <span style="color:#000">nil</span>)
+	(<span style="color:#000">my:darkroom-mode-hook</span>)
+	(<span style="color:#000">delete-other-windows</span>))
+
+  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-mode-hook</span> ()
+	<span style="color:#c41a16">&#34;For </span><span style="color:#c41a16">`darkroom-mode-hook&#39;</span><span style="color:#c41a16">.&#34;</span>
+	(<span style="color:#a90d91">interactive</span>)
+	(<span style="color:#000">darkroom-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)))
 </code></pre></div>
 
     
