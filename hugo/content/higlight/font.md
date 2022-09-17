@@ -19,7 +19,8 @@ Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等の
 * [日本語等幅フォント Cica](https://github.com/miiton/Cica)
 
 [オフィシャルページ](https://github.com/miiton/Cica/releases/tag/v5.0.3)にある最新の `Cica v5.03` は、
-`page-break-lines` で表示が乱れるようです。
+`page-break-lines` で表示が乱れるので、`dashboard.el` を使われるなら `Cica v5.01` がいいと思います。
+記号の表記なども変わっていて、私は `Cica v2.04`が好みで使い続けています。
 
 
 ## フォントのインストール
