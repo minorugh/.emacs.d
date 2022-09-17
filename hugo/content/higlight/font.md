@@ -27,8 +27,9 @@ Linux 環境でのインストールの方法です。
 
 1. [ダウンロードページ](https://github.com/SSW-SCIENTIFIC/Cica/releases)から、
 [Cica-v5.0.1.zip](https://github.com/SSW-SCIENTIFIC/Cica/releases/download/v5.0.1-no-glyph-mod/Cica-v5.0.1.zip) をダウンロードします。
-2. zipファイルを展開します。
-3. 解凍したファイルを `~/.fonts/` にコピーします。
+2. 私のサイトからもDLしていただけます。[Cica-v5.0.1.zip](https://dl.wegh.net/Cica/Cica-v5.0.1.zip) [Cica-v2.0.4.zip](https://dl.wegh.net/Cica/Cica-v2.0.4.zip)
+3. zipファイルを展開します。
+4. 解凍したファイルを `~/.fonts/` にコピーします。
 
 ```codesession
 $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/
