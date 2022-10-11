@@ -1,2 +1,2 @@
-docs/* linguist-language=Emacs-lisp
-hugo/* linguist-language=Emacs-lisp
+docs/* linguist-documentation 
+hugo/* linguist-documentation
