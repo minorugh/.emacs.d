@@ -1,4 +1,4 @@
-baseURL = "https://minorugh.github.io/.emacs.d/"
+baseURL = "https://minorugh.github.io/emacs.d/"
 languageCode = "ja-jp"
 title = "minoru's Emacs Config"
 theme = "docdock"

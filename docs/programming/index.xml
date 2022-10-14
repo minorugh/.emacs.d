@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>開発サポート on minoru&#39;s Emacs Config</title>
-    <link>https://minorugh.github.io/.emacs.d/programming/</link>
+    <link>https://minorugh.github.io/emacs.d/programming/</link>
     <description>Recent content in 開発サポート on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 29 Aug 2022 06:01:24 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 06:01:24 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/emacs.d/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>10.1. function key</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/function/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/function/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/function/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/function/</guid>
       <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
    キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
     </item>
     
     <item>
       <title>10.2. gist interface</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/gist/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/gist/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/gist/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/gist/</guid>
       <description>Gistインターフェイス リスト管理などもできる gist.el というパッケージを使っていましたが、そもそもローカルで管理する必要がないから Gistを使うのだと思うので post 専用の簡単な関数を作りました。
 gist をinstallしておく必要があります。
 $ sudo apt install gist ターミナルで gist --help と打つと沢山の起動オプションが表示される。
@@ -32,20 +32,20 @@ gist -o でポスト後の結果の URLをブラウザで開いてくれるの�
     
     <item>
       <title>10.3. flymake</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/flymake/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/flymake/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/flymake/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/flymake/</guid>
       <description>[flymake] 構文エラー表示 ビルトインの flymake-mode が軽くて使いやすくなったので、flycheck から移行しました。
 (leaf flymake :hook (prog-mode-hook . flymake-mode) :config (remove-hook &amp;#39;flymake-diagnostic-functions &amp;#39;flymake-proc-legacy-flymake) (leaf flymake-posframe :el-get Ladicle/flymake-posframe :hook (flymake-mode-hook . flymake-posframe-mode) :custom (flymake-posframe-error-prefix . &amp;#34; &amp;#34;))) </description>
     </item>
     
     <item>
       <title>10.4. quickrun</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/quickrun/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/quickrun/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/quickrun/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/quickrun/</guid>
       <description>[quickrun.el] お手軽ビルド 🔗 emacsorphanage/quickrun: Run command quickly.
 編集中のソースコードをビルド・実行して別バッファに結果を得ます。
 open-junk-file でショートプログラムを書きながら、その都度 quickrun させて…という具合に使えて重宝です。
@@ -54,10 +54,10 @@ open-junk-file でショートプログラムを書きながら、その都度 q
     
     <item>
       <title>10.5. magit</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/magit/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/magit/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/magit/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/magit/</guid>
       <description>[magit.el] Gitクライアント 🔗 magit/magit.el: Git user interface.
 magit status は、デフォルトでは other-window に表示されますが、フルフレームで表示されるようにしました。
 (leaf magit :ensure t :bind ((&amp;#34;M-g s&amp;#34; . magit-status) (&amp;#34;M-g b&amp;#34; . magit-blame) (&amp;#34;M-g t&amp;#34; . git-timemachine-toggle)) :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh) :custom (transient-history-file . &amp;#34;~/.emacs.d/tmp/transient-history&amp;#34;) :init (leaf diff-hl	:ensure t :hook ((after-init-hook . global-diff-hl-mode) (after-init-hook . diff-hl-margin-mode))) (leaf git-timemachine	:ensure t) (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil))) (setq magit-display-buffer-function #&amp;#39;magit-display-buffer-fullframe-status-v1) </description>
@@ -65,10 +65,10 @@ magit status は、デフォルトでは other-window に表示されますが�
     
     <item>
       <title>10.6. git-timemachine</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/git-timemachine/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/git-timemachine/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/git-timemachine/</guid>
       <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
 次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
  p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  (leaf git-timemachine	:ensure t) </description>
@@ -76,10 +76,10 @@ magit status は、デフォルトでは other-window に表示されますが�
     
     <item>
       <title>10.7. browse-at-point</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/browsepoint/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/browsepoint/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/browsepoint/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/browsepoint/</guid>
       <description>[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
 browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。
 (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil)) </description>
@@ -87,10 +87,10 @@ browse-at-remote.el は、Git管理しているEmacsバッファーからgithub�
     
     <item>
       <title>10.8. counsel-tramp</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/tramp/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/tramp/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/tramp/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/tramp/</guid>
       <description>[counsel-tramp.el] 🔗 masasam/emacs-counsel-tramp: Tramp ivy interface for ssh and docker and ‎vagrant.
 管理している俳句サイトのレンタルサーバーxsrverをチラ見するのに使っています。
 サーバー上のファイルを直接編集するというのはまずないのですが、うっかり手元が滑って重要なファイルを触ってしまわないように view-mode で開くようにしています。
@@ -99,10 +99,10 @@ browse-at-remote.el は、Git管理しているEmacsバッファーからgithub�
     
     <item>
       <title>10.9. easy-hugo</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/easy-hugo/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/easy-hugo/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/easy-hugo/</guid>
       <description>[eagy-hugo.el] マルチブログ管理 masasam/emacs-easy-hugo: Emacs major mode for managing hugo.
 Hugoで作成された複数のブログを管理するための Emacs メジャー モードです。
 作者の @masasam さんが、私の多くの要望を受け入れて完成してくださいました。感謝！
@@ -113,10 +113,10 @@ minorugh.github.io をGitHub Pagesで公開しています。
     
     <item>
       <title>10.10. open-junk-file</title>
-      <link>https://minorugh.github.io/.emacs.d/programming/junk/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/junk/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/programming/junk/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/junk/</guid>
       <description>[open-junk-file.el] 使い捨てファイルを書く、開く 🔗 rubikitch/open-junk-file: Write a disposable file.
 ファイルは howmフォルダー ~/Dropbox/howm/junk/ に保存します。
 そうすることで howm の検索機能が利用でき、 ローマ字（migemo）での日本語検索も可能になるのでとても便利です。

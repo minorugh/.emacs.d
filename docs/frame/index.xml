@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>フレーム / ウインドウ制御 on minoru&#39;s Emacs Config</title>
-    <link>https://minorugh.github.io/.emacs.d/frame/</link>
+    <link>https://minorugh.github.io/emacs.d/frame/</link>
     <description>Recent content in フレーム / ウインドウ制御 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 29 Aug 2022 05:55:43 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 05:55:43 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/emacs.d/frame/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5.1. dimmer-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/dimmer/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/dimmer/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/dimmer/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/dimmer/</guid>
       <description>[dimmer.el] 現在のバッファ以外の輝度を落とす 🔗 gonewest818/dimmer.el: Visually highlight the selected buffer.
 現在のバッファ以外の輝度を落とす機能を実現するためのパッケージです。
 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
@@ -23,10 +23,10 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     
     <item>
       <title>5.2. scrool-other-window</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/scrool-other-window/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/scrool-other-window/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/scrool-other-window/</guid>
       <description>deactiveなwindowをスクロールさせる scrool-other-window は、deactive なwindowをスクロールさせるためのキーバインド設定です。
 通常 &amp;lt;next&amp;gt; / &amp;lt;prior&amp;gt; は、PgUp / PgDn として機能するが、画面分割のときは other-Window に対応させている。
 (leaf *my:scroll-other-window :bind ((&amp;#34;&amp;lt;next&amp;gt;&amp;#34; . my:scroll-other-window) (&amp;#34;&amp;lt;prior&amp;gt;&amp;#34; . my:scroll-other-window-down)) :init (defun my:scroll-other-window () &amp;#34;If there are two windows, `scroll-other-window&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-up)) (scroll-other-window)) (defun my:scroll-other-window-down () &amp;#34;If there are two windows, `scroll-other-window-down&amp;#39;.&amp;#34; (interactive) (when (one-window-p) (scroll-down)) (scroll-other-window-down))) </description>
@@ -34,20 +34,20 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
     
     <item>
       <title>5.3. cus-sprit-window</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/sprit-window/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/sprit-window/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/sprit-window/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/sprit-window/</guid>
       <description>デフォルトの画面分割コマンドをカスタマイズ dimmer-mode 連携のためにデフォルトのコマンドをカスタマイズします。
  画面分割したときは、dimmer-mode on + follow-mode on にする。 画面分割を閉じたときは、dimmer-mode off にする。  (leaf *cus-sprit-window-functions :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.</description>
     </item>
     
     <item>
       <title>5.4. tempbuf</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/tempbuf/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/tempbuf/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/tempbuf/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/tempbuf/</guid>
       <description>[tempbuf.el] 不要なバッファを自動的に kill 🔗 emacswiki.org/emacs/tempbuf.el: Automatically deleted in the background
 tempbuf.el は不要になったと思われるバッファを自動的に kill してくれます。
 使っていた時間が長い程、裏に回った時には長い時間保持してくれる。
@@ -57,10 +57,10 @@ tempbuf.el は不要になったと思われるバッファを自動的に kill 
     
     <item>
       <title>5.5. winner-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/winner/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/winner/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/winner/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/winner/</guid>
       <description>11.3. [Winner.el] ウインドウ構成の履歴を辿る ビルトインの winner.el を使います．
 分割状況を含めて各ウィンドウで表示していたバッファの履歴を辿ることができます。
 winner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィンドウを閉じた時でも即座に元の状態に戻すことが可能です。
@@ -69,10 +69,10 @@ winner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィ�
     
     <item>
       <title>5.6. doom-thmes</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/doom-themes/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/doom-themes/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/doom-themes/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/doom-themes/</guid>
       <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
 doom-themes には、わんさかとtheme ファイルがパックされています。自分は、doom-dracula を愛用しています。
 (leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
@@ -81,10 +81,10 @@ doom-themes には、わんさかとtheme ファイルがパックされてい�
     
     <item>
       <title>5.7. doom-modeline</title>
-      <link>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</link>
+      <link>https://minorugh.github.io/emacs.d/frame/doom-modeline/</link>
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/frame/doom-modeline/</guid>
+      <guid>https://minorugh.github.io/emacs.d/frame/doom-modeline/</guid>
       <description>[doom-modeline.el] モードライン 🔗 seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.
 Emacsモダン化計画 -かわEmacs編 の記事に触発されて以来、doom-modeline を愛用しています。
 TeMPOraL/nyan-mode.el も可愛くて癒やされています(^^)

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>メモ環境 on minoru&#39;s Emacs Config</title>
-    <link>https://minorugh.github.io/.emacs.d/memo-tool/</link>
+    <link>https://minorugh.github.io/emacs.d/memo-tool/</link>
     <description>Recent content in メモ環境 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 29 Aug 2022 06:00:38 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/memo-tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 06:00:38 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/emacs.d/memo-tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>11.1. howm</title>
-      <link>https://minorugh.github.io/.emacs.d/memo-tool/howm/</link>
+      <link>https://minorugh.github.io/emacs.d/memo-tool/howm/</link>
       <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/memo-tool/howm/</guid>
+      <guid>https://minorugh.github.io/emacs.d/memo-tool/howm/</guid>
       <description>[howm.el] お手軽メモ環境 🔗 howm: Write fragmentarily and read collectively.
 メモ書きに特化した使い方なのでhowm-menu は使わない。 howm-list-all の一覧画面をよく使うが、ここからでも一連のワンキーコマンドは全て使える。
 タイトルの行頭にタグ（memo: note: など）を自動挿入して howm-create出来るように設定していて色付もしている。
@@ -22,10 +22,10 @@
     
     <item>
       <title>11.2. org-capture</title>
-      <link>https://minorugh.github.io/.emacs.d/memo-tool/org/</link>
+      <link>https://minorugh.github.io/emacs.d/memo-tool/org/</link>
       <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/memo-tool/org/</guid>
+      <guid>https://minorugh.github.io/emacs.d/memo-tool/org/</guid>
       <description>[org-capture.el] ウエブページをキャプチャーする 🔗 sprig/org-capture-extension: A Chrome and firefox extension facilitating org-capture in emacs
 メモ書きは、howmとorg-journalがメインなので、GTD目的で org-capture を使うことはないが、org-mode の勉強のために設定している。
 Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリージョンしたCODEをワンクリックでEmacsにキャプチャーできる仕組みが便利。 導入法は上記リンク先に詳しいです。
@@ -34,10 +34,10 @@ Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリ�
     
     <item>
       <title>11.3. org-journal</title>
-      <link>https://minorugh.github.io/.emacs.d/memo-tool/journal/</link>
+      <link>https://minorugh.github.io/emacs.d/memo-tool/journal/</link>
       <pubDate>Tue, 30 Aug 2022 19:35:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/memo-tool/journal/</guid>
+      <guid>https://minorugh.github.io/emacs.d/memo-tool/journal/</guid>
       <description>[org-journal.el] ライフログを書く 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
 日記を書くためのモードらしい。使ってみて意外と優れもの。
 一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
@@ -49,10 +49,10 @@ calender.elとの連動も具備していて、M-x calendar して j と打つ�
     
     <item>
       <title>11.4. scratch-memo</title>
-      <link>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</link>
+      <link>https://minorugh.github.io/emacs.d/memo-tool/scratch/</link>
       <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/memo-tool/scratch/</guid>
+      <guid>https://minorugh.github.io/emacs.d/memo-tool/scratch/</guid>
       <description>scratchバッファーを付箋として使う Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに *scratch*バッファーが使えるように設定してみた。
 再起動しても*scratch* の内容が消えないように auto-save-buffers の *scratch* 自動保存機能を併用しています。
 専用のパッケージもあるようです。

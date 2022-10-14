@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hydra on minoru&#39;s Emacs Config</title>
-    <link>https://minorugh.github.io/.emacs.d/hydra/</link>
+    <link>https://minorugh.github.io/emacs.d/hydra/</link>
     <description>Recent content in Hydra on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 29 Aug 2022 05:59:34 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/hydra/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 05:59:34 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/emacs.d/hydra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>8.1. hydra-menu</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-menu/</link>
+      <link>https://minorugh.github.io/emacs.d/hydra/hydra-menu/</link>
       <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-menu/</guid>
+      <guid>https://minorugh.github.io/emacs.d/hydra/hydra-menu/</guid>
       <description>hydra-menu は、いわば私の秘書のような役割です。
 便宜上、quick-menuとwork-menu に分けていますが、どちらからでも相互に呼び出せるようにしています。
 Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェクトのディレクトリを一発で開くためのショートカットを設定しています。
@@ -22,10 +22,10 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     
     <item>
       <title>8.2. hydra-make</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</link>
+      <link>https://minorugh.github.io/emacs.d/hydra/hydra-make/</link>
       <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-make/</guid>
+      <guid>https://minorugh.github.io/emacs.d/hydra/hydra-make/</guid>
       <description>Hydra for make command 🔗 自動化のための nmake 入門講座: 石井勝
 上記記事を読んで自分革命がありました。
  同じことは2度しない 必ずしなければならない作業 → 自動化できないか考える  と、いうことで、私は多くの日常ワークを make で自動化しています。目的に応じて選択実行するために hydra でメニュー化しています。
@@ -34,10 +34,10 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     
     <item>
       <title>8.3. hydra-package</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</link>
+      <link>https://minorugh.github.io/emacs.d/hydra/hydra-package/</link>
       <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-package/</guid>
+      <guid>https://minorugh.github.io/emacs.d/hydra/hydra-package/</guid>
       <description>Hydra for package-urils MELPAの管理には Package-utils を使っています。 また、el-get にもいろいろとコマンドがあるようです。
 どちらもあまり使いこなせてないのですが、 とりあえず主なコマンドを hydra-package でメニュー化しています。
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for package utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf package-utils :ensure t :chord (&amp;#34;p@&amp;#34; . hydra-package/body) :hydra (hydra-package (:color red :hint nil) &amp;#34; 📦 Package: _m_elpa _i_nstall upgrade:_l_ist._n_ame._a_ll _r_emove _e_l-get &amp;#34; (&amp;#34;i&amp;#34; package-install) (&amp;#34;l&amp;#34; package-utils-list-upgrades) (&amp;#34;n&amp;#34; package-utils-upgrade-by-name) (&amp;#34;r&amp;#34; package-utils-remove-by-name) (&amp;#34;a&amp;#34; package-utils-upgrade-all-and-restart) (&amp;#34;m&amp;#34; package-list-packages) (&amp;#34;e&amp;#34; select-elget-command) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :preface (defun select-elget-command () &amp;#34;Narrow the only el-get command in `M-x&amp;#39;.&amp;#34; (interactive) (counsel-M-x &amp;#34;^el-get &amp;#34;))) </description>
@@ -45,10 +45,10 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     
     <item>
       <title>8.4. hydra-markdown</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</link>
+      <link>https://minorugh.github.io/emacs.d/hydra/hydra-markdown/</link>
       <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-markdown/</guid>
+      <guid>https://minorugh.github.io/emacs.d/hydra/hydra-markdown/</guid>
       <description>Hydra for markdown-mode メモ書きや執筆関係の下書きには、markdown-mode をメインにしています。
 挿入テンプレートやライブビューアーのほか、md2docx md2pdf などのコマンド群を hydra でメニュー化しました。
 ;; Hydra for markdown-mode (leaf *hydra-markdown :hydra (hydra-markdown (:color red :hint nil) &amp;#34;  Markdown: _i_talic 消線:_x_ foot_n_ote _t_able _m_arkup pre_v_iew md2:_p_df:_d_ocx&amp;#34; (&amp;#34;i&amp;#34; markdown-insert-italic) (&amp;#34;x&amp;#34; markdown-insert-strike-through) (&amp;#34;t&amp;#34; markdown-insert-table) (&amp;#34;n&amp;#34; markdown-insert-footnote) (&amp;#34;m&amp;#34; markdown-toggle-markup-hiding) (&amp;#34;v&amp;#34; livedown-preview) ;; Pndoc (&amp;#34;p&amp;#34; md2pdf) (&amp;#34;d&amp;#34; md2docx) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (leaf emacs-livedown :el-get shime/emacs-livedown) (custom-set-variables &amp;#39;(markdown-toc-user-toc-structure-manipulation-fn &amp;#39;cdr)) :config (defun md2pdf () &amp;#34;Generate pdf from currently open markdown.&amp;#34; (interactive) (let ((filename (buffer-file-name (current-buffer)))) ;; Use wkhtmltopdf without latex (shell-command-to-string (concat &amp;#34;pandoc &amp;#34; filename &amp;#34; -f markdown -t html5 -o &amp;#34; (file-name-sans-extension filename) &amp;#34;.</description>
@@ -56,10 +56,10 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     
     <item>
       <title>8.5. hydra-view-mode</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</link>
+      <link>https://minorugh.github.io/emacs.d/hydra/hydra-view/</link>
       <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-view/</guid>
+      <guid>https://minorugh.github.io/emacs.d/hydra/hydra-view/</guid>
       <description>Hydra for view-mode: view-modeのヘルプ機能 view-mode の便利コマンド群、覚えてしまえばどうということはないのですが、認知も危ぶまれるような老骨なので、hydra でヘルプメニューを作りました。
 バッファーをvew-mode で開いているとき、[.]/[?] キーを打つことでhydra-view が発動します。
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; hydra view mode ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-view-mode :hydra (hydra-view (:color red :hint nil) &amp;#34;  View mode -----------------------^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------------------------------------ _x_:del-chra _u_:undo winner:_[__]_ _s_wiper :_o_._0_._1_._2_ _%_:paren _-__\/__+_ help_._ _d_:del-line _y_:yank x_r_ef🐾_RET_ _g_oogle _w_:for-word^^^^^^ _@_:point _m_agit^^^^ ex_i_t_:_ &amp;#34; (&amp;#34;r&amp;#34; xref-find-references) (&amp;#34;RET&amp;#34; xref-find-definitions) (&amp;#34;x&amp;#34; my:view-del-char) (&amp;#34;w&amp;#34; forward-word) (&amp;#34;d&amp;#34; my:view-kill-region) (&amp;#34;y&amp;#34; my:view-yank) (&amp;#34;u&amp;#34; my:view-undo) (&amp;#34;[&amp;#34; winner-undo) (&amp;#34;]&amp;#34; winner-redo) (&amp;#34;n&amp;#34; my:org-view-next-heading) (&amp;#34;p&amp;#34; my:org-view-previous-heading) (&amp;#34;%&amp;#34; my:jump-brace) (&amp;#34;@&amp;#34; counsel-mark-ring) (&amp;#34;i&amp;#34; View-exit-and-edit :exit t) (&amp;#34;:&amp;#34; View-exit-and-edit :exit t) (&amp;#34;s&amp;#34; swiper-thing-at-point) (&amp;#34;m&amp;#34; magit-status) (&amp;#34;g&amp;#34; my:google) (&amp;#34;o&amp;#34; other-window-or-split) (&amp;#34;0&amp;#34; my:delete-window) (&amp;#34;1&amp;#34; my:delete-other-windows) (&amp;#34;2&amp;#34; my:split-window-below) (&amp;#34;3&amp;#34; my:split-window-right) (&amp;#34;+&amp;#34; text-scale-increase) (&amp;#34;-&amp;#34; text-scale-decrease) (&amp;#34;/&amp;#34; (text-scale-set 0)) (&amp;#34;.</description>
@@ -67,10 +67,10 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
     
     <item>
       <title>8.6. hydra-browse</title>
-      <link>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</link>
+      <link>https://minorugh.github.io/emacs.d/hydra/hydra-browse/</link>
       <pubDate>Mon, 29 Aug 2022 05:59:34 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/hydra/hydra-browse/</guid>
+      <guid>https://minorugh.github.io/emacs.d/hydra/hydra-browse/</guid>
       <description>Hydra for brows-url お気に入りサイトをChromeで一発で開くために hydra でメニュー化しました。
 dashboard 画面からワンキーで呼び出せるようにもしていて便利です。
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;; Hydra for favorite utils ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; (leaf *hydra-browse :hydra (hydra-browse (:hint nil :exit t) &amp;#34; ^ Shop^ ^ SNS^ ^🔃 Repos^ ^ Blog^ ^ Life^ ^ Social^ ^ Github^ oogle ^^^^^^^^------------------------------------------------------------------------------------------------------------------ _A_: Amazon _t_: Twitter _d_: Dropbox _g_: ghub.io _j_: Jorudan _k_: Keep _1_: minorugh _5_: Translate _R_: Rakuten _y_: Youtube _f_: Flickr _x_: xsrv.jp _n_: News _p_: Pocket _2_: gist _6_: Map _Y_: Yodobashi _I_: Instagram _G_: Gdrive _e_: Essay _w_: Weather _q_: Qiita _3_: explore _7_: Earth _K_: Kakaku _T_: Tumblr _X_: Xserver _b_: Blog _S_: SanyoBas _s_: Slack _4_: Centaur _8_: Photo &amp;#34; (&amp;#34;A&amp;#34; (browse-url &amp;#34;https://www.</description>

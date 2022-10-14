@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>起動設定 on minoru&#39;s Emacs Config</title>
-    <link>https://minorugh.github.io/.emacs.d/startup/</link>
+    <link>https://minorugh.github.io/emacs.d/startup/</link>
     <description>Recent content in 起動設定 on minoru&#39;s Emacs Config</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 29 Aug 2022 05:45:20 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/.emacs.d/startup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Aug 2022 05:45:20 +0900</lastBuildDate><atom:link href="https://minorugh.github.io/emacs.d/startup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.1. eary-init.el</title>
-      <link>https://minorugh.github.io/.emacs.d/startup/eary-init/</link>
+      <link>https://minorugh.github.io/emacs.d/startup/eary-init/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/startup/eary-init/</guid>
+      <guid>https://minorugh.github.io/emacs.d/startup/eary-init/</guid>
       <description>早期初期化ファイル 🔗 minorugh/.emacs.d/early-init.el
 Emacs27から導入された eary-init.elは、init.el でGUIやパッケージシステムの初期化が実行される前にロードされるので、UI関係や package-enable-at-startup のようなパッケージ初期化プロセスに影響を与える変数を先に書くことで起動を早くすることが出来るようです。
 GCを減らす GC の閾値を最大にしておくことで GC を実質止めることができます。とりあえず書いておけば速くなる系なのでおすすめです。
@@ -26,10 +26,10 @@ eary-init.el に以下を書いて、1回目の実行を抑制することで少
     
     <item>
       <title>1.2. speed up startup</title>
-      <link>https://minorugh.github.io/.emacs.d/startup/speed-up/</link>
+      <link>https://minorugh.github.io/emacs.d/startup/speed-up/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/startup/speed-up/</guid>
+      <guid>https://minorugh.github.io/emacs.d/startup/speed-up/</guid>
       <description>起動時間の短縮 マジックファイル名を一時的に無効にすることで、起動時間を短縮できます。
 GC設定とともに設定ファイル読み込み後に正常値に戻します。 eary-init.el に書くよりも init.el の先頭に書くほうが効果がある感じです。
 ;; Speed up startup (unless (or (daemonp) noninteractive init-file-debug) (let ((old-file-name-handler-alist file-name-handler-alist)) (setq file-name-handler-alist nil) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover file name handlers.&amp;#34; (setq file-name-handler-alist (delete-dups (append file-name-handler-alist old-file-name-handler-alist))))))) ;; Defer garbage collection further back in the startup process (setq gc-cons-threshold most-positive-fixnum) (add-hook &amp;#39;emacs-startup-hook (lambda () &amp;#34;Recover GC values after startup.&amp;#34; (setq gc-cons-threshold 800000))) </description>
@@ -37,10 +37,10 @@ GC設定とともに設定ファイル読み込み後に正常値に戻します
     
     <item>
       <title>1.3. leaf.el</title>
-      <link>https://minorugh.github.io/.emacs.d/startup/leaf/</link>
+      <link>https://minorugh.github.io/emacs.d/startup/leaf/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/startup/leaf/</guid>
+      <guid>https://minorugh.github.io/emacs.d/startup/leaf/</guid>
       <description>設定ファイルを明示的に書く 🔗 Emacs入門から始めるleaf.el入門
 @conao3 さんの上記記事に触発されて、use-pacage.elから leaf.el に全面的に書き直しました。
 leaf.el の初期設定 @conao3 さんの示されていたものを下敷きにして init.el を設定しています。
@@ -49,10 +49,10 @@ leaf.el の初期設定 @conao3 さんの示されていたものを下敷きに
     
     <item>
       <title>1.4. init-loader.el</title>
-      <link>https://minorugh.github.io/.emacs.d/startup/init-loader/</link>
+      <link>https://minorugh.github.io/emacs.d/startup/init-loader/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/startup/init-loader/</guid>
+      <guid>https://minorugh.github.io/emacs.d/startup/init-loader/</guid>
       <description>[init-loader.el] 設定ファイルのローダー 🔗 emacs-jp/init-loader: Loader of configuration files.
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
@@ -61,10 +61,10 @@ init-loader には、エラーが出た設定ファイルは読み込まれな�
     
     <item>
       <title>1.5. test.el</title>
-      <link>https://minorugh.github.io/.emacs.d/startup/test/</link>
+      <link>https://minorugh.github.io/emacs.d/startup/test/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/startup/test/</guid>
+      <guid>https://minorugh.github.io/emacs.d/startup/test/</guid>
       <description>[test.el] 最小限の emacs を起動させるための設定 test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
 以下を .zshrc または .bashrc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
 alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
@@ -72,10 +72,10 @@ alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH
     
     <item>
       <title>1.6. dashboard</title>
-      <link>https://minorugh.github.io/.emacs.d/startup/dashboard/</link>
+      <link>https://minorugh.github.io/emacs.d/startup/dashboard/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/.emacs.d/startup/dashboard/</guid>
+      <guid>https://minorugh.github.io/emacs.d/startup/dashboard/</guid>
       <description>[dashboard.el]初期画面をイケメンにする 🔗 emacs-dashboard: An extensible emacs startup screen
 Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、dashbord.el を導入しました。
 &amp;lt;home&amp;gt; キーを押すことで何処からでも dashboard画面に戻ります。
