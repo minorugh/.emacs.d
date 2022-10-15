@@ -1,4 +1,4 @@
-;;; 99_my:dired.el --- My dired configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 99_my:dired.el --- User dired configurations. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
@@ -60,7 +60,7 @@
 (defun my:xsrv-dir ()
   "Open xsrv dir."
   (interactive)
-  (find-file "~/Dropbox/xsrv/"))
+  (find-file "~/Dropbox/xsrv.jp/"))
 
 (defun my:emacs-dir ()
   "Open `.emacs.d' dir."
@@ -83,14 +83,13 @@
   (interactive)
   (find-file "~/Dropbox/org/"))
 
-(defun mozc-dir ()
-  "Open mozc dir."
+(defun my:docker-dir ()
+  "Open docker dir."
   (interactive)
-  (setq dired-listing-switches "-lgGhFA")
-  (find-file "~/Dropbox/mozc/.mozc/"))
+  (find-file "~/docker"))
 
 (defun my:open-capture ()
-  "Open `org-capture' file."
+  "Open `org-caupture' file."
   (interactive)
   (find-file "~/Dropbox/org/capture.org")
   (view-mode 1)
@@ -150,6 +149,7 @@
   (goto-char (point-min)))
 
 
-(provide '99_my:dired)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 99_my:dired.el ends here

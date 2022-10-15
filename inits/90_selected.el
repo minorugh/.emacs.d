@@ -1,11 +1,8 @@
-;;; 90_selected.el --- Selected configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 90_selected.el --- Selected configurations. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Selected configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf selected
   :ensure t
   :hook (after-init-hook . selected-global-mode)
@@ -13,19 +10,17 @@
 		 (";" . comment-dwim)
 		 ("c" . clipboard-kill-ring-save)
 		 ("s" . swiper-thing-at-point)
-		 ("t" . google-translate-auto)
-		 ("T" . chromium-translate)
+		 ("t" . deepl-translate)
 		 ("W" . my:weblio)
 		 ("k" . my:koujien)
 		 ("e" . my:eijiro)
-		 ("g" . my:google)))
-
-(leaf *cus-selected
-  :hook ((activate-mark-hook . my:activate-selected)
-		 (activate-mark-hook . (lambda () (setq my:ime-flag current-input-method) (my:ime-off)))
-		 (deactivate-mark-hook . (lambda () (unless (null my:ime-flag) (my:ime-on)))))
+		 ("g" . my:google))
   :init
   (defvar my:ime-flag nil)
+  (add-hook 'activate-mark-hook 'my:activate-selected)
+  (add-hook 'activate-mark-hook '(lambda () (setq my:ime-flag current-input-method) (my:ime-off)))
+  (add-hook 'deactivate-mark-hook '(lambda () (unless (null my:ime-flag) (my:ime-on))))
+
   (defun my:activate-selected ()
 	"Active selected."
 	(selected-global-mode 1)
@@ -43,9 +38,7 @@
 	(deactivate-input-method)))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; user-dictionary-configurations
- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (with-eval-after-load 'selected
   (defun my:google (str)
 	(interactive (list (my:get-region nil)))
@@ -77,4 +70,7 @@
 
 (provide '90_selected)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 90_selected.el ends here

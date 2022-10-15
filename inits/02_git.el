@@ -1,18 +1,18 @@
-;; 02_git.el  --- Git configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;; 02_git.el  --- Git configurations. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-erro t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mgit configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf magit
   :ensure t
   :bind (("M-g s" . magit-status)
-		 ("M-g b" . magit-blame)
+		 ("M-g l" . magit-log-buffer-file)
+		 ("M-g b" . magit-blame-addition)
 		 ("M-g t" . git-timemachine-toggle))
   :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh)
-  :custom (transient-history-file . "~/.emacs.d/tmp/transient-history")
+  :custom
+  (transient-history-file . "~/.emacs.d/tmp/transient-history")
   :init
   (leaf diff-hl	:ensure t
 	:hook ((after-init-hook . global-diff-hl-mode)
@@ -24,9 +24,7 @@
 	:custom (browse-at-remote-prefer-symbolic . nil)))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Gist configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf gist
   :bind (("s-g p" . gist-region-or-buffer)
 		 ("s-g c" . my:chromium-gist))
@@ -60,6 +58,7 @@ If region isn't selected, post from the buffer."
 	(delete-other-windows)))
 
 
-(provide '02_git)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 02_git.el ends here

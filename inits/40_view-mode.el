@@ -1,14 +1,8 @@
-;;; 40_view-mode.el --- View mode configurations.  -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 40_view-mode.el --- View mode configurations.  -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-;;(setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; View mode configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf view
-  :hook ((find-file-hook . my:auto-view)
-		 (server-visit-hook . my:unlock-view-mode))
   :chord ("::" . view-mode)
   :bind (:view-mode-map
 		 ("h" . backward-char)
@@ -17,13 +11,13 @@
 		 ("e" . end-of-buffer)
 		 ("w" . forward-word)
 		 ("b" . scroll-down)
+		 ("D" . my:view-kill-region)
 		 ("c" . kill-ring-save)
 		 ("r" . xref-find-references)
 		 ("RET" . xref-find-definitions)
 		 ("x" . my:view-del-char)
 		 ("y" . my:view-yank)
-		 ("d" . my:view-kill-region)
-		 ("u" . my:view-undo)
+		 ("U" . my:view-undo)
 		 ("m" . magit-status)
 		 ("g" . my:google)
 		 ("s" . swiper-region)
@@ -54,7 +48,7 @@
   ;; Specific directory
   (defvar my:auto-view-dirs nil)
   (add-to-list 'my:auto-view-dirs "~/src/")
-  (add-to-list 'my:auto-view-dirs "~/Dropbox/GH/")
+  ;; (add-to-list 'my:auto-view-dirs "~/Dropbox/GH/")
   (add-to-list 'my:auto-view-dirs "/scp:xsrv:/home/minorugh/")
 
   (defun my:auto-view ()
@@ -66,23 +60,24 @@
 	  (dolist (dir my:auto-view-dirs)
 		(when (eq 0 (string-match (expand-file-name dir) buffer-file-name))
 		  (view-mode 1)))))
+  (add-hook 'find-file-hook 'my:auto-view)
 
   (defun my:unlock-view-mode ()
 	"Unlock view mode with git commit."
 	(when (string-match "COMMIT_EDITMSG" buffer-file-name)
 	  (view-mode 0)))
-
-  ;; Change-modeline-color
-  (leaf viewer
-	:ensure t
-	:hook (view-mode-hook . viewer-change-modeline-color-setup)
-	:custom `((viewer-modeline-color-view . "#852941")
-			  (viewer-modeline-color-unwritable . "#2F6828"))))
+  (add-hook 'server-visit-hook 'my:unlock-view-mode))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; custom functions for view-mode
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Change-modeline-color
+(leaf viewer
+  :ensure t
+  :hook (view-mode-hook . viewer-change-modeline-color-setup)
+  :custom `((viewer-modeline-color-view . "#852941")
+			(viewer-modeline-color-unwritable . "#2F6828")))
+
+
+;; Custom view commands
 (with-eval-after-load 'view
   ;; save-buffer no message
   (defun my:save-buffer ()
@@ -147,48 +142,7 @@ If the region is inactive, to kill whole line."
 	  (previous-line))))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; hydra view mode
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(leaf *hydra-view-mode
-  :hydra
-  (hydra-view
-   (:color red :hint nil)
-   "
-   View mode
-  -----------------------^^^^^^^^^^^^^^^^^^^^^^^^^^------------------------------------------------------------
-  _x_:del-chra   _u_:undo   winner:_[__]_   _s_wiper   :_o_._0_._1_._2_   _%_:paren   _-__\/__+_   help_._
-  _d_:del-line   _y_:yank   x_r_ef🐾_RET_   _g_oogle   _w_:for-word^^^^^^   _@_:point   _m_agit^^^^   ex_i_t_:_
-"
-   ("r" xref-find-references)
-   ("RET" xref-find-definitions)
-   ("x" my:view-del-char)
-   ("w" forward-word)
-   ("d" my:view-kill-region)
-   ("y" my:view-yank)
-   ("u" my:view-undo)
-   ("[" winner-undo)
-   ("]" winner-redo)
-   ("n" my:org-view-next-heading)
-   ("p" my:org-view-previous-heading)
-   ("%" my:jump-brace)
-   ("@" counsel-mark-ring)
-   ("i" View-exit-and-edit :exit t)
-   (":" View-exit-and-edit :exit t)
-   ("s" swiper-thing-at-point)
-   ("m" magit-status)
-   ("g" my:google)
-   ("o" other-window-or-split)
-   ("0" my:delete-window)
-   ("1" my:delete-other-windows)
-   ("2" my:split-window-below)
-   ("3" my:split-window-right)
-   ("+" text-scale-increase)
-   ("-" text-scale-decrease)
-   ("/" (text-scale-set 0))
-   ("." nil :cokor blue)))
-
-
-(provide '40_view-mode)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 40_view-mode.el ends here
