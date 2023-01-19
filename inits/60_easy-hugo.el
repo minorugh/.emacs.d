@@ -8,13 +8,13 @@
   :bind (("C-c C-e" . easy-hugo)
 		 (:easy-hugo-mode-map
 		  ([tab] . easy-hugo-no-help)
-		  ("n" . my:evil-easy-hugo-newpost)
 		  ("o" . easy-hugo-open-basedir)
 		  ("r" . easy-hugo-rename)
+		  ("n" . my:evil-easy-hugo-newpost)
 		  ("e" . my:edit-easy-hugo)))
   :config
-  ;; Open newpost with evil-isert-state
   (defun my:evil-easy-hugo-newpost (post-file)
+	"Open newpost with `evil-isert-state'."
 	(interactive (list (read-from-minibuffer
 						"Filename: "
 						`(,easy-hugo-default-ext . 1) nil nil nil)))
@@ -29,8 +29,7 @@
 		 (kill-buffer "*hugo*"))
 	   (find-file filename)
 	   (evil-insert-state)
-	   (goto-char (point-max))
-	   (save-buffer))))
+	   (goto-char (point-max)))))
   :init
   ;; Main blog (=blog1)
   (setq easy-hugo-basedir "~/Dropbox/minorugh.com/snap/")
@@ -91,8 +90,7 @@
 "))
 
 (leaf popup :ensure t)
-(leaf request
-  :ensure t
+(leaf request :ensure t
   :custom (request-storage-directory . "~/.emacs.d/tmp/request"))
 
 (defun my:edit-easy-hugo ()
