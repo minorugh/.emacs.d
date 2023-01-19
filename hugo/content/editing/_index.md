@@ -15,8 +15,8 @@ disableToc = true
 [markdown-mode]({{< relref "markdown" >}})
 : markdownでの編集をサポートしてくれる
 
-[view-mode]({{< relref "view" >}})
-: ファイルの閲覧に特化した便利機能
+[evil-mode]({{< relref "evil" >}})
+: Vimエミュレート機能
 
 [web-mode]({{< relref "web-mode" >}})
 : HTML編集をサポートしてくれる。
