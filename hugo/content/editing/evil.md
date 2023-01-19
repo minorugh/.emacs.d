@@ -12,20 +12,21 @@ weight = 2
 ```elisp
 (leaf evil
   :ensure t
-  :hook (after-init-hook . evil-mode)
+  :hook ((after-init-hook . evil-mode)
+		 (find-file-hook . my:evil-insert-state))
   :bind ((:evil-normal-state-map
 		  ("?" . chromium-vim-chert)
 		  ("C-e" . seq-end)
 		  ("SPC" . evil-insert-state)
 		  ("M-." . nil)	;; Use with other settings
-		  ("<hiragana-katakana>" . my:evil-insert-ime-on)
+		  ("<hiragana-katakana>" . my:evil-append-ime-on)
 		  ([home] . open-dashboard))
 		 (:evil-visual-state-map
-		  ("gg" . my:google)
+		  ("g" . my:google)
 		  ("k" . my:koujien)
 		  ("t" . gts-do-translate)))
   :init
-  ;; options for Evil, must be written bfore (require 'evil)
+  ;; Options for Evil, must be written bfore (require 'evil)
   (setq evil-insert-state-cursor '(bar . 4))
   (setq evil-cross-lines t)
   (setq evil-undo-system 'undo-fu)
@@ -40,15 +41,16 @@ weight = 2
   (define-key key-translation-map [muhenkan] 'evil-escape-or-quit)
   (define-key evil-operator-state-map [muhenkan] 'evil-escape-or-quit)
 
-  ;; Forcing Emacs State for major mode
-  (add-to-list 'evil-emacs-state-modes 'lisp-interaction-mode)
-  (add-to-list 'evil-emacs-state-modes 'fundamental-mode)
-  (add-to-list 'evil-emacs-state-modes 'dashboard-mode)
-  (add-to-list 'evil-emacs-state-modes 'dired-mode)
-  (add-to-list 'evil-emacs-state-modes 'neotree-mode)
-  (add-to-list 'evil-emacs-state-modes 'easy-hugo-mode)
+  ;; Force evil-emacs-state-modes into major mode
+  (dolist (mode '(lisp-interaction-mode
+				  fundamental-mode
+				  dashboard-mode
+				  dired-mode
+				  neotree-mode
+				  easy-hugo-mode))
+    (add-to-list 'evil-emacs-state-modes mode))
 
-  ;; Forcing Emacs State for minor mode
+  ;; Force evil-emacs-state into minor mode
   (add-hook 'org-capture-mode-hook 'evil-emacs-state)
   (add-hook 'view-mode-hook 'evil-emacs-state)
 
@@ -67,18 +69,18 @@ weight = 2
 	(if current-input-method (deactivate-input-method))
 	(evil-normal-state))
 
-  (defun my:evil-insert-ime-on ()
-	"Turn on input-method then return to insert-state."
-	(interactive)
-	(evil-insert-state)
-	(toggle-input-method))
-
   (defun my:evil-insert-state ()
-	"New files are opened with insert-state."
+	"New files open in insert state."
 	(interactive)
 	(unless (file-exists-p buffer-file-name)
 	  (evil-insert-state)))
-  (add-hook 'find-file-hook 'my:evil-insert-state)
+
+  (defun my:evil-append-ime-on ()
+	"Turn on input-method after append status."
+	(interactive)
+	(evil-insert-state)
+	(forward-char 1)
+	(toggle-input-method))
 
   (defun evil-swap-key (map key1 key2)
 	"Swap KEY1 and KEY2 in MAP."
@@ -93,6 +95,10 @@ weight = 2
 	"Set buffer for automatic insert-state."
 	(when (member (buffer-name) '("COMMIT_EDITMSG"))
 	  (evil-insert-state)))
-  (advice-add 'switch-to-buffer :after #'ad:switch-to-buffer))
-```
+  (advice-add 'switch-to-buffer :after #'ad:switch-to-buffer)
 
+  (defun chromium-vim-chert ()
+	"Chromium vim chert sheet."
+	(interactive)
+	(browse-url "https://vim.rtorr.com/lang/ja")))
+```
