@@ -14,3 +14,9 @@ weight = 10
 ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 `C-;` を押すと確定され `iedet-mode`を抜けます。
 
 Emacsでは使うことのない `<insert>` にキーバインドして重宝しています。
+
+```emacs-lisp
+(leaf iedit
+  :ensure t
+  :bind ("<insert>" . iedit-mode))
+```

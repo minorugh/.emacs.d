@@ -307,7 +307,8 @@ minorugh.github.io をGitHub Pagesで公開しています。
 バッファー内の複数箇所を同時に編集するツールです。
 対象範囲を選択して C-; を押すとiedit-modeとなり、選択したキーワードが全てハイライト表示され、モードラインにキーワードの出現した回数が表示され、ミニバッファにもメッセージが表示されます。
 ハイライトされた部分を編集すると、他のハイライトも同時に編集されるようになります。編集後、もう一度 C-; を押すと確定され iedet-modeを抜けます。
-Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドして重宝しています。</description>
+Emacsでは使うことのない &amp;lt;insert&amp;gt; にキーバインドして重宝しています。
+(leaf iedit :ensure t :bind (&amp;#34;&amp;lt;insert&amp;gt;&amp;#34; . iedit-mode)) </description>
     </item>
     
     <item>
