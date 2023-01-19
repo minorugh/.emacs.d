@@ -1,6 +1,6 @@
 +++
 date = "2022-08-29T05:53:26+09:00"
-title = "6.2. evil-mode"
+title = "6.2. evil"
 draft = false
 weight = 2 
 +++

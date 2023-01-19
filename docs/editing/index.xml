@@ -23,7 +23,7 @@ emacs-livedown.elisp は、el-get でインストールします。
     </item>
     
     <item>
-      <title>6.2. evil-mode</title>
+      <title>6.2. evil</title>
       <link>https://minorugh.github.io/emacs.d/editing/evil/</link>
       <pubDate>Mon, 29 Aug 2022 05:53:26 +0900</pubDate>
       
