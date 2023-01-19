@@ -71,15 +71,14 @@ Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリ�
     </item>
     
     <item>
-      <title>6.2. veiw-mode</title>
-      <link>https://minorugh.github.io/emacs.d/editing/view/</link>
+      <title>6.2. evil-mode</title>
+      <link>https://minorugh.github.io/emacs.d/editing/evil/</link>
       <pubDate>Mon, 29 Aug 2022 05:53:26 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/emacs.d/editing/view/</guid>
-      <description>[view-mode] ファイル閲覧モード（標準機能） view-mode はビルトインの機能です。
-特定の拡張子に対して常に view-mode で開きたいときやgzされた elispソースを見るときに使います。
-設定では、my:auto-view-dirs に追加したディレクトリのファイルを開くと連携して view-mode が有効になります．
-(leaf view :hook (find-file-hook . my:auto-view) (server-visit-hook . my:unlock-view-mode) :chord (&amp;#34;::&amp;#34; . view-mode) :bind (:view-mode-map (&amp;#34;h&amp;#34; . backward-char) (&amp;#34;l&amp;#34; . forward-char) (&amp;#34;a&amp;#34; . beginning-of-buffer) (&amp;#34;e&amp;#34; . end-of-buffer) (&amp;#34;w&amp;#34; . forward-word) (&amp;#34;b&amp;#34; . scroll-down) (&amp;#34;c&amp;#34; . kill-ring-save) (&amp;#34;r&amp;#34; . xref-find-references) (&amp;#34;RET&amp;#34; . xref-find-definitions) (&amp;#34;x&amp;#34; . my:view-del-char) (&amp;#34;y&amp;#34; . my:view-yank) (&amp;#34;d&amp;#34; . my:view-kill-region) (&amp;#34;u&amp;#34; . my:view-undo) (&amp;#34;m&amp;#34; . magit-status) (&amp;#34;g&amp;#34; .</description>
+      <guid>https://minorugh.github.io/emacs.d/editing/evil/</guid>
+      <description>[evil-mode] Vimエミュレートモード evil-mode Emacsの拡張可能なviレイヤです。
+私の場合は、完璧なVimエミュレート機能が欲しいわけではなく view-mode の代わりとして使うことを目的として設定を工夫しています。
+(leaf evil :ensure t :hook (after-init-hook . evil-mode) :bind ((:evil-normal-state-map (&amp;#34;?&amp;#34; . chromium-vim-chert) (&amp;#34;C-e&amp;#34; . seq-end) (&amp;#34;SPC&amp;#34; . evil-insert-state) (&amp;#34;M-.&amp;#34; . nil)	;; Use with other settings (&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . my:evil-insert-ime-on) ([home] . open-dashboard)) (:evil-visual-state-map (&amp;#34;gg&amp;#34; . my:google) (&amp;#34;k&amp;#34; . my:koujien) (&amp;#34;t&amp;#34; . gts-do-translate))) :init ;; options for Evil, must be written bfore (require &amp;#39;evil) (setq evil-insert-state-cursor &amp;#39;(bar . 4)) (setq evil-cross-lines t) (setq evil-undo-system &amp;#39;undo-fu) :config ;; Use emacs key bindings in insert state (setcdr evil-insert-state-map nil) ;; Go back to normal state with ESC (define-key evil-insert-state-map [escape] &amp;#39;my:evil-normal-state) ;; Use muhenkan key as ESC (define-key key-translation-map [muhenkan] &amp;#39;evil-escape-or-quit) (define-key evil-operator-state-map [muhenkan] &amp;#39;evil-escape-or-quit) ;; Forcing Emacs State for major mode (add-to-list &amp;#39;evil-emacs-state-modes &amp;#39;lisp-interaction-mode) (add-to-list &amp;#39;evil-emacs-state-modes &amp;#39;fundamental-mode) (add-to-list &amp;#39;evil-emacs-state-modes &amp;#39;dashboard-mode) (add-to-list &amp;#39;evil-emacs-state-modes &amp;#39;dired-mode) (add-to-list &amp;#39;evil-emacs-state-modes &amp;#39;neotree-mode) (add-to-list &amp;#39;evil-emacs-state-modes &amp;#39;easy-hugo-mode) ;; Forcing Emacs State for minor mode (add-hook &amp;#39;org-capture-mode-hook &amp;#39;evil-emacs-state) (add-hook &amp;#39;view-mode-hook &amp;#39;evil-emacs-state) (defun evil-escape-or-quit (&amp;amp;optional prompt) &amp;#34;If in evil state to ESC, else muhenkan key.</description>
     </item>
     
     <item>
