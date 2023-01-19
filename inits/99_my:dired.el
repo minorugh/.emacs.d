@@ -12,23 +12,33 @@
   (setq dired-listing-switches "-lgGhFA")
   (find-file "~/src/github.com/minorugh/dotfiles/"))
 
+(defun backup-makefile ()
+  "Open backup maikefile."
+  (interactive)
+  (find-file "~/Dropbox/makefile"))
+
+(defun my:zshrc ()
+  "Open zshrc."
+  (interactive)
+  (find-file "~/.zshrc"))
+
 (defun my:root-dir ()
   "Open root dir."
   (interactive)
   (setq dired-listing-switches "-lgGhFA")
   (find-file "/"))
 
-(defun my:minorugh-dir ()
-  "Open minorugh.com."
+(defun my:xsrv-dir ()
+  "Open xsrv dir."
   (interactive)
   (setq dired-listing-switches "-lgGhFA")
-  (find-file "~/Dropbox/minorugh.com/"))
+  (find-file "~/src/xsrv"))
 
-(defun my:github.io-dir ()
+(defun my:github-dir ()
   "Open root dir."
-  (interactive)
+  (interactive)i
   (setq dired-listing-switches "-lgGhFA")
-  (find-file "src/github.com/minorugh/minorugh.github.io/"))
+  (find-file "~/src/github.com/minorugh/"))
 
 (defun my:scr-dir ()
   "Open scr dir."
@@ -57,11 +67,6 @@
   (interactive)
   (find-file "~/Dropbox/"))
 
-(defun my:xsrv-dir ()
-  "Open xsrv dir."
-  (interactive)
-  (find-file "~/Dropbox/xsrv.jp/"))
-
 (defun my:emacs-dir ()
   "Open `.emacs.d' dir."
   (interactive)
@@ -81,18 +86,17 @@
 (defun my:org-dir ()
   "Open org dir."
   (interactive)
-  (find-file "~/Dropbox/org/"))
+  (find-file "~/Dropbox/howm/org/"))
 
-(defun my:docker-dir ()
+(defun my:docker-compose ()
   "Open docker dir."
   (interactive)
-  (find-file "~/docker"))
+  (find-file "~/src/xsrv/docker-compose"))
 
 (defun my:open-capture ()
   "Open `org-caupture' file."
   (interactive)
-  (find-file "~/Dropbox/org/capture.org")
-  (view-mode 1)
+  (find-file "~/Dropbox/howm/org/capture.org")
   (goto-char (point-min)))
 
 (defun my:diary ()
@@ -125,6 +129,24 @@
   (find-file "~/Dropbox/GH/swan/tex/swan.txt")
   (goto-char (point-min)))
 
+(defun my:tpost ()
+  "Open tselect file."
+  (interactive)
+  (find-file "~/Dropbox/GH/tselect/tex/minoru_sen.txt")
+  (goto-char (point-min)))
+
+(defun my:tselext ()
+  "Open tselect file."
+  (interactive)
+  (find-file "~/Dropbox/GH/tselext/select.txt")
+  (goto-char (point-min)))
+
+(defun my:dselext ()
+  "Open tselect file."
+  (interactive)
+  (find-file "~/Dropbox/GH/d_selext/select.txt")
+  (goto-char (point-min)))
+
 (defun my:teirei ()
   "Open teirei file."
   (interactive)
@@ -142,10 +164,35 @@
   (interactive)
   (find-file "~/Dropbox/GH/kinnei/draft.txt"))
 
+(defun my:year ()
+  "Open year file."
+  (interactive)
+  (find-file (format-time-string "~/Dropbox/GH/year/%Y.txt"))
+  (evil-insert-state)
+  (goto-char (point-max))
+  (forward-line -10))
+
+(defun my:year-draft ()
+  "Open year draft file."
+  (interactive)
+  (find-file "~/Dropbox/GH/year/draft.txt")
+  (evil-insert-state)
+  (goto-char (point-min))
+  (forward-line))
+
+(defun my:tpdia ()
+  "Open year draft file."
+  (interactive)
+  (find-file "~/Dropbox/GH/tpdia/dia.txt")
+  (evil-insert-state)
+  (goto-char (point-min))
+  (forward-line))
+
 (defun my:apvoice ()
   "Open apvoice file."
   (interactive)
   (find-file "~/Dropbox/GH/apvoice/apvoice.txt")
+  (evil-insert-state)
   (goto-char (point-min)))
 
 

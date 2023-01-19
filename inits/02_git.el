@@ -6,26 +6,47 @@
 ;; Mgit configuration
 (leaf magit
   :ensure t
-  :bind (("M-g s" . magit-status)
-		 ("M-g l" . magit-log-buffer-file)
-		 ("M-g b" . magit-blame-addition)
-		 ("M-g t" . git-timemachine-toggle))
+  :bind (("C-x g" . magit-status )
+		 ("M-g" . hydra-git/body))
   :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh)
+  :hydra
+  (hydra-git
+   (:color red :hint nil)
+   "
+  magit: _s_tatus  _b_lame  _c_heckout  _l_og  _g_itk  _t_imemachine
+"
+   ("s" magit-status)
+   ("b" magit-blame-addition)
+   ("c" magit-file-checkout)
+   ("l" magit-log-buffer-file)
+   ("g" gitk-open)
+   ("t" git-timemachine-toggle)
+   ("<muhenkan>" nil))
   :custom
   (transient-history-file . "~/.emacs.d/tmp/transient-history")
+  :preface
+  (defun gitk-open ()
+	"Open gitk with current dir."
+	(interactive)
+	(shell-command "gitk &")
+	(delete-other-windows))
+
+  (defun git-gui-open ()
+	"Open gitk with current dir."
+	(interactive)
+	(shell-command "git gui &")
+	(delete-other-windows))
   :init
   (leaf diff-hl	:ensure t
 	:hook ((after-init-hook . global-diff-hl-mode)
 		   (after-init-hook . diff-hl-margin-mode)))
-
   (leaf git-timemachine	:ensure t)
-
   (leaf browse-at-remote :ensure t
 	:custom (browse-at-remote-prefer-symbolic . nil)))
 
 
 ;; Gist configuration
-(leaf gist
+(leaf cus-gist
   :bind (("s-g p" . gist-region-or-buffer)
 		 ("s-g c" . my:chromium-gist))
   :init
@@ -38,7 +59,7 @@
 If enter is pressed without file-name, that's will be buffer-file-neme."
 	(interactive)
 	(let ((file (file-name-nondirectory (buffer-file-name (current-buffer)))))
-	  (read-from-minibuffer (format "File name (%s): " file) file)))
+	  (read-from-minibuffer (format "File name (%s): " file) File)))
 
   (defun gist-region-or-buffer ()
 	"If region is selected, post from the region.

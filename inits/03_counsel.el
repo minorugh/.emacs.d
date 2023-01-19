@@ -1,32 +1,39 @@
-;;; 03_counsel.el --- Counsel configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 03_counsel.el --- Counsel configurations. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Counsel configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf counsel
   :ensure t
   :defer-config (ivy-mode)
   :bind (("C-r" . swiper-thing-at-point)
 		 ("C-s" . swiper-region)
 		 ("C-:" . counsel-switch-buffer)
+		 ("M-:" . counsel-switch-buffer)
 		 ("s-a" . counsel-ag)
+		 ("s-w" . counsel-web-suggest)
 		 ("M-x" . counsel-M-x)
 		 ("M-y" . counsel-yank-pop)
-		 ("<f6>" . counsel-linux-app)
 		 ("C-x m" . counsel-mark-ring)
 		 ("C-x C-b" . ibuffer)
 		 ("C-x C-f" . counsel-find-file)
 		 ("C-x C-r" . counsel-recentf))
-  :custom `((search-default-mode . nil)
-			(ivy-use-virtual-buffers . t)
-			(ivy-use-selectable-prompt . t)
-			(enable-recursive-minibuffers . t)
-			(counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions))
-			(ivy-format-functions-alist . '((t . my:ivy-format-function-arrow))))
+  :custom
+  `((search-default-mode . nil)
+	(ivy-use-virtual-buffers . t)
+	(ivy-use-selectable-prompt . t)
+	(enable-recursive-minibuffers . t)
+	(counsel-find-file-ignore-regexp . (regexp-opt completion-ignored-extensions))
+	(ivy-format-functions-alist . '((t . my:ivy-format-function-arrow))))
   :init
+  (defun swiper-region ()
+	"If region is selected, `swiper-thing-at-point'.
+If the region isn't selected, `swiper'."
+	(interactive)
+	(if (not (use-region-p))
+		(swiper)
+      (swiper-thing-at-point)))
+
   ;; Highlight selection candidate with cursor row with icon
   (defun my:ivy-format-function-arrow (cands)
 	"Transform into a string for minibuffer with CANDS."
@@ -43,25 +50,19 @@
 	 "\n")))
 
 
-(leaf ivy-rich :ensure t
+(leaf ivy-rich
+  :ensure t
+  :after ivy
   :hook (after-init-hook . ivy-rich-mode))
 
-(leaf amx	:ensure t
+(leaf amx
+  :ensure t
   :custom	`((amx-save-file . ,"~/.emacs.d/tmp/amx-items")
 			  (amx-history-length . 20)))
 
-
-(defun swiper-region ()
-  "If region is selected, `swiper-thing-at-point'.
-If the region isn't selected, `swiper'."
-  (interactive)
-  (if (not (use-region-p))
-	  (swiper)
-    (swiper-thing-at-point)))
-
-
 ;; Fast full-text search
-(with-no-warnings
+(leaf cus-counsel-ag
+  :init
   (defun ad:counsel-ag (f &optional initial-input initial-directory extra-ag-args ag-prompt caller)
 	(apply f (or initial-input
 				 (and (not (thing-at-point-looking-at "^\\*+"))
@@ -78,52 +79,21 @@ If the region isn't selected, `swiper'."
 
 	(ivy-add-actions
 	 'counsel-ag
-	 '(("r" my:counsel-ag-in-dir "search in directory"))))
+	 '(("r" my:counsel-ag-in-dir "search in directory")))
 
-  (defun my:counsel-ag-in-dir (_arg)
-	"Search again with new root directory."
-	(let ((current-prefix-arg '(4)))
-	  (counsel-ag ivy-text nil ""))
-	))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Migemo configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(leaf migemo
-  :ensure t
-  :hook (after-init-hook . migemo-init)
-  :when (executable-find "cmigemo")
-  :custom `((migemo-command . "cmigemo")
-			(migemo-dictionary . "/usr/share/cmigemo/utf-8/migemo-dict"))
-  :config
-  (leaf swiper-migemo
-	:doc "https://github.com/tam17aki/swiper-migemo"
-	:el-get tam17aki/swiper-migemo
-	:config
-	(global-swiper-migemo-mode +1)))
+	(defun my:counsel-ag-in-dir (_arg)
+	  "Search again with new root directory."
+	  (let ((current-prefix-arg '(4)))
+		(counsel-ag ivy-text nil "")))))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; counsel related misc
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Font-awesom
-(leaf fontawesome
-  :ensure t
-  :bind ("s-f" . counsel-fontawesome))
-
-;; CSS
-;; (leaf counsel-css
-;;   :ensure t
-;;   :hook (css-mode-hook . counsel-css-imenu-setup))
-
-;; Tramp
 (leaf counsel-tramp
   :ensure t
-  :custom `((tramp-persistency-file-name . ,"~/.emacs.d/tmp/tramp")
-			(tramp-default-method . "scp")
-			(counsel-tramp-custom-connections
-			 . '(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/)))
+  :custom
+  `((tramp-persistency-file-name . ,"~/.emacs.d/tmp/tramp")
+	(tramp-default-method . "scp")
+	(counsel-tramp-custom-connections
+	 . '(/scp:xsrv:/home/minorugh/gospel-haiku.com/public_html/)))
   :config
   (defun my:tramp-quit ()
 	"Quit tramp, if tramp connencted."
@@ -134,6 +104,43 @@ If the region isn't selected, `swiper'."
 	  (message "Tramp Quit!"))))
 
 
-(provide '03_counsel)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(leaf counsel-css
+  :ensure t
+  :config
+  (add-hook 'css-mode-hook #'counsel-css-imenu-setup))
+
+
+;; counsel-web-search with migemo
+(leaf counsel-web
+  :ensure t
+  :config
+  (setq counsel-web-search-action #'browse-url)
+  (setq counsel-web-engine 'google)
+  (setq counsel-web-search-dynamic-update t))
+
+
+(leaf migemo
+  :ensure t
+  :hook (after-init-hook . migemo-init)
+  :when (executable-find "cmigemo")
+  :custom
+  `((migemo-command . "cmigemo")
+	(migemo-dictionary . "/usr/share/cmigemo/utf-8/migemo-dict")))
+
+
+(leaf swiper-migemo
+  :doc "https://github.com/tam17aki/swiper-migemo"
+  :el-get tam17aki/swiper-migemo
+  :after swiper
+  :config
+  (global-swiper-migemo-mode +1)
+  (add-to-list 'swiper-migemo-enable-command 'counsel-rg)
+  (setq migemo-options '("--quiet" "--nonewline" "--emacs"))
+  (migemo-kill)
+  (migemo-init))
+
+
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 03_counsel.el ends here

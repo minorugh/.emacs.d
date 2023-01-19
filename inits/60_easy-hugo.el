@@ -1,26 +1,36 @@
-;;; 60_easy-hugo.el --- Easy-Hugo configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 60_easy-hugo.el --- Easy-Hugo configurations. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Easy-Hugo configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf easy-hugo
   :ensure t
   :bind (("C-c C-e" . easy-hugo)
-		 ("C-x p" . easy-hugo-preview)
-		 ("C-x P" . easy-hugo-publish)
 		 (:easy-hugo-mode-map
 		  ([tab] . easy-hugo-no-help)
+		  ("n" . my:evil-easy-hugo-newpost)
 		  ("o" . easy-hugo-open-basedir)
 		  ("r" . easy-hugo-rename)
 		  ("e" . my:edit-easy-hugo)))
   :config
-  ;; Sort-publishday on startup
-  (setq easy-hugo--sort-char-flg nil)
-  (setq easy-hugo--sort-time-flg nil)
-  (setq easy-hugo--sort-publishday-flg 1)
+  ;; Open newpost with evil-isert-state
+  (defun my:evil-easy-hugo-newpost (post-file)
+	(interactive (list (read-from-minibuffer
+						"Filename: "
+						`(,easy-hugo-default-ext . 1) nil nil nil)))
+	(easy-hugo-with-env
+	 (let ((filename (expand-file-name post-file easy-hugo-postdir)))
+	   (when (file-exists-p (file-truename filename))
+		 (error "%s already exists!" filename))
+	   (call-process easy-hugo-bin nil "*hugo*" t "new"
+					 (file-relative-name filename
+										 (expand-file-name "content" easy-hugo-basedir)))
+	   (when (get-buffer "*hugo*")
+		 (kill-buffer "*hugo*"))
+	   (find-file filename)
+	   (evil-insert-state)
+	   (goto-char (point-max))
+	   (save-buffer))))
   :init
   ;; Main blog (=blog1)
   (setq easy-hugo-basedir "~/Dropbox/minorugh.com/snap/")
@@ -31,10 +41,10 @@
   ;; Bloglist
   (setq easy-hugo-bloglist
 		'(;; blog2 setting
-		  ((easy-hugo-basedir . "~/src/github.com/minorugh/.emacs.d/hugo/")
-		   (easy-hugo-url . "https://minorugh.github.io/.emacs.d")
+		  ((easy-hugo-basedir . "~/src/github.com/minorugh/emacs.d/hugo/")
+		   (easy-hugo-url . "https://minorugh.github.io/emacs.d")
 		   (easy-hugo-postdir . "content/startup")
-		   (easy-hugo-preview-url . "http://localhost:1313/.emacs.d/"))
+		   (easy-hugo-preview-url . "http://localhost:1313/emacs.d/"))
 		  ;; blog3 setting
 		  ((easy-hugo-basedir . "~/src/github.com/minorugh/minorugh.github.io/")
 		   (easy-hugo-url . "https://minorugh.github.io")
@@ -55,7 +65,7 @@
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/gospel-haiku.com/public_html/es/"))
 		  ;; blog7 setting
-		  ((easy-ugo-basedir . "~/Dropbox/minorugh.com/bible/")
+		  ((easy-hugo-basedir . "~/Dropbox/minorugh.com/bible/")
 		   (easy-hugo-url . "https://bible.minorugh.com")
 		   (easy-hugo-sshdomain . "xsrv")
 		   (easy-hugo-root . "/home/minorugh/minorugh.com/public_html/bible/"))
@@ -78,20 +88,20 @@
   c .. Open config      o .. Open base dir   < .. Previous blog    > .. Next bloge
   , .. Prev postdir     . .. Next postdir    ; .. Select blog      v .. Open view mode
   N .. No help [tab]    s .. Sort time       u .. Sort Publish     e .. Edit easy-hugo
-")
-  :preface
-  (leaf popup :ensure t)
-  (leaf request	:ensure t
-	:custom (request-storage-directory . "~/.emacs.d/tmp/request"))
+"))
 
-  (defun my:edit-easy-hugo ()
-	"Edit setting file for 'easy-hugo'."
-	(interactive)
-	(find-file "~/.emacs.d/inits/60_easy-hugo.el")
-	(view-mode -1)
-	(forword-line 2)))
+(leaf popup :ensure t)
+(leaf request
+  :ensure t
+  :custom (request-storage-directory . "~/.emacs.d/tmp/request"))
+
+(defun my:edit-easy-hugo ()
+  "Edit setting file for 'easy-hugo'."
+  (interactive)
+  (find-file "~/.emacs.d/inits/60_easy-hugo.el"))
 
 
-(provide '60_easy-hugo)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 60_easy-hugo.el ends here

@@ -1,24 +1,22 @@
-;;; 50_yatex.el --- YaTex configuration. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 50_yatex.el --- YaTex configuration. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; YaTex configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf yatex
   :ensure t
   :mode ("\\.tex\\'" "\\.sty\\'" "\\.cls\\'")
   :hook (yatex-mode-hook . (lambda ()(interactive)(view-mode -1)))
-  :custom `((tex-command . "platex")
-			(dviprint-command-format . "dvpd.sh %s")
-			(YaTeX-kanji-code . nil)
-			(YaTeX-latex-message-code . 'utf-8)
-			(YaTeX-default-pop-window-height . 15))
-  :config
-  (leaf yatexprc
-	:bind (("M-c" . YaTeX-typeset-buffer)
-		   ("M-v" . YaTeX-lpr))))
+  :custom
+  `((tex-command . "platex")
+	(dviprint-command-format . "dvpd.sh %s")
+	(YaTeX-kanji-code . nil)
+	(YaTeX-latex-message-code . 'utf-8)
+	(YaTeX-default-pop-window-height . 15)))
+(leaf yatexprc
+  :after yatex
+  :bind (("M-c" . YaTeX-typeset-buffer)
+		 ("M-v" . YaTeX-lpr)))
 
 
 ;;-----------------------------
@@ -50,6 +48,7 @@
 ;; rm *.lo*
 
 
-(provide '50_yatex)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 50_yatex.el ends here

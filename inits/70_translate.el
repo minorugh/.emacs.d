@@ -3,13 +3,17 @@
 ;;; Code:
 ;; (setq debug-on-error t)
 
+;; Load deepl api key
+(load-file "~/Dropbox/backup/emacs/deepl-api.el")
+
+
+;; Display translation results on minibuffer
 (leaf deepl-translate
   :el-get minorugh/deepl-translate
-  :bind ("C-c d" . deepl-translate)
-  :custom (deepl-auth-key . "7f4efb81-0c38-589c-2da0-97ae1e7f2ff3:fx"))
+  :bind ("C-c C-t" . deepl-translate))
 
 
-;; Deepl translate with go-translate
+;; Display Deepl and Google Translate results in other buffer
 (leaf go-translate
   :ensure t
   :bind ("C-t" . gts-do-translate)
@@ -20,21 +24,21 @@
 		 :picker
 		 (gts-noprompt-picker)
 		 :engines (list
-				   (gts-deepl-engine
-					:auth-key "7f4efb81-0c38-589c-2da0-97ae1e7f2ff3:fx" :pro nil)
 				   (gts-google-engine)
-				   (gts-bing-engine))
- 		 :render (gts-buffer-render))))
+				   ;; (gts-bing-engine)
+				   (gts-deepl-engine
+					:auth-key (format deepl-auth-key) :pro nil))
+		 :render (gts-buffer-render))))
 
 
-;; Deepl translation on web page
-(leaf my:deeple-traqslate
+;; Deepl translation in web page
+(leaf my:deeple-translate
   :bind ("C-c t" . my:deepl-translate)
-  :preface
+  :init
   (defun my:deepl-translate (&optional string)
 	(interactive)
 	(setq string
-          (cond ((stringp string) string)
+		  (cond ((stringp string) string)
 				((use-region-p)
 				 (buffer-substring (region-beginning) (region-end)))
 				(t
@@ -48,9 +52,9 @@
 	(run-at-time 0.1 nil 'deactivate-mark)
 	(browse-url
 	 (concat
-      "https://www.deepl.com/translator#en/ja/"
-      (url-hexify-string string)
-      ))))
+	  "https://www.deepl.com/translator#en/ja/"
+	  (url-hexify-string string)
+	  ))))
 
 
 ;; Local Variables:

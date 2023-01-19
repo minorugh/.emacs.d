@@ -1,11 +1,8 @@
-;;; 04_company.el --- Company configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 04_company.el --- Company configurations. -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Company configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf company
   :ensure t
   :hook (after-init-hook . global-company-mode)
@@ -34,16 +31,16 @@
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Yasnippet configuration
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (leaf yasnippet
   :ensure t
   :hook (after-init-hook . yas-global-mode)
-  :config
-  (leaf yasnippet-snippets :ensure t))
+  :custom (yas-indent-line . 'fixed))
+(leaf yasnippet-snippets
+  :ensure t
+  :after yasnippet)
 
 
-(provide '04_company)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 04_company.el ends here

@@ -10,11 +10,12 @@
 		 (";" . comment-dwim)
 		 ("c" . clipboard-kill-ring-save)
 		 ("s" . swiper-thing-at-point)
+		 ("d" . gts-do-translate)
 		 ("t" . deepl-translate)
 		 ("W" . my:weblio)
 		 ("k" . my:koujien)
-		 ("e" . my:eijiro)
-		 ("g" . my:google))
+		 ("j" . my:eijiro)
+		 ("gg" . my:google))
   :init
   (defvar my:ime-flag nil)
   (add-hook 'activate-mark-hook 'my:activate-selected)
@@ -35,11 +36,8 @@
   (defun my:ime-off ()
 	"IME off."
 	(interactive)
-	(deactivate-input-method)))
+	(deactivate-input-method))
 
-
-;; user-dictionary-configurations
-(with-eval-after-load 'selected
   (defun my:google (str)
 	(interactive (list (my:get-region nil)))
 	(browse-url (format "https://www.google.com/search?hl=ja&q=%s"
@@ -68,8 +66,6 @@
 	(buffer-substring-no-properties (region-beginning) (region-end))))
 
 
-(provide '90_selected)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; End:

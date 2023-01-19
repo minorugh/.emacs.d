@@ -1,11 +1,10 @@
-;;; test.el --- test-init -*- lexical-binding: t; no-byte-compile:t -*-
+;;; test.el --- test-init -*- lexical-binding: t -*-
 ;;; Commentary:
-
+;;
 ;; This will start with typing `eq' at shell with minimal Emacs.
 ;; Write below at .zshrc or .bashrc.
 ;; alias eq="emacs -q -l ~/.emacs.d/mini-init.el"
 ;; Use when test of package and my Emacs don't start.
-
 ;;; Code:
 
 (menu-bar-mode -1)
@@ -16,8 +15,8 @@
 (setq inhibit-startup-message t)
 
 ;; Package
-(unless (bound-and-true-p package--initialized) ; To avoid warnings in 27
-  (setq package-enable-at-startup nil)          ; To prevent initializing twice
+(unless (bound-and-true-p package--initialized) ;; To avoid warnings in 27
+  (setq package-enable-at-startup nil)          ;; To prevent initializing twice
   (package-initialize))
 
 ;; UI
@@ -94,7 +93,6 @@
 	(ivy-mode 1)
   (define-key global-map (kbd "C-s") 'swiper-thing-at-point))
 
-
 ;; Brace the corresponding parentheses
 (show-paren-mode 1)
 (setq show-paren-delay 0)
@@ -120,5 +118,7 @@
 (require 'generic-x)
 
 (provide 'mini-init)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; test.el ends here
