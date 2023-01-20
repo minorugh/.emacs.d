@@ -67,7 +67,8 @@ weight = 2
 	"Turn off input-method then return to normal-state."
 	(interactive)
 	(if current-input-method (deactivate-input-method))
-	(evil-normal-state))
+	(evil-normal-state)
+	(if (use-region-p) (keyboard-quit)))
 
   (defun my:evil-insert-state ()
 	"New files open in insert state."

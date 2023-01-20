@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-20T08:46:35 JST">
+<meta name="revised" content="2023-01-20T10:09:04 JST">
 <title>6.2. evil-mode :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -966,7 +966,8 @@
 	<span style="color:#c41a16">&#34;Turn off input-method then return to normal-state.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#a90d91">if</span> <span style="color:#000">current-input-method</span> (<span style="color:#000">deactivate-input-method</span>))
-	(<span style="color:#000">evil-normal-state</span>))
+	(<span style="color:#000">evil-normal-state</span>)
+	(<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>) (<span style="color:#000">keyboard-quit</span>)))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-insert-state</span> ()
 	<span style="color:#c41a16">&#34;New files open in insert state.&#34;</span>
