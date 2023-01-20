@@ -9,7 +9,6 @@ description = ""
 * [@minoruGH](https://twitter.com/minorugh)  の Emacs設定ファイルの一部を解説しているページです。
 * [https://github.com/minorugh/emacs.d/](https://github.com/minorugh/emacs.d/) から
 Hugo を使ってGitHub Pages にWebサイトを構築しています。
-* 本ドキュメントは、[@takaxp](https://twitter.com/takaxp)さんが公開されている [takaxp.github.io/](https://takaxp.github.io/init.html) の記事を下敷きにした模倣版です。
 * 執筆用途に特化して設定していますので、コンセプトやキーバイドなどは極めて邪道思想になっています。
 
 ## 動作確認環境
@@ -33,6 +32,7 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。
 │   ├── 90_eshell.el
 │   └── 99_chromium.el
 ├── snippets/
+├── template/
 ├── tmp/
 ├── early-init.el
 ├── init.el

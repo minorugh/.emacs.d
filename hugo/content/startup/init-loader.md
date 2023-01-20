@@ -13,6 +13,9 @@ title = "1.4. init-loader.el"
 ```elisp
 (leaf init-loader
   :ensure t
+  :init
+  (load-file "~/.emacs.d/template/my:dired.el")
+  (load-file "~/.emacs.d/template/my:template.el")
   :config
   (custom-set-variables
    '(init-loader-show-log-after-init 'error-only))
@@ -20,3 +23,7 @@ title = "1.4. init-loader.el"
 ```
 
 デフォルトで `~/.emacs.d/inits` デレクトリ以下のファイルを読み込みます。
+
+## ユーザー設定ファイルのロード
+ごく個人的なtemplateファイル群を `~/.emacs.d/template` フォルダーに置くようにしているので `init-loader` を起動する前にこれらを読み込むようにしている。
+

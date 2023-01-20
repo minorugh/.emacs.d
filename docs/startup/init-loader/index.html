@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-20T10:09:04 JST">
+<meta name="revised" content="2023-01-21T07:58:54 JST">
 <title>1.4. init-loader.el :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -887,6 +887,7 @@
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#init-loaderel-設定ファイルのローダー">[init-loader.el] 設定ファイルのローダー</a></li>
+    <li><a href="#ユーザー設定ファイルのロード">ユーザー設定ファイルのロード</a></li>
   </ul>
 </nav>
       </div>
@@ -912,11 +913,16 @@
 <p><code>init-loader</code> には、エラーが出た設定ファイルは読み込まれない&hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">init-loader</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+  <span style="color:#a90d91">:init</span>
+  (<span style="color:#000">load-file</span> <span style="color:#c41a16">&#34;~/.emacs.d/template/my:dired.el&#34;</span>)
+  (<span style="color:#000">load-file</span> <span style="color:#c41a16">&#34;~/.emacs.d/template/my:template.el&#34;</span>)
   <span style="color:#a90d91">:config</span>
   (<span style="color:#000">custom-set-variables</span>
    <span style="color:#000">&#39;</span>(<span style="color:#000">init-loader-show-log-after-init</span> <span style="color:#c41a16">&#39;error-only</span>))
   (<span style="color:#000">init-loader-load</span>))
 </code></pre></div><p>デフォルトで <code>~/.emacs.d/inits</code> デレクトリ以下のファイルを読み込みます。</p>
+<h2 id="ユーザー設定ファイルのロード">ユーザー設定ファイルのロード</h2>
+<p>ごく個人的なtemplateファイル群を <code>~/.emacs.d/template</code> フォルダーに置くようにしているので <code>init-loader</code> を起動する前にこれらを読み込むようにしている。</p>
 
 
     

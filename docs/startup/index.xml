@@ -56,7 +56,8 @@ leaf.el の初期設定 @conao3 さんの示されていたものを下敷きに
       <description>[init-loader.el] 設定ファイルのローダー 🔗 emacs-jp/init-loader: Loader of configuration files.
 起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。
 init-loader には、エラーが出た設定ファイルは読み込まれない&amp;hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。
-(leaf init-loader :ensure t :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みます。</description>
+(leaf init-loader :ensure t :init (load-file &amp;#34;~/.emacs.d/template/my:dired.el&amp;#34;) (load-file &amp;#34;~/.emacs.d/template/my:template.el&amp;#34;) :config (custom-set-variables &amp;#39;(init-loader-show-log-after-init &amp;#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みます。
+ユーザー設定ファイルのロード ごく個人的なtemplateファイル群を ~/.emacs.d/template フォルダーに置くようにしているので init-loader を起動する前にこれらを読み込むようにしている。</description>
     </item>
     
     <item>

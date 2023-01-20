@@ -37,9 +37,12 @@
 	(leaf-keywords-init)
 	(setq custom-file (locate-user-emacs-file "~/.emacs.d/tmp/custom.el"))))
 
-;; Load init files
+
 (leaf init-loader
   :ensure t
+  :init
+  (load-file "~/.emacs.d/template/my:dired.el")
+  (load-file "~/.emacs.d/template/my:template.el")
   :config
   (custom-set-variables
    '(init-loader-show-log-after-init 'error-only))
