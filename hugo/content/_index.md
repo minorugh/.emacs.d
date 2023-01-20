@@ -36,6 +36,5 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。
 ├── tmp/
 ├── early-init.el
 ├── init.el
-└── mini-init.el
-
+└── test.el
 ```
