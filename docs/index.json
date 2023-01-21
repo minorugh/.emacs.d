@@ -165,7 +165,7 @@
 	"title": "6.7. yasunippets",
 	"tags": [],
 	"description": "",
-	"content": "[yasnippets.el] テンプレート システム 🔗 joaotavora/yasnippet: Template system for Emacs.\nyasnippetは、Emacsのテンプレートシステムです。省略形を入力すると、それが関数テンプレートに自動的に展開されます。\ncompany と連携することでとても便利になります。\n(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) "
+	"content": "[yasnippets.el] テンプレート システム 🔗 joaotavora/yasnippet: Template system for Emacs.\nyasnippetは、Emacsのテンプレートシステムです。省略形を入力すると、それが関数テンプレートに自動的に展開されます。\ncompany と連携することでとても便利になります。\n(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :custom (yas-indent-line . \u0026#39;fixed)) (leaf yasnippet-snippets :ensure t :after yasnippet) "
 },
 {
 	"uri": "https://minorugh.github.io/emacs.d/display/",

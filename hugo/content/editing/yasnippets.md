@@ -15,6 +15,8 @@ weight = 7
 (leaf yasnippet
   :ensure t
   :hook (after-init-hook . yas-global-mode)
-  :config
-  (leaf yasnippet-snippets :ensure t))
+  :custom (yas-indent-line . 'fixed))
+(leaf yasnippet-snippets
+  :ensure t
+  :after yasnippet)
 ```

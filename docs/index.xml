@@ -224,7 +224,7 @@ browse-at-remote.el は、Git管理しているEmacsバッファーからgithub�
       <description>[yasnippets.el] テンプレート システム 🔗 joaotavora/yasnippet: Template system for Emacs.
 yasnippetは、Emacsのテンプレートシステムです。省略形を入力すると、それが関数テンプレートに自動的に展開されます。
 company と連携することでとても便利になります。
-(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :config (leaf yasnippet-snippets :ensure t)) </description>
+(leaf yasnippet :ensure t :hook (after-init-hook . yas-global-mode) :custom (yas-indent-line . &amp;#39;fixed)) (leaf yasnippet-snippets :ensure t :after yasnippet) </description>
     </item>
     
     <item>
