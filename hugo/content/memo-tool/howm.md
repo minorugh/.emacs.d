@@ -8,10 +8,10 @@ weight = 1
 ## [howm.el] お手軽メモ環境
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
-スケジュール管理は全てスマホに移行したのでEmacsではメモ環境専用としてhowmを使っている。
+スケジュール管理は全てスマホに移行したので、メモや記事の下書きなど執筆用として`howm` を利用している。
 
-なので`howm-menu`は使わず `howm-list-all` をメニュー代わりにしている。
-この一覧画面からでも `c:hown-create` をはじめ `howm-nenu` の一連のワンキーコマンドは全て使えるので便利。
+`howm-menu` は使わないので `howm-list-all` をメニュー代わりにしているが、
+この一覧画面からでも `c:hown-create` をはじめ `howm-nenu` の一連のワンキーコマンドは全て使えるので便利だ。
 
 タイトルの行頭にタグ（memo: note: など）を自動挿入して `howm-create`出来るように設定していて色付もしている。
 

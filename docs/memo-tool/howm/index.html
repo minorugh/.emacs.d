@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-21T10:40:49 JST">
+<meta name="revised" content="2023-01-21T10:47:07 JST">
 <title>11.1. howm :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -901,9 +901,9 @@
     
 <h2 id="howmel-お手軽メモ環境">[howm.el] お手軽メモ環境</h2>
 <p>🔗 <a href="https://howm.osdn.jp/">howm: Write fragmentarily and read collectively.</a></p>
-<p>スケジュール管理は全てスマホに移行したのでEmacsではメモ環境専用としてhowmを使っている。</p>
-<p>なので<code>howm-menu</code>は使わず <code>howm-list-all</code> をメニュー代わりにしている。
-この一覧画面からでも <code>c:hown-create</code> をはじめ <code>howm-nenu</code> の一連のワンキーコマンドは全て使えるので便利。</p>
+<p>スケジュール管理は全てスマホに移行したので、メモや記事の下書きなど執筆用として<code>howm</code> を利用している。</p>
+<p><code>howm-menu</code> は使わないので <code>howm-list-all</code> をメニュー代わりにしているが、
+この一覧画面からでも <code>c:hown-create</code> をはじめ <code>howm-nenu</code> の一連のワンキーコマンドは全て使えるので便利だ。</p>
 <p>タイトルの行頭にタグ（memo: note: など）を自動挿入して <code>howm-create</code>出来るように設定していて色付もしている。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">howm</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
