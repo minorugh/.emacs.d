@@ -38,11 +38,7 @@
       <guid>https://minorugh.github.io/emacs.d/editing/markdown/</guid>
       <description>[markdown-mode.el] markdownモード編集、入力支援 🔗 jrblevin/markdown-mode: Emacs Markdown Mode.
 Markdown形式のテキストを編集するための主要なモードです。
-(leaf markdown-mode :ensure t :mode (&amp;#34;\\.md\\&amp;#39;&amp;#34;) :custom `((markdown-italic-underscore . t) (markdown-asymmetric-header . t) (markdown-fontify-code-blocks-natively . t)) markdownファイルのプレビューには、emacs-livedownを使っています。 記事を書きながらライブでプレビュー出来るすぐれものです。
-🔗 shime/emacs-livedown: Emacs plugin for Livedown.
-$ npm install -g livedown でインストールできます。
-emacs-livedown.elisp は、el-get でインストールします。
-(leaf emacs-livedown :el-get shime/emacs-livedown :bind ((&amp;#34;C-c C-c p&amp;#34; . livedown-preview) (&amp;#34;C-c C-c k&amp;#34; . livedown-kill))) </description>
+(leaf markdown-mode :ensure t :mode (&amp;#34;\\.md\\&amp;#39;&amp;#34;) :chord (:markdown-mode-map (&amp;#34;..&amp;#34; . hydra-markdown/body)) :custom `((markdown-command . &amp;#34;pandoc&amp;#34;) (markdown-command-needs-filename . t) (markdown-fontify-code-blocks-natively . t) (markdown-content-type . &amp;#34;application/xhtml+xml&amp;#34;) (markdown-css-paths . &amp;#39;(&amp;#34;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&amp;#34;)) (markdown-xhtml-header-content . &amp;#34; &amp;lt;meta name=&amp;#39;viewport&amp;#39; content=&amp;#39;width=device-width, initial-scale=1, shrink-to-fit=no&amp;#39;&amp;gt; &amp;lt;style&amp;gt; body { box-sizing: border-box; max-width: 740px; width: 100%; margin: 40px auto; padding: 0 10px; font-size: large; } &amp;lt;/style&amp;gt; &amp;lt;script src=&amp;#39;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js&amp;#39;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; document.addEventListener(&amp;#39;DOMContentLoaded&amp;#39;, () =&amp;gt; { document.body.classList.add(&amp;#39;markdown-body&amp;#39;); document.</description>
     </item>
     
     <item>

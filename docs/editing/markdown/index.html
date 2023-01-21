@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-21T08:06:34 JST">
+<meta name="revised" content="2023-01-21T09:43:51 JST">
 <title>6.1. markdown-mode :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -912,21 +912,41 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">markdown-mode</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.md\\&#39;&#34;</span>)
+  <span style="color:#a90d91">:chord</span> (<span style="color:#a90d91">:markdown-mode-map</span>
+		  (<span style="color:#c41a16">&#34;..&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-markdown/body</span>))
   <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">markdown-italic-underscore</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-    (<span style="color:#000">markdown-asymmetric-header</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">markdown-fontify-code-blocks-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>))
-</code></pre></div><p>markdownファイルのプレビューには、<code>emacs-livedown</code>を使っています。
-記事を書きながらライブでプレビュー出来るすぐれものです。</p>
-<p>🔗 <a href="https://github.com/shime/emacs-livedown">shime/emacs-livedown: Emacs plugin for Livedown.</a></p>
-<pre><code class="language-session" data-lang="session">$ npm install -g livedown
-</code></pre><p>でインストールできます。</p>
-<p><code>emacs-livedown.elisp</code> は、<code>el-get</code> でインストールします。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">emacs-livedown</span>
- <span style="color:#a90d91">:el-get</span> <span style="color:#000">shime/emacs-livedown</span>
- <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c C-c p&#34;</span> <span style="color:#000">.</span> <span style="color:#000">livedown-preview</span>)
-        (<span style="color:#c41a16">&#34;C-c C-c k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">livedown-kill</span>)))
-</code></pre></div>
+  <span style="color:#000">`</span>((<span style="color:#000">markdown-command</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;pandoc&#34;</span>)
+	(<span style="color:#000">markdown-command-needs-filename</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+	(<span style="color:#000">markdown-fontify-code-blocks-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+	(<span style="color:#000">markdown-content-type</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;application/xhtml+xml&#34;</span>)
+	(<span style="color:#000">markdown-css-paths</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&#34;</span>))
+	(<span style="color:#000">markdown-xhtml-header-content</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;
+</span><span style="color:#c41a16">  &lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1, shrink-to-fit=no&#39;&gt;
+</span><span style="color:#c41a16">  &lt;style&gt;
+</span><span style="color:#c41a16">  body {
+</span><span style="color:#c41a16">    box-sizing: border-box;
+</span><span style="color:#c41a16">    max-width: 740px;
+</span><span style="color:#c41a16">    width: 100%;
+</span><span style="color:#c41a16">    margin: 40px auto;
+</span><span style="color:#c41a16">    padding: 0 10px;
+</span><span style="color:#c41a16">    font-size: large;
+</span><span style="color:#c41a16">  }
+</span><span style="color:#c41a16">  &lt;/style&gt;
+</span><span style="color:#c41a16">  &lt;script src=&#39;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js&#39;&gt;&lt;/script&gt;
+</span><span style="color:#c41a16">  &lt;script&gt;
+</span><span style="color:#c41a16">  document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+</span><span style="color:#c41a16">    document.body.classList.add(&#39;markdown-body&#39;);
+</span><span style="color:#c41a16">    document.querySelectorAll(&#39;pre code&#39;).forEach((code) =&gt; {
+</span><span style="color:#c41a16">      if (code.className != &#39;mermaid&#39;) {
+</span><span style="color:#c41a16">        hljs.highlightBlock(code);
+</span><span style="color:#c41a16">      }
+</span><span style="color:#c41a16">    });
+</span><span style="color:#c41a16">  });
+</span><span style="color:#c41a16">  &lt;/script&gt;
+</span><span style="color:#c41a16">  &#34;</span>)))
+</code></pre></div><p>markdownファイルのプレビューには、<code>pandoc</code>を使っています。</p>
+<p>CSSフレームワークとしては、<code>github.min.css</code> が多く使われていますが、私は好みで <code>bootstrap.min.css</code> を使っています。</p>
+
 
     
     
