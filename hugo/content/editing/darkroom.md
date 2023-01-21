@@ -14,7 +14,7 @@ weight = 5
 
 `darkroom-mode` から抜けるときは、`revert-buffer` でもとに戻します。
 
-`yes/no`確認を聞かれるのが煩わしいので `my:revery-buffer-no-confirm` の関数を作りました。
+`yes/no`確認を聞かれるのが煩わしいので `(revert-buffer t t)` としています。
 
 ```elisp
 (leaf darkroom
@@ -26,22 +26,15 @@ weight = 5
   (defun my:darkroom-in ()
 	"Enter to the `darkroom-mode'."
 	(interactive)
-	(view-mode 0)
 	(diff-hl-mode 0)
 	(display-line-numbers-mode 0)
-	(darkroom-tentative-mode 1)
-	(setq-local line-spacing 0.4))
+	(darkroom-mode 1)
+	(setq-local line-spacing 0.5))
 
   (defun my:darkroom-out ()
 	"Returns from `darkroom-mode' to the previous state."
 	(interactive)
-	(my:linespacing)
-	(darkroom-tentative-mode 0)
+	(darkroom-mode 0)
 	(display-line-numbers-mode 1)
-	(my:revert-buffer-no-confirm))
-
-  (defun my:revert-buffer-no-confirm ()
-	"Revert buffer without confirmation."
-	(interactive)
-	(revert-buffer t t)))
+	(revert-buffer t t))
 ```

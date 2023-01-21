@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-21T09:55:50 JST">
+<meta name="revised" content="2023-01-21T10:03:36 JST">
 <title>6.5. darkroom :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -911,7 +911,7 @@
 <p>画面の余計な項目を最小限にして、文章の執筆に集中できるようにするパッケージです。</p>
 <p>[F12] キーで IN/OUT をトグルしています。</p>
 <p><code>darkroom-mode</code> から抜けるときは、<code>revert-buffer</code> でもとに戻します。</p>
-<p><code>yes/no</code>確認を聞かれるのが煩わしいので <code>my:revery-buffer-no-confirm</code> の関数を作りました。</p>
+<p><code>yes/no</code>確認を聞かれるのが煩わしいので <code>(revert-buffer t t)</code> としています。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">darkroom</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f12&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:darkroom-in</span>)
@@ -921,24 +921,17 @@
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-in</span> ()
 	<span style="color:#c41a16">&#34;Enter to the </span><span style="color:#c41a16">`darkroom-mode&#39;</span><span style="color:#c41a16">.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">0</span>)
 	(<span style="color:#000">diff-hl-mode</span> <span style="color:#1c01ce">0</span>)
 	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
-	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">1</span>)
-	(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>))
+	(<span style="color:#000">darkroom-mode</span> <span style="color:#1c01ce">1</span>)
+	(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.5</span>))
 
   (<span style="color:#a90d91">defun</span> <span style="color:#000">my:darkroom-out</span> ()
 	<span style="color:#c41a16">&#34;Returns from </span><span style="color:#c41a16">`darkroom-mode&#39;</span><span style="color:#c41a16"> to the previous state.&#34;</span>
 	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">my:linespacing</span>)
-	(<span style="color:#000">darkroom-tentative-mode</span> <span style="color:#1c01ce">0</span>)
+	(<span style="color:#000">darkroom-mode</span> <span style="color:#1c01ce">0</span>)
 	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">1</span>)
-	(<span style="color:#000">my:revert-buffer-no-confirm</span>))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:revert-buffer-no-confirm</span> ()
-	<span style="color:#c41a16">&#34;Revert buffer without confirmation.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">revert-buffer</span> <span style="color:#000">t</span> <span style="color:#000">t</span>)))
+	(<span style="color:#000">revert-buffer</span> <span style="color:#000">t</span> <span style="color:#000">t</span>))
 </code></pre></div>
 
     
