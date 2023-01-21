@@ -13,27 +13,40 @@ Markdown形式のテキストを編集するための主要なモードです。
 (leaf markdown-mode
   :ensure t
   :mode ("\\.md\\'")
+  :chord (:markdown-mode-map
+		  (".." . hydra-markdown/body))
   :custom
-  `((markdown-italic-underscore . t)
-    (markdown-asymmetric-header . t)
-	(markdown-fontify-code-blocks-natively . t))
+  `((markdown-command . "pandoc")
+	(markdown-command-needs-filename . t)
+	(markdown-fontify-code-blocks-natively . t)
+	(markdown-content-type . "application/xhtml+xml")
+	(markdown-css-paths . '("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"))
+	(markdown-xhtml-header-content . "
+  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+  <style>
+  body {
+    box-sizing: border-box;
+    max-width: 740px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 10px;
+    font-size: large;
+  }
+  </style>
+  <script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('markdown-body');
+    document.querySelectorAll('pre code').forEach((code) => {
+      if (code.className != 'mermaid') {
+        hljs.highlightBlock(code);
+      }
+    });
+  });
+  </script>
+  ")))
 ```
 
-markdownファイルのプレビューには、`emacs-livedown`を使っています。
-記事を書きながらライブでプレビュー出来るすぐれものです。
+markdownファイルのプレビューには、`pandoc`を使っています。
 
-🔗 [shime/emacs-livedown: Emacs plugin for Livedown.](https://github.com/shime/emacs-livedown)
-
-```session
-$ npm install -g livedown
-```
-でインストールできます。
-
-`emacs-livedown.elisp` は、`el-get` でインストールします。
-
-```elisp
-(leaf emacs-livedown
- :el-get shime/emacs-livedown
- :bind (("C-c C-c p" . livedown-preview)
-        ("C-c C-c k" . livedown-kill)))
-```
+CSSフレームワークとしては、`github.min.css` が多く使われていますが、私は好みで `bootstrap.min.css` を使っています。

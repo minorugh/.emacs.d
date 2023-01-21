@@ -16,41 +16,31 @@
 	(markdown-command-needs-filename . t)
 	(markdown-fontify-code-blocks-natively . t)
 	(markdown-content-type . "application/xhtml+xml")
-	(markdown-css-paths . '("https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"))
+	(markdown-css-paths . '("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"))
 	(markdown-xhtml-header-content . "
   <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-  <link rel='icon' href=\"https://doc.gospel-haiku.com/favicon.png\">
-  <link rel='apple-touch-icon' href=\"https://doc.gospel-haiku.com/favicon.png\" />
-  <!-- Bootstrap Core CSS -->
-  <link rel='stylesheet' href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\">
-  <!--<link rel='stylesheet' href=\"https://gospel-haiku.com/common/css/main.css\">-->
   <style>
   body {
     box-sizing: border-box;
-    max-width: 960px;
+    max-width: 740px;
     width: 100%;
     margin: 40px auto;
     padding: 0 10px;
-  }
-  /*pre {
-    background-color:#f5f5f5;
-    font-size:80%;
-  }*/
-  h1 {
-    border: 0;
+    font-size: large;
   }
   </style>
-  <script src='http://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('markdown-body');
-    document.querySelectorAll('pre[lang] > code').forEach((code) => {
-      code.classList.add(code.parentElement.lang);
-      hljs.highlightBlock(code);
+    document.querySelectorAll('pre code').forEach((code) => {
+      if (code.className != 'mermaid') {
+        hljs.highlightBlock(code);
+      }
     });
   });
   </script>
-   "))
+  "))
   :hydra
   (hydra-markdown
    (:color red :hint nil)
