@@ -9,6 +9,7 @@ weight = 1
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
 スケジュール管理は全てスマホに移行したのでEmacsではメモ環境専用としてhowmを使っている。
+
 なので`howm-menu`は使わず `howm-list-all` をメニュー代わりにしている。
 この一覧画面からでも `c:hown-create` をはじめ `howm-nenu` の一連のワンキーコマンドは全て使えるので便利。
 
