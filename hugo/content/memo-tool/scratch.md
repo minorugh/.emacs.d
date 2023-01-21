@@ -1,8 +1,8 @@
 +++
 date = "2022-08-29T06:00:38+09:00"
-title = "11.4. scratch-memo"
+title = "11.3. scratch-memo"
 draft = false
-weight = 4
+weight = 3
 +++
 
 ## scratchバッファーを付箋として使う

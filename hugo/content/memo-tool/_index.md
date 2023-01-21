@@ -16,9 +16,6 @@ TPOで使い分けるメモツール
 [org-capture]({{< relref "org" >}})
 : ウエブページを自動でキャプチャーする
 
-[org-journal]({{< relref "journal" >}})
-: org-journalでライフログを書く
-
 [scratch-memo]({{< relref "scratch" >}})
 : scratchを付箋として使う設定
 

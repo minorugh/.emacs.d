@@ -8,12 +8,11 @@ weight = 1
 ## [howm.el] お手軽メモ環境
 🔗 [howm: Write fragmentarily and read collectively.](https://howm.osdn.jp/) 
 
-メモ書きに特化した使い方なので`howm-menu` は使わない。
-`howm-list-all` の一覧画面をよく使うが、ここからでも一連のワンキーコマンドは全て使える。
+スケジュール管理は全てスマホに移行したのでEmacsではメモ環境専用としてhowmを使っている。
+なので`howm-menu`は使わず `howm-list-all` をメニュー代わりにしている。
+この一覧画面からでも `c:hown-create` をはじめ `howm-nenu` の一連のワンキーコマンドは全て使えるので便利。
 
 タイトルの行頭にタグ（memo: note: など）を自動挿入して `howm-create`出来るように設定していて色付もしている。
-
-お好みだけれど私は自動的に執筆モードになるようにしている。
 
 ```elisp
 (leaf howm
@@ -25,36 +24,30 @@ weight = 1
 		  ("," . my:howm-create-memo)
 		  ("t" . my:howm-create-tech)))
   :init
-  (setq howm-view-title-header "#"
-		howm-directory "~/Dropbox/howm"
-		howm-file-name-format "%Y/%m/%Y%m%d%H%M.md")
-  :custom `((howm-view-split-horizontally . t)
-			(howm-view-summary-persistent . nil)
-			(howm-normalizer . 'howm-sort-items-by-reverse-date)
-			(howm-user-font-lock-keywords
-			 . '(("memo:" . (0 'compilation-error))
-				 ("tech:" . (0 'compilation-info)))))
+  (setq howm-view-title-header "#")
+  (setq howm-directory "~/Dropbox/howm")
+  (setq howm-file-name-format "%Y/%m/%Y%m%d%H%M.md")
+  :custom
+  `((howm-view-split-horizontally . t)
+	(howm-view-summary-persistent . nil)
+	(howm-normalizer . 'howm-sort-items-by-reverse-date)
+	(howm-user-font-lock-keywords
+	 . '(("memo:" . (0 'compilation-error))
+		 ;; ("note:" . (0 'compilation-info))
+		 ("tech:" . (0 'compilation-info))))
+	(howm-template . '("# %title%cursor\n%date%file"
+					   "# memo: %cursor\n%date%file"
+					   "# tech: %cursor\n%date%file")))
   :config
-  (setq howm-template '("# %title%cursor\n%date%file"
-						"# memo: %cursor\n%date%file"
-						"# tech: %cursor\n%date%file"))
   (defun my:howm-create-memo ()
     "Create by inserting tags automatically."
 	(interactive)
 	(howm-create 2 nil)
-	(my:darkroom-mode-hook)
 	(delete-other-windows))
 
   (defun my:howm-create-tech ()
     "Create by inserting tags automatically."
 	(interactive)
 	(howm-create 3 nil)
-	(my:darkroom-mode-hook)
-	(delete-other-windows))
-
-  (defun my:darkroom-mode-hook ()
-	"For `darkroom-mode-hook'."
-	(interactive)
-	(darkroom-mode 1)
-	(display-line-numbers-mode 0)))
+	(delete-other-windows)))
 ```

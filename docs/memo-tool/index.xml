@@ -14,10 +14,9 @@
       
       <guid>https://minorugh.github.io/emacs.d/memo-tool/howm/</guid>
       <description>[howm.el] お手軽メモ環境 🔗 howm: Write fragmentarily and read collectively.
-メモ書きに特化した使い方なのでhowm-menu は使わない。 howm-list-all の一覧画面をよく使うが、ここからでも一連のワンキーコマンドは全て使える。
+スケジュール管理は全てスマホに移行したのでEmacsではメモ環境専用としてhowmを使っている。 なのでhowm-menuは使わず howm-list-all をメニュー代わりにしている。 この一覧画面からでも c:hown-create をはじめ howm-nenu の一連のワンキーコマンドは全て使えるので便利。
 タイトルの行頭にタグ（memo: note: など）を自動挿入して howm-create出来るように設定していて色付もしている。
-お好みだけれど私は自動的に執筆モードになるようにしている。
-(leaf howm :ensure t :hook (after-init-hook . howm-mode) :bind ((:howm-view-summary-mode-map ([backtab] . howm-view-summary-previous-section) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . howm-view-summary-open) (&amp;#34;,&amp;#34; . my:howm-create-memo) (&amp;#34;t&amp;#34; . my:howm-create-tech))) :init (setq howm-view-title-header &amp;#34;#&amp;#34; howm-directory &amp;#34;~/Dropbox/howm&amp;#34; howm-file-name-format &amp;#34;%Y/%m/%Y%m%d%H%M.md&amp;#34;) :custom `((howm-view-split-horizontally . t) (howm-view-summary-persistent . nil) (howm-normalizer . &amp;#39;howm-sort-items-by-reverse-date) (howm-user-font-lock-keywords . &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;compilation-error)) (&amp;#34;tech:&amp;#34; . (0 &amp;#39;compilation-info))))) :config (setq howm-template &amp;#39;(&amp;#34;# %title%cursor\n%date%file&amp;#34; &amp;#34;# memo: %cursor\n%date%file&amp;#34; &amp;#34;# tech: %cursor\n%date%file&amp;#34;)) (defun my:howm-create-memo () &amp;#34;Create by inserting tags automatically.</description>
+(leaf howm :ensure t :hook (after-init-hook . howm-mode) :bind ((:howm-view-summary-mode-map ([backtab] . howm-view-summary-previous-section) (&amp;#34;&amp;lt;return&amp;gt;&amp;#34; . howm-view-summary-open) (&amp;#34;,&amp;#34; . my:howm-create-memo) (&amp;#34;t&amp;#34; . my:howm-create-tech))) :init (setq howm-view-title-header &amp;#34;#&amp;#34;) (setq howm-directory &amp;#34;~/Dropbox/howm&amp;#34;) (setq howm-file-name-format &amp;#34;%Y/%m/%Y%m%d%H%M.md&amp;#34;) :custom `((howm-view-split-horizontally . t) (howm-view-summary-persistent . nil) (howm-normalizer . &amp;#39;howm-sort-items-by-reverse-date) (howm-user-font-lock-keywords . &amp;#39;((&amp;#34;memo:&amp;#34; . (0 &amp;#39;compilation-error)) ;; (&amp;#34;note:&amp;#34; .</description>
     </item>
     
     <item>
@@ -33,22 +32,7 @@ Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリ�
     </item>
     
     <item>
-      <title>11.3. org-journal</title>
-      <link>https://minorugh.github.io/emacs.d/memo-tool/journal/</link>
-      <pubDate>Tue, 30 Aug 2022 19:35:34 +0900</pubDate>
-      
-      <guid>https://minorugh.github.io/emacs.d/memo-tool/journal/</guid>
-      <description>[org-journal.el] ライフログを書く 🔗 bastibe/org-journal: A simple org-mode based journaling mode.
-日記を書くためのモードらしい。使ってみて意外と優れもの。
-一日に一枚、その日のファイルを生成して、エントリを作成すると時刻のスタンプとともに記録する場を設けてくれる。
-org-modeと同じルールでタスク管理もできて、ファイルの拡張子を.orgにしておけば agendaにも反映してくれるし、未達成だった昨日のTODOは、自動的に今日に持ち越してくれるというのが親切だ。
-calender.elとの連動も具備していて、M-x calendar して j と打つと以下のコマンドが使える。
- d .. org-journal-display-entry &amp;hellip; 編集できる n .. org-journal-new-date-entry&amp;hellip; 選択した日付のエントリーを作成 r .. org-journal-read-entry &amp;hellip; 編集不可（read only）  ひとりTwitterという感じでリラックスして使いたいので、自動的に執筆モードになるようにフックして快適である。
-(leaf org-journal :doc &amp;#34;https://www.emacswiki.org/emacs/OrgJournal&amp;#34; :ensure t :hook (find-file-hook . my:journal-auto-darkroom) :chord (&amp;#34;,,&amp;#34; . hydra-journal/body) :bind ((:org-journal-mode-map (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; . org-journal-save-entry-and-exit)) (&amp;#34;C-c j&amp;#34; . org-journal-new-entry) (&amp;#34;C-c t&amp;#34; . journal-file-today) (&amp;#34;C-c y&amp;#34; . journal-file-yesterday)) :custom `((org-journal-dir .</description>
-    </item>
-    
-    <item>
-      <title>11.4. scratch-memo</title>
+      <title>11.3. scratch-memo</title>
       <link>https://minorugh.github.io/emacs.d/memo-tool/scratch/</link>
       <pubDate>Mon, 29 Aug 2022 06:00:38 +0900</pubDate>
       
