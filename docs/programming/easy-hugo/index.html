@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-21T10:47:07 JST">
+<meta name="revised" content="2023-01-24T16:11:57 JST">
 <title>10.9. easy-hugo :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -880,6 +880,12 @@
 		<nav id="TableOfContents">
   <ul>
     <li><a href="#eagy-hugoel-マルチブログ管理">[eagy-hugo.el] マルチブログ管理</a></li>
+    <li><a href="#evil-mode対応">evil-mode対応</a>
+      <ul>
+        <li><a href="#1-メニュー画面">1. メニュー画面</a></li>
+        <li><a href="#2-新規記事作成">2. 新規記事作成</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -909,18 +915,14 @@
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">easy-hugo</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-c C-e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo</span>)
-		 (<span style="color:#c41a16">&#34;C-x p&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-preview</span>)
-		 (<span style="color:#c41a16">&#34;C-x P&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-publish</span>)
 		 (<span style="color:#a90d91">:easy-hugo-mode-map</span>
 		  ([<span style="color:#000">tab</span>] <span style="color:#000">.</span> <span style="color:#000">easy-hugo-no-help</span>)
 		  (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-open-basedir</span>)
 		  (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">easy-hugo-rename</span>)
 		  (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:edit-easy-hugo</span>)))
   <span style="color:#a90d91">:config</span>
-  <span style="color:#177500">;; Sort-publishday on startup</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo--sort-char-flg</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo--sort-time-flg</span> <span style="color:#000">nil</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo--sort-publishday-flg</span> <span style="color:#1c01ce">1</span>)
+  <span style="color:#177500">;; Load custom function for evil-mode</span>
+  (<span style="color:#000">load-file</span> <span style="color:#c41a16">&#34;~/.emacs.d/template/my:evil-easy-hugo.el&#34;</span>)
   <span style="color:#a90d91">:init</span>
   <span style="color:#177500">;; Main blog (=blog1)</span>
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-basedir</span> <span style="color:#c41a16">&#34;~/Dropbox/minorugh.com/snap/&#34;</span>)
@@ -928,7 +930,6 @@
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-sshdomain</span> <span style="color:#c41a16">&#34;xsrv&#34;</span>)
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-root</span> <span style="color:#c41a16">&#34;/home/minorugh/minorugh.com/public_html/snap/&#34;</span>)
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-previewtime</span> <span style="color:#c41a16">&#34;300&#34;</span>)
-  <span style="color:#177500">;; Bloglist</span>
   (<span style="color:#a90d91">setq</span> <span style="color:#000">easy-hugo-bloglist</span>
 		<span style="color:#000">&#39;</span>(<span style="color:#177500">;; blog2 setting</span>
 		  ((<span style="color:#000">easy-hugo-basedir</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/src/github.com/minorugh/.emacs.d/hugo/&#34;</span>)
@@ -989,7 +990,17 @@
 	(<span style="color:#a90d91">interactive</span>)
 	(<span style="color:#000">find-file</span> <span style="color:#c41a16">&#34;~/.emacs.d/inits/60_easy-hugo.el&#34;</span>)
 	(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">-1</span>)
-	(<span style="color:#000">forword-line</span> <span style="color:#1c01ce">2</span>)))
+	(<span style="color:#000">forword-line</span> <span style="color:#1c01ce">2</span>)))	
+</code></pre></div><h2 id="evil-mode対応">evil-mode対応</h2>
+<p><code>evil-mode</code> を導入すると何かと衝突するため使いづらい面が出てきます。</p>
+<h3 id="1-メニュー画面">1. メニュー画面</h3>
+<p>何もしなければ <code>evil-normal-stete</code> で起動し<code>easy-hugo-mode</code> のkeybindを奪うので <code>evil-emacs-state</code> で起動するよう変更します。下記のEvilの標準設定で解決できます。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;evil-emacs-state-modes</span> <span style="color:#c41a16">&#39;easy-hugo-mode</span>)
+</code></pre></div><h3 id="2-新規記事作成">2. 新規記事作成</h3>
+<p>メニュー画面から新規記事作成画を選択したとき <code>evil-normal-state</code> で開かれるため、その都度挿入モードに切り替える必要があり面倒です。</p>
+<p>そこで新規記事作成時は、<code>evil-mode</code> を自動判別して <code>evil-insert-state</code> でファイルを開くように改変した関数を上書きロードするようにしました。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#177500">;; Load custom function for evil-mode</span>
+(<span style="color:#000">load-file</span> <span style="color:#c41a16">&#34;~/.emacs.d/template/my:evil-easy-hugo.el&#34;</span>)
 </code></pre></div>
 
     

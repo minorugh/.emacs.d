@@ -21,18 +21,14 @@ Hugoで作成された複数のブログを管理するための Emacs メジャ
 (leaf easy-hugo
   :ensure t
   :bind (("C-c C-e" . easy-hugo)
-		 ("C-x p" . easy-hugo-preview)
-		 ("C-x P" . easy-hugo-publish)
 		 (:easy-hugo-mode-map
 		  ([tab] . easy-hugo-no-help)
 		  ("o" . easy-hugo-open-basedir)
 		  ("r" . easy-hugo-rename)
 		  ("e" . my:edit-easy-hugo)))
   :config
-  ;; Sort-publishday on startup
-  (setq easy-hugo--sort-char-flg nil)
-  (setq easy-hugo--sort-time-flg nil)
-  (setq easy-hugo--sort-publishday-flg 1)
+  ;; Load custom function for evil-mode
+  (load-file "~/.emacs.d/template/my:evil-easy-hugo.el")
   :init
   ;; Main blog (=blog1)
   (setq easy-hugo-basedir "~/Dropbox/minorugh.com/snap/")
@@ -40,7 +36,6 @@ Hugoで作成された複数のブログを管理するための Emacs メジャ
   (setq easy-hugo-sshdomain "xsrv")
   (setq easy-hugo-root "/home/minorugh/minorugh.com/public_html/snap/")
   (setq easy-hugo-previewtime "300")
-  ;; Bloglist
   (setq easy-hugo-bloglist
 		'(;; blog2 setting
 		  ((easy-hugo-basedir . "~/src/github.com/minorugh/.emacs.d/hugo/")
@@ -101,5 +96,26 @@ Hugoで作成された複数のブログを管理するための Emacs メジャ
 	(interactive)
 	(find-file "~/.emacs.d/inits/60_easy-hugo.el")
 	(view-mode -1)
-	(forword-line 2)))
+	(forword-line 2)))	
 ```
+
+## evil-mode対応
+`evil-mode` を導入すると何かと衝突するため使いづらい面が出てきます。
+
+### 1. メニュー画面
+何もしなければ `evil-normal-stete` で起動し`easy-hugo-mode` のkeybindを奪うので `evil-emacs-state` で起動するよう変更します。下記のEvilの標準設定で解決できます。
+
+```emacs-lisp
+(add-to-list 'evil-emacs-state-modes 'easy-hugo-mode)
+```
+
+### 2. 新規記事作成
+メニュー画面から新規記事作成画を選択したとき `evil-normal-state` で開かれるため、その都度挿入モードに切り替える必要があり面倒です。
+
+そこで新規記事作成時は、`evil-mode` を自動判別して `evil-insert-state` でファイルを開くように改変した関数を上書きロードするようにしました。
+
+```emacs-lisp
+;; Load custom function for evil-mode
+(load-file "~/.emacs.d/template/my:evil-easy-hugo.el")
+```
+

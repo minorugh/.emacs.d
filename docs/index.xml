@@ -246,7 +246,7 @@ Hugoで作成された複数のブログを管理するための Emacs メジャ
 作者の @masasam さんが、私の多くの要望を受け入れて完成してくださいました。感謝！
 静的サイトジェネレータ「Hugo」は、とても簡単に構築できるので、私の場合、公開ページの他にプライベートな書庫代わりとしても使っています。 数えたらなんと９個も…
 minorugh.github.io をGitHub Pagesで公開しています。
-(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (&amp;#34;C-x p&amp;#34; . easy-hugo-preview) (&amp;#34;C-x P&amp;#34; . easy-hugo-publish) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Sort-publishday on startup (setq easy-hugo--sort-char-flg nil) (setq easy-hugo--sort-time-flg nil) (setq easy-hugo--sort-publishday-flg 1) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh.</description>
+(leaf easy-hugo :ensure t :bind ((&amp;#34;C-c C-e&amp;#34; . easy-hugo) (:easy-hugo-mode-map ([tab] . easy-hugo-no-help) (&amp;#34;o&amp;#34; . easy-hugo-open-basedir) (&amp;#34;r&amp;#34; . easy-hugo-rename) (&amp;#34;e&amp;#34; . my:edit-easy-hugo))) :config ;; Load custom function for evil-mode (load-file &amp;#34;~/.emacs.d/template/my:evil-easy-hugo.el&amp;#34;) :init ;; Main blog (=blog1) (setq easy-hugo-basedir &amp;#34;~/Dropbox/minorugh.com/snap/&amp;#34;) (setq easy-hugo-url &amp;#34;https://snap.minorugh.com&amp;#34;) (setq easy-hugo-sshdomain &amp;#34;xsrv&amp;#34;) (setq easy-hugo-root &amp;#34;/home/minorugh/minorugh.com/public_html/snap/&amp;#34;) (setq easy-hugo-previewtime &amp;#34;300&amp;#34;) (setq easy-hugo-bloglist &amp;#39;(;; blog2 setting ((easy-hugo-basedir .</description>
     </item>
     
     <item>
