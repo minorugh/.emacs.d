@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-01-24T16:11:57 JST">
+<meta name="revised" content="2023-01-27T16:24:23 JST">
 <title>6.6. ivy / counsel / swiper :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -912,7 +912,7 @@
 <p><code>counsel.el</code> をインストールすれば、<code>ivy.el</code> も <code>swiper.el</code> も一緒にインストールされるようです。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">counsel</span>
   <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:defer-config</span> (<span style="color:#000">ivy-mode</span>)
+  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">ivy-mode</span>)
   <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;C-r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-thing-at-point</span>)
 		 (<span style="color:#c41a16">&#34;C-s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-region</span>)
 		 (<span style="color:#c41a16">&#34;C-:&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-switch-buffer</span>)

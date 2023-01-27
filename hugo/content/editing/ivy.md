@@ -17,7 +17,7 @@ weight = 6
 ```elisp
 (leaf counsel
   :ensure t
-  :defer-config (ivy-mode)
+  :hook (after-init-hook . ivy-mode)
   :bind (("C-r" . swiper-thing-at-point)
 		 ("C-s" . swiper-region)
 		 ("C-:" . counsel-switch-buffer)
