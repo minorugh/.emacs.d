@@ -4,9 +4,9 @@ title = "3.2. other-window-or-split"
 draft = false
 +++
 ## 画面分割時のカーソルの移動
-`other-window-or-split` は、画面分割コマンド `C-x 3` を拡張するもので、状況判断して画面移動の `C-x o` にもなります。
+`other-window-or-split` は、画面分割コマンド `C-x 3` を拡張するもので、状況判断して画面が分割されていないときは画面移動の `C-x o` になります。
 
-画面分割されていないときは、左右分割に加えて `follow-mode` `dimmer-mode` を `ON` にしています。（詳細後述）
+画面分割されていないときは、左右分割に加えて `dimmer-mode` を `ON` にしています。（詳細後述）
 
 画面分割と移動とを賢く判断してくれるのでとても便利です。
 
@@ -16,7 +16,6 @@ draft = false
  (interactive)
  (when (one-window-p)
 	 (split-window-horizontally)
-	 (follow-mode 1)
 	 (dimmer-mode 1))
    (other-window 1))
 (bind-key "C-q" 'other-window-or-split)
