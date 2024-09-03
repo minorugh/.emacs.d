@@ -5,7 +5,7 @@ description = ""
 +++
 # minoru's Emacs Config
 
-## はじめに_
+## はじめに
 * [@minoruGH](https://twitter.com/minorugh)  の Emacs設定ファイルの一部を解説しているページです。
 * [https://github.com/minorugh/emacs.d/](https://github.com/minorugh/emacs.d/) から
 Hugo を使ってGitHub Pages にWebサイトを構築しています。
