@@ -1,109 +1,73 @@
-;;; 09_mozc.el --- Japanese mozc configurations. -*- lexical-binding: t; no-byte-compile: t -*-
+;;; 09_mozc.el --- Japanese mozc configurations.
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Japanese mozc configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(leaf mozc
-  :ensure t
-  :hook (after-init-hook . mozc-mode)
-  :bind ("<hiragana-katakana>" . toggle-input-method)
-  (:mozc-mode-map
-   ("," . (lambda () (interactive) (mozc-insert-str "、")))
-   ("." . (lambda () (interactive) (mozc-insert-str "。")))
-   ("?" . (lambda () (interactive) (mozc-insert-str "？")))
-   ("!" . (lambda () (interactive) (mozc-insert-str "！"))))
-  :custom `((default-input-method . "japanese-mozc")
-			(mozc-helper-program-name . "mozc_emacs_helper")
-			(mozc-leim-title . "あ"))
+(leaf mozc :ensure t
+  :doc "minor mode to input Japanese with Mozc"
+  :hook after-init-hook
+  :bind (("<hiragana-katakana>" . my:toggle-input-method)
+	 ("s-d" . my:mozc-word-regist)
+	 (:mozc-mode-map
+	  ("," . (lambda () (interactive) (mozc-insert-str "、")))
+	  ("." . (lambda () (interactive) (mozc-insert-str "。")))))
   :config
+  (setq default-input-method     "japanese-mozc")
+  (setq mozc-helper-program-name "mozc_emacs_helper")
+  (setq mozc-leim-title          "あ")
+
+  (leaf mozc-cursor-color :el-get "iRi-E/mozc-el-extensions"
+    :doc "Set cursor color corresponding to mozc's input state"
+    :require t
+    :config
+    (setq mozc-cursor-color-alist '((direct . "#50fa7b") (hiragana . "#ff5555"))))
+
+  (leaf mozc-cand-posframe :ensure t
+    :doc "Posframe frontend for mozc"
+    :if (display-graphic-p)
+    :hook (mozc-cand-posframe-hook . (lambda () (interactive) (dimmer-mode -1)))
+    :require t
+    :config
+    (setq mozc-candidate-style 'posframe )
+    :custom-face
+    (mozc-cand-posframe-normal-face  . '((t (:background "#1E2029" :foreground "#C7C9D1"))))
+    (mozc-cand-posframe-focused-face . '((t (:background "#393F60" :foreground "#C7C9D1"))))
+    (mozc-cand-posframe-footer-face  . '((t (:background "#1E2029" :foreground "#454D73")))))
+
   (defadvice toggle-input-method (around toggle-input-method-around activate)
-	"Input method function in key-chord.el not to be nil."
-	(let ((input-method-function-save input-method-function))
-	  ad-do-it
-	  (setq input-method-function input-method-function-save)))
+    "Input method function in key-chord.el not to be nil."
+    (let ((input-method-function-save input-method-function))
+      ad-do-it
+      (setq input-method-function input-method-function-save)))
+
+  (defun my:toggle-input-method ()
+    "If `evil-mode' enabled, set to` emacs-state'."
+    (interactive)
+    (if (boundp 'evil-mode)
+	(evil-emacs-state))
+    (toggle-input-method))
 
   (defun mozc-insert-str (str)
-	"STR Immediately confirmed by punctuation."
-	(interactive)
-	(mozc-handle-event 'enter)
-	(insert str))
-  :init
-  (leaf mozc-cursor-color
-	:el-get iRi-E/mozc-el-extensions
-	:hook (after-init-hook . mozc-cursor-color-setup)
-	:config
-	(setq mozc-cursor-color-alist
-		  '((direct . "#50fa7b")
-			(read-only . "#f8f8f2")
-			(hiragana . "#ff5555"))))
-
-  (leaf mozc-cand-posframe
-	:ensure t
-	:after mozc
-	:require t
-	:custom	(mozc-candidate-style . 'posframe)
-	:init
-	(leaf posframe :ensure t)))
-
-
-;; Add space between full-width and half-width
-(leaf pangu-spacing
-  :ensure t
-  :after mozc
-  :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode)
-  :config
-  (setq pangu-spacing-include-regexp
-		(rx (or (and (or (group-n 3 (any "。，！？；：「」（）、"))
-						 (group-n 1 (or (category japanese))))))
-			(group-n 2 (in "a-zA-Z")))))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Custom configurations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(leaf *cus-mozc-tool
-  :bind (("s-t" . my:mozc-dictionary-tool)
-		 ("s-d" . my:mozc-word-regist)
-		 ("s-h" . chromium-tegaki))
-  :init
-  (defun select-mozc-tool ()
-	"Select mozc-tool."
-	(interactive)
-	(counsel-M-x "my:mozc- "))
-
-  (defun my:mozc-config-dialog ()
-	"Open `mozc-config-dialog'."
-	(interactive)
-	(compile "/usr/lib/mozc/mozc_tool --mode=config_dialog")
-	(delete-other-windows))
-
-  (defun my:mozc-dictionary-tool ()
-	"Open `mozc-dictipnary-tool'."
-	(interactive)
-	(compile "/usr/lib/mozc/mozc_tool --mode=dictionary_tool")
-	(delete-other-windows))
+    "STR Immediately confirmed by punctuation."
+    (interactive)
+    (mozc-handle-event 'enter)
+    (insert str))
 
   (defun my:mozc-word-regist ()
-	"Open `mozc-word-regist'."
-	(interactive)
-	(compile "/usr/lib/mozc/mozc_tool --mode=word_register_dialog")
-	(delete-other-windows))
+    "Open `mozc-word-regist'."
+    (interactive)
+    (compile "/usr/lib/mozc/mozc_tool --mode=word_register_dialog")
+    (delete-other-windows))
 
-  (defun my:mozc-hand-writing ()
-	"Open `mozc-hand-writing'."
-	(interactive)
-	(compile "/usr/lib/mozc/mozc_tool --mode=hand_writing")
-	(delete-other-windows))
-
-  (defun chromium-tegaki ()
-	"Chromium tegaki site."
-	(interactive)
-	(browse-url "https://mojinavi.com/tegaki")))
+  (defun my:mozc-copy ()
+    "Copy mozc to submachines for avoid conflicts."
+    (interactive)
+    (unless (string-match "P1" (shell-command-to-string "uname -n"))
+      (compile "cp -rf ~/Dropbox/backup/mozc/.mozc ~/"))
+    (add-hook 'emacs-startup-hook 'my:mozc-copy)))
 
 
-(provide '09_mozc)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
 ;;; 09_mozc.el ends here

@@ -1,69 +1,59 @@
-;;; 90_selected.el --- Selected configurations. -*- lexical-binding: t -*-
+;;; 90_selected.el --- Selected configurations.
 ;;; Commentary:
 ;;; Code:
 ;; (setq debug-on-error t)
 
-(leaf selected
-  :ensure t
+(leaf selected :ensure t
+  :doc "Keymap for when region is active"
+  :url "http://github.com/Kungsgeten/selected.el"
   :hook (after-init-hook . selected-global-mode)
   :bind (:selected-keymap
-		 (";" . comment-dwim)
-		 ("c" . clipboard-kill-ring-save)
-		 ("s" . swiper-thing-at-point)
-		 ("d" . gts-do-translate)
-		 ("t" . deepl-translate)
-		 ("W" . my:weblio)
-		 ("k" . my:koujien)
-		 ("j" . my:eijiro)
-		 ("g" . my:google))
-  :init
+	 (";" . comment-dwim)
+	 ("c" . clipboard-kill-ring-save)
+	 ("s" . swiper-thing-at-point)
+	 ("d" . deepl-translate)
+	 ("t" . google-translate-auto)
+	 ("w" . my:weblio)
+	 ("g" . my:google-this))
+  :config
   (defvar my:ime-flag nil)
   (add-hook 'activate-mark-hook 'my:activate-selected)
-  (add-hook 'activate-mark-hook '(lambda () (setq my:ime-flag current-input-method) (my:ime-off)))
-  (add-hook 'deactivate-mark-hook '(lambda () (unless (null my:ime-flag) (my:ime-on))))
-
+  (add-hook 'activate-mark-hook #'(lambda () (setq my:ime-flag current-input-method) (my:ime-off)))
+  (add-hook 'deactivate-mark-hook #'(lambda () (unless (null my:ime-flag) (my:ime-on))))
+  (leaf google-this :ensure t)
+  :init
   (defun my:activate-selected ()
-	"Active selected."
-	(selected-global-mode 1)
-	(selected--on)
-	(remove-hook 'activate-mark-hook #'my:activate-selected))
+    (selected-global-mode 1)
+    (selected--on)
+    (remove-hook 'activate-mark-hook 'my:activate-selected))
 
   (defun my:ime-on ()
-	"IME on."
-	(interactive)
-	(when (null current-input-method) (toggle-input-method)))
+    (interactive)
+    (when (null current-input-method)
+      (toggle-input-method)))
 
   (defun my:ime-off ()
-	"IME off."
-	(interactive)
-	(deactivate-input-method))
+    (interactive)
+    (deactivate-input-method))
 
-  (defun my:google (str)
-	(interactive (list (my:get-region nil)))
-	(browse-url (format "https://www.google.com/search?hl=ja&q=%s"
-						(upcase (url-hexify-string str)))))
-
-  (defun my:koujien (str)
-	"Open koujien with STR."
-	(interactive (list (my:get-region nil)))
-	(browse-url (format "https://sakura-paris.org/dict/広辞苑/prefix/%s"
-						(upcase (url-hexify-string str)))))
+  (defun my:google-this ()
+    (interactive)
+    (google-this (current-word) t))
 
   (defun my:weblio (str)
-	"Open weblio with STR."
-	(interactive (list (my:get-region nil)))
-	(browse-url (format "https://www.weblio.jp/content/%s"
-						(upcase (url-hexify-string str)))))
+    "Search weblio."
+    (interactive (list (region-or-read-string nil)))
+    (browse-url (format "https://www.weblio.jp/content/%s"
+			(upcase (url-hexify-string str)))))
 
-  (defun my:eijiro (str)
-	"Open eijiro with STR."
-	(interactive (list (my:get-region nil)))
-	(browse-url (format "https://eow.alc.co.jp/%s/UTF-8/"
-						(upcase (url-hexify-string str)))))
-
-  (defun my:get-region (r)
-	"Get search word from region with R."
-	(buffer-substring-no-properties (region-beginning) (region-end))))
+  (defun region-or-read-string (prompt &optional initial history default inherit)
+    "If region is specified, get the string, otherwise call `read-string'."
+    (if (not (region-active-p))
+	(read-string prompt initial history default inherit)
+      (prog1
+	  (buffer-substring-no-properties (region-beginning) (region-end))
+	(deactivate-mark)
+	(message "")))))
 
 
 ;; Local Variables:
