@@ -38,7 +38,7 @@
       <guid>https://minorugh.github.io/emacs.d/utility-tool/ps-print/</guid>
       <description>PS-Printer での印刷 EmacsからPostscript経由で印刷する際の個人的な設定です。
 Postscript 対応のプリンターが必要。
-(defalias &#39;ps-mule-header-string-charsets &#39;ignore) (setq ps-multibyte-buffer &#39;non-latin-printer ps-paper-type &#39;a4 ps-font-size 9 ;; ps-font-family &#39;Helvetica ps-font-family &#39;Courier ps-line-number-font &#39;Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) </description>
+(defalias &amp;#39;ps-mule-header-string-charsets &amp;#39;ignore) (setq ps-multibyte-buffer &amp;#39;non-latin-printer ps-paper-type &amp;#39;a4 ps-font-size 9 ;; ps-font-family &amp;#39;Helvetica ps-font-family &amp;#39;Courier ps-line-number-font &amp;#39;Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) </description>
     </item>
     
     <item>
@@ -72,7 +72,7 @@ Postscript 対応のプリンターが必要。
       <description>[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.
 restart-emacs は、Emacsを再起動させるコマンドです。
 C-u の数で再起動の方法を制御できます。
- M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>
+M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>
     </item>
     
     <item>

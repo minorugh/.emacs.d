@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>4.1. font setting :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -903,11 +903,11 @@
     
 <h2 id="フォントの設定">フォントの設定</h2>
 <p>メイン機: Thinkpad E590 とサブ機: X250 とでそれぞれに適した値を設定することで設定ファイルを共有しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-18&#34;</span>))
-<span style="color:#177500">;; for sub-machine</span>
-(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;x250&#34;</span> (<span style="color:#000">code-command-to-string</span> <span style="color:#c41a16">&#34;uname -n&#34;</span>))
-  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-15&#34;</span>)))
-</code></pre></div><h2 id="cicaフォントとは">Cicaフォントとは</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-18&#34;</span>))
+</span></span><span style="display:flex;"><span><span style="color:#177500">;; for sub-machine</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;x250&#34;</span> (<span style="color:#000">code-command-to-string</span> <span style="color:#c41a16">&#34;uname -n&#34;</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;default-frame-alist</span> <span style="color:#000">&#39;</span>(<span style="color:#000">font</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;Cica-15&#34;</span>)))
+</span></span></code></pre></div><h2 id="cicaフォントとは">Cicaフォントとは</h2>
 <p>Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、プログラミング用日本語等幅フォントです。</p>
 <ul>
 <li><a href="https://github.com/miiton/Cica">日本語等幅フォント Cica</a></li>
@@ -924,7 +924,7 @@
 <li>zipファイルを展開します。</li>
 <li>解凍したファイルを <code>~/.fonts/</code> にコピーします。</li>
 </ol>
-<pre><code class="language-codesession" data-lang="codesession">$ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/
+<pre tabindex="0"><code class="language-codesession" data-lang="codesession">$ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/
 $ sudo fc-cache -vf
 </code></pre>
 

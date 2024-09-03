@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>6.1. markdown-mode :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,42 +902,42 @@
 <h2 id="markdown-modeel-markdownモード編集入力支援">[markdown-mode.el] markdownモード編集、入力支援</h2>
 <p>🔗 <a href="https://github.com/jrblevin/markdown-mode">jrblevin/markdown-mode: Emacs Markdown Mode.</a></p>
 <p>Markdown形式のテキストを編集するための主要なモードです。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">markdown-mode</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.md\\&#39;&#34;</span>)
-  <span style="color:#a90d91">:chord</span> (<span style="color:#a90d91">:markdown-mode-map</span>
-		  (<span style="color:#c41a16">&#34;..&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-markdown/body</span>))
-  <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">markdown-command</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;pandoc&#34;</span>)
-	(<span style="color:#000">markdown-command-needs-filename</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">markdown-fontify-code-blocks-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">markdown-content-type</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;application/xhtml+xml&#34;</span>)
-	(<span style="color:#000">markdown-css-paths</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&#34;</span>))
-	(<span style="color:#000">markdown-xhtml-header-content</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;
-</span><span style="color:#c41a16">  &lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1, shrink-to-fit=no&#39;&gt;
-</span><span style="color:#c41a16">  &lt;style&gt;
-</span><span style="color:#c41a16">  body {
-</span><span style="color:#c41a16">    box-sizing: border-box;
-</span><span style="color:#c41a16">    max-width: 740px;
-</span><span style="color:#c41a16">    width: 100%;
-</span><span style="color:#c41a16">    margin: 40px auto;
-</span><span style="color:#c41a16">    padding: 0 10px;
-</span><span style="color:#c41a16">    font-size: large;
-</span><span style="color:#c41a16">  }
-</span><span style="color:#c41a16">  &lt;/style&gt;
-</span><span style="color:#c41a16">  &lt;script src=&#39;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js&#39;&gt;&lt;/script&gt;
-</span><span style="color:#c41a16">  &lt;script&gt;
-</span><span style="color:#c41a16">  document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
-</span><span style="color:#c41a16">    document.body.classList.add(&#39;markdown-body&#39;);
-</span><span style="color:#c41a16">    document.querySelectorAll(&#39;pre code&#39;).forEach((code) =&gt; {
-</span><span style="color:#c41a16">      if (code.className != &#39;mermaid&#39;) {
-</span><span style="color:#c41a16">        hljs.highlightBlock(code);
-</span><span style="color:#c41a16">      }
-</span><span style="color:#c41a16">    });
-</span><span style="color:#c41a16">  });
-</span><span style="color:#c41a16">  &lt;/script&gt;
-</span><span style="color:#c41a16">  &#34;</span>)))
-</code></pre></div><p>markdownファイルのプレビューには、<code>pandoc</code>を使っています。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">markdown-mode</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:mode</span> (<span style="color:#c41a16">&#34;\\.md\\&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:chord</span> (<span style="color:#a90d91">:markdown-mode-map</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;..&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-markdown/body</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">`</span>((<span style="color:#000">markdown-command</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;pandoc&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">markdown-command-needs-filename</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">markdown-fontify-code-blocks-natively</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">markdown-content-type</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;application/xhtml+xml&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">markdown-css-paths</span> <span style="color:#000">.</span> <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&#34;</span>))
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">markdown-xhtml-header-content</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1, shrink-to-fit=no&#39;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &lt;style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  body {
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    box-sizing: border-box;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    max-width: 740px;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    width: 100%;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    margin: 40px auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    padding: 0 10px;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    font-size: large;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &lt;/style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &lt;script src=&#39;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js&#39;&gt;&lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &lt;script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    document.body.classList.add(&#39;markdown-body&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    document.querySelectorAll(&#39;pre code&#39;).forEach((code) =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">      if (code.className != &#39;mermaid&#39;) {
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">        hljs.highlightBlock(code);
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">    });
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  });
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">  &#34;</span>)))
+</span></span></code></pre></div><p>markdownファイルのプレビューには、<code>pandoc</code>を使っています。</p>
 <p>CSSフレームワークとしては、<code>github.min.css</code> が多く使われていますが、私は好みで <code>bootstrap.min.css</code> を使っています。</p>
 
 

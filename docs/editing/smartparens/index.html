@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>6.13. smartparens :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,15 +902,15 @@
 <h2 id="smartparensel-対応する括弧の挿入をアシスト">[smartparens.el] 対応する括弧の挿入をアシスト</h2>
 <p>🔗 <a href="https://github.com/Fuco1/smartparens">Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.</a></p>
 <p>設定がいまいちよくわからず、試行錯誤しましたが、</p>
-<pre><code>(require 'smartparens-config)
+<pre tabindex="0"><code>(require &#39;smartparens-config)
 </code></pre><p>を追加したところとても賢く機能するようになりました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">smartparens</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">smartparens-global-mode</span>)
-		 (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-smartparens-mode</span>))
-  <span style="color:#a90d91">:config</span>
-  (<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;smartparens-config</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">smartparens</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">smartparens-global-mode</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">prog-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">turn-on-smartparens-mode</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:config</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">require</span> <span style="color:#c41a16">&#39;smartparens-config</span>))
+</span></span></code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>11.3. scratch-memo :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -908,38 +908,38 @@
 <li><a href="http://emacs.rubikitch.com/persistent-scratch/">persistent-scratch.el: scratch バッファを永続化・自動保存・復元する</a></li>
 </ul>
 <p><code>toggle-scratch</code> は、編集中のバッファーと<code>scratch</code>とをトグルで切り替えます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Scratch for sticky-memo</span>
-(<span style="color:#000">leaf</span> <span style="color:#000">*scratch-memo</span>
-  <span style="color:#a90d91">:after</span> <span style="color:#000">auto-save-buffers-enhanced</span>
-  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;S-&lt;return&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-scratch</span>)
-  <span style="color:#a90d91">:custom</span> ((<span style="color:#000">auto-save-buffers-enhanced-save-scratch-buffer-to-file-p</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-		   (<span style="color:#000">auto-save-buffers-enhanced-file-related-with-scratch-buffer</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/.emacs.d/tmp/scratch&#34;</span>))
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">toggle-scratch</span> ()
-	<span style="color:#c41a16">&#34;Toggle current buffer and *scratch* buffer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">string=</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span> (<span style="color:#000">buffer-name</span>)))
-		(<span style="color:#a90d91">progn</span>
-		  (<span style="color:#a90d91">setq</span> <span style="color:#000">toggle-scratch-prev-buffer</span> (<span style="color:#000">buffer-name</span>))
-		  (<span style="color:#000">switch-to-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>))
-	  (<span style="color:#000">switch-to-buffer</span> <span style="color:#000">toggle-scratch-prev-buffer</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">read-scratch-data</span> ()
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> <span style="color:#c41a16">&#34;~/.emacs.d/tmp/scratch&#34;</span>))
-	  (<span style="color:#a90d91">when</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">file</span>)
-		(<span style="color:#000">set-buffer</span> (<span style="color:#000">get-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>))
-		(<span style="color:#000">erase-buffer</span>)
-		(<span style="color:#000">insert-file-contents</span> <span style="color:#000">file</span>))))
-  (<span style="color:#000">read-scratch-data</span>))
-</code></pre></div><h2 id="scratch-バッファーを消さない">Scratch バッファーを消さない</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; Scratch for sticky-memo</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">*scratch-memo</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:after</span> <span style="color:#000">auto-save-buffers-enhanced</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;S-&lt;return&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-scratch</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span> ((<span style="color:#000">auto-save-buffers-enhanced-save-scratch-buffer-to-file-p</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>		   (<span style="color:#000">auto-save-buffers-enhanced-file-related-with-scratch-buffer</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/.emacs.d/tmp/scratch&#34;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">toggle-scratch</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Toggle current buffer and *scratch* buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">string=</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span> (<span style="color:#000">buffer-name</span>)))
+</span></span><span style="display:flex;"><span>		(<span style="color:#a90d91">progn</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#a90d91">setq</span> <span style="color:#000">toggle-scratch-prev-buffer</span> (<span style="color:#000">buffer-name</span>))
+</span></span><span style="display:flex;"><span>		  (<span style="color:#000">switch-to-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">switch-to-buffer</span> <span style="color:#000">toggle-scratch-prev-buffer</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">read-scratch-data</span> ()
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> <span style="color:#c41a16">&#34;~/.emacs.d/tmp/scratch&#34;</span>))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">when</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">file</span>)
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">set-buffer</span> (<span style="color:#000">get-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>))
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">erase-buffer</span>)
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">insert-file-contents</span> <span style="color:#000">file</span>))))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">read-scratch-data</span>))
+</span></span></code></pre></div><h2 id="scratch-バッファーを消さない">Scratch バッファーを消さない</h2>
 <p><code>scratch</code>付箋環境を実現させるのに必須なのは、決して<code>scratch</code>バッファーを消さないようにすること。
 難しい関数を設定せずともビルトインコマンドで簡単に実現できます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Set buffer that can not be killed</span>
-(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>
-  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
-(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*Messages*&#34;</span>
-  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; Set buffer that can not be killed</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*scratch*&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">with-current-buffer</span> <span style="color:#c41a16">&#34;*Messages*&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">emacs-lock-mode</span> <span style="color:#c41a16">&#39;kill</span>))
+</span></span></code></pre></div>
 
     
     

@@ -18,7 +18,7 @@
 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
 (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) 画面分割との連携 dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 下記の通り発想転換すれば呪縛から逃れることができます。
- 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じるときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
+画面分割したときは、dimmer-mode-on にする。 画面分割を閉じるときは、dimmer-mode-off にする。 (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
       
       <guid>https://minorugh.github.io/emacs.d/frame/sprit-window/</guid>
       <description>デフォルトの画面分割コマンドをカスタマイズ dimmer-mode 連携のためにデフォルトのコマンドをカスタマイズします。
- 画面分割したときは、dimmer-mode on + follow-mode on にする。 画面分割を閉じたときは、dimmer-mode off にする。  (leaf *cus-sprit-window-functions :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.</description>
+画面分割したときは、dimmer-mode on + follow-mode on にする。 画面分割を閉じたときは、dimmer-mode off にする。 (leaf *cus-sprit-window-functions :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
 tempbuf.el は不要になったと思われるバッファを自動的に kill してくれます。
 使っていた時間が長い程、裏に回った時には長い時間保持してくれる。
 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなズボラな自分には便利です。
- my:tembuf-ignore-files は、勝手に kill させないファイルの指定 find-file-hook は、find-file で開いたファイルが削除対象 dired buffer /magit-buffer は、無条件に削除  (leaf tempbuf :el-get (tempbuf :url &amp;#34;http://www.emacswiki.org/emacs/download/tempbuf.el&amp;#34;) :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :custom `((tempbuf-kill-message . nil) (my:tempbuf-ignore-files . &amp;#34;~/Dropbox/org/task.org&amp;#34;)) :init (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
+my:tembuf-ignore-files は、勝手に kill させないファイルの指定 find-file-hook は、find-file で開いたファイルが削除対象 dired buffer /magit-buffer は、無条件に削除 (leaf tempbuf :el-get (tempbuf :url &amp;#34;http://www.emacswiki.org/emacs/download/tempbuf.el&amp;#34;) :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :custom `((tempbuf-kill-message . nil) (my:tempbuf-ignore-files . &amp;#34;~/Dropbox/org/task.org&amp;#34;)) :init (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ winner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィ�
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/emacs.d/frame/doom-themes/</guid>
-      <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
+      <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&amp;rsquo; Theme Pack.
 doom-themes には、わんさかとtheme ファイルがパックされています。自分は、doom-dracula を愛用しています。
 (leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
 (leaf cycle-custom-theme :doc &amp;#34;https://bre.is/5tE2BvUp&amp;#34; :config (setq my:themes (list &amp;#39;doom-dracula &amp;#39;iceberg &amp;#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () &amp;#34;Switch themes to cycle.&amp;#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message &amp;#34;%s&amp;#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc &amp;#34;modified version for myself&amp;#34; :el-get minorugh/iceberg-theme) (add-to-list &amp;#39;custom-theme-load-path &amp;#34;~/.</description>

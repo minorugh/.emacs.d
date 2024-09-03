@@ -24,7 +24,7 @@
       
       <guid>https://minorugh.github.io/emacs.d/core/mozc/</guid>
       <description>Debianでの日本語入力環境構築が完了していることが前提です。
- Debian系の日本語入力をMozcにする  Mozcサーバーをインストール EmacsからMozcを使えるようにするには、mozc_emacs_helper をインストールする必要があります。 OSによって手法が異なりますが、Linuxの場合は簡単です。
+Debian系の日本語入力をMozcにする Mozcサーバーをインストール EmacsからMozcを使えるようにするには、mozc_emacs_helper をインストールする必要があります。 OSによって手法が異なりますが、Linuxの場合は簡単です。
 $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインストールされていたらOKです。
 インライン入力を無効にする デフォルトはC-\ で emacs-mozc が起動しますが、 Emacsでも &amp;lt;hiragana-katakana&amp;gt; でON/OFFをしたいので、Emacsのインライン入力を無効にします。
 方法は簡単で、~/.Xresources を作成して下記のように設定します。
@@ -32,7 +32,7 @@ $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインスト�
 これで、&amp;lt;hiragana-katakana&amp;gt; を toggle-input-method に割り当てることができます。
 [mozc.el] Mozcサーバーを使って日本語テキストを入力 🔗 google/mozc.el: Input Japanese text using Mozc server.
 句読点などは、自動的に確定させるように mozc-insert-str を定義しました。
-(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; .</description>
+(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?</description>
     </item>
     
     <item>

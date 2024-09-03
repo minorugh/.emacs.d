@@ -14,7 +14,7 @@
       
       <guid>https://minorugh.github.io/emacs.d/programming/function/</guid>
       <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
-   キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
+キー コマンド 説明 F1 emacs help ivyで提供される便利機能 F2 imenu-list-smart-toggle imenuのサイドバー版 F3 filer-current-dir-open nautilusを開く F4 term-current-dir-open gonome-terminalを開く F5 quikuran お手軽ビルド F6 counsel-linux-app Linuxアプリランチャー F7 calendar-toggle カレンダーのトグル表示 F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示 F9 display-line-numbers-mode 行番号のトグル表示 F10 neotree-toggle Neotreeのトグル表示 F11 toggle-frame-fullscreen Emacsの標準機能 F12 darkroom-mode darkroom-modeのトグル操作 home open-dashboard dashboardの再表示 end suspend-frame `Emacsの最小化 insert iedit-menu 文字列の置換え muhenkan minibuffer-keyboard-quit minibufferを閉じる S-RET toggle-scratch scratchのトグル表示 </description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ Google-Chrome や Firefoxの拡張機能を使って、お気に入りURLやリ�
       <description>scratchバッファーを付箋として使う Emacsで作業中の編集画面から短期的なメモを気軽に書きたいので付箋代わりに *scratch*バッファーが使えるように設定してみた。
 再起動しても*scratch* の内容が消えないように auto-save-buffers の *scratch* 自動保存機能を併用しています。
 専用のパッケージもあるようです。
- persistent-scratch.el: scratch バッファを永続化・自動保存・復元する  toggle-scratch は、編集中のバッファーとscratchとをトグルで切り替えます。
+persistent-scratch.el: scratch バッファを永続化・自動保存・復元する toggle-scratch は、編集中のバッファーとscratchとをトグルで切り替えます。
 ;; Scratch for sticky-memo (leaf *scratch-memo :after auto-save-buffers-enhanced :bind (&amp;#34;S-&amp;lt;return&amp;gt;&amp;#34; . toggle-scratch) :custom ((auto-save-buffers-enhanced-save-scratch-buffer-to-file-p . t) (auto-save-buffers-enhanced-file-related-with-scratch-buffer . &amp;#34;~/.emacs.d/tmp/scratch&amp;#34;)) :init (defun toggle-scratch () &amp;#34;Toggle current buffer and *scratch* buffer.&amp;#34; (interactive) (if (not (string= &amp;#34;*scratch*&amp;#34; (buffer-name))) (progn (setq toggle-scratch-prev-buffer (buffer-name)) (switch-to-buffer &amp;#34;*scratch*&amp;#34;)) (switch-to-buffer toggle-scratch-prev-buffer))) (defun read-scratch-data () (let ((file &amp;#34;~/.emacs.d/tmp/scratch&amp;#34;)) (when (file-exists-p file) (set-buffer (get-buffer &amp;#34;*scratch*&amp;#34;)) (erase-buffer) (insert-file-contents file)))) (read-scratch-data)) Scratch バッファーを消さない scratch付箋環境を実現させるのに必須なのは、決してscratchバッファーを消さないようにすること。 難しい関数を設定せずともビルトインコマンドで簡単に実現できます。</description>
     </item>
     
@@ -160,7 +160,7 @@ magit status は、デフォルトでは other-window に表示されますが�
 [F12] キーで IN/OUT をトグルしています。
 darkroom-mode から抜けるときは、revert-buffer でもとに戻します。
 yes/no確認を聞かれるのが煩わしいので (revert-buffer t t) としています。
-(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-mode 1) (setq-local line-spacing 0.5)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39;to the previous state.&amp;#34; (interactive) (darkroom-mode 0) (display-line-numbers-mode 1) (revert-buffer t t)) </description>
+(leaf darkroom :ensure t :bind ((&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-in) (:darkroom-mode-map (&amp;#34;&amp;lt;f12&amp;gt;&amp;#34; . my:darkroom-out))) :config (defun my:darkroom-in () &amp;#34;Enter to the `darkroom-mode&amp;#39;.&amp;#34; (interactive) (diff-hl-mode 0) (display-line-numbers-mode 0) (darkroom-mode 1) (setq-local line-spacing 0.5)) (defun my:darkroom-out () &amp;#34;Returns from `darkroom-mode&amp;#39; to the previous state.&amp;#34; (interactive) (darkroom-mode 0) (display-line-numbers-mode 1) (revert-buffer t t)) </description>
     </item>
     
     <item>
@@ -171,7 +171,7 @@ yes/no確認を聞かれるのが煩わしいので (revert-buffer t t) とし�
       <guid>https://minorugh.github.io/emacs.d/programming/git-timemachine/</guid>
       <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
 次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
- p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  (leaf git-timemachine	:ensure t) </description>
+p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示 (leaf git-timemachine	:ensure t) </description>
     </item>
     
     <item>
@@ -189,10 +189,10 @@ counsel.el をインストールすれば、ivy.el も swiper.el も一緒にイ
     
     <item>
       <title>10.7. browse-at-point</title>
-      <link>https://minorugh.github.io/emacs.d/programming/browsepoint/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/browse@point/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/emacs.d/programming/browsepoint/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/browse@point/</guid>
       <description>[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
 browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。
 (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil)) </description>
@@ -322,7 +322,7 @@ avy-migemo-e.g.swiper.el を使って出来ていたのですが、２年ほど�
       <guid>https://minorugh.github.io/emacs.d/editing/smartparens/</guid>
       <description>[smartparens.el] 対応する括弧の挿入をアシスト 🔗 Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.
 設定がいまいちよくわからず、試行錯誤しましたが、
-(require &#39;smartparens-config) を追加したところとても賢く機能するようになりました。
+(require &amp;#39;smartparens-config) を追加したところとても賢く機能するようになりました。
 (leaf smartparens :ensure t :hook ((after-init-hook . smartparens-global-mode) (prog-mode-hook . turn-on-smartparens-mode)) :config (require &amp;#39;smartparens-config)) </description>
     </item>
     
@@ -347,7 +347,7 @@ Emacsバッファーで領域を選択した後、バインドしたワンキー
       <guid>https://minorugh.github.io/emacs.d/editing/pangu/</guid>
       <description>[pangu-spacing.el] 漢字と英字の間にスペースを自動追加 🔗 coldnew/pangu-spacing: Add space between Chinese and English characters.
 pangu-spacingは、漢字と英字の間にスペースを自動追加してくれます。 少しカスタマイズしました。
- 英字の前方のみとし後方にはスペースは挿入しない。 半角数字は、対象から除外。  ;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
+英字の前方のみとし後方にはスペースは挿入しない。 半角数字は、対象から除外。 ;; Add space between full-width and half-width (leaf pangu-spacing :ensure t :after mozc :hook ((markdown-mode-hook text-mode-hook) . pangu-spacing-mode) :config (setq pangu-spacing-include-regexp (rx (or (and (or (group-n 3 (any &amp;#34;。，！？；：「」（）、&amp;#34;)) (group-n 1 (or (category japanese)))))) (group-n 2 (in &amp;#34;a-zA-Z&amp;#34;))))) </description>
     </item>
     
     <item>
@@ -392,7 +392,7 @@ Font-awesome の入力をcounsel で支援してくれる。
       <guid>https://minorugh.github.io/emacs.d/utility-tool/ps-print/</guid>
       <description>PS-Printer での印刷 EmacsからPostscript経由で印刷する際の個人的な設定です。
 Postscript 対応のプリンターが必要。
-(defalias &#39;ps-mule-header-string-charsets &#39;ignore) (setq ps-multibyte-buffer &#39;non-latin-printer ps-paper-type &#39;a4 ps-font-size 9 ;; ps-font-family &#39;Helvetica ps-font-family &#39;Courier ps-line-number-font &#39;Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) </description>
+(defalias &amp;#39;ps-mule-header-string-charsets &amp;#39;ignore) (setq ps-multibyte-buffer &amp;#39;non-latin-printer ps-paper-type &amp;#39;a4 ps-font-size 9 ;; ps-font-family &amp;#39;Helvetica ps-font-family &amp;#39;Courier ps-line-number-font &amp;#39;Courier ps-printer-name nil ps-print-header nil ps-show-n-of-n t ps-line-number t ps-print-footer nil) </description>
     </item>
     
     <item>
@@ -426,7 +426,7 @@ Postscript 対応のプリンターが必要。
       <description>[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.
 restart-emacs は、Emacsを再起動させるコマンドです。
 C-u の数で再起動の方法を制御できます。
- M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる  (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>
+M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>
     </item>
     
     <item>
@@ -484,7 +484,7 @@ Hydra for quick-menu 編集作業で頻繁にアクセスするプロジェク�
       <guid>https://minorugh.github.io/emacs.d/hydra/hydra-make/</guid>
       <description>Hydra for make command 🔗 自動化のための nmake 入門講座: 石井勝
 上記記事を読んで自分革命がありました。
- 同じことは2度しない 必ずしなければならない作業 → 自動化できないか考える  と、いうことで、私は多くの日常ワークを make で自動化しています。目的に応じて選択実行するために hydra でメニュー化しています。
+同じことは2度しない 必ずしなければならない作業 → 自動化できないか考える と、いうことで、私は多くの日常ワークを make で自動化しています。目的に応じて選択実行するために hydra でメニュー化しています。
 ;; Hydra for make command (leaf *user-make-configulation :mode ((&amp;#34;\\.mak\\&amp;#39;&amp;#34; &amp;#34;makefile\\&amp;#39;&amp;#34;) . makefile-mode) :hydra (hydra-make (:hint nil :exit t) &amp;#34;  make:_k_ _u_psftp _m_ove _d_raft _b_klog _g_it _s_ort _c_lean 🐾 &amp;#34; (&amp;#34;k&amp;#34; my:make-k) (&amp;#34;u&amp;#34; my:make-upsftp) (&amp;#34;m&amp;#34; my:make-move) (&amp;#34;d&amp;#34; my:make-draft) (&amp;#34;b&amp;#34; my:make-bklog) (&amp;#34;g&amp;#34; my:make-git) (&amp;#34;s&amp;#34; my:make-sort) (&amp;#34;c&amp;#34; my:make-clean) (&amp;#34;&amp;lt;muhenkan&amp;gt;&amp;#34; nil)) :init (setq compilation-scroll-output t) (setq compilation-always-kill t) (setq compilation-finish-functions &amp;#39;compile-autoclose) (defun compile-autoclose (buffer string) &amp;#34;Automatically close the compilation buffer.</description>
     </item>
     
@@ -609,7 +609,7 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
       <description>[neotree.el] Emacs 上でディレクトリツリーを表示させる 🔗 jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.
 最近は、Dired よりももっぱらこちらを愛用している。Rename, Delete などの簡単なコマンドも使えて便利。
 (leaf neotree :ensure t :bind ((&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-find) (:neotree-mode-map (&amp;#34;RET&amp;#34; . neotree-enter-hide) (&amp;#34;a&amp;#34; . neotree-hidden-file-toggle) (&amp;#34;&amp;lt;left&amp;gt;&amp;#34; . neotree-select-up-node) (&amp;#34;&amp;lt;right&amp;gt;&amp;#34; . neotree-change-root) (&amp;#34;&amp;lt;f10&amp;gt;&amp;#34; . neotree-toggle))) :custom `((neo-keymap-style . &amp;#39;concise) (neo-create-file-auto-open . t))) アイコンは all-the-icons より doom-themes の拡張設定のほうがシンプルで見やすい。
-;; doom-themes  (doom-themes-neotree-config) カスタマイズ設定 ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。
+;; doom-themes (doom-themes-neotree-config) カスタマイズ設定 ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。
 (with-eval-after-load neotree ;; Change neotree&amp;#39;s font size ;; Tips from https://github.com/jaypei/emacs-neotree/issues/218 (defun neotree-text-scale () &amp;#34;Neotree text scale.</description>
     </item>
     
@@ -621,9 +621,9 @@ undo-fu は、シンプルながら安定した undo/redo 機能を提供して�
       <guid>https://minorugh.github.io/emacs.d/higlight/font/</guid>
       <description>フォントの設定 メイン機: Thinkpad E590 とサブ機: X250 とでそれぞれに適した値を設定することで設定ファイルを共有しています。
 (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-18&amp;#34;)) ;; for sub-machine (when (string-match &amp;#34;x250&amp;#34; (code-command-to-string &amp;#34;uname -n&amp;#34;)) (add-to-list &amp;#39;default-frame-alist &amp;#39;(font . &amp;#34;Cica-15&amp;#34;))) Cicaフォントとは Cicaフォントは、Hack、DejaVu Sans Mono、Rounded Mgen+、Noto Emoji等のフォントを組み合わせて調整をした、プログラミング用日本語等幅フォントです。
- 日本語等幅フォント Cica  オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れるので、dashboard.el を使われるなら Cica v5.01 がいいと思います。 記号の表記なども変わっていて、私は Cica v2.04が好みで使い続けています。
+日本語等幅フォント Cica オフィシャルページにある最新の Cica v5.03 は、 page-break-lines で表示が乱れるので、dashboard.el を使われるなら Cica v5.01 がいいと思います。 記号の表記なども変わっていて、私は Cica v2.04が好みで使い続けています。
 フォントのインストール Linux 環境でのインストールの方法です。
- ダウンロードページから、 Cica-v5.0.1.zip をダウンロードします。 私のクラウドサーバーからもDownloadしていただけます。 Cica-v5.0.1.zip | Cica-v2.0.4.zip zipファイルを展開します。 解凍したファイルを ~/.fonts/ にコピーします。  $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf </description>
+ダウンロードページから、 Cica-v5.0.1.zip をダウンロードします。 私のクラウドサーバーからもDownloadしていただけます。 Cica-v5.0.1.zip | Cica-v2.0.4.zip zipファイルを展開します。 解凍したファイルを ~/.fonts/ にコピーします。 $ sudo cp Cica-{Bold,BoldItalic,Regular,RegularItalic}.ttf ~/.fonts/ $ sudo fc-cache -vf </description>
     </item>
     
     <item>
@@ -727,7 +727,7 @@ show-trailing-whitespace は、便利だけれどtext-modeなどでは多少う�
 takaxp.github.io の設定をそのままパクリました。 ON/OFF できるのが快適です。
 (leaf dimmer :ensure t :chord (&amp;#34;..&amp;#34; . my:toggle-dimmer) :config (defvar my:dimmer-mode 1) (setq dimmer-buffer-exclusion-regexps &amp;#39;(&amp;#34;^ \\*which-key\\|^ \\*LV\\|^ \\*.*posframe.*buffer.*\\*$&amp;#34;)) (setq dimmer-fraction 0.6) (defun my:toggle-dimmer () (interactive) (unless (one-window-p) (if (setq my:dimmer-mode (not my:dimmer-mode)) (dimmer-on) (dimmer-off)))) (defun dimmer-off () (dimmer-process-all) (dimmer-mode -1)) (defun dimmer-on () (when my:dimmer-mode (dimmer-mode 1) (dimmer-process-all)))) 画面分割との連携 dimmer-mode を global に設定すると多くのシーンでDisable対策の設定が必要になり面倒です。
 下記の通り発想転換すれば呪縛から逃れることができます。
- 画面分割したときは、dimmer-mode-on にする。 画面分割を閉じるときは、dimmer-mode-off にする。  (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
+画面分割したときは、dimmer-mode-on にする。 画面分割を閉じるときは、dimmer-mode-off にする。 (leaf *sprit-window-configurations :bind ((&amp;#34;C-q&amp;#34; .</description>
     </item>
     
     <item>
@@ -748,7 +748,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
       
       <guid>https://minorugh.github.io/emacs.d/frame/sprit-window/</guid>
       <description>デフォルトの画面分割コマンドをカスタマイズ dimmer-mode 連携のためにデフォルトのコマンドをカスタマイズします。
- 画面分割したときは、dimmer-mode on + follow-mode on にする。 画面分割を閉じたときは、dimmer-mode off にする。  (leaf *cus-sprit-window-functions :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.</description>
+画面分割したときは、dimmer-mode on + follow-mode on にする。 画面分割を閉じたときは、dimmer-mode off にする。 (leaf *cus-sprit-window-functions :bind ((&amp;#34;C-q&amp;#34; . other-window-or-split) (&amp;#34;C-x 2&amp;#34; . my:split-window-below) (&amp;#34;C-x 1&amp;#34; . my:delete-other-windows) (&amp;#34;C-x 0&amp;#34; . my:delete-window) (&amp;#34;&amp;lt;C-return&amp;gt;&amp;#34; . window-swap-states)) :init (defun other-window-or-split () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (when (one-window-p) (split-window-horizontally) (follow-mode 1) (dimmer-mode 1)) (other-window 1)) (defun my:split-window-below () &amp;#34;With turn on dimmer.&amp;#34; (interactive) (split-window-below) (follow-mode 1) (dimmer-mode 1)) (defun my:delete-window () &amp;#34;With turn off dimmer.</description>
     </item>
     
     <item>
@@ -761,7 +761,7 @@ takaxp.github.io の設定をそのままパクリました。 ON/OFF できる�
 tempbuf.el は不要になったと思われるバッファを自動的に kill してくれます。
 使っていた時間が長い程、裏に回った時には長い時間保持してくれる。
 つまり、一瞬開いただけのファイルは明示的に kill しなくても勝手にやってくれるのでファイルを開いてそのまま放置みたいなズボラな自分には便利です。
- my:tembuf-ignore-files は、勝手に kill させないファイルの指定 find-file-hook は、find-file で開いたファイルが削除対象 dired buffer /magit-buffer は、無条件に削除  (leaf tempbuf :el-get (tempbuf :url &amp;#34;http://www.emacswiki.org/emacs/download/tempbuf.el&amp;#34;) :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :custom `((tempbuf-kill-message . nil) (my:tempbuf-ignore-files . &amp;#34;~/Dropbox/org/task.org&amp;#34;)) :init (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
+my:tembuf-ignore-files は、勝手に kill させないファイルの指定 find-file-hook は、find-file で開いたファイルが削除対象 dired buffer /magit-buffer は、無条件に削除 (leaf tempbuf :el-get (tempbuf :url &amp;#34;http://www.emacswiki.org/emacs/download/tempbuf.el&amp;#34;) :hook ((find-file-hook . my:find-file-tempbuf-hook) (dired-mode-hook . turn-on-tempbuf-mode) (magit-mode-hook . turn-on-tempbuf-mode) ) :custom `((tempbuf-kill-message . nil) (my:tempbuf-ignore-files . &amp;#34;~/Dropbox/org/task.org&amp;#34;)) :init (defun my:find-file-tempbuf-hook () (let ((ignore-file-names (mapcar &amp;#39;expand-file-name my:tempbuf-ignore-files))) (unless (member (buffer-file-name) ignore-file-names) (turn-on-tempbuf-mode))))) </description>
     </item>
     
     <item>
@@ -782,7 +782,7 @@ winner-undo で直前の状態に戻せます。誤って C-x 0 で分割ウィ�
       <pubDate>Mon, 29 Aug 2022 05:55:43 +0900</pubDate>
       
       <guid>https://minorugh.github.io/emacs.d/frame/doom-themes/</guid>
-      <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&#39; Theme Pack.
+      <description>[doom-thems.el] テーマ 🔗 doomemacs/themes: Doom Emacs&amp;rsquo; Theme Pack.
 doom-themes には、わんさかとtheme ファイルがパックされています。自分は、doom-dracula を愛用しています。
 (leaf doom-themes :ensure t :hook (after-init-hook . (lambda () (load-theme &amp;#39;doom-dracula t))) :custom (doom-themes-enable-italic . nil) (doom-themes-enable-bold . nil) :config (doom-themes-neotree-config) (doom-themes-org-config)) テーマを切り替えて使う 作業用途によってテーマを変える設定です。 いまは使ってません。
 (leaf cycle-custom-theme :doc &amp;#34;https://bre.is/5tE2BvUp&amp;#34; :config (setq my:themes (list &amp;#39;doom-dracula &amp;#39;iceberg &amp;#39;doom-solarized-light)) (setq curr-theme my:themes) (defun cycle-custom-theme () &amp;#34;Switch themes to cycle.&amp;#34; (interactive) (disable-theme (car curr-theme)) (setq curr-theme (cdr curr-theme)) (if (null curr-theme) (setq curr-theme my:themes)) (load-theme (car curr-theme) t) (message &amp;#34;%s&amp;#34; (car curr-theme))) (load-theme (car curr-theme) t) :init (leaf iceberg-theme :doc &amp;#34;modified version for myself&amp;#34; :el-get minorugh/iceberg-theme) (add-to-list &amp;#39;custom-theme-load-path &amp;#34;~/.</description>
@@ -906,7 +906,7 @@ imenu-list は、imenu の各エントリを *Ilist* バッファで一覧しま
       <guid>https://minorugh.github.io/emacs.d/cursor/sequential-command/</guid>
       <description>[sequential-command.el] バッファーの先頭と最終行への移動を簡単に 🔗 https://github.com/HKey/sequential-command
 sequential-command は、標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
- C-a を連続で打つことで行頭→ページ先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ページ最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。 MELPAからもインストールできますが、私は HKey氏の改良版を el-get でインストールしています。
+C-a を連続で打つことで行頭→ページ先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ページ最終行→元の位置とカーソルが移動 地味ながら一度使うと便利すぎて止められません。 MELPAからもインストールできますが、私は HKey氏の改良版を el-get でインストールしています。
 (leaf sequential-command :doc &amp;#34;https://bre.is/6Xu4fQs6&amp;#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) </description>
     </item>
     
@@ -928,7 +928,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
       
       <guid>https://minorugh.github.io/emacs.d/cursor/jump-brace/</guid>
       <description>括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
-(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は、カーソル位置から順方向に選択 C-M-U (backward-up-list) は、一つ外のカッコの先頭にポイントを移す  標準機能はなにげに使いにくいです。</description>
+(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能 C-M-SPC (mark-sexp) は、カーソル位置から順方向に選択 C-M-U (backward-up-list) は、一つ外のカッコの先頭にポイントを移す 標準機能はなにげに使いにくいです。</description>
     </item>
     
     <item>
@@ -964,7 +964,7 @@ expand-region.elは、カーソル位置を起点として選択範囲を広げ�
 過去に訪れた箇所の一覧をリストとして表示して、そこから戻りたい箇所を選択できます。 デフォルトは tab移動ですが変更しています。また、g でリスト画面が消えてくれるので、わかりやすくggで発動するようにキーバインドしています。
 リスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。
 ignore-bufferの正規表現、なかなか難しいのですが…
- ^* &amp;raquo; scratch dashboard Message init-log などが有効になるようです。 ^magit &amp;raquo; 先頭にmagit とつくmagit commit時に作られるbuffer を無視します。 \]$ &amp;raquo; diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の]がマッチすれば無視します。  (leaf point-history :el-get blue0513/point-history :hook (after-init-hook . point-history-mode) :chord (&amp;#34;gg&amp;#34; . point-history-show) ;; Since it disappears with `g&amp;#39; :bind ((:point-history-show-mode-map (&amp;#34;&amp;lt;SPC&amp;gt;&amp;#34; . point-history-next-line) (&amp;#34;b&amp;#34; . point-history-prev-line))) :custom (point-history-show-buffer-height . 15) :custom (point-history-ignore-buffer . &amp;#34;^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$&amp;#34;)) デレクトリバッファー名の末尾に [dir]をつける counsel-switch-buffer でファイルとデレクトリとを区別しやすいようにこのようにしてます。</description>
+^* &amp;raquo; scratch dashboard Message init-log などが有効になるようです。 ^magit &amp;raquo; 先頭にmagit とつくmagit commit時に作られるbuffer を無視します。 \]$ &amp;raquo; diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の]がマッチすれば無視します。 (leaf point-history :el-get blue0513/point-history :hook (after-init-hook . point-history-mode) :chord (&amp;#34;gg&amp;#34; . point-history-show) ;; Since it disappears with `g&amp;#39; :bind ((:point-history-show-mode-map (&amp;#34;&amp;lt;SPC&amp;gt;&amp;#34; . point-history-next-line) (&amp;#34;b&amp;#34; . point-history-prev-line))) :custom (point-history-show-buffer-height . 15) :custom (point-history-ignore-buffer . &amp;#34;^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$&amp;#34;)) デレクトリバッファー名の末尾に [dir]をつける counsel-switch-buffer でファイルとデレクトリとを区別しやすいようにこのようにしてます。</description>
     </item>
     
     <item>
@@ -984,7 +984,7 @@ ignore-bufferの正規表現、なかなか難しいのですが…
       
       <guid>https://minorugh.github.io/emacs.d/core/mozc/</guid>
       <description>Debianでの日本語入力環境構築が完了していることが前提です。
- Debian系の日本語入力をMozcにする  Mozcサーバーをインストール EmacsからMozcを使えるようにするには、mozc_emacs_helper をインストールする必要があります。 OSによって手法が異なりますが、Linuxの場合は簡単です。
+Debian系の日本語入力をMozcにする Mozcサーバーをインストール EmacsからMozcを使えるようにするには、mozc_emacs_helper をインストールする必要があります。 OSによって手法が異なりますが、Linuxの場合は簡単です。
 $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインストールされていたらOKです。
 インライン入力を無効にする デフォルトはC-\ で emacs-mozc が起動しますが、 Emacsでも &amp;lt;hiragana-katakana&amp;gt; でON/OFFをしたいので、Emacsのインライン入力を無効にします。
 方法は簡単で、~/.Xresources を作成して下記のように設定します。
@@ -992,7 +992,7 @@ $ sudo apt install emacs-mozc /user/bin/ に mozc_emacs_helper がインスト�
 これで、&amp;lt;hiragana-katakana&amp;gt; を toggle-input-method に割り当てることができます。
 [mozc.el] Mozcサーバーを使って日本語テキストを入力 🔗 google/mozc.el: Input Japanese text using Mozc server.
 句読点などは、自動的に確定させるように mozc-insert-str を定義しました。
-(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; .</description>
+(leaf mozc :ensure t :bind ((&amp;#34;&amp;lt;hiragana-katakana&amp;gt;&amp;#34; . toggle-input-method) (:mozc-mode-map (&amp;#34;,&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;、&amp;#34;))) (&amp;#34;.&amp;#34; . (lambda () (interactive) (mozc-insert-str &amp;#34;。&amp;#34;))) (&amp;#34;?</description>
     </item>
     
     <item>

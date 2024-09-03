@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>8.2. hydra-make :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -908,46 +908,46 @@
 <li>必ずしなければならない作業 → 自動化できないか考える</li>
 </ol>
 <p>と、いうことで、私は多くの日常ワークを <code>make</code> で自動化しています。目的に応じて選択実行するために <code>hydra</code> でメニュー化しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Hydra for make command</span>
-(<span style="color:#000">leaf</span> <span style="color:#000">*user-make-configulation</span>
-  <span style="color:#a90d91">:mode</span> ((<span style="color:#c41a16">&#34;\\.mak\\&#39;&#34;</span> <span style="color:#c41a16">&#34;makefile\\&#39;&#34;</span>) <span style="color:#000">.</span> <span style="color:#000">makefile-mode</span>)
-  <span style="color:#a90d91">:hydra</span>
-  (<span style="color:#000">hydra-make</span>
-   (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
-   <span style="color:#c41a16">&#34;
-</span><span style="color:#c41a16">     make:_k_  _u_psftp  _m_ove  _d_raft  _b_klog  _g_it  _s_ort  _c_lean  🐾
-</span><span style="color:#c41a16">&#34;</span>
-   (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">my:make-k</span>)
-   (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">my:make-upsftp</span>)
-   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">my:make-move</span>)
-   (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">my:make-draft</span>)
-   (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">my:make-bklog</span>)
-   (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">my:make-git</span>)
-   (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">my:make-sort</span>)
-   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">my:make-clean</span>)
-   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-scroll-output</span> <span style="color:#000">t</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-always-kill</span> <span style="color:#000">t</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-finish-functions</span> <span style="color:#c41a16">&#39;compile-autoclose</span>)
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">compile-autoclose</span> (<span style="color:#000">buffer</span> <span style="color:#000">string</span>)
-	<span style="color:#c41a16">&#34;Automatically close the compilation buffer.&#34;</span>
-	(<span style="color:#a90d91">cond</span> ((<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;finished&#34;</span> <span style="color:#000">string</span>)
-		   (<span style="color:#000">bury-buffer</span> <span style="color:#c41a16">&#34;*compilation*&#34;</span>)
-		   (<span style="color:#000">delete-other-windows</span>)
-		   (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
-		  (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>)))))
-</code></pre></div><h2 id="make-command-functions">make command functions</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; Hydra for make command</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">*user-make-configulation</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:mode</span> ((<span style="color:#c41a16">&#34;\\.mak\\&#39;&#34;</span> <span style="color:#c41a16">&#34;makefile\\&#39;&#34;</span>) <span style="color:#000">.</span> <span style="color:#000">makefile-mode</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hydra</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">hydra-make</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#a90d91">:hint</span> <span style="color:#000">nil</span> <span style="color:#a90d91">:exit</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>   <span style="color:#c41a16">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">     make:_k_  _u_psftp  _m_ove  _d_raft  _b_klog  _g_it  _s_ort  _c_lean  🐾
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">&#34;</span>
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">my:make-k</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;u&#34;</span> <span style="color:#000">my:make-upsftp</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">my:make-move</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;d&#34;</span> <span style="color:#000">my:make-draft</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;b&#34;</span> <span style="color:#000">my:make-bklog</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">my:make-git</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">my:make-sort</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">my:make-clean</span>)
+</span></span><span style="display:flex;"><span>   (<span style="color:#c41a16">&#34;&lt;muhenkan&gt;&#34;</span> <span style="color:#000">nil</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-scroll-output</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-always-kill</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-finish-functions</span> <span style="color:#c41a16">&#39;compile-autoclose</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">compile-autoclose</span> (<span style="color:#000">buffer</span> <span style="color:#000">string</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Automatically close the compilation buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">cond</span> ((<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;finished&#34;</span> <span style="color:#000">string</span>)
+</span></span><span style="display:flex;"><span>		   (<span style="color:#000">bury-buffer</span> <span style="color:#c41a16">&#34;*compilation*&#34;</span>)
+</span></span><span style="display:flex;"><span>		   (<span style="color:#000">delete-other-windows</span>)
+</span></span><span style="display:flex;"><span>		   (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
+</span></span><span style="display:flex;"><span>		  (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>)))))
+</span></span></code></pre></div><h2 id="make-command-functions">make command functions</h2>
 <p>必要な <code>make</code>実行コマンドを定義します。</p>
 <p>例えば、詳細に <code>commit message</code> を残さなくてもいい Gitリポジトリは、<code>magit</code> は使わずに <code>make</code> で自動コミットします。
 <code>make git</code> で実行されます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#177500"># makefile for auto commit
-</span><span style="color:#177500"></span><span style="color:#000">git</span><span style="color:#000">:</span>
-	git add . <span style="color:#000">&amp;&amp;</span> git diff --cached --exit-code --quiet <span style="color:#000">&amp;&amp;</span> <span style="color:#a90d91">echo</span> <span style="color:#c41a16">&#34;\nnothing to commit, working tree clean!&#34;</span><span style="color:#000">||</span> <span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	git commit -a -m <span style="color:#c41a16">&#34;Updated: `date +&#39;%Y-%m-%d %H:%M:%S&#39;`&#34;</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#c41a16">\
-</span><span style="color:#c41a16"></span>	git push origin master
-</code></pre></div><p>実行関数は、コマンドを実行しながら、Emacs上で別の作業をさせることができる <code>compile</code> を使います。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#177500"># makefile for auto commit
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span><span style="color:#000">git</span><span style="color:#000">:</span>
+</span></span><span style="display:flex;"><span>	git add . <span style="color:#000">&amp;&amp;</span> git diff --cached --exit-code --quiet <span style="color:#000">&amp;&amp;</span> <span style="color:#a90d91">echo</span> <span style="color:#c41a16">&#34;\nnothing to commit, working tree clean!&#34;</span><span style="color:#000">||</span> <span style="color:#c41a16">\
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16"></span>	git commit -a -m <span style="color:#c41a16">&#34;Updated: `date +&#39;%Y-%m-%d %H:%M:%S&#39;`&#34;</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#c41a16">\
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16"></span>	git push origin master
+</span></span></code></pre></div><p>実行関数は、コマンドを実行しながら、Emacs上で別の作業をさせることができる <code>compile</code> を使います。</p>
 <ul>
 <li><a href="https://qiita.com/tadsan/items/17d32514b81f1e8f208a">Emacsからの安全なシェルコマンド実行</a></li>
 </ul>
@@ -957,61 +957,61 @@
 <li>正常終了したら確認なしで自動的にコンパイル実行をkillする</li>
 <li>実行終了した <code>*compilation*</code> バッファーを自動で閉じる</li>
 </ul>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-scroll-output</span> <span style="color:#000">t</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-always-kill</span> <span style="color:#000">t</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-finish-functions</span> <span style="color:#c41a16">&#39;compile-autoclose</span>)
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">compile-autoclose</span> (<span style="color:#000">buffer</span> <span style="color:#000">string</span>)
-  <span style="color:#c41a16">&#34;Automatically close the compilation buffer.&#34;</span>
-  (<span style="color:#a90d91">cond</span> ((<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;finished&#34;</span> <span style="color:#000">string</span>)
-         (<span style="color:#000">bury-buffer</span> <span style="color:#c41a16">&#34;*compilation*&#34;</span>)
-		 (<span style="color:#000">delete-other-windows</span>)
-		 (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
-		 (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>))))
-</code></pre></div><p>実行コマンドの一例は以下のとおり。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; My make command functions</span>
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-k</span> ()
-  <span style="color:#c41a16">&#34;Make k.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make -k&#34;</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-draft</span> ()
-  <span style="color:#c41a16">&#34;Make kinnei draft.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make df&#34;</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-upsftp</span> ()
-  <span style="color:#c41a16">&#34;Make upfstp.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make up&#34;</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-move</span> ()
-  <span style="color:#c41a16">&#34;Make move.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make mv&#34;</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-bklog</span> ()
-  <span style="color:#c41a16">&#34;Make bklog.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make bk&#34;</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-git</span> ()
-  <span style="color:#c41a16">&#34;Make git.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make git&#34;</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-sort</span> ()
-  <span style="color:#c41a16">&#34;Make sort for filelist.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make sort&#34;</span>)
-  (<span style="color:#000">find-file</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/upsftp/filelist.txt&#34;</span>)
-  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-clean</span> ()
-  <span style="color:#c41a16">&#34;Make clean.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make clean&#34;</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-scroll-output</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-always-kill</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">compilation-finish-functions</span> <span style="color:#c41a16">&#39;compile-autoclose</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">compile-autoclose</span> (<span style="color:#000">buffer</span> <span style="color:#000">string</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Automatically close the compilation buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">cond</span> ((<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;finished&#34;</span> <span style="color:#000">string</span>)
+</span></span><span style="display:flex;"><span>         (<span style="color:#000">bury-buffer</span> <span style="color:#c41a16">&#34;*compilation*&#34;</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">delete-other-windows</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Build successful.&#34;</span>))
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">t</span> (<span style="color:#000">message</span> <span style="color:#c41a16">&#34;Compilation exited abnormally: %s&#34;</span> <span style="color:#000">string</span>))))
+</span></span></code></pre></div><p>実行コマンドの一例は以下のとおり。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; My make command functions</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-k</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make k.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make -k&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-draft</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make kinnei draft.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make df&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-upsftp</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make upfstp.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make up&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-move</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make move.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make mv&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-bklog</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make bklog.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make bk&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-git</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make git.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make git&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-sort</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make sort for filelist.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make sort&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">find-file</span> <span style="color:#c41a16">&#34;~/Dropbox/GH/upsftp/filelist.txt&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">goto-char</span> (<span style="color:#000">point-min</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:make-clean</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Make clean.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;make clean&#34;</span>))
+</span></span></code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>12.1. delete-no-contens :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -903,29 +903,29 @@
 <h2 id="空になったファイルを自動的に削除">空になったファイルを自動的に削除</h2>
 <p>空になったファイルを <code>kill-buffer</code> することで自動的にファイルを削除します。</p>
 <p>なにげに便利なのですが、とりあえずファイル名だけつけて内容は後で…というようなシーンでは空行を入れておくなどしないと消えてしまいます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
-  <span style="color:#c41a16">&#34;Automatic deletion for empty files (Valid in all modes).&#34;</span>
-  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))
-			 (<span style="color:#000">=</span> (<span style="color:#000">point-min</span>) (<span style="color:#000">point-max</span>)))
-    (<span style="color:#000">delete-file</span>
-     (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
-
-(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">memq</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>))
-    (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
-		  (<span style="color:#000">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
-</code></pre></div><h2 id="バッファーのファイルを強制的に削除">バッファーのファイルを強制的に削除</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-file-if-no-contents</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Automatic deletion for empty files (Valid in all modes).&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>))
+</span></span><span style="display:flex;"><span>			 (<span style="color:#000">=</span> (<span style="color:#000">point-min</span>) (<span style="color:#000">point-max</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#000">delete-file</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">memq</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a90d91">setq</span> <span style="color:#000">after-save-hook</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#000">cons</span> <span style="color:#c41a16">&#39;my:delete-file-if-no-contents</span> <span style="color:#000">after-save-hook</span>)))
+</span></span></code></pre></div><h2 id="バッファーのファイルを強制的に削除">バッファーのファイルを強制的に削除</h2>
 <p>危険なのであまりお薦めできませんが…</p>
 <p>安全のために確認するようにしてます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-this-file</span> ()
-	<span style="color:#c41a16">&#34;Delete the current file, and kill the buffer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">unless</span> (<span style="color:#000">buffer-file-name</span>)
-      (<span style="color:#000">error</span> <span style="color:#c41a16">&#34;No file is currently being edited&#34;</span>))
-	(<span style="color:#a90d91">when</span> (<span style="color:#000">yes-or-no-p</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;Really delete &#39;%s&#39;?&#34;</span>
-                               (<span style="color:#000">file-name-nondirectory</span> <span style="color:#000">buffer-file-name</span>)))
-      (<span style="color:#000">delete-file</span> (<span style="color:#000">buffer-file-name</span>))
-      (<span style="color:#000">kill-this-buffer</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:delete-this-file</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Delete the current file, and kill the buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">unless</span> (<span style="color:#000">buffer-file-name</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#000">error</span> <span style="color:#c41a16">&#34;No file is currently being edited&#34;</span>))
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">when</span> (<span style="color:#000">yes-or-no-p</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;Really delete &#39;%s&#39;?&#34;</span>
+</span></span><span style="display:flex;"><span>                               (<span style="color:#000">file-name-nondirectory</span> <span style="color:#000">buffer-file-name</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#000">delete-file</span> (<span style="color:#000">buffer-file-name</span>))
+</span></span><span style="display:flex;"><span>      (<span style="color:#000">kill-this-buffer</span>)))
+</span></span></code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>6.14. selected :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -905,76 +905,76 @@
 <p>🔗 <a href="https://github.com/Kungsgeten/selected.el">Kungsgeten/selected.el: Keymap for when region is active.</a></p>
 <p>選択領域に対するスピードコマンドです。</p>
 <p>Emacsバッファーで領域を選択した後、バインドしたワンキーを入力するとコマンドが実行されます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">selected</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">selected-global-mode</span>)
-  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:selected-keymap</span>
-		 (<span style="color:#c41a16">&#34;;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">comment-dwim</span>)
-		 (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-kill-ring-save</span>)
-		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-thing-at-point</span>)
-		 (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">google-translate-auto</span>)
-		 (<span style="color:#c41a16">&#34;T&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-translate</span>)
-		 (<span style="color:#c41a16">&#34;W&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:weblio</span>)
-		 (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:koujien</span>)
-		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:eijiro</span>)
-		 (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)))
-</code></pre></div><h2 id="browse-urlで検索サイトで開く">browse-urlで検索サイトで開く</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">selected</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">selected-global-mode</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:selected-keymap</span>
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">comment-dwim</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">clipboard-kill-ring-save</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">swiper-thing-at-point</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">google-translate-auto</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;T&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-translate</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;W&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:weblio</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:koujien</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:eijiro</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)))
+</span></span></code></pre></div><h2 id="browse-urlで検索サイトで開く">browse-urlで検索サイトで開く</h2>
 <p>検索結果を browse-url で表示させるユーザーコマンドは、検索 urlのフォーマットとさえわかれば、パッケージツールに頼らずともお好みのマイコマンドを作成できます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:koujien</span> (<span style="color:#000">str</span>)
-  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
-  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&#34;</span>
-                      (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:weblio</span> (<span style="color:#000">str</span>)
-  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
-  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://www.weblio.jp/content/%s&#34;</span>
-	                  (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:eijiro</span> (<span style="color:#000">str</span>)
-  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
-  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://eow.alc.co.jp/%s/UTF-8/&#34;</span>
-                      (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:google</span> (<span style="color:#000">str</span>)
-	(<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
-	(<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://www.google.com/search?hl=ja&amp;q=%s&#34;</span>
-						(<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">my:get-region</span> (<span style="color:#000">r</span>)
-	<span style="color:#c41a16">&#34;Get search word from region.&#34;</span>
-	(<span style="color:#000">buffer-substring-no-properties</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>)))
-</code></pre></div><h2 id="ime-のオンオフを自動制御する">IME のオン・オフを自動制御する</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:koujien</span> (<span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://sakura-paris.org/dict/広辞苑/prefix/%s&#34;</span>
+</span></span><span style="display:flex;"><span>                      (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:weblio</span> (<span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://www.weblio.jp/content/%s&#34;</span>
+</span></span><span style="display:flex;"><span>	                  (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:eijiro</span> (<span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://eow.alc.co.jp/%s/UTF-8/&#34;</span>
+</span></span><span style="display:flex;"><span>                      (<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:google</span> (<span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span> (<span style="color:#000">list</span> (<span style="color:#000">my:get-region</span> <span style="color:#000">nil</span>)))
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">browse-url</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;https://www.google.com/search?hl=ja&amp;q=%s&#34;</span>
+</span></span><span style="display:flex;"><span>						(<span style="color:#000">upcase</span> (<span style="color:#000">url-hexify-string</span> <span style="color:#000">str</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:get-region</span> (<span style="color:#000">r</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Get search word from region.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">buffer-substring-no-properties</span> (<span style="color:#000">region-beginning</span>) (<span style="color:#000">region-end</span>)))
+</span></span></code></pre></div><h2 id="ime-のオンオフを自動制御する">IME のオン・オフを自動制御する</h2>
 <p>selectedコマンドを選択するときは、IMEをOffにしないといけないのですがこれを自動でさせます。</p>
 <p>領域を選択し始める時に IMEをオフにして、コマンド発行後に IMEを元に戻すという例が、
 <a href="https://qiita.com/takaxp"><code>@takaxp</code></a> さんの <a href="https://qiita.com/takaxp/items/00245794d46c3a5fcaa8"><code>Qiitaの記事</code></a> にあったので、私の環境（emacs-mozc ）にあうように設定したら、すんなり動いてくれました。感謝！</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*cus-selected</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">activate-mark-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:activate-selected</span>)
-		 (<span style="color:#000">activate-mark-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">setq</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">my:ime-off</span>)))
-		 (<span style="color:#000">deactivate-mark-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">unless</span> (<span style="color:#000">null</span> <span style="color:#000">my:ime-flag</span>) (<span style="color:#000">my:ime-on</span>)))))
-  <span style="color:#a90d91">:init</span>
-  <span style="color:#177500">;; Control mozc when seleceted</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:activate-selected</span> ()
-	(<span style="color:#000">selected-global-mode</span> <span style="color:#1c01ce">1</span>)
-	(<span style="color:#000">selected--on</span>)
-	(<span style="color:#000">remove-hook</span> <span style="color:#c41a16">&#39;activate-mark-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:activate-selected</span>))
-  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;activate-mark-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:activate-selected</span>)
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ime-on</span> ()
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">when</span> (<span style="color:#000">null</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">toggle-input-method</span>)))
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ime-off</span> ()
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">inactivate-input-method</span>))
-
-  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">nil</span>)
-  (<span style="color:#000">add-hook</span>
-   <span style="color:#c41a16">&#39;activate-mark-hook</span>
-   <span style="color:#000">#&#39;</span>(<span style="color:#a90d91">lambda</span> ()
-	   (<span style="color:#a90d91">setq</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">my:ime-off</span>)))
-  (<span style="color:#000">add-hook</span>
-   <span style="color:#c41a16">&#39;deactivate-mark-hook</span>
-   <span style="color:#000">#&#39;</span>(<span style="color:#a90d91">lambda</span> ()
-	   (<span style="color:#a90d91">unless</span> (<span style="color:#000">null</span> <span style="color:#000">my:ime-flag</span>) (<span style="color:#000">my:ime-on</span>)))))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">*cus-selected</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">activate-mark-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:activate-selected</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">activate-mark-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">setq</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">my:ime-off</span>)))
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">deactivate-mark-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#a90d91">unless</span> (<span style="color:#000">null</span> <span style="color:#000">my:ime-flag</span>) (<span style="color:#000">my:ime-on</span>)))))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Control mozc when seleceted</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:activate-selected</span> ()
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">selected-global-mode</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">selected--on</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">remove-hook</span> <span style="color:#c41a16">&#39;activate-mark-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:activate-selected</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;activate-mark-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:activate-selected</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ime-on</span> ()
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">when</span> (<span style="color:#000">null</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">toggle-input-method</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ime-off</span> ()
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">inactivate-input-method</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defvar</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">nil</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-hook</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#c41a16">&#39;activate-mark-hook</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000">#&#39;</span>(<span style="color:#a90d91">lambda</span> ()
+</span></span><span style="display:flex;"><span>	   (<span style="color:#a90d91">setq</span> <span style="color:#000">my:ime-flag</span> <span style="color:#000">current-input-method</span>) (<span style="color:#000">my:ime-off</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-hook</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#c41a16">&#39;deactivate-mark-hook</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#000">#&#39;</span>(<span style="color:#a90d91">lambda</span> ()
+</span></span><span style="display:flex;"><span>	   (<span style="color:#a90d91">unless</span> (<span style="color:#000">null</span> <span style="color:#000">my:ime-flag</span>) (<span style="color:#000">my:ime-on</span>)))))
+</span></span></code></pre></div>
 
     
     

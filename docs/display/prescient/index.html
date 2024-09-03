@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>7.5. prescient :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -904,17 +904,17 @@
 <p><code>prescient.el</code> は、<code>ivy</code> や <code>company</code> などのパッケージを使用したときに表示される候補のリストをソートおよびフィルタリングするライブラリです。</p>
 <p><code>ivy-prescient.el</code> や <code>company-prescient.el</code> などの拡張パッケージは、さまざまなフレームワークで使用できるようにライブラリを適合させます。</p>
 <p>コマンド履歴を保存していて、コマンドのイニシャル入力も可能にします。例えば <code>counsel-M-x</code> で <code>cc</code> と入力すると <code>company-compile</code> が真っ先にヒットします。これなしではやっていけない体質になりました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">prescient</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">prescient-persist-mode</span>)
-  <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">prescient-aggressive-file-save</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">prescient-save-file</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/.emacs.d/tmp/prescient-save&#34;</span>))
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;prescient</span>
-	(<span style="color:#000">leaf</span> <span style="color:#000">ivy-prescient</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span> <span style="color:#a90d91">:global-minor-mode</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">leaf</span> <span style="color:#000">company-prescient</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span> <span style="color:#a90d91">:global-minor-mode</span> <span style="color:#000">t</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">prescient</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">prescient-persist-mode</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">`</span>((<span style="color:#000">prescient-aggressive-file-save</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">prescient-save-file</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;~/.emacs.d/tmp/prescient-save&#34;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;prescient</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">leaf</span> <span style="color:#000">ivy-prescient</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span> <span style="color:#a90d91">:global-minor-mode</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">leaf</span> <span style="color:#000">company-prescient</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span> <span style="color:#a90d91">:global-minor-mode</span> <span style="color:#000">t</span>)))
+</span></span></code></pre></div>
 
     
     

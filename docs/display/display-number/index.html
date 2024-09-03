@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>7.4. display-line-numbers :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,19 +902,19 @@
 <h2 id="display-line-number-行番号を表示">[display-line-number] 行番号を表示</h2>
 <p>Emacsで左側に行数を表示する<code>linum-mode</code> は重いことで有名で、軽くするためにはいろいろと設定しなくてはいけなかった。</p>
 <p>Emacs26で、待望のCで書かれた <code>diplay-line-numbers-mode</code> が実装されたのでそちらを使います。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">display-line-numbers</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">global-display-line-numbers-mode</span>)
-		 ((<span style="color:#000">lisp-interaction-mode-hook</span> <span style="color:#000">dired-mode-hook</span>)<span style="color:#000">.</span> <span style="color:#000">my:disable-modes</span>))
-  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f9&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">display-line-numbers-mode</span>)
-  <span style="color:#a90d91">:custom</span> (<span style="color:#000">display-line-numbers-width-start</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:disable-modes</span> ()
-	<span style="color:#c41a16">&#34;Disable modes in scrtch buffer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
-	(<span style="color:#000">flymake-mode</span> <span style="color:#1c01ce">0</span>)
-	(<span style="color:#000">nyan-mode</span> <span style="color:#1c01ce">0</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">display-line-numbers</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">global-display-line-numbers-mode</span>)
+</span></span><span style="display:flex;"><span>		 ((<span style="color:#000">lisp-interaction-mode-hook</span> <span style="color:#000">dired-mode-hook</span>)<span style="color:#000">.</span> <span style="color:#000">my:disable-modes</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;&lt;f9&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">display-line-numbers-mode</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span> (<span style="color:#000">display-line-numbers-width-start</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:disable-modes</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Disable modes in scrtch buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">display-line-numbers-mode</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">flymake-mode</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">nyan-mode</span> <span style="color:#1c01ce">0</span>)))
+</span></span></code></pre></div>
 
     
     

@@ -14,7 +14,7 @@
       
       <guid>https://minorugh.github.io/emacs.d/programming/function/</guid>
       <description>便利キーバインド 便利機能をワンキーアクションで使えるように設定しています。
-   キー コマンド 説明     F1 emacs help ivyで提供される便利機能   F2 imenu-list-smart-toggle imenuのサイドバー版   F3 filer-current-dir-open nautilusを開く   F4 term-current-dir-open gonome-terminalを開く   F5 quikuran お手軽ビルド   F6 counsel-linux-app Linuxアプリランチャー   F7 calendar-toggle カレンダーのトグル表示   F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示   F9 display-line-numbers-mode 行番号のトグル表示   F10 neotree-toggle Neotreeのトグル表示   F11 toggle-frame-fullscreen Emacsの標準機能   F12 darkroom-mode darkroom-modeのトグル操作   home open-dashboard dashboardの再表示   end suspend-frame `Emacsの最小化   insert iedit-menu 文字列の置換え   muhenkan minibuffer-keyboard-quit minibufferを閉じる   S-RET toggle-scratch scratchのトグル表示    </description>
+キー コマンド 説明 F1 emacs help ivyで提供される便利機能 F2 imenu-list-smart-toggle imenuのサイドバー版 F3 filer-current-dir-open nautilusを開く F4 term-current-dir-open gonome-terminalを開く F5 quikuran お手軽ビルド F6 counsel-linux-app Linuxアプリランチャー F7 calendar-toggle カレンダーのトグル表示 F8 toggle-menu-bar-mode-from-frame menu-barのトグル表示 F9 display-line-numbers-mode 行番号のトグル表示 F10 neotree-toggle Neotreeのトグル表示 F11 toggle-frame-fullscreen Emacsの標準機能 F12 darkroom-mode darkroom-modeのトグル操作 home open-dashboard dashboardの再表示 end suspend-frame `Emacsの最小化 insert iedit-menu 文字列の置換え muhenkan minibuffer-keyboard-quit minibufferを閉じる S-RET toggle-scratch scratchのトグル表示 </description>
     </item>
     
     <item>
@@ -71,15 +71,15 @@ magit status は、デフォルトでは other-window に表示されますが�
       <guid>https://minorugh.github.io/emacs.d/programming/git-timemachine/</guid>
       <description>[git-timemachine.el] 🔗 emacsmirror/git-timemachine: Walk through git revisions of a file.
 次のキーを使用して、ファイルの履歴バージョンをナビゲートしてくれます。
- p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示  (leaf git-timemachine	:ensure t) </description>
+p 以前の履歴バージョンにアクセス n 次の履歴バージョンにアクセス w 現在の履歴バージョンの省略されたハッシュをコピー W 現在の履歴バージョンの完全なハッシュをコピー g n 番目のリビジョンに移動 t 選択したコミットメッセージでリビジョンに移動 q タイムマシンを終了 b 現在アクセスしているリビジョンでmagit-blame c magit を使用して現在のコミットを表示 (leaf git-timemachine	:ensure t) </description>
     </item>
     
     <item>
       <title>10.7. browse-at-point</title>
-      <link>https://minorugh.github.io/emacs.d/programming/browsepoint/</link>
+      <link>https://minorugh.github.io/emacs.d/programming/browse@point/</link>
       <pubDate>Mon, 29 Aug 2022 06:01:24 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/emacs.d/programming/browsepoint/</guid>
+      <guid>https://minorugh.github.io/emacs.d/programming/browse@point/</guid>
       <description>[browse-at-remote.el] 🔗 rmuslimov/browse-at-remote: Browse target page on github/bitbucket from emacs buffers
 browse-at-remote.el は、Git管理しているEmacsバッファーからgithubの特定リンクを瞬時に開くことができる優れものです。
 (leaf browse-at-remote :ensure t :custom (browse-at-remote-prefer-symbolic . nil)) </description>

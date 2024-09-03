@@ -15,7 +15,7 @@
       <guid>https://minorugh.github.io/emacs.d/cursor/sequential-command/</guid>
       <description>[sequential-command.el] バッファーの先頭と最終行への移動を簡単に 🔗 https://github.com/HKey/sequential-command
 sequential-command は、標準の C-a C-e を拡張し、バッファーの先頭と最終行への移動を簡単にしてくれます。
- C-a を連続で打つことで行頭→ページ先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ページ最終行→元の位置とカーソルが移動  地味ながら一度使うと便利すぎて止められません。 MELPAからもインストールできますが、私は HKey氏の改良版を el-get でインストールしています。
+C-a を連続で打つことで行頭→ページ先頭→元の位置とカーソルが移動 C-e を連続で打つことで行末→ページ最終行→元の位置とカーソルが移動 地味ながら一度使うと便利すぎて止められません。 MELPAからもインストールできますが、私は HKey氏の改良版を el-get でインストールしています。
 (leaf sequential-command :doc &amp;#34;https://bre.is/6Xu4fQs6&amp;#34; :el-get HKey/sequential-command :config (leaf sequential-command-config :hook (emacs-startup-hook . sequential-command-setup-keys))) </description>
     </item>
     
@@ -37,7 +37,7 @@ sequential-command は、標準の C-a C-e を拡張し、バッファーの先�
       
       <guid>https://minorugh.github.io/emacs.d/cursor/jump-brace/</guid>
       <description>括弧の先頭と最後へ交互にポイント移動 my:jump-brace は、括弧の先頭と最後へ交互にポイント移動します。
-(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能  C-M-SPC (mark-sexp) は、カーソル位置から順方向に選択 C-M-U (backward-up-list) は、一つ外のカッコの先頭にポイントを移す  標準機能はなにげに使いにくいです。</description>
+(defun my:jump-brace () &amp;#34;Jump to the corresponding parenthesis.&amp;#34; (interactive) (let ((c (following-char)) (p (preceding-char))) (if (eq (char-syntax c) 40) (forward-list) (if (eq (char-syntax p) 41) (backward-list) (backward-up-list))))) (bind-key &amp;#34;C-M-9&amp;#34; &amp;#39;my:jump-brace) 標準機能 C-M-SPC (mark-sexp) は、カーソル位置から順方向に選択 C-M-U (backward-up-list) は、一つ外のカッコの先頭にポイントを移す 標準機能はなにげに使いにくいです。</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ expand-region.elは、カーソル位置を起点として選択範囲を広げ�
 過去に訪れた箇所の一覧をリストとして表示して、そこから戻りたい箇所を選択できます。 デフォルトは tab移動ですが変更しています。また、g でリスト画面が消えてくれるので、わかりやすくggで発動するようにキーバインドしています。
 リスト上でポイントを移動させると、連動してビューバッファーを表示し対応位置をハイライトしてくれるところが優れものです。
 ignore-bufferの正規表現、なかなか難しいのですが…
- ^* &amp;raquo; scratch dashboard Message init-log などが有効になるようです。 ^magit &amp;raquo; 先頭にmagit とつくmagit commit時に作られるbuffer を無視します。 \]$ &amp;raquo; diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の]がマッチすれば無視します。  (leaf point-history :el-get blue0513/point-history :hook (after-init-hook . point-history-mode) :chord (&amp;#34;gg&amp;#34; . point-history-show) ;; Since it disappears with `g&amp;#39; :bind ((:point-history-show-mode-map (&amp;#34;&amp;lt;SPC&amp;gt;&amp;#34; . point-history-next-line) (&amp;#34;b&amp;#34; . point-history-prev-line))) :custom (point-history-show-buffer-height . 15) :custom (point-history-ignore-buffer . &amp;#34;^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$&amp;#34;)) デレクトリバッファー名の末尾に [dir]をつける counsel-switch-buffer でファイルとデレクトリとを区別しやすいようにこのようにしてます。</description>
+^* &amp;raquo; scratch dashboard Message init-log などが有効になるようです。 ^magit &amp;raquo; 先頭にmagit とつくmagit commit時に作られるbuffer を無視します。 \]$ &amp;raquo; diredで開いたバッファーには 末尾に[dir]がつくようにカスタマイズしているので、最後尾の]がマッチすれば無視します。 (leaf point-history :el-get blue0513/point-history :hook (after-init-hook . point-history-mode) :chord (&amp;#34;gg&amp;#34; . point-history-show) ;; Since it disappears with `g&amp;#39; :bind ((:point-history-show-mode-map (&amp;#34;&amp;lt;SPC&amp;gt;&amp;#34; . point-history-next-line) (&amp;#34;b&amp;#34; . point-history-prev-line))) :custom (point-history-show-buffer-height . 15) :custom (point-history-ignore-buffer . &amp;#34;^ \\*Minibuf\\|^*\\|^ \\*point-history-show*\\|^magit\\|\]$&amp;#34;)) デレクトリバッファー名の末尾に [dir]をつける counsel-switch-buffer でファイルとデレクトリとを区別しやすいようにこのようにしてます。</description>
     </item>
     
   </channel>

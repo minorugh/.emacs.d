@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>6.2. evil-mode :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,99 +902,99 @@
 <h2 id="evil-mode-vimエミュレートモード">[evil-mode] Vimエミュレートモード</h2>
 <p><a href="https://www.emacswiki.org/emacs/Evil">evil-mode</a> Emacsの拡張可能なviレイヤです。</p>
 <p>私の場合は、完璧なVimエミュレート機能が欲しいわけではなく <code>view-mode</code> の代わりとして使うことを目的として設定を工夫しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">evil</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">evil-mode</span>)
-		 (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:evil-insert-state</span>))
-  <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:evil-normal-state-map</span>
-		  (<span style="color:#c41a16">&#34;?&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-vim-chert</span>)
-		  (<span style="color:#c41a16">&#34;C-e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">seq-end</span>)
-		  (<span style="color:#c41a16">&#34;SPC&#34;</span> <span style="color:#000">.</span> <span style="color:#000">evil-insert-state</span>)
-		  (<span style="color:#c41a16">&#34;M-.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)	<span style="color:#177500">;; Use with other settings</span>
-		  (<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:evil-append-ime-on</span>)
-		  ([<span style="color:#000">home</span>] <span style="color:#000">.</span> <span style="color:#000">open-dashboard</span>))
-		 (<span style="color:#a90d91">:evil-visual-state-map</span>
-		  (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)
-		  (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:koujien</span>)
-		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gts-do-translate</span>)))
-  <span style="color:#a90d91">:init</span>
-  <span style="color:#177500">;; Options for Evil, must be written bfore (require &#39;evil)</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">evil-insert-state-cursor</span> <span style="color:#000">&#39;</span>(<span style="color:#000">bar</span> <span style="color:#000">.</span> <span style="color:#1c01ce">4</span>))
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">evil-cross-lines</span> <span style="color:#000">t</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">evil-undo-system</span> <span style="color:#c41a16">&#39;undo-fu</span>)
-  <span style="color:#a90d91">:config</span>
-  <span style="color:#177500">;; Use emacs key bindings in insert state</span>
-  (<span style="color:#000">setcdr</span> <span style="color:#000">evil-insert-state-map</span> <span style="color:#000">nil</span>)
-
-  <span style="color:#177500">;; Go back to normal state with ESC</span>
-  (<span style="color:#000">define-key</span> <span style="color:#000">evil-insert-state-map</span> [<span style="color:#000">escape</span>] <span style="color:#c41a16">&#39;my:evil-normal-state</span>)
-
-  <span style="color:#177500">;; Use muhenkan key as ESC</span>
-  (<span style="color:#000">define-key</span> <span style="color:#000">key-translation-map</span> [<span style="color:#000">muhenkan</span>] <span style="color:#c41a16">&#39;evil-escape-or-quit</span>)
-  (<span style="color:#000">define-key</span> <span style="color:#000">evil-operator-state-map</span> [<span style="color:#000">muhenkan</span>] <span style="color:#c41a16">&#39;evil-escape-or-quit</span>)
-
-  <span style="color:#177500">;; Force evil-emacs-state-modes into major mode</span>
-  (<span style="color:#a90d91">dolist</span> (<span style="color:#000">mode</span> <span style="color:#000">&#39;</span>(<span style="color:#000">lisp-interaction-mode</span>
-				  <span style="color:#000">fundamental-mode</span>
-				  <span style="color:#000">dashboard-mode</span>
-				  <span style="color:#000">dired-mode</span>
-				  <span style="color:#000">neotree-mode</span>
-				  <span style="color:#000">easy-hugo-mode</span>))
-    (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;evil-emacs-state-modes</span> <span style="color:#000">mode</span>))
-
-  <span style="color:#177500">;; Force evil-emacs-state into minor mode</span>
-  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;org-capture-mode-hook</span> <span style="color:#c41a16">&#39;evil-emacs-state</span>)
-  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;view-mode-hook</span> <span style="color:#c41a16">&#39;evil-emacs-state</span>)
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">evil-escape-or-quit</span> (<span style="color:#a90d91">&amp;optional</span> <span style="color:#000">prompt</span>)
-	<span style="color:#c41a16">&#34;If in evil state to ESC, else muhenkan key.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">cond</span>
-	 ((<span style="color:#a90d91">or</span> (<span style="color:#000">evil-normal-state-p</span>) (<span style="color:#000">evil-insert-state-p</span>)
-		  (<span style="color:#000">evil-visual-state-p</span>) (<span style="color:#000">evil-replace-state-p</span>)) [<span style="color:#000">escape</span>])
-	 (<span style="color:#000">t</span> [<span style="color:#000">muhenkan</span>])))
-
-  <span style="color:#177500">;; User custom functions</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-normal-state</span> ()
-	<span style="color:#c41a16">&#34;Turn off input-method then return to normal-state.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">if</span> <span style="color:#000">current-input-method</span> (<span style="color:#000">deactivate-input-method</span>))
-	(<span style="color:#000">evil-normal-state</span>)
-	(<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>) (<span style="color:#000">keyboard-quit</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-insert-state</span> ()
-	<span style="color:#c41a16">&#34;New files open in insert state.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">unless</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">buffer-file-name</span>)
-	  (<span style="color:#000">evil-insert-state</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-append-ime-on</span> ()
-	<span style="color:#c41a16">&#34;Turn on input-method after append status.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">evil-insert-state</span>)
-	(<span style="color:#000">forward-char</span> <span style="color:#1c01ce">1</span>)
-	(<span style="color:#000">toggle-input-method</span>))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">evil-swap-key</span> (<span style="color:#000">map</span> <span style="color:#000">key1</span> <span style="color:#000">key2</span>)
-	<span style="color:#c41a16">&#34;Swap KEY1 and KEY2 in MAP.&#34;</span>
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">def1</span> (<span style="color:#000">lookup-key</span> <span style="color:#000">map</span> <span style="color:#000">key1</span>))
-          (<span style="color:#000">def2</span> (<span style="color:#000">lookup-key</span> <span style="color:#000">map</span> <span style="color:#000">key2</span>)))
-      (<span style="color:#000">define-key</span> <span style="color:#000">map</span> <span style="color:#000">key1</span> <span style="color:#000">def2</span>)
-      (<span style="color:#000">define-key</span> <span style="color:#000">map</span> <span style="color:#000">key2</span> <span style="color:#000">def1</span>)))
-  (<span style="color:#000">evil-swap-key</span> <span style="color:#000">evil-motion-state-map</span> <span style="color:#c41a16">&#34;j&#34;</span> <span style="color:#c41a16">&#34;gj&#34;</span>)
-  (<span style="color:#000">evil-swap-key</span> <span style="color:#000">evil-motion-state-map</span> <span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#c41a16">&#34;gk&#34;</span>)
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">ad:switch-to-buffer</span> (<span style="color:#a90d91">&amp;rest</span> <span style="color:#000">_arg</span>)
-	<span style="color:#c41a16">&#34;Set buffer for automatic insert-state.&#34;</span>
-	(<span style="color:#a90d91">when</span> (<span style="color:#000">member</span> (<span style="color:#000">buffer-name</span>) <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;COMMIT_EDITMSG&#34;</span>))
-	  (<span style="color:#000">evil-insert-state</span>)))
-  (<span style="color:#000">advice-add</span> <span style="color:#c41a16">&#39;switch-to-buffer</span> <span style="color:#a90d91">:after</span> <span style="color:#000">#&#39;</span><span style="color:#000">ad:switch-to-buffer</span>)
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">chromium-vim-chert</span> ()
-	<span style="color:#c41a16">&#34;Chromium vim chert sheet.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://vim.rtorr.com/lang/ja&#34;</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">evil</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">evil-mode</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">find-file-hook</span> <span style="color:#000">.</span> <span style="color:#000">my:evil-insert-state</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> ((<span style="color:#a90d91">:evil-normal-state-map</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;?&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-vim-chert</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;C-e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">seq-end</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;SPC&#34;</span> <span style="color:#000">.</span> <span style="color:#000">evil-insert-state</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;M-.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)	<span style="color:#177500">;; Use with other settings</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;&lt;hiragana-katakana&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:evil-append-ime-on</span>)
+</span></span><span style="display:flex;"><span>		  ([<span style="color:#000">home</span>] <span style="color:#000">.</span> <span style="color:#000">open-dashboard</span>))
+</span></span><span style="display:flex;"><span>		 (<span style="color:#a90d91">:evil-visual-state-map</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:google</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:koujien</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gts-do-translate</span>)))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Options for Evil, must be written bfore (require &#39;evil)</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">evil-insert-state-cursor</span> <span style="color:#000">&#39;</span>(<span style="color:#000">bar</span> <span style="color:#000">.</span> <span style="color:#1c01ce">4</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">evil-cross-lines</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">evil-undo-system</span> <span style="color:#c41a16">&#39;undo-fu</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:config</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Use emacs key bindings in insert state</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">setcdr</span> <span style="color:#000">evil-insert-state-map</span> <span style="color:#000">nil</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Go back to normal state with ESC</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">define-key</span> <span style="color:#000">evil-insert-state-map</span> [<span style="color:#000">escape</span>] <span style="color:#c41a16">&#39;my:evil-normal-state</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Use muhenkan key as ESC</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">define-key</span> <span style="color:#000">key-translation-map</span> [<span style="color:#000">muhenkan</span>] <span style="color:#c41a16">&#39;evil-escape-or-quit</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">define-key</span> <span style="color:#000">evil-operator-state-map</span> [<span style="color:#000">muhenkan</span>] <span style="color:#c41a16">&#39;evil-escape-or-quit</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Force evil-emacs-state-modes into major mode</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">dolist</span> (<span style="color:#000">mode</span> <span style="color:#000">&#39;</span>(<span style="color:#000">lisp-interaction-mode</span>
+</span></span><span style="display:flex;"><span>				  <span style="color:#000">fundamental-mode</span>
+</span></span><span style="display:flex;"><span>				  <span style="color:#000">dashboard-mode</span>
+</span></span><span style="display:flex;"><span>				  <span style="color:#000">dired-mode</span>
+</span></span><span style="display:flex;"><span>				  <span style="color:#000">neotree-mode</span>
+</span></span><span style="display:flex;"><span>				  <span style="color:#000">easy-hugo-mode</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;evil-emacs-state-modes</span> <span style="color:#000">mode</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Force evil-emacs-state into minor mode</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;org-capture-mode-hook</span> <span style="color:#c41a16">&#39;evil-emacs-state</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;view-mode-hook</span> <span style="color:#c41a16">&#39;evil-emacs-state</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">evil-escape-or-quit</span> (<span style="color:#a90d91">&amp;optional</span> <span style="color:#000">prompt</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;If in evil state to ESC, else muhenkan key.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">cond</span>
+</span></span><span style="display:flex;"><span>	 ((<span style="color:#a90d91">or</span> (<span style="color:#000">evil-normal-state-p</span>) (<span style="color:#000">evil-insert-state-p</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#000">evil-visual-state-p</span>) (<span style="color:#000">evil-replace-state-p</span>)) [<span style="color:#000">escape</span>])
+</span></span><span style="display:flex;"><span>	 (<span style="color:#000">t</span> [<span style="color:#000">muhenkan</span>])))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; User custom functions</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-normal-state</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Turn off input-method then return to normal-state.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">if</span> <span style="color:#000">current-input-method</span> (<span style="color:#000">deactivate-input-method</span>))
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">evil-normal-state</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">if</span> (<span style="color:#000">use-region-p</span>) (<span style="color:#000">keyboard-quit</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-insert-state</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;New files open in insert state.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">unless</span> (<span style="color:#000">file-exists-p</span> <span style="color:#000">buffer-file-name</span>)
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">evil-insert-state</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:evil-append-ime-on</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Turn on input-method after append status.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">evil-insert-state</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">forward-char</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">toggle-input-method</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">evil-swap-key</span> (<span style="color:#000">map</span> <span style="color:#000">key1</span> <span style="color:#000">key2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Swap KEY1 and KEY2 in MAP.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">def1</span> (<span style="color:#000">lookup-key</span> <span style="color:#000">map</span> <span style="color:#000">key1</span>))
+</span></span><span style="display:flex;"><span>          (<span style="color:#000">def2</span> (<span style="color:#000">lookup-key</span> <span style="color:#000">map</span> <span style="color:#000">key2</span>)))
+</span></span><span style="display:flex;"><span>      (<span style="color:#000">define-key</span> <span style="color:#000">map</span> <span style="color:#000">key1</span> <span style="color:#000">def2</span>)
+</span></span><span style="display:flex;"><span>      (<span style="color:#000">define-key</span> <span style="color:#000">map</span> <span style="color:#000">key2</span> <span style="color:#000">def1</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">evil-swap-key</span> <span style="color:#000">evil-motion-state-map</span> <span style="color:#c41a16">&#34;j&#34;</span> <span style="color:#c41a16">&#34;gj&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">evil-swap-key</span> <span style="color:#000">evil-motion-state-map</span> <span style="color:#c41a16">&#34;k&#34;</span> <span style="color:#c41a16">&#34;gk&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">ad:switch-to-buffer</span> (<span style="color:#a90d91">&amp;rest</span> <span style="color:#000">_arg</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Set buffer for automatic insert-state.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">when</span> (<span style="color:#000">member</span> (<span style="color:#000">buffer-name</span>) <span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;COMMIT_EDITMSG&#34;</span>))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">evil-insert-state</span>)))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">advice-add</span> <span style="color:#c41a16">&#39;switch-to-buffer</span> <span style="color:#a90d91">:after</span> <span style="color:#000">#&#39;</span><span style="color:#000">ad:switch-to-buffer</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">chromium-vim-chert</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Chromium vim chert sheet.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">browse-url</span> <span style="color:#c41a16">&#34;https://vim.rtorr.com/lang/ja&#34;</span>)))
+</span></span></code></pre></div>
 
     
     

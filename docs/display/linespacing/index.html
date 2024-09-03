@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>7.3. line-spacing :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,15 +902,15 @@
 <h2 id="myline-spacing-行間を制御する">[my:line-spacing] 行間を制御する</h2>
 <p><code>line-spacing</code> は、行間を制御する変数ですが、バッファローカルな変数なので、ミニバッファも含めて、各バッファの行間を個別に制御できます。</p>
 <p>執筆モードの <code>darkroom-mode</code> では、</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>)
-</code></pre></div><p>と行間を大きくするように設定していて、<code>dark-room</code> を出るときに元に戻します。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.4</span>)
+</span></span></code></pre></div><p>と行間を大きくするように設定していて、<code>dark-room</code> を出るときに元に戻します。</p>
 <p><a href="https://pxaka.tokyo/blog/2019/emacs-buffer-list-update-hook/">@takaxpさんのブログ記事</a> のによると、<code>global</code> で <code>0.3</code> 以下に設定すると
 <code>nil</code> に戻せないという不具合があるとのことなので、次のように設定しました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">my:linespacing</span> ()
-  (<span style="color:#a90d91">unless</span> (<span style="color:#000">minibufferp</span>)
-    (<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.2</span>)))
-(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;buffer-list-update-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:linespacing</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">my:linespacing</span> ()
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">unless</span> (<span style="color:#000">minibufferp</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a90d91">setq-local</span> <span style="color:#000">line-spacing</span> <span style="color:#1c01ce">0.2</span>)))
+</span></span><span style="display:flex;"><span>(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;buffer-list-update-hook</span> <span style="color:#000">#&#39;</span><span style="color:#000">my:linespacing</span>)
+</span></span></code></pre></div>
 
     
     

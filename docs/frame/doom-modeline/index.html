@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>5.7. doom-modeline :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -903,26 +903,26 @@
 <p>🔗 <a href="https://github.com/seagle0128/doom-modeline">seagle0128/doom-modeline: A fancy and fast mode-line inspired by minimalism design.</a></p>
 <p><a href="https://qiita.com/Ladicle/items/feb5f9dce9adf89652cf">Emacsモダン化計画 -かわEmacs編</a> の記事に触発されて以来、<code>doom-modeline</code> を愛用しています。</p>
 <p><a href="https://github.com/TeMPOraL/nyan-mode">TeMPOraL/nyan-mode.el</a> も可愛くて癒やされています(^^)</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(<span style="color:#000">leaf</span> <span style="color:#000">doom-modeline</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">doom-modeline-mode</span>)
-  <span style="color:#a90d91">:custom</span>
-  (<span style="color:#000">doom-modeline-icon</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-  (<span style="color:#000">doom-modeline-major-mode-icon</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
-  (<span style="color:#000">doom-modeline-minor-modes</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
-  <span style="color:#a90d91">:config</span>
-  (<span style="color:#000">line-number-mode</span> <span style="color:#1c01ce">0</span>)
-  (<span style="color:#000">column-number-mode</span> <span style="color:#1c01ce">0</span>)
-  (<span style="color:#000">doom-modeline-def-modeline</span> <span style="color:#c41a16">&#39;main</span>
-    <span style="color:#000">&#39;</span>(<span style="color:#000">bar</span> <span style="color:#000">window-number</span> <span style="color:#000">matches</span> <span style="color:#000">buffer-info</span> <span style="color:#000">remote-host</span> <span style="color:#000">buffer-position</span> <span style="color:#000">parrot</span> <span style="color:#000">selection-info</span>)
-    <span style="color:#000">&#39;</span>(<span style="color:#000">misc-info</span> <span style="color:#000">persp-name</span> <span style="color:#000">lsp</span> <span style="color:#000">github</span> <span style="color:#000">debug</span> <span style="color:#000">minor-modes</span> <span style="color:#000">input-method</span> <span style="color:#000">major-mode</span> <span style="color:#000">process</span> <span style="color:#000">vcs</span> <span style="color:#000">checker</span>))
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#000">leaf</span> <span style="color:#000">nyan-mode</span>
-	<span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-	<span style="color:#a90d91">:config</span>
-	(<span style="color:#000">nyan-mode</span> <span style="color:#1c01ce">1</span>)
-	(<span style="color:#000">nyan-start-animation</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">doom-modeline</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">doom-modeline-mode</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">doom-modeline-icon</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">doom-modeline-major-mode-icon</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">doom-modeline-minor-modes</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:config</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">line-number-mode</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">column-number-mode</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">doom-modeline-def-modeline</span> <span style="color:#c41a16">&#39;main</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">&#39;</span>(<span style="color:#000">bar</span> <span style="color:#000">window-number</span> <span style="color:#000">matches</span> <span style="color:#000">buffer-info</span> <span style="color:#000">remote-host</span> <span style="color:#000">buffer-position</span> <span style="color:#000">parrot</span> <span style="color:#000">selection-info</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#000">&#39;</span>(<span style="color:#000">misc-info</span> <span style="color:#000">persp-name</span> <span style="color:#000">lsp</span> <span style="color:#000">github</span> <span style="color:#000">debug</span> <span style="color:#000">minor-modes</span> <span style="color:#000">input-method</span> <span style="color:#000">major-mode</span> <span style="color:#000">process</span> <span style="color:#000">vcs</span> <span style="color:#000">checker</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">leaf</span> <span style="color:#000">nyan-mode</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a90d91">:config</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">nyan-mode</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">nyan-start-animation</span>)))
+</span></span></code></pre></div>
 
     
     

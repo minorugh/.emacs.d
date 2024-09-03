@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>12.4. open terminal :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,13 +902,13 @@
 <h2 id="gnome-terminal-を-emacsから呼び出す">gnome-terminal を Emacsから呼び出す</h2>
 <p>Emacsで開いている<code>buffer</code> の<code>current-dir</code> で <code>gnome-terminal</code> を起動させます。</p>
 <p>こちらを使うようになってからは<code>eshell</code> を使う機会が減りました。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">term-current-dir-open</span> ()
-  <span style="color:#c41a16">&#34;Open terminal application in current dir.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">let</span> ((<span style="color:#000">dir</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">default-directory</span>)))
-    (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gnome-terminal --working-directory &#34;</span> <span style="color:#000">dir</span>))))
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;&lt;f4&gt;&#34;</span> <span style="color:#c41a16">&#39;term-current-dir-open</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">term-current-dir-open</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Open terminal application in current dir.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">let</span> ((<span style="color:#000">dir</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">default-directory</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gnome-terminal --working-directory &#34;</span> <span style="color:#000">dir</span>))))
+</span></span><span style="display:flex;"><span>(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;&lt;f4&gt;&#34;</span> <span style="color:#c41a16">&#39;term-current-dir-open</span>)
+</span></span></code></pre></div>
 
     
     

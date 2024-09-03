@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>3.2. other-window-or-split :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,15 +902,15 @@
 <h2 id="画面分割時のカーソルの移動">画面分割時のカーソルの移動</h2>
 <p><code>other-window-or-split</code> は、画面分割コマンド <code>C-x 3</code> を拡張するもので、状況判断して画面分割されていないときは左右分割を実行し、画面が分割されているときは画面移動の <code>C-x o</code> になります。</p>
 <p>画面分割と移動とを賢く判断してくれるのでとても便利です。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">defun</span> <span style="color:#000">other-window-or-split</span> ()
- <span style="color:#c41a16">&#34;With turn on dimmer.&#34;</span>
- (<span style="color:#a90d91">interactive</span>)
- (<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
-	 (<span style="color:#000">split-window-horizontally</span>)
-	 (<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">1</span>))
-   (<span style="color:#000">other-window</span> <span style="color:#1c01ce">1</span>))
-(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-q&#34;</span> <span style="color:#c41a16">&#39;other-window-or-split</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">other-window-or-split</span> ()
+</span></span><span style="display:flex;"><span> <span style="color:#c41a16">&#34;With turn on dimmer.&#34;</span>
+</span></span><span style="display:flex;"><span> (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span> (<span style="color:#a90d91">when</span> (<span style="color:#000">one-window-p</span>)
+</span></span><span style="display:flex;"><span>	 (<span style="color:#000">split-window-horizontally</span>)
+</span></span><span style="display:flex;"><span>	 (<span style="color:#000">dimmer-mode</span> <span style="color:#1c01ce">1</span>))
+</span></span><span style="display:flex;"><span>   (<span style="color:#000">other-window</span> <span style="color:#1c01ce">1</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#000">bind-key</span> <span style="color:#c41a16">&#34;C-q&#34;</span> <span style="color:#c41a16">&#39;other-window-or-split</span>)
+</span></span></code></pre></div>
 
     
     

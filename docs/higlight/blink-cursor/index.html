@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>4.3. blink-cursor :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,11 +902,11 @@
 <h2 id="カーソルの点滅を制御">カーソルの点滅を制御</h2>
 <p>ビルトインの <code>blink-cursor.el</code> を設定してカーソルの点滅を制御します。</p>
 <p>以下の例では、入力が止まってから 10 秒後に 0.3 秒間隔で点滅します。次に入力が始まるまで点滅が続きます．</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-blinks</span> <span style="color:#1c01ce">0</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-interval</span> <span style="color:#1c01ce">0.3</span>)
-(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-delay</span> <span style="color:#1c01ce">10</span>)
-(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;emacs-startup-hook</span> <span style="color:#000">.</span> <span style="color:#000">blink-cursor-mode</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-blinks</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-interval</span> <span style="color:#1c01ce">0.3</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">blink-cursor-delay</span> <span style="color:#1c01ce">10</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;emacs-startup-hook</span> <span style="color:#000">.</span> <span style="color:#000">blink-cursor-mode</span>)
+</span></span></code></pre></div>
 
     
     

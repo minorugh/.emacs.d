@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>9.6. dired :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -907,136 +907,136 @@
 <p>Emacs入門当初は、多機能な <code>dired</code> を追求してやまなかった。</p>
 <p>現在は使用頻度も減り、あれやこれやとカスタマイズした備忘録として残しています。</p>
 <p>最近の進化といえば、<code>all-the-icons-dired.el</code> で多少ビジアルになったくらい。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">dired</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">dired-my-append-buffer-name-hint</span>)
-		 (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#000">load</span> <span style="color:#c41a16">&#34;dired-x&#34;</span>) (<span style="color:#000">dired-omit-mode</span> <span style="color:#1c01ce">1</span>))))
-  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:dired-mode-map</span>
-		 (<span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-up-alternate-directory</span>)
-		 (<span style="color:#c41a16">&#34;&lt;right&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-open-in-accordance-with-situation</span>)
-		 (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-open-in-accordance-with-situation</span>)
-		 (<span style="color:#c41a16">&#34;&lt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">beginning-of-buffer</span>)
-		 (<span style="color:#c41a16">&#34;&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">end-of-buffer</span>)
-		 (<span style="color:#c41a16">&#34;SPC&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:dired-toggle-mark</span>)
-		 (<span style="color:#c41a16">&#34;C-g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:dired-unmark-all</span>)
-		 (<span style="color:#c41a16">&#34;f&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-find-file</span>)
-		 (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">wdired-change-to-wdired-mode</span>)
-		 (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-open-file</span>)
-		 (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-hide-details-mode</span>)
-		 (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-dired-listing-switches</span>)
-		 (<span style="color:#c41a16">&#34;q&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-dwim-quit-window</span>)
-		 (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">.</span> <span style="color:#000">call-sxiv</span>)
-		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">sudo-edit</span>)
-		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gedit-open-dired</span>)
-		 (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-do-gist</span>)
-		 (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-omit-mode</span>))
-  <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">dired-dwim-target</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">delete-by-moving-to-trash</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
-	(<span style="color:#000">dired-recursive-copies</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;always</span>)
-	(<span style="color:#000">dired-recursive-deletes</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;always</span>)
-	(<span style="color:#000">dired-listing-switches</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;-lgGhF&#34;</span>)
-	(<span style="color:#000">dired-omit-files</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;.elc&#34;</span>)
-	(<span style="color:#000">ls-lisp-use-insert-directory-program</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
-	(<span style="color:#000">ls-lisp-dirs-first</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
-</code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-<span style="color:#177500">;; Dired custom configurations</span>
- <span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;dired</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">toggle-dired-listing-switches</span> ()
-	<span style="color:#c41a16">&#34;Toggle </span><span style="color:#c41a16">`dired-mode&#39;</span><span style="color:#c41a16"> switch between with and without &#39;A&#39; option to show or hide dot files.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">progn</span>
-	  (<span style="color:#a90d91">if</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;[Aa]&#34;</span> <span style="color:#000">dired-listing-switches</span>)
-		  (<span style="color:#a90d91">setq</span> <span style="color:#000">dired-listing-switches</span> <span style="color:#c41a16">&#34;-lgGhF&#34;</span>)
-		(<span style="color:#a90d91">setq</span> <span style="color:#000">dired-listing-switches</span> <span style="color:#c41a16">&#34;-lgGhFA&#34;</span>))
-	  (<span style="color:#000">reload-current-dired-buffer</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">reload-current-dired-buffer</span> ()
-	<span style="color:#c41a16">&#34;Reload current </span><span style="color:#c41a16">`dired-mode&#39;</span><span style="color:#c41a16"> buffer.&#34;</span>
-	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">dired-current-directory</span>)))
-	  (<span style="color:#a90d91">progn</span> (<span style="color:#000">kill-buffer</span> (<span style="color:#000">current-buffer</span>))
-			 (<span style="color:#000">dired</span> <span style="color:#000">dir</span>))))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-my-append-buffer-name-hint</span> ()
-	<span style="color:#c41a16">&#34;Append a auxiliary string [Dir] to a name of dired buffer.&#34;</span>
-	(<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#000">major-mode</span> <span style="color:#c41a16">&#39;dired-mode</span>)
-	  (<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">list-buffers-directory</span>))
-			 <span style="color:#177500">;; Add a drive letter for Windows</span>
-			 (<span style="color:#000">drive</span> (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">eq</span> <span style="color:#c41a16">&#39;system-type</span> <span style="color:#c41a16">&#39;windows-nt</span>)
-							 (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;^\\([a-zA-Z]:\\)/&#34;</span> <span style="color:#000">dir</span>))
-						(<span style="color:#000">match-string</span> <span style="color:#1c01ce">1</span> <span style="color:#000">dir</span>) <span style="color:#c41a16">&#34;&#34;</span>)))
-		(<span style="color:#000">rename-buffer</span> (<span style="color:#000">concat</span> (<span style="color:#000">buffer-name</span>) <span style="color:#c41a16">&#34; [&#34;</span> <span style="color:#000">drive</span> <span style="color:#c41a16">&#34;dir]&#34;</span>) <span style="color:#000">t</span>))))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-dwim-quit-window</span> ()
-	<span style="color:#c41a16">&#34;`quit-window &#39;according to screen division.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">quit-window</span> (<span style="color:#000">not</span> (<span style="color:#000">delq</span> (<span style="color:#000">selected-window</span>) (<span style="color:#000">get-buffer-window-list</span>)))))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-open-in-accordance-with-situation</span> ()
-	<span style="color:#c41a16">&#34;Files are opened in separate buffers, directories are opened in the same buffer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">dired-get-filename</span>)))
-	  (<span style="color:#a90d91">if</span> (<span style="color:#000">file-directory-p</span> <span style="color:#000">file</span>)
-		  (<span style="color:#000">dired-find-alternate-file</span>)
-		(<span style="color:#000">dired-find-file</span>)
-		<span style="color:#177500">;; If in org-mode, open with view-mode</span>
-		(<span style="color:#a90d91">if</span> (<span style="color:#000">equal</span> <span style="color:#000">major-mode</span> <span style="color:#c41a16">&#39;org-mode</span>)
-			(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>)))))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-up-alternate-directory</span> ()
-	<span style="color:#c41a16">&#34;Move to higher directory without make new buffer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">dired-current-directory</span>))
-		   (<span style="color:#000">up</span> (<span style="color:#000">file-name-directory</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">dir</span>))))
-	  (<span style="color:#a90d91">or</span> (<span style="color:#000">dired-goto-file</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">dir</span>))
-		  <span style="color:#177500">;; Only try dired-goto-subdir if buffer has more than one dir.</span>
-		  (<span style="color:#a90d91">and</span> (<span style="color:#000">cdr</span> <span style="color:#000">dired-subdir-alist</span>)
-			   (<span style="color:#000">dired-goto-subdir</span> <span style="color:#000">up</span>))
-		  (<span style="color:#a90d91">progn</span>
-			(<span style="color:#000">find-alternate-file</span> <span style="color:#000">up</span>)
-			(<span style="color:#000">dired-goto-file</span> <span style="color:#000">dir</span>)))))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-open-file</span> ()
-	<span style="color:#c41a16">&#34;In dired, open the file in associated application.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">file</span> (<span style="color:#000">dired-get-filename</span> <span style="color:#000">nil</span> <span style="color:#000">t</span>)))
-	  (<span style="color:#000">call-process</span> <span style="color:#c41a16">&#34;xdg-open&#34;</span> <span style="color:#000">nil</span> <span style="color:#1c01ce">0</span> <span style="color:#000">nil</span> <span style="color:#000">file</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:dired-toggle-mark</span> (<span style="color:#000">arg</span>)
-	<span style="color:#c41a16">&#34;ARG toggle the current next files.&#34;</span>
-	(<span style="color:#a90d91">interactive</span> <span style="color:#c41a16">&#34;p&#34;</span>)
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">dired-marker-char</span>
-		   (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">save-excursion</span> (<span style="color:#000">beginning-of-line</span>)
-							   (<span style="color:#000">looking-at</span> <span style="color:#c41a16">&#34; &#34;</span>))
-			   <span style="color:#000">dired-marker-char</span> <span style="color:#2300ce">?\0</span><span style="color:#1c01ce">40</span>)))
-	  (<span style="color:#000">dired-mark</span> <span style="color:#000">arg</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:dired-unmark-all</span> ()
-	<span style="color:#c41a16">&#34;Dired unmark all.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;dired-unmark-all-marks</span>)
-	(<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;revert-buffer</span>))
-
-  <span style="color:#177500">;; Show all images in the directory</span>
-  <span style="color:#177500">;; https://gist.github.com/kobapan/28908b564b610bd3e6f3fae78637ac8b</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">call-sxiv</span> ()
-	<span style="color:#c41a16">&#34;Image viewer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">image-files</span>
-		   (<span style="color:#000">delq</span> <span style="color:#000">nil</span>
-				 (<span style="color:#000">mapcar</span>
-				  (<span style="color:#a90d91">lambda</span> (<span style="color:#000">f</span>)
-					(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;\.\\(jpe?g\\|png\\|gif\\|bmp\\)$&#34;</span> <span style="color:#000">f</span>)
-					  <span style="color:#000">f</span>))
-				  (<span style="color:#000">directory-files</span> <span style="color:#000">default-directory</span>)))))
-	  <span style="color:#177500">;; File list in the current directory in alphabetical order</span>
-	  (<span style="color:#000">start-process-shell-command</span>
-	   <span style="color:#c41a16">&#34;sxiv&#34;</span> <span style="color:#000">nil</span>
-	   (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;sxiv -f -t -n %s %s&#34;</span>
-			   (<span style="color:#000">length</span> <span style="color:#000">image-files</span>)
-			   (<span style="color:#000">mapconcat</span> <span style="color:#c41a16">&#39;identity</span> <span style="color:#000">image-files</span> <span style="color:#c41a16">&#34; &#34;</span>))))))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">dired</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">dired-my-append-buffer-name-hint</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">dired-mode-hook</span> <span style="color:#000">.</span> (<span style="color:#a90d91">lambda</span> () (<span style="color:#000">load</span> <span style="color:#c41a16">&#34;dired-x&#34;</span>) (<span style="color:#000">dired-omit-mode</span> <span style="color:#1c01ce">1</span>))))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> (<span style="color:#a90d91">:dired-mode-map</span>
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-up-alternate-directory</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;&lt;right&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-open-in-accordance-with-situation</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-open-in-accordance-with-situation</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;&lt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">beginning-of-buffer</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">end-of-buffer</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;SPC&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:dired-toggle-mark</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;C-g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">my:dired-unmark-all</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;f&#34;</span> <span style="color:#000">.</span> <span style="color:#000">counsel-find-file</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;r&#34;</span> <span style="color:#000">.</span> <span style="color:#000">wdired-change-to-wdired-mode</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;o&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-open-file</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;[&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-hide-details-mode</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">toggle-dired-listing-switches</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;q&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-dwim-quit-window</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;i&#34;</span> <span style="color:#000">.</span> <span style="color:#000">call-sxiv</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">sudo-edit</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;e&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gedit-open-dired</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;@&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-do-gist</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">dired-omit-mode</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">`</span>((<span style="color:#000">dired-dwim-target</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">delete-by-moving-to-trash</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">dired-recursive-copies</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;always</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">dired-recursive-deletes</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;always</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">dired-listing-switches</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;-lgGhF&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">dired-omit-files</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#34;.elc&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">ls-lisp-use-insert-directory-program</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">ls-lisp-dirs-first</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
+</span></span></code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#177500">;; Dired custom configurations</span>
+</span></span><span style="display:flex;"><span> <span style="color:#177500">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#c41a16">&#39;dired</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">toggle-dired-listing-switches</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Toggle </span><span style="color:#c41a16">`dired-mode&#39;</span><span style="color:#c41a16"> switch between with and without &#39;A&#39; option to show or hide dot files.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">progn</span>
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">if</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;[Aa]&#34;</span> <span style="color:#000">dired-listing-switches</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#a90d91">setq</span> <span style="color:#000">dired-listing-switches</span> <span style="color:#c41a16">&#34;-lgGhF&#34;</span>)
+</span></span><span style="display:flex;"><span>		(<span style="color:#a90d91">setq</span> <span style="color:#000">dired-listing-switches</span> <span style="color:#c41a16">&#34;-lgGhFA&#34;</span>))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">reload-current-dired-buffer</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">reload-current-dired-buffer</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Reload current </span><span style="color:#c41a16">`dired-mode&#39;</span><span style="color:#c41a16"> buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">dired-current-directory</span>)))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">progn</span> (<span style="color:#000">kill-buffer</span> (<span style="color:#000">current-buffer</span>))
+</span></span><span style="display:flex;"><span>			 (<span style="color:#000">dired</span> <span style="color:#000">dir</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-my-append-buffer-name-hint</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Append a auxiliary string [Dir] to a name of dired buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">when</span> (<span style="color:#000">eq</span> <span style="color:#000">major-mode</span> <span style="color:#c41a16">&#39;dired-mode</span>)
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">expand-file-name</span> <span style="color:#000">list-buffers-directory</span>))
+</span></span><span style="display:flex;"><span>			 <span style="color:#177500">;; Add a drive letter for Windows</span>
+</span></span><span style="display:flex;"><span>			 (<span style="color:#000">drive</span> (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">and</span> (<span style="color:#000">eq</span> <span style="color:#c41a16">&#39;system-type</span> <span style="color:#c41a16">&#39;windows-nt</span>)
+</span></span><span style="display:flex;"><span>							 (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;^\\([a-zA-Z]:\\)/&#34;</span> <span style="color:#000">dir</span>))
+</span></span><span style="display:flex;"><span>						(<span style="color:#000">match-string</span> <span style="color:#1c01ce">1</span> <span style="color:#000">dir</span>) <span style="color:#c41a16">&#34;&#34;</span>)))
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">rename-buffer</span> (<span style="color:#000">concat</span> (<span style="color:#000">buffer-name</span>) <span style="color:#c41a16">&#34; [&#34;</span> <span style="color:#000">drive</span> <span style="color:#c41a16">&#34;dir]&#34;</span>) <span style="color:#000">t</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-dwim-quit-window</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;`quit-window &#39;according to screen division.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">quit-window</span> (<span style="color:#000">not</span> (<span style="color:#000">delq</span> (<span style="color:#000">selected-window</span>) (<span style="color:#000">get-buffer-window-list</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-open-in-accordance-with-situation</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Files are opened in separate buffers, directories are opened in the same buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">dired-get-filename</span>)))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">if</span> (<span style="color:#000">file-directory-p</span> <span style="color:#000">file</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#000">dired-find-alternate-file</span>)
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">dired-find-file</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#177500">;; If in org-mode, open with view-mode</span>
+</span></span><span style="display:flex;"><span>		(<span style="color:#a90d91">if</span> (<span style="color:#000">equal</span> <span style="color:#000">major-mode</span> <span style="color:#c41a16">&#39;org-mode</span>)
+</span></span><span style="display:flex;"><span>			(<span style="color:#000">view-mode</span> <span style="color:#1c01ce">1</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-up-alternate-directory</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Move to higher directory without make new buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">dir</span> (<span style="color:#000">dired-current-directory</span>))
+</span></span><span style="display:flex;"><span>		   (<span style="color:#000">up</span> (<span style="color:#000">file-name-directory</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">dir</span>))))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">or</span> (<span style="color:#000">dired-goto-file</span> (<span style="color:#000">directory-file-name</span> <span style="color:#000">dir</span>))
+</span></span><span style="display:flex;"><span>		  <span style="color:#177500">;; Only try dired-goto-subdir if buffer has more than one dir.</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#a90d91">and</span> (<span style="color:#000">cdr</span> <span style="color:#000">dired-subdir-alist</span>)
+</span></span><span style="display:flex;"><span>			   (<span style="color:#000">dired-goto-subdir</span> <span style="color:#000">up</span>))
+</span></span><span style="display:flex;"><span>		  (<span style="color:#a90d91">progn</span>
+</span></span><span style="display:flex;"><span>			(<span style="color:#000">find-alternate-file</span> <span style="color:#000">up</span>)
+</span></span><span style="display:flex;"><span>			(<span style="color:#000">dired-goto-file</span> <span style="color:#000">dir</span>)))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-open-file</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;In dired, open the file in associated application.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let*</span> ((<span style="color:#000">file</span> (<span style="color:#000">dired-get-filename</span> <span style="color:#000">nil</span> <span style="color:#000">t</span>)))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">call-process</span> <span style="color:#c41a16">&#34;xdg-open&#34;</span> <span style="color:#000">nil</span> <span style="color:#1c01ce">0</span> <span style="color:#000">nil</span> <span style="color:#000">file</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:dired-toggle-mark</span> (<span style="color:#000">arg</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;ARG toggle the current next files.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span> <span style="color:#c41a16">&#34;p&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">dired-marker-char</span>
+</span></span><span style="display:flex;"><span>		   (<span style="color:#a90d91">if</span> (<span style="color:#a90d91">save-excursion</span> (<span style="color:#000">beginning-of-line</span>)
+</span></span><span style="display:flex;"><span>							   (<span style="color:#000">looking-at</span> <span style="color:#c41a16">&#34; &#34;</span>))
+</span></span><span style="display:flex;"><span>			   <span style="color:#000">dired-marker-char</span> <span style="color:#2300ce">?\0</span><span style="color:#1c01ce">40</span>)))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">dired-mark</span> <span style="color:#000">arg</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:dired-unmark-all</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Dired unmark all.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;dired-unmark-all-marks</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;revert-buffer</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Show all images in the directory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; https://gist.github.com/kobapan/28908b564b610bd3e6f3fae78637ac8b</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">call-sxiv</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Image viewer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">image-files</span>
+</span></span><span style="display:flex;"><span>		   (<span style="color:#000">delq</span> <span style="color:#000">nil</span>
+</span></span><span style="display:flex;"><span>				 (<span style="color:#000">mapcar</span>
+</span></span><span style="display:flex;"><span>				  (<span style="color:#a90d91">lambda</span> (<span style="color:#000">f</span>)
+</span></span><span style="display:flex;"><span>					(<span style="color:#a90d91">when</span> (<span style="color:#000">string-match</span> <span style="color:#c41a16">&#34;\.\\(jpe?g\\|png\\|gif\\|bmp\\)$&#34;</span> <span style="color:#000">f</span>)
+</span></span><span style="display:flex;"><span>					  <span style="color:#000">f</span>))
+</span></span><span style="display:flex;"><span>				  (<span style="color:#000">directory-files</span> <span style="color:#000">default-directory</span>)))))
+</span></span><span style="display:flex;"><span>	  <span style="color:#177500">;; File list in the current directory in alphabetical order</span>
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">start-process-shell-command</span>
+</span></span><span style="display:flex;"><span>	   <span style="color:#c41a16">&#34;sxiv&#34;</span> <span style="color:#000">nil</span>
+</span></span><span style="display:flex;"><span>	   (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;sxiv -f -t -n %s %s&#34;</span>
+</span></span><span style="display:flex;"><span>			   (<span style="color:#000">length</span> <span style="color:#000">image-files</span>)
+</span></span><span style="display:flex;"><span>			   (<span style="color:#000">mapconcat</span> <span style="color:#c41a16">&#39;identity</span> <span style="color:#000">image-files</span> <span style="color:#c41a16">&#34; &#34;</span>))))))
+</span></span></code></pre></div>
 
     
     

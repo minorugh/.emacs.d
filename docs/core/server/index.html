@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>2.4. server :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -901,13 +901,13 @@
     
 <h2 id="emacsclientを使う">emacsclientを使う</h2>
 <p>コマンドラインから <code>emacsclient</code> をよく使うので、Emacs起動時にビルトインの <code>server</code> を起動させています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Server start for emacs-client</span>
-(<span style="color:#000">leaf</span> <span style="color:#000">server</span>
-  <span style="color:#a90d91">:require</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:config</span>
-  (<span style="color:#a90d91">unless</span> (<span style="color:#000">server-running-p</span>)
-    (<span style="color:#000">server-start</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; Server start for emacs-client</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">server</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:require</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:config</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">unless</span> (<span style="color:#000">server-running-p</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#000">server-start</span>)))
+</span></span></code></pre></div>
 
     
     

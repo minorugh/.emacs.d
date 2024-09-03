@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>4.4. ivy-format-function-arrow :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -901,21 +901,21 @@
     
 <h2 id="選択行をアイコンで強調">選択行をアイコンで強調</h2>
 <p><code>my:ivy-format-function-arrow</code> は、<code>ivy-mode</code> の選択行をアイコンで強調する設定です。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ivy-format-function-arrow</span> (<span style="color:#000">cands</span>)
-	<span style="color:#c41a16">&#34;Transform into a string for minibuffer with CANDS.&#34;</span>
-	(<span style="color:#000">ivy--format-function-generic</span>
-	 (<span style="color:#a90d91">lambda</span> (<span style="color:#000">str</span>)
-	   (<span style="color:#000">concat</span> (<span style="color:#a90d91">if</span> (<span style="color:#000">display-graphic-p</span>)
-				   (<span style="color:#000">all-the-icons-octicon</span> <span style="color:#c41a16">&#34;chevron-right&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">0.8</span> <span style="color:#a90d91">:v-adjust</span> <span style="color:#1c01ce">-0.05</span>)
-				 <span style="color:#c41a16">&#34;&gt;&#34;</span>)
-			   (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>))
-			   (<span style="color:#000">ivy--add-face</span> <span style="color:#000">str</span> <span style="color:#c41a16">&#39;ivy-current-match</span>)))
-	 (<span style="color:#a90d91">lambda</span> (<span style="color:#000">str</span>)
-	   (<span style="color:#000">concat</span> (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>)) <span style="color:#000">str</span>))
-	 <span style="color:#000">cands</span>
-	 <span style="color:#c41a16">&#34;\n&#34;</span>))
-(<span style="color:#a90d91">setq</span> <span style="color:#000">ivy-format-functions-alist</span> <span style="color:#000">&#39;</span>((<span style="color:#000">t</span> <span style="color:#000">.</span> <span style="color:#000">my:ivy-format-function-arrow</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">my:ivy-format-function-arrow</span> (<span style="color:#000">cands</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Transform into a string for minibuffer with CANDS.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">ivy--format-function-generic</span>
+</span></span><span style="display:flex;"><span>	 (<span style="color:#a90d91">lambda</span> (<span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>	   (<span style="color:#000">concat</span> (<span style="color:#a90d91">if</span> (<span style="color:#000">display-graphic-p</span>)
+</span></span><span style="display:flex;"><span>				   (<span style="color:#000">all-the-icons-octicon</span> <span style="color:#c41a16">&#34;chevron-right&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">0.8</span> <span style="color:#a90d91">:v-adjust</span> <span style="color:#1c01ce">-0.05</span>)
+</span></span><span style="display:flex;"><span>				 <span style="color:#c41a16">&#34;&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>			   (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>))
+</span></span><span style="display:flex;"><span>			   (<span style="color:#000">ivy--add-face</span> <span style="color:#000">str</span> <span style="color:#c41a16">&#39;ivy-current-match</span>)))
+</span></span><span style="display:flex;"><span>	 (<span style="color:#a90d91">lambda</span> (<span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>	   (<span style="color:#000">concat</span> (<span style="color:#000">propertize</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#c41a16">&#39;display</span> <span style="color:#000">`</span>(<span style="color:#000">space</span> <span style="color:#a90d91">:align-to</span> <span style="color:#1c01ce">2</span>)) <span style="color:#000">str</span>))
+</span></span><span style="display:flex;"><span>	 <span style="color:#000">cands</span>
+</span></span><span style="display:flex;"><span>	 <span style="color:#c41a16">&#34;\n&#34;</span>))
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">setq</span> <span style="color:#000">ivy-format-functions-alist</span> <span style="color:#000">&#39;</span>((<span style="color:#000">t</span> <span style="color:#000">.</span> <span style="color:#000">my:ivy-format-function-arrow</span>)))
+</span></span></code></pre></div>
 
     
     

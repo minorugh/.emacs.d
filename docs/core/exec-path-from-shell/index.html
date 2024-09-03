@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:55 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>2.5. exec-path-from-shell :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,12 +902,12 @@
 <h2 id="exec-path-from-shellel-設定をシェルから継承する">[exec-path-from-shell.el] 設定をシェルから継承する</h2>
 <p>🔗 <a href="https://github.com/purcell/exec-path-from-shell">purcell/exec-path-from-shell: Make Emacs use the $PATH set up by the user&rsquo;s shell</a></p>
 <p>シェルに設定した <code>PATH</code>情報をEmacsにも継承して設定してくれます。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">exec-path-from-shell</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:when</span> (<span style="color:#000">memq</span> <span style="color:#000">window-system</span> <span style="color:#000">&#39;</span>(<span style="color:#000">mac</span> <span style="color:#000">ns</span> <span style="color:#000">x</span>))
-  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">exec-path-from-shell-initialize</span>)
-  <span style="color:#a90d91">:custom</span> (<span style="color:#000">exec-path-from-shell-check-startup-files</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">exec-path-from-shell</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:when</span> (<span style="color:#000">memq</span> <span style="color:#000">window-system</span> <span style="color:#000">&#39;</span>(<span style="color:#000">mac</span> <span style="color:#000">ns</span> <span style="color:#000">x</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> (<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">exec-path-from-shell-initialize</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span> (<span style="color:#000">exec-path-from-shell-check-startup-files</span> <span style="color:#000">.</span> <span style="color:#000">nil</span>))
+</span></span></code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>9.7. neotree :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -906,49 +906,49 @@
 <h2 id="neotreeel-emacs-上でディレクトリツリーを表示させる">[neotree.el] Emacs 上でディレクトリツリーを表示させる</h2>
 <p>🔗 <a href="https://github.com/jaypei/emacs-neotree">jaypei/emacs-neotree: A Emacs tree plugin like NerdTree for Vim.</a></p>
 <p>最近は、<code>Dired</code> よりももっぱらこちらを愛用している。<code>Rename</code>, <code>Delete</code> などの簡単なコマンドも使えて便利。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">neotree</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-find</span>)
-		 (<span style="color:#a90d91">:neotree-mode-map</span>
-		  (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-enter-hide</span>)
-		  (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-hidden-file-toggle</span>)
-		  (<span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-select-up-node</span>)
-		  (<span style="color:#c41a16">&#34;&lt;right&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-change-root</span>)
-		  (<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-toggle</span>)))
-  <span style="color:#a90d91">:custom</span>
-  <span style="color:#000">`</span>((<span style="color:#000">neo-keymap-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;concise</span>)
-    (<span style="color:#000">neo-create-file-auto-open</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
-</code></pre></div><p>アイコンは <code>all-the-icons</code> より <code>doom-themes</code> の拡張設定のほうがシンプルで見やすい。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; doom-themes </span>
-(<span style="color:#000">doom-themes-neotree-config</span>)
-</code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">neotree</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-find</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#a90d91">:neotree-mode-map</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;RET&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-enter-hide</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;a&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-hidden-file-toggle</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;&lt;left&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-select-up-node</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;&lt;right&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-change-root</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;&lt;f10&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">neotree-toggle</span>)))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:custom</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">`</span>((<span style="color:#000">neo-keymap-style</span> <span style="color:#000">.</span> <span style="color:#c41a16">&#39;concise</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#000">neo-create-file-auto-open</span> <span style="color:#000">.</span> <span style="color:#000">t</span>)))
+</span></span></code></pre></div><p>アイコンは <code>all-the-icons</code> より <code>doom-themes</code> の拡張設定のほうがシンプルで見やすい。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; doom-themes </span>
+</span></span><span style="display:flex;"><span>(<span style="color:#000">doom-themes-neotree-config</span>)
+</span></span></code></pre></div><h3 id="カスタマイズ設定">カスタマイズ設定</h3>
 <p>ツリーバッファーでRETを押したらツリーを自動で閉じるように設定している。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#000">neotree</span>
-  <span style="color:#177500">;; Change neotree&#39;s font size</span>
-  <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/218</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-text-scale</span> ()
-	<span style="color:#c41a16">&#34;Neotree text scale.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">text-scale-adjust</span> <span style="color:#1c01ce">0</span>)
-	(<span style="color:#000">text-scale-decrease</span> <span style="color:#1c01ce">0.8</span>)
-	(<span style="color:#000">message</span> <span style="color:#000">nil</span>))
-  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;neo-after-create-hook</span>
-			(<span style="color:#a90d91">lambda</span> (<span style="color:#000">_</span>)
-			  (<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;neotree-text-scale</span>)))
-
-  <span style="color:#177500">;; neotree enter hide</span>
-  <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/77</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">neo-open-file-hide</span> (<span style="color:#000">full-path</span> <span style="color:#a90d91">&amp;optional</span> <span style="color:#000">arg</span>)
-	<span style="color:#c41a16">&#34;Neotree enter hide with FULL-PATH ARG.&#34;</span>
-	(<span style="color:#000">neo-global--select-mru-window</span> <span style="color:#000">arg</span>)
-	(<span style="color:#000">find-file</span> <span style="color:#000">full-path</span>)
-	(<span style="color:#000">neotree-hide</span>))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-enter-hide</span> (<span style="color:#a90d91">&amp;optional</span> <span style="color:#000">arg</span>)
-	<span style="color:#c41a16">&#34;Neotree enter hide with ARG.&#34;</span>
-	(<span style="color:#a90d91">interactive</span> <span style="color:#c41a16">&#34;P&#34;</span>)
-	(<span style="color:#000">neo-buffer--execute</span> <span style="color:#000">arg</span> <span style="color:#c41a16">&#39;neo-open-file-hide</span> <span style="color:#c41a16">&#39;neo-open-dir</span>)))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#a90d91">with-eval-after-load</span> <span style="color:#000">neotree</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Change neotree&#39;s font size</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/218</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-text-scale</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Neotree text scale.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">text-scale-adjust</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">text-scale-decrease</span> <span style="color:#1c01ce">0.8</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">message</span> <span style="color:#000">nil</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-hook</span> <span style="color:#c41a16">&#39;neo-after-create-hook</span>
+</span></span><span style="display:flex;"><span>			(<span style="color:#a90d91">lambda</span> (<span style="color:#000">_</span>)
+</span></span><span style="display:flex;"><span>			  (<span style="color:#000">call-interactively</span> <span style="color:#c41a16">&#39;neotree-text-scale</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; neotree enter hide</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Tips from https://github.com/jaypei/emacs-neotree/issues/77</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">neo-open-file-hide</span> (<span style="color:#000">full-path</span> <span style="color:#a90d91">&amp;optional</span> <span style="color:#000">arg</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Neotree enter hide with FULL-PATH ARG.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">neo-global--select-mru-window</span> <span style="color:#000">arg</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">find-file</span> <span style="color:#000">full-path</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">neotree-hide</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">neotree-enter-hide</span> (<span style="color:#a90d91">&amp;optional</span> <span style="color:#000">arg</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Neotree enter hide with ARG.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span> <span style="color:#c41a16">&#34;P&#34;</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">neo-buffer--execute</span> <span style="color:#000">arg</span> <span style="color:#c41a16">&#39;neo-open-file-hide</span> <span style="color:#c41a16">&#39;neo-open-dir</span>)))
+</span></span></code></pre></div>
 
     
     

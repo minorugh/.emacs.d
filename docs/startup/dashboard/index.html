@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>1.6. dashboard :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -905,112 +905,112 @@
 <p>Emacsの起動を早くしようと試行錯誤している一方、せめて初期画面くらいは、ホットするようなものにしたい…ということで、<code>dashbord.el</code> を導入しました。</p>
 <p><img src="https://camo.githubusercontent.com/de931cfbad673c47366b2a3cd8d0aa7eede1ae13899512c0d51ba731866d5c40/68747470733a2f2f6c6976652e737461746963666c69636b722e636f6d2f36353533352f35313633313934363035335f623964383438613335375f622e6a7067" alt="dashboard"></p>
 <p><code>&lt;home&gt;</code> キーを押すことで何処からでも <code>dashboard</code>画面に戻ります。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">dashboard</span>
-  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
-  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-setup-startup-hook</span>)
-		 (<span style="color:#000">dashboard-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">page-break-lines-mode</span>))
-  <span style="color:#a90d91">:defun</span> (<span style="color:#000">dashboard-setup-startup-hook</span>)
-  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-dashboard</span>)
-		 (<span style="color:#a90d91">:dashboard-mode-map</span>
-		  (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-calendar</span>)
-		  (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-yahoo-japan</span>)
-		  (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-nhk-news</span>)
-		  (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-weather</span>)
-		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-tweetdeck</span>)
-		  (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-homepage</span>)
-		  (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">.</span> <span style="color:#000">sylpheed</span>)
-		  (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">slack</span>)
-		  (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-browse/body</span>)
-		  (<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">quit-dashboard</span>)))
-  <span style="color:#a90d91">:advice</span> (<span style="color:#a90d91">:override</span> <span style="color:#000">emacs-init-time</span> <span style="color:#000">ad:emacs-init-time</span>)
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#000">leaf</span> <span style="color:#000">page-break-lines</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>)
-  <span style="color:#a90d91">:config</span>
-  <span style="color:#177500">;; Set the title</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-banner-logo-title</span>
-		(<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;GNU Emacs &#34;</span> <span style="color:#000">emacs-version</span> <span style="color:#c41a16">&#34; kernel &#34;</span>
-				(<span style="color:#000">car</span> (<span style="color:#000">split-string</span> (<span style="color:#000">shell-command-to-string</span> <span style="color:#c41a16">&#34;uname -r&#34;</span>)))  <span style="color:#c41a16">&#34; Debian &#34;</span>
-				(<span style="color:#000">car</span> (<span style="color:#000">split-string</span> (<span style="color:#000">shell-command-to-string</span> <span style="color:#c41a16">&#34;cat /etc/debian_version&#34;</span>))) <span style="color:#c41a16">&#34; 86_64 GNU/Linux&#34;</span>))
-
-  <span style="color:#177500">;; Set the banner</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-startup-banner</span> (<span style="color:#000">expand-file-name</span> <span style="color:#c41a16">&#34;emacs.png&#34;</span> <span style="color:#000">user-emacs-directory</span>)
-		<span style="color:#000">dashboard-page-separator</span> <span style="color:#c41a16">&#34;\n\f\f\n&#34;</span>
-		<span style="color:#000">dashboard-set-heading-icons</span> <span style="color:#000">t</span>
-		<span style="color:#000">dashboard-set-file-icons</span> <span style="color:#000">t</span>
-		<span style="color:#000">show-week-agenda-p</span> <span style="color:#000">t</span>
-		<span style="color:#000">dashboard-items</span> <span style="color:#000">&#39;</span>((<span style="color:#000">recents</span>  <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)
-						  (<span style="color:#000">agenda</span> <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)))
-
-  <span style="color:#177500">;; Set the footer</span>
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-footer-messages</span>
-		<span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;Always be joyful. Never stop praying. Be thankful in all circumstances.&#34;</span>))
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-footer-icon</span>
-		(<span style="color:#000">all-the-icons-octicon</span> <span style="color:#c41a16">&#34;dashboard&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">1.0</span> <span style="color:#a90d91">:v-adjust</span> <span style="color:#1c01ce">-0.05</span> <span style="color:#a90d91">:face</span> <span style="color:#c41a16">&#39;font-lock-keyword-face</span>))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-insert-custom</span> (<span style="color:#000">list-size</span>)
-	<span style="color:#c41a16">&#34;Insert custom itemes LIST-SIZE.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#000">insert</span> <span style="color:#c41a16">&#34; GH: (h)    calendar: (c)    News: (n.y.w)    Mail: (m)    Slack: (s)    Twitter: (t)    (.)&#34;</span>))
-
-  <span style="color:#177500">;; Insert custom item</span>
-  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-item-generators</span>  <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-insert-custom</span>))
-  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-items</span> <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span>) <span style="color:#000">t</span>))
-</code></pre></div><h2 id="カスタマイズ設定">カスタマイズ設定</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">dashboard</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:hook</span> ((<span style="color:#000">after-init-hook</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-setup-startup-hook</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">dashboard-mode-hook</span> <span style="color:#000">.</span> <span style="color:#000">page-break-lines-mode</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:defun</span> (<span style="color:#000">dashboard-setup-startup-hook</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> ((<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">open-dashboard</span>)
+</span></span><span style="display:flex;"><span>		 (<span style="color:#a90d91">:dashboard-mode-map</span>
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;c&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-calendar</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;y&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-yahoo-japan</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;n&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-nhk-news</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;w&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-weather</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;t&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-tweetdeck</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;h&#34;</span> <span style="color:#000">.</span> <span style="color:#000">chromium-homepage</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;m&#34;</span> <span style="color:#000">.</span> <span style="color:#000">sylpheed</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;s&#34;</span> <span style="color:#000">.</span> <span style="color:#000">slack</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;.&#34;</span> <span style="color:#000">.</span> <span style="color:#000">hydra-browse/body</span>)
+</span></span><span style="display:flex;"><span>		  (<span style="color:#c41a16">&#34;&lt;home&gt;&#34;</span> <span style="color:#000">.</span> <span style="color:#000">quit-dashboard</span>)))
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:advice</span> (<span style="color:#a90d91">:override</span> <span style="color:#000">emacs-init-time</span> <span style="color:#000">ad:emacs-init-time</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">leaf</span> <span style="color:#000">page-break-lines</span> <span style="color:#a90d91">:ensure</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:config</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Set the title</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-banner-logo-title</span>
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;GNU Emacs &#34;</span> <span style="color:#000">emacs-version</span> <span style="color:#c41a16">&#34; kernel &#34;</span>
+</span></span><span style="display:flex;"><span>				(<span style="color:#000">car</span> (<span style="color:#000">split-string</span> (<span style="color:#000">shell-command-to-string</span> <span style="color:#c41a16">&#34;uname -r&#34;</span>)))  <span style="color:#c41a16">&#34; Debian &#34;</span>
+</span></span><span style="display:flex;"><span>				(<span style="color:#000">car</span> (<span style="color:#000">split-string</span> (<span style="color:#000">shell-command-to-string</span> <span style="color:#c41a16">&#34;cat /etc/debian_version&#34;</span>))) <span style="color:#c41a16">&#34; 86_64 GNU/Linux&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Set the banner</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-startup-banner</span> (<span style="color:#000">expand-file-name</span> <span style="color:#c41a16">&#34;emacs.png&#34;</span> <span style="color:#000">user-emacs-directory</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#000">dashboard-page-separator</span> <span style="color:#c41a16">&#34;\n\f\f\n&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">dashboard-set-heading-icons</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">dashboard-set-file-icons</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">show-week-agenda-p</span> <span style="color:#000">t</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">dashboard-items</span> <span style="color:#000">&#39;</span>((<span style="color:#000">recents</span>  <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)
+</span></span><span style="display:flex;"><span>						  (<span style="color:#000">agenda</span> <span style="color:#000">.</span> <span style="color:#1c01ce">5</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Set the footer</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-footer-messages</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#000">&#39;</span>(<span style="color:#c41a16">&#34;Always be joyful. Never stop praying. Be thankful in all circumstances.&#34;</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-footer-icon</span>
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">all-the-icons-octicon</span> <span style="color:#c41a16">&#34;dashboard&#34;</span> <span style="color:#a90d91">:height</span> <span style="color:#1c01ce">1.0</span> <span style="color:#a90d91">:v-adjust</span> <span style="color:#1c01ce">-0.05</span> <span style="color:#a90d91">:face</span> <span style="color:#c41a16">&#39;font-lock-keyword-face</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-insert-custom</span> (<span style="color:#000">list-size</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Insert custom itemes LIST-SIZE.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">insert</span> <span style="color:#c41a16">&#34; GH: (h)    calendar: (c)    News: (n.y.w)    Mail: (m)    Slack: (s)    Twitter: (t)    (.)&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#177500">;; Insert custom item</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-item-generators</span>  <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span> <span style="color:#000">.</span> <span style="color:#000">dashboard-insert-custom</span>))
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">add-to-list</span> <span style="color:#c41a16">&#39;dashboard-items</span> <span style="color:#000">&#39;</span>(<span style="color:#000">custom</span>) <span style="color:#000">t</span>))
+</span></span></code></pre></div><h2 id="カスタマイズ設定">カスタマイズ設定</h2>
 <p><code>dashbord</code> をカスタマイズするためのユーザー関数です。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp"><span style="color:#177500">;; Custom configurations</span>
-(<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-goto-recent-files</span> ()
-  <span style="color:#c41a16">&#34;Go to recent files.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">let</span> ((<span style="color:#000">func</span> (<span style="color:#000">local-key-binding</span> <span style="color:#c41a16">&#34;r&#34;</span>)))
-    (<span style="color:#a90d91">and</span> <span style="color:#000">func</span> (<span style="color:#000">funcall</span> <span style="color:#000">func</span>))))
-
-(<span style="color:#a90d91">defvar</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">nil</span>
-  <span style="color:#c41a16">&#34;Wether recovers the layout.&#34;</span>)
-
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">open-dashboard</span> ()
-  <span style="color:#c41a16">&#34;Open the *dashboard* buffer and jump to the first widget.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">t</span>)
-  (<span style="color:#000">delete-other-windows</span>)
-  (<span style="color:#000">dashboard-refresh-buffer</span>)
-  (<span style="color:#000">dashboard-goto-recent-files</span>))
-
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">quit-dashboard</span> ()
-  <span style="color:#c41a16">&#34;Quit dashboard window.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">quit-window</span> <span style="color:#000">t</span>)
-  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> <span style="color:#000">dashboard-recover-layout-p</span>
-			 (<span style="color:#000">bound-and-true-p</span> <span style="color:#000">winner-mode</span>))
-    (<span style="color:#000">winner-undo</span>)
-    (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">nil</span>)))
-
-
-<span style="color:#177500">;; Return a string giving the duration of the Emacs initialization</span>
-(<span style="color:#a90d91">defun</span> <span style="color:#000">ad:emacs-init-time</span> ()
-  <span style="color:#c41a16">&#34;Advice </span><span style="color:#c41a16">`emacs-init-time&#39;</span><span style="color:#c41a16">.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#a90d91">let</span> ((<span style="color:#000">str</span>
-		 (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;%.3f seconds&#34;</span>
-				 (<span style="color:#000">float-time</span>
-				  (<span style="color:#000">time-subtract</span> <span style="color:#000">after-init-time</span> <span style="color:#000">before-init-time</span>)))))
-	(<span style="color:#a90d91">if</span> (<span style="color:#000">called-interactively-p</span> <span style="color:#c41a16">&#39;interactive</span>)
-		(<span style="color:#000">message</span> <span style="color:#c41a16">&#34;%s&#34;</span> <span style="color:#000">str</span>)
-	  <span style="color:#000">str</span>)))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">sylpheed</span> ()
-  <span style="color:#c41a16">&#34;Open sylpheed.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;sylpheed&#34;</span>)
-  (<span style="color:#000">delete-other-windows</span>))
-
-(<span style="color:#a90d91">defun</span> <span style="color:#000">slack</span> ()
-  <span style="color:#c41a16">&#34;Open sylpheed.&#34;</span>
-  (<span style="color:#a90d91">interactive</span>)
-  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;slack&#34;</span>)
-  (<span style="color:#000">delete-other-windows</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span><span style="color:#177500">;; Custom configurations</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">dashboard-goto-recent-files</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Go to recent files.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">let</span> ((<span style="color:#000">func</span> (<span style="color:#000">local-key-binding</span> <span style="color:#c41a16">&#34;r&#34;</span>)))
+</span></span><span style="display:flex;"><span>    (<span style="color:#a90d91">and</span> <span style="color:#000">func</span> (<span style="color:#000">funcall</span> <span style="color:#000">func</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defvar</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">nil</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Wether recovers the layout.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">open-dashboard</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Open the *dashboard* buffer and jump to the first widget.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">delete-other-windows</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">dashboard-refresh-buffer</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">dashboard-goto-recent-files</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">quit-dashboard</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Quit dashboard window.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">quit-window</span> <span style="color:#000">t</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">when</span> (<span style="color:#a90d91">and</span> <span style="color:#000">dashboard-recover-layout-p</span>
+</span></span><span style="display:flex;"><span>			 (<span style="color:#000">bound-and-true-p</span> <span style="color:#000">winner-mode</span>))
+</span></span><span style="display:flex;"><span>    (<span style="color:#000">winner-undo</span>)
+</span></span><span style="display:flex;"><span>    (<span style="color:#a90d91">setq</span> <span style="color:#000">dashboard-recover-layout-p</span> <span style="color:#000">nil</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#177500">;; Return a string giving the duration of the Emacs initialization</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">ad:emacs-init-time</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Advice </span><span style="color:#c41a16">`emacs-init-time&#39;</span><span style="color:#c41a16">.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">let</span> ((<span style="color:#000">str</span>
+</span></span><span style="display:flex;"><span>		 (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;%.3f seconds&#34;</span>
+</span></span><span style="display:flex;"><span>				 (<span style="color:#000">float-time</span>
+</span></span><span style="display:flex;"><span>				  (<span style="color:#000">time-subtract</span> <span style="color:#000">after-init-time</span> <span style="color:#000">before-init-time</span>)))))
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">if</span> (<span style="color:#000">called-interactively-p</span> <span style="color:#c41a16">&#39;interactive</span>)
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">message</span> <span style="color:#c41a16">&#34;%s&#34;</span> <span style="color:#000">str</span>)
+</span></span><span style="display:flex;"><span>	  <span style="color:#000">str</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">sylpheed</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Open sylpheed.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;sylpheed&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">delete-other-windows</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a90d91">defun</span> <span style="color:#000">slack</span> ()
+</span></span><span style="display:flex;"><span>  <span style="color:#c41a16">&#34;Open sylpheed.&#34;</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">compile</span> <span style="color:#c41a16">&#34;slack&#34;</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#000">delete-other-windows</span>))
+</span></span></code></pre></div>
 
     
     

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-07-01T16:07:56 JST">
+<meta name="revised" content="2024-09-03T11:26:06 JST">
 <title>10.2. gist interface :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -55,8 +55,8 @@
   </div>
 
   <ul class="topics">
-            <li data-nav-id="/emacs.d/" class="dd-item">
-            <a href="/emacs.d/"><i class="fa fa-fw fa-home"></i></a>
+            <li data-nav-id="/" class="dd-item">
+            <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
     <li data-nav-id="https://minorugh.github.io/emacs.d/startup/" class="dd-item haschildren
         ">
@@ -682,9 +682,9 @@
           </a>
         </div>
     </li>
-      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browsepoint/" class="dd-item">
+      <li data-nav-id="https://minorugh.github.io/emacs.d/programming/browse@point/" class="dd-item">
         <div>
-          <a href="/emacs.d/programming/browsepoint/">
+          <a href="/emacs.d/programming/browse@point/">
             10.7. browse-at-point
           </a>
         </div>
@@ -902,40 +902,40 @@
 <h2 id="gistインターフェイス">Gistインターフェイス</h2>
 <p>リスト管理などもできる <a href="https://github.com/defunkt/gist.el"><code>gist.el</code></a> というパッケージを使っていましたが、そもそもローカルで管理する必要がないから <code>Gist</code>を使うのだと思うので <code>post</code> 専用の簡単な関数を作りました。</p>
 <p><code>gist</code> をinstallしておく必要があります。</p>
-<pre><code class="language-shellsession" data-lang="shellsession">$ sudo apt install gist
+<pre tabindex="0"><code class="language-shellsession" data-lang="shellsession">$ sudo apt install gist
 </code></pre><p>ターミナルで <code>gist --help</code> と打つと沢山の起動オプションが表示される。</p>
 <p><code>gist -o</code> でポスト後の結果の URLをブラウザで開いてくれるのでこれを採用した。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(<span style="color:#000">leaf</span> <span style="color:#000">*gist-configurations</span>
-  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;s-g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gist-region-or-buffer</span>)
-  <span style="color:#a90d91">:init</span>
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">gist-description</span> ()
-	<span style="color:#c41a16">&#34;Add gist description.&#34;</span>
-	(<span style="color:#000">code-quote-argument</span> (<span style="color:#000">read-from-minibuffer</span> <span style="color:#c41a16">&#34;Add gist description: &#34;</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">gist-filename</span> ()
-	<span style="color:#c41a16">&#34;The character string entered in minibuffer is used as file-name.
-</span><span style="color:#c41a16">If enter is pressed without file-name, that&#39;s will be buffer-file-neme.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">file-name-nondirectory</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
-	  (<span style="color:#000">read-from-minibuffer</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;File name (%s): &#34;</span> <span style="color:#000">file</span>) <span style="color:#000">file</span>)))
-
-  (<span style="color:#a90d91">defun</span> <span style="color:#000">gist-region-or-buffer</span> ()
-	<span style="color:#c41a16">&#34;If region is selected, post from the region.
-</span><span style="color:#c41a16">If region isn&#39;t selected, post from the buffer.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">buffer-file-name</span>)))
-	  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
-		  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -od &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">file</span>))
-		(<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -oPd &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; -f &#34;</span> (<span style="color:#000">gist-filename</span>)))))
-	(<span style="color:#000">delete-other-windows</span>))
-</code></pre></div><p><code>dired</code> からも使えるように定義しています。</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-do-gist</span> ()
-	<span style="color:#c41a16">&#34;Dired-get-filename do gist and open in browser.&#34;</span>
-	(<span style="color:#a90d91">interactive</span>)
-	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">dired-get-filename</span> <span style="color:#000">nil</span> <span style="color:#000">t</span>)))
-	  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -od &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">file</span>)))
-	(<span style="color:#000">delete-other-windows</span>))
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(<span style="color:#000">leaf</span> <span style="color:#000">*gist-configurations</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:bind</span> (<span style="color:#c41a16">&#34;s-g&#34;</span> <span style="color:#000">.</span> <span style="color:#000">gist-region-or-buffer</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a90d91">:init</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">gist-description</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Add gist description.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">code-quote-argument</span> (<span style="color:#000">read-from-minibuffer</span> <span style="color:#c41a16">&#34;Add gist description: &#34;</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">gist-filename</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;The character string entered in minibuffer is used as file-name.
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">If enter is pressed without file-name, that&#39;s will be buffer-file-neme.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">file-name-nondirectory</span> (<span style="color:#000">buffer-file-name</span> (<span style="color:#000">current-buffer</span>)))))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">read-from-minibuffer</span> (<span style="color:#000">format</span> <span style="color:#c41a16">&#34;File name (%s): &#34;</span> <span style="color:#000">file</span>) <span style="color:#000">file</span>)))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">gist-region-or-buffer</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;If region is selected, post from the region.
+</span></span></span><span style="display:flex;"><span><span style="color:#c41a16">If region isn&#39;t selected, post from the buffer.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">buffer-file-name</span>)))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#a90d91">if</span> (<span style="color:#000">not</span> (<span style="color:#000">use-region-p</span>))
+</span></span><span style="display:flex;"><span>		  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -od &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">file</span>))
+</span></span><span style="display:flex;"><span>		(<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -oPd &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; -f &#34;</span> (<span style="color:#000">gist-filename</span>)))))
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">delete-other-windows</span>))
+</span></span></code></pre></div><p><code>dired</code> からも使えるように定義しています。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>  (<span style="color:#a90d91">defun</span> <span style="color:#000">dired-do-gist</span> ()
+</span></span><span style="display:flex;"><span>	<span style="color:#c41a16">&#34;Dired-get-filename do gist and open in browser.&#34;</span>
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">interactive</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#a90d91">let</span> ((<span style="color:#000">file</span> (<span style="color:#000">dired-get-filename</span> <span style="color:#000">nil</span> <span style="color:#000">t</span>)))
+</span></span><span style="display:flex;"><span>	  (<span style="color:#000">compile</span> (<span style="color:#000">concat</span> <span style="color:#c41a16">&#34;gist -od &#34;</span> (<span style="color:#000">gist-description</span>) <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">file</span>)))
+</span></span><span style="display:flex;"><span>	(<span style="color:#000">delete-other-windows</span>))
+</span></span></code></pre></div>
 
     
     
