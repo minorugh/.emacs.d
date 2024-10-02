@@ -15,7 +15,7 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。
 以下の環境で使用しています。が、動作を保証するものではありません。
 
 * Debian 11.4  86_64 GNU/Linux
-* 自分でビルドした Emacs 27.2.50
+* 自分でビルドした Emacs 29.4
 
 ## デレクトリ構成
 設定ファイルの構成は下記のとおりです。
@@ -23,7 +23,7 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。
 ```shellsession
 ~/.emacs.d
 │
-├── el-get/
+├── elisp/
 ├── elpa/
 ├── inits/
 │   ├── 00_base.el
@@ -32,9 +32,8 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。
 │   ├── 90_eshell.el
 │   └── 99_chromium.el
 ├── snippets/
-├── template/
 ├── tmp/
 ├── early-init.el
 ├── init.el
-└── test.el
+└── init-mini.el
 ```

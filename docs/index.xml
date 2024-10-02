@@ -423,7 +423,7 @@ Postscript 対応のプリンターが必要。
       <pubDate>Mon, 29 Aug 2022 06:03:08 +0900</pubDate>
       
       <guid>https://minorugh.github.io/emacs.d/utility-tool/restart/</guid>
-      <description>[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.
+      <description>[restart-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.
 restart-emacs は、Emacsを再起動させるコマンドです。
 C-u の数で再起動の方法を制御できます。
 M-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs &amp;ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる (leaf restart-emacs :ensure t :bind (&amp;#34;C-x C-c&amp;#34; . restart-emacs)) </description>

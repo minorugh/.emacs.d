@@ -6,7 +6,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2024-09-03T15:42:46 JST">
+<meta name="revised" content="2024-10-02T21:28:26 JST">
 <title>minoru&#39;s Emacs Configuration :: minoru&#39;s Emacs Config</title>
 <link rel="shortcut icon" href="/emacs.d/images/favicon.png" type="image/x-icon" />
 <link href="/emacs.d/css/nucleus.css" rel="stylesheet">
@@ -864,13 +864,13 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。</li>
 <p>以下の環境で使用しています。が、動作を保証するものではありません。</p>
 <ul>
 <li>Debian 11.4  86_64 GNU/Linux</li>
-<li>自分でビルドした Emacs 27.2.50</li>
+<li>自分でビルドした Emacs 29.4</li>
 </ul>
 <h2 id="デレクトリ構成">デレクトリ構成</h2>
 <p>設定ファイルの構成は下記のとおりです。</p>
 <pre tabindex="0"><code class="language-shellsession" data-lang="shellsession">~/.emacs.d
 │
-├── el-get/
+├── elisp/
 ├── elpa/
 ├── inits/
 │   ├── 00_base.el
@@ -879,11 +879,10 @@ Hugo を使ってGitHub Pages にWebサイトを構築しています。</li>
 │   ├── 90_eshell.el
 │   └── 99_chromium.el
 ├── snippets/
-├── template/
 ├── tmp/
 ├── early-init.el
 ├── init.el
-└── test.el
+└── init-mini.el
 </code></pre>
 
 

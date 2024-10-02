@@ -326,7 +326,7 @@
 	"title": "12.6. restart-emacs",
 	"tags": [],
 	"description": "",
-	"content": "[rstert-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.\nrestart-emacs は、Emacsを再起動させるコマンドです。\nC-u の数で再起動の方法を制御できます。\nM-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs \u0026ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) "
+	"content": "[restart-emacs.el] Emacsを再起動させる 🔗 iqbalansari/restart-emacs: A simple emacs package to restart emacs from within emacs.\nrestart-emacs は、Emacsを再起動させるコマンドです。\nC-u の数で再起動の方法を制御できます。\nM-x restart-emacs 通常のEmacsを立ち上げる C-u M-x restart-emacs emacs \u0026ndash;debug-init C-u C-u M-x restart-emacs emacs -Q C-u C-u C-u M-x restart-emacs 引数を尋ねる (leaf restart-emacs :ensure t :bind (\u0026#34;C-x C-c\u0026#34; . restart-emacs)) "
 },
 {
 	"uri": "https://minorugh.github.io/emacs.d/utility-tool/open-sudo/",
@@ -354,7 +354,7 @@
 	"title": "minoru&#39;s Emacs Configuration",
 	"tags": [],
 	"description": "",
-	"content": "minoru\u0026rsquo;s Emacs Config はじめに @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から Hugo を使ってGitHub Pages にWebサイトを構築しています。 執筆用途に特化して設定していますので、コンセプトやキーバイドなどは極めて邪道思想になっています。 動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\nDebian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 27.2.50 デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── el-get/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── template/ ├── tmp/ ├── early-init.el ├── init.el └── test.el "
+	"content": "minoru\u0026rsquo;s Emacs Config はじめに @minoruGH の Emacs設定ファイルの一部を解説しているページです。 https://github.com/minorugh/emacs.d/ から Hugo を使ってGitHub Pages にWebサイトを構築しています。 執筆用途に特化して設定していますので、コンセプトやキーバイドなどは極めて邪道思想になっています。 動作確認環境 以下の環境で使用しています。が、動作を保証するものではありません。\nDebian 11.4 86_64 GNU/Linux 自分でビルドした Emacs 29.4 デレクトリ構成 設定ファイルの構成は下記のとおりです。\n~/.emacs.d │ ├── elisp/ ├── elpa/ ├── inits/ │ ├── 00_base.el │ ├── 01_dashboard.el │ ├── ... │ ├── 90_eshell.el │ └── 99_chromium.el ├── snippets/ ├── tmp/ ├── early-init.el ├── init.el └── init-mini.el "
 },
 {
 	"uri": "https://minorugh.github.io/emacs.d/hydra/hydra-menu/",
