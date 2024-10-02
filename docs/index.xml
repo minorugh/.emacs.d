@@ -1104,14 +1104,14 @@ init-loader には、エラーが出た設定ファイルは読み込まれな�
     </item>
     
     <item>
-      <title>1.5. test.el</title>
-      <link>https://minorugh.github.io/emacs.d/startup/test/</link>
+      <title>1.5. init-mini.el</title>
+      <link>https://minorugh.github.io/emacs.d/startup/init-mini/</link>
       <pubDate>Mon, 29 Aug 2022 05:45:20 +0900</pubDate>
       
-      <guid>https://minorugh.github.io/emacs.d/startup/test/</guid>
-      <description>[test.el] 最小限の emacs を起動させるための設定 test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
+      <guid>https://minorugh.github.io/emacs.d/startup/init-mini/</guid>
+      <description>[test.el] 最小限の emacs を起動させるための設定 init-mini.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。
 以下を .zshrc または .bashrc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。
-alias eq = &amp;#39;emacs -q -l ~/.emacs.d/test.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
+alias eq = &amp;#39;emacs -q -l ~/.emacs.d/init-mini.el&amp;#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。</description>
     </item>
     
     <item>

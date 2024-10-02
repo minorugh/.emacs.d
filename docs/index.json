@@ -735,11 +735,11 @@
 	"content": "[init-loader.el] 設定ファイルのローダー 🔗 emacs-jp/init-loader: Loader of configuration files.\n起動時間が犠牲になるということで敬遠される向きもあるが微々たるもので、恩恵のほうが遥かに大きい。\ninit-loader には、エラーが出た設定ファイルは読み込まれない\u0026hellip;という特徴があり原因究明がしやすくなるというメリットがある。またログの出力機能を備えていることもメリットとして挙げられる。\n(leaf init-loader :ensure t :init (load-file \u0026#34;~/.emacs.d/template/my:dired.el\u0026#34;) (load-file \u0026#34;~/.emacs.d/template/my:template.el\u0026#34;) :config (custom-set-variables \u0026#39;(init-loader-show-log-after-init \u0026#39;error-only)) (init-loader-load)) デフォルトで ~/.emacs.d/inits デレクトリ以下のファイルを読み込みます。\nユーザー設定ファイルのロード ごく個人的なtemplateファイル群を ~/.emacs.d/template フォルダーに置くようにしているので init-loader を起動する前にこれらを読み込むようにしている。\n"
 },
 {
-	"uri": "https://minorugh.github.io/emacs.d/startup/test/",
-	"title": "1.5. test.el",
+	"uri": "https://minorugh.github.io/emacs.d/startup/init-mini/",
+	"title": "1.5. init-mini.el",
 	"tags": [],
 	"description": "",
-	"content": "[test.el] 最小限の emacs を起動させるための設定 test.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。\n以下を .zshrc または .bashrc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。\nalias eq = \u0026#39;emacs -q -l ~/.emacs.d/test.el\u0026#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。\n"
+	"content": "[test.el] 最小限の emacs を起動させるための設定 init-mini.el は、 新しいパッケージを試したり設定をテストしたり、エラー等で Emacsが起動しない場合などに使用します。\n以下を .zshrc または .bashrc に記述し反映させたのち、シェルから eq と入力することで起動することがでます。\nalias eq = \u0026#39;emacs -q -l ~/.emacs.d/init-mini.el\u0026#39; ファイルの PATH は、ご自分の環境に応じて修正が必要です。\n"
 },
 {
 	"uri": "https://minorugh.github.io/emacs.d/startup/dashboard/",
