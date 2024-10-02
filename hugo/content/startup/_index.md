@@ -31,7 +31,7 @@ Emacs-27導入にあわせて `early-init.el` を設定しました。
 [init-loader.el を使う]({{< relref "init-loader" >}})
 : 設定ファイル群のローダー
 
-[test.el]({{< relref "test" >}})
+[init-mini.el]({{< relref "init-mini" >}})
 : 最小限の emacs を起動させる設定
 
 [dashboard]({{< relref "dashboard" >}})
